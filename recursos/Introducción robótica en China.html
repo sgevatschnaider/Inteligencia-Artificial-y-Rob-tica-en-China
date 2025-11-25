@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>La Revolución Robótica de China: Un Análisis Integral</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- ECharts -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    
+    <!-- QRCode.js (Librería para generar el QR) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <!-- Tippy.js & Popper.js (Para Tooltips Interactivos) -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <!-- Animaciones Tippy -->
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/shift-away.css"/>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    
+    <style>
+        :root {
+            --primary: #1e40af;
+            --secondary: #64748b;
+            --accent: #f59e0b;
+            --neutral: #f8fafc;
+            --base-100: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --bg-body: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            --card-bg: #ffffff;
+            --sidebar-bg: #ffffff;
+            --border-color: #e2e8f0;
+            
+            /* Colores Categorías Tooltips */
+            --tooltip-stat: #2563eb;   /* Azul - Estadísticas */
+            --tooltip-tech: #9333ea;   /* Morado - Tecnología */
+            --tooltip-policy: #059669; /* Verde - Políticas */
+            --tooltip-corp: #ea580c;   /* Naranja - Empresas */
+            --tooltip-def: #4b5563;    /* Gris - Definiciones */
+        }
+
+        /* Variables para Modo Oscuro */
+        [data-theme="dark"] {
+            --primary: #60a5fa;
+            --secondary: #94a3b8;
+            --accent: #fbbf24;
+            --neutral: #1e293b;
+            --base-100: #0f172a;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --bg-body: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --card-bg: #1e293b;
+            --sidebar-bg: #0f172a;
+            --border-color: #334155;
+            
+            --tooltip-stat: #60a5fa;
+            --tooltip-tech: #c084fc;
+            --tooltip-policy: #34d399;
+            --tooltip-corp: #fb923c;
+            --tooltip-def: #9ca3af;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-body);
+            transition: background 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+        
+        .serif {
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.9) 0%, rgba(15, 23, 42, 0.8) 100%);
+        }
+
+        /* Barra de Progreso */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            z-index: 9999;
+            width: 0%;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+        
+        /* TOC Optimizado */
+        .toc-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            z-index: 40;
+            overflow-y: auto;
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.05);
+            transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+            will-change: transform;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+        
+        .toc-link {
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            color: var(--text-secondary);
+            position: relative;
+        }
+        
+        .toc-link.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 70%;
+            background: var(--primary);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { height: 0; opacity: 0; }
+            to { height: 70%; opacity: 1; }
+        }
+        
+        .toc-link:hover, .toc-link.active {
+            background: rgba(30, 64, 175, 0.05);
+            color: var(--primary);
+            padding-left: 1.25rem;
+        }
+
+        [data-theme="dark"] .toc-link:hover, [data-theme="dark"] .toc-link.active {
+            background: rgba(96, 165, 250, 0.1);
+        }
+
+        /* --- ESTILOS DE TOOLTIPS EN EL TEXTO --- */
+        .tooltip-term {
+            border-bottom: 1px dashed;
+            cursor: help;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        
+        .tooltip-term:hover {
+            background-color: rgba(0,0,0,0.05);
+            border-bottom-style: solid;
+        }
+
+        [data-theme="dark"] .tooltip-term:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Colores específicos por categoría */
+        .term-stat { border-bottom-color: var(--tooltip-stat); color: var(--tooltip-stat); }
+        .term-tech { border-bottom-color: var(--tooltip-tech); color: var(--tooltip-tech); }
+        .term-policy { border-bottom-color: var(--tooltip-policy); color: var(--tooltip-policy); }
+        .term-corp { border-bottom-color: var(--tooltip-corp); color: var(--tooltip-corp); }
+        .term-def { border-bottom-color: var(--tooltip-def); color: var(--text-primary); }
+
+        /* Estilos Personalizados para las cajas Tippy (Themes) */
+        .tippy-box[data-theme~='stat-theme'] { background-color: #1e40af; color: white; }
+        .tippy-box[data-theme~='stat-theme'][data-placement^='top'] > .tippy-arrow::before { border-top-color: #1e40af; }
+        
+        .tippy-box[data-theme~='tech-theme'] { background-color: #7e22ce; color: white; }
+        .tippy-box[data-theme~='tech-theme'][data-placement^='top'] > .tippy-arrow::before { border-top-color: #7e22ce; }
+
+        .tippy-box[data-theme~='policy-theme'] { background-color: #047857; color: white; }
+        .tippy-box[data-theme~='policy-theme'][data-placement^='top'] > .tippy-arrow::before { border-top-color: #047857; }
+        
+        .tippy-box[data-theme~='corp-theme'] { background-color: #c2410c; color: white; }
+        .tippy-box[data-theme~='corp-theme'][data-placement^='top'] > .tippy-arrow::before { border-top-color: #c2410c; }
+        
+        /* Animaciones */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .fade-in-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Skeleton */
+        .img-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        [data-theme="dark"] .img-skeleton {
+            background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .section-divider {
+            background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
+            height: 2px;
+            margin: 3rem 0;
+        }
+        
+        .citation-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .citation-link:hover {
+            border-bottom-color: var(--primary);
+        }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 1.5rem;
+            height: 70vh;
+        }
+        
+        .bento-main {
+            grid-row: 1 / -1;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+        
+        .bento-side-1 {
+            background: rgba(30, 64, 175, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+        
+        .bento-side-2 {
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+        
+        .chart-container {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1.5rem;
+            z-index: 50;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Correcciones Modo Oscuro */
+        [data-theme="dark"] .bg-white { background-color: var(--card-bg) !important; color: var(--text-primary); }
+        [data-theme="dark"] .text-gray-900, [data-theme="dark"] .text-gray-800, [data-theme="dark"] .text-gray-700, [data-theme="dark"] .text-gray-600 { color: var(--text-primary) !important; }
+        [data-theme="dark"] .text-gray-500, [data-theme="dark"] .text-gray-400 { color: var(--text-secondary) !important; }
+        
+        [data-theme="dark"] .bg-gray-50, [data-theme="dark"] .bg-blue-50, [data-theme="dark"] .bg-green-50, [data-theme="dark"] .bg-purple-50, [data-theme="dark"] .bg-orange-50, [data-theme="dark"] .bg-red-50, [data-theme="dark"] .bg-pink-50, [data-theme="dark"] .bg-yellow-50 {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="dark"] .from-blue-50, [data-theme="dark"] .from-green-50, [data-theme="dark"] .from-purple-50,
+        [data-theme="dark"] .to-blue-100, [data-theme="dark"] .to-green-100, [data-theme="dark"] .to-purple-100 {
+            background-image: none !important;
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Contenedor QR - Asegurar fondo blanco en modo oscuro para legibilidad */
+        #qr-container-box {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(4px);
+            color: #1e293b; /* Texto oscuro siempre dentro de la caja QR */
+        }
+        
+        @media print {
+            .toc-sidebar, .theme-toggle, #reading-progress { display: none !important; }
+            .main-content { margin-left: 0 !important; }
+            section { page-break-inside: avoid; }
+            .chart-container { page-break-inside: avoid; border: 1px solid #ccc; }
+            body { background: white; color: black; }
+        }
+        
+        @media (max-width: 1024px) {
+            .toc-sidebar { transform: translateX(-100%); }
+            .toc-sidebar.open { transform: translateX(0); }
+            .main-content { margin-left: 0; }
+            .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto auto auto; height: auto; }
+            .bento-main { grid-row: 1; min-height: 400px; }
+            .theme-toggle { right: 4rem; }
+        }
+        
+        @media (max-width: 768px) {
+            .main-content { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .hero-gradient h1 { font-size: 2.25rem !important; line-height: 1.2 !important; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de Progreso -->
+    <div id="reading-progress" class="reading-progress"></div>
+
+    <!-- Botón Cambio de Tema -->
+    <button id="themeToggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <span>Modo Oscuro</span>
+    </button>
+
+    <!-- Table of Contents Sidebar -->
+    <nav class="toc-sidebar">
+      <div class="p-6 border-b border-gray-200" style="border-color: var(--border-color);">
+        <h2 class="text-lg font-bold text-gray-900 serif">Índice</h2>
+      </div>
+      <div class="p-4 space-y-1">
+        <a href="#executive-summary" class="block px-3 py-2 text-sm toc-link rounded">
+          <i class="fas fa-star mr-2"></i>Resumen Ejecutivo
+        </a>
+        <a href="#global-positioning" class="block px-3 py-2 text-sm toc-link rounded">
+          <i class="fas fa-globe mr-2"></i>Posicionamiento Global
+        </a>
+        <a href="#policy-frameworks" class="block px-3 py-2 text-sm toc-link rounded">
+          <i class="fas fa-gavel mr-2"></i>Marcos Estratégicos
+        </a>
+        <a href="#industry-leaders" class="block px-3 py-2 text-sm toc-link rounded">
+          <i class="fas fa-industry mr-2"></i>Líderes de la Industria
+        </a>
+        <a href="#applications" class="block px-3 py-2 text-sm toc-link rounded">
+          <i class="fas fa-cogs mr-2"></i>Dominios de Aplicación
+        </a>
+        <a href="#technology-stack" class="block px-3 py-2 text-sm toc-link rounded">
+          <i class="fas fa-microchip mr-2"></i>Tecnología e Innovación
+        </a>
+        <a href="#socioeconomic-context" class="block px-3 py-2 text-sm toc-link rounded">
+          <i class="fas fa-chart-line mr-2"></i>Contexto Socioeconómico
+        </a>
+        <a href="#future-outlook" class="block px-3 py-2 text-sm toc-link rounded">
+          <i class="fas fa-rocket mr-2"></i>Perspectivas Futuras
+        </a>
+        <!-- Link al Glosario -->
+        <a href="#glossary" class="block px-3 py-2 text-sm toc-link rounded text-purple-600 font-medium">
+          <i class="fas fa-book mr-2"></i>Glosario de Términos
+        </a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section with Bento Layout -->
+      <section class="relative">
+        <div class="bento-grid max-w-7xl mx-auto p-8">
+          <!-- Main Hero Content -->
+          <div class="bento-main hero-gradient flex flex-col justify-center p-8 text-white">
+            <div class="absolute inset-0 opacity-20 overflow-hidden">
+              <img 
+                id="hero-parallax"
+                src="https://kimi-web-img.moonshot.cn/img/media.wired.com/ab67462aadfbf2c8a2830af87626b76d7d69b6a8.jpg" 
+                alt="Línea de ensamblaje robótico en una fábrica" 
+                class="w-full h-full object-cover transition-transform duration-75 ease-out will-change-transform" 
+              />
+            </div>
+            <div class="relative z-10 w-full md:w-2/3">
+              <h1 class="text-5xl font-bold serif mb-6 leading-tight">
+                <em>La Revolución Robótica de China</em>
+              </h1>
+              <p class="text-xl opacity-90 max-w-2xl mb-8">
+                Un análisis integral de la evolución de la industria, el panorama actual y la trayectoria futura a medida que China emerge como el epicentro global de la innovación en robótica.
+              </p>
+              <div class="flex items-center space-x-4 text-sm opacity-80">
+                <span><i class="fas fa-calendar mr-2"></i>Análisis 2025</span>
+                <span><i class="fas fa-chart-line mr-2"></i>Inteligencia de Mercado</span>
+                <span><i class="fas fa-microscope mr-2"></i>Investigación Tecnológica</span>
+              </div>
+            </div>
+
+            <!-- NUEVO: Tarjeta QR Flotante (Visible en Desktop/Tablet) -->
+            <div id="qr-container-box" class="absolute bottom-8 right-8 p-4 rounded-xl shadow-2xl flex flex-col items-center justify-center transition-transform hover:scale-105 border border-gray-100 z-20 hidden md:flex">
+                <div id="qrcode" class="mb-2 bg-white p-1"></div>
+                <div class="text-center">
+                    <p class="text-xs font-bold uppercase tracking-wider text-gray-800 mb-1">Visualización</p>
+                    <a href="https://clinquant-meringue-3930c2.netlify.app/src/classroom/graphs/recursos/robot_china" target="_blank" class="text-[10px] text-blue-600 hover:text-blue-800 underline font-medium">
+                        Ver interactivo <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+            </div>
+          </div>
+
+          <!-- Side Panel 1: Key Metrics -->
+          <div class="bento-side-1">
+            <h3 class="font-bold text-lg mb-4 text-gray-800">
+              <i class="fas fa-trophy text-blue-600 mr-2"></i>Liderazgo de Mercado
+            </h3>
+            <div class="space-y-3">
+              <div class="flex justify-between">
+                <span class="text-sm text-gray-600">Cuota de Mercado Global</span>
+                <span 
+                    class="tooltip-term term-stat font-bold text-2xl"
+                    data-tippy-content="Porcentaje del mercado mundial de robótica industrial dominado por China (2024)."
+                    data-tippy-theme="stat-theme">
+                    40%
+                </span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-sm text-gray-600">Instalaciones Anuales</span>
+                <span 
+                    class="tooltip-term term-stat font-bold text-2xl"
+                    data-tippy-content="Total de nuevos robots industriales instalados en fábricas chinas durante el último año fiscal."
+                    data-tippy-theme="stat-theme">
+                    295K
+                </span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-sm text-gray-600">Ranking Densidad Robots</span>
+                <span 
+                    class="tooltip-term term-stat font-bold text-2xl"
+                    data-tippy-content="Puesto mundial en número de robots por cada 10,000 empleados en la industria manufacturera."
+                    data-tippy-theme="stat-theme">
+                    #3
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Panel 2: Growth Projections -->
+          <div class="bento-side-2 relative">
+            <h3 class="font-bold text-lg mb-4 text-gray-800">
+              <i class="fas fa-rocket text-amber-600 mr-2"></i>Trayectoria Crecimiento
+            </h3>
+            <div class="space-y-3">
+              <div>
+                <div class="text-sm text-gray-600 mb-1">Tamaño Mercado 2028</div>
+                <div class="font-bold text-2xl text-amber-600">$108MM</div>
+              </div>
+              <div>
+                <div class="text-sm text-gray-600 mb-1">
+                    <span class="tooltip-term term-def" data-tippy-content="Tasa de Crecimiento Anual Compuesta: Promedio de crecimiento anual durante un periodo de tiempo.">CAGR</span> Esperado
+                </div>
+                <div class="font-bold text-2xl text-amber-600">23%</div>
+              </div>
+            </div>
+            <!-- Enlace visible solo en móvil (porque el QR está oculto) -->
+            <div class="mt-6 md:hidden">
+                 <a href="https://clinquant-meringue-3930c2.netlify.app/src/classroom/graphs/recursos/robot_china" target="_blank" class="block w-full text-center py-2 px-4 bg-amber-500 text-white rounded-lg text-sm font-bold shadow hover:bg-amber-600 transition-colors">
+                    <i class="fas fa-chart-network mr-2"></i>Ver Visualización
+                 </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Executive Summary -->
+      <section id="executive-summary" class="max-w-5xl mx-auto px-8 py-12">
+        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+          <h2 class="text-3xl font-bold serif mb-6 text-gray-900">
+            <i class="fas fa-star text-blue-600 mr-3"></i>Resumen Ejecutivo
+          </h2>
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl text-gray-700 mb-6 font-medium">
+              China ha surgido rápidamente como el epicentro mundial de la industria robótica, impulsada por una poderosa combinación de inversión gubernamental masiva, política industrial estratégica y un vasto mercado interno.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 mt-8">
+              <div>
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Dominio Actual</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Mayor productor, instalador y consumidor de <span class="tooltip-term term-tech" data-tippy-content="Robots diseñados para automatizar tareas en procesos de fabricación." data-tippy-theme="tech-theme">robots industriales</span> del mundo</li>
+                  <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Mercado de $47 mil millones en 2024 (40% del mercado global)</li>
+                  <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="tooltip-term term-stat" data-tippy-content="Medida clave de automatización: Cantidad de robots operativos por cada 10,000 trabajadores humanos." data-tippy-theme="stat-theme">Densidad de robots</span> de 470 unidades por cada 10.000 empleados (#3 globalmente)</li>
+                  <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Marcas nacionales capturaron el 57% de la cuota de mercado en 2024</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Trayectoria Futura</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li><i class="fas fa-arrow-trend-up text-blue-500 mr-2"></i>Mercado proyectado a alcanzar $108 mil millones para 2028</li>
+                  <li><i class="fas fa-arrow-trend-up text-blue-500 mr-2"></i>Mercado de robots humanoides se espera alcance $150 mil millones para 2030</li>
+                  <li><i class="fas fa-arrow-trend-up text-blue-500 mr-2"></i>Integración profunda de IA y robótica</li>
+                  <li><i class="fas fa-arrow-trend-up text-blue-500 mr-2"></i>Posible papel de liderazgo en la automatización global</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Global Positioning & Market Data -->
+      <section id="global-positioning" class="max-w-7xl mx-auto px-8 py-12">
+        <h2 class="text-4xl font-bold serif mb-8 text-gray-900">
+          <i class="fas fa-globe text-blue-600 mr-4"></i>Posicionamiento Global y Datos de Mercado
+        </h2>
+
+        <div class="grid lg:grid-cols-2 gap-8 mb-12">
+          <div class="chart-container">
+            <h3 class="text-xl font-bold mb-4">Crecimiento del Mercado de Robótica en China</h3>
+            <div id="marketGrowthChart" style="height: 400px;"></div>
+            <p class="text-sm text-gray-600 mt-2">
+              <a href="https://www.chinadailyhk.com/hk/article/616904" class="citation-link" target="_blank">Fuente: Análisis de Morgan Stanley</a>
+            </p>
+          </div>
+
+          <div class="chart-container">
+            <h3 class="text-xl font-bold mb-4">Densidad de Robots Industriales por País (2023)</h3>
+            <div id="robotDensityChart" style="height: 400px;"></div>
+            <p class="text-sm text-gray-600 mt-2">
+              <a href="https://metalworkingnews.info/china-overtakes-germany-and-japan-in-robot-density/" class="citation-link" target="_blank">Fuente: Informe <span class="tooltip-term term-def" data-tippy-content="Federación Internacional de Robótica: La autoridad mundial en estadísticas de robótica.">IFR</span> 2024</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4">
+              <i class="fas fa-industry text-blue-600 mr-2"></i>Estadísticas de Producción e Instalación
+            </h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span class="font-medium">Producción Robots Industriales (2024)</span>
+                <span class="text-2xl font-bold text-blue-600">556.000 unidades</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span class="font-medium">Producción Robots de Servicio (2024)</span>
+                <span class="text-2xl font-bold text-green-600">10,5M unidades</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span class="font-medium">Instalaciones Anuales (2024)</span>
+                <span class="text-2xl font-bold text-purple-600">295.000 unidades</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span class="font-medium">Cuota de Instalación Global</span>
+                <span class="text-2xl font-bold text-orange-600">54%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4">
+              <i class="fas fa-chart-pie text-green-600 mr-2"></i>Cuota de Mercado: Doméstica vs Extranjera
+            </h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                <span class="font-medium">Marcas Domésticas (2024)</span>
+                <span class="text-2xl font-bold text-blue-600">57%</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span class="font-medium">Marcas Extranjeras (2024)</span>
+                <span class="text-2xl font-bold text-gray-600">43%</span>
+              </div>
+              <p class="text-sm text-gray-600 mt-4">
+                Por primera vez en 2024, los fabricantes de robots chinos vendieron más unidades a nivel nacional que los competidores extranjeros.
+                <a href="http://english.scio.gov.cn/m/chinavoices/2025-09/26/content_118098631.html" class="citation-link" target="_blank">Fuente: Informe IFR</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Strategic Policy Frameworks -->
+      <section id="policy-frameworks" class="max-w-7xl mx-auto px-8 py-12">
+        <h2 class="text-4xl font-bold serif mb-8 text-gray-900">
+          <i class="fas fa-gavel text-blue-600 mr-4"></i>Marcos Políticos Estratégicos
+        </h2>
+
+        <div class="grid lg:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-blue-500 hover:transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-industry text-blue-500 text-2xl mr-3"></i>
+              <h3 class="text-xl font-bold">Hecho en China 2025</h3>
+            </div>
+            <p class="text-gray-700 mb-4">Lanzado en 2015, identificó la robótica como uno de los diez sectores clave para la transformación de manufactura de bajo costo a liderazgo de alta tecnología.</p>
+            <div class="space-y-2 text-sm">
+              <div><i class="fas fa-target text-green-500 mr-2"></i>Autosuficiencia en tecnologías clave</div>
+              <div><i class="fas fa-target text-green-500 mr-2"></i><span class="tooltip-term term-policy" data-tippy-content="Estrategia para producir componentes críticos (como reductores y chips) dentro de China en lugar de importarlos." data-tippy-theme="policy-theme">Localización</span> de componentes críticos</div>
+              <div><i class="fas fa-target text-green-500 mr-2"></i>Duplicar densidad de robots en manufactura</div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-purple-500 hover:transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-brain text-purple-500 text-2xl mr-3"></i>
+              <h3 class="text-xl font-bold">Plan de Desarrollo de IA</h3>
+            </div>
+            <p class="text-gray-700 mb-4">El plan de 2017 busca hacer de China el líder mundial en IA para 2030, con la robótica como área clave de aplicación.</p>
+            <div class="space-y-2 text-sm">
+              <div><i class="fas fa-robot text-purple-500 mr-2"></i>Desarrollo de <span class="tooltip-term term-tech" data-tippy-content="Embodied AI: Inteligencia Artificial que interactúa con el mundo físico a través de un cuerpo robótico." data-tippy-theme="tech-theme">IA Corporizada</span></div>
+              <div><i class="fas fa-robot text-purple-500 mr-2"></i>Centros de innovación de robots humanoides</div>
+              <div><i class="fas fa-robot text-purple-500 mr-2"></i>Integración de <span class="tooltip-term term-tech" data-tippy-content="Large Language Models (ej. GPT): Permiten a los robots comprender comandos en lenguaje natural." data-tippy-theme="tech-theme">LLM</span> y robótica</div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-green-500 hover:transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-calendar-alt text-green-500 text-2xl mr-3"></i>
+              <h3 class="text-xl font-bold">14º Plan Quinquenal</h3>
+            </div>
+            <p class="text-gray-700 mb-4">Plan actual (2021-2025) con objetivos específicos para la densidad de robots y la localización de componentes.</p>
+            <div class="space-y-2 text-sm">
+              <div><i class="fas fa-chart-line text-green-500 mr-2"></i>Duplicar densidad de robots para 2025</div>
+              <div><i class="fas fa-chart-line text-green-500 mr-2"></i>70% tasa de domesticación en componentes clave</div>
+              <div><i class="fas fa-chart-line text-green-500 mr-2"></i>Plan de acción "Robot+"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-lg">
+          <h3 class="text-2xl font-bold mb-6">
+            <i class="fas fa-map-marked-alt text-blue-600 mr-3"></i>Clusters Tecnológicos Regionales
+          </h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="text-lg font-bold mb-4 text-blue-600">Delta del Río Yangtsé</h4>
+              <div class="rounded-lg overflow-hidden mb-4 bg-gray-200">
+                  <img 
+                    src="https://kimi-web-img.moonshot.cn/img/www.vnet.com/118de2d92527b86cefa3884c9e0106e10c58caaa.jpg" 
+                    loading="lazy"
+                    decoding="async"
+                    alt="Vista aérea del centro de manufactura en el Delta del Río Yangtsé" 
+                    class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105 img-skeleton-target" 
+                  />
+              </div>
+              <ul class="space-y-2 text-gray-700">
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Corredor de manufactura Shanghai-Suzhou-Wuhu</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Iniciativa de robot "Totalmente hecho en el Delta del Yangtsé"</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>94% tasa de localización alcanzada</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>40% reducción de costos mediante colaboración</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold mb-4 text-purple-600">Delta del Río Perla</h4>
+               <div class="rounded-lg overflow-hidden mb-4 bg-gray-200">
+                  <img 
+                    src="https://kimi-web-img.moonshot.cn/img/resources.news.e.abb.com/79a545998e283b8ebf67b8e7b25fdbf2650525ae.jpg" 
+                    loading="lazy"
+                    decoding="async"
+                    alt="Centro de investigación robótica en Guangzhou" 
+                    class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105 img-skeleton-target" 
+                  />
+              </div>
+              <ul class="space-y-2 text-gray-700">
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Ecosistema de cadena industrial completa en Guangzhou</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Enfoque en manufactura de componentes centrales</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Hub de startups de robótica en Shenzhen</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>39.64% aumento en nuevas empresas de robótica (2024)</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 mt-6">
+            <a href="https://www.ndrc.gov.cn/wsdwhfz/202511/t20251118_1401683.html" class="citation-link" target="_blank">Fuente: Informe de Desarrollo Regional <span class="tooltip-term term-def" data-tippy-content="Comisión Nacional de Desarrollo y Reforma: La agencia de gestión macroeconómica de China.">NDRC</span></a>
+          </p>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Industry & Research Leaders -->
+      <section id="industry-leaders" class="max-w-7xl mx-auto px-8 py-12">
+        <h2 class="text-4xl font-bold serif mb-8 text-gray-900">
+          <i class="fas fa-industry text-blue-600 mr-4"></i>Líderes de la Industria e Investigación
+        </h2>
+
+        <div class="grid lg:grid-cols-3 gap-8 mb-12">
+          <!-- Industrial Robotics Leaders -->
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-blue-600">
+              <i class="fas fa-cog mr-2"></i>Robótica Industrial
+            </h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-blue-500 pl-4">
+                <h4 class="font-bold"><span class="tooltip-term term-corp" data-tippy-content="Empresa estatal afiliada a la Academia China de Ciencias, pionera en robótica móvil." data-tippy-theme="corp-theme">Siasun</span> Robot & Automation</h4>
+                <p class="text-sm text-gray-600">Empresa estatal, portafolio integral que abarca robots industriales y móviles</p>
+              </div>
+              <div class="border-l-4 border-green-500 pl-4">
+                <h4 class="font-bold"><span class="tooltip-term term-corp" data-tippy-content="Una de las principales marcas chinas, conocida por adquirir la empresa alemana CLOOS." data-tippy-theme="corp-theme">Estun</span> Automation</h4>
+                <p class="text-sm text-gray-600">Top 5 proveedores, adquirió al especialista alemán en soldadura Cloos</p>
+              </div>
+              <div class="border-l-4 border-purple-500 pl-4">
+                <h4 class="font-bold">Inovance Technology</h4>
+                <p class="text-sm text-gray-600">Líder de mercado en soluciones de automatización integral y componentes centrales</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service & Humanoid Robotics -->
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-purple-600">
+              <i class="fas fa-robot mr-2"></i>Servicio y Humanoides
+            </h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-blue-500 pl-4">
+                <h4 class="font-bold"><span class="tooltip-term term-corp" data-tippy-content="Famosa por sus robots humanoides 'Walker' y educación STEM. Recientemente listada en HK." data-tippy-theme="corp-theme">UBTECH</span> Robotics</h4>
+                <p class="text-sm text-gray-600">Valoración de $7.5MM, serie humanoide Walker, 500 unidades industriales planeadas para 2025</p>
+              </div>
+              <div class="border-l-4 border-green-500 pl-4">
+                <h4 class="font-bold">Unitree Robotics</h4>
+                <p class="text-sm text-gray-600">Récord mundial del humanoide más rápido, modelo H1 con capacidades de voltereta</p>
+              </div>
+              <div class="border-l-4 border-orange-500 pl-4">
+                <h4 class="font-bold">Zhi Yuan Robotics (Agibot)</h4>
+                <p class="text-sm text-gray-600">Produjo 1.000 robots humanoides en el primer año, modelo multimodal WorkGPT</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Consumer Robotics -->
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-green-600">
+              <i class="fas fa-home mr-2"></i>Robótica de Consumo
+            </h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-blue-500 pl-4">
+                <h4 class="font-bold"><span class="tooltip-term term-corp" data-tippy-content="Líder mundial indiscutible en drones civiles y fotografía aérea." data-tippy-theme="corp-theme">DJI</span></h4>
+                <p class="text-sm text-gray-600">Líder global en drones, ecosistema de robótica educativa RoboMaster</p>
+              </div>
+              <div class="border-l-4 border-green-500 pl-4">
+                <h4 class="font-bold">Ecovacs Robotics</h4>
+                <p class="text-sm text-gray-600">Líder global en robots de servicio doméstico, serie de aspiradoras DEEBOT</p>
+              </div>
+              <div class="border-l-4 border-purple-500 pl-4">
+                <h4 class="font-bold">Hairoo Innovation</h4>
+                <p class="text-sm text-gray-600">Líder en robótica logística, soluciones de almacenamiento HaiPick</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-lg">
+          <h3 class="text-2xl font-bold mb-6">
+            <i class="fas fa-university text-blue-600 mr-3"></i>Principales Institutos de Investigación
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-flask text-blue-600 text-2xl"></i>
+              </div>
+              <h4 class="font-bold mb-2">Academia China de Ciencias</h4>
+              <p class="text-sm text-gray-600">Institución científica premier, origen de Siasun y otras empresas de robótica</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-graduation-cap text-green-600 text-2xl"></i>
+              </div>
+              <h4 class="font-bold mb-2">Mejores Universidades</h4>
+              <p class="text-sm text-gray-600">Tsinghua, Peking, ShanghaiTech - laboratorios de robótica de clase mundial y desarrollo de talento</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-building text-purple-600 text-2xl"></i>
+              </div>
+              <h4 class="font-bold mb-2">Centros de Innovación Regional</h4>
+              <p class="text-sm text-gray-600">Centro de Innovación de Robots Inteligentes Corporizados de Guangdong, Centro de Innovación de Robots Humanoides de Beijing</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Application Domains -->
+      <section id="applications" class="max-w-7xl mx-auto px-8 py-12">
+        <h2 class="text-4xl font-bold serif mb-8 text-gray-900">
+          <i class="fas fa-cogs text-blue-600 mr-4"></i>Dominios de Aplicación y Casos de Estudio
+        </h2>
+
+        <div class="grid lg:grid-cols-2 gap-8 mb-12">
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4">
+              <i class="fas fa-industry text-blue-600 mr-2"></i>Manufactura y Automatización Industrial
+            </h3>
+             <div class="rounded-lg overflow-hidden mb-4 bg-gray-200">
+                <img 
+                    src="https://kimi-web-img.moonshot.cn/img/eu-images.contentstack.com/f71ef36b785fef9cd1df9321ccd887b7e8b2839d.png" 
+                    loading="lazy"
+                    decoding="async"
+                    alt="Robots humanoides trabajando en línea de ensamblaje automotriz" 
+                    class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105 img-skeleton-target" 
+                />
+            </div>
+            <div class="space-y-4">
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h4 class="font-bold text-blue-800 mb-2">Caso Fábrica Zeekr EV</h4>
+                <p class="text-sm text-gray-700">Robots humanoides UBTECH Walker S1 desplegados para operaciones multitarea, incluyendo levantamiento de cajas pesadas y manejo de materiales blandos</p>
+              </div>
+              <div class="bg-green-50 p-4 rounded-lg">
+                <h4 class="font-bold text-green-800 mb-2">Iniciativa Delta del Río Yangtsé</h4>
+                <p class="text-sm text-gray-700">12 empresas colaborando en una cadena de suministro 100% localizada, logrando 94% de localización y 40% de reducción de costos</p>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 mt-4">
+              <a href="https://www.china-briefing.com/news/chinese-humanoid-robot-market-opportunities/" class="citation-link" target="_blank">Fuente: Informe China Briefing</a>
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4">
+              <i class="fas fa-truck text-purple-600 mr-2"></i>Logística y Almacenamiento
+            </h3>
+            <div class="rounded-lg overflow-hidden mb-4 bg-gray-200">
+                <img 
+                    src="https://kimi-web-img.moonshot.cn/img/koerber-supplychain.com/9112784cc9fa274b0dee9a88edd55051983a138e.jpeg" 
+                    loading="lazy"
+                    decoding="async"
+                    alt="Robots móviles autónomos trabajando en un almacén" 
+                    class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105 img-skeleton-target" 
+                />
+            </div>
+            <div class="space-y-4">
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <h4 class="font-bold text-purple-800 mb-2">Sistemas de Integración AMR</h4>
+                <p class="text-sm text-gray-700">Geek+ líder del mercado en <span class="tooltip-term term-tech" data-tippy-content="Autonomous Mobile Robots: Robots que navegan libremente sin guías físicas." data-tippy-theme="tech-theme">AMRs</span> de almacén, UBTECH demostrando flujos de trabajo de extremo a extremo con integración Walker S2</p>
+              </div>
+              <div class="bg-orange-50 p-4 rounded-lg">
+                <h4 class="font-bold text-orange-800 mb-2">Hairoo Innovation</h4>
+                <p class="text-sm text-gray-700">Sistema HaiPick combinando AMRs con almacenamiento inteligente, operando en espacio 3D para máxima densidad</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4">
+              <i class="fas fa-heartbeat text-red-600 mr-2"></i>Salud y Cuidado de Ancianos
+            </h3>
+            <div class="space-y-4">
+              <div class="bg-red-50 p-4 rounded-lg">
+                <h4 class="font-bold text-red-800 mb-2">Quirúrgico y Rehabilitación</h4>
+                <p class="text-sm text-gray-700">Empresas chinas desarrollando sistemas de robots quirúrgicos domésticos y exoesqueletos de rehabilitación para competir con proveedores extranjeros</p>
+              </div>
+              <div class="bg-pink-50 p-4 rounded-lg">
+                <h4 class="font-bold text-pink-800 mb-2">Compañeros de Cuidado Humanoides</h4>
+                <p class="text-sm text-gray-700">Robots UBTECH Walker proporcionando compañía y asistencia para el cuidado de ancianos, abordando desafíos demográficos</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4">
+              <i class="fas fa-home text-green-600 mr-2"></i>Hogar y Consumo
+            </h3>
+            <div class="space-y-4">
+              <div class="bg-green-50 p-4 rounded-lg">
+                <h4 class="font-bold text-green-800 mb-2">Robots de Servicio Doméstico</h4>
+                <p class="text-sm text-gray-700">Ecovacs liderando el mercado de aspiradoras robóticas con navegación impulsada por IA y reconocimiento de objetos</p>
+              </div>
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h4 class="font-bold text-blue-800 mb-2">Robótica Educativa</h4>
+                <p class="text-sm text-gray-700">Serie DJI RoboMaster fomentando la educación <span class="tooltip-term term-def" data-tippy-content="Science, Technology, Engineering, and Mathematics.">STEM</span> a través de competiciones de robótica práctica y desafíos de programación</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Technology Stack & Innovation -->
+      <section id="technology-stack" class="max-w-7xl mx-auto px-8 py-12">
+        <h2 class="text-4xl font-bold serif mb-8 text-gray-900">
+          <i class="fas fa-microchip text-blue-600 mr-4"></i>Stack Tecnológico y Cuellos de Botella en Innovación
+        </h2>
+
+        <div class="grid lg:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-blue-600">
+              <i class="fas fa-cogs mr-2"></i>Componentes de Hardware
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                <span class="font-medium tooltip-term term-tech" data-tippy-content="Motores de precisión que controlan la posición y velocidad exacta del robot." data-tippy-theme="tech-theme">Servomotores</span>
+                <span class="text-sm text-gray-600">Inovance Technology liderando</span>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <span class="font-medium tooltip-term term-tech" data-tippy-content="Dispositivos mecánicos que reducen la velocidad del motor y aumentan la fuerza (torque)." data-tippy-theme="tech-theme">Reductores</span>
+                <span class="text-sm text-red-600">
+                  &lt; 30% doméstico</span>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <span class="font-medium">Controladores</span>
+                <span class="text-sm text-red-600">
+                  &lt; 30% doméstico</span>
+              </div>
+            </div>
+            <div class="mt-4 p-3 bg-yellow-50 rounded-lg">
+              <p class="text-sm text-gray-700">
+                <i class="fas fa-exclamation-triangle text-yellow-600 mr-2"></i>
+                Meta 2025: &gt;70% tasa de domesticación para componentes clave
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-purple-600">
+              <i class="fas fa-brain mr-2"></i>Software e Integración de IA
+            </h3>
+            <div class="space-y-4">
+              <div class="p-3 bg-purple-50 rounded-lg">
+                <h4 class="font-bold text-purple-800 mb-1">Sistemas de Control</h4>
+                <p class="text-sm text-gray-700">Empresas chinas desarrollando algoritmos de control de movimiento propietarios</p>
+              </div>
+              <div class="p-3 bg-green-50 rounded-lg">
+                <h4 class="font-bold text-green-800 mb-1">Modelos de Lenguaje Grande (LLMs)</h4>
+                <p class="text-sm text-gray-700">Integración de Ernie Bot, SenseNova para interacción natural humano-robot</p>
+              </div>
+              <div class="p-3 bg-blue-50 rounded-lg">
+                <h4 class="font-bold text-blue-800 mb-1">WorkGPT (Agibot)</h4>
+                <p class="text-sm text-gray-700">Modelo multimodal para orquestación autónoma de tareas</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-red-600">
+              <i class="fas fa-exclamation-circle mr-2"></i>Cuellos de Botella en Innovación
+            </h3>
+            <div class="space-y-3">
+              <div class="p-3 bg-red-50 rounded-lg">
+                <h4 class="font-bold text-red-800 mb-1">Limitaciones de Hardware</h4>
+                <p class="text-sm text-gray-700">Restricciones de vida de batería, desafíos de durabilidad en entornos humanos</p>
+              </div>
+              <div class="p-3 bg-orange-50 rounded-lg">
+                <h4 class="font-bold text-orange-800 mb-1">Entrenamiento de Modelos IA</h4>
+                <p class="text-sm text-gray-700">Conjuntos de datos limitados de interacción en el mundo real para IA corporizada</p>
+              </div>
+              <div class="p-3 bg-yellow-50 rounded-lg">
+                <h4 class="font-bold text-yellow-800 mb-1">Costos Altos</h4>
+                <p class="text-sm text-gray-700">Robots humanoides aún costosos, limitando la accesibilidad al mercado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-lg">
+          <h3 class="text-2xl font-bold mb-6">
+            <i class="fas fa-chart-line text-blue-600 mr-3"></i>Línea de Tiempo de Desarrollo Tecnológico
+          </h3>
+          <div class="relative">
+            <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-blue-200"></div>
+            <div class="space-y-8">
+              <div class="relative flex items-center">
+                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                  2024
+                </div>
+                <div class="ml-8">
+                  <h4 class="font-bold text-lg">Estado Actual</h4>
+                  <p class="text-gray-700">57% cuota mercado doméstico, 470 densidad robots, integración IA básica</p>
+                </div>
+              </div>
+              <div class="relative flex items-center">
+                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                  2025
+                </div>
+                <div class="ml-8">
+                  <h4 class="font-bold text-lg">Objetivos a Corto Plazo</h4>
+                  <p class="text-gray-700">70% tasa domesticación, duplicar densidad robots, integración IA avanzada</p>
+                </div>
+              </div>
+              <div class="relative flex items-center">
+                <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                  2030
+                </div>
+                <div class="ml-8">
+                  <h4 class="font-bold text-lg">Visión Futura</h4>
+                  <p class="text-gray-700">$150MM mercado humanoides, liderazgo mundial en IA, sistemas totalmente autónomos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Socioeconomic Context -->
+      <section id="socioeconomic-context" class="max-w-7xl mx-auto px-8 py-12">
+        <h2 class="text-4xl font-bold serif mb-8 text-gray-900">
+          <i class="fas fa-chart-line text-blue-600 mr-4"></i>Contexto Socioeconómico y Geopolítico
+        </h2>
+
+        <div class="grid lg:grid-cols-2 gap-8 mb-12">
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4">
+              <i class="fas fa-users text-blue-600 mr-2"></i>Transición Demográfica
+            </h3>
+            <div class="rounded-lg overflow-hidden mb-4 bg-gray-200">
+                <img 
+                    src="https://kimi-web-img.moonshot.cn/img/www.globaltimes.cn/f98851112ba54a18230659b082cda96b406b5c0d.jpeg" 
+                    loading="lazy"
+                    decoding="async"
+                    alt="Personas mayores con asistentes robóticos en China" 
+                    class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105 img-skeleton-target" 
+                />
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-3 bg-red-50 rounded-lg">
+                <span class="font-medium">Población Envejecida</span>
+                <span class="text-red-600 font-bold">Aumento rápido</span>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                <span class="font-medium">Contracción Fuerza Laboral</span>
+                <span class="text-blue-600 font-bold">Acelerando</span>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+                <span class="font-medium">Costos Laborales</span>
+                <span class="text-green-600 font-bold">En aumento</span>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 mt-4">
+              El legado de la política de hijo único creando desequilibrio demográfico, impulsando la demanda de automatización y robótica para el cuidado de ancianos.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-bold mb-4">
+              <i class="fas fa-globe text-purple-600 mr-2"></i>Rivalidad Geopolítica
+            </h3>
+            <div class="space-y-4">
+              <div class="p-3 bg-red-50 rounded-lg border-l-4 border-red-500">
+                <h4 class="font-bold text-red-800 mb-2">Restricciones Tecnológicas</h4>
+                <p class="text-sm text-gray-700">Controles de exportación de EE.UU. limitando el acceso a tecnologías y componentes clave</p>
+              </div>
+              <div class="p-3 bg-orange-50 rounded-lg border-l-4 border-orange-500">
+                <h4 class="font-bold text-orange-800 mb-2">Riesgos Cadena de Suministro</h4>
+                <p class="text-sm text-gray-700">Tensiones geopolíticas impulsando la necesidad de independencia en la cadena de suministro doméstica</p>
+              </div>
+              <div class="p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                <h4 class="font-bold text-blue-800 mb-2">Respuesta Competitiva</h4>
+                <p class="text-sm text-gray-700">Restricciones inadvertidamente estimulando la innovación doméstica y la autosuficiencia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-lg">
+          <h3 class="text-2xl font-bold mb-6">
+            <i class="fas fa-industry text-blue-600 mr-3"></i>Estrategia de Actualización Industrial
+          </h3>
+          <div class="grid md:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-arrow-down text-red-600 text-2xl"></i>
+              </div>
+              <h4 class="font-bold mb-2">Desde Gama Baja</h4>
+              <p class="text-sm text-gray-600">Manufactura intensiva en mano de obra</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-cogs text-yellow-600 text-2xl"></i>
+              </div>
+              <h4 class="font-bold mb-2">Mediante Automatización</h4>
+              <p class="text-sm text-gray-600">Integración de robótica</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-microchip text-blue-600 text-2xl"></i>
+              </div>
+              <h4 class="font-bold mb-2">A Alta Tecnología</h4>
+              <p class="text-sm text-gray-600">Manufactura avanzada</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-trophy text-green-600 text-2xl"></i>
+              </div>
+              <h4 class="font-bold mb-2">Liderazgo Global</h4>
+              <p class="text-sm text-gray-600">Autosuficiencia tecnológica</p>
+            </div>
+          </div>
+          <p class="text-center text-gray-700 mt-6">
+            La robótica sirve como habilitador clave para la estrategia de China de ascender en la cadena de valor y lograr autosuficiencia tecnológica
+          </p>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Future Outlook -->
+      <section id="future-outlook" class="max-w-7xl mx-auto px-8 py-12">
+        <h2 class="text-4xl font-bold serif mb-8 text-gray-900">
+          <i class="fas fa-rocket text-blue-600 mr-4"></i>Perspectivas Futuras (2025–2035)
+        </h2>
+
+        <div class="grid lg:grid-cols-3 gap-8 mb-12">
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-blue-800">
+              <i class="fas fa-brain mr-2"></i>Avance Tecnológico
+            </h3>
+            <div class="space-y-3">
+              <div class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span class="text-sm">Integración Avanzada de IA Corporizada</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span class="text-sm">Conectividad 5G e IoT</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span class="text-sm">Reducción de Costos por Producción Masiva</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span class="text-sm">Estandarización de la Industria</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-green-800">
+              <i class="fas fa-chart-line mr-2"></i>Expansión de Mercado
+            </h3>
+            <div class="space-y-3">
+              <div class="flex items-center">
+                <i class="fas fa-arrow-up text-blue-500 mr-2"></i>
+                <span class="text-sm">Mercado de $108MM para 2028</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-arrow-up text-blue-500 mr-2"></i>
+                <span class="text-sm">Crecimiento en Robots de Servicio</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-arrow-up text-blue-500 mr-2"></i>
+                <span class="text-sm">Mercado Humanoide ($150MM para 2030)</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-arrow-up text-blue-500 mr-2"></i>
+                <span class="text-sm">Nuevos Dominios de Aplicación</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-purple-800">
+              <i class="fas fa-globe mr-2"></i>Impacto Global
+            </h3>
+            <div class="space-y-3">
+              <div class="flex items-center">
+                <i class="fas fa-crown text-yellow-500 mr-2"></i>
+                <span class="text-sm">Liderazgo en Cadena de Suministro</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-handshake text-blue-500 mr-2"></i>
+                <span class="text-sm">Competencia y Colaboración</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-robot text-purple-500 mr-2"></i>
+                <span class="text-sm">Escala Global de Automatización por IA</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-lightbulb text-orange-500 mr-2"></i>
+                <span class="text-sm">Establecimiento de Estándares Tecnológicos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-lg mb-8">
+          <h3 class="text-2xl font-bold mb-6">
+            <i class="fas fa-trending-up text-blue-600 mr-3"></i>Proyecciones de Mercado y Tendencias de Inversión
+          </h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-dollar-sign text-blue-600 text-3xl"></i>
+              </div>
+              <h4 class="text-3xl font-bold text-blue-600 mb-2">$108MM</h4>
+              <p class="text-gray-700 font-medium">Tamaño Mercado 2028</p>
+              <p class="text-sm text-gray-600">Trayectoria de crecimiento CAGR 23%</p>
+            </div>
+            <div class="text-center">
+              <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-robot text-green-600 text-3xl"></i>
+              </div>
+              <h4 class="text-3xl font-bold text-green-600 mb-2">$150MM</h4>
+              <p class="text-gray-700 font-medium">Mercado Humanoide 2030</p>
+              <p class="text-sm text-gray-600">Proyección Goldman Sachs</p>
+            </div>
+            <div class="text-center">
+              <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-coins text-purple-600 text-3xl"></i>
+              </div>
+              <h4 class="text-3xl font-bold text-purple-600 mb-2">$138MM</h4>
+              <p class="text-gray-700 font-medium">Fondo VC Estatal</p>
+              <p class="text-sm text-gray-600">Programa de inversión a 20 años</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 mt-6 text-center">
+            <a href="https://www.chinadailyhk.com/hk/article/616904" class="citation-link" target="_blank">Fuente: Análisis de Morgan Stanley</a> |
+            <a href="https://finance.yahoo.com/news/china-industrial-robotics-market-trends-094600260.html" class="citation-link" target="_blank">Programa de Inversión Estatal</a>
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-lg">
+          <h3 class="text-2xl font-bold mb-6">
+            <i class="fas fa-lightbulb text-yellow-600 mr-3"></i>Implicaciones Estratégicas para la Robótica Global
+          </h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="text-lg font-bold mb-4 text-blue-600">Rol de Liderazgo de China</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Impulsor principal de la innovación global en robótica</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Influencia mayor en dinámicas de cadena de suministro</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Estableciendo estándares para la automatización de próxima generación</li>
+                <li><i class="fas fa-check text-green-500 mr-2"></i>Exportando soluciones de robótica globalmente</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold mb-4 text-purple-600">Panorama de Competencia Global</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li><i class="fas fa-users text-blue-500 mr-2"></i>Innovación de EE.UU. vs Escala China</li>
+                <li><i class="fas fa-users text-blue-500 mr-2"></i>Liderazgo en ingeniería de precisión de Japón</li>
+                <li><i class="fas fa-users text-blue-500 mr-2"></i>Manufactura avanzada de Corea del Sur</li>
+                <li><i class="fas fa-users text-blue-500 mr-2"></i>Oportunidades de colaboración en estándares</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
+            <h4 class="text-xl font-bold mb-4 text-center">El Futuro de la Automatización</h4>
+            <p class="text-gray-700 text-center">
+              La revolución robótica de China representa más que un avance tecnológico—señala un cambio fundamental en la manufactura global, la entrega de servicios y la colaboración humano-robot. A medida que la industria continúa su rápida evolución, el mundo observa para ver cómo esta transformación remodelará el panorama económico global.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: GLOSARIO -->
+      <section id="glossary" class="max-w-7xl mx-auto px-8 py-12 bg-white rounded-xl shadow-lg my-12">
+        <h2 class="text-3xl font-bold serif mb-6 text-gray-900 border-b pb-4">
+            <i class="fas fa-book text-blue-600 mr-3"></i>Glosario de Términos
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-4 bg-gray-50 rounded-lg">
+                <span class="text-blue-600 font-bold block mb-2">AMR</span>
+                <p class="text-sm text-gray-700">Autonomous Mobile Robots. Robots capaces de navegar y moverse en entornos no estructurados sin guías físicas.</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-lg">
+                <span class="text-blue-600 font-bold block mb-2">CAGR</span>
+                <p class="text-sm text-gray-700">Compound Annual Growth Rate. Tasa de crecimiento anual compuesta, utilizada para medir el retorno de inversión.</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-lg">
+                <span class="text-blue-600 font-bold block mb-2">Domesticación</span>
+                <p class="text-sm text-gray-700">Proceso estratégico de sustituir importaciones tecnológicas por producción local china.</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-lg">
+                <span class="text-blue-600 font-bold block mb-2">IFR</span>
+                <p class="text-sm text-gray-700">Federación Internacional de Robótica. Organización global que representa a la industria robótica.</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-lg">
+                <span class="text-blue-600 font-bold block mb-2">LLM</span>
+                <p class="text-sm text-gray-700">Large Language Models. Modelos de IA entrenados en enormes cantidades de texto para entender y generar lenguaje humano.</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-lg">
+                <span class="text-blue-600 font-bold block mb-2">Reductor</span>
+                <p class="text-sm text-gray-700">Componente mecánico crítico que reduce la velocidad de un motor eléctrico para aumentar su par de torsión.</p>
+            </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-8">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4">Metodología de Investigación</h3>
+              <p class="text-gray-400 text-sm">
+                Este análisis se basa en una investigación exhaustiva de informes de la industria, fuentes gubernamentales, publicaciones académicas y entrevistas a expertos de 2024-2025.
+              </p>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-4">Fuentes de Datos Clave</h3>
+              <ul class="text-gray-400 text-sm space-y-1">
+                <li>Federación Internacional de Robótica (IFR)</li>
+                <li>Comisión Nacional de Desarrollo y Reforma de China</li>
+                <li>Investigación de Morgan Stanley</li>
+                <li>Informes de Empresas del Sector</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-4">Aviso Legal</h3>
+              <p class="text-gray-400 text-sm">
+                Todas las proyecciones de mercado y declaraciones prospectivas se basan en las tendencias actuales y la información disponible públicamente hasta 2025.
+              </p>
+            </div>
+          </div>
+          <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+            <p>© 2025 Análisis de la Industria Robótica. Todos los derechos reservados.</p>
+            <div class="mt-4 font-bold text-white text-base">Material elaborado por Sergio Gevatschnaider</div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const htmlElement = document.documentElement;
+            const themeToggleBtn = document.getElementById('themeToggle');
+            const icon = themeToggleBtn.querySelector('i');
+            const text = themeToggleBtn.querySelector('span');
+            
+            // --- GENERACIÓN CÓDIGO QR ---
+            // Se genera una sola vez al cargar
+            const qrContainer = document.getElementById("qrcode");
+            if (qrContainer) {
+                new QRCode(qrContainer, {
+                    text: "https://clinquant-meringue-3930c2.netlify.app/src/classroom/graphs/recursos/robot_china",
+                    width: 100,
+                    height: 100,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+            }
+
+            // --- 4. Gráficos Interactivos y Responsivos al Tema ---
+            
+            // Función para obtener colores según el tema
+            function getChartTheme(isDark) {
+                return {
+                    backgroundColor: 'transparent',
+                    textStyle: { color: isDark ? '#f1f5f9' : '#1e293b' },
+                    gridColor: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'
+                };
+            }
+
+            // Inicializar Gráficos
+            const densityChart = echarts.init(document.getElementById('robotDensityChart'));
+            const marketGrowthChart = echarts.init(document.getElementById('marketGrowthChart'));
+
+            const densityOption = {
+                animation: { duration: 1500, easing: 'elasticOut' },
+                tooltip: { 
+                    trigger: 'axis', 
+                    axisPointer: { type: 'shadow' },
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    formatter: '{b}: {c} robots/10k'
+                },
+                grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+                xAxis: { type: 'value', name: 'Robots/10k', splitLine: { lineStyle: { type: 'dashed' } } },
+                yAxis: { 
+                    type: 'category', 
+                    data: ['Global', 'EE.UU.', 'Japón', 'Alemania', 'China', 'Singapur', 'Corea Sur'], 
+                    inverse: true 
+                },
+                series: [{
+                    type: 'bar',
+                    data: [162, 295, 419, 429, 470, 770, 1012],
+                    itemStyle: {
+                        color: (params) => {
+                            const colors = ['#94a3b8', '#6366f1', '#8b5cf6', '#10b981', '#3b82f6', '#f59e0b', '#ef4444'];
+                            return colors[params.dataIndex];
+                        },
+                        borderRadius: [0, 4, 4, 0]
+                    },
+                    emphasis: { focus: 'series' }
+                }]
+            };
+
+            const marketGrowthOption = {
+                animation: { duration: 1500, easing: 'cubicOut' },
+                tooltip: { trigger: 'axis', formatter: '{b}: ${c}MM' },
+                grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+                xAxis: { type: 'category', data: ['2024', '2025', '2026', '2027', '2028'] },
+                yAxis: { type: 'value', name: '$MM', splitLine: { lineStyle: { type: 'dashed' } } },
+                series: [{
+                    type: 'line',
+                    data: [47, 58, 72, 89, 108],
+                    smooth: true,
+                    lineStyle: { color: '#3b82f6', width: 4 },
+                    areaStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            { offset: 0, color: 'rgba(59, 130, 246, 0.5)' },
+                            { offset: 1, color: 'rgba(59, 130, 246, 0.0)' }
+                        ])
+                    },
+                    symbolSize: 10,
+                    itemStyle: { color: '#3b82f6', borderWidth: 2, borderColor: '#fff' }
+                }]
+            };
+
+            // Función para actualizar gráficos al cambiar tema
+            function updateCharts() {
+                const isDark = htmlElement.getAttribute('data-theme') === 'dark';
+                const themeData = getChartTheme(isDark);
+                
+                const commonUpdate = {
+                    textStyle: themeData.textStyle,
+                    xAxis: { splitLine: { lineStyle: { color: themeData.gridColor } }, axisLabel: { color: themeData.textStyle.color } },
+                    yAxis: { splitLine: { lineStyle: { color: themeData.gridColor } }, axisLabel: { color: themeData.textStyle.color } }
+                };
+
+                densityChart.setOption({ ...densityOption, ...commonUpdate });
+                marketGrowthChart.setOption({ ...marketGrowthOption, ...commonUpdate });
+            }
+
+            // Renderizar inicial
+            updateCharts();
+
+            // Toggle Tema
+            themeToggleBtn.addEventListener('click', () => {
+                const isDark = htmlElement.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    htmlElement.removeAttribute('data-theme');
+                    icon.className = 'fas fa-moon';
+                    text.textContent = 'Modo Oscuro';
+                } else {
+                    htmlElement.setAttribute('data-theme', 'dark');
+                    icon.className = 'fas fa-sun';
+                    text.textContent = 'Modo Claro';
+                }
+                updateCharts();
+            });
+
+            // --- 2. Intersection Observer (Fade In) ---
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('fade-in-element');
+                fadeInObserver.observe(section);
+            });
+
+            // --- 3. Parallax Hero ---
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const heroImg = document.getElementById('hero-parallax');
+                if (heroImg && scrolled < 800) {
+                    heroImg.style.transform = `translateY(${scrolled * 0.4}px) scale(1.1)`;
+                }
+                
+                // --- 7. Reading Progress Logic ---
+                const winScroll = document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const progress = (winScroll / height) * 100;
+                document.getElementById('reading-progress').style.width = progress + '%';
+            });
+
+            // --- 5. Skeleton Loader Logic ---
+            // Simplemente añadimos la clase skeleton a las imágenes y la quitamos al cargar
+            document.querySelectorAll('.img-skeleton-target').forEach(img => {
+                img.classList.add('img-skeleton');
+                img.onload = function() {
+                    this.classList.remove('img-skeleton');
+                };
+                // Fallback si ya cargó
+                if(img.complete) img.classList.remove('img-skeleton');
+            });
+
+            // --- 6. Smooth Scroll Mejorado (Offset) ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if(target){
+                        const offset = 20;
+                        const targetPosition = target.offsetTop - offset;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Actualizar active state manualmente para respuesta inmediata
+                        document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Cerrar menú móvil si existe
+                        if(window.innerWidth <= 1024) document.querySelector('.toc-sidebar').classList.remove('open');
+                    }
+                });
+            });
+
+            // --- 8. Inicializar Tooltips con Temas ---
+            
+            // Inicialización general para tooltips en el texto
+            tippy('.tooltip-term', {
+                animation: 'shift-away',
+                arrow: true,
+                duration: 200,
+                interactive: true,
+                maxWidth: 300,
+                onMount(instance) {
+                    // Si quisieras lógica adicional al abrir
+                }
+            });
+
+            // Logic TOC Link Active State on Scroll
+            const sections = document.querySelectorAll('section[id]');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            
+            function updateActiveTocLink() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.scrollY >= sectionTop - 300) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveTocLink);
+            updateActiveTocLink();
+
+            // Mobile Menu
+            const tocToggle = document.createElement('button');
+            tocToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            tocToggle.className = 'fixed top-4 left-4 z-50 bg-white p-3 rounded-lg shadow-lg lg:hidden text-gray-800';
+            tocToggle.onclick = function() {
+                document.querySelector('.toc-sidebar').classList.toggle('open');
+            };
+            document.body.appendChild(tocToggle);
+
+            // Close mobile TOC when clicking outside
+            document.addEventListener('click', function(e) {
+                const sidebar = document.querySelector('.toc-sidebar');
+                if (window.innerWidth <= 1024 && 
+                    !sidebar.contains(e.target) && 
+                    e.target !== tocToggle &&
+                    sidebar.classList.contains('open')) {
+                    sidebar.classList.remove('open');
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                marketGrowthChart.resize();
+                densityChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>
