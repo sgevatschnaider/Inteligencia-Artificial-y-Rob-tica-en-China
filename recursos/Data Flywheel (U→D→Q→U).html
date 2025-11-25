@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data Flywheel Robótico — USA vs China</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<style>
+  :root{--bg:#0b1020;--panel:#121735;--ink:#e6ecff;--muted:#a9b0d6;--line:#1e2549;
+        --us:#7dd3fc;--cn:#ef4444;--ok:#22c55e;--warn:#f59e0b;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:linear-gradient(135deg,#0b1020,#1b2141);color:var(--ink);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto;padding:20px;min-height:100vh}
+  .wrap{max-width:1400px;margin:0 auto}
+  header{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin-bottom:16px}
+  h1{font-size:24px;margin-bottom:4px}
+  .muted{color:var(--muted)}
+  .params-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+  fieldset{border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:10px}
+  legend{padding:0 6px;color:var(--muted)}
+  .row{display:flex;gap:8px;align-items:center;margin:6px 0}
+  label{flex:1;color:var(--muted)}
+  input{flex:1;background:#0a1229;border:1px solid #243047;color:var(--ink);border-radius:10px;padding:8px 10px}
+  select{flex:1;background:#0a1229;border:1px solid #243047;color:var(--ink);border-radius:10px;padding:8px 10px}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:#0b152f;border:1px solid #2a3561;color:var(--ink);padding:10px 12px;border-radius:10px;font-weight:700;cursor:pointer}
+  .btn.primary{background:linear-gradient(135deg,var(--ok),#16a34a);border:0}
+  .btn.warn{background:linear-gradient(135deg,var(--warn),#d97706);border:0}
+  .scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+  .scenario{background:#0b1128;border:1px solid var(--line);border-radius:12px;padding:10px;cursor:pointer;text-align:center}
+  .scenario.active{border-color:var(--us);box-shadow:0 0 0 2px rgba(125,211,252,.15) inset}
+  .controls{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .kpi{background:#0b1128;border:1px solid #1e2549;border-left:4px solid var(--us);border-radius:10px;padding:10px}
+  .kpi.cn{border-left-color:var(--cn)}
+  .kpi b{display:block;font-size:20px;margin-top:4px}
+  .charts-section{margin-top:20px}
+  .charts{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .chart-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;min-height:350px}
+  .chart-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+  .badge{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:3px 8px;color:var(--muted)}
+  footer{color:var(--muted);text-align:center;margin-top:20px}
+  @media(max-width:1200px){.params-grid{grid-template-columns:1fr}.charts{grid-template-columns:1fr}}
+  canvas{width:100%;height:280px !important;display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Simulador del Data Flywheel — USA vs China</h1>
+    <div class="muted">Dos modos: <b>A</b> multiplicativo y <b>B</b> stock–flow con instalaciones IFR</div>
+  </header>
+
+  <!-- PARÁMETROS EN GRID HORIZONTAL -->
+  <div class="params-grid">
+    <div class="card">
+      <fieldset>
+        <legend>Modo y horizonte</legend>
+        <div class="row">
+          <label>Modo</label>
+          <select id="mode">
+            <option value="A">A — U' = U·(1 + s + κQ − σ)</option>
+            <option value="B">B — U' = (1−ρ)U + I + (γQ − σ)U</option>
+          </select>
+        </div>
+        <div class="row"><label>Meses T</label><input id="months" type="number" min="6" max="120" value="36"></div>
+        <div class="row"><label>Umbral τ (tτ)</label><input id="tau" type="number" step="0.01" min="0.5" max="0.99" value="0.90"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Parámetros globales</legend>
+        <div class="grid2">
+          <div class="row"><label>Q0</label><input id="Q0" type="number" step="0.01" min="0" max="1" value="0.20"></div>
+          <div class="row"><label>D0</label><input id="D0" type="number" step="1" min="0" value="100"></div>
+          <div class="row"><label>β</label><input id="beta" type="number" step="0.0001" min="0" value="0.003"></div>
+          <div class="row"><label>θ</label><input id="theta" type="number" step="0.01" min="0.1" max="1" value="0.6"></div>
+          <div class="row"><label>φ</label><input id="phi" type="number" step="0.1" min="0" value="1.2"></div>
+          <div class="row"><label>ω (obsolescencia)</label><input id="omega" type="number" step="0.01" min="0" max="1" value="0"></div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="card">
+      <fieldset>
+        <legend>Estados/Parámetros — EE. UU. (<span style="color:#7dd3fc">azul</span>)</legend>
+        <div class="row"><label>U0 (miles)</label><input id="US_U0" type="number" value="400"></div>
+        <div class="row"><label>α</label><input id="US_alpha" type="number" step="0.1" value="5.0"></div>
+        <div class="row"><label>δ</label><input id="US_delta" type="number" step="0.01" min="0" max="1" value="0.80"></div>
+        <div class="row modeA"><label>s (mes)</label><input id="US_s" type="number" step="0.0001" value="0.0068214934"></div>
+        <div class="row modeA"><label>κ</label><input id="US_kappa" type="number" step="0.001" value="0.018"></div>
+        <div class="row modeB"><label>I anual (k)</label><input id="US_Iy" type="number" step="0.1" value="34.2"></div>
+        <div class="row modeB"><label>γ</label><input id="US_gamma" type="number" step="0.001" value="0.018"></div>
+        <div class="row"><label>σ</label><input id="US_sigma" type="number" step="0.0001" value="0.002"></div>
+        <div class="row modeB"><label>ρ (mes)</label><input id="US_rho" type="number" step="0.0001" value="0"></div>
+      </fieldset>
+    </div>
+
+    <div class="card">
+      <fieldset>
+        <legend>Estados/Parámetros — China (<span style="color:#ef4444">rojo</span>)</legend>
+        <div class="row"><label>U0 (miles)</label><input id="CN_U0" type="number" value="2000"></div>
+        <div class="row"><label>α</label><input id="CN_alpha" type="number" step="0.1" value="6.0"></div>
+        <div class="row"><label>δ</label><input id="CN_delta" type="number" step="0.01" min="0" max="1" value="0.45"></div>
+        <div class="row modeA"><label>s (mes)</label><input id="CN_s" type="number" step="0.0001" value="0.0117149169"></div>
+        <div class="row modeA"><label>κ</label><input id="CN_kappa" type="number" step="0.001" value="0.014"></div>
+        <div class="row modeB"><label>I anual (k)</label><input id="CN_Iy" type="number" step="0.1" value="295.0"></div>
+        <div class="row modeB"><label>γ</label><input id="CN_gamma" type="number" step="0.001" value="0.014"></div>
+        <div class="row"><label>σ</label><input id="CN_sigma" type="number" step="0.0001" value="0.0015"></div>
+        <div class="row modeB"><label>ρ (mes)</label><input id="CN_rho" type="number" step="0.0001" value="0"></div>
+      </fieldset>
+    </div>
+  </div>
+
+  <!-- ESCENARIOS Y CONTROLES -->
+  <div class="card">
+    <div class="scenarios">
+      <div class="scenario active" data-scn="base">📊 Base</div>
+      <div class="scenario" data-scn="cn_delta">🌐 CN ↑ δ (0.45→0.70)</div>
+      <div class="scenario" data-scn="us_sigma">⚡ US ↓ σ (0.002→0.001)</div>
+      <div class="scenario" data-scn="cn_Iplus">📈 CN ↑ I (+20%)</div>
+      <div class="scenario" data-scn="us_delta">🎯 US ↑ δ (0.80→0.90)</div>
+      <div class="scenario" data-scn="reset">↺ Reset</div>
+    </div>
+
+    <div class="controls">
+      <button id="play" class="btn primary">▶ Play</button>
+      <button id="pause" class="btn">⏸ Pause</button>
+      <button id="reset" class="btn warn">↺ Reset</button>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div>t<sub>τ</sub> US</div><b id="kpi_tUS">—</b></div>
+      <div class="kpi cn"><div>t<sub>τ</sub> CN</div><b id="kpi_tCN">—</b></div>
+      <div class="kpi"><div>Q<sub>final</sub> US</div><b id="kpi_qUS">—</b></div>
+      <div class="kpi cn"><div>Q<sub>final</sub> CN</div><b id="kpi_qCN">—</b></div>
+    </div>
+  </div>
+
+  <!-- GRÁFICOS ABAJO -->
+  <div class="charts-section">
+    <div class="charts">
+      <div class="chart-card">
+        <div class="chart-hdr"><b>Calidad del modelo Q(t)</b><span class="badge">τ: <span id="badgeTau">0.90</span></span></div>
+        <canvas id="chartQ"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-hdr"><b>Unidades desplegadas U(t) (miles)</b></div>
+        <canvas id="chartU"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-hdr"><b>Datos acumulados D(t)</b><span class="badge">ω: <span id="badgeOmega">0</span></span></div>
+        <canvas id="chartD"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-hdr"><b>Tiempo hasta Q ≥ τ</b></div>
+        <canvas id="chartT"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <footer>Simulador animado — USA vs China · Data Flywheel (U→D→Q→U) · Material elaborado por el profesor Sergio Gevatschnaider</footer>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+function monthlyI(kPerYear){return kPerYear/12;}
+function tTau(Qarr,tau){for(let i=0;i<Qarr.length;i++) if(Qarr[i]>=tau) return i; return -1;}
+
+let animState={running:false,currentMonth:0,intervalId:null,USres:null,CNres:null};
+let charts={};
+
+function switchMode(){
+  const m=$("mode").value;
+  document.querySelectorAll(".modeA").forEach(el=>el.style.display=(m==="A")?"flex":"none");
+  document.querySelectorAll(".modeB").forEach(el=>el.style.display=(m==="B")?"flex":"none");
+  stopAnimation();
+  simulateAndDraw();
+}
+$("mode").addEventListener("change",switchMode);
+
+function simulateCountry(p,g,mode){
+  const T=g.months; let U=p.U0, D=g.D0, Q=g.Q0;
+  const out={t:Array.from({length:T+1},(_,i)=>i), U:[U], D:[D], Q:[Q]};
+  
+  for(let t=0;t<T;t++){
+    const dataGen=p.alpha*U*p.delta;
+    D=(1-g.omega)*D + dataGen;
+    const dQ=g.beta*Math.pow(dataGen,g.theta)*Math.pow(p.delta,g.phi)*(1-Q);
+    Q=clamp(Q+dQ,0,1);
+    
+    if(mode==="A"){
+      // Modo A: Multiplicativo
+      const growth=1+p.s+p.kappa*Q-p.sigma;
+      U=Math.max(0, U*growth);
+    }else{
+      // Modo B: Stock-flow
+      const I=monthlyI(p.Iy||0);
+      const rho=p.rho||0;
+      U=Math.max(0, (1-rho)*U + I + (p.gamma*Q-p.sigma)*U );
+    }
+    
+    out.U.push(U); out.D.push(D); out.Q.push(Q);
+  }
+  return out;
+}
+
+function destroyCharts(){Object.values(charts).forEach(c=>c?.destroy()); charts={};}
+
+function updateChartsToMonth(month){
+  if(!animState.USres || !animState.CNres) return;
+  
+  const USres=animState.USres;
+  const CNres=animState.CNres;
+  const tau=+$("tau").value;
+  
+  const slice=month+1;
+  const labels=USres.t.slice(0,slice);
+  
+  charts.Q.data.labels=labels;
+  charts.Q.data.datasets[0].data=USres.Q.slice(0,slice);
+  charts.Q.data.datasets[1].data=CNres.Q.slice(0,slice);
+  charts.Q.update('none');
+  
+  charts.U.data.labels=labels;
+  charts.U.data.datasets[0].data=USres.U.slice(0,slice);
+  charts.U.data.datasets[1].data=CNres.U.slice(0,slice);
+  charts.U.update('none');
+  
+  charts.D.data.labels=labels;
+  charts.D.data.datasets[0].data=USres.D.slice(0,slice);
+  charts.D.data.datasets[1].data=CNres.D.slice(0,slice);
+  charts.D.update('none');
+  
+  const tUS=tTau(USres.Q.slice(0,slice),tau);
+  const tCN=tTau(CNres.Q.slice(0,slice),tau);
+  const maxPossible=USres.t.length-1;
+  charts.T.data.datasets[0].data=[
+    tUS>=0?tUS:(month<maxPossible?maxPossible:0),
+    tCN>=0?tCN:(month<maxPossible?maxPossible:0)
+  ];
+  charts.T.options.scales.y.max=Math.max(maxPossible,10);
+  charts.T.update('none');
+  
+  $("kpi_tUS").textContent=(tUS>=0?tUS:"—");
+  $("kpi_tCN").textContent=(tCN>=0?tCN:"—");
+  $("kpi_qUS").textContent=USres.Q[month].toFixed(3);
+  $("kpi_qCN").textContent=CNres.Q[month].toFixed(3);
+}
+
+function simulateAndDraw(){
+  const mode=$("mode").value;
+  const g={months:+$("months").value,Q0:+$("Q0").value,D0:+$("D0").value,beta:+$("beta").value,
+           theta:+$("theta").value,phi:+$("phi").value,omega:+$("omega").value};
+  const US={U0:+$("US_U0").value,alpha:+$("US_alpha").value,delta:+$("US_delta").value,
+            s:+$("US_s").value,kappa:+$("US_kappa").value,sigma:+$("US_sigma").value,
+            Iy:+$("US_Iy").value,gamma:+$("US_gamma").value,rho:+$("US_rho").value};
+  const CN={U0:+$("CN_U0").value,alpha:+$("CN_alpha").value,delta:+$("CN_delta").value,
+            s:+$("CN_s").value,kappa:+$("CN_kappa").value,sigma:+$("CN_sigma").value,
+            Iy:+$("CN_Iy").value,gamma:+$("CN_gamma").value,rho:+$("CN_rho").value};
+  const tau=+$("tau").value; $("badgeTau").textContent=tau.toFixed(2); $("badgeOmega").textContent=g.omega;
+
+  const USres=simulateCountry(US,g,mode), CNres=simulateCountry(CN,g,mode);
+  
+  animState.USres=USres;
+  animState.CNres=CNres;
+  animState.currentMonth=0;
+
+  destroyCharts();
+  const common={responsive:true,maintainAspectRatio:true,animation:{duration:0},
+    plugins:{legend:{labels:{color:"#e6ecff"}},tooltip:{mode:"index",intersect:false}},
+    scales:{x:{grid:{color:"#1e2549"},ticks:{color:"#a9b0d6"}},
+            y:{grid:{color:"#1e2549"},ticks:{color:"#a9b0d6"}}}};
+
+  charts.Q=new Chart($("chartQ"),{type:"line",
+    data:{labels:[],datasets:[
+      {label:"US",data:[],borderColor:"#7dd3fc",backgroundColor:"rgba(125,211,252,.12)",borderWidth:3,tension:.35,fill:true},
+      {label:"China",data:[],borderColor:"#ef4444",backgroundColor:"rgba(239,68,68,.12)",borderWidth:3,tension:.35,fill:true}
+    ]},options:{...common,scales:{...common.scales,y:{...common.scales.y,beginAtZero:true,max:1}}}});
+
+  charts.U=new Chart($("chartU"),{type:"line",
+    data:{labels:[],datasets:[
+      {label:"US (miles)",data:[],borderColor:"#7dd3fc",backgroundColor:"rgba(125,211,252,.12)",borderWidth:3,tension:.35,fill:true},
+      {label:"China (miles)",data:[],borderColor:"#ef4444",backgroundColor:"rgba(239,68,68,.12)",borderWidth:3,tension:.35,fill:true}
+    ]},options:common});
+
+  charts.D=new Chart($("chartD"),{type:"line",
+    data:{labels:[],datasets:[
+      {label:"US",data:[],borderColor:"#7dd3fc",backgroundColor:"rgba(125,211,252,.15)",borderWidth:3,tension:.35,fill:true},
+      {label:"China",data:[],borderColor:"#ef4444",backgroundColor:"rgba(239,68,68,.15)",borderWidth:3,tension:.35,fill:true}
+    ]},options:common});
+
+  const tUS=tTau(USres.Q,tau), tCN=tTau(CNres.Q,tau);
+  const maxT=g.months;
+  charts.T=new Chart($("chartT"),{type:"bar",
+    data:{labels:["US","China"],datasets:[{label:`Meses hasta Q ≥ ${tau}`,data:[maxT,maxT],backgroundColor:["#7dd3fc","#ef4444"]}]},
+    options:{responsive:true,animation:{duration:0},plugins:{legend:{display:false}},
+      scales:{x:{ticks:{color:"#a9b0d6"},grid:{color:"#1e2549"}},y:{beginAtZero:true,max:maxT,ticks:{color:"#a9b0d6"},grid:{color:"#1e2549"}}}}});
+
+  updateChartsToMonth(0);
+}
+
+function applyScenario(key){
+  document.querySelectorAll(".scenario").forEach(x=>x.classList.remove("active"));
+  document.querySelector(`.scenario[data-scn="${key}"]`).classList.add("active");
+  
+  $("US_delta").value=0.80; $("CN_delta").value=0.45;
+  $("US_sigma").value=0.002; $("CN_sigma").value=0.0015;
+  $("CN_Iy").value=295.0; $("US_Iy").value=34.2;
+
+  if(key==="cn_delta") {$("CN_delta").value=0.70;}
+  if(key==="us_sigma") {$("US_sigma").value=0.001;}
+  if(key==="cn_Iplus") {$("CN_Iy").value=(295.0*1.20).toFixed(1);}
+  if(key==="us_delta") {$("US_delta").value=0.90;}
+  if(key==="reset"){
+    $("US_U0").value=400; $("CN_U0").value=2000;
+    $("US_alpha").value=5.0; $("CN_alpha").value=6.0;
+    $("US_s").value=0.0068214934; $("CN_s").value=0.0117149169;
+    $("US_kappa").value=0.018; $("CN_kappa").value=0.014;
+    $("US_gamma").value=0.018; $("CN_gamma").value=0.014;
+    $("US_rho").value=0; $("CN_rho").value=0;
+    $("Q0").value=0.20; $("D0").value=100; $("beta").value=0.003; $("theta").value=0.6; $("phi").value=1.2; $("omega").value=0;
+  }
+  stopAnimation();
+  simulateAndDraw();
+}
+
+function playAnimation(){
+  if(animState.running) return;
+  animState.running=true;
+  animState.intervalId=setInterval(()=>{
+    if(animState.currentMonth>=animState.USres.t.length-1){
+      stopAnimation();
+      return;
+    }
+    animState.currentMonth++;
+    updateChartsToMonth(animState.currentMonth);
+  },100);
+}
+
+function pauseAnimation(){
+  if(animState.intervalId){
+    clearInterval(animState.intervalId);
+    animState.intervalId=null;
+  }
+  animState.running=false;
+}
+
+function stopAnimation(){
+  pauseAnimation();
+}
+
+function resetAnimation(){
+  stopAnimation();
+  simulateAndDraw();
+}
+
+$("play").addEventListener("click",playAnimation);
+$("pause").addEventListener("click",pauseAnimation);
+$("reset").addEventListener("click",resetAnimation);
+document.querySelectorAll(".scenario").forEach(s=>s.addEventListener("click",()=>applyScenario(s.dataset.scn)));
+
+switchMode();
+simulateAndDraw();
+
+// ---------------------------- Fallback sin Chart.js ---------------------------
+function drawSeries(ctx, data, color){
+  const w = ctx.canvas.clientWidth, h = ctx.canvas.clientHeight;
+  ctx.clearRect(0,0,w,h);
+  ctx.fillStyle = "#0e1430"; ctx.fillRect(0,0,w,h);
+  const max = Math.max(...data), min = Math.min(...data);
+  const n = Math.max(1, data.length-1);
+  const x = i => (i/n) * (w-20) + 10;
+  const y = v => h-10 - ( (v-min)/(max-min || 1) ) * (h-20);
+  ctx.strokeStyle = color; ctx.lineWidth = 2;
+  ctx.beginPath();
+  for(let i=0;i<data.length;i++){
+    const X=x(i), Y=y(data[i]);
+    if(i===0) ctx.moveTo(X,Y); else ctx.lineTo(X,Y);
+  }
+  ctx.stroke();
+  // axes
+  ctx.strokeStyle="#1c2450"; ctx.lineWidth=1;
+  ctx.beginPath(); ctx.moveTo(10,h-10); ctx.lineTo(w-10,h-10); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(10,10); ctx.lineTo(10,h-10); ctx.stroke();
+}
+function fallbackDraw(sim){
+  const Qus=sim.us.Q, Qcn=sim.cn.Q;
+  const Uus=sim.us.U, Ucn=sim.cn.U;
+  const Dus=sim.us.D, Dcn=sim.cn.D;
+  const qctx = $("chartQ").getContext("2d");
+  const uctx = $("chartU").getContext("2d");
+  const dctx = $("chartD").getContext("2d");
+  drawSeries(qctx,Qus,"#7dd3fc"); drawSeries(qctx,Qcn,"#ef4444");
+  drawSeries(uctx,Uus,"#7dd3fc"); drawSeries(uctx,Ucn,"#ef4444");
+  drawSeries(dctx,Dus,"#7dd3fc"); drawSeries(dctx,Dcn,"#ef4444");
+}
+window.addEventListener("load",()=>{
+  if(typeof Chart==="undefined"){
+    // Si Chart.js no cargó (offline/CDN bloqueado), pintamos fallback
+    const tmp = simulateAll(T,TAU);
+    fallbackDraw(tmp);
+  }
+});
+
+</script>
+</body>
+</html>

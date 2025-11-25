@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Efecto Flywheel: La Carrera Robótica Mundial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+      --bg-secondary: rgba(255, 255, 255, 0.85);
+      --bg-tertiary: rgba(248, 250, 252, 0.8);
+      --text-primary: #2c3e50;
+      --text-secondary: #34495e;
+      --text-light: #ffffff;
+      --accent-primary: #3498db;
+      --accent-secondary: #2980b9;
+      --accent-gradient: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+      --border-color: rgba(226, 232, 240, 0.8);
+      --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.08);
+      --border-radius: 20px;
+      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    [data-theme="dark"] {
+      --bg-primary: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+      --bg-secondary: rgba(26, 32, 44, 0.85);
+      --bg-tertiary: rgba(45, 55, 72, 0.7);
+      --text-primary: #f7fafc;
+      --text-secondary: #a0aec0;
+      --accent-primary: #43cea2;
+      --accent-secondary: #185a9d;
+      --border-color: rgba(255, 255, 255, 0.15);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.8; background: var(--bg-primary); color: var(--text-primary); transition: var(--transition); min-height: 100vh; position: relative; overflow-x: hidden; }
+    
+    .container { max-width: 1000px; margin: 0 auto; padding: 2rem; z-index: 1; }
+    .header { text-align: center; margin-bottom: 3rem; position: relative; }
+    .main-title { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem; }
+    .subtitle { font-size: 1.4rem; color: var(--text-light); font-weight: 400; opacity: 0.95; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); max-width: 900px; margin: auto; }
+
+    .theme-toggle { position: fixed; top: 2rem; right: 2rem; width: 60px; height: 60px; border: 1px solid var(--border-color); border-radius: 50%; background: var(--bg-secondary); backdrop-filter: blur(15px); box-shadow: var(--shadow-card); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--accent-primary); transition: var(--transition); z-index: 1000; }
+    .theme-toggle:hover { transform: scale(1.15) rotate(180deg); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12); }
+
+    .lesson-container { display: flex; flex-direction: column; gap: 1.5rem; }
+    .topic-card { background: var(--bg-secondary); backdrop-filter: blur(20px); border-radius: var(--border-radius); box-shadow: var(--shadow-card); border: 2px solid var(--border-color); overflow: hidden; transition: var(--transition); }
+    .topic-header { cursor: pointer; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .topic-title { font-size: 1.3rem; font-weight: 600; color: var(--text-primary); }
+    .expand-icon { font-size: 1.2rem; color: var(--text-secondary); transition: var(--transition); }
+    .topic-card.open .expand-icon { transform: rotate(180deg); }
+    .topic-content { max-height: 0; overflow: hidden; transition: max-height 1.5s ease, padding 1.5s ease; background: var(--bg-tertiary); }
+    .topic-card.open .topic-content { max-height: 9000px; padding: 1.5rem 2rem; border-top: 1px solid var(--border-color); }
+    .topic-content p, .topic-content ul { color: var(--text-secondary); margin-bottom: 1.5rem; }
+    .topic-content h4 { font-size: 1.2rem; color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 1.5rem; font-weight: 600; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
+    .topic-content ul { padding-left: 20px; }
+    .topic-content li { margin-bottom: 1rem; line-height: 1.7; }
+    .topic-content strong { color: var(--text-primary); font-weight: 600; }
+    
+    .diagram-container, .equation-container { background: rgba(0,0,0,0.02); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; margin: 2.5rem 0; font-family: 'JetBrains Mono', monospace; color: var(--text-secondary); }
+    [data-theme="dark"] .diagram-container, [data-theme="dark"] .equation-container { background: rgba(0,0,0,0.2); }
+    .diagram-title { font-weight: 600; text-align: center; margin-bottom: 2rem; color: var(--text-primary); font-size: 1rem; }
+    .diagram-flow { display: flex; justify-content: space-around; align-items: center; gap: 1rem; flex-wrap: wrap;}
+    .diagram-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); align-items: stretch; gap: 1.5rem; }
+    .diagram-box { border: 2px solid var(--border-color); padding: 1rem; border-radius: 8px; text-align: center; background: var(--bg-secondary); box-shadow: var(--shadow-card); min-width: 120px; display: flex; flex-direction: column; justify-content: center; }
+    .diagram-box strong { display: block; font-size: 0.9em; color: var(--text-primary); margin-bottom: 0.3rem; }
+    .diagram-box span { font-size: 0.8em; }
+    .diagram-arrow { flex-grow: 1; position: relative; text-align: center; }
+    .diagram-arrow::after { content: '→'; font-size: 2.5rem; color: var(--accent-primary); }
+    .diagram-arrow-label { font-size: 0.8em; font-weight: 500; }
+    .equation-container pre { background: transparent; padding: 0; margin: 0; white-space: pre-wrap; word-wrap: break-word; font-size: 1.1em; text-align: center;}
+    
+    table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+    th, td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid var(--border-color); color: var(--text-secondary); }
+    th { color: var(--text-primary); font-weight: 600; background: rgba(0,0,0,0.05); }
+    [data-theme="dark"] th { background: rgba(255,255,255,0.05); }
+    td:first-child { font-weight: 500; color: var(--text-primary); }
+    
+    .sources-list { list-style-type: none; padding-left: 0; }
+    .sources-list li { font-style: italic; }
+
+    footer { text-align: center; margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); }
+    footer p { color: var(--text-light); opacity: 0.9; margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="theme-toggle" id="themeToggleButton" title="Cambiar tema"><i class="fas fa-moon" id="theme-icon"></i></div>
+  
+  <div class="container">
+    <header class="header">
+      <h1 class="main-title">El Efecto Flywheel</h1>
+      <p class="subtitle">Cómo los Datos Impulsan la Carrera Robótica Mundial</p>
+    </header>
+
+    <div class="lesson-container">
+        
+        <div class="topic-card open">
+            <div class="topic-header"><span class="topic-title">1. El Círculo Virtuoso: ¿Qué es el "Data Flywheel"?</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>En el corazón de la competencia en robótica e IA entre Estados Unidos y China se encuentra un ciclo autorreforzado conocido como el <strong>"Data Flywheel"</strong> (Volante de Inercia de Datos). Este círculo virtuoso es la clave para entender quién liderará la próxima revolución tecnológica.</p>
+                <p>Es un sistema dinámico de retroalimentación: el despliegue de más robots genera enormes cantidades de datos del mundo real. Estos datos se utilizan para entrenar y refinar los modelos de IA, mejorando sus capacidades. A su vez, estos modelos mejorados impulsan el despliegue de aún más robots, creando un ciclo continuo de mejora.</p>
+                <div class="diagram-container">
+                    <div class="diagram-title">El Ciclo del "Data Flywheel" en Robótica</div>
+                    <div class="diagram-flow">
+                        <div class="diagram-box"><strong>1. Más Robots</strong><span>Se despliegan más unidades en el mundo real.</span></div>
+                        <div class="diagram-arrow"><div class="diagram-arrow-label">Generan</div></div>
+                        <div class="diagram-box"><strong>2. Más Datos</strong><span>Se recopila información masiva sobre interacciones.</span></div>
+                        <div class="diagram-arrow"><div class="diagram-arrow-label">Entrenan</div></div>
+                        <div class="diagram-box"><strong>3. IA más Inteligente</strong><span>Los modelos de IA se refinan y mejoran.</span></div>
+                        <div class="diagram-arrow"><div class="diagram-arrow-label">Potencian</div></div>
+                        <div class="diagram-box"><strong>4. Robots más Capaces</strong><span>Nuevas unidades son más autónomas y eficientes.</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">2. Una Historia de Dos Estrategias: Calidad vs. Cantidad</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>Una simulación de esta carrera tecnológica resalta las diferentes estrategias de las dos naciones. El modelo, que incorpora variables como la inversión, las tasas de aprendizaje y la calidad de los datos, revela una dinámica fascinante donde China apuesta por el volumen y Estados Unidos por la calidad.</p>
+                <div class="diagram-container">
+                     <div class="diagram-title">Comparativa Estratégica: China vs. Estados Unidos</div>
+                     <div class="diagram-grid">
+                        <div class="diagram-box">
+                            <strong>Enfoque de China: Cantidad</strong>
+                            <span>Despliegue masivo para una rápida acumulación de datos. El volumen acelera el aprendizaje de la IA, incluso con datos de menor calidad individual.</span>
+                        </div>
+                         <div class="diagram-box">
+                            <strong>Enfoque de EE. UU.: Calidad</strong>
+                            <span>Menos robots pero más sofisticados. Se priorizan datos de alta precisión para impulsar saltos cualitativos en la capacidad de la IA.</span>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">3. El Enfoque de China: Una Apuesta por el Volumen</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>China está aprovechando su masiva capacidad de fabricación para desplegar un número significativamente mayor de robots. Aunque la calidad inicial de los datos por robot sea inferior, el gran volumen proporciona una ventaja poderosa. Este enfoque, reforzado por el apoyo gubernamental, permite a China acumular rápidamente un conjunto de datos masivo, acelerando la mejora de sus modelos de IA.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Símbolo</th>
+                            <th>Valor</th>
+                            <th>Significado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Robots Iniciales</td><td>Uo</td><td>2,000,000</td><td>Un despliegue inicial dominante.</td>
+                        </tr>
+                        <tr>
+                            <td>Datos por Robot</td><td>α</td><td>6.0</td><td>Mayor generación de datos por unidad.</td>
+                        </tr>
+                        <tr>
+                            <td>Calidad de Datos</td><td>δ</td><td>0.45</td><td>Menor calidad de datos individuales.</td>
+                        </tr>
+                        <tr>
+                            <td>Tasa de Crecimiento Base</td><td>s</td><td>0.0117</td><td>Crecimiento mensual autónomo más rápido.</td>
+                        </tr>
+                         <tr>
+                            <td>Efecto de la IA</td><td>κ</td><td>0.014</td><td>Un impacto ligeramente menor de la IA en el crecimiento.</td>
+                        </tr>
+                        <tr>
+                            <td>Fricción</td><td>σ</td><td>0.0015</td><td>Menor tasa de deterioro o pérdida.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">4. La Estrategia de EE. UU.: Foco en Calidad e Innovación</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>En contraste, Estados Unidos se concentra en la calidad y sofisticación de sus sistemas robóticos. Aunque despliega menos robots, el énfasis está en datos de mayor calidad y en un mayor impacto de los avances de la IA en futuros despliegues. La estrategia de EE. UU. se basa en su liderazgo en innovación para crear robots más capaces, incluso con un volumen menor de datos.</p>
+                <table>
+                     <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Símbolo</th>
+                            <th>Valor</th>
+                            <th>Significado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Robots Iniciales</td><td>Uo</td><td>400,000</td><td>Una flota inicial más pequeña.</td>
+                        </tr>
+                        <tr>
+                            <td>Datos por Robot</td><td>α</td><td>5.0</td><td>Menor generación de datos por unidad.</td>
+                        </tr>
+                        <tr>
+                            <td>Calidad de Datos</td><td>δ</td><td>0.80</td><td>Datos precisos y de alta calidad.</td>
+                        </tr>
+                        <tr>
+                            <td>Tasa de Crecimiento Base</td><td>s</td><td>0.0068</td><td>Crecimiento mensual autónomo más lento.</td>
+                        </tr>
+                         <tr>
+                            <td>Efecto de la IA</td><td>κ</td><td>0.018</td><td>La calidad de la IA tiene un impacto más fuerte.</td>
+                        </tr>
+                        <tr>
+                            <td>Fricción</td><td>σ</td><td>0.002</td><td>Mayor tasa de deterioro o pérdida.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">5. El Corazón Matemático del Flywheel</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>La dinámica de esta competencia puede entenderse a través de un conjunto de modelos matemáticos interconectados que simulan el crecimiento de los robots (U), los datos acumulados (D) y la calidad de la IA (Q).</p>
+                
+                <h4>Crecimiento de una Flota Robótica (U)</h4>
+                <p>El número de robots crece por una tasa base más el impulso de la calidad de la IA, menos el desgaste natural. La inteligencia de los robots amplifica el crecimiento de la flota.</p>
+                <div class="equation-container"><pre>U' = U ⋅ (1 + s + κQ - σ)</pre></div>
+
+                <h4>El Motor de Datos (D)</h4>
+                <p>La acumulación de datos está directamente ligada al número de robots desplegados y a la calidad de los datos que generan. Una flota más grande se traduce en una acumulación más rápida.</p>
+                <div class="equation-container"><pre>D<sub>t</sub> = (1 - ω) D<sub>t-1</sub> + α ⋅ U<sub>t-1</sub> ⋅ δ</pre></div>
+
+                <h4>El Camino hacia una IA más Inteligente (Q)</h4>
+                <p>La mejora en la calidad de la IA es una función de los datos acumulados y su calidad. A medida que la calidad se acerca a su máximo (1), la mejora se ralentiza.</p>
+                <div class="equation-container"><pre>ΔQ<sub>t</sub> = β ⋅ D<sup>θ</sup> ⋅ δ<sup>φ</sup> ⋅ (1 - Q)</pre></div>
+            </div>
+        </div>
+        
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">6. Implicaciones Estratégicas: Una Carrera Contra el Tiempo</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>La simulación revela una visión crítica: <strong>a corto plazo, la cantidad puede superar a la calidad</strong>. El despliegue masivo de China le permite alcanzar un alto nivel de calidad en sus modelos de IA más rápidamente que Estados Unidos.</p>
+                <p>Esto subraya un desafío estratégico para EE. UU. Si bien su enfoque en datos de alta calidad es una ventaja a largo plazo, corre el riesgo de quedarse atrás si no puede escalar el despliegue de sus sistemas. El "Data Flywheel" demuestra que el país que puede generar la mayor cantidad de datos, aunque no sean perfectos, tiene una ventaja significativa para acelerar sus capacidades de IA.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <h4>Fuentes</h4>
+        <ul class="sources-list">
+            <li>The New York Times, "There Are More Robots Working in China Than the Rest of the World Combined"</li>
+            <li>ChinaTalk, "Why Robots are Coming"</li>
+            <li>International Federation of Robotics (IFR), "World Robotics Report"</li>
+        </ul>
+      <p style="margin-top: 2rem;">Material Elaborado por el profesor Sergio Gevatschnaider</p>
+    </footer>
+
+  </div>
+  
+  <script>
+    (function() {
+        const themeToggleButton = document.getElementById('themeToggleButton');
+        const themeIcon = document.getElementById('theme-icon');
+        const bodyEl = document.body;
+
+        function setTheme(theme) {
+            bodyEl.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (themeIcon) {
+                themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            }
+        }
+
+        themeToggleButton.addEventListener('click', () => {
+            const currentTheme = bodyEl.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        setTheme(savedTheme);
+
+        document.querySelectorAll('.topic-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const card = header.parentElement;
+                card.classList.toggle('open');
+            });
+        });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datos Comparativos sobre Robótica: China vs. Estados Unidos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+      --bg-secondary: rgba(255, 255, 255, 0.85);
+      --bg-tertiary: rgba(248, 250, 252, 0.8);
+      --text-primary: #2c3e50;
+      --text-secondary: #34495e;
+      --text-light: #ffffff;
+      --accent-primary: #3498db;
+      --accent-secondary: #2980b9;
+      --accent-gradient: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+      --border-color: rgba(226, 232, 240, 0.8);
+      --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.08);
+      --border-radius: 20px;
+      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    [data-theme="dark"] {
+      --bg-primary: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+      --bg-secondary: rgba(26, 32, 44, 0.85);
+      --bg-tertiary: rgba(45, 55, 72, 0.7);
+      --text-primary: #f7fafc;
+      --text-secondary: #a0aec0;
+      --accent-primary: #43cea2;
+      --accent-secondary: #185a9d;
+      --border-color: rgba(255, 255, 255, 0.15);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.8; background: var(--bg-primary); color: var(--text-primary); transition: var(--transition); min-height: 100vh; position: relative; overflow-x: hidden; }
+    
+    .container { max-width: 1000px; margin: 0 auto; padding: 2rem; z-index: 1; }
+    .header { text-align: center; margin-bottom: 3rem; position: relative; }
+    .main-title { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem; }
+    .subtitle { font-size: 1.4rem; color: var(--text-light); font-weight: 400; opacity: 0.95; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); max-width: 900px; margin: auto; }
+
+    .theme-toggle { position: fixed; top: 2rem; right: 2rem; width: 60px; height: 60px; border: 1px solid var(--border-color); border-radius: 50%; background: var(--bg-secondary); backdrop-filter: blur(15px); box-shadow: var(--shadow-card); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--accent-primary); transition: var(--transition); z-index: 1000; }
+    .theme-toggle:hover { transform: scale(1.15) rotate(180deg); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12); }
+
+    .lesson-container { display: flex; flex-direction: column; gap: 1.5rem; }
+    .topic-card { background: var(--bg-secondary); backdrop-filter: blur(20px); border-radius: var(--border-radius); box-shadow: var(--shadow-card); border: 2px solid var(--border-color); overflow: hidden; transition: var(--transition); }
+    .topic-header { cursor: pointer; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .topic-title { font-size: 1.3rem; font-weight: 600; color: var(--text-primary); }
+    .expand-icon { font-size: 1.2rem; color: var(--text-secondary); transition: var(--transition); }
+    .topic-card.open .expand-icon { transform: rotate(180deg); }
+    .topic-content { max-height: 0; overflow: hidden; transition: max-height 1.5s ease, padding 1.5s ease; background: var(--bg-tertiary); }
+    .topic-card.open .topic-content { max-height: 9000px; padding: 1.5rem 2rem; border-top: 1px solid var(--border-color); }
+    .topic-content p, .topic-content ul { color: var(--text-secondary); margin-bottom: 1.5rem; }
+    .topic-content h4 { font-size: 1.2rem; color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 1.5rem; font-weight: 600; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
+    .topic-content ul { padding-left: 20px; }
+    .topic-content li { margin-bottom: 1rem; line-height: 1.7; }
+    .topic-content strong { color: var(--text-primary); font-weight: 600; }
+    
+    .diagram-container, .equation-container { background: rgba(0,0,0,0.02); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; margin: 2.5rem 0; font-family: 'JetBrains Mono', monospace; color: var(--text-secondary); }
+    [data-theme="dark"] .diagram-container, [data-theme="dark"] .equation-container { background: rgba(0,0,0,0.2); }
+    .diagram-title { font-weight: 600; text-align: center; margin-bottom: 2rem; color: var(--text-primary); font-size: 1rem; }
+    .diagram-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); align-items: stretch; gap: 1.5rem; }
+    .diagram-box { border: 2px solid var(--border-color); padding: 1rem; border-radius: 8px; text-align: center; background: var(--bg-secondary); box-shadow: var(--shadow-card); min-width: 120px; display: flex; flex-direction: column; justify-content: center; }
+    .diagram-box strong { display: block; font-size: 0.9em; color: var(--text-primary); margin-bottom: 0.3rem; }
+    .diagram-box span { font-size: 0.8em; }
+    
+    table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+    th, td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid var(--border-color); color: var(--text-secondary); }
+    th { color: var(--text-primary); font-weight: 600; background: rgba(0,0,0,0.05); }
+    [data-theme="dark"] th { background: rgba(255,255,255,0.05); }
+    td:first-child { font-weight: 500; color: var(--text-primary); }
+    
+    footer { text-align: center; margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); }
+    footer p { color: var(--text-light); opacity: 0.9; margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="theme-toggle" id="themeToggleButton" title="Cambiar tema"><i class="fas fa-moon" id="theme-icon"></i></div>
+  
+  <div class="container">
+    <header class="header">
+      <h1 class="main-title">Datos Comparativos sobre Robótica</h1>
+      <p class="subtitle">Análisis Cuantitativo: China vs. Estados Unidos</p>
+    </header>
+
+    <div class="lesson-container">
+        
+        <div class="topic-card open">
+            <div class="topic-header"><span class="topic-title">1. Volumen y Crecimiento de Robots Industriales</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>A continuación se presentan los datos cuantitativos clave que ilustran la situación de la robótica industrial en ambas naciones.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Métrica</th>
+                            <th>China</th>
+                            <th>Estados Unidos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nuevos robots instalados (último año)</td>
+                            <td>Casi 300,000</td>
+                            <td>34,000</td>
+                        </tr>
+                        <tr>
+                            <td>Total de robots en operación</td>
+                            <td>Más de 2 millones</td>
+                            <td>Aproximadamente 400,000</td>
+                        </tr>
+                        <tr>
+                            <td>Proporción de instalación (China vs. EE. UU.)</td>
+                            <td colspan="2">Por cada robot nuevo en EE. UU., China instaló casi nueve.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">2. Posición en el Mercado Global (Año 2024)</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Métrica</th>
+                            <th>China</th>
+                            <th>Estados Unidos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Instalaciones anuales (unidades)</td>
+                            <td>295,000</td>
+                            <td>34,200</td>
+                        </tr>
+                        <tr>
+                            <td>Variación anual (2024 vs. año anterior)</td>
+                            <td>+7%</td>
+                            <td>-9%</td>
+                        </tr>
+                        <tr>
+                            <td>Cuota del mercado mundial de instalaciones nuevas</td>
+                            <td>54%</td>
+                            <td>No especificado, pero es el tercer mercado más grande.</td>
+                        </tr>
+                         <tr>
+                            <td>Cuota dentro de los 5 principales mercados</td>
+                            <td colspan="2">El 80% de las instalaciones mundiales se concentra en los 5 mercados principales, siendo China el líder indiscutible.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">3. Producción y Mercado Interno</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Métrica</th>
+                            <th>China</th>
+                            <th>Estados Unidos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cuota de mercado de robots de producción nacional</td>
+                            <td>Aproximadamente 60%</td>
+                            <td>No especificado.</td>
+                        </tr>
+                        <tr>
+                            <td>Cuota en el suministro mundial de fabricación de robots</td>
+                            <td>Un tercio del suministro global, superando a Japón.</td>
+                            <td>No especificado.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                 <p style="margin-top: 1rem;">Nota: Por primera vez, las empresas chinas vendieron más robots en su país que todos los proveedores extranjeros juntos.</p>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">4. Estrategia y Políticas Gubernamentales</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <div class="diagram-container">
+                     <div class="diagram-title">Comparativa de Estrategias Nacionales</div>
+                     <div class="diagram-grid">
+                        <div class="diagram-box">
+                            <strong>China: Plan Estratégico "Made in China 2025"</strong>
+                            <span>Lanzado en 2015, elevó la robótica a prioridad nacional para transformar al país en una potencia tecnológica. Impulsado por costos laborales crecientes, se centró en la adopción masiva y el fomento de la fabricación nacional.</span>
+                        </div>
+                         <div class="diagram-box">
+                            <strong>Estados Unidos: Falta de Estrategia Cohesiva</strong>
+                            <span>Se sugiere una falta de un plan cohesivo similar al de China. La frase "sin una estrategia, un país siempre está en desventaja" resalta esta carencia.</span>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">5. Avances en Robótica Humanoide</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                 <div class="diagram-container">
+                     <div class="diagram-title">Desarrollo de Robots Humanoides</div>
+                     <div class="diagram-grid">
+                        <div class="diagram-box">
+                            <strong>China: Rápido Desarrollo y Bajo Costo</strong>
+                            <span>Empresas emergentes, con fuerte apoyo gubernamental, están desarrollando rápidamente humanoides. Por ejemplo, Unitree Robotics vende modelos básicos por aproximadamente $6,000 en China.</span>
+                        </div>
+                         <div class="diagram-box">
+                            <strong>Estados Unidos: Pioneros con Altos Costos</strong>
+                            <span>Se mencionan pioneros como Boston Dynamics, pero se destaca que el costo de sus robots similares es considerablemente mayor (una fracción del costo).</span>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+      <p>Material elaborado por el profesor Sergio Gevatschnaider.</p>
+    </footer>
+
+  </div>
+  
+  <script>
+    (function() {
+        const themeToggleButton = document.getElementById('themeToggleButton');
+        const themeIcon = document.getElementById('theme-icon');
+        const bodyEl = document.body;
+
+        function setTheme(theme) {
+            bodyEl.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (themeIcon) {
+                themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            }
+        }
+
+        themeToggleButton.addEventListener('click', () => {
+            const currentTheme = bodyEl.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        setTheme(savedTheme);
+
+        document.querySelectorAll('.topic-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const card = header.parentElement;
+                card.classList.toggle('open');
+            });
+        });
+    })();
+  </script>
+</body>
+</html>

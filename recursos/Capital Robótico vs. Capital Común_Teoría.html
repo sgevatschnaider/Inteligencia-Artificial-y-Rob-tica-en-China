@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capital Robótico vs. Capital Común: El Efecto del Data Flywheel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+      --bg-secondary: rgba(255, 255, 255, 0.85);
+      --bg-tertiary: rgba(248, 250, 252, 0.8);
+      --text-primary: #2c3e50;
+      --text-secondary: #34495e;
+      --text-light: #ffffff;
+      --accent-primary: #3498db;
+      --accent-secondary: #2980b9;
+      --accent-gradient: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+      --border-color: rgba(226, 232, 240, 0.8);
+      --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.08);
+      --border-radius: 20px;
+      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    [data-theme="dark"] {
+      --bg-primary: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+      --bg-secondary: rgba(26, 32, 44, 0.85);
+      --bg-tertiary: rgba(45, 55, 72, 0.7);
+      --text-primary: #f7fafc;
+      --text-secondary: #a0aec0;
+      --accent-primary: #43cea2;
+      --accent-secondary: #185a9d;
+      --border-color: rgba(255, 255, 255, 0.15);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.8; background: var(--bg-primary); color: var(--text-primary); transition: var(--transition); min-height: 100vh; position: relative; overflow-x: hidden; }
+    
+    .container { max-width: 1000px; margin: 0 auto; padding: 2rem; z-index: 1; }
+    .header { text-align: center; margin-bottom: 3rem; position: relative; }
+    .main-title { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem; }
+    .subtitle { font-size: 1.4rem; color: var(--text-light); font-weight: 400; opacity: 0.95; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); max-width: 900px; margin: auto; }
+
+    .theme-toggle { position: fixed; top: 2rem; right: 2rem; width: 60px; height: 60px; border: 1px solid var(--border-color); border-radius: 50%; background: var(--bg-secondary); backdrop-filter: blur(15px); box-shadow: var(--shadow-card); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--accent-primary); transition: var(--transition); z-index: 1000; }
+    .theme-toggle:hover { transform: scale(1.15) rotate(180deg); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12); }
+
+    .lesson-container { display: flex; flex-direction: column; gap: 1.5rem; }
+    .topic-card { background: var(--bg-secondary); backdrop-filter: blur(20px); border-radius: var(--border-radius); box-shadow: var(--shadow-card); border: 2px solid var(--border-color); overflow: hidden; transition: var(--transition); }
+    .topic-header { cursor: pointer; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .topic-title { font-size: 1.3rem; font-weight: 600; color: var(--text-primary); }
+    .expand-icon { font-size: 1.2rem; color: var(--text-secondary); transition: var(--transition); }
+    .topic-card.open .expand-icon { transform: rotate(180deg); }
+    .topic-content { max-height: 0; overflow: hidden; transition: max-height 1.5s ease, padding 1.5s ease; background: var(--bg-tertiary); }
+    .topic-card.open .topic-content { max-height: 9000px; padding: 1.5rem 2rem; border-top: 1px solid var(--border-color); }
+    .topic-content p, .topic-content ul { color: var(--text-secondary); margin-bottom: 1.5rem; }
+    .topic-content h4 { font-size: 1.2rem; color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 1.5rem; font-weight: 600; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
+    .topic-content ul { padding-left: 20px; }
+    .topic-content li { margin-bottom: 1rem; line-height: 1.7; }
+    .topic-content strong { color: var(--text-primary); font-weight: 600; }
+    
+    .diagram-container, .equation-container { background: rgba(0,0,0,0.02); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; margin: 2.5rem 0; font-family: 'JetBrains Mono', monospace; color: var(--text-secondary); }
+    [data-theme="dark"] .diagram-container, [data-theme="dark"] .equation-container { background: rgba(0,0,0,0.2); }
+    .diagram-title { font-weight: 600; text-align: center; margin-bottom: 2rem; color: var(--text-primary); font-size: 1rem; }
+    .diagram-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); align-items: stretch; gap: 1.5rem; }
+    .diagram-box { border: 2px solid var(--border-color); padding: 1rem; border-radius: 8px; text-align: center; background: var(--bg-secondary); box-shadow: var(--shadow-card); min-width: 120px; display: flex; flex-direction: column; justify-content: center; }
+    .diagram-box strong { display: block; font-size: 0.9em; color: var(--text-primary); margin-bottom: 0.3rem; }
+    .diagram-box span { font-size: 0.8em; }
+    .equation-container pre { background: transparent; padding: 0; margin: 0; white-space: pre-wrap; word-wrap: break-word; font-size: 1.1em; text-align: center;}
+    
+    table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+    th, td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid var(--border-color); color: var(--text-secondary); }
+    th { color: var(--text-primary); font-weight: 600; background: rgba(0,0,0,0.05); }
+    [data-theme="dark"] th { background: rgba(255,255,255,0.05); }
+    td:first-child { font-weight: 500; color: var(--text-primary); }
+    
+    footer { text-align: center; margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); }
+    footer p { color: var(--text-light); opacity: 0.9; margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="theme-toggle" id="themeToggleButton" title="Cambiar tema"><i class="fas fa-moon" id="theme-icon"></i></div>
+  
+  <div class="container">
+    <header class="header">
+      <h1 class="main-title">Capital Robótico vs. Capital Común</h1>
+      <p class="subtitle">Una simulación del impacto del Data Flywheel en la productividad total</p>
+    </header>
+
+    <div class="lesson-container">
+        
+        <div class="topic-card open">
+            <div class="topic-header"><span class="topic-title">1. Propósito General del Simulador</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>Este simulador busca cuantificar el efecto del aprendizaje tecnológico (Data Flywheel) sobre la productividad y el crecimiento económico.</p>
+                <p>En otras palabras: <strong>¿cuánto del crecimiento de una economía proviene de invertir más en robots (capital físico) y cuánto proviene de aprender y mejorar con los datos (capital cognitivo o aprendizaje)?</strong></p>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">2. Estructura Conceptual del Modelo</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>El modelo se basa en una función de producción ampliada de tipo Cobb–Douglas, que incluye tres tipos de capital:</p>
+                <h4>Fórmula de Producción</h4>
+                <div class="equation-container"><pre>Y = A ⋅ L<sup>α</sup> ⋅ K<sup>β</sup> ⋅ (R ⋅ θ)<sup>γ</sup></pre></div>
+                <h4>Componentes del Modelo</h4>
+                <table>
+                    <thead>
+                        <tr><th>Símbolo</th><th>Nombre</th><th>Intuición</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Y</td><td>Output (producción total)</td><td>Valor económico generado.</td></tr>
+                        <tr><td>A</td><td>Nivel tecnológico general</td><td>Innovaciones externas (no por aprendizaje interno).</td></tr>
+                        <tr><td>L</td><td>Trabajo humano</td><td>Capital humano y horas de trabajo.</td></tr>
+                        <tr><td>K</td><td>Capital común</td><td>Máquinas, fábricas, infraestructura.</td></tr>
+                        <tr><td>R</td><td>Capital robótico</td><td>Robots, automatización inteligente.</td></tr>
+                        <tr><td>θ</td><td>Productividad del aprendizaje</td><td>Cuánto más eficaces se vuelven los robots gracias a los datos.</td></tr>
+                        <tr><td>α, β, γ</td><td>Elasticidades</td><td>Miden cuánto contribuye cada tipo de capital al total (suma ≈ 1).</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">3. El Data Flywheel en este Contexto</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>El Data Flywheel es el ciclo de retroalimentación positiva que ocurre cuando más robots generan más datos, que entrenan mejor la IA, lo que hace que esos robots sean más productivos (mayor θ), impulsando aún más su uso.</p>
+                <p>Matemáticamente, este aprendizaje se modela como una curva de saturación exponencial:</p>
+                <h4>Fórmula del Aprendizaje</h4>
+                <div class="equation-container"><pre>θ(U, D; λ) = 1 + β<sub>θ</sub> ⋅ (1 - e<sup>-λ(0.03U + 0.04D)</sup>)</pre></div>
+                <h4>Parámetros Clave</h4>
+                <table>
+                    <thead><tr><th>Parámetro</th><th>Significado</th></tr></thead>
+                    <tbody>
+                        <tr><td>U</td><td>Uso o despliegue de robots.</td></tr>
+                        <tr><td>D</td><td>Diversidad de datos disponibles.</td></tr>
+                        <tr><td>λ</td><td>Ritmo de aprendizaje (velocidad con que el sistema incorpora experiencia).</td></tr>
+                        <tr><td>β<sub>θ</sub></td><td>Potencial máximo de mejora por aprendizaje.</td></tr>
+                    </tbody>
+                </table>
+                <p>Intuitivamente: La fórmula <strong>(1 - e<sup>-x</sup>)</strong> significa que al principio el sistema aprende rápido, pero luego el aprendizaje se desacelera a medida que se acerca a su máxima eficiencia posible (1 + β<sub>θ</sub>).</p>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">4. Etapas que Calcula el Simulador</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>El simulador compara tres escenarios fijos:</p>
+                <h4>Etapa 1: Producción Base (Y₀)</h4>
+                <p>Representa el estado inicial de la economía. Los robots trabajan con su nivel inicial de productividad (θ₀), sin aprendizaje adicional.</p>
+                <div class="equation-container"><pre>Y₀ = A ⋅ L<sup>α</sup> K<sup>β</sup> (R₀ ⋅ θ₀)<sup>γ</sup></pre></div>
+                
+                <h4>Etapa 2: Más Uso, Sin Aprendizaje (Y₁)</h4>
+                <p>Aumenta la cantidad de robots (R), pero sin mejorar su eficiencia (θ). Esto muestra el crecimiento puramente por inversión física. Es el crecimiento industrial clásico: “Pongo más máquinas, produzco más.”</p>
+                <div class="equation-container"><pre>Y₁ = A ⋅ L<sup>α</sup> K<sup>β</sup> (R₁ ⋅ θ₀)<sup>γ</sup></pre></div>
+
+                <h4>Etapa 3: Más Uso + Aprendizaje (Y₂ - Efecto Flywheel)</h4>
+                <p>Además de tener más robots, estos aprendieron de la experiencia. Su productividad aumentó de θ₀ a θ₁. Es el crecimiento que proviene del capital cognitivo.</p>
+                <div class="equation-container"><pre>Y₂ = A ⋅ L<sup>α</sup> K<sup>β</sup> (R₁ ⋅ θ₁)<sup>γ</sup></pre></div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">5. Interpretación del Gráfico de Resultados</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>El gráfico visualiza las tres etapas y dos métricas de productividad marginal (MP<sub>R</sub>):</p>
+                <div class="diagram-container">
+                    <div class="diagram-title">Visualización de Resultados de la Simulación</div>
+                    <div class="diagram-grid">
+                        <div class="diagram-box"><strong>Y₀ (Base)</strong><span>Producción inicial: <strong>108.50</strong></span></div>
+                        <div class="diagram-box"><strong>Y₁ (+uso sin aprendizaje)</strong><span>Más robots, misma eficiencia: <strong>113.14</strong></span></div>
+                        <div class="diagram-box"><strong>Y₂ (+uso + aprendizaje)</strong><span>Más robots y más inteligencia: <strong>117.24</strong></span></div>
+                        <div class="diagram-box"><strong>MP<sub>R</sub> actual</strong><span>Productividad marginal actual: <strong>0.33</strong></span></div>
+                        <div class="diagram-box"><strong>MP<sub>R</sub> post-flywheel</strong><span>Productividad marginal post-aprendizaje: <strong>0.31</strong></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">6. ¿Qué Dicen los Resultados?</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <h4>(a) Crecimiento Total</h4>
+                <p>El crecimiento total del sistema fue de <strong>8.74</strong> (de 108.50 a 117.24), lo que representa un aumento del <strong>8.05%</strong>.</p>
+                <h4>(b) Descomposición del Crecimiento</h4>
+                <table>
+                    <thead>
+                        <tr><th>Fuente de Crecimiento</th><th>Aporte al Crecimiento</th><th>Porcentaje del Total</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Aumento de Robots (sin aprendizaje)</td><td>4.64</td><td>53%</td></tr>
+                        <tr><td>Aprendizaje (Data Flywheel)</td><td>4.10</td><td>47%</td></tr>
+                    </tbody>
+                </table>
+                <p><strong>Interpretación Clave:</strong> Casi la mitad del crecimiento total no provino de tener más robots, sino de que los robots existentes aprendieron y mejoraron gracias al Data Flywheel.</p>
+                <h4>(c) Productividad Marginal (MP<sub>R</sub>)</h4>
+                <p>La productividad marginal del capital robótico bajó de 0.33 a 0.31, reflejando la ley de rendimientos decrecientes. Aunque los robots son más productivos en conjunto, cada robot adicional contribuye un poco menos al total a medida que la economía se satura.</p>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">7. Intuición Económica</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>Imagina dos escenarios en una fábrica inteligente:</p>
+                <ul>
+                    <li><strong>Escenario A (Sin aprendizaje - Y₁):</strong> Compras más robots, pero cada uno hace exactamente lo mismo que antes. El crecimiento depende del capital físico.</li>
+                    <li><strong>Escenario B (Con aprendizaje - Y₂):</strong> Los robots (nuevos y viejos) aprenden de los datos, se coordinan mejor, optimizan tareas y fallan menos. El crecimiento depende del capital cognitivo.</li>
+                </ul>
+                <p>En el segundo caso, la producción aumenta sin necesidad de agregar tanto hardware, porque el software (la IA) se vuelve más eficiente.</p>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header"><span class="topic-title">8. Conclusión Final y Resumen</span><i class="fas fa-chevron-down expand-icon"></i></div>
+            <div class="topic-content">
+                <p>Este simulador muestra la transición estructural de la economía moderna: ya no basta con invertir más dinero en máquinas (capital físico); ahora, la ventaja competitiva surge de aprender con los datos (capital cognitivo).</p>
+                <h4>Puntos Clave:</h4>
+                <ul>
+                    <li>Más del 45% del crecimiento provino del aprendizaje del sistema (θ).</li>
+                    <li>El Data Flywheel convierte el uso de robots en una forma de entrenamiento: cada tarea genera información que mejora la productividad futura.</li>
+                    <li>El sistema sigue mostrando rendimientos decrecientes marginales, lo que significa que el aprendizaje se vuelve más lento o costoso a medida que el sistema se perfecciona.</li>
+                </ul>
+                <h4>En Resumen</h4>
+                <table>
+                    <thead>
+                        <tr><th>Concepto</th><th>Descripción</th><th>Ejemplo Didáctico</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Y₀</td><td>Estado base</td><td>Fábrica con robots estándar.</td></tr>
+                        <tr><td>Y₁</td><td>Más robots sin aprendizaje</td><td>“Duplico el número de máquinas.”</td></tr>
+                        <tr><td>Y₂</td><td>Más robots + aprendizaje</td><td>“Los robots se vuelven más inteligentes.”</td></tr>
+                        <tr><td>ΔY por θ</td><td>Ganancia cognitiva</td><td>El efecto real del Data Flywheel.</td></tr>
+                        <tr><td>MP<sub>R</sub></td><td>Productividad marginal</td><td>Valor agregado por cada robot adicional.</td></tr>
+                    </tbody>
+                </table>
+                <p><strong>Lección Clave:</strong> El aprendizaje (datos + IA) ahora genera tanto crecimiento como la inversión física.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+      <p>Material elaborado por el profesor Sergio Gevatschnaider en base al simulador de Capital Común_Capital Robótico</p>
+    </footer>
+
+  </div>
+  
+  <script>
+    (function() {
+        const themeToggleButton = document.getElementById('themeToggleButton');
+        const themeIcon = document.getElementById('theme-icon');
+        const bodyEl = document.body;
+
+        function setTheme(theme) {
+            bodyEl.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (themeIcon) {
+                themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            }
+        }
+
+        themeToggleButton.addEventListener('click', () => {
+            const currentTheme = bodyEl.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        setTheme(savedTheme);
+
+        document.querySelectorAll('.topic-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const card = header.parentElement;
+                card.classList.toggle('open');
+            });
+        });
+    })();
+  </script>
+</body>
+</html>

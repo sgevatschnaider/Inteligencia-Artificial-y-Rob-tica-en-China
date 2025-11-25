@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Modelo Data Flywheel – Real + Sintético</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  
+  :root{
+    --bg-primary: #0a0e1a;
+    --bg-secondary: #0f1419;
+    --bg-panel: linear-gradient(135deg, #1a1f2e 0%, #151922 100%);
+    --bg-card: rgba(26, 31, 46, 0.6);
+    --border-color: rgba(99, 102, 241, 0.1);
+    --border-hover: rgba(99, 102, 241, 0.3);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-primary: #6366f1;
+    --accent-secondary: #8b5cf6;
+    --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --us-color: #3b82f6;
+    --cn-color: #ec4899;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --glow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  /* Animated background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header */
+  header {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
+    animation: slideDown 0.5s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  
+  .subtitle {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .subtitle code {
+    background: rgba(99, 102, 241, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--accent-primary);
+  }
+  
+  /* Layout */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 24px;
+    animation: fadeIn 0.6s ease-out 0.2s both;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Card styles */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  
+  .card-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .card-title::before {
+    content: '';
+    width: 3px;
+    height: 16px;
+    background: var(--accent-gradient);
+    border-radius: 2px;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+  
+  .sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+  }
+  
+  .sidebar::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 3px;
+  }
+  
+  /* Form controls */
+  label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+  
+  select {
+    width: 100%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236366f1' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+  }
+  
+  select:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-secondary);
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--accent-gradient);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+    transition: all 0.2s ease;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: var(--glow);
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--accent-gradient);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+    transition: all 0.2s ease;
+  }
+  
+  .control-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .control-group {
+    margin-bottom: 4px;
+  }
+  
+  .control-value {
+    font-size: 13px;
+    color: var(--accent-primary);
+    font-weight: 600;
+    margin-top: 8px;
+    font-family: 'Courier New', monospace;
+  }
+  
+  /* Insight box */
+  .insight {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    border-left: 3px solid var(--accent-primary);
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* KPI Grid */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .kpi-card {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .kpi-card:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .kpi-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  
+  .kpi-value {
+    font-size: 28px;
+    font-weight: 700;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+  }
+  
+  .kpi-subtitle {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  
+  /* Charts Grid */
+  .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+  }
+  
+  .chart-container {
+    position: relative;
+    height: 320px;
+  }
+  
+  canvas {
+    border-radius: 8px;
+  }
+  
+  /* Legend */
+  .legend {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .legend-item:hover {
+    background: rgba(99, 102, 241, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  
+  .legend-dot.us {
+    background: var(--us-color);
+    box-shadow: 0 0 8px var(--us-color);
+  }
+  
+  .legend-dot.cn {
+    background: var(--cn-color);
+    box-shadow: 0 0 8px var(--cn-color);
+  }
+  
+  /* Footer */
+  footer {
+    margin-top: 32px;
+    padding: 24px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  footer code {
+    background: rgba(99, 102, 241, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--accent-primary);
+  }
+  
+  .attribution {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .main-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+      position: relative;
+      max-height: none;
+    }
+    
+    .charts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Loading animation */
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  .loading {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🔄 Modelo Data Flywheel — Real + Sintético</h1>
+    <div class="subtitle">
+      Flujo de datos efectivo U↑D↑Q↑U con datos sintéticos (sim2real, mezcla óptima y reducción de fricción efectiva)
+      <br>
+      <code>ΔD<sup>eff</sup> = α<sub>R</sub>Uδ<sub>R</sub> + m(η)·S·ψ·χ</code> 
+      <code>m(η) = exp[-λ(η-η*)²]</code>
+    </div>
+  </header>
+
+  <div class="main-grid">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="card">
+        <h2 class="card-title">🎯 Escenarios</h2>
+        <label for="scenarioSelect">Selecciona escenario</label>
+        <select id="scenarioSelect"></select>
+        <div class="insight" id="scenarioInsight"></div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">⚙️ Parámetros Globales</h2>
+        <div class="control-row">
+          <div class="control-group">
+            <label>β (eficiencia)</label>
+            <input id="beta" type="range" min="0.0005" max="0.01" step="0.0005">
+            <div class="control-value" id="betaVal"></div>
+          </div>
+          <div class="control-group">
+            <label>θ (curvatura)</label>
+            <input id="theta" type="range" min="0.4" max="1.0" step="0.02">
+            <div class="control-value" id="thetaVal"></div>
+          </div>
+        </div>
+        <div class="control-row">
+          <div class="control-group">
+            <label>φ (peso diversidad)</label>
+            <input id="phi" type="range" min="0.0" max="2.0" step="0.05">
+            <div class="control-value" id="phiVal"></div>
+          </div>
+          <div class="control-group">
+            <label>⏱️ Meses</label>
+            <input id="months" type="range" min="6" max="60" step="1">
+            <div class="control-value" id="monthsVal"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">🧪 Canal Sintético</h2>
+        <div class="control-row">
+          <div class="control-group">
+            <label>Escala S (×)</label>
+            <input id="SScale" type="range" min="0" max="3" step="0.1">
+            <div class="control-value" id="SScaleVal"></div>
+          </div>
+          <div class="control-group">
+            <label>Fidelidad ψ (±)</label>
+            <input id="psiAdj" type="range" min="-0.3" max="0.3" step="0.01">
+            <div class="control-value" id="psiAdjVal"></div>
+          </div>
+        </div>
+        <div class="control-row">
+          <div class="control-group">
+            <label>Cobertura χ (±)</label>
+            <input id="chiAdj" type="range" min="-0.5" max="0.5" step="0.01">
+            <div class="control-value" id="chiAdjVal"></div>
+          </div>
+          <div class="control-group">
+            <label>Mezcla óptima η* (±)</label>
+            <input id="etaStarAdj" type="range" min="-0.3" max="0.3" step="0.01">
+            <div class="control-value" id="etaStarAdjVal"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">📊 Leyenda</h2>
+        <div class="legend">
+          <div class="legend-item">
+            <span class="legend-dot us"></span>
+            <span>US</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot cn"></span>
+            <span>CN</span>
+          </div>
+          <div class="legend-item">Q: calidad</div>
+          <div class="legend-item">U: unidades</div>
+          <div class="legend-item">D: datos</div>
+          <div class="legend-item">m(η): mezcla</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main>
+      <div class="card">
+        <h2 class="card-title">📈 Métricas Clave (KPIs)</h2>
+        <div class="kpi-grid" id="kpis"></div>
+      </div>
+
+      <div class="charts-grid" style="margin-top: 24px">
+        <div class="card">
+          <h2 class="card-title">📊 Calidad Q(t)</h2>
+          <div class="chart-container">
+            <canvas id="chartQ"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <h2 class="card-title">🤖 Despliegue U(t)</h2>
+          <div class="chart-container">
+            <canvas id="chartU"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <h2 class="card-title">💾 Datos D(t)</h2>
+          <div class="chart-container">
+            <canvas id="chartD"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <h2 class="card-title">🔀 Mezcla m(η) y fracción η(t)</h2>
+          <div class="chart-container">
+            <canvas id="chartMix"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <h2 class="card-title">🎨 δ efectiva (diversidad)</h2>
+          <div class="chart-container">
+            <canvas id="chartDeltaEff"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <h2 class="card-title">⚡ Flujo ΔD<sub>t</sub></h2>
+          <div class="chart-container">
+            <canvas id="chartDataEff"></canvas>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <div>
+      <strong>Modelo matemático:</strong><br>
+      <code>D<sub>t+1</sub> = D<sub>t</sub> + ΔD<sup>eff</sup></code>, 
+      <code>Q<sub>t+1</sub> = Q<sub>t</sub> + β(ΔD<sup>eff</sup>)<sup>θ</sup>(δ<sup>eff</sup>)<sup>φ</sup>(1-Q<sub>t</sub>)</code>, 
+      <code>U<sub>t+1</sub> = U<sub>t</sub>[1 + s + κQ<sub>t</sub> - σ<sup>eff</sup>]</code>
+      <br>
+      Con <code>ΔD<sup>eff</sup> = α<sub>R</sub>Uδ<sub>R</sub> + m(η)·S·ψ·χ</code>, 
+      <code>δ<sup>eff</sup> = w<sub>R</sub>δ<sub>R</sub> + w<sub>S</sub>·m(η)·ψ·χ·δ<sub>S</sub></code>, 
+      <code>η = S/(S + α<sub>R</sub>Uδ<sub>R</sub>)</code>, 
+      <code>m(η) = exp[-λ(η-η*)²]</code>, 
+      <code>σ<sup>eff</sup> = σ - Δσ<sub>sim</sub></code>
+    </div>
+    <div class="attribution">
+      Material elaborado por el profesor Sergio Gevatschnaider
+    </div>
+  </footer>
+</div>
+
+<script>
+/* Escenarios */
+const scenarios = {
+  base: {
+    name: 'Escenario Base',
+    US: { U0: 400, alphaR: 5.0, deltaR: 0.80, s: 0.00682, kappa: 0.018, sigma: 0.002, Q0: 0.20,
+          S: 0, psi: 0.70, chi: 1.30, deltaS: 0.70, wS: 0.40, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0 },
+    CN: { U0: 2000, alphaR: 6.0, deltaR: 0.45, s: 0.01171, kappa: 0.014, sigma: 0.0015, Q0: 0.20,
+          S: 0, psi: 0.65, chi: 1.20, deltaS: 0.60, wS: 0.35, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0 },
+    insight: 'Base reproducible: canal sintético apagado (S=0).'
+  },
+  sim_us_equalizer: {
+    name: 'US: Sintético de alta fidelidad',
+    US: { U0: 400, alphaR: 5.0, deltaR: 0.80, s: 0.00682, kappa: 0.018, sigma: 0.002, Q0: 0.20,
+          S: 600, psi: 0.75, chi: 1.35, deltaS: 0.85, wS: 0.50, etaStar: 0.55, lambdaMix: 8.0, dSigmaSim: 0.0003 },
+    CN: { U0: 2000, alphaR: 6.0, deltaR: 0.45, s: 0.01171, kappa: 0.014, sigma: 0.0015, Q0: 0.20,
+          S: 250, psi: 0.65, chi: 1.25, deltaS: 0.65, wS: 0.40, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0001 },
+    insight: 'US compensa menor U con datos sintéticos de alta fidelidad/cobertura y mezcla sintonizada.'
+  },
+  sim_cn_diversity: {
+    name: 'CN: Sim + Diversidad',
+    US: { U0: 400, alphaR: 5.0, deltaR: 0.80, s: 0.00682, kappa: 0.018, sigma: 0.002, Q0: 0.20,
+          S: 200, psi: 0.70, chi: 1.25, deltaS: 0.80, wS: 0.40, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0001 },
+    CN: { U0: 2000, alphaR: 6.0, deltaR: 0.70, s: 0.01171, kappa: 0.014, sigma: 0.0015, Q0: 0.20,
+          S: 500, psi: 0.70, chi: 1.35, deltaS: 0.85, wS: 0.50, etaStar: 0.55, lambdaMix: 8.0, dSigmaSim: 0.0002 },
+    insight: 'China sube diversidad real (δR) y añade sim de alta cobertura: t90 cae fuerte.'
+  },
+  diversity: {
+    name: 'CN: Mayor Diversidad (real)',
+    US: { U0: 400, alphaR: 5.0, deltaR: 0.80, s: 0.00682, kappa: 0.018, sigma: 0.002, Q0: 0.20,
+          S: 0, psi: 0.70, chi: 1.30, deltaS: 0.70, wS: 0.40, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0 },
+    CN: { U0: 2000, alphaR: 6.0, deltaR: 0.70, s: 0.01171, kappa: 0.014, sigma: 0.0015, Q0: 0.20,
+          S: 0, psi: 0.65, chi: 1.20, deltaS: 0.60, wS: 0.35, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0 },
+    insight: 'Incrementar δR en China acelera dramáticamente el aprendizaje (DIVERSIDAD>ESCALA).'
+  },
+  friction: {
+    name: 'US: Menor Fricción (real)',
+    US: { U0: 400, alphaR: 5.0, deltaR: 0.80, s: 0.00682, kappa: 0.018, sigma: 0.001, Q0: 0.20,
+          S: 0, psi: 0.70, chi: 1.30, deltaS: 0.70, wS: 0.40, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0 },
+    CN: { U0: 2000, alphaR: 6.0, deltaR: 0.45, s: 0.01171, kappa: 0.014, sigma: 0.0015, Q0: 0.20,
+          S: 0, psi: 0.65, chi: 1.20, deltaS: 0.60, wS: 0.35, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0 },
+    insight: 'Bajar σ escala U pero no acelera mucho t90 si no sube diversidad o fidelidad.'
+  }
+};
+
+const sharedParams ={
+  beta: 0.003,
+  theta: 0.6,
+  phi: 1.2,
+  D0: 100,
+  months: 24,
+  wR: 0.6,
+  etaMode: 'auto'
+};
+
+/* Simulador núcleo */
+function simulateFlywheel(params, shared, tuning){
+  const results = {
+    t: [],
+    US: { U:[], D:[], Q:[], eta:[], m:[], deltaEff:[], dataEff:[] },
+    CN: { U:[], D:[], Q:[], eta:[], m:[], deltaEff:[], dataEff:[] }
+  };
+
+  function stepOneCountry(p){
+    let U = p.U0, D = shared.D0, Q = p.Q0;
+    const out = { U:[], D:[], Q:[], eta:[], m:[], deltaEff:[], dataEff:[] };
+
+    const S_eff = Math.max(0, p.S * tuning.SScale);
+    const psi_eff = Math.min(1, Math.max(0, p.psi + tuning.psiAdj));
+    const chi_eff = Math.max(0.5, p.chi + tuning.chiAdj);
+    const etaStar_eff = Math.min(0.95, Math.max(0.05, p.etaStar + tuning.etaStarAdj));
+
+    for(let t=0; t<=shared.months; t++){
+      out.U.push(U); out.D.push(D); out.Q.push(Q);
+
+      const dataReal = p.alphaR * U * p.deltaR;
+      const dataSynth_raw = S_eff;
+      const dataSynth_eff = dataSynth_raw * psi_eff * chi_eff;
+
+      const denom = dataReal + dataSynth_raw;
+      const eta_t = denom>0 ? (dataSynth_raw / denom) : 0.0;
+      const m_t = Math.exp(-p.lambdaMix * Math.pow(eta_t - etaStar_eff, 2));
+
+      const deltaEff = (shared.wR * p.deltaR) + (p.wS * m_t * psi_eff * chi_eff * p.deltaS);
+      const dataEff  = dataReal + m_t * dataSynth_eff;
+
+      out.eta.push(eta_t); out.m.push(m_t); out.deltaEff.push(deltaEff); out.dataEff.push(dataEff);
+
+      D = D + dataEff;
+
+      const learning = shared.beta * Math.pow(Math.max(dataEff,0), shared.theta)
+                                   * Math.pow(Math.max(deltaEff,0), shared.phi)
+                                   * (1 - Q);
+      Q = Math.min(1.0, Q + learning);
+
+      const sigmaEff = Math.max(0, p.sigma - (p.dSigmaSim || 0));
+      const growth = 1 + p.s + p.kappa * Q - sigmaEff;
+      U = U * growth;
+    }
+    return out;
+  }
+
+  const US = scenarios[currentScenario].US;
+  const CN = scenarios[currentScenario].CN;
+
+  results.US = stepOneCountry(US);
+  results.CN = stepOneCountry(CN);
+  for(let t=0; t<=shared.months; t++) results.t.push(t);
+  return results;
+}
+
+/* Métricas auxiliares */
+function t90(seriesQ){
+  for(let i=0;i<seriesQ.length;i++){
+    if(seriesQ[i] >= 0.90) return i;
+  }
+  return null;
+}
+function last(arr){ return arr[arr.length-1]; }
+function fmt(x, d=2){ return Number(x).toFixed(d); }
+
+/* UI & Gráficos */
+const scenarioSelect = document.getElementById('scenarioSelect');
+const scenarioInsight = document.getElementById('scenarioInsight');
+const betaSlider  = document.getElementById('beta');
+const thetaSlider = document.getElementById('theta');
+const phiSlider   = document.getElementById('phi');
+const monthsSlider= document.getElementById('months');
+const betaVal  = document.getElementById('betaVal');
+const thetaVal = document.getElementById('thetaVal');
+const phiVal   = document.getElementById('phiVal');
+const monthsVal= document.getElementById('monthsVal');
+
+const SScale = document.getElementById('SScale');
+const psiAdj = document.getElementById('psiAdj');
+const chiAdj = document.getElementById('chiAdj');
+const etaStarAdj = document.getElementById('etaStarAdj');
+const SScaleVal = document.getElementById('SScaleVal');
+const psiAdjVal = document.getElementById('psiAdjVal');
+const chiAdjVal = document.getElementById('chiAdjVal');
+const etaStarAdjVal = document.getElementById('etaStarAdjVal');
+
+let currentScenario = 'base';
+let charts = {};
+
+function populateScenarios(){
+  Object.entries(scenarios).forEach(([key, sc])=>{
+    const opt = document.createElement('option');
+    opt.value = key; opt.textContent = sc.name;
+    scenarioSelect.appendChild(opt);
+  });
+  scenarioSelect.value = currentScenario;
+  scenarioInsight.textContent = scenarios[currentScenario].insight;
+}
+
+function initSliders(){
+  betaSlider.value  = sharedParams.beta;
+  thetaSlider.value = sharedParams.theta;
+  phiSlider.value   = sharedParams.phi;
+  monthsSlider.value= sharedParams.months;
+
+  betaVal.textContent  = `β = ${fmt(sharedParams.beta,4)}`;
+  thetaVal.textContent = `θ = ${fmt(sharedParams.theta,2)}`;
+  phiVal.textContent   = `φ = ${fmt(sharedParams.phi,2)}`;
+  monthsVal.textContent= `${sharedParams.months} meses`;
+
+  SScale.value = 1.0; SScaleVal.textContent = `S ×${fmt(1.0,1)}`;
+  psiAdj.value = 0.0; psiAdjVal.textContent = `ψ adj ${fmt(0,2)}`;
+  chiAdj.value = 0.0; chiAdjVal.textContent = `χ adj ${fmt(0,2)}`;
+  etaStarAdj.value = 0.0; etaStarAdjVal.textContent = `η* adj ${fmt(0,2)}`;
+
+  betaSlider.oninput = ()=>{ sharedParams.beta = parseFloat(betaSlider.value); betaVal.textContent = `β = ${fmt(sharedParams.beta,4)}`; rerun(); };
+  thetaSlider.oninput= ()=>{ sharedParams.theta= parseFloat(thetaSlider.value); thetaVal.textContent= `θ = ${fmt(sharedParams.theta,2)}`; rerun(); };
+  phiSlider.oninput  = ()=>{ sharedParams.phi  = parseFloat(phiSlider.value); phiVal.textContent  = `φ = ${fmt(sharedParams.phi,2)}`; rerun(); };
+  monthsSlider.oninput=()=>{ sharedParams.months=parseInt(monthsSlider.value); monthsVal.textContent=`${sharedParams.months} meses`; rerun(); };
+
+  SScale.oninput= ()=>{ SScaleVal.textContent = `S ×${fmt(parseFloat(SScale.value),1)}`; rerun(); };
+  psiAdj.oninput = ()=>{ psiAdjVal.textContent= `ψ adj ${fmt(parseFloat(psiAdj.value),2)}`; rerun(); };
+  chiAdj.oninput = ()=>{ chiAdjVal.textContent= `χ adj ${fmt(parseFloat(chiAdj.value),2)}`; rerun(); };
+  etaStarAdj.oninput=()=>{ etaStarAdjVal.textContent= `η* adj ${fmt(parseFloat(etaStarAdj.value),2)}`; rerun(); };
+
+  scenarioSelect.onchange = ()=>{ currentScenario = scenarioSelect.value; scenarioInsight.textContent = scenarios[currentScenario].insight; rerun(); };
+}
+
+function mkChart(ctx, label, ySuggestedMax=null){
+  return new Chart(ctx, {
+    type:'line',
+    data:{labels:[], datasets:[]},
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      animation:false,
+      interaction:{mode:'index',intersect:false},
+      plugins:{
+        legend:{
+          display:true,
+          labels:{color:'#94a3b8', font:{size:11}}
+        }
+      },
+      scales:{
+        x:{
+          grid:{color:'rgba(99, 102, 241, 0.05)'},
+          ticks:{color:'#64748b', font:{size:10}}
+        },
+        y:{
+          grid:{color:'rgba(99, 102, 241, 0.05)'},
+          ticks:{color:'#64748b', font:{size:10}},
+          suggestedMax: ySuggestedMax
+        }
+      }
+    }
+  });
+}
+
+function ensureCharts(){
+  if(charts.Q) return;
+  charts.Q = mkChart(document.getElementById('chartQ').getContext('2d'),'Q',1.02);
+  charts.U = mkChart(document.getElementById('chartU').getContext('2d'),'U');
+  charts.D = mkChart(document.getElementById('chartD').getContext('2d'),'D');
+  charts.M = mkChart(document.getElementById('chartMix').getContext('2d'),'m(η) & η',1.05);
+  charts.DE= mkChart(document.getElementById('chartDeltaEff').getContext('2d'),'δ^eff',1.1);
+  charts.DF= mkChart(document.getElementById('chartDataEff').getContext('2d'),'ΔD_eff');
+}
+
+function updateCharts(sim){
+  const t = sim.t;
+
+  charts.Q.data.labels = t;
+  charts.Q.data.datasets = [
+    {label:'US — Q', data: sim.US.Q, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'CN — Q', data: sim.CN.Q, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'Umbral Q=0.90', data: t.map(()=>0.90), borderColor:'#f59e0b', borderDash:[6,6], borderWidth:1.5, pointRadius:0}
+  ];
+  charts.Q.update();
+
+  charts.U.data.labels = t;
+  charts.U.data.datasets = [
+    {label:'US — U (k)', data: sim.US.U, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'CN — U (k)', data: sim.CN.U, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0}
+  ];
+  charts.U.update();
+
+  charts.D.data.labels = t;
+  charts.D.data.datasets = [
+    {label:'US — D', data: sim.US.D, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'CN — D', data: sim.CN.D, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0}
+  ];
+  charts.D.update();
+
+  charts.M.data.labels = t;
+  charts.M.data.datasets = [
+    {label:'US — m(η)', data: sim.US.m, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'CN — m(η)', data: sim.CN.m, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'US — η(t)', data: sim.US.eta, borderColor:'rgba(59,130,246,0.5)', borderDash:[5,5], tension:0.3, borderWidth:1.5, pointRadius:0},
+    {label:'CN — η(t)', data: sim.CN.eta, borderColor:'rgba(236,72,153,0.5)', borderDash:[5,5], tension:0.3, borderWidth:1.5, pointRadius:0}
+  ];
+  charts.M.update();
+
+  charts.DE.data.labels = t;
+  charts.DE.data.datasets = [
+    {label:'US — δ^eff', data: sim.US.deltaEff, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'CN — δ^eff', data: sim.CN.deltaEff, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0}
+  ];
+  charts.DE.update();
+
+  charts.DF.data.labels = t;
+  charts.DF.data.datasets = [
+    {label:'US — ΔD_eff', data: sim.US.dataEff, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'CN — ΔD_eff', data: sim.CN.dataEff, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0}
+  ];
+  charts.DF.update();
+}
+
+function updateKPIs(sim){
+  const kpis = document.getElementById('kpis');
+  const t90US = t90(sim.US.Q), t90CN = t90(sim.CN.Q);
+  const lastUUS = last(sim.US.U), lastUCN = last(sim.CN.U);
+  const lastQUS = last(sim.US.Q), lastQCN = last(sim.CN.Q);
+  const lastDUS = last(sim.US.D), lastDCN = last(sim.CN.D);
+
+  kpis.innerHTML = `
+    <div class="kpi-card">
+      <div class="kpi-title">t₉₀ (US)</div>
+      <div class="kpi-value">${t90US===null? '—' : t90US}</div>
+      <div class="kpi-subtitle">meses hasta Q≥0.90</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-title">t₉₀ (CN)</div>
+      <div class="kpi-value">${t90CN===null? '—' : t90CN}</div>
+      <div class="kpi-subtitle">meses hasta Q≥0.90</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-title">Q final (US)</div>
+      <div class="kpi-value">${fmt(lastQUS,3)}</div>
+      <div class="kpi-subtitle">calidad mes ${sim.t.length-1}</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-title">Q final (CN)</div>
+      <div class="kpi-value">${fmt(lastQCN,3)}</div>
+      <div class="kpi-subtitle">calidad mes ${sim.t.length-1}</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-title">U final (US)</div>
+      <div class="kpi-value">${fmt(lastUUS,0)}k</div>
+      <div class="kpi-subtitle">unidades desplegadas</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-title">U final (CN)</div>
+      <div class="kpi-value">${fmt(lastUCN,0)}k</div>
+      <div class="kpi-subtitle">unidades desplegadas</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-title">D final (US)</div>
+      <div class="kpi-value">${fmt(lastDUS,0)}</div>
+      <div class="kpi-subtitle">datos acumulados</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-title">D final (CN)</div>
+      <div class="kpi-value">${fmt(lastDCN,0)}</div>
+      <div class="kpi-subtitle">datos acumulados</div>
+    </div>
+  `;
+}
+
+function rerun(){
+  ensureCharts();
+  const tuning = {
+    SScale: parseFloat(SScale.value),
+    psiAdj: parseFloat(psiAdj.value),
+    chiAdj: parseFloat(chiAdj.value),
+    etaStarAdj: parseFloat(etaStarAdj.value)
+  };
+  const sim = simulateFlywheel(scenarios[currentScenario], sharedParams, tuning);
+  updateCharts(sim);
+  updateKPIs(sim);
+}
+
+populateScenarios();
+initSliders();
+rerun();
+</script>
+</body>
+</html>

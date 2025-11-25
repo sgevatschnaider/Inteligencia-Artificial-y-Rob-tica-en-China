@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Flywheel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #a0a0ff;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .flywheel-container {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .flywheel {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: rotate 20s linear infinite;
+            animation-play-state: running;
+        }
+
+        .flywheel.fast {
+            animation-duration: 8s;
+        }
+
+        .flywheel.faster {
+            animation-duration: 4s;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .center-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 60px rgba(102, 126, 234, 0.6);
+            z-index: 10;
+            font-weight: bold;
+            font-size: 1.3em;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .segment {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .segment:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px currentColor;
+        }
+
+        .segment-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .segment-desc {
+            font-size: 0.9em;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        .segment1 {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(79, 172, 254, 0.3));
+            border: 2px solid #00f2fe;
+            color: #00f2fe;
+        }
+
+        .segment2 {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, rgba(250, 130, 220, 0.2), rgba(250, 80, 180, 0.3));
+            border: 2px solid #fa82dc;
+            color: #fa82dc;
+        }
+
+        .segment3 {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, rgba(130, 250, 150, 0.2), rgba(80, 250, 120, 0.3));
+            border: 2px solid #82fa96;
+            color: #82fa96;
+        }
+
+        .segment4 {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, rgba(250, 200, 100, 0.2), rgba(250, 150, 80, 0.3));
+            border: 2px solid #fac864;
+            color: #fac864;
+        }
+
+        .arrow {
+            position: absolute;
+            font-size: 3em;
+            animation: pulse 2s ease-in-out infinite;
+            z-index: 5;
+        }
+
+        .arrow1 {
+            top: 18%;
+            right: 18%;
+            transform: rotate(45deg);
+            color: #00f2fe;
+        }
+
+        .arrow2 {
+            bottom: 18%;
+            right: 18%;
+            transform: rotate(135deg);
+            color: #fa82dc;
+        }
+
+        .arrow3 {
+            bottom: 18%;
+            left: 18%;
+            transform: rotate(225deg);
+            color: #82fa96;
+        }
+
+        .arrow4 {
+            top: 18%;
+            left: 18%;
+            transform: rotate(315deg);
+            color: #fac864;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: rotate(var(--rotation)) scale(1); }
+            50% { opacity: 1; transform: rotate(var(--rotation)) scale(1.2); }
+        }
+
+        .arrow1 { --rotation: 45deg; }
+        .arrow2 { --rotation: 135deg; }
+        .arrow3 { --rotation: 225deg; }
+        .arrow4 { --rotation: 315deg; }
+
+        .controls {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-box h3 {
+            color: #4facfe;
+            margin-bottom: 15px;
+        }
+
+        .info-box p {
+            line-height: 1.8;
+            color: #d0d0ff;
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes particleFloat {
+            0% { opacity: 0; transform: translateY(0) scale(0); }
+            50% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(-100px) scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .flywheel-container {
+                width: 400px;
+                height: 400px;
+            }
+            
+            .segment {
+                width: 140px;
+                height: 140px;
+                padding: 15px;
+            }
+            
+            .center-circle {
+                width: 120px;
+                height: 120px;
+                font-size: 1em;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Flywheel</h1>
+        <p class="subtitle">Un ciclo auto-reforzante de mejora continua impulsado por IA</p>
+        
+        <div class="flywheel-container">
+            <div class="particles" id="particles"></div>
+            
+            <div class="flywheel" id="flywheel">
+                <div class="segment segment1">
+                    <div class="segment-title">Uso del Producto</div>
+                    <div class="segment-desc">Los usuarios interactúan generando datos</div>
+                </div>
+                
+                <div class="segment segment2">
+                    <div class="segment-title">Recopilación de Datos</div>
+                    <div class="segment-desc">Captura y análisis de comportamiento</div>
+                </div>
+                
+                <div class="segment segment3">
+                    <div class="segment-title">Mejora de IA</div>
+                    <div class="segment-desc">Los modelos aprenden y se optimizan</div>
+                </div>
+                
+                <div class="segment segment4">
+                    <div class="segment-title">Producto Mejorado</div>
+                    <div class="segment-desc">Mejor experiencia impulsa más uso</div>
+                </div>
+                
+                <div class="arrow arrow1">➜</div>
+                <div class="arrow arrow2">➜</div>
+                <div class="arrow arrow3">➜</div>
+                <div class="arrow arrow4">➜</div>
+            </div>
+            
+            <div class="center-circle">
+                Ventaja Competitiva
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn" onclick="speedUp()">Acelerar</button>
+            <button class="btn" onclick="reset()">Reiniciar</button>
+        </div>
+        
+        <div class="info-box">
+            <h3>¿Cómo funciona el Data Flywheel?</h3>
+            <p>
+                Al igual que un volante mecánico, el Data Flywheel requiere esfuerzo inicial para comenzar a girar, 
+                pero una vez que gana impulso, continúa girando con velocidad y potencia crecientes. Cada ciclo 
+                refuerza el siguiente: más usuarios → más datos → mejor IA → mejor producto → más usuarios. 
+                Este efecto compuesto crea una barrera de entrada significativa para los competidores y 
+                es la estrategia que empresas como Amazon han usado para dominar sus mercados.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const flywheel = document.getElementById('flywheel');
+        let speed = 0;
+
+        function speedUp() {
+            speed++;
+            if (speed === 1) {
+                flywheel.classList.add('fast');
+                createParticles();
+            } else if (speed >= 2) {
+                flywheel.classList.remove('fast');
+                flywheel.classList.add('faster');
+                createParticles();
+                createParticles();
+            }
+        }
+
+        function reset() {
+            speed = 0;
+            flywheel.classList.remove('fast', 'faster');
+        }
+
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const segments = document.querySelectorAll('.segment');
+            
+            segments.forEach(segment => {
+                const rect = segment.getBoundingClientRect();
+                const containerRect = particlesContainer.getBoundingClientRect();
+                
+                for (let i = 0; i < 5; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    particle.style.left = (rect.left - containerRect.left + rect.width / 2) + 'px';
+                    particle.style.top = (rect.top - containerRect.top + rect.height / 2) + 'px';
+                    particle.style.animationDelay = (i * 0.2) + 's';
+                    particlesContainer.appendChild(particle);
+                    
+                    setTimeout(() => particle.remove(), 3000);
+                }
+            });
+        }
+
+        // Efecto de partículas continuo
+        setInterval(() => {
+            if (speed > 0) {
+                createParticles();
+            }
+        }, 2000);
+    </script>
+    <p>Material elaborado por el profesor Sergio Gevatschnaider</p>
+</body>
+</html>

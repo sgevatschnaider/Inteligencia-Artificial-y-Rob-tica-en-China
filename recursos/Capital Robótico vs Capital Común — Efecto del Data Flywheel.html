@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Capital Robótico y Data Flywheel — Demostración Interactiva</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+  :root{
+    --bg-dark:#0a0e27; --bg-card:rgba(15,23,42,.6);
+    --text:#f1f5f9; --muted:#94a3b8;
+    --blue:#3b82f6; --purple:#a855f7; --green:#10b981; --cyan:#06b6d4; --orange:#f59e0b; --pink:#ec4899;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;background:var(--bg-dark);color:var(--text);min-height:100vh;overflow-x:hidden}
+  .bg{position:fixed;inset:0;opacity:.3;z-index:0;background:
+      radial-gradient(circle at 15% 40%, rgba(59,130,246,.35) 0%, transparent 45%),
+      radial-gradient(circle at 80% 80%, rgba(168,85,247,.35) 0%, transparent 45%),
+      radial-gradient(circle at 40% 20%, rgba(16,185,129,.2) 0%, transparent 45%);
+      animation:bgMove 20s ease-in-out infinite}
+  @keyframes bgMove{0%,100%{transform:translate(0,0)}30%{transform:translate(-15px,10px)}60%{transform:translate(20px,-12px)}}
+  .container{position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:20px}
+  header{padding:38px 20px;margin-bottom:28px;text-align:center;border-radius:24px;background:linear-gradient(135deg, rgba(59,130,246,.12), rgba(168,85,247,.12));border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px)}
+  header h1{font-size:clamp(26px,4.5vw,46px);font-weight:700;background:linear-gradient(135deg,var(--blue),var(--purple),var(--green));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}
+  header p{max-width:820px;margin:0 auto;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:410px 1fr;gap:20px}
+  @media (max-width:1100px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--bg-card);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:20px;backdrop-filter:blur(10px)}
+  .section{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .sicon{width:30px;height:30px;border-radius:8px;display:grid;place-items:center}
+  .stitle{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:700}
+  .row{margin:14px 0}
+  .label{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .label span{color:var(--muted);font-size:13px}
+  .val{font-variant-numeric:tabular-nums;font-weight:700}
+  input[type="range"]{width:100%;height:6px;border-radius:3px;background:rgba(255,255,255,.1);appearance:none}
+  input[type="range"]::-webkit-slider-thumb{appearance:none;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));box-shadow:0 0 8px rgba(59,130,246,.6)}
+  .inline{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .btn{padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(59,130,246,.12);color:#e5e7eb;cursor:pointer}
+  .small{font-size:12px;color:var(--muted)}
+  .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+  .kcard{border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:14px}
+  .kcard h6{font-size:12px;color:var(--muted);text-transform:uppercase;margin-bottom:6px}
+  .kval{font-size:26px;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .kval.g{background:linear-gradient(135deg,var(--green),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .kval.o{background:linear-gradient(135deg,var(--orange),#fbbf24);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hint{margin-top:12px;border-radius:12px;padding:12px;border:1px solid rgba(16,185,129,.25);background:rgba(16,185,129,.08);color:var(--muted);font-size:13px}
+  canvas{width:100%;height:400px;border-radius:12px}
+  .mini canvas{height:180px}
+  .pill{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="container">
+  <header>
+    <h1>⚡ Capital Robótico vs Capital Común — Efecto del Data Flywheel</h1>
+    <p>Interactúa con los parámetros y observa cómo el aprendizaje endógeno (<em>θ</em>) eleva la productividad del capital robótico <strong>(R·θ)</strong>.</p>
+  </header>
+
+  <div class="grid">
+    <!-- CONTROLES -->
+    <aside>
+      <div class="card">
+        <div class="section"><div class="sicon" style="background:linear-gradient(135deg,#3b82f6,#8b5cf6)">⚙️</div><div class="stitle">Parámetros del modelo</div></div>
+
+        <div class="row"><div class="label"><span>A — Escala</span><span class="val" id="A_val">1.00</span></div><input id="A" type="range" min="0.5" max="2" step="0.01" value="1"/></div>
+        <div class="row"><div class="label"><span>α — Trabajo (L)</span><span class="val" id="alpha_val">0.40</span></div><input id="alpha" type="range" min="0.05" max="0.8" step="0.01" value="0.40"/></div>
+        <div class="row"><div class="label"><span>β — Capital común (K)</span><span class="val" id="beta_val">0.30</span></div><input id="beta" type="range" min="0.05" max="0.8" step="0.01" value="0.30"/></div>
+        <div class="row"><div class="label"><span>γ — Capital robótico (R·θ)</span><span class="val" id="gamma_val">0.30</span></div><input id="gamma" type="range" min="0.05" max="0.8" step="0.01" value="0.30"/></div>
+
+        <div id="sum_note" class="pill" style="margin-top:6px;display:block">α+β+γ = 1.00 → Constantes a escala</div>
+
+        <div class="section" style="margin-top:18px"><div class="sicon" style="background:linear-gradient(135deg,#10b981,#06b6d4)">📊</div><div class="stitle">Dotaciones</div></div>
+        <div class="row"><div class="label"><span>L — Trabajo</span><span class="val" id="L_val">100</span></div><input id="L" type="range" min="1" max="200" step="1" value="100"/></div>
+        <div class="row"><div class="label"><span>K — Capital común</span><span class="val" id="K_val">100</span></div><input id="K" type="range" min="1" max="200" step="1" value="100"/></div>
+        <div class="row"><div class="label"><span>R — Capital robótico</span><span class="val" id="R_val">100</span></div><input id="R" type="range" min="1" max="200" step="1" value="100"/></div>
+
+        <div class="section" style="margin-top:18px"><div class="sicon" style="background:linear-gradient(135deg,#a855f7,#ec4899)">🔄</div><div class="stitle">Flywheel de datos</div></div>
+        <div class="row"><div class="label"><span>U — Uso (operaciones)</span><span class="val" id="U_val">40</span></div><input id="U" type="range" min="0" max="100" step="1" value="40"/></div>
+        <div class="row"><div class="label"><span>D — Diversidad (tareas)</span><span class="val" id="D_val">40</span></div><input id="D" type="range" min="0" max="100" step="1" value="40"/></div>
+        <div class="row"><div class="label"><span>β<sub>θ</sub> — Sensibilidad</span><span class="val" id="btheta_val">0.50</span></div><input id="btheta" type="range" min="0" max="1" step="0.01" value="0.50"/></div>
+
+        <!-- NUEVO: velocidad de aprendizaje -->
+        <div class="row"><div class="label"><span>λ — Velocidad de aprendizaje</span><span class="val" id="lambda_val">0.35</span></div><input id="lambda" type="range" min="0.05" max="1.50" step="0.01" value="0.35"/></div>
+
+        <div class="row"><div class="label"><span>T — Ciclos (acumulación)</span><span class="val" id="T_val">8</span></div><input id="T" type="range" min="1" max="20" step="1" value="8"/></div>
+
+        <div class="inline" style="margin-top:6px">
+          <label class="small"><input id="isolate" type="checkbox" /> Aislar aprendizaje (R constante)</label>
+          <label class="small"><input id="stacked" type="checkbox" checked /> Barra apilada: Δ por θ</label>
+        </div>
+
+        <div class="inline" style="margin-top:10px">
+          <button id="preset" class="btn">Preset: énfasis en aprendizaje</button>
+          <button id="reset" class="btn" style="background:rgba(16,185,129,.12)">Reset</button>
+        </div>
+
+        <div class="small" style="margin-top:10px">
+          <strong>θ(U,D;λ)</strong> = 1 + β<sub>θ</sub>·(1 − e<sup>−λ·(0.03U + 0.04D)</sup>).<br/>
+          Con λ bajo, la curva no se satura y T impacta más.
+        </div>
+      </div>
+    </aside>
+
+    <!-- RESULTADOS -->
+    <main>
+      <div class="card">
+        <div class="section"><div class="sicon" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">📈</div><div class="stitle">Producción y efecto del aprendizaje</div></div>
+
+        <div class="kpi">
+          <div class="kcard"><h6>θ₀ (actual)</h6><div class="kval" id="theta0">—</div></div>
+          <div class="kcard"><h6>θ₁ (tras T)</h6><div class="kval g" id="theta1">—</div></div>
+          <div class="kcard"><h6>Δθ</h6><div class="kval" id="dtheta">—</div></div>
+          <div class="kcard"><h6>ΔY por θ (puro)</h6><div class="kval g" id="gain_abs">—</div></div>
+          <div class="kcard"><h6>ΔY total (Y₂−Y₀)</h6><div class="kval o" id="gain_tot">—</div></div>
+          <div class="kcard"><h6>% explicado por θ</h6><div class="kval" id="share_theta">—</div></div>
+          <div class="kcard"><h6>MP<sub>R</sub> actual</h6><div class="kval" id="mpr0">—</div></div>
+          <div class="kcard"><h6>MP<sub>R</sub> post</h6><div class="kval" id="mpr1">—</div></div>
+        </div>
+
+        <div style="margin-top:10px">
+          <canvas id="chart" width="900" height="400" aria-label="Barras Y0, Y1, Y2 y MP_R"></canvas>
+        </div>
+
+        <div class="hint">
+          <strong>Lectura:</strong> Y₁ = más uso **sin** aprender. Y₂ = uso + **aprendizaje**. La parte apilada resalta la
+          ganancia pura del <em>data flywheel</em> (Δθ). Probá bajar λ o marcar “Aislar aprendizaje”.
+        </div>
+      </div>
+
+      <div class="card mini">
+        <div class="section"><div class="sicon" style="background:linear-gradient(135deg,#f59e0b,#eab308)">🧠</div><div class="stitle">Curva de aprendizaje</div></div>
+        <div class="small" style="margin-bottom:6px">Se grafica θ vs <code>x = λ·(0.03U + 0.04D)</code>. Puntos: estado actual (x₀) y tras T ciclos (x₁).</div>
+        <canvas id="thetaChart" width="900" height="180" aria-label="Curva de aprendizaje"></canvas>
+      </div>
+    </main>
+  </div>
+  
+  <!-- ATRIBUCIÓN AGREGADA -->
+  <footer style="text-align: center; padding-top: 20px; font-size: 13px; color: var(--muted);">
+    Elaborado por el profesor Sergio Gevastschnaider
+  </footer>
+</div>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const fmt = x => !isFinite(x) ? '—' : (Math.abs(x)>=1e6? (x/1e6).toFixed(2)+'M' : Math.abs(x)>=1e3? (x/1e3).toFixed(2)+'k' : x.toFixed(2));
+  const pct = x => (x>=0?'▲ ':'▼ ') + Math.abs(x).toFixed(2) + '%';
+
+  // Coeficientes base del término x = 0.03U + 0.04D
+  const aU = 0.03, aD = 0.04;
+
+  const ids = ["A","alpha","beta","gamma","L","K","R","U","D","btheta","lambda","T","isolate","stacked"];
+  const ctx = $("chart").getContext("2d");
+  const ctxT = $("thetaChart").getContext("2d");
+
+  function theta(U,D,bθ,λ){
+    const x = λ * (aU*U + aD*D);
+    return 1 + bθ*(1 - Math.exp(-x));
+  }
+  function prod(A,α,β,γ,L,K,R,th){
+    const Ls=Math.max(L,1e-12), Ks=Math.max(K,1e-12), Rob=Math.max(R*th,1e-12);
+    return A*Math.pow(Ls,α)*Math.pow(Ks,β)*Math.pow(Rob,γ);
+  }
+  function MPK(A,α,β,γ,L,K,R,th){ const Y = prod(A,α,β,γ,L,K,R,th); return β*Y/Math.max(K,1e-9); }
+  function MPR(A,α,β,γ,L,K,R,th){ const Y = prod(A,α,β,γ,L,K,R,th); return γ*Y/Math.max(R,1e-9); }
+
+  function wrap(text,max){ const w=text.split(' '),o=[]; let c=[]; for(const t of w){ if((c.join(' ').length+t.length+1)>max){o.push(c.join(' ')); c=[t];} else c.push(t);} if(c.length)o.push(c.join(' ')); return o.slice(0,3); }
+
+  function drawBars(Y0,Yuse,Y2,MPR0,MPR1,overlay,stacked){
+    // Responsivo
+    const canvas = $("chart"); const parent = canvas.parentElement;
+    const W = canvas.width = Math.max(620, parent.clientWidth - 32);
+    const H = canvas.height = 400;
+    ctx.clearRect(0,0,W,H);
+
+    // Grid
+    ctx.strokeStyle='rgba(255,255,255,.06)'; ctx.lineWidth=1;
+    for(let i=0;i<=5;i++){ const y=Math.round((H-90)*(i/5))+30; ctx.beginPath(); ctx.moveTo(50,y); ctx.lineTo(W-20,y); ctx.stroke(); }
+
+    const groups = [
+      {label:'Y₀: Base', value:Y0,             color:'#64748b'},
+      {label:'Y₁: +uso SIN aprendizaje', value:Yuse,           color:'#f59e0b'},
+      {label:'Y₂: +uso + aprendizaje (θ)', value:Y2,           color:'#10b981', overlay: overlay},
+      {label:'MP_R actual', value:MPR0,        color:'#a855f7'},
+      {label:'MP_R post-flywheel', value:MPR1, color:'#ec4899'}
+    ];
+    const maxVal = Math.max(...groups.map(g=>g.value)) * 1.2 || 1;
+    const mL=50, mB=54, mT=20, gap=20;
+    const barW=(W - mL - 20 - gap*(groups.length-1))/groups.length;
+
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+
+    groups.forEach((g,i)=>{
+      const x = mL + i*(barW+gap);
+      const h = (g.value/maxVal)*(H - mT - mB);
+      const y = H - mB - h;
+
+      // Sombra
+      ctx.fillStyle='rgba(0,0,0,.35)'; ctx.fillRect(x+4,y+4,barW,h);
+
+      if(i===2 && stacked && g.overlay>0){
+        // base (uso)
+        const base = g.value - g.overlay;
+        const hb = (base/maxVal)*(H - mT - mB);
+        const yb = H - mB - hb;
+
+        const gradB = ctx.createLinearGradient(x,yb,x,yb+hb);
+        gradB.addColorStop(0,'#0ea5e9'); gradB.addColorStop(1,'#0ea5e946');
+        ctx.fillStyle = gradB; ctx.fillRect(x,yb,barW,hb);
+        ctx.strokeStyle='#0ea5e9'; ctx.lineWidth=2; ctx.strokeRect(x,yb,barW,hb);
+
+        // overlay (aprendizaje)
+        const ho = h - hb, yo = yb - ho;
+        const gradO = ctx.createLinearGradient(x,yo,x,yo+ho);
+        gradO.addColorStop(0,'#22d3ee'); gradO.addColorStop(1,'#22d3ee66');
+        ctx.fillStyle = gradO; ctx.fillRect(x,yo,barW,ho);
+        ctx.strokeStyle='#22d3ee'; ctx.lineWidth=2; ctx.strokeRect(x,yo,barW,ho);
+
+        // Valor
+        ctx.fillStyle='#f1f5f9'; ctx.font='bold 13px Space Grotesk';
+        ctx.fillText(fmt(g.value), x+barW/2, yo-12);
+
+        // Etiqueta
+        ctx.fillStyle='#94a3b8'; ctx.font='11px Space Grotesk';
+        wrap(g.label,18).forEach((ln,k)=>ctx.fillText(ln, x+barW/2, H - mB + 16 + k*13));
+        // Bracket Δθ
+        ctx.strokeStyle='#22d3ee'; ctx.lineWidth=1.5;
+        ctx.beginPath(); ctx.moveTo(x+barW+6, yo); ctx.lineTo(x+barW+6, yo+ho); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(x+barW+6, yo); ctx.lineTo(x+barW+12, yo);
+        ctx.moveTo(x+barW+6, yo+ho); ctx.lineTo(x+barW+12, yo+ho); ctx.stroke();
+        ctx.fillStyle='#22d3ee'; ctx.font='bold 11px Space Grotesk';
+        ctx.fillText('Δ por θ', x+barW+28, yo+ho/2);
+
+      } else {
+        const grad = ctx.createLinearGradient(x,y,x,y+h);
+        grad.addColorStop(0,g.color); grad.addColorStop(1,g.color+'66');
+        ctx.fillStyle=grad; ctx.fillRect(x,y,barW,h);
+        ctx.strokeStyle=g.color; ctx.lineWidth=2; ctx.strokeRect(x,y,barW,h);
+
+        ctx.fillStyle='#f1f5f9'; ctx.font='bold 13px Space Grotesk';
+        ctx.fillText(fmt(g.value), x+barW/2, y-12);
+        ctx.fillStyle='#94a3b8'; ctx.font='11px Space Grotesk';
+        wrap(g.label,18).forEach((ln,k)=>ctx.fillText(ln, x+barW/2, H - mB + 16 + k*13));
+      }
+    });
+  }
+
+  function drawThetaCurve(bθ, λ, U0, D0, U1, D1){
+    const canvas = $("thetaChart"); const parent = canvas.parentElement;
+    const W = canvas.width = Math.max(620, parent.clientWidth - 32); const H = canvas.height = 180;
+    ctxT.clearRect(0,0,W,H);
+
+    const x0 = λ*(aU*U0 + aD*D0), x1 = λ*(aU*U1 + aD*D1);
+    const xmax = Math.max(0.6, x1)*1.25;
+
+    // Eje
+    ctxT.strokeStyle='rgba(255,255,255,.12)'; ctxT.lineWidth=1;
+    ctxT.beginPath(); ctxT.moveTo(50,H-28); ctxT.lineTo(W-20,H-28); ctxT.stroke();
+
+    // Curva
+    ctxT.strokeStyle='#60a5fa'; ctxT.lineWidth=2;
+    ctxT.beginPath();
+    for(let i=0;i<=260;i++){
+      const x = (i/260)*xmax;
+      const yθ = 1 + bθ*(1 - Math.exp(-x));
+      const X = 50 + (W-80)*(x/xmax);
+      const Y = (H-50) - (H-90)*((yθ-1)/Math.max(bθ,1e-6));
+      if(i===0) ctxT.moveTo(X,Y); else ctxT.lineTo(X,Y);
+    }
+    ctxT.stroke();
+
+    // Puntos x0, x1
+    const mark = (x,color,label,θv) => {
+      const X = 50 + (W-80)*(x/xmax);
+      const Y = (H-50) - (H-90)*((θv-1)/Math.max(bθ,1e-6));
+      ctxT.fillStyle=color; ctxT.strokeStyle=color;
+      ctxT.beginPath(); ctxT.arc(X,Y,4,0,Math.PI*2); ctxT.fill();
+      ctxT.font='11px Space Grotesk'; ctxT.fillStyle=color;
+      ctxT.fillText(label, X+8, Y-10);
+      ctxT.fillText('θ='+θv.toFixed(3), X+8, Y+6);
+    };
+    const θ0 = 1 + bθ*(1 - Math.exp(-x0));
+    const θ1 = 1 + bθ*(1 - Math.exp(-x1));
+    mark(x0,'#f59e0b','x₀',θ0);
+    mark(x1,'#22d3ee','x₁',θ1);
+  }
+
+  function sumNote(α,β,γ){
+    const s = α+β+γ, tol = .02;
+    const el = $("sum_note");
+    let txt = `α+β+γ = ${s.toFixed(2)} → `;
+    if(s > 1+tol) txt += 'Crecientes a escala';
+    else if(s < 1-tol) txt += 'Decrecientes a escala';
+    else txt += 'Constantes a escala';
+    el.textContent = txt;
+  }
+
+  function updateVals(){
+    $("A_val").textContent=(+A.value).toFixed(2);
+    $("alpha_val").textContent=(+alpha.value).toFixed(2);
+    $("beta_val").textContent=(+beta.value).toFixed(2);
+    $("gamma_val").textContent=(+gamma.value).toFixed(2);
+    $("L_val").textContent= (+L.value).toFixed(0);
+    $("K_val").textContent= (+K.value).toFixed(0);
+    $("R_val").textContent= (+R.value).toFixed(0);
+    $("U_val").textContent= (+U.value).toFixed(0);
+    $("D_val").textContent= (+D.value).toFixed(0);
+    $("btheta_val").textContent=(+btheta.value).toFixed(2);
+    $("lambda_val").textContent=(+lambda.value).toFixed(2);
+    $("T_val").textContent=(+T.value).toFixed(0);
+  }
+
+  // Entradas
+  const A=$("A"), alpha=$("alpha"), beta=$("beta"), gamma=$("gamma"),
+        L=$("L"), K=$("K"), R=$("R"),
+        U=$("U"), D=$("D"), btheta=$("btheta"), lambda=$("lambda"), T=$("T"),
+        isolate=$("isolate"), stacked=$("stacked");
+
+  function update(){
+    updateVals(); sumNote(+alpha.value,+beta.value,+gamma.value);
+
+    const A0=+A.value, α=+alpha.value, β=+beta.value, γ=+gamma.value;
+    const L0=+L.value, K0=+K.value, R0=+R.value;
+    const U0=+U.value, D0=+D.value, bθ=+btheta.value, λ=+lambda.value, cyc=+T.value;
+
+    // Multiplicadores: +15% de uso y crecimiento suave por ciclos g(T)=1+0.25*(T-1)
+    const useBump = 1.15;
+    const gT = 1 + 0.25*(cyc - 1);
+
+    const θ0 = theta(U0,D0,bθ,λ);
+    const R1 = isolate.checked ? R0 : R0*useBump;
+    const U1 = U0*useBump*gT, D1 = D0*useBump*gT;
+    const θ1 = theta(U1,D1,bθ,λ);
+
+    // Producciones
+    const Y0   = prod(A0,α,β,γ,L0,K0,R0,θ0);
+    const Yuse = prod(A0,α,β,γ,L0,K0,R1,θ0);   // +uso sin aprendizaje
+    const Y2   = prod(A0,α,β,γ,L0,K0,R1,θ1);   // +uso + aprendizaje
+
+    // Productividades marginales
+    const MPR0 = MPR(A0,α,β,γ,L0,K0,R0,θ0);
+    const MPR1 = MPR(A0,α,β,γ,L0,K0,R1,θ1);
+
+    // Δ y KPIs
+    const dY_total = Y2 - Y0;
+    const dY_theta = Y2 - Yuse; // overlay puro por aprendizaje
+    const share    = dY_total!==0 ? (dY_theta/dY_total)*100 : 0;
+
+    // KPIs
+    $("theta0").textContent = θ0.toFixed(3);
+    $("theta1").textContent = θ1.toFixed(3);
+    $("dtheta").textContent = (θ1-θ0>=0?'+':'') + (θ1-θ0).toFixed(3);
+    $("gain_abs").textContent = fmt(dY_theta) + " (" + pct( (Y2/Yuse-1)*100 ) + ")";
+    $("gain_tot").textContent = fmt(dY_total) + " (" + pct( (Y2/Y0-1)*100 ) + ")";
+    $("share_theta").textContent = (share>=0?'+':'') + share.toFixed(2) + "%";
+    $("mpr0").textContent = fmt(MPR0);
+    $("mpr1").textContent = fmt(MPR1);
+
+    // Dibujos
+    drawBars(Y0, Yuse, Y2, MPR0, MPR1, dY_theta, stacked.checked);
+    drawThetaCurve(bθ, λ, U0, D0, U1, D1);
+  }
+
+  // Listeners
+  ids.forEach(id=>{
+    const el=$(id); if(!el) return;
+    el.addEventListener('input',update); el.addEventListener('change',update);
+  });
+  window.addEventListener('resize',update);
+
+  // Botones
+  $("preset").addEventListener('click', ()=>{
+    U.value=10; D.value=10; btheta.value=0.9; gamma.value=0.45; lambda.value=0.6;
+    T.value=12; isolate.checked=true; stacked.checked=true; update();
+  });
+  $("reset").addEventListener('click', ()=>{
+    A.value=1; alpha.value=0.4; beta.value=0.3; gamma.value=0.3;
+    L.value=100; K.value=100; R.value=100; U.value=40; D.value=40; btheta.value=0.5;
+    lambda.value=0.35; T.value=8; isolate.checked=false; stacked.checked=true; update();
+  });
+
+  // Init
+  update();
+})();
+</script>
+</body>
+</html>
