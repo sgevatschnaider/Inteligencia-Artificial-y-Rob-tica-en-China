@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Contributors Welcome](https://img.shields.io/badge/contributors-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Last Updated](https://img.shields.io/badge/last%20updated-2024-blue.svg)](#)
+[![Last Updated](https://img.shields.io/badge/last%20updated-2025-blue.svg)](#)
 
 Una base de conocimiento integral y de código abierto que explora los rápidos avances de China en inteligencia artificial y robótica, abarcando políticas, industria, ética e innovación tecnológica.
 
