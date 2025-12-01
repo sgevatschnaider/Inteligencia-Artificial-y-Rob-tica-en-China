@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>IA en Salud en China: Estado y Evolución 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Habilitar modo oscuro manual
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Crimson Text', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'sage': {
+                            50: '#f6f7f6',
+                            100: '#e3e8e3',
+                            200: '#c7d2c7',
+                            300: '#a4b5a4',
+                            400: '#7d947d',
+                            500: '#5f7a5f',
+                            600: '#4a614a',
+                            700: '#3e503e',
+                            800: '#344234',
+                            900: '#2c372c',
+                            950: '#1a211a',
+                        },
+                        'stone': {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            400: '#a8a29e',
+                            500: '#78716c',
+                            600: '#57534e',
+                            700: '#44403c',
+                            800: '#292524',
+                            900: '#1c1917',
+                            950: '#0c0a09',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-mask {
+            background: linear-gradient(135deg, rgba(95, 122, 95, 0.1) 0%, rgba(120, 113, 108, 0.15) 100%);
+        }
+        
+        /* Ajuste para modo oscuro en gradient-mask */
+        html.dark .gradient-mask {
+            background: linear-gradient(135deg, rgba(95, 122, 95, 0.2) 0%, rgba(120, 113, 108, 0.25) 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #3e503e 0%, #44403c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        html.dark .text-gradient {
+            background: linear-gradient(135deg, #a4b5a4 0%, #d6d3d1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .citation-link {
+            color: #5f7a5f;
+            text-decoration: underline;
+            text-decoration-color: #a4b5a4;
+            transition: all 0.2s ease;
+        }
+
+        html.dark .citation-link {
+            color: #7d947d;
+            text-decoration-color: #5f7a5f;
+        }
+        
+        .citation-link:hover {
+            color: #3e503e;
+            text-decoration-color: #5f7a5f;
+        }
+
+        html.dark .citation-link:hover {
+            color: #a4b5a4;
+        }
+        
+        .toc-fixed {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            width: 280px;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(95, 122, 95, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        html.dark .toc-fixed {
+            background: rgba(28, 25, 23, 0.95); /* stone-900 */
+            border: 1px solid rgba(125, 148, 125, 0.2);
+        }
+        
+        .main-content {
+            margin-left: 320px;
+            padding-right: 2rem;
+            transition: margin 0.3s;
+        }
+        
+        @media (max-width: 1280px) {
+            .toc-fixed {
+                position: relative;
+                width: 100%;
+                margin-bottom: 2rem;
+                max-height: none;
+                top: 0;
+                left: 0;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .toc-fixed {
+                display: none;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding-right: 0;
+            }
+        }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .hero-text {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(95, 122, 95, 0.2) 0%, rgba(120, 113, 108, 0.3) 100%);
+            z-index: 5;
+        }
+
+        /* Mermaid Container Styles */
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        /* En modo oscuro, mantenemos el fondo claro o gris muy suave para que los gráficos (que suelen ser oscuros) se vean bien */
+        html.dark .mermaid-container {
+            background: #e7e5e4; /* stone-200 */
+            border-color: #57534e;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container.zoomed .mermaid {
+            height: 100%;
+            width: 100%;
+            cursor: grab;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        html.dark .mermaid-controls {
+            background: rgba(41, 37, 36, 0.95);
+            border: 1px solid #57534e;
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        html.dark .mermaid-control-btn {
+            background: #44403c;
+            border-color: #57534e;
+            color: #e7e5e4;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+        
+        html.dark .mermaid-control-btn:hover {
+            background: #292524;
+            color: #60a5fa;
+        }
+
+        .mermaid-control-btn:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 1024px) {
+            .mermaid-control-btn:not(.reset-zoom) {
+                display: none;
+            }
+            .mermaid-controls {
+                top: auto;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+  <base target="_blank">
+</head>
+
+  <body class="bg-stone-50 dark:bg-stone-950 text-stone-800 dark:text-stone-200 font-sans leading-relaxed transition-colors duration-300">
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="fixed top-4 right-4 z-[60] p-3 bg-sage-700 dark:bg-sage-600 text-white rounded-full shadow-lg hover:bg-sage-600 dark:hover:bg-sage-500 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sage-500" aria-label="Cambiar tema">
+        <i class="fas fa-moon text-lg w-5 h-5 flex items-center justify-center"></i>
+    </button>
+
+    <!-- Fixed Table of Contents -->
+    <div class="toc-fixed">
+      <h3 class="font-serif text-lg font-semibold text-sage-700 dark:text-sage-300 mb-4">Contenido</h3>
+      <nav class="space-y-2">
+        <a class="block text-sm text-stone-600 dark:text-stone-400 hover:text-sage-600 dark:hover:text-sage-300 transition-colors py-1" href="#executive-summary">Resumen Ejecutivo</a>
+        <a class="block text-sm text-stone-600 dark:text-stone-400 hover:text-sage-600 dark:hover:text-sage-300 transition-colors py-1" href="#national-strategy">Estrategia Nacional de IA</a>
+        <a class="block text-sm text-stone-600 dark:text-stone-400 hover:text-sage-600 dark:hover:text-sage-300 transition-colors py-1" href="#market-analysis">Análisis de Mercado</a>
+        <a class="block text-sm text-stone-600 dark:text-stone-400 hover:text-sage-600 dark:hover:text-sage-300 transition-colors py-1" href="#intelligent-diagnostics">Diagnóstico Inteligente</a>
+        <a class="block text-sm text-stone-600 dark:text-stone-400 hover:text-sage-600 dark:hover:text-sage-300 transition-colors py-1" href="#drug-discovery">Descubrimiento de Fármacos</a>
+        <a class="block text-sm text-stone-600 dark:text-stone-400 hover:text-sage-600 dark:hover:text-sage-300 transition-colors py-1" href="#smart-hospitals">Hospitales Inteligentes</a>
+        <a class="block text-sm text-stone-600 dark:text-stone-400 hover:text-sage-600 dark:hover:text-sage-300 transition-colors py-1" href="#surgical-robotics">Robótica Quirúrgica</a>
+        <a class="block text-sm text-stone-600 dark:text-stone-400 hover:text-sage-600 dark:hover:text-sage-300 transition-colors py-1" href="#global-comparison">Comparación Global</a>
+        <a class="block text-sm text-stone-600 dark:text-stone-400 hover:text-sage-600 dark:hover:text-sage-300 transition-colors py-1" href="#risks-challenges">Riesgos y Desafíos</a>
+        <a class="block text-sm text-stone-600 dark:text-stone-400 hover:text-sage-600 dark:hover:text-sage-300 transition-colors py-1" href="#future-projections">Proyecciones Futuras</a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Hero Section -->
+      <section class="mb-16 pt-8">
+        <div class="bento-grid">
+          <div class="hero-text">
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-gradient leading-tight mb-6">
+              <em>IA en Salud en China:</em>
+              <br/>
+              Estado y Evolución 2025
+            </h1>
+            <p class="text-xl text-stone-600 dark:text-stone-300 mb-8 leading-relaxed">
+              Un análisis integral de la integración estratégica de la inteligencia artificial en la atención médica de China, desde mandatos gubernamentales hasta dinámicas de mercado y proyecciones futuras.
+            </p>
+            <div class="flex items-center space-x-6 text-sm text-stone-500 dark:text-stone-400">
+              <span class="flex items-center">
+                <i class="fas fa-calendar-alt mr-2"></i>
+                Noviembre 2025
+              </span>
+              <span class="flex items-center">
+                <i class="fas fa-chart-line mr-2"></i>
+                Análisis de Mercado
+              </span>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img alt="Tecnología de inteligencia artificial en hospital chino" class="w-full h-80 object-cover" src="https://kimi-web-img.moonshot.cn/img/apicms.thestar.com.my/d672dba5d161cb4c7fcfb7fe41a733e2fbf2a500.webp" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Executive Summary -->
+      <section class="mb-20" id="executive-summary">
+        <div class="bg-white dark:bg-stone-900 rounded-2xl p-8 shadow-sm border border-sage-100 dark:border-sage-800 transition-colors">
+          <h2 class="font-serif text-3xl font-semibold text-sage-700 dark:text-sage-300 mb-8">Resumen Ejecutivo</h2>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="space-y-6">
+              <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200">Panorama General</h3>
+              <p class="text-stone-600 dark:text-stone-300 leading-relaxed">
+                El sector de la salud en China está experimentando una transformación profunda impulsada por la integración estratégica de la IA. Esto representa una reingeniería fundamental de los sistemas de prestación de atención médica, diagnóstico y gestión, posicionando a China como líder mundial en IA para la salud.
+              </p>
+
+              <div class="bg-sage-50 dark:bg-sage-900 p-6 rounded-lg">
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 mb-3">Implicaciones Estratégicas Clave</h4>
+                <ul class="space-y-2 text-sm text-stone-600 dark:text-stone-300">
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-sage-500 mt-1 mr-2 text-xs"></i>
+                    <span>Estrategia Nacional de IA en Salud lanzada en Nov 2025</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-sage-500 mt-1 mr-2 text-xs"></i>
+                    <span>Objetivo de diagnóstico asistido por IA universal para 2030</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-sage-500 mt-1 mr-2 text-xs"></i>
+                    <span>Inversión gubernamental multimillonaria</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200">Trayectoria de Crecimiento del Mercado</h3>
+
+              <div class="space-y-4">
+                <div class="flex justify-between items-center p-4 bg-stone-50 dark:bg-stone-800 rounded-lg">
+                  <span class="text-stone-600 dark:text-stone-400">Valor de Mercado 2023</span>
+                  <span class="font-semibold text-sage-700 dark:text-sage-300">$1.59 mil millones</span>
+                </div>
+                <div class="flex justify-between items-center p-4 bg-stone-50 dark:bg-stone-800 rounded-lg">
+                  <span class="text-stone-600 dark:text-stone-400">Proyección 2025</span>
+                  <span class="font-semibold text-sage-700 dark:text-sage-300">$1.93 mil millones</span>
+                </div>
+                <div class="flex justify-between items-center p-4 bg-sage-100 dark:bg-sage-800/60 rounded-lg">
+                  <span class="text-stone-600 dark:text-stone-400">Proyección 2035</span>
+                  <span class="font-bold text-sage-800 dark:text-sage-200">$22.26 mil millones</span>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-sage-50 to-stone-50 dark:from-sage-900 dark:to-stone-900 p-6 rounded-lg">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-stone-600 dark:text-stone-400">TCAC (2025-2035)</span>
+                  <span class="text-2xl font-bold text-sage-800 dark:text-sage-200">27.72%</span>
+                </div>
+                <p class="text-sm text-stone-500 dark:text-stone-500">Tasa de Crecimiento Anual Compuesto</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- National AI Healthcare Strategy -->
+      <section class="mb-20" id="national-strategy">
+        <div class="bg-white dark:bg-stone-900 rounded-2xl p-8 shadow-sm border border-sage-100 dark:border-sage-800 transition-colors">
+          <h2 class="font-serif text-3xl font-semibold text-sage-700 dark:text-sage-300 mb-8">Estrategia Nacional de IA en Salud</h2>
+
+          <div class="mb-12">
+            <div class="gradient-mask p-8 rounded-xl mb-8">
+              <h3 class="font-serif text-2xl font-semibold text-stone-800 dark:text-stone-200 mb-4">
+                Universalización del Diagnóstico Asistido por IA para 2030
+              </h3>
+              <p class="text-stone-600 dark:text-stone-300 leading-relaxed mb-6">
+                La histórica <a class="citation-link" href="https://english.www.gov.cn/news/202511/04/content_WS690a0437c6d00ca5f9a0751a.html">Estrategia Nacional de Salud con IA</a> de China, revelada el 4 de noviembre de 2025, establece un objetivo ambicioso para lograr un diagnóstico inteligente de nivel básico universal en todas las instituciones médicas de atención primaria para 2030.
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-stone-800 bg-opacity-80 p-6 rounded-lg">
+                  <h4 class="font-semibold text-sage-800 dark:text-sage-200 mb-3">Transformación de la Atención Primaria</h4>
+                  <ul class="space-y-2 text-sm text-stone-600 dark:text-stone-300">
+                    <li>• Integración de clínicas comunitarias y de aldea</li>
+                    <li>• Herramientas de IA para gestión de enfermedades comunes</li>
+                    <li>• Automatización de revisión de recetas</li>
+                    <li>• Sistemas de seguimiento de pacientes</li>
+                  </ul>
+                </div>
+                <div class="bg-white dark:bg-stone-800 bg-opacity-80 p-6 rounded-lg">
+                  <h4 class="font-semibold text-sage-800 dark:text-sage-200 mb-3">Requisitos de Grado Hospitalario</h4>
+                  <ul class="space-y-2 text-sm text-stone-600 dark:text-stone-300">
+                    <li>• Todos los hospitales de Grado 2+ deben adoptar IA</li>
+                    <li>• Diagnóstico inteligente por imágenes médicas</li>
+                    <li>• Apoyo a la toma de decisiones clínicas</li>
+                    <li>• Análisis multi-condición de órganos</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200 mb-6">Plan de Implementación por Fases</h3>
+
+              <div class="space-y-4">
+                <div class="flex items-start space-x-4 p-4 border-l-4 border-sage-400 bg-sage-50 dark:bg-sage-900">
+                  <div class="bg-sage-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold">1</div>
+                  <div>
+                    <h4 class="font-semibold text-stone-800 dark:text-stone-200">Planificación de Infraestructura</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-sm">Nov 2025 - Mar 2026: Establecimiento de plataforma nacional de información de salud</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-4 p-4 border-l-4 border-sage-400 bg-sage-50 dark:bg-sage-900">
+                  <div class="bg-sage-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold">2</div>
+                  <div>
+                    <h4 class="font-semibold text-stone-800 dark:text-stone-200">Implementación Piloto</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-sm">Abr - Dic 2026: 50 hospitales y 500 clínicas municipales probando herramientas de IA</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-4 p-4 border-l-4 border-sage-400 bg-sage-50 dark:bg-sage-900">
+                  <div class="bg-sage-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold">3</div>
+                  <div>
+                    <h4 class="font-semibold text-stone-800 dark:text-stone-200">Integración Nacional</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-sm">Para 2027: Integración completa de bases de datos y disponibilidad nacional de herramientas de IA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-stone-50 dark:bg-stone-800 p-6 rounded-lg">
+            <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200 mb-4">Marco de Inversión Gubernamental</h3>
+            <div class="grid md:grid-cols-3 gap-4">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-sage-700 dark:text-sage-300 mb-2">$2-3 mil M</div>
+                <p class="text-sm text-stone-600 dark:text-stone-400">Presupuesto Estratégico a 5 Años</p>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-sage-700 dark:text-sage-300 mb-2">$15.7 mil M</div>
+                <p class="text-sm text-stone-600 dark:text-stone-400">Gasto Total en IA 2024</p>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-sage-700 dark:text-sage-300 mb-2">$1.4 Billones</div>
+                <p class="text-sm text-stone-600 dark:text-stone-400">Inversión en IA proyectada para 2030</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Market Analysis -->
+      <section class="mb-20" id="market-analysis">
+        <div class="bg-white dark:bg-stone-900 rounded-2xl p-8 shadow-sm border border-sage-100 dark:border-sage-800 transition-colors">
+          <h2 class="font-serif text-3xl font-semibold text-sage-700 dark:text-sage-300 mb-8">Análisis de Mercado y Actores Clave</h2>
+
+          <div class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-stone-800 dark:text-stone-200 mb-6">Líderes Tecnológicos</h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div class="bg-gradient-to-br from-sage-50 to-stone-50 dark:from-sage-900 dark:to-stone-900 p-6 rounded-lg">
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 mb-3">Ping An Good Doctor</h4>
+                <p class="text-sm text-stone-600 dark:text-stone-300 mb-3">Asistente médico IA "Ping An Xin Yi" con 99% de precisión en orientación al paciente</p>
+                <div class="text-xs text-sage-600 dark:text-sage-400">
+                  <a class="citation-link" href="https://healthtechasia.co/ping-an-good-doctor-launches-ai-powered-digital-twin-service-ping-an-xin-yi/">Fuente</a>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-sage-50 to-stone-50 dark:from-sage-900 dark:to-stone-900 p-6 rounded-lg">
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 mb-3">Alibaba Health</h4>
+                <p class="text-sm text-stone-600 dark:text-stone-300 mb-3">Modelo CancerUniT que diagnostica 8 tipos de cáncer en un solo análisis</p>
+                <div class="text-xs text-sage-600 dark:text-sage-400">
+                  <a class="citation-link" href="https://kr-asia.com/alibabas-damo-academy-introduces-ai-model-that-can-diagnose-eight-cancer-types-in-a-single-analysis">Fuente</a>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-sage-50 to-stone-50 dark:from-sage-900 dark:to-stone-900 p-6 rounded-lg">
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 mb-3">Tencent Healthcare</h4>
+                <p class="text-sm text-stone-600 dark:text-stone-300 mb-3">Plataforma Tencent Miying desplegada en más de 100 hospitales</p>
+                <div class="text-xs text-sage-600 dark:text-sage-400">
+                  <a class="citation-link" href="https://www.kellymedgroup.com/news/tencent-launches-ai-based-medical-imaging-and-data-management-appliance/">Fuente</a>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-sage-50 to-stone-50 dark:from-sage-900 dark:to-stone-900 p-6 rounded-lg">
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 mb-3">Baidu</h4>
+                <p class="text-sm text-stone-600 dark:text-stone-300 mb-3">Plataforma Baidu Brain para imágenes médicas y descubrimiento de fármacos</p>
+                <div class="text-xs text-sage-600 dark:text-sage-400">
+                  <a class="citation-link" href="https://english.ckgsb.edu.cn/knowledge/article/ai-applications-in-china-healthcare-system/">Fuente</a>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-sage-50 to-stone-50 dark:from-sage-900 dark:to-stone-900 p-6 rounded-lg">
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 mb-3">Huawei</h4>
+                <p class="text-sm text-stone-600 dark:text-stone-300 mb-3">Solución de Imágenes Digitales e Inteligentes y robótica quirúrgica</p>
+                <div class="text-xs text-sage-600 dark:text-sage-400">
+                  <a class="citation-link" href="https://e.huawei.com/id/industries/healthcare/medical-imaging">Fuente</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <h3 class="font-serif text-2xl font-semibold text-stone-800 dark:text-stone-200 mb-6">Principales Instituciones de Investigación</h3>
+
+            <div class="space-y-6">
+              <div class="border border-sage-200 dark:border-sage-800 rounded-lg p-6">
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 mb-3">Universidad de Tsinghua</h4>
+                <p class="text-stone-600 dark:text-stone-300 mb-4">
+                  Desarrolló el primer <a class="citation-link" href="https://www.globaltimes.cn/page/202405/1313235.shtml">"Hospital de Agentes"</a> del mundo:
+                  un hospital virtual totalmente autónomo gestionado por agentes de IA, logrando un 93.06% de precisión en el conjunto de datos MedQA.
+                </p>
+                <div class="flex items-center text-sm text-sage-600 dark:text-sage-400">
+                  <span class="bg-sage-100 dark:bg-sage-900 px-3 py-1 rounded-full">42 médicos IA</span>
+                  <span class="mx-2">•</span>
+                  <span class="bg-sage-100 dark:bg-sage-900 px-3 py-1 rounded-full">21 especialidades</span>
+                </div>
+              </div>
+
+              <div class="border border-sage-200 dark:border-sage-800 rounded-lg p-6">
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 mb-3">Peking Union Medical College Hospital</h4>
+                <p class="text-stone-600 dark:text-stone-300 mb-4">
+                  Líder en la evaluación IA de trastornos neurológicos con más de
+                  <a class="citation-link" href="http://www.ecns.cn/news/cns-wire/2025-02-24/detail-ihepcskv6104225.shtml">100,000 evaluaciones neurológicas</a>
+                  completadas utilizando sistemas de IA para Parkinson y Alzheimer.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Intelligent Diagnostics -->
+      <section class="mb-20" id="intelligent-diagnostics">
+        <div class="bg-white dark:bg-stone-900 rounded-2xl p-8 shadow-sm border border-sage-100 dark:border-sage-800 transition-colors">
+          <h2 class="font-serif text-3xl font-semibold text-sage-700 dark:text-sage-300 mb-8">Diagnóstico Inteligente Potenciado por IA</h2>
+
+          <div class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-stone-800 dark:text-stone-200 mb-6">Sistemas de IA para Imágenes Médicas</h3>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <img alt="Sistema de imágenes médicas con IA en hospital chino" class="w-full h-64 object-cover rounded-lg mb-4" src="https://kimi-web-img.moonshot.cn/img/www.forwardpathway.com/b03730b4f6b31f01c4ff0a8117709d1533e88a5a.jpg" referrerpolicy="no-referrer"/>
+
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 mb-3">Panorama del Mercado</h4>
+                <p class="text-stone-600 dark:text-stone-300 text-sm leading-relaxed">
+                  Más de <a class="citation-link" href="https://www.worldhealthexpo.com/insights/ai-automation/china-s-medical-artificial-intelligence-market-continues-to-grow">150 proveedores nacionales</a>
+                  compitiendo en IA de imágenes médicas, con la NMPA aprobando 59 dispositivos de Clase III para 2023.
+                  Las imágenes médicas representan el 67% de todos los dispositivos médicos de IA aprobados.
+                </p>
+              </div>
+
+              <div class="space-y-4">
+                <div class="bg-sage-50 dark:bg-sage-900 p-4 rounded-lg">
+                  <h5 class="font-semibold text-sage-800 dark:text-sage-200 text-sm mb-2">Detección de Nódulos Pulmonares</h5>
+                  <div class="flex justify-between text-xs">
+                    <span class="text-stone-600 dark:text-stone-400">AUC:</span>
+                    <span class="font-semibold text-stone-800 dark:text-stone-200">0.848</span>
+                  </div>
+                  <div class="flex justify-between text-xs">
+                    <span class="text-stone-600 dark:text-stone-400">Sensibilidad:</span>
+                    <span class="font-semibold text-stone-800 dark:text-stone-200">82.9%</span>
+                  </div>
+                </div>
+
+                <div class="bg-sage-50 dark:bg-sage-900 p-4 rounded-lg">
+                  <h5 class="font-semibold text-sage-800 dark:text-sage-200 text-sm mb-2">Cribado de Cáncer de Esófago</h5>
+                  <div class="flex justify-between text-xs">
+                    <span class="text-stone-600 dark:text-stone-400">Precisión:</span>
+                    <span class="font-semibold text-stone-800 dark:text-stone-200">90%</span>
+                  </div>
+                  <div class="flex justify-between text-xs">
+                    <span class="text-stone-600 dark:text-stone-400">Hospitales Validados:</span>
+                    <span class="font-semibold text-stone-800 dark:text-stone-200">100+</span>
+                  </div>
+                </div>
+
+                <div class="bg-sage-50 dark:bg-sage-900 p-4 rounded-lg">
+                  <h5 class="font-semibold text-sage-800 dark:text-sage-200 text-sm mb-2">Retinopatía Diabética</h5>
+                  <div class="flex justify-between text-xs">
+                    <span class="text-stone-600 dark:text-stone-400">Precisión:</span>
+                    <span class="font-semibold text-stone-800 dark:text-stone-200">97%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-stone-50 to-sage-50 dark:from-stone-900 dark:to-sage-900 p-6 rounded-lg">
+              <h4 class="font-semibold text-stone-800 dark:text-stone-200 mb-4">Estudio de Caso: Éxito de Tencent Miying</h4>
+              <div class="grid md:grid-cols-3 gap-4 text-center">
+                <div>
+                  <div class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-1">24,000+</div>
+                  <p class="text-xs text-stone-600 dark:text-stone-400">Pacientes con COVID-19 diagnosticados en el Hospital Lei Shen Shan</p>
+                </div>
+                <div>
+                  <div class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-1">-20%</div>
+                  <p class="text-xs text-stone-600 dark:text-stone-400">Reducción en la tasa de diagnóstico fallido de glaucoma</p>
+                </div>
+                <div>
+                  <div class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-1">+20%</div>
+                  <p class="text-xs text-stone-600 dark:text-stone-400">Tasa de detección de pólipos de colon mejorada</p>
+                </div>
+              </div>
+              <div class="text-xs text-sage-600 dark:text-sage-400 mt-4">
+                <a class="citation-link" href="https://regional.chinadaily.com.cn/wic/2023-11/24/c_942135.htm">Fuente: China Daily</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <h3 class="font-serif text-2xl font-semibold text-stone-800 dark:text-stone-200 mb-6">Medicina Preventiva y Cribado Poblacional</h3>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="border border-sage-200 dark:border-sage-800 rounded-lg p-6">
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 mb-3">Centros de Salud Comunitarios</h4>
+                <p class="text-stone-600 dark:text-stone-300 text-sm mb-4">
+                  En Shenzhen, <a class="citation-link" href="https://www.sz.gov.cn/en_szgov/news/latest/content/post_12401714.html">400+ instituciones de salud comunitarias</a>
+                  han introducido asistencia de diagnóstico inteligente, creando sistemas de servicio "IA más médico" profundamente integrados.
+                </p>
+                <div class="bg-sage-50 dark:bg-sage-900 p-3 rounded">
+                  <div class="text-xs text-stone-600 dark:text-stone-400 mb-1">Meta de Reducción de Costos de Salud</div>
+                  <div class="text-lg font-bold text-sage-700 dark:text-sage-300">20% para 2030</div>
+                </div>
+              </div>
+
+              <div class="border border-sage-200 dark:border-sage-800 rounded-lg p-6">
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 mb-3">Integración de Medicina Tradicional China</h4>
+                <p class="text-stone-600 dark:text-stone-300 text-sm mb-4">
+                  <a class="citation-link" href="https://www.sz.gov.cn/en_szgov/news/latest/content/post_12401714.html">Grupo de trabajo IA + MTC</a>
+                  establecido en Shenzhen, con terminales inteligentes analizando la lengua y características faciales para evaluación de salud.
+                </p>
+                <div class="space-y-2 text-xs text-stone-600 dark:text-stone-400">
+                  <div class="flex items-center">
+                    <i class="fas fa-robot text-sage-500 mr-2"></i>
+                    <span>Robots de moxibustión con visión 3D</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-eye text-sage-500 mr-2"></i>
+                    <span>Análisis de visión de alta precisión</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Drug Discovery -->
+      <section class="mb-20" id="drug-discovery">
+        <div class="bg-white dark:bg-stone-900 rounded-2xl p-8 shadow-sm border border-sage-100 dark:border-sage-800 transition-colors">
+          <h2 class="font-serif text-3xl font-semibold text-sage-700 dark:text-sage-300 mb-8">IA en Descubrimiento y Desarrollo de Fármacos</h2>
+
+          <div class="mb-12">
+            <img alt="Laboratorio de descubrimiento de fármacos con inteligencia artificial" class="w-full h-64 object-cover rounded-lg mb-8" src="https://kimi-web-img.moonshot.cn/img/interestingengineering.com/5d045023bf66c5c7444378cd749cead0d8592139" referrerpolicy="no-referrer" />
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200 mb-4">Avances en IA Generativa</h3>
+                <p class="text-stone-600 dark:text-stone-300 leading-relaxed mb-6">
+                  <a class="citation-link" href="https://english.ckgsb.edu.cn/knowledge/article/ai-applications-in-china-healthcare-system/">Insilico Medicine</a>,
+                  respaldada por Baidu y Sinovation Ventures, usó IA generativa para descubrir un nuevo fármaco para la fibrosis pulmonar idiopática en menos de 18 meses a un costo inferior a $3 millones.
+                </p>
+
+                <div class="bg-sage-50 dark:bg-sage-900 p-4 rounded-lg">
+                  <h4 class="font-semibold text-sage-800 dark:text-sage-200 text-sm mb-2">Logro Clave</h4>
+                  <ul class="text-xs text-stone-600 dark:text-stone-300 space-y-1">
+                    <li>• Tiempo de descubrimiento: &lt;18 meses (vs 5-7 años tradicional)</li>
+                    <li>• Costo: $3M (vs $2.6B tradicional)</li>
+                    <li>• Actualmente en ensayos clínicos en China y EE. UU.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200 mb-4">Colaboraciones Farmacéuticas Globales</h3>
+                <div class="space-y-4">
+                  <div class="border-l-4 border-sage-400 pl-4">
+                    <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm">Pfizer + XtalPi</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-xs">Asociación estratégica para descubrimiento de fármacos impulsado por IA</p>
+                  </div>
+                  <div class="border-l-4 border-sage-400 pl-4">
+                    <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm">Eli Lilly + XtalPi</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-xs">Colaboración de descubrimiento de fármacos multi-objetivo</p>
+                  </div>
+                  <div class="border-l-4 border-sage-400 pl-4">
+                    <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm">Sanofi + Earendil Labs</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-xs">Plataforma de IA para identificación de objetivos</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-sage-50 to-stone-50 dark:from-sage-900 dark:to-stone-900 p-6 rounded-lg">
+            <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200 mb-4">Diseño de Moléculas Asistido por IA</h3>
+            <p class="text-stone-600 dark:text-stone-300 leading-relaxed mb-4">
+              <a class="citation-link" href="https://spst.shanghaitech.edu.cn/spst_en/2020/0110/c2885a49784/page.htm">Investigadores de la Universidad de Pekín</a>
+              han desarrollado un método de representación molecular de IA explicable utilizando mecanismos de atención gráfica, ayudando a los químicos medicinales a obtener conocimientos químicos directos de los datos de descubrimiento de fármacos.
+            </p>
+            <div class="flex items-center text-sm text-sage-600 dark:text-sage-400">
+              <i class="fas fa-flask mr-2"></i>
+              <span>Acelerando el descubrimiento de fármacos con modelos de IA explicables</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Smart Hospitals -->
+      <section class="mb-20" id="smart-hospitals">
+        <div class="bg-white dark:bg-stone-900 rounded-2xl p-8 shadow-sm border border-sage-100 dark:border-sage-800 transition-colors">
+          <h2 class="font-serif text-3xl font-semibold text-sage-700 dark:text-sage-300 mb-8">Sistemas de Gestión Hospitalaria Inteligente</h2>
+
+          <div class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-stone-800 dark:text-stone-200 mb-6">Optimización del Flujo de Trabajo y Monitoreo Remoto</h3>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+              <div class="text-center">
+                <div class="bg-sage-100 dark:bg-sage-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-clock text-sage-600 dark:text-sage-300 text-xl"></i>
+                </div>
+                <h4 class="font-semibold text-stone-800 dark:text-stone-200 mb-2">Reducción de Tiempo</h4>
+                <p class="text-sm text-stone-600 dark:text-stone-400">Tiempo de documentación reducido de 30 a 10 minutos</p>
+              </div>
+
+              <div class="text-center">
+                <div class="bg-sage-100 dark:bg-sage-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-bed text-sage-600 dark:text-sage-300 text-xl"></i>
+                </div>
+                <h4 class="font-semibold text-stone-800 dark:text-stone-200 mb-2">Duración de la Estancia</h4>
+                <p class="text-sm text-stone-600 dark:text-stone-400">Reducción promedio del 8% mediante optimización por IA</p>
+              </div>
+
+              <div class="text-center">
+                <div class="bg-sage-100 dark:bg-sage-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-cloud text-sage-600 dark:text-sage-300 text-xl"></i>
+                </div>
+                <h4 class="font-semibold text-stone-800 dark:text-stone-200 mb-2">Integración en la Nube</h4>
+                <p class="text-sm text-stone-600 dark:text-stone-400">Plataforma de Nube de Imágenes Médicas Tencent AIMIS</p>
+              </div>
+            </div>
+
+            <div class="bg-stone-50 dark:bg-stone-800 p-6 rounded-lg">
+              <h4 class="font-semibold text-stone-800 dark:text-stone-200 mb-4">Historias de Éxito de Hospitales Inteligentes</h4>
+
+              <div class="space-y-4">
+                <div class="border-l-4 border-sage-400 pl-4">
+                  <h5 class="font-semibold text-stone-800 dark:text-stone-200 text-sm mb-1">Hospital General Provincial de Guangdong No. 2</h5>
+                  <p class="text-stone-600 dark:text-stone-400 text-xs mb-2">
+                    <a class="citation-link" href="https://english.cas.cn/newsroom/archive/china_archive/cn2019/201910/t20191010_219840.shtml">96% de precisión</a>
+                    en diagnóstico de cáncer gastrointestinal superior con sistema de IA
+                  </p>
+                  <div class="text-xs text-sage-600 dark:text-sage-400">90% de precisión para diagnóstico en etapa temprana</div>
+                </div>
+
+                <div class="border-l-4 border-sage-400 pl-4">
+                  <h5 class="font-semibold text-stone-800 dark:text-stone-200 text-sm mb-1">Primer Hospital Afiliado de la Universidad de Zhengzhou</h5>
+                  <p class="text-stone-600 dark:text-stone-400 text-xs mb-2">
+                    <a class="citation-link" href="https://e.huawei.com/ua/case-studies/industries/healthcare/202411-first-affiliated-hospital-of-zhengzhou">Plataforma de diagnóstico remoto 5G+IA</a>
+                    sirviendo a 425 hospitales en la provincia de Henan
+                  </p>
+                  <div class="text-xs text-sage-600 dark:text-sage-400">10,000+ diagnósticos de patología remota anuales</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Surgical Robotics -->
+      <section class="mb-20" id="surgical-robotics">
+        <div class="bg-white dark:bg-stone-900 rounded-2xl p-8 shadow-sm border border-sage-100 dark:border-sage-800 transition-colors">
+          <h2 class="font-serif text-3xl font-semibold text-sage-700 dark:text-sage-300 mb-8">Equipos Médicos Avanzados y Robótica Quirúrgica</h2>
+
+          <div class="mb-12">
+            <img alt="Robots quirúrgicos impulsados por IA en quirófano de hospital chino" class="w-full h-64 object-cover rounded-lg mb-8" src="https://kimi-web-img.moonshot.cn/img/img2.chinadaily.com.cn/5345e9daea5b50fdf15ed4dc7660d5d66199241a.jpeg" referrerpolicy="no-referrer" />
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200 mb-4">Robots Quirúrgicos Chinos</h3>
+
+                <div class="space-y-4">
+                  <div class="bg-sage-50 dark:bg-sage-900 p-4 rounded-lg">
+                    <h4 class="font-semibold text-sage-800 dark:text-sage-200 text-sm mb-2">Robot Quirúrgico de IA Huawei</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-xs mb-2">
+                      Impulsado por el <a class="citation-link" href="https://interestingengineering.com/innovation/huawei-ai-chips-power-china-next-generation-surgery-technology">chip de IA Ascend 910B</a>,
+                      asistiendo en la planificación quirúrgica y sistemas de visión 3D
+                    </p>
+                    <div class="flex items-center text-xs text-sage-600 dark:text-sage-400">
+                      <i class="fas fa-microchip mr-1"></i>
+                      <span>Asistencia quirúrgica impulsada por IA</span>
+                    </div>
+                  </div>
+
+                  <div class="bg-sage-50 dark:bg-sage-900 p-4 rounded-lg">
+                    <h4 class="font-semibold text-sage-800 dark:text-sage-200 text-sm mb-2">Robot Ortopédico Tinavi</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-xs mb-2">
+                      Brazo robótico de alta precisión para reemplazo de articulaciones y cirugía espinal con retroalimentación de navegación en tiempo real
+                    </p>
+                    <div class="flex items-center text-xs text-sage-600 dark:text-sage-400">
+                      <i class="fas fa-bone mr-1"></i>
+                      <span>Precisión quirúrgica ortopédica</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200 mb-4">Tendencias de Automatización Médica</h3>
+
+                <div class="space-y-4">
+                  <div class="border border-sage-200 dark:border-sage-800 p-4 rounded-lg">
+                    <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm mb-2">Endoscopia Integrada con IA</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-xs">
+                      Análisis de imagen en tiempo real para detección de enfermedades gastrointestinales con identificación automatizada de lesiones
+                    </p>
+                  </div>
+
+                  <div class="border border-sage-200 dark:border-sage-800 p-4 rounded-lg">
+                    <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm mb-2">Cirugía Mínimamente Invasiva</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-xs">
+                      Equipos laparoscópicos y artroscópicos mejorados por IA para mayor precisión y reducción de complicaciones
+                    </p>
+                  </div>
+
+                  <div class="border border-sage-200 dark:border-sage-800 p-4 rounded-lg">
+                    <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm mb-2">Imágenes Médicas 3D</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-xs">
+                      <a class="citation-link" href="https://www.huaweicentral.com/huawei-launches-medical-imaging-system-that-converts-2d-visuals-into-3d/">"Reading Picture Bao" de Huawei</a>
+                      convierte imágenes 2D en modelos 3D para una visualización clínica mejorada
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Global Comparison -->
+      <section class="mb-20" id="global-comparison">
+        <div class="bg-white dark:bg-stone-900 rounded-2xl p-8 shadow-sm border border-sage-100 dark:border-sage-800 transition-colors">
+          <h2 class="font-serif text-3xl font-semibold text-sage-700 dark:text-sage-300 mb-8">Panorama Global de la IA en Salud</h2>
+
+          <div class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-stone-800 dark:text-stone-200 mb-6">Matriz de Comparación Regional</h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse bg-stone-50 dark:bg-stone-800 rounded-lg overflow-hidden">
+                <thead>
+                  <tr class="bg-sage-600 text-white">
+                    <th class="p-4 text-left font-semibold text-sm">Característica</th>
+                    <th class="p-4 text-center font-semibold text-sm">China</th>
+                    <th class="p-4 text-center font-semibold text-sm">Estados Unidos</th>
+                    <th class="p-4 text-center font-semibold text-sm">Unión Europea</th>
+                    <th class="p-4 text-center font-semibold text-sm">Japón</th>
+                    <th class="p-4 text-center font-semibold text-sm">Corea del Sur</th>
+                    <th class="p-4 text-center font-semibold text-sm">Singapur</th>
+                  </tr>
+                </thead>
+                <tbody class="text-xs text-stone-800 dark:text-stone-200">
+                  <tr class="border-b border-sage-100 dark:border-sage-700">
+                    <td class="p-4 font-semibold">Tamaño de Mercado (2025)</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">$4.99 mil M</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">$4.99 mil M</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">$5.02 mil M</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">Región APAC</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">Región APAC</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">Región APAC</td>
+                  </tr>
+                  <tr class="border-b border-sage-100 dark:border-sage-700 bg-sage-50 dark:bg-sage-900/50">
+                    <td class="p-4 font-semibold">TCAC Proyectado</td>
+                    <td class="p-4 text-center text-sage-700 dark:text-sage-300 font-semibold">17.1%</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">A $102 mil M para 2030</td>
+                    <td class="p-4 text-center text-sage-700 dark:text-sage-300 font-semibold">35.4%</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">-</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">-</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">-</td>
+                  </tr>
+                  <tr class="border-b border-sage-100 dark:border-sage-700">
+                    <td class="p-4 font-semibold">Apoyo Gubernamental</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">Centralizado, dirigido por el estado</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">Descentralizado, sector específico</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">Integral, basado en derechos</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">Visión Sociedad 5.0</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">Ley Básica de IA</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">Estrategia Nación Inteligente</td>
+                  </tr>
+                  <tr class="border-b border-sage-100 dark:border-sage-700 bg-sage-50 dark:bg-sage-900/50">
+                    <td class="p-4 font-semibold">Liderazgo en Patentes</td>
+                    <td class="p-4 text-center text-sage-700 dark:text-sage-300 font-semibold">60%+ cuota global</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">Base de investigación fuerte</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">I+D de alta calidad</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">Enfoque en robótica</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">Protección al consumidor</td>
+                    <td class="p-4 text-center text-stone-600 dark:text-stone-400">Enfoque banco de pruebas</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="text-xs text-sage-600 dark:text-sage-400 mt-4 text-right">
+              <a class="citation-link" href="https://gradientflow.com/ai-governance-global-cheat-sheet/">Fuentes: Gradient Flow, MarketsandMarkets</a>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gradient-to-br from-sage-50 to-stone-50 dark:from-sage-900 dark:to-stone-900 p-6 rounded-lg">
+              <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200 mb-4">Ventajas Competitivas de China</h3>
+              <ul class="space-y-3 text-sm text-stone-600 dark:text-stone-300">
+                <li class="flex items-start">
+                  <i class="fas fa-star text-sage-500 mt-1 mr-2 text-xs"></i>
+                  <span><strong>Apoyo Gubernamental:</strong> Estrategias nacionales verticales con financiación masiva ($1.4B para 2030)</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-database text-sage-500 mt-1 mr-2 text-xs"></i>
+                  <span><strong>Acceso a Datos:</strong> 38,000+ hospitales proporcionando vastos conjuntos de datos de pacientes para entrenamiento de IA</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-users text-sage-500 mt-1 mr-2 text-xs"></i>
+                  <span><strong>Talento:</strong> 30,000+ investigadores de IA activos con fuerte base educativa STEM</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-chart-line text-sage-500 mt-1 mr-2 text-xs"></i>
+                  <span><strong>Escala de Mercado:</strong> Mercado doméstico garantizado a través de mandatos de adopción universal</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-gradient-to-br from-stone-50 to-sage-50 dark:from-stone-900 dark:to-sage-900 p-6 rounded-lg">
+              <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200 mb-4">Colaboración y Competencia Global</h3>
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm mb-2">Impulsores de Colaboración</h4>
+                  <p class="text-stone-600 dark:text-stone-400 text-xs">
+                    Empresas farmacéuticas occidentales asociándose con firmas de biotecnología IA chinas para plataformas avanzadas de descubrimiento de fármacos y candidatos innovadores
+                  </p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm mb-2">Dinámicas de Competencia</h4>
+                  <p class="text-stone-600 dark:text-stone-400 text-xs">
+                    Rivalidad EE.UU.-China impulsando la innovación, con China cerrando la brecha en imágenes médicas y aplicaciones hospitalarias inteligentes
+                  </p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm mb-2">Desafíos de Datos</h4>
+                  <p class="text-stone-600 dark:text-stone-400 text-xs">
+                    Intercambio de datos transfronterizo complicado por regulaciones PIPL y GDPR, requiriendo soluciones de aprendizaje federado
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Risks & Challenges -->
+      <section class="mb-20" id="risks-challenges">
+        <div class="bg-white dark:bg-stone-900 rounded-2xl p-8 shadow-sm border border-sage-100 dark:border-sage-800 transition-colors">
+          <h2 class="font-serif text-3xl font-semibold text-sage-700 dark:text-sage-300 mb-8">Riesgos y Desafíos Regulatorios</h2>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="space-y-6">
+              <div class="border border-red-200 bg-red-50 dark:bg-red-900/20 dark:border-red-800 p-6 rounded-lg">
+                <h3 class="font-semibold text-red-800 dark:text-red-200 mb-3 flex items-center">
+                  <i class="fas fa-shield-alt mr-2"></i>
+                  Privacidad y Seguridad de Datos
+                </h3>
+                <p class="text-red-700 dark:text-red-300 text-sm mb-4">
+                  Las violaciones de datos de salud plantean riesgos significativos, con información sensible del paciente, incluidos registros médicos y datos genéticos, vulnerable a ciberataques.
+                </p>
+                <div class="text-xs text-red-600 dark:text-red-400">
+                  <a class="citation-link text-red-600 dark:text-red-400" href="https://www.fortunebusinessinsights.com/industry-reports/artificial-intelligence-in-healthcare-market-100534">Brecha de 23andMe expuso datos de 14,000 individuos</a>
+                </div>
+              </div>
+
+              <div class="border border-orange-200 bg-orange-50 dark:bg-orange-900/20 dark:border-orange-800 p-6 rounded-lg">
+                <h3 class="font-semibold text-orange-800 dark:text-orange-200 mb-3 flex items-center">
+                  <i class="fas fa-eye mr-2"></i>
+                  Transparencia Algorítmica
+                </h3>
+                <p class="text-orange-700 dark:text-orange-300 text-sm mb-4">
+                  La naturaleza de "caja negra" de los modelos de IA desafía la validación clínica y aprobación regulatoria, con el 86% de los estadounidenses preocupados por la transparencia de la IA generativa.
+                </p>
+                <div class="text-xs text-orange-600 dark:text-orange-400">
+                  <a class="citation-link text-orange-600 dark:text-orange-400" href="https://resourcera.com/data/artificial-intelligence/ai-healthcare-statistics/">89% de los médicos quieren fuentes de datos claras</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <div class="border border-yellow-200 bg-yellow-50 dark:bg-yellow-900/20 dark:border-yellow-800 p-6 rounded-lg">
+                <h3 class="font-semibold text-yellow-800 dark:text-yellow-200 mb-3 flex items-center">
+                  <i class="fas fa-gavel mr-2"></i>
+                  Incertidumbre Regulatoria
+                </h3>
+                <p class="text-yellow-700 dark:text-yellow-300 text-sm mb-4">
+                  El avance tecnológico rápido supera el desarrollo regulatorio, creando incertidumbre para las empresas que buscan llevar productos de IA al mercado.
+                </p>
+                <div class="text-xs text-yellow-600 dark:text-yellow-400">
+                  92 dispositivos Clase III aprobados por NMPA pero criterios en evolución
+                </div>
+              </div>
+
+              <div class="border border-blue-200 bg-blue-50 dark:bg-blue-900/20 dark:border-blue-800 p-6 rounded-lg">
+                <h3 class="font-semibold text-blue-800 dark:text-blue-200 mb-3 flex items-center">
+                  <i class="fas fa-balance-scale mr-2"></i>
+                  Responsabilidad Legal
+                </h3>
+                <p class="text-blue-700 dark:text-blue-300 text-sm mb-4">
+                  Responsabilidad ambigua cuando la IA contribuye a errores médicos, con responsabilidad poco clara entre desarrolladores, hospitales y clínicos.
+                </p>
+                <div class="text-xs text-blue-600 dark:text-blue-400">
+                  <a class="citation-link text-blue-600 dark:text-blue-400" href="https://resourcera.com/data/artificial-intelligence/ai-healthcare-statistics/">ChatGPT diagnosticó erróneamente 83/100 casos pediátricos</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-sage-100 to-stone-100 dark:from-sage-900 dark:to-stone-800 p-6 rounded-lg">
+            <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200 mb-4">Evolución del Marco Regulatorio</h3>
+            <div class="grid md:grid-cols-3 gap-4">
+              <div class="text-center">
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 text-sm mb-2">PIPL</h4>
+                <p class="text-xs text-stone-600 dark:text-stone-400">Ley de Protección de Información Personal con requisitos estrictos de manejo de datos</p>
+              </div>
+              <div class="text-center">
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 text-sm mb-2">DSL</h4>
+                <p class="text-xs text-stone-600 dark:text-stone-400">Ley de Seguridad de Datos con protección mejorada para datos importantes</p>
+              </div>
+              <div class="text-center">
+                <h4 class="font-semibold text-sage-800 dark:text-sage-200 text-sm mb-2">CSL</h4>
+                <p class="text-xs text-stone-600 dark:text-stone-400">Ley de Ciberseguridad que exige la localización de datos para infraestructura crítica</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Future Projections -->
+      <section class="mb-20" id="future-projections">
+        <div class="bg-white dark:bg-stone-900 rounded-2xl p-8 shadow-sm border border-sage-100 dark:border-sage-800 transition-colors">
+          <h2 class="font-serif text-3xl font-semibold text-sage-700 dark:text-sage-300 mb-8">Proyecciones Futuras (2026–2030)</h2>
+
+          <div class="mb-12">
+            <img alt="Tecnología futurista de IA en entorno de salud" class="w-full h-64 object-cover rounded-lg mb-8" src="https://kimi-web-img.moonshot.cn/img/cdn.residencyadvisor.com/42fcbf3ea21b39c1398c7ee3c25d79da3f102e80.png" referrerpolicy="no-referrer" />
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div class="bg-gradient-to-br from-sage-50 to-stone-50 dark:from-sage-900 dark:to-stone-900 p-6 rounded-lg">
+                <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200 mb-4">Proyecciones de Crecimiento del Mercado</h3>
+                <div class="space-y-4">
+                  <div class="flex justify-between items-center p-3 bg-white dark:bg-stone-800 rounded">
+                    <span class="text-stone-600 dark:text-stone-400">Mercado Global 2025</span>
+                    <span class="font-bold text-sage-700 dark:text-sage-300">$21.66 mil M</span>
+                  </div>
+                  <div class="flex justify-between items-center p-3 bg-white dark:bg-stone-800 rounded">
+                    <span class="text-stone-600 dark:text-stone-400">Proyección 2030</span>
+                    <span class="font-bold text-sage-800 dark:text-sage-200">$110.61 mil M</span>
+                  </div>
+                  <div class="flex justify-between items-center p-3 bg-sage-100 dark:bg-sage-900 rounded">
+                    <span class="text-stone-600 dark:text-stone-400">TCAC (2025-2030)</span>
+                    <span class="font-bold text-sage-800 dark:text-sage-200">38.6%</span>
+                  </div>
+                </div>
+                <div class="text-xs text-sage-600 dark:text-sage-400 mt-4">
+                  <a class="citation-link" href="https://www.marketsandmarkets.com/PressReleases/artificial-intelligence-healthcare.asp">Fuente: MarketsandMarkets</a>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-stone-50 to-sage-50 dark:from-stone-900 dark:to-sage-900 p-6 rounded-lg">
+                <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200 mb-4">Tendencias de Inversión</h3>
+                <div class="space-y-4">
+                  <div class="border-l-4 border-sage-400 pl-4">
+                    <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm mb-1">Estados Unidos</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-xs">$1.4 mil M de gasto en IA de salud en 2025, casi el triple del año anterior</p>
+                  </div>
+                  <div class="border-l-4 border-sage-400 pl-4">
+                    <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm mb-1">China</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-xs">CNY 30 mil M ($4.1 mil M) nueva financiación en el sector "IA+Salud"</p>
+                  </div>
+                  <div class="border-l-4 border-sage-400 pl-4">
+                    <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm mb-1">Áreas de Enfoque Clave</h4>
+                    <p class="text-stone-600 dark:text-stone-400 text-xs">Integración vertical, sinergia hardware/software, preparación regulatoria</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <h3 class="font-serif text-2xl font-semibold text-stone-800 dark:text-stone-200 mb-6">Impulsores Clave y Escenarios</h3>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+              <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 p-6 rounded-lg">
+                <h4 class="font-semibold text-green-800 dark:text-green-200 mb-3 flex items-center">
+                  <i class="fas fa-arrow-up text-green-600 mr-2"></i>
+                  Escenario Optimista
+                </h4>
+                <ul class="text-green-700 dark:text-green-300 text-sm space-y-2">
+                  <li>• Navegación regulatoria exitosa</li>
+                  <li>• Herramientas de IA altamente confiables</li>
+                  <li>• Adopción generalizada</li>
+                  <li>• Mejores resultados para pacientes</li>
+                </ul>
+              </div>
+
+              <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 p-6 rounded-lg">
+                <h4 class="font-semibold text-yellow-800 dark:text-yellow-200 mb-3 flex items-center">
+                  <i class="fas fa-minus text-yellow-600 mr-2"></i>
+                  Escenario Moderado
+                </h4>
+                <ul class="text-yellow-700 dark:text-yellow-300 text-sm space-y-2">
+                  <li>• Ritmo de crecimiento más lento</li>
+                  <li>• Desafíos persistentes</li>
+                  <li>• Limitado a casos de uso de alto valor</li>
+                  <li>• Aplicaciones complejas de nicho</li>
+                </ul>
+              </div>
+
+              <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-6 rounded-lg">
+                <h4 class="font-semibold text-red-800 dark:text-red-200 mb-3 flex items-center">
+                  <i class="fas fa-arrow-down text-red-600 mr-2"></i>
+                  Escenario Pesimista
+                </h4>
+                <ul class="text-red-700 dark:text-red-300 text-sm space-y-2">
+                  <li>• Gran rechazo público</li>
+                  <li>• Regulaciones restrictivas</li>
+                  <li>• Sofocación de la innovación</li>
+                  <li>• Pérdida de confianza pública</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-sage-100 to-stone-100 dark:from-sage-900 dark:to-stone-800 p-6 rounded-lg">
+            <h3 class="font-serif text-xl font-semibold text-stone-800 dark:text-stone-200 mb-4">Desafíos Emergentes (2026-2030)</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm mb-3">Desafíos Técnicos</h4>
+                <ul class="text-stone-600 dark:text-stone-300 text-xs space-y-1">
+                  <li>• Sesgo algorítmico en diagnósticos</li>
+                  <li>• Problemas de explicabilidad de caja negra</li>
+                  <li>• Potencial de mal uso de IA generativa</li>
+                  <li>• Calidad y estandarización de datos</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-stone-800 dark:text-stone-200 text-sm mb-3">Impacto Social</h4>
+                <ul class="text-stone-600 dark:text-stone-300 text-xs space-y-1">
+                  <li>• Desplazamiento de la fuerza laboral de salud</li>
+                  <li>• Preocupaciones de equidad y acceso</li>
+                  <li>• Gestión de implicaciones éticas</li>
+                  <li>• Coordinación de gobernanza internacional</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="text-center py-8 text-stone-500 dark:text-stone-400 text-sm border-t border-sage-100 dark:border-sage-900">
+        <p>Material elaborado por el profesor Sergio Gevatschnaider</p>
+      </footer>
+    </div>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        const icon = themeToggleBtn.querySelector('i');
+
+        // Check local storage or system preference on load
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            htmlElement.classList.remove('dark');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                localStorage.theme = 'light';
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#5f7a5f',
+                primaryTextColor: '#1c1917',
+                primaryBorderColor: '#3e503e',
+                lineColor: '#78716c',
+                secondaryColor: '#f6f7f6',
+                tertiaryColor: '#fafaf9',
+                background: '#ffffff',
+                mainBkg: '#ffffff',
+                secondBkg: '#f6f7f6',
+                tertiaryBkg: '#fafaf9'
+            },
+            flowchart: {
+                curve: 'basis',
+                padding: 20,
+                nodeSpacing: 50,
+                rankSpacing: 80,
+                diagramPadding: 20
+            },
+            fontSize: 14,
+            fontFamily: 'Inter, sans-serif'
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight active section in TOC
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const tocLinks = document.querySelectorAll('.toc-fixed a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                link.classList.remove('text-sage-700', 'font-semibold', 'dark:text-sage-300');
+                link.classList.add('text-stone-600', 'dark:text-stone-400');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.remove('text-stone-600', 'dark:text-stone-400');
+                    link.classList.add('text-sage-700', 'font-semibold', 'dark:text-sage-300');
+                }
+            });
+        });
+
+        // Mermaid Controls Logic
+        function initializeMermaidControls() {
+            const containers = document.querySelectorAll('.mermaid-container');
+
+            containers.forEach(container => {
+                const mermaidElement = container.querySelector('.mermaid');
+                let scale = 1;
+                let isDragging = false;
+                let startX, startY, translateX = 0, translateY = 0;
+
+                const zoomInBtn = container.querySelector('.zoom-in');
+                const zoomOutBtn = container.querySelector('.zoom-out');
+                const resetBtn = container.querySelector('.reset-zoom');
+                const fullscreenBtn = container.querySelector('.fullscreen');
+
+                function updateTransform() {
+                    mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                    if (scale > 1) {
+                        container.classList.add('zoomed');
+                    } else {
+                        container.classList.remove('zoomed');
+                    }
+                    mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
+                }
+
+                if (zoomInBtn) {
+                    zoomInBtn.addEventListener('click', () => {
+                        scale = Math.min(scale * 1.25, 4);
+                        updateTransform();
+                    });
+                }
+
+                if (zoomOutBtn) {
+                    zoomOutBtn.addEventListener('click', () => {
+                        scale = Math.max(scale / 1.25, 0.3);
+                        if (scale <= 1) {
+                            translateX = 0;
+                            translateY = 0;
+                        }
+                        updateTransform();
+                    });
+                }
+
+                if (resetBtn) {
+                    resetBtn.addEventListener('click', () => {
+                        scale = 1;
+                        translateX = 0;
+                        translateY = 0;
+                        updateTransform();
+                    });
+                }
+
+                if (fullscreenBtn) {
+                    fullscreenBtn.addEventListener('click', () => {
+                        if (container.requestFullscreen) {
+                            container.requestFullscreen();
+                        } else if (container.webkitRequestFullscreen) {
+                            container.webkitRequestFullscreen();
+                        } else if (container.msRequestFullscreen) {
+                            container.msRequestFullscreen();
+                        }
+                    });
+                }
+
+                mermaidElement.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    mermaidElement.style.cursor = 'grabbing';
+                    e.preventDefault();
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (isDragging) {
+                        translateX = e.clientX - startX;
+                        translateY = e.clientY - startY;
+                        updateTransform();
+                    }
+                });
+
+                document.addEventListener('mouseup', () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        mermaidElement.style.cursor = 'grab';
+                        updateTransform();
+                    }
+                });
+            });
+        }
+        
+        // Inicializar controles de mermaid si hay diagramas
+        document.addEventListener('DOMContentLoaded', initializeMermaidControls);
+    </script>
+  </body>
+</html>

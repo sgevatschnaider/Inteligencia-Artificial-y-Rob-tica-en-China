@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>IA en el Sector de Vehículos Autónomos de China: Un Informe de Investigación Integral</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.5.0/mermaid.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Habilita el modo oscuro manual
+            theme: {
+                extend: {
+                    colors: {
+                        'sage': {
+                            50: '#f6f7f5',
+                            100: '#e8eae6',
+                            200: '#d1d7cc',
+                            300: '#b4c0ad',
+                            400: '#95a48c',
+                            500: '#7a8a71',
+                            600: '#616e5a',
+                            700: '#4f584a',
+                            800: '#42483e',
+                            900: '#393e36',
+                            950: '#1a1d19' // Color extra oscuro para fondo en dark mode
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(122, 138, 113, 0.8) 0%, rgba(79, 88, 74, 0.9) 100%);
+        }
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .break-words {
+            word-break: break-word;
+        }
+        
+        /* Mermaid chart styling */
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* En modo oscuro, mantenemos el contenedor claro pero atenuado para contraste con el gráfico */
+        html.dark .mermaid-container {
+            background: #e5e7eb; 
+            border-color: #4b5563;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container.zoomed .mermaid {
+            height: 100%;
+            width: 100%;
+            cursor: grab;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        html.dark .mermaid-controls {
+            background: rgba(31, 41, 55, 0.95);
+            border: 1px solid #4b5563;
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        html.dark .mermaid-control-btn {
+            background: #374151;
+            border-color: #4b5563;
+            color: #e5e7eb;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        html.dark .mermaid-control-btn:hover {
+            background: #1f2937;
+        }
+
+        .mermaid-control-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Enhanced mermaid styling for better contrast */
+        .mermaid svg {
+            max-width: none !important;
+            width: auto !important;
+            height: auto !important;
+        }
+        
+        .mermaid .node rect,
+        .mermaid .node circle,
+        .mermaid .node ellipse,
+        .mermaid .node polygon {
+            stroke: #4f584a !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .node .label {
+            color: #393e36 !important;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+        }
+        
+        .mermaid .edgePath .path {
+            stroke: #7a8a71 !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .edgeLabel {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            color: #393e36 !important;
+            font-weight: 500 !important;
+            padding: 4px 8px !important;
+            border-radius: 4px !important;
+            border: 1px solid #d1d7cc !important;
+        }
+
+        @media (max-width: 1024px) {
+            .mermaid-control-btn:not(.reset-zoom) {
+                display: none;
+            }
+            .mermaid-controls {
+                top: auto;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+  <base target="_blank">
+</head>
+
+  <body class="bg-sage-50 dark:bg-sage-950 text-sage-900 dark:text-sage-100 font-sans overflow-x-hidden transition-colors duration-300">
+    
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="fixed top-4 right-4 z-[60] p-3 bg-sage-700 dark:bg-sage-600 text-white rounded-full shadow-lg hover:bg-sage-600 dark:hover:bg-sage-500 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sage-500" aria-label="Cambiar tema">
+        <i class="fas fa-moon text-lg w-5 h-5 flex items-center justify-center"></i>
+    </button>
+
+    <!-- Toggle button for mobile TOC -->
+    <button id="toc-toggle" class="fixed top-4 left-4 z-50 p-2 bg-sage-700 text-white rounded-lg shadow-lg md:hidden">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Fixed Table of Contents -->
+    <nav id="toc" class="fixed left-0 top-0 h-screen w-80 bg-white dark:bg-sage-900 shadow-2xl z-50 overflow-y-auto border-r border-sage-200 dark:border-sage-800 transform -translate-x-full md:translate-x-0 transition-transform duration-300">
+      <div class="p-6 border-b border-sage-200 dark:border-sage-800">
+        <h3 class="font-serif text-xl font-bold text-sage-800 dark:text-sage-100">Tabla de Contenidos</h3>
+      </div>
+      <div class="p-4 space-y-2">
+        <a href="#introduction" class="block px-3 py-2 text-sm text-sage-700 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-800 rounded transition-colors">1. Introducción y Contexto</a>
+        <a href="#ecosystem" class="block px-3 py-2 text-sm text-sage-700 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-800 rounded transition-colors">2. Ecosistema</a>
+        <a href="#investment" class="block px-3 py-2 text-sm text-sage-700 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-800 rounded transition-colors">3. Panorama de Inversión</a>
+        <a href="#technologies" class="block px-3 py-2 text-sm text-sage-700 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-800 rounded transition-colors">4. Tecnologías Clave de IA</a>
+        <a href="#companies" class="block px-3 py-2 text-sm text-sage-700 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-800 rounded transition-colors">5. Empresas Principales</a>
+        <a href="#regulatory" class="block px-3 py-2 text-sm text-sage-700 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-800 rounded transition-colors">6. Marco Regulatorio</a>
+        <a href="#challenges" class="block px-3 py-2 text-sm text-sage-700 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-800 rounded transition-colors">7. Desafíos</a>
+        <a href="#future" class="block px-3 py-2 text-sm text-sage-700 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-800 rounded transition-colors">8. Perspectivas Futuras</a>
+        <a href="#notes" class="block px-3 py-2 text-sm text-sage-700 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-800 rounded transition-colors">9. Notas y Supuestos</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="min-h-screen md:ml-80 transition-all duration-300">
+      <!-- Hero Section -->
+      <section class="relative bg-sage-800 overflow-hidden">
+        <div class="absolute inset-0">
+          <img src="https://kimi-web-img.moonshot.cn/img/img2.chinadaily.com.cn/e55c66740af92a4ab02c1a09e109d09a48559d1e.png" alt="Tecnología de vehículos autónomos en China" class="w-full h-full object-cover opacity-30" referrerpolicy="no-referrer" />
+          <div class="gradient-overlay absolute inset-0"></div>
+        </div>
+
+        <!-- Bento Grid Layout -->
+        <div class="relative z-10 container mx-auto px-4 md:px-8 py-16">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <!-- Main Title -->
+            <div class="md:col-span-8">
+              <h1 class="font-serif text-3xl md:text-5xl font-bold text-white text-shadow mb-6 leading-tight break-words">
+                IA en el Sector de <em class="italic">Vehículos Autónomos</em> de China
+              </h1>
+              <p class="text-base md:text-xl text-sage-100 mb-8 leading-relaxed break-words">
+                Cómo el 22% de la inversión privada en IA de China está impulsando una posición de liderazgo global en la movilidad autónoma
+              </p>
+              <div class="flex flex-wrap gap-4 text-sm text-sage-200">
+                <span><i class="fas fa-chart-line mr-2"></i>$27.5MM Inversión en VA</span>
+                <span><i class="fas fa-car mr-2"></i>11M+ Viajes en Robotaxi</span>
+                <span><i class="fas fa-map-marker-alt mr-2"></i>13 Ciudades Globales</span>
+              </div>
+            </div>
+
+            <!-- Key Stats Grid -->
+            <div class="md:col-span-4 space-y-4">
+              <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                <div class="text-3xl font-bold text-white">22%</div>
+                <div class="text-sage-200 text-sm">de la inversión privada de IA en el sector VA</div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                <div class="text-3xl font-bold text-white">¥890MM</div>
+                <div class="text-sage-200 text-sm">Inversión total en IA para 2025</div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                <div class="text-3xl font-bold text-white">38%</div>
+                <div class="text-sage-200 text-sm">de la cuota de inversión global en IA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Introduction Section -->
+      <section id="introduction" class="py-16 bg-white dark:bg-sage-900 transition-colors duration-300">
+        <div class="container mx-auto px-8">
+          <div class="max-w-4xl">
+            <h2 class="font-serif text-4xl font-bold text-sage-800 dark:text-sage-100 mb-8">Introducción y Contexto General</h2>
+
+            <div class="prose prose-lg max-w-none">
+              <div class="bg-sage-50 dark:bg-sage-800 p-8 rounded-lg border-l-4 border-sage-600 mb-8 transition-colors duration-300">
+                <p class="text-lg leading-relaxed text-sage-800 dark:text-sage-200 font-medium">
+                  China ha emergido rápidamente como líder global en el sector de vehículos autónomos (VA), impulsada por una combinación única de fuerte apoyo gubernamental, inversión masiva pública y privada, y un ecosistema vibrante de empresas tecnológicas y startups.
+                </p>
+              </div>
+
+              <h3 class="font-serif text-2xl font-bold text-sage-800 dark:text-sage-100 mb-4 mt-12">Niveles de Autonomía SAE</h3>
+              <p class="text-sage-700 dark:text-sage-300 leading-relaxed mb-6">
+                La clasificación de vehículos autónomos está estandarizada por la Sociedad de Ingenieros de Automoción (SAE) en seis niveles distintos, que van desde L0 (sin automatización) hasta L5 (automatización completa). Este marco, conocido como SAE J3016, ha sido adaptado al estándar nacional de China, <strong>GB/T 40429-2021</strong>
+                <a href="https://unece.org/sites/default/files/2025-06/ECE-TRANS-WP.1-S-Jiune-16e.pdf" class="text-sage-600 dark:text-sage-400 text-sm" target="_blank">[584]</a>.
+              </p>
+
+              <!-- SAE Levels Diagram -->
+              <div class="mermaid-container">
+                <div class="mermaid-controls">
+                  <button class="mermaid-control-btn zoom-in" title="Ampliar">
+                    <i class="fas fa-search-plus"></i>
+                  </button>
+                  <button class="mermaid-control-btn zoom-out" title="Reducir">
+                    <i class="fas fa-search-minus"></i>
+                  </button>
+                  <button class="mermaid-control-btn reset-zoom" title="Restablecer">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                  </button>
+                  <button class="mermaid-control-btn fullscreen" title="Pantalla completa">
+                    <i class="fas fa-expand"></i>
+                  </button>
+                </div>
+                <div class="mermaid" id="sae-levels-chart">
+                  flowchart TD
+                  L0[&#34;Nivel 0
+                  <br/>Sin Automatización&#34;]
+                  L1[&#34;Nivel 1
+                  <br/>Asistencia al Conductor&#34;]
+                  L2[&#34;Nivel 2
+                  <br/>Automatización Parcial&#34;]
+                  L3[&#34;Nivel 3
+                  <br/>Automatización Condicional&#34;]
+                  L4[&#34;Nivel 4
+                  <br/>Alta Automatización&#34;]
+                  L5[&#34;Nivel 5
+                  <br/>Automatización Completa&#34;]
+
+                  L0 --&gt; L1 --&gt; L2 --&gt; L3 --&gt; L4 --&gt; L5
+
+                  style L0 fill:#f6f7f5,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                  style L1 fill:#e8eae6,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                  style L2 fill:#d1d7cc,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                  style L3 fill:#b4c0ad,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                  style L4 fill:#95a48c,stroke:#7a8a71,stroke-width:2px,color:#ffffff
+                  style L5 fill:#7a8a71,stroke:#616e5a,stroke-width:3px,color:#ffffff
+                </div>
+              </div>
+
+              <h3 class="font-serif text-2xl font-bold text-sage-800 dark:text-sage-100 mb-4">La Posición Global de China</h3>
+              <p class="text-sage-700 dark:text-sage-300 leading-relaxed mb-6">
+                China ha superado a EE.UU. en el despliegue de robotaxis y está en camino de liderar en volumen, con empresas chinas registrando más de <strong>11 millones de viajes acumulados en robotaxi</strong>
+                <a href="https://www.eetimes.eu/av-status-u-s-vs-china-vs-europe/" class="text-sage-600 dark:text-sage-400 text-sm" target="_blank">[650]</a>. Mientras Europa ha mostrado fortaleza en VA centrados en rutas y entrega de mercancías, se queda atrás en los segmentos más prominentes de robotaxis y camiones autónomos.
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-sage-50 dark:bg-sage-800 p-6 rounded-lg transition-colors duration-300">
+                  <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-3">Impulsores Clave del Liderazgo</h4>
+                  <ul class="space-y-2 text-sage-700 dark:text-sage-300">
+                    <li><i class="fas fa-check text-sage-600 dark:text-sage-400 mr-2"></i>Fuerte apoyo gubernamental</li>
+                    <li><i class="fas fa-check text-sage-600 dark:text-sage-400 mr-2"></i>Inversión masiva (¥890MM en 2025)</li>
+                    <li><i class="fas fa-check text-sage-600 dark:text-sage-400 mr-2"></i>Infraestructura avanzada</li>
+                    <li><i class="fas fa-check text-sage-600 dark:text-sage-400 mr-2"></i>Mercado doméstico próspero</li>
+                  </ul>
+                </div>
+                <div class="bg-sage-50 dark:bg-sage-800 p-6 rounded-lg transition-colors duration-300">
+                  <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-3">Impacto Estratégico</h4>
+                  <ul class="space-y-2 text-sage-700 dark:text-sage-300">
+                    <li><i class="fas fa-arrow-right text-sage-600 dark:text-sage-400 mr-2"></i>Autosuficiencia tecnológica</li>
+                    <li><i class="fas fa-arrow-right text-sage-600 dark:text-sage-400 mr-2"></i>Influencia en estándares globales</li>
+                    <li><i class="fas fa-arrow-right text-sage-600 dark:text-sage-400 mr-2"></i>Liderazgo económico</li>
+                    <li><i class="fas fa-arrow-right text-sage-600 dark:text-sage-400 mr-2"></i>Capacidades de exportación</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ecosystem Section -->
+      <section id="ecosystem" class="py-16 bg-sage-50 dark:bg-sage-950 transition-colors duration-300">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl">
+            <h2 class="font-serif text-4xl font-bold text-sage-800 dark:text-sage-100 mb-8">Ecosistema de IA para Vehículos Autónomos</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+              <div class="bg-white dark:bg-sage-800 p-8 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                <div class="text-sage-600 dark:text-sage-400 text-3xl mb-4"><i class="fas fa-rocket"></i></div>
+                <h3 class="font-serif text-xl font-bold text-sage-800 dark:text-sage-100 mb-4">Startups y Empresas Emergentes</h3>
+                <p class="text-sage-700 dark:text-sage-300 mb-4">Innovadores líderes impulsando el avance tecnológico:</p>
+                <ul class="space-y-2 text-sm text-sage-600 dark:text-sage-400">
+                  <li><strong>Pony.ai:</strong> Joint venture con Toyota para 1,000 robotaxis</li>
+                  <li><strong>WeRide:</strong> Operaciones en 13 ciudades, 2,000 robobuses pedidos</li>
+                  <li><strong>AutoX:</strong> Respaldada por Alibaba, totalmente sin conductor en Shenzhen</li>
+                  <li><strong>TuSimple:</strong> Líder en camiones autónomos</li>
+                </ul>
+              </div>
+
+              <div class="bg-white dark:bg-sage-800 p-8 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                <div class="text-sage-600 dark:text-sage-400 text-3xl mb-4"><i class="fas fa-building"></i></div>
+                <h3 class="font-serif text-xl font-bold text-sage-800 dark:text-sage-100 mb-4">Conglomerados Tecnológicos</h3>
+                <p class="text-sage-700 dark:text-sage-300 mb-4">Principales actores que proveen plataformas e infraestructura:</p>
+                <ul class="space-y-2 text-sm text-sage-600 dark:text-sage-400">
+                  <li><strong>Baidu:</strong> Plataforma abierta Apollo y servicio Apollo Go</li>
+                  <li><strong>Huawei:</strong> Chips de IA, 5G y soluciones inteligentes</li>
+                  <li><strong>Alibaba:</strong> Inversión en AutoX e integración en la nube</li>
+                  <li><strong>Tencent:</strong> Servicios en la nube y soluciones de IA</li>
+                </ul>
+              </div>
+
+              <div class="bg-white dark:bg-sage-800 p-8 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                <div class="text-sage-600 dark:text-sage-400 text-3xl mb-4"><i class="fas fa-university"></i></div>
+                <h3 class="font-serif text-xl font-bold text-sage-800 dark:text-sage-100 mb-4">Instituciones de Investigación</h3>
+                <p class="text-sage-700 dark:text-sage-300 mb-4">Contribuciones académicas y desarrollo de talento:</p>
+                <ul class="space-y-2 text-sm text-sage-600 dark:text-sage-400">
+                  <li><strong>Tsinghua University:</strong> Líder en investigación de IA</li>
+                  <li><strong>Peking University:</strong> Avances en visión por computadora</li>
+                  <li><strong>BAAI:</strong> Modelos mundiales multimodales</li>
+                  <li><strong>Investigación Conjunta:</strong> Desarrollo de BEVFusion</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Ecosystem Visualization -->
+            <div class="mermaid-container">
+              <div class="mermaid-controls">
+                <button class="mermaid-control-btn zoom-in" title="Ampliar">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+                <button class="mermaid-control-btn zoom-out" title="Reducir">
+                  <i class="fas fa-search-minus"></i>
+                </button>
+                <button class="mermaid-control-btn reset-zoom" title="Restablecer">
+                  <i class="fas fa-expand-arrows-alt"></i>
+                </button>
+                <button class="mermaid-control-btn fullscreen" title="Pantalla completa">
+                  <i class="fas fa-expand"></i>
+                </button>
+              </div>
+              <div class="mermaid" id="ecosystem-chart">
+                graph TB
+                subgraph &#34;Gobierno y Políticas&#34;
+                A[&#34;Made in China 2025&#34;]
+                B[&#34;Zonas Piloto&#34;]
+                C[&#34;Permisos de Prueba&#34;]
+                end
+
+                subgraph &#34;Proveedores de Tecnología&#34;
+                D[&#34;Baidu Apollo&#34;]
+                E[&#34;Huawei&#34;]
+                F[&#34;Alibaba&#34;]
+                G[&#34;Tencent&#34;]
+                end
+
+                subgraph &#34;Startups y Operadores&#34;
+                H[&#34;Pony.ai&#34;]
+                I[&#34;WeRide&#34;]
+                J[&#34;AutoX&#34;]
+                K[&#34;TuSimple&#34;]
+                end
+
+                subgraph &#34;Instituciones de Investigación&#34;
+                L[&#34;Universidad Tsinghua&#34;]
+                M[&#34;Universidad de Pekín&#34;]
+                N[&#34;BAAI&#34;]
+                end
+
+                subgraph &#34;Infraestructura&#34;
+                O[&#34;Redes 5G&#34;]
+                P[&#34;Carreteras Inteligentes&#34;]
+                Q[&#34;Sistemas V2X&#34;]
+                end
+
+                A --&gt; B
+                A --&gt; C
+                B --&gt; D
+                B --&gt; E
+                C --&gt; H
+                C --&gt; I
+                D --&gt; H
+                E --&gt; J
+                L --&gt; D
+                M --&gt; E
+                N --&gt; G
+                O --&gt; P
+                P --&gt; Q
+                Q --&gt; H
+
+                style A fill:#7a8a71,stroke:#616e5a,stroke-width:2px,color:#ffffff
+                style B fill:#95a48c,stroke:#7a8a71,stroke-width:2px,color:#ffffff
+                style C fill:#95a48c,stroke:#7a8a71,stroke-width:2px,color:#ffffff
+                style D fill:#b4c0ad,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                style E fill:#b4c0ad,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                style F fill:#b4c0ad,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                style G fill:#b4c0ad,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                style H fill:#d1d7cc,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                style I fill:#d1d7cc,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                style J fill:#d1d7cc,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                style K fill:#d1d7cc,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                style L fill:#e8eae6,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                style M fill:#e8eae6,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                style N fill:#e8eae6,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                style O fill:#f6f7f5,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                style P fill:#f6f7f5,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                style Q fill:#f6f7f5,stroke:#7a8a71,stroke-width:2px,color:#393e36
+              </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-sage-800 dark:text-sage-100 mb-4 mt-12">Principales Ciudades y Zonas Piloto</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-4">Beijing</h4>
+                <ul class="space-y-2 text-sage-700 dark:text-sage-300">
+                  <li><i class="fas fa-map text-sage-600 dark:text-sage-400 mr-2"></i><strong>600 km²</strong> zona de demostración (ampliándose a 3,000 km²)</li>
+                  <li><i class="fas fa-building text-sage-600 dark:text-sage-400 mr-2"></i><strong>35+ empresas</strong> operando</li>
+                  <li><i class="fas fa-route text-sage-600 dark:text-sage-400 mr-2"></i><strong>38M+ km</strong> de kilometraje de prueba acumulado</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-4">Shanghai</h4>
+                <ul class="space-y-2 text-sage-700 dark:text-sage-300">
+                  <li><i class="fas fa-road text-sage-600 dark:text-sage-400 mr-2"></i><strong>2,000+ km</strong> de carreteras de prueba</li>
+                  <li><i class="fas fa-taxi text-sage-600 dark:text-sage-400 mr-2"></i>Robotaxis sin conductor en el distrito de Pudong</li>
+                  <li><i class="fas fa-ship text-sage-600 dark:text-sage-400 mr-2"></i>Camiones autónomos en el Puerto de Yangshan</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Investment Section -->
+      <section id="investment" class="py-16 bg-white dark:bg-sage-900 transition-colors duration-300">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl">
+            <h2 class="font-serif text-4xl font-bold text-sage-800 dark:text-sage-100 mb-8">Panorama de Inversión Pública y Privada</h2>
+
+            <div class="bg-sage-800 dark:bg-sage-700 text-white p-8 rounded-lg mb-12 transition-colors duration-300">
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                <div>
+                  <div class="text-4xl font-bold mb-2">¥890MM</div>
+                  <div class="text-sage-200">Inversión Total en IA 2025</div>
+                </div>
+                <div>
+                  <div class="text-4xl font-bold mb-2">22%</div>
+                  <div class="text-sage-200">Cuota del Sector VA</div>
+                </div>
+                <div>
+                  <div class="text-4xl font-bold mb-2">¥196MM</div>
+                  <div class="text-sage-200">Valor de Inversión en VA</div>
+                </div>
+                <div>
+                  <div class="text-4xl font-bold mb-2">38%</div>
+                  <div class="text-sage-200">Cuota Global de Inv. en IA</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+              <div class="bg-sage-50 dark:bg-sage-800 p-8 rounded-lg transition-colors duration-300">
+                <h3 class="font-serif text-xl font-bold text-sage-800 dark:text-sage-100 mb-4">Desarrollo de Software de IA</h3>
+                <p class="text-sage-700 dark:text-sage-300 mb-4">Inversión en tecnologías centrales de conducción autónoma:</p>
+                <ul class="space-y-2 text-sm text-sage-600 dark:text-sage-400">
+                  <li><i class="fas fa-eye text-sage-600 dark:text-sage-400 mr-2"></i>Visión por computadora y percepción</li>
+                  <li><i class="fas fa-brain text-sage-600 dark:text-sage-400 mr-2"></i>Algoritmos de toma de decisiones</li>
+                  <li><i class="fas fa-code text-sage-600 dark:text-sage-400 mr-2"></i>Modelos de IA de extremo a extremo</li>
+                  <li><i class="fas fa-map text-sage-600 dark:text-sage-400 mr-2"></i>Soluciones de mapeo HD</li>
+                </ul>
+              </div>
+
+              <div class="bg-sage-50 dark:bg-sage-800 p-8 rounded-lg transition-colors duration-300">
+                <h3 class="font-serif text-xl font-bold text-sage-800 dark:text-sage-100 mb-4">Desarrollo de Hardware</h3>
+                <p class="text-sage-700 dark:text-sage-300 mb-4">Inversión en componentes físicos y sistemas:</p>
+                <ul class="space-y-2 text-sm text-sage-600 dark:text-sage-400">
+                  <li><i class="fas fa-camera text-sage-600 dark:text-sage-400 mr-2"></i>LiDAR y tecnologías de sensores</li>
+                  <li><i class="fas fa-microchip text-sage-600 dark:text-sage-400 mr-2"></i>Chips y procesadores de IA</li>
+                  <li><i class="fas fa-car text-sage-600 dark:text-sage-400 mr-2"></i>Sistemas de integración de vehículos</li>
+                  <li><i class="fas fa-cog text-sage-600 dark:text-sage-400 mr-2"></i>Sistemas de seguridad redundantes</li>
+                </ul>
+              </div>
+
+              <div class="bg-sage-50 dark:bg-sage-800 p-8 rounded-lg transition-colors duration-300">
+                <h3 class="font-serif text-xl font-bold text-sage-800 dark:text-sage-100 mb-4">Infraestructura Inteligente</h3>
+                <p class="text-sage-700 dark:text-sage-300 mb-4">Inversión en sistemas de infraestructura de apoyo:</p>
+                <ul class="space-y-2 text-sm text-sage-600 dark:text-sage-400">
+                  <li><i class="fas fa-wifi text-sage-600 dark:text-sage-400 mr-2"></i>Sistemas de comunicación V2X</li>
+                  <li><i class="fas fa-road text-sage-600 dark:text-sage-400 mr-2"></i>Unidades inteligentes en carretera</li>
+                  <li><i class="fas fa-cloud text-sage-600 dark:text-sage-400 mr-2"></i>Computación perimetral (Edge) y centros de datos</li>
+                  <li><i class="fas fa-signal text-sage-600 dark:text-sage-400 mr-2"></i>Expansión de la red 5G</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-sage-800 border border-sage-200 dark:border-sage-700 p-8 rounded-lg transition-colors duration-300">
+              <h3 class="font-serif text-2xl font-bold text-sage-800 dark:text-sage-100 mb-6">Desglose de Financiación Pública vs Privada</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                  <span class="text-sage-700 dark:text-sage-300">Financiación Gubernamental</span>
+                  <div class="flex items-center">
+                    <div class="w-32 bg-sage-200 dark:bg-sage-600 rounded-full h-2 mr-3">
+                      <div class="bg-sage-600 dark:bg-sage-400 h-2 rounded-full" style="width: 39%"></div>
+                    </div>
+                    <span class="text-sage-800 dark:text-sage-100 font-medium">¥345MM (39%)</span>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sage-700 dark:text-sage-300">Capital de Riesgo Privado</span>
+                  <div class="flex items-center">
+                    <div class="w-32 bg-sage-200 dark:bg-sage-600 rounded-full h-2 mr-3">
+                      <div class="bg-sage-500 dark:bg-sage-300 h-2 rounded-full" style="width: 32%"></div>
+                    </div>
+                    <span class="text-sage-800 dark:text-sage-100 font-medium">¥287MM (32%)</span>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sage-700 dark:text-sage-300">I+D Corporativo</span>
+                  <div class="flex items-center">
+                    <div class="w-32 bg-sage-200 dark:bg-sage-600 rounded-full h-2 mr-3">
+                      <div class="bg-sage-400 dark:bg-sage-200 h-2 rounded-full" style="width: 29%"></div>
+                    </div>
+                    <span class="text-sage-800 dark:text-sage-100 font-medium">¥258MM (29%)</span>
+                  </div>
+                </div>
+              </div>
+              <p class="text-sm text-sage-600 dark:text-sage-400 mt-4">
+                Fuente: <a href="https://www.secondtalent.com/resources/chinese-ai-investment-statistics/" class="text-sage-600 dark:text-sage-400 hover:underline" target="_blank">Second Talent AI Investment Statistics [629]</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technologies Section -->
+      <section id="technologies" class="py-16 bg-sage-50 dark:bg-sage-950 transition-colors duration-300">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl">
+            <h2 class="font-serif text-4xl font-bold text-sage-800 dark:text-sage-100 mb-8">Tecnologías Clave de IA en Vehículos Autónomos</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div>
+                <h3 class="font-serif text-2xl font-bold text-sage-800 dark:text-sage-100 mb-6">Sistemas de Percepción</h3>
+
+                <div class="space-y-6">
+                  <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                    <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-3">Visión por Computadora y Detección de Objetos</h4>
+                    <p class="text-sage-700 dark:text-sage-300 mb-4">Modelos avanzados de aprendizaje profundo para reconocimiento y clasificación de objetos en tiempo real, entrenados en conjuntos de datos masivos de escenarios de tráfico chinos.</p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Sistemas multicámara</span>
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Imagen de alta resolución</span>
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Procesamiento en tiempo real</span>
+                    </div>
+                  </div>
+
+                  <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                    <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-3">Tecnología de Fusión de Sensores</h4>
+                    <p class="text-sage-700 dark:text-sage-300 mb-4">Integración de datos de cámara, LiDAR y radar para una percepción ambiental robusta, especialmente en condiciones climáticas adversas.</p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Mapeo LiDAR</span>
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Detección por radar</span>
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Visión por cámara</span>
+                    </div>
+                  </div>
+
+                  <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                    <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-3">Modelos de Vista de Pájaro (BEV)</h4>
+                    <p class="text-sage-700 dark:text-sage-300 mb-4">Pioneros por empresas chinas, los BEV transforman los datos de los sensores en representaciones 3D unificadas para un mejor razonamiento espacial.</p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Modelos ST-P3</span>
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Aprendizaje de extremo a extremo</span>
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Consistencia espacial</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="font-serif text-2xl font-bold text-sage-800 dark:text-sage-100 mb-6">Planificación y Toma de Decisiones</h3>
+
+                <div class="space-y-6">
+                  <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                    <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-3">Aprendizaje por Refuerzo</h4>
+                    <p class="text-sage-700 dark:text-sage-300 mb-4">Agentes de IA aprenden comportamientos de conducción óptimos a través de la interacción con entornos de tráfico complejos, desarrollando capacidades de decisión similares a las humanas.</p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Planificación de trayectoria</span>
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Aprendizaje de comportamiento</span>
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Restricciones de seguridad</span>
+                    </div>
+                  </div>
+
+                  <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                    <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-3">Lógica de Entorno Complejo</h4>
+                    <p class="text-sage-700 dark:text-sage-300 mb-4">Marcos avanzados para manejar escenarios impredecibles como calles estrechas, vehículos de emergencia e intrusiones de peatones.</p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Modelos mundiales</span>
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Conductores virtuales</span>
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Manejo de casos extremos</span>
+                    </div>
+                  </div>
+
+                  <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                    <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-3">Simulación y Entrenamiento</h4>
+                    <p class="text-sage-700 dark:text-sage-300 mb-4">Entornos virtuales para entrenar y validar modelos de IA a través de millones de escenarios antes del despliegue en el mundo real.</p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Simulación Baidu Apollo</span>
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Pruebas de estrés</span>
+                      <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-3 py-1 rounded-full text-sm">Plataformas de validación</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Technology Stack Diagram -->
+            <div class="mt-16">
+              <h3 class="font-serif text-2xl font-bold text-sage-800 dark:text-sage-100 mb-6 text-center">Pila Tecnológica de Vehículos Autónomos</h3>
+              <div class="mermaid-container">
+                <div class="mermaid-controls">
+                  <button class="mermaid-control-btn zoom-in" title="Ampliar">
+                    <i class="fas fa-search-plus"></i>
+                  </button>
+                  <button class="mermaid-control-btn zoom-out" title="Reducir">
+                    <i class="fas fa-search-minus"></i>
+                  </button>
+                  <button class="mermaid-control-btn reset-zoom" title="Restablecer">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                  </button>
+                  <button class="mermaid-control-btn fullscreen" title="Pantalla completa">
+                    <i class="fas fa-expand"></i>
+                  </button>
+                </div>
+                <div class="mermaid" id="tech-stack-chart">
+                  graph TD
+                  A[&#34;Capa de Percepción&#34;] --&gt; B[&#34;Capa de Localización&#34;]
+                  B --&gt; C[&#34;Capa de Planificación&#34;]
+                  C --&gt; D[&#34;Capa de Control&#34;]
+                  D --&gt; E[&#34;Actuación del Vehículo&#34;]
+
+                  A1[&#34;Cámaras&#34;] --&gt; A
+                  A2[&#34;LiDAR&#34;] --&gt; A
+                  A3[&#34;Radar&#34;] --&gt; A
+                  A4[&#34;Modelos BEV&#34;] --&gt; A
+
+                  B1[&#34;Mapas HD&#34;] --&gt; B
+                  B2[&#34;GNSS&#34;] --&gt; B
+                  B3[&#34;SLAM&#34;] --&gt; B
+                  B4[&#34;Fusión de Sensores&#34;] --&gt; B
+
+                  C1[&#34;Aprendizaje por Refuerzo&#34;] --&gt; C
+                  C2[&#34;Planificación de Rutas&#34;] --&gt; C
+                  C3[&#34;Predicción de Comportamiento&#34;] --&gt; C
+                  C4[&#34;Lógica de Decisión&#34;] --&gt; C
+
+                  D1[&#34;Algoritmos MPC&#34;] --&gt; D
+                  D2[&#34;Dinámica del Vehículo&#34;] --&gt; D
+                  D3[&#34;Sistemas de Seguridad&#34;] --&gt; D
+                  D4[&#34;Control Redundante&#34;] --&gt; D
+
+                  E1[&#34;Dirección&#34;] --&gt; E
+                  E2[&#34;Aceleración&#34;] --&gt; E
+                  E3[&#34;Frenado&#34;] --&gt; E
+                  E4[&#34;Drive-by-wire&#34;] --&gt; E
+
+                  style A fill:#7a8a71,stroke:#616e5a,stroke-width:2px,color:#ffffff
+                  style B fill:#95a48c,stroke:#7a8a71,stroke-width:2px,color:#ffffff
+                  style C fill:#b4c0ad,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                  style D fill:#d1d7cc,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                  style E fill:#e8eae6,stroke:#7a8a71,stroke-width:2px,color:#393e36
+                  style A1 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style A2 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style A3 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style A4 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style B1 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style B2 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style B3 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style B4 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style C1 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style C2 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style C3 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style C4 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style D1 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style D2 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style D3 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style D4 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style E1 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style E2 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style E3 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                  style E4 fill:#f6f7f5,stroke:#7a8a71,stroke-width:1px,color:#393e36
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Companies Section -->
+      <section id="companies" class="py-16 bg-white dark:bg-sage-900 transition-colors duration-300">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl">
+            <h2 class="font-serif text-4xl font-bold text-sage-800 dark:text-sage-100 mb-8">Empresas y Actores Clave</h2>
+
+            <!-- Baidu Apollo -->
+            <div class="bg-sage-50 dark:bg-sage-800 p-8 rounded-lg mb-12 transition-colors duration-300">
+              <div class="flex items-start gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 bg-sage-700 dark:bg-sage-600 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-car text-white text-2xl"></i>
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-serif text-2xl font-bold text-sage-800 dark:text-sage-100 mb-4">Baidu Apollo</h3>
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div>
+                      <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-2">Tecnologías Principales</h4>
+                      <ul class="text-sm text-sage-700 dark:text-sage-300 space-y-1">
+                        <li>Plataforma VA de código abierto</li>
+                        <li>Tecnología de mapeo HD</li>
+                        <li>Modelos de IA de extremo a extremo</li>
+                        <li>Arquitectura modular</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-2">Despliegue</h4>
+                      <ul class="text-sm text-sage-700 dark:text-sage-300 space-y-1">
+                        <li>Servicio de robotaxi Apollo Go</li>
+                        <li>17M+ viajes completados</li>
+                        <li>250K pedidos semanales sin conductor</li>
+                        <li>Múltiples ciudades chinas</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-2">Logros</h4>
+                      <ul class="text-sm text-sage-700 dark:text-sage-300 space-y-1">
+                        <li>Robotaxi de 6ª generación: ¥204,600</li>
+                        <li>Asociaciones con BAIC, FAW, Geely</li>
+                        <li>Liderazgo en estándares industriales</li>
+                        <li>Primer permiso de prueba en vía pública</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p class="text-sage-700 dark:text-sage-400">
+                    <a href="https://carnewschina.com/2025/11/13/baidus-apollo-go-robotaxi-leads-global-autonomous-driving-with-17m-orders-targets-profit-this-year/" class="text-sage-600 dark:text-sage-400 hover:underline" target="_blank">[7]</a>
+                    <a href="https://www.cnbc.com/2025/11/03/china-baidu-robotaxis-alphabet-waymo-.html" class="text-sage-600 dark:text-sage-400 hover:underline" target="_blank">[8]</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pony.ai -->
+            <div class="bg-sage-50 dark:bg-sage-800 p-8 rounded-lg mb-12 transition-colors duration-300">
+              <div class="flex items-start gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 bg-sage-700 dark:bg-sage-600 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-rocket text-white text-2xl"></i>
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-serif text-2xl font-bold text-sage-800 dark:text-sage-100 mb-4">Pony.ai</h3>
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div>
+                      <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-2">Enfoque Tecnológico</h4>
+                      <ul class="text-sm text-sage-700 dark:text-sage-300 space-y-1">
+                        <li>Sistema &#34;Conductor Virtual&#34;</li>
+                        <li>Solución de pila completa</li>
+                        <li>Plataforma agnóstica al vehículo</li>
+                        <li>Integración vertical</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-2">Expansión Global</h4>
+                      <ul class="text-sm text-sage-700 dark:text-sage-300 space-y-1">
+                        <li>Operaciones en EE.UU. y China</li>
+                        <li>Joint venture con Toyota</li>
+                        <li>1,000 robotaxis planeados</li>
+                        <li>Pruebas en 4 ciudades Tier 1</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-2">Modelo de Negocio</h4>
+                      <ul class="text-sm text-sage-700 dark:text-sage-300 space-y-1">
+                        <li>Servicios directos de robotaxi</li>
+                        <li>Integración en red Uber</li>
+                        <li>Camiones autónomos</li>
+                        <li>Asociaciones logísticas</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p class="text-sage-700 dark:text-sage-400">
+                    <a href="https://www.eetimes.eu/av-status-u-s-vs-china-vs-europe/" class="text-sage-600 dark:text-sage-400 hover:underline" target="_blank">[597]</a>
+                    <a href="https://autonews.gasgoo.com/m/70038353.html" class="text-sage-600 dark:text-sage-400 hover:underline" target="_blank">[595]</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Other Major Players Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-3">WeRide</h4>
+                <p class="text-sm text-sage-700 dark:text-sage-300 mb-3">Operador global de robotaxis con presencia en 13 ciudades y 2,000 robobuses pedidos.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-2 py-1 rounded-full text-xs">Operaciones Globales</span>
+                  <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-2 py-1 rounded-full text-xs">Asociación Nissan</span>
+                </div>
+              </div>
+
+              <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-3">AutoX</h4>
+                <p class="text-sm text-sage-700 dark:text-sage-300 mb-3">Pionero respaldado por Alibaba en robotaxis totalmente sin conductor, operando en Shenzhen con sistemas de 5ª generación.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-2 py-1 rounded-full text-xs">Totalmente Sin Conductor</span>
+                  <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-2 py-1 rounded-full text-xs">Respaldo de Alibaba</span>
+                </div>
+              </div>
+
+              <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-3">TuSimple</h4>
+                <p class="text-sm text-sage-700 dark:text-sage-300 mb-3">Líder en camiones autónomos con asociación con Navistar, enfocado en soluciones de transporte de larga distancia.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-2 py-1 rounded-full text-xs">Camiones Autónomos</span>
+                  <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-2 py-1 rounded-full text-xs">Asociación Navistar</span>
+                </div>
+              </div>
+
+              <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-3">DiDi Autonomous Driving</h4>
+                <p class="text-sm text-sage-700 dark:text-sage-300 mb-3">Aprovechando la plataforma de transporte privado más grande de China para el despliegue de robotaxis e integración en el mercado.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-2 py-1 rounded-full text-xs">Integración en Ridesharing</span>
+                  <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-2 py-1 rounded-full text-xs">Base de Usuarios Masiva</span>
+                </div>
+              </div>
+
+              <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-3">Huawei</h4>
+                <p class="text-sm text-sage-700 dark:text-sage-300 mb-3">Proveedor de soluciones automotrices inteligentes con chips Ascend AI y sistema Qiankun ADS.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-2 py-1 rounded-full text-xs">Chips de IA</span>
+                  <span class="bg-sage-100 dark:bg-sage-700 text-sage-800 dark:text-sage-100 px-2 py-1 rounded-full text-xs">Integración 5G</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Regulatory Section -->
+      <section id="regulatory" class="py-16 bg-sage-50 dark:bg-sage-950 transition-colors duration-300">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl">
+            <h2 class="font-serif text-4xl font-bold text-sage-800 dark:text-sage-100 mb-8">Marco Regulatorio y Política Pública</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              <div class="bg-white dark:bg-sage-800 p-8 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                <h3 class="font-serif text-xl font-bold text-sage-800 dark:text-sage-100 mb-6">Marco Regulatorio Nacional</h3>
+                <div class="space-y-4">
+                  <div class="border-l-4 border-sage-600 pl-4">
+                    <h4 class="font-bold text-sage-800 dark:text-sage-100">Autorización de Pruebas</h4>
+                    <p class="text-sage-700 dark:text-sage-300 text-sm">Proceso integral gestionado por el MIIT con requisitos de permisos claros y protocolos de seguridad <a href="https://law.asia/china-autonomous-vehicle-regulations/" class="text-sage-600 dark:text-sage-400" target="_blank">[586]</a>.</p>
+                  </div>
+                  <div class="border-l-4 border-sage-600 pl-4">
+                    <h4 class="font-bold text-sage-800 dark:text-sage-100">Certificación de Seguridad</h4>
+                    <p class="text-sage-700 dark:text-sage-300 text-sm">Estándares que cubren seguridad funcional, ciberseguridad, privacidad de datos y pruebas de rendimiento.</p>
+                  </div>
+                  <div class="border-l-4 border-sage-600 pl-4">
+                    <h4 class="font-bold text-sage-800 dark:text-sage-100">Incentivos Gubernamentales</h4>
+                    <p class="text-sage-700 dark:text-sage-300 text-sm">Apoyo financiero, exenciones fiscales y procesos simplificados para el desarrollo y despliegue de VA.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white dark:bg-sage-800 p-8 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                <h3 class="font-serif text-xl font-bold text-sage-800 dark:text-sage-100 mb-6">Iniciativas de Ciudades Líderes</h3>
+                <div class="space-y-4">
+                  <div class="border-l-4 border-sage-600 pl-4">
+                    <h4 class="font-bold text-sage-800 dark:text-sage-100">Beijing</h4>
+                    <p class="text-sage-700 dark:text-sage-300 text-sm">Zona de demostración de 600 km² con 33 empresas y más de 38M de kilómetros de prueba <a href="https://english.beijing.gov.cn/beijinginfo/sci/latesttrends/202410/t20241023_3925763.html" class="text-sage-600 dark:text-sage-400" target="_blank">[623]</a>.</p>
+                  </div>
+                  <div class="border-l-4 border-sage-600 pl-4">
+                    <h4 class="font-bold text-sage-800 dark:text-sage-100">Shenzhen</h4>
+                    <p class="text-sage-700 dark:text-sage-300 text-sm">Primeras regulaciones integrales de VA con definiciones de responsabilidad y pruebas en autopista <a href="https://www.scmp.com/tech/policy/article/3187483/chinas-southern-tech-hub-shenzhen-becomes-first-city-mainland-regulate" class="text-sage-600 dark:text-sage-400" target="_blank">[607]</a>.</p>
+                  </div>
+                  <div class="border-l-4 border-sage-600 pl-4">
+                    <h4 class="font-bold text-sage-800 dark:text-sage-100">Shanghai</h4>
+                    <p class="text-sage-700 dark:text-sage-300 text-sm">Más de 2,000 km de carreteras de prueba y proyecto de camiones autónomos en el Puerto de Yangshan.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Policy Impact -->
+            <div class="bg-sage-800 dark:bg-sage-700 text-white p-8 rounded-lg transition-colors duration-300">
+              <h3 class="font-serif text-2xl font-bold mb-6">Impacto Estratégico de las Políticas</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-bold mb-4">Factores Habilitadores</h4>
+                  <ul class="space-y-2 text-sage-200">
+                    <li><i class="fas fa-check mr-2"></i>Proceso claro de autorización de pruebas</li>
+                    <li><i class="fas fa-check mr-2"></i>Estándares de seguridad integrales</li>
+                    <li><i class="fas fa-check mr-2"></i>Incentivos financieros y apoyo</li>
+                    <li><i class="fas fa-check mr-2"></i>Desarrollo de infraestructura en zonas piloto</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-4">Desafíos de Implementación</h4>
+                  <ul class="space-y-2 text-sage-200">
+                    <li><i class="fas fa-exclamation-triangle mr-2"></i>Equilibrar innovación con seguridad</li>
+                    <li><i class="fas fa-exclamation-triangle mr-2"></i>Armonización regulatoria regional</li>
+                    <li><i class="fas fa-exclamation-triangle mr-2"></i>Construir confianza y aceptación pública</li>
+                    <li><i class="fas fa-exclamation-triangle mr-2"></i>Gestionar compromisos de seguridad vs velocidad</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Challenges Section -->
+      <section id="challenges" class="py-16 bg-white dark:bg-sage-900 transition-colors duration-300">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl">
+            <h2 class="font-serif text-4xl font-bold text-sage-800 dark:text-sage-100 mb-8">Desafíos y Limitaciones</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <!-- Technical Challenges -->
+              <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-8 rounded-lg transition-colors duration-300">
+                <div class="text-red-600 dark:text-red-400 text-3xl mb-4"><i class="fas fa-cog"></i></div>
+                <h3 class="font-serif text-xl font-bold text-red-800 dark:text-red-200 mb-4">Obstáculos Técnicos</h3>
+
+                <div class="space-y-4">
+                  <div>
+                    <h4 class="font-bold text-red-800 dark:text-red-300 text-sm mb-2">Confiabilidad y Seguridad de la IA</h4>
+                    <p class="text-red-700 dark:text-red-200 text-sm">Asegurar niveles de rendimiento &#34;superhumanos&#34; y abordar la naturaleza de &#34;caja negra&#34; de los modelos de aprendizaje profundo.</p>
+                    <div class="mt-2 p-3 bg-red-100 dark:bg-red-900/40 rounded">
+                      <p class="text-xs text-red-800 dark:text-red-200"><strong>Incidente Reciente:</strong> Accidente fatal del Xiaomi SU7 a 116 km/h resaltó fallos de reconocimiento <a href="https://www.eetimes.eu/av-status-u-s-vs-china-vs-europe/" class="text-red-600 dark:text-red-300" target="_blank">[597]</a>.</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-red-800 dark:text-red-300 text-sm mb-2">Casos Extremos y Clima</h4>
+                    <p class="text-red-700 dark:text-red-200 text-sm">Manejo de escenarios raros y condiciones adversas que afectan el rendimiento de los sensores.</p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-red-800 dark:text-red-300 text-sm mb-2">Complejidad del Mundo Real</h4>
+                    <p class="text-red-700 dark:text-red-200 text-sm">Navegar entornos urbanos densos con diversos usuarios de la vía y culturas de conducción agresivas.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ethical &amp; Social Challenges -->
+              <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-8 rounded-lg transition-colors duration-300">
+                <div class="text-amber-600 dark:text-amber-400 text-3xl mb-4"><i class="fas fa-users"></i></div>
+                <h3 class="font-serif text-xl font-bold text-amber-800 dark:text-amber-200 mb-4">Preocupaciones Éticas y Sociales</h3>
+
+                <div class="space-y-4">
+                  <div>
+                    <h4 class="font-bold text-amber-800 dark:text-amber-300 text-sm mb-2">Brecha de Confianza Pública</h4>
+                    <p class="text-amber-700 dark:text-amber-200 text-sm">85% de comodidad con el concepto de VA vs solo 9% aceptando el reemplazo total del conductor.</p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-amber-800 dark:text-amber-300 text-sm mb-2">Impacto en el Empleo</h4>
+                    <p class="text-amber-700 dark:text-amber-200 text-sm">Potencial desplazamiento de millones de conductores de camiones, autobuses y taxis.</p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-amber-800 dark:text-amber-300 text-sm mb-2">Privacidad y Seguridad de Datos</h4>
+                    <p class="text-amber-700 dark:text-amber-200 text-sm">77.4% de los propietarios de vehículos inteligentes reacios a compartir datos con fabricantes debido a preocupaciones de seguridad.</p>
+                    <div class="mt-2 p-3 bg-amber-100 dark:bg-amber-900/40 rounded">
+                      <p class="text-xs text-amber-800 dark:text-amber-200">Principales preocupaciones incluyen riesgos de hackeo y mal uso de datos para extorsión.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Economic Challenges -->
+              <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-8 rounded-lg transition-colors duration-300">
+                <div class="text-blue-600 dark:text-blue-400 text-3xl mb-4"><i class="fas fa-chart-line"></i></div>
+                <h3 class="font-serif text-xl font-bold text-blue-800 dark:text-blue-200 mb-4">Viabilidad Económica</h3>
+
+                <div class="space-y-4">
+                  <div>
+                    <h4 class="font-bold text-blue-800 dark:text-blue-300 text-sm mb-2">Altos Costos de Hardware</h4>
+                    <p class="text-blue-700 dark:text-blue-200 text-sm">Sensores costosos (LiDAR, cámaras) y plataformas de computación de alto rendimiento siguen siendo barreras para el despliegue masivo.</p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-blue-800 dark:text-blue-300 text-sm mb-2">Desafíos de Escalabilidad</h4>
+                    <p class="text-blue-700 dark:text-blue-200 text-sm">Camino poco claro hacia la rentabilidad para modelos de negocio de robotaxis y camiones autónomos.</p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-blue-800 dark:text-blue-300 text-sm mb-2">Camino a la Rentabilidad</h4>
+                    <p class="text-blue-700 dark:text-blue-200 text-sm">La mayoría de las empresas operan con pérdidas a pesar del potencial masivo del mercado.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Future Outlook Section -->
+      <section id="future" class="py-16 bg-sage-50 dark:bg-sage-950 transition-colors duration-300">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl">
+            <h2 class="font-serif text-4xl font-bold text-sage-800 dark:text-sage-100 mb-8">Perspectivas Futuras</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+              <div>
+                <h3 class="font-serif text-2xl font-bold text-sage-800 dark:text-sage-100 mb-6">Línea de Tiempo de Despliegue Masivo</h3>
+                <div class="bg-white dark:bg-sage-800 p-8 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                  <div class="space-y-6">
+                    <div class="flex items-center">
+                      <div class="w-12 h-12 bg-sage-600 dark:bg-sage-500 rounded-full flex items-center justify-center text-white font-bold mr-4">L3</div>
+                      <div>
+                        <div class="font-bold text-sage-800 dark:text-sage-100">Comercialización Nivel 3</div>
+                        <div class="text-sage-600 dark:text-sage-300 text-sm">Producción masiva para 2025, casos de uso limitados en autopista</div>
+                      </div>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="w-12 h-12 bg-sage-700 dark:bg-sage-600 rounded-full flex items-center justify-center text-white font-bold mr-4">L4</div>
+                      <div>
+                        <div class="font-bold text-sage-800 dark:text-sage-100">Despliegue Nivel 4</div>
+                        <div class="text-sage-600 dark:text-sage-300 text-sm">Robotaxis y camiones para el final de la década</div>
+                      </div>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="w-12 h-12 bg-sage-800 dark:bg-sage-700 rounded-full flex items-center justify-center text-white font-bold mr-4">L5</div>
+                      <div>
+                        <div class="font-bold text-sage-800 dark:text-sage-100">Automatización Completa Nivel 5</div>
+                        <div class="text-sage-600 dark:text-sage-300 text-sm">Línea de tiempo de adopción total del consumidor por determinar</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="font-serif text-2xl font-bold text-sage-800 dark:text-sage-100 mb-6">Sectores de Adopción Masiva Inicial</h3>
+                <div class="space-y-4">
+                  <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                    <div class="flex items-center mb-3">
+                      <i class="fas fa-taxi text-sage-600 dark:text-sage-400 text-xl mr-3"></i>
+                      <h4 class="font-bold text-sage-800 dark:text-sage-100">Servicios de Robotaxi</h4>
+                    </div>
+                    <p class="text-sage-700 dark:text-sage-300 text-sm">Camino claro a la comercialización con modelos de negocio establecidos y gran potencial de mercado.</p>
+                  </div>
+
+                  <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                    <div class="flex items-center mb-3">
+                      <i class="fas fa-truck text-sage-600 dark:text-sage-400 text-xl mr-3"></i>
+                      <h4 class="font-bold text-sage-800 dark:text-sage-100">Camiones Autónomos</h4>
+                    </div>
+                    <p class="text-sage-700 dark:text-sage-300 text-sm">Abordando la escasez de conductores y mejorando la eficiencia en el transporte de larga distancia.</p>
+                  </div>
+
+                  <div class="bg-white dark:bg-sage-800 p-6 rounded-lg shadow-sm border border-sage-200 dark:border-sage-700 transition-colors duration-300">
+                    <div class="flex items-center mb-3">
+                      <i class="fas fa-bus text-sage-600 dark:text-sage-400 text-xl mr-3"></i>
+                      <h4 class="font-bold text-sage-800 dark:text-sage-100">Transporte Público</h4>
+                    </div>
+                    <p class="text-sage-700 dark:text-sage-300 text-sm">Entornos controlados como puertos, aeropuertos y carriles dedicados.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Global Influence -->
+            <div class="bg-sage-800 dark:bg-sage-700 text-white p-8 rounded-lg mb-12 transition-colors duration-300">
+              <h3 class="font-serif text-2xl font-bold mb-6">Influencia Global de China</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-bold mb-4">Exportación de Tecnología y Estándares</h4>
+                  <p class="text-sage-200 mb-4">Empresas chinas de VA expandiéndose globalmente, exportando tecnologías e influyendo en estándares internacionales para movilidad e IA.</p>
+                  <ul class="space-y-2 text-sage-200 text-sm">
+                    <li><i class="fas fa-globe mr-2"></i>Expansión en mercados extranjeros</li>
+                    <li><i class="fas fa-handshake mr-2"></i>Asociaciones internacionales</li>
+                    <li><i class="fas fa-clipboard-list mr-2"></i>Desarrollo de estándares</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-4">Moldeando Normas de Movilidad Global</h4>
+                  <p class="text-sage-200 mb-4">Promoviendo el modelo de integración &#34;vehículo-carretera-nube&#34; globalmente, diferente de los enfoques centrados en el vehículo de Occidente.</p>
+                  <ul class="space-y-2 text-sage-200 text-sm">
+                    <li><i class="fas fa-road mr-2"></i>Enfoque primero en infraestructura</li>
+                    <li><i class="fas fa-cloud mr-2"></i>Integración vehículo-nube</li>
+                    <li><i class="fas fa-signal mr-2"></i>Estándares de comunicación V2X</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Future Scenario -->
+            <div class="bg-white dark:bg-sage-800 border border-sage-200 dark:border-sage-700 p-8 rounded-lg transition-colors duration-300">
+              <h3 class="font-serif text-2xl font-bold text-sage-800 dark:text-sage-100 mb-6">Visión 2030: Liderazgo de VA en China</h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                  <div class="text-4xl text-sage-600 dark:text-sage-400 mb-3"><i class="fas fa-car"></i></div>
+                  <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-2">Liderazgo de Mercado</h4>
+                  <p class="text-sage-700 dark:text-sage-300 text-sm">China lidera el despliegue global de VA con la flota más grande de robotaxis y red de camiones autónomos.</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl text-sage-600 dark:text-sage-400 mb-3"><i class="fas fa-microchip"></i></div>
+                  <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-2">Independencia Tecnológica</h4>
+                  <p class="text-sage-700 dark:text-sage-300 text-sm">Cadenas de suministro domésticas para LiDAR, chips de IA y sensores reducen la dependencia extranjera.</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl text-sage-600 dark:text-sage-400 mb-3"><i class="fas fa-globe-americas"></i></div>
+                  <h4 class="font-bold text-sage-800 dark:text-sage-100 mb-2">Estándares Globales</h4>
+                  <p class="text-sage-700 dark:text-sage-300 text-sm">Estándares chinos de VA adoptados internacionalmente, moldeando el futuro de la movilidad global.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Notes Section -->
+      <section id="notes" class="py-16 bg-white dark:bg-sage-900 transition-colors duration-300">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl">
+            <h2 class="font-serif text-4xl font-bold text-sage-800 dark:text-sage-100 mb-8">Notas y Supuestos</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div class="bg-sage-50 dark:bg-sage-800 p-6 rounded-lg transition-colors duration-300">
+                <h3 class="font-bold text-sage-800 dark:text-sage-100 mb-4">Fuentes de Datos</h3>
+                <ul class="space-y-2 text-sm text-sage-700 dark:text-sage-300">
+                  <li><i class="fas fa-book mr-2"></i>Artículos de investigación académica</li>
+                  <li><i class="fas fa-chart-bar mr-2"></i>Informes de industria y análisis</li>
+                  <li><i class="fas fa-file-alt mr-2"></i>Documentos de política gubernamental</li>
+                  <li><i class="fas fa-newspaper mr-2"></i>Publicaciones de noticias reputadas</li>
+                  <li><i class="fas fa-globe mr-2"></i>Fuentes chinas e internacionales</li>
+                </ul>
+              </div>
+
+              <div class="bg-sage-50 dark:bg-sage-800 p-6 rounded-lg transition-colors duration-300">
+                <h3 class="font-bold text-sage-800 dark:text-sage-100 mb-4">Supuestos Clave</h3>
+                <ul class="space-y-2 text-sm text-sage-700 dark:text-sage-300">
+                  <li><i class="fas fa-check mr-2"></i>Apoyo gubernamental continuo</li>
+                  <li><i class="fas fa-check mr-2"></i>Entorno regulatorio favorable</li>
+                  <li><i class="fas fa-check mr-2"></i>Avance tecnológico rápido</li>
+                  <li><i class="fas fa-check mr-2"></i>Disminución de costos de hardware/software</li>
+                  <li><i class="fas fa-check mr-2"></i>Fuerte crecimiento del mercado doméstico</li>
+                </ul>
+              </div>
+
+              <div class="bg-sage-50 dark:bg-sage-800 p-6 rounded-lg transition-colors duration-300">
+                <h3 class="font-bold text-sage-800 dark:text-sage-100 mb-4">Limitaciones</h3>
+                <ul class="space-y-2 text-sm text-sage-700 dark:text-sage-300">
+                  <li><i class="fas fa-exclamation-triangle mr-2"></i>Basado solo en información pública</li>
+                  <li><i class="fas fa-exclamation-triangle mr-2"></i>Industria en rápida evolución</li>
+                  <li><i class="fas fa-exclamation-triangle mr-2"></i>Alta incertidumbre en proyecciones</li>
+                  <li><i class="fas fa-exclamation-triangle mr-2"></i>Análisis centrado en China</li>
+                  <li><i class="fas fa-exclamation-triangle mr-2"></i>Acceso limitado a datos propietarios</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-12 bg-sage-800 dark:bg-sage-700 text-white p-8 rounded-lg transition-colors duration-300">
+              <h3 class="font-serif text-xl font-bold mb-4">Metodología</h3>
+              <p class="text-sage-200 leading-relaxed">
+                Este informe se basa en un análisis exhaustivo realizado por expertos en IA e investigación automotriz, utilizando una metodología de revisión sistemática de literatura. El análisis se centró en identificar tendencias clave, desafíos y oportunidades en el sector de vehículos autónomos de China mediante el examen de múltiples fuentes de datos y perspectivas de expertos. Todas las proyecciones están sujetas a un alto grado de incertidumbre dada la naturaleza rápidamente cambiante de la tecnología y las condiciones del mercado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer/Credit -->
+      <footer class="py-8 bg-sage-900 dark:bg-black text-white text-center transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <p class="font-serif text-lg font-medium">Materia Elaborado por el profesor Sergio Gevatschnaider</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+    const icon = themeToggleBtn.querySelector('i');
+
+    // Check local storage or system preference on load
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlElement.classList.add('dark');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        htmlElement.classList.remove('dark');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+        htmlElement.classList.toggle('dark');
+        if (htmlElement.classList.contains('dark')) {
+            localStorage.theme = 'dark';
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            localStorage.theme = 'light';
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    });
+
+    // Initialize Mermaid
+    document.addEventListener('DOMContentLoaded', function() {
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#7a8a71',
+                primaryTextColor: '#393e36',
+                primaryBorderColor: '#616e5a',
+                lineColor: '#7a8a71',
+                secondaryColor: '#95a48c',
+                tertiaryColor: '#b4c0ad',
+                background: '#ffffff',
+                mainBkg: '#ffffff',
+                secondBkg: '#f6f7f5',
+                tertiaryBkg: '#e8eae6',
+                // Enhanced contrast colors
+                nodeBorder: '#4f584a',
+                clusterBkg: '#f6f7f5',
+                clusterBorder: '#7a8a71',
+                defaultLinkColor: '#7a8a71',
+                titleColor: '#393e36',
+                edgeLabelBackground: 'rgba(255, 255, 255, 0.95)',
+                nodeTextColor: '#393e36',
+                // Ensure good contrast for different node types
+                cScale0: '#7a8a71',
+                cScale1: '#95a48c', 
+                cScale2: '#b4c0ad',
+                cScale3: '#d1d7cc',
+                cScale4: '#e8eae6',
+                cScale5: '#f6f7f5'
+            },
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true,
+                curve: 'basis',
+                padding: 20
+            },
+            graph: {
+                useMaxWidth: false,
+                htmlLabels: true
+            },
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '14px',
+            securityLevel: 'loose'
+        });
+
+        // Initialize Mermaid Controls for zoom and pan
+        initializeMermaidControls();
+
+        // Toggle TOC on mobile
+        const tocToggle = document.getElementById('toc-toggle');
+        const toc = document.getElementById('toc');
+        
+        tocToggle.addEventListener('click', function() {
+            toc.classList.toggle('-translate-x-full');
+        });
+
+        // Close TOC when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768) {
+                const isClickInsideToc = toc.contains(event.target);
+                const isClickOnToggle = tocToggle.contains(event.target);
+                if (!isClickInsideToc && !isClickOnToggle) {
+                    toc.classList.add('-translate-x-full');
+                }
+            }
+        });
+    });
+
+    // Initialize Mermaid Controls for zoom and pan
+    function initializeMermaidControls() {
+        const containers = document.querySelectorAll('.mermaid-container');
+
+        containers.forEach(container => {
+        const mermaidElement = container.querySelector('.mermaid');
+        let scale = 1;
+        let isDragging = false;
+        let startX, startY, translateX = 0, translateY = 0;
+
+        // 触摸相关状态
+        let isTouch = false;
+        let touchStartTime = 0;
+        let initialDistance = 0;
+        let initialScale = 1;
+        let isPinching = false;
+
+        // Zoom controls
+        const zoomInBtn = container.querySelector('.zoom-in');
+        const zoomOutBtn = container.querySelector('.zoom-out');
+        const resetBtn = container.querySelector('.reset-zoom');
+        const fullscreenBtn = container.querySelector('.fullscreen');
+
+        function updateTransform() {
+            mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+            if (scale > 1) {
+            container.classList.add('zoomed');
+            } else {
+            container.classList.remove('zoomed');
+            }
+
+            mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
+        }
+
+        if (zoomInBtn) {
+            zoomInBtn.addEventListener('click', () => {
+            scale = Math.min(scale * 1.25, 4);
+            updateTransform();
+            });
+        }
+
+        if (zoomOutBtn) {
+            zoomOutBtn.addEventListener('click', () => {
+            scale = Math.max(scale / 1.25, 0.3);
+            if (scale <= 1) {
+                translateX = 0;
+                translateY = 0;
+            }
+            updateTransform();
+            });
+        }
+
+        if (resetBtn) {
+            resetBtn.addEventListener('click', () => {
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+            });
+        }
+
+        if (fullscreenBtn) {
+            fullscreenBtn.addEventListener('click', () => {
+            if (container.requestFullscreen) {
+                container.requestFullscreen();
+            } else if (container.webkitRequestFullscreen) {
+                container.webkitRequestFullscreen();
+            } else if (container.msRequestFullscreen) {
+                container.msRequestFullscreen();
+            }
+            });
+        }
+
+        // Mouse Events
+        mermaidElement.addEventListener('mousedown', (e) => {
+            if (isTouch) return; // Si es dispositivo táctil, ignorar eventos de ratón
+
+            isDragging = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            mermaidElement.style.cursor = 'grabbing';
+            updateTransform();
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging && !isTouch) {
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            updateTransform();
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (isDragging && !isTouch) {
+            isDragging = false;
+            mermaidElement.style.cursor = 'grab';
+            updateTransform();
+            }
+        });
+
+        document.addEventListener('mouseleave', () => {
+            if (isDragging && !isTouch) {
+            isDragging = false;
+            mermaidElement.style.cursor = 'grab';
+            updateTransform();
+            }
+        });
+
+        // Obtener distancia entre dos puntos
+        function getTouchDistance(touch1, touch2) {
+            return Math.hypot(
+            touch2.clientX - touch1.clientX,
+            touch2.clientY - touch1.clientY
+            );
+        }
+
+        // Touch Events - Manejo de eventos táctiles
+        mermaidElement.addEventListener('touchstart', (e) => {
+            isTouch = true;
+            touchStartTime = Date.now();
+
+            if (e.touches.length === 1) {
+            // Un dedo arrastra
+            isPinching = false;
+            isDragging = true;
+
+            const touch = e.touches[0];
+            startX = touch.clientX - translateX;
+            startY = touch.clientY - translateY;
+
+            } else if (e.touches.length === 2) {
+            // Dos dedos hacen zoom
+            isPinching = true;
+            isDragging = false;
+
+            const touch1 = e.touches[0];
+            const touch2 = e.touches[1];
+            initialDistance = getTouchDistance(touch1, touch2);
+            initialScale = scale;
+            }
+
+            e.preventDefault();
+        }, { passive: false });
+
+        mermaidElement.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 1 && isDragging && !isPinching) {
+            // Un dedo arrastra
+            const touch = e.touches[0];
+            translateX = touch.clientX - startX;
+            translateY = touch.clientY - startY;
+            updateTransform();
+
+            } else if (e.touches.length === 2 && isPinching) {
+            // Dos dedos hacen zoom
+            const touch1 = e.touches[0];
+            const touch2 = e.touches[1];
+            const currentDistance = getTouchDistance(touch1, touch2);
+
+            if (initialDistance > 0) {
+                const newScale = Math.min(Math.max(
+                initialScale * (currentDistance / initialDistance),
+                0.3
+                ), 4);
+                scale = newScale;
+                updateTransform();
+            }
+            }
+
+            e.preventDefault();
+        }, { passive: false });
+
+        mermaidElement.addEventListener('touchend', (e) => {
+            // Restablecer estado
+            if (e.touches.length === 0) {
+            isDragging = false;
+            isPinching = false;
+            initialDistance = 0;
+
+            // Retrasar restablecimiento de isTouch para evitar disparos inmediatos de ratón
+            setTimeout(() => {
+                isTouch = false;
+            }, 100);
+            } else if (e.touches.length === 1 && isPinching) {
+            // De dos dedos a uno, cambiar a modo arrastre
+            isPinching = false;
+            isDragging = true;
+
+            const touch = e.touches[0];
+            startX = touch.clientX - translateX;
+            startY = touch.clientY - translateY;
+            }
+
+            updateTransform();
+        });
+
+        mermaidElement.addEventListener('touchcancel', (e) => {
+            isDragging = false;
+            isPinching = false;
+            initialDistance = 0;
+
+            setTimeout(() => {
+            isTouch = false;
+            }, 100);
+
+            updateTransform();
+        });
+
+        // Enhanced wheel zoom with better center point handling
+        container.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const rect = container.getBoundingClientRect();
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const delta = e.deltaY > 0 ? 0.9 : 1.1;
+            const newScale = Math.min(Math.max(scale * delta, 0.3), 4);
+
+            // Adjust translation to zoom towards center
+            if (newScale !== scale) {
+            const scaleDiff = newScale / scale;
+            translateX = translateX * scaleDiff;
+            translateY = translateY * scaleDiff;
+            scale = newScale;
+
+            if (scale <= 1) {
+                translateX = 0;
+                translateY = 0;
+            }
+
+            updateTransform();
+            }
+        });
+
+        // Initialize display
+        updateTransform();
+        });
+    }
+
+    // Smooth scrolling for TOC links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Highlight active TOC section
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section[id]');
+        const tocLinks = document.querySelectorAll('nav a[href^="#"]');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        tocLinks.forEach(link => {
+            link.classList.remove('bg-sage-200', 'font-semibold', 'dark:bg-sage-800');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('bg-sage-200', 'font-semibold', 'dark:bg-sage-800');
+            }
+        });
+    });
+</script>
+
+  
+
+</body></html>
