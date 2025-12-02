@@ -98,13 +98,37 @@ Desde los polos de hardware en Shenzhen hasta los laboratorios de IA en Beijing,
 
 Aquí tienes el código Markdown listo para copiar y pegar en tu repositorio. He mantenido la fidelidad estética y estructural que solicitaste, redactando los resúmenes basándome en el análisis técnico de los archivos HTML y el contexto del artículo de tu blog.
 
+Entiendo perfectamente lo que sucede al ver la imagen.
+
+**El problema:**
+Cuando abres el archivo en tu computadora ("local"), tu navegador ejecuta todo el código (estilos Tailwind, gráficos Mermaid, colores) sin restricciones.
+Cuando lo abres desde GitHub usando `htmlpreview`, este servicio a veces **bloquea los scripts de configuración** (como la configuración de colores de Tailwind) por seguridad o velocidad, resultando en esa página blanca con letra "Times New Roman" aburrida que me muestras en la foto.
+
+**La Solución:**
+Para que se vea *exactamente* igual que en tu PC (con el diseño moderno y colores), debemos cambiar el enlace del visor. En lugar de `htmlpreview`, usaremos **Raw.githack**, que sirve el archivo como una página web real de producción.
+
+Aquí tienes el código **corregido con los enlaces nuevos** que funcionarán correctamente:
+
 ## 🚗💊 Nuevos Informes Sectoriales y Análisis Estratégico
 
 | 📄 Recurso | 📥 Acceso |
 |---|---|
-| **IA en Vehículos Autónomos (Informe Integral)** <br><br> <details><summary><strong>Resumen:</strong> <em>(haz clic para expandir/colapsar)</em></summary><p>Informe exhaustivo que documenta cómo China ha capturado el 22% de la inversión privada en IA para el sector de movilidad. Analiza la infraestructura "Smart Road", los niveles de autonomía SAE adaptados a China y detalla el ecosistema de gigantes tecnológicos (Baidu Apollo, Huawei) y startups (Pony.ai, WeRide). Incluye diagramas técnicos sobre fusión de sensores, modelos BEV (Bird's Eye View) y un análisis comparativo de regulación entre Pekín, Shanghái y Shenzhen.</p></details> | [![Ver Informe VA](https://img.shields.io/badge/Ver_Informe-Vehículos_Autónomos-blue?style=for-the-badge&logo=html5&logoColor=white)](https://htmlpreview.github.io/?https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/recursos/IA_Automoviles_China.html) |
-| **IA en Salud: Estado y Evolución 2025** <br><br> <details><summary><strong>Resumen:</strong> <em>(haz clic para expandir/colapsar)</em></summary><p>Análisis profundo de la estrategia nacional "IA + Salud" de China, con el objetivo de diagnósticos universales asistidos por IA para 2030. Cubre la proyección de mercado ($22MM para 2035), avances en descubrimiento de fármacos (Insilico Medicine), hospitales inteligentes y robótica quirúrgica. Examina cómo instituciones como Ping An y Tencent están reingenierizando la atención primaria y compara el modelo centralizado chino frente a los enfoques occidentales.</p></details> | [![Ver Informe Salud](https://img.shields.io/badge/Ver_Informe-IA_en_Salud-teal?style=for-the-badge&logo=html5&logoColor=white)](https://htmlpreview.github.io/?https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/recursos/IA_Salud_China.html) |
+| **IA en Vehículos Autónomos (Informe Integral)** <br><br> <details><summary><strong>Resumen:</strong> <em>(haz clic para expandir/colapsar)</em></summary><p>Informe exhaustivo que documenta cómo China ha capturado el 22% de la inversión privada en IA para el sector de movilidad. Analiza la infraestructura "Smart Road", los niveles de autonomía SAE adaptados a China y detalla el ecosistema de gigantes tecnológicos (Baidu Apollo, Huawei) y startups (Pony.ai, WeRide). Incluye diagramas técnicos sobre fusión de sensores, modelos BEV (Bird's Eye View) y un análisis comparativo de regulación entre Pekín, Shanghái y Shenzhen.</p></details> | [![Ver Informe VA](https://img.shields.io/badge/Ver_Informe-Vehículos_Autónomos-blue?style=for-the-badge&logo=html5&logoColor=white)](https://raw.githack.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/main/recursos/IA_Automoviles_China.html) |
+| **IA en Salud: Estado y Evolución 2025** <br><br> <details><summary><strong>Resumen:</strong> <em>(haz clic para expandir/colapsar)</em></summary><p>Análisis profundo de la estrategia nacional "IA + Salud" de China, con el objetivo de diagnósticos universales asistidos por IA para 2030. Cubre la proyección de mercado ($22MM para 2035), avances en descubrimiento de fármacos (Insilico Medicine), hospitales inteligentes y robótica quirúrgica. Examina cómo instituciones como Ping An y Tencent están reingenierizando la atención primaria y compara el modelo centralizado chino frente a los enfoques occidentales.</p></details> | [![Ver Informe Salud](https://img.shields.io/badge/Ver_Informe-IA_en_Salud-teal?style=for-the-badge&logo=html5&logoColor=white)](https://raw.githack.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/main/recursos/IA_Salud_China.html) |
 | **El automóvil como código: China, IA y movilidad** <br><br> <details><summary><strong>Resumen:</strong> <em>(haz clic para expandir/colapsar)</em></summary><p>Artículo de análisis publicado en <em>Economía y Ética</em>. Explora el cambio de paradigma del vehículo físico al "vehículo definido por software" (SDV). Argumenta cómo la integración de "IA encarnada" y modelos generativos (tipo DeepSeek) en fabricantes como BYD y Geely no solo cambia la conducción, sino que reescribe la arquitectura de poder económico global, transformando el automóvil en una plataforma de código y datos en tiempo real.</p></details> | [![Leer Artículo](https://img.shields.io/badge/Leer_Artículo-Blog_Economía_y_Ética-orange?style=for-the-badge&logo=blogger&logoColor=white)](https://economiayetica.blogspot.com/2025/03/el-automovil-como-codigo-china-ia-y-la_23.html) |
+
+---
+
+### 💡 Alternativa Profesional (Recomendada para el futuro)
+
+Si quieres que tus enlaces se vean 100% profesionales y carguen muy rápido sin depender de servicios externos, te recomiendo activar **GitHub Pages** en tu repositorio. Es gratis y fácil:
+
+1.  Ve a tu repositorio en GitHub.
+2.  Haz clic en **Settings** (Configuración) en la barra superior.
+3.  En el menú de la izquierda, busca y haz clic en **Pages**.
+4.  Donde dice **Branch**, selecciona `main` y guarda (`Save`).
+
+En unos minutos, GitHub te dará un enlace oficial (tipo `https://sgevatschnaider.github.io/...`). Si haces esto, avísame y te actualizo el código con esos enlaces, que son los más estables. **Por ahora, usa el código de arriba con `raw.githack`, que solucionará el problema visual inmediatamente.**
 
 ---
 
