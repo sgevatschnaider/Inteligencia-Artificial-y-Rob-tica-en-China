@@ -21,8 +21,8 @@ Thank you for helping improve this bilingual knowledge base. Gracias por ayudar 
 4. Update both language versions when changing shared editorial content.
 5. Do not translate company or policy names literally when an established English or Spanish rendering exists.
 6. Label machine-assisted translation and have it reviewed for terminology, meaning, numbers, and links.
-7. For a bilingual interactive resource, keep the reviewed Spanish string as the source text, add its English equivalent under the matching filename in `recursos/i18n.js`, and include `<script src="i18n.js"></script>` before `</body>`.
-7. Confirm that you have the right to contribute all text, code, data, and media.
+7. For a bilingual interactive resource, keep the reviewed Spanish string as the source text. Add its English equivalent either under the matching filename in `recursos/i18n.js` or in a page-specific `i18n-*.js` dictionary loaded immediately before `i18n.js`.
+8. Confirm that you have the right to contribute all text, code, data, and media.
 
 For translations, preserve meaning, register, evidentiary qualifications, units, and dates. Prefer idiomatic professional English or neutral international Spanish over word-for-word equivalence.
 
@@ -45,8 +45,8 @@ For translations, preserve meaning, register, evidentiary qualifications, units,
 4. Actualiza ambos idiomas cuando modifiques contenido editorial compartido.
 5. No traduzcas literalmente nombres de empresas o políticas si existe una denominación consolidada.
 6. Identifica las traducciones asistidas por máquinas y revisa terminología, sentido, cifras y enlaces.
-7. Para un recurso interactivo bilingüe, conserva el texto español revisado como fuente, agrega su equivalente inglés bajo el nombre de archivo correspondiente en `recursos/i18n.js` e incluye `<script src="i18n.js"></script>` antes de `</body>`.
-7. Confirma que tienes derecho a aportar todos los textos, código, datos y materiales.
+7. Para un recurso interactivo bilingüe, conserva el texto español revisado como fuente. Agrega su equivalente inglés bajo el nombre de archivo correspondiente en `recursos/i18n.js` o en un diccionario `i18n-*.js` específico de la página, cargado inmediatamente antes de `i18n.js`.
+8. Confirma que tienes derecho a aportar todos los textos, código, datos y materiales.
 
 En las traducciones conserva significado, registro, reservas probatorias, unidades y fechas. Prioriza un inglés profesional idiomático o español internacional neutro frente a la equivalencia palabra por palabra.
 

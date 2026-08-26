@@ -2,7 +2,7 @@
 
 **[Catálogo en español](../recursos/README.md) · [English overview](../README.en.md) · [Interactive website](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)**
 
-The source materials in `recursos/` were produced primarily during **2025** and remain available as dated reports, visualisations, and models. The sector reports and PDF remain in Spanish; the comparative dashboard and all six data-flywheel resources now provide an in-page **ES/EN** switch, professionally edited Spanish, and complete English translations. For current figures and context, use the [2026 overview](../README.en.md) and [source policy](../docs/en/sources.md).
+The source materials in `recursos/` were produced primarily during **2025** and remain available as dated reports, visualisations, and models. All ten HTML resources provide an in-page **ES/EN** switch, professionally edited Spanish, and complete English translations; the PDF presentation remains in Spanish. For current figures and context, use the [2026 overview](../README.en.md) and [source policy](../docs/en/sources.md).
 
 > **Reading note:** sector reports may contain estimates, forecasts, or corporate announcements current at the time of writing. They should not automatically be treated as observed 2026 data.
 
@@ -11,9 +11,9 @@ The source materials in `recursos/` were produced primarily during **2025** and 
 | Resource | Description | Format and language | Access |
 |---|---|---|---|
 | **AI and Robotics in China** | A general presentation covering industrial strategy, demographics, automation, and major innovation clusters. | PDF · Spanish | [Open](../recursos/IA%20Y%20CHINA.pdf) |
-| **China's Robotics Revolution** | A historical, industrial, and technological introduction to China's robotics ecosystem. | Interactive HTML · Spanish | [Open on GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html) |
-| **AI in China's Autonomous-Vehicle Sector** | An examination of the company ecosystem, infrastructure, perception stack, regulation, and deployment models. | Interactive HTML · Spanish | [Open on GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html) |
-| **AI in Chinese Healthcare** | Coverage of diagnostic support, drug discovery, smart hospitals, and medical robotics. | Interactive HTML · Spanish | [Open on GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Salud_China.html) |
+| **China's Robotics Revolution** | A historical, industrial, and technological introduction to China's robotics ecosystem. | Interactive HTML · Spanish/English | [Open on GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html) |
+| **AI in China's Autonomous-Vehicle Sector** | An examination of the company ecosystem, infrastructure, perception stack, regulation, and deployment models. | Interactive HTML · Spanish/English | [Open on GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html) |
+| **AI in Chinese Healthcare** | Coverage of diagnostic support, drug discovery, smart hospitals, and medical robotics. | Interactive HTML · Spanish/English | [Open on GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Salud_China.html) |
 | **Comparative Robotics Data** | A visual comparison of industrial-robot adoption, updated with World Robotics 2025. | Interactive HTML · Spanish/English | [Open on GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Datos%20Comparativos%20sobre%20Rob%C3%B3tica.html) |
 
 ## Interactive simulators and conceptual models

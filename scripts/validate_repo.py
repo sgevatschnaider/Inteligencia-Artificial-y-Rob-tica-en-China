@@ -21,6 +21,9 @@ FORBIDDEN = (
     "Entiendo perfectamente lo que sucede",
 )
 BILINGUAL_RESOURCES = {
+    "Introducción robótica en China.html",
+    "IA_Automoviles_China.html",
+    "IA_Salud_China.html",
     "Capital Robótico vs Capital Común — Efecto del Data Flywheel.html",
     "Capital Robótico vs. Capital Común_Teoría.html",
     "Data Flywheel (U→D→Q→U).html",
@@ -28,6 +31,11 @@ BILINGUAL_RESOURCES = {
     "Robot_datos_sinteticos.html",
     "Simulacion_dataflywheel.html",
     "Simulador Data Flywheel Componentes.html",
+}
+PAGE_DICTIONARIES = {
+    "Introducción robótica en China.html": "i18n-introduccion.js",
+    "IA_Automoviles_China.html": "i18n-automoviles.js",
+    "IA_Salud_China.html": "i18n-salud.js",
 }
 
 
@@ -97,6 +105,9 @@ def validate_html(errors: list[str]) -> None:
                     errors.append(f"{source.relative_to(ROOT)} lacks the bilingual language controller")
                 if "Recurso bilingüe ES/EN" not in text:
                     errors.append(f"{source.relative_to(ROOT)} is not labelled ES/EN")
+                page_dictionary = PAGE_DICTIONARIES.get(source.name)
+                if page_dictionary and f'<script src="{page_dictionary}"></script>' not in text:
+                    errors.append(f"{source.relative_to(ROOT)} lacks its page translation dictionary")
         for raw_link in parser.links:
             target = local_target(source, raw_link)
             if target is not None and not target.exists():

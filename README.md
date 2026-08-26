@@ -54,13 +54,13 @@ Primary references: [IFR World Robotics 2025](https://ifr.org/downloads/press_do
 
 ## Featured resources · Recursos destacados
 
-The three sector reports and the PDF remain in Spanish and are labelled accordingly. The comparative dashboard and all six data-flywheel resources now include an in-page ES/EN switch, professionally edited Spanish, and complete English translations. See the [English catalogue](resources/README.md).
+All ten HTML resources now include an in-page ES/EN switch, professionally edited Spanish, and complete English translations. The PDF presentation remains in Spanish and is labelled accordingly. See the [English catalogue](resources/README.md).
 
-Los tres informes sectoriales y el PDF permanecen en español y están identificados como tales. La visualización comparativa y los seis recursos sobre el data flywheel ahora incluyen un selector ES/EN, español revisado y traducción inglesa completa. Consulta el [catálogo en español](recursos/README.md).
+Los diez recursos HTML ahora incluyen un selector ES/EN, español revisado y traducción inglesa completa. La presentación en PDF permanece en español y está identificada como tal. Consulta el [catálogo en español](recursos/README.md).
 
-- [China's Robotics Revolution / La revolución robótica de China — ES](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html)
-- [AI and autonomous vehicles in China / IA y vehículos autónomos en China — ES](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html)
-- [AI in Chinese healthcare / IA en la salud china — ES](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Salud_China.html)
+- [China's Robotics Revolution / La revolución robótica de China — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html)
+- [AI and autonomous vehicles in China / IA y vehículos autónomos en China — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html)
+- [AI in Chinese healthcare / IA en la salud china — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Salud_China.html)
 - [Industrial-robotics comparison / Comparación de robótica industrial — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Datos%20Comparativos%20sobre%20Rob%C3%B3tica.html)
 - [Data-flywheel simulators / Simuladores de data flywheel — ES/EN](recursos/README.md#simuladores-y-modelos-interactivos)
 - [Presentation / Presentación: IA y robótica en China — ES, PDF](recursos/IA%20Y%20CHINA.pdf)

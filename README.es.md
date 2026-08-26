@@ -95,11 +95,11 @@ Lee [Aplicaciones, ética y sociedad](docs/es/aplicaciones-etica.md).
 
 ## Recursos interactivos
 
-Los informes sectoriales fueron producidos en español durante 2025 y se conservan como recursos fechados. La visualización comparativa y los seis recursos sobre el data flywheel incorporan desde 2026 un selector ES/EN, español revisado y traducción inglesa profesional. Sus cifras deben interpretarse junto con las fuentes y este panorama actualizado.
+Los informes sectoriales fueron producidos durante 2025 y se conservan como recursos fechados. Los diez recursos HTML incorporan desde 2026 un selector ES/EN, español revisado y traducción inglesa profesional; la presentación en PDF permanece en español. Sus cifras deben interpretarse junto con las fuentes y este panorama actualizado.
 
-- [La revolución robótica de China](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html)
-- [IA en vehículos autónomos](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html)
-- [IA en salud](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Salud_China.html)
+- [La revolución robótica de China — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html)
+- [IA en vehículos autónomos — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html)
+- [IA en salud — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Salud_China.html)
 - [Datos comparativos de robótica — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Datos%20Comparativos%20sobre%20Rob%C3%B3tica.html)
 - [Simuladores y modelos del data flywheel — ES/EN](recursos/README.md#simuladores-y-modelos-interactivos)
 - [Catálogo completo](recursos/README.md)

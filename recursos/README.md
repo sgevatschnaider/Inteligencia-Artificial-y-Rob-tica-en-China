@@ -2,7 +2,7 @@
 
 **[English catalogue](../resources/README.md) · [Panorama en español](../README.es.md) · [Sitio interactivo](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)**
 
-Los materiales de esta carpeta fueron producidos principalmente durante **2025** y se conservan como informes, visualizaciones y modelos fechados. Los informes sectoriales y el PDF permanecen en español; la visualización comparativa y los seis recursos del data flywheel incluyen un selector **ES/EN**, con español revisado y traducción inglesa profesional. Para cifras y contexto actualizado, consulta el [panorama de 2026](../README.es.md) y las [fuentes](../docs/es/fuentes.md).
+Los materiales de esta carpeta fueron producidos principalmente durante **2025** y se conservan como informes, visualizaciones y modelos fechados. Los diez recursos HTML incluyen un selector **ES/EN**, con español revisado y traducción inglesa profesional; la presentación en PDF permanece en español. Para cifras y contexto actualizado, consulta el [panorama de 2026](../README.es.md) y las [fuentes](../docs/es/fuentes.md).
 
 > **Criterio de lectura:** los informes sectoriales pueden contener estimaciones, proyecciones o anuncios empresariales propios de su fecha. No deben interpretarse automáticamente como datos observados en 2026.
 
@@ -11,9 +11,9 @@ Los materiales de esta carpeta fueron producidos principalmente durante **2025**
 | Recurso | Formato | Idioma | Acceso |
 |---|---|---|---|
 | **IA y robótica en China** — presentación general sobre estrategia, demografía, automatización y polos industriales. | PDF | ES | [Abrir](IA%20Y%20CHINA.pdf) |
-| **La revolución robótica de China** — introducción histórica, industrial y tecnológica. | HTML interactivo | ES | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html) |
-| **IA en vehículos autónomos** — ecosistema, infraestructura, percepción, regulación y empresas. | HTML interactivo | ES | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html) |
-| **IA en salud en China** — diagnóstico, descubrimiento de fármacos, hospitales y robótica médica. | HTML interactivo | ES | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Salud_China.html) |
+| **La revolución robótica de China** — introducción histórica, industrial y tecnológica. | HTML interactivo | ES/EN | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html) |
+| **IA en vehículos autónomos** — ecosistema, infraestructura, percepción, regulación y empresas. | HTML interactivo | ES/EN | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html) |
+| **IA en salud en China** — diagnóstico, descubrimiento de fármacos, hospitales y robótica médica. | HTML interactivo | ES/EN | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Salud_China.html) |
 | **Datos comparativos sobre robótica** — visualización comparativa de adopción industrial, actualizada con World Robotics 2025. | HTML interactivo | ES/EN | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Datos%20Comparativos%20sobre%20Rob%C3%B3tica.html) |
 
 ## Simuladores y modelos interactivos

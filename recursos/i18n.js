@@ -8,6 +8,7 @@
         'Contexto editorial': 'Editorial context',
         '← Portada bilingüe / Bilingual home': '← Bilingual home / Portada bilingüe',
         '· Recurso bilingüe ES/EN · edición 2026': '· Bilingual ES/EN resource · 2026 edition',
+        '· Recurso bilingüe ES/EN · informe 2025': '· Bilingual ES/EN resource · 2025 report',
         'Material elaborado por el profesor Sergio Gevatschnaider': 'Prepared by Professor Sergio Gevatschnaider'
     };
 
@@ -411,7 +412,11 @@
         }
     };
 
-    const dictionary = { ...common, ...(dictionaries[fileName] || {}) };
+    const dictionary = {
+        ...common,
+        ...(dictionaries[fileName] || {}),
+        ...(window.CHINA_AI_PAGE_DICTIONARY || {})
+    };
     const originalText = new WeakMap();
     const lastRenderedText = new WeakMap();
     const originalAttributes = new WeakMap();
@@ -460,7 +465,7 @@
 
     function translateElementAttributes(element) {
         if (element.closest('#china-ai-language-switch')) return;
-        const attributes = ['aria-label', 'title', 'placeholder'];
+        const attributes = ['aria-label', 'title', 'placeholder', 'alt', 'data-tippy-content'];
         if (!originalAttributes.has(element)) originalAttributes.set(element, new Map());
         const saved = originalAttributes.get(element);
         attributes.forEach((attribute) => {
@@ -517,6 +522,9 @@
         });
         translating = false;
         if (persist) localStorage.setItem(STORAGE_KEY, currentLanguage);
+        document.querySelectorAll('[data-tippy-content]').forEach((element) => {
+            if (element._tippy) element._tippy.setContent(element.getAttribute('data-tippy-content'));
+        });
         refreshSimulation();
         window.dispatchEvent(new CustomEvent('china-ai-languagechange', { detail: { language: currentLanguage } }));
     }
@@ -528,7 +536,8 @@
             #china-ai-language-switch button{min-width:2.65rem;padding:.55rem .68rem;border:0;border-radius:999px;background:transparent;color:#fff;cursor:pointer;font:inherit;letter-spacing:.04em}
             #china-ai-language-switch button:hover,#china-ai-language-switch button:focus-visible{outline:2px solid #f4c45f;outline-offset:1px}
             #china-ai-language-switch button.is-active{background:#f4c45f;color:#071923}
-            @media(max-width:700px){#china-ai-language-switch{top:.6rem;right:.6rem}body{padding-top:4.25rem!important}}
+            #china-ai-language-switch.has-theme-control{right:6rem}
+            @media(max-width:700px){#china-ai-language-switch{top:.6rem;right:.6rem}#china-ai-language-switch.has-theme-control{right:4.7rem}body{padding-top:4.25rem!important}}
         `;
         document.head.appendChild(style);
 
@@ -536,6 +545,9 @@
         switcher.id = 'china-ai-language-switch';
         switcher.setAttribute('role', 'group');
         switcher.setAttribute('aria-label', 'Selector de idioma / Language selector');
+        if (document.querySelector('#theme-toggle, #themeToggle, #themeToggleButton, .theme-toggle')) {
+            switcher.classList.add('has-theme-control');
+        }
         switcher.innerHTML = '<button type="button" data-language="es" aria-label="Español">ES</button><button type="button" data-language="en" aria-label="English">EN</button>';
         switcher.addEventListener('click', (event) => {
             const button = event.target.closest('button[data-language]');
