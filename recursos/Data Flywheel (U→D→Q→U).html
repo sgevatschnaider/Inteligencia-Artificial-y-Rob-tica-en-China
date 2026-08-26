@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Data Flywheel Robótico — USA vs China</title>
+<title>Data Flywheel Robótico — EE. UU. vs. China</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 <style>
   :root{--bg:#0b1020;--panel:#121735;--ink:#e6ecff;--muted:#a9b0d6;--line:#1e2549;
@@ -45,11 +45,11 @@
 </style>
 </head>
 <body>
-<aside role="note" aria-label="Contexto editorial" style="position:fixed;right:1rem;bottom:1rem;z-index:99999;max-width:22rem;padding:.75rem 1rem;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:#071923;color:#fff;box-shadow:0 10px 35px rgba(0,0,0,.28);font:600 13px/1.35 system-ui,sans-serif"><a href="../index.html" style="color:#f4c45f;text-decoration:none">← Portada bilingüe / Bilingual home</a><span style="opacity:.78"> · Recurso ES, edición 2025</span></aside>
+<aside role="note" aria-label="Contexto editorial" style="position:fixed;right:1rem;bottom:1rem;z-index:99999;max-width:22rem;padding:.75rem 1rem;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:#071923;color:#fff;box-shadow:0 10px 35px rgba(0,0,0,.28);font:600 13px/1.35 system-ui,sans-serif"><a href="../index.html" style="color:#f4c45f;text-decoration:none">← Portada bilingüe / Bilingual home</a><span style="opacity:.78"> · Recurso bilingüe ES/EN · edición 2026</span></aside>
 <div class="wrap">
   <header>
-    <h1>Simulador del Data Flywheel — USA vs China</h1>
-    <div class="muted">Dos modos: <b>A</b> multiplicativo y <b>B</b> stock–flow con instalaciones IFR</div>
+    <h1>Simulador del Data Flywheel — EE. UU. vs. China</h1>
+    <div class="muted">Dos modos: <b>A</b> multiplicativo y <b>B</b> de acumulación y flujo con instalaciones de la IFR</div>
   </header>
 
   <!-- PARÁMETROS EN GRID HORIZONTAL -->
@@ -64,7 +64,7 @@
             <option value="B">B — U' = (1−ρ)U + I + (γQ − σ)U</option>
           </select>
         </div>
-        <div class="row"><label>Meses T</label><input id="months" type="number" min="6" max="120" value="36"></div>
+        <div class="row"><label>Horizonte T (meses)</label><input id="months" type="number" min="6" max="120" value="36"></div>
         <div class="row"><label>Umbral τ (tτ)</label><input id="tau" type="number" step="0.01" min="0.5" max="0.99" value="0.90"></div>
       </fieldset>
 
@@ -83,13 +83,13 @@
 
     <div class="card">
       <fieldset>
-        <legend>Estados/Parámetros — EE. UU. (<span style="color:#7dd3fc">azul</span>)</legend>
+        <legend>Estado y parámetros — EE. UU. (<span style="color:#7dd3fc">azul</span>)</legend>
         <div class="row"><label>U0 (miles)</label><input id="US_U0" type="number" value="400"></div>
         <div class="row"><label>α</label><input id="US_alpha" type="number" step="0.1" value="5.0"></div>
         <div class="row"><label>δ</label><input id="US_delta" type="number" step="0.01" min="0" max="1" value="0.80"></div>
         <div class="row modeA"><label>s (mes)</label><input id="US_s" type="number" step="0.0001" value="0.0068214934"></div>
         <div class="row modeA"><label>κ</label><input id="US_kappa" type="number" step="0.001" value="0.018"></div>
-        <div class="row modeB"><label>I anual (k)</label><input id="US_Iy" type="number" step="0.1" value="34.2"></div>
+        <div class="row modeB"><label>I anual (miles)</label><input id="US_Iy" type="number" step="0.1" value="34.2"></div>
         <div class="row modeB"><label>γ</label><input id="US_gamma" type="number" step="0.001" value="0.018"></div>
         <div class="row"><label>σ</label><input id="US_sigma" type="number" step="0.0001" value="0.002"></div>
         <div class="row modeB"><label>ρ (mes)</label><input id="US_rho" type="number" step="0.0001" value="0"></div>
@@ -98,13 +98,13 @@
 
     <div class="card">
       <fieldset>
-        <legend>Estados/Parámetros — China (<span style="color:#ef4444">rojo</span>)</legend>
+        <legend>Estado y parámetros — China (<span style="color:#ef4444">rojo</span>)</legend>
         <div class="row"><label>U0 (miles)</label><input id="CN_U0" type="number" value="2000"></div>
         <div class="row"><label>α</label><input id="CN_alpha" type="number" step="0.1" value="6.0"></div>
         <div class="row"><label>δ</label><input id="CN_delta" type="number" step="0.01" min="0" max="1" value="0.45"></div>
         <div class="row modeA"><label>s (mes)</label><input id="CN_s" type="number" step="0.0001" value="0.0117149169"></div>
         <div class="row modeA"><label>κ</label><input id="CN_kappa" type="number" step="0.001" value="0.014"></div>
-        <div class="row modeB"><label>I anual (k)</label><input id="CN_Iy" type="number" step="0.1" value="295.0"></div>
+        <div class="row modeB"><label>I anual (miles)</label><input id="CN_Iy" type="number" step="0.1" value="295.0"></div>
         <div class="row modeB"><label>γ</label><input id="CN_gamma" type="number" step="0.001" value="0.014"></div>
         <div class="row"><label>σ</label><input id="CN_sigma" type="number" step="0.0001" value="0.0015"></div>
         <div class="row modeB"><label>ρ (mes)</label><input id="CN_rho" type="number" step="0.0001" value="0"></div>
@@ -117,23 +117,23 @@
     <div class="scenarios">
       <div class="scenario active" data-scn="base">📊 Base</div>
       <div class="scenario" data-scn="cn_delta">🌐 CN ↑ δ (0.45→0.70)</div>
-      <div class="scenario" data-scn="us_sigma">⚡ US ↓ σ (0.002→0.001)</div>
+      <div class="scenario" data-scn="us_sigma">⚡ EE. UU. ↓ σ (0.002→0.001)</div>
       <div class="scenario" data-scn="cn_Iplus">📈 CN ↑ I (+20%)</div>
-      <div class="scenario" data-scn="us_delta">🎯 US ↑ δ (0.80→0.90)</div>
-      <div class="scenario" data-scn="reset">↺ Reset</div>
+      <div class="scenario" data-scn="us_delta">🎯 EE. UU. ↑ δ (0.80→0.90)</div>
+      <div class="scenario" data-scn="reset">↺ Restablecer</div>
     </div>
 
     <div class="controls">
-      <button id="play" class="btn primary">▶ Play</button>
-      <button id="pause" class="btn">⏸ Pause</button>
-      <button id="reset" class="btn warn">↺ Reset</button>
+      <button id="play" class="btn primary">▶ Reproducir</button>
+      <button id="pause" class="btn">⏸ Pausar</button>
+      <button id="reset" class="btn warn">↺ Restablecer</button>
     </div>
 
     <div class="kpis">
-      <div class="kpi"><div>t<sub>τ</sub> US</div><b id="kpi_tUS">—</b></div>
-      <div class="kpi cn"><div>t<sub>τ</sub> CN</div><b id="kpi_tCN">—</b></div>
-      <div class="kpi"><div>Q<sub>final</sub> US</div><b id="kpi_qUS">—</b></div>
-      <div class="kpi cn"><div>Q<sub>final</sub> CN</div><b id="kpi_qCN">—</b></div>
+      <div class="kpi"><div>t<sub>τ</sub> EE. UU.</div><b id="kpi_tUS">—</b></div>
+      <div class="kpi cn"><div>t<sub>τ</sub> China</div><b id="kpi_tCN">—</b></div>
+      <div class="kpi"><div>Q<sub>final</sub> EE. UU.</div><b id="kpi_qUS">—</b></div>
+      <div class="kpi cn"><div>Q<sub>final</sub> China</div><b id="kpi_qCN">—</b></div>
     </div>
   </div>
 
@@ -159,7 +159,7 @@
     </div>
   </div>
 
-  <footer>Simulador animado — USA vs China · Data Flywheel (U→D→Q→U) · Material elaborado por el profesor Sergio Gevatschnaider</footer>
+  <footer>Simulador animado — EE. UU. vs. China · Data Flywheel (U→D→Q→U) · Material elaborado por el profesor Sergio Gevatschnaider</footer>
 </div>
 
 <script>
@@ -275,26 +275,26 @@ function simulateAndDraw(){
 
   charts.Q=new Chart($("chartQ"),{type:"line",
     data:{labels:[],datasets:[
-      {label:"US",data:[],borderColor:"#7dd3fc",backgroundColor:"rgba(125,211,252,.12)",borderWidth:3,tension:.35,fill:true},
+      {label:"EE. UU.",data:[],borderColor:"#7dd3fc",backgroundColor:"rgba(125,211,252,.12)",borderWidth:3,tension:.35,fill:true},
       {label:"China",data:[],borderColor:"#ef4444",backgroundColor:"rgba(239,68,68,.12)",borderWidth:3,tension:.35,fill:true}
     ]},options:{...common,scales:{...common.scales,y:{...common.scales.y,beginAtZero:true,max:1}}}});
 
   charts.U=new Chart($("chartU"),{type:"line",
     data:{labels:[],datasets:[
-      {label:"US (miles)",data:[],borderColor:"#7dd3fc",backgroundColor:"rgba(125,211,252,.12)",borderWidth:3,tension:.35,fill:true},
+      {label:"EE. UU. (miles)",data:[],borderColor:"#7dd3fc",backgroundColor:"rgba(125,211,252,.12)",borderWidth:3,tension:.35,fill:true},
       {label:"China (miles)",data:[],borderColor:"#ef4444",backgroundColor:"rgba(239,68,68,.12)",borderWidth:3,tension:.35,fill:true}
     ]},options:common});
 
   charts.D=new Chart($("chartD"),{type:"line",
     data:{labels:[],datasets:[
-      {label:"US",data:[],borderColor:"#7dd3fc",backgroundColor:"rgba(125,211,252,.15)",borderWidth:3,tension:.35,fill:true},
+      {label:"EE. UU.",data:[],borderColor:"#7dd3fc",backgroundColor:"rgba(125,211,252,.15)",borderWidth:3,tension:.35,fill:true},
       {label:"China",data:[],borderColor:"#ef4444",backgroundColor:"rgba(239,68,68,.15)",borderWidth:3,tension:.35,fill:true}
     ]},options:common});
 
   const tUS=tTau(USres.Q,tau), tCN=tTau(CNres.Q,tau);
   const maxT=g.months;
   charts.T=new Chart($("chartT"),{type:"bar",
-    data:{labels:["US","China"],datasets:[{label:`Meses hasta Q ≥ ${tau}`,data:[maxT,maxT],backgroundColor:["#7dd3fc","#ef4444"]}]},
+    data:{labels:["EE. UU.","China"],datasets:[{label:`Meses hasta Q ≥ ${tau}`,data:[maxT,maxT],backgroundColor:["#7dd3fc","#ef4444"]}]},
     options:{responsive:true,animation:{duration:0},plugins:{legend:{display:false}},
       scales:{x:{ticks:{color:"#a9b0d6"},grid:{color:"#1e2549"}},y:{beginAtZero:true,max:maxT,ticks:{color:"#a9b0d6"},grid:{color:"#1e2549"}}}}});
 
@@ -405,5 +405,6 @@ window.addEventListener("load",()=>{
 });
 
 </script>
+<script src="i18n.js"></script>
 </body>
 </html>

@@ -20,6 +20,15 @@ FORBIDDEN = (
     "Aquí tienes el código Markdown listo",
     "Entiendo perfectamente lo que sucede",
 )
+BILINGUAL_RESOURCES = {
+    "Capital Robótico vs Capital Común — Efecto del Data Flywheel.html",
+    "Capital Robótico vs. Capital Común_Teoría.html",
+    "Data Flywheel (U→D→Q→U).html",
+    "Datos Comparativos sobre Robótica.html",
+    "Robot_datos_sinteticos.html",
+    "Simulacion_dataflywheel.html",
+    "Simulador Data Flywheel Componentes.html",
+}
 
 
 class PageParser(HTMLParser):
@@ -83,6 +92,11 @@ def validate_html(errors: list[str]) -> None:
             resource_count += 1
             if "Portada bilingüe / Bilingual home" not in text:
                 errors.append(f"{source.relative_to(ROOT)} lacks the bilingual navigation banner")
+            if source.name in BILINGUAL_RESOURCES:
+                if '<script src="i18n.js"></script>' not in text:
+                    errors.append(f"{source.relative_to(ROOT)} lacks the bilingual language controller")
+                if "Recurso bilingüe ES/EN" not in text:
+                    errors.append(f"{source.relative_to(ROOT)} is not labelled ES/EN")
         for raw_link in parser.links:
             target = local_target(source, raw_link)
             if target is not None and not target.exists():
@@ -104,6 +118,7 @@ def validate_required_files(errors: list[str]) -> None:
         "docs/es/fuentes.md",
         "docs/en/sources.md",
         "recursos/README.md",
+        "recursos/i18n.js",
         "resources/README.md",
     )
     for relative in required:

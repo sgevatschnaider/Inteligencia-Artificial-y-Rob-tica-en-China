@@ -95,12 +95,13 @@ Read [Applications, ethics, and society](docs/en/applications-ethics.md).
 
 ## Interactive resources
 
-The following analytical resources were produced in Spanish during 2025. They remain available as dated materials; their figures should be read alongside the sources and the updated 2026 overview.
+The sector reports were produced in Spanish during 2025 and remain available as dated materials. As of 2026, the comparative dashboard and all six data-flywheel resources include an in-page ES/EN switch, professionally edited Spanish, and complete English translations. Their figures should be read alongside the sources and this updated overview.
 
 - [China's robotics revolution — Spanish](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html)
 - [AI and autonomous vehicles in China — Spanish](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html)
 - [AI in Chinese healthcare — Spanish](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Salud_China.html)
-- [Comparative robotics data — Spanish](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Datos%20Comparativos%20sobre%20Rob%C3%B3tica.html)
+- [Comparative robotics data — Spanish/English](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Datos%20Comparativos%20sobre%20Rob%C3%B3tica.html)
+- [Data Flywheel simulators and models — Spanish/English](resources/README.md#interactive-simulators-and-conceptual-models)
 - [Complete English catalogue](resources/README.md)
 
 ## Navigation

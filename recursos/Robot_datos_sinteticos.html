@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Modelo Data Flywheel – Real + Sintético</title>
+<title>Modelo de data flywheel — datos reales y sintéticos</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -479,10 +479,10 @@
 </style>
 </head>
 <body>
-<aside role="note" aria-label="Contexto editorial" style="position:fixed;right:1rem;bottom:1rem;z-index:99999;max-width:22rem;padding:.75rem 1rem;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:#071923;color:#fff;box-shadow:0 10px 35px rgba(0,0,0,.28);font:600 13px/1.35 system-ui,sans-serif"><a href="../index.html" style="color:#f4c45f;text-decoration:none">← Portada bilingüe / Bilingual home</a><span style="opacity:.78"> · Recurso ES, edición 2025</span></aside>
+<aside role="note" aria-label="Contexto editorial" style="position:fixed;right:1rem;bottom:1rem;z-index:99999;max-width:22rem;padding:.75rem 1rem;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:#071923;color:#fff;box-shadow:0 10px 35px rgba(0,0,0,.28);font:600 13px/1.35 system-ui,sans-serif"><a href="../index.html" style="color:#f4c45f;text-decoration:none">← Portada bilingüe / Bilingual home</a><span style="opacity:.78"> · Recurso bilingüe ES/EN · edición 2026</span></aside>
 <div class="container">
   <header>
-    <h1>🔄 Modelo Data Flywheel — Real + Sintético</h1>
+    <h1>🔄 Modelo de data flywheel — datos reales y sintéticos</h1>
     <div class="subtitle">
       Flujo de datos efectivo U↑D↑Q↑U con datos sintéticos (sim2real, mezcla óptima y reducción de fricción efectiva)
       <br>
@@ -496,13 +496,13 @@
     <aside class="sidebar">
       <div class="card">
         <h2 class="card-title">🎯 Escenarios</h2>
-        <label for="scenarioSelect">Selecciona escenario</label>
+          <label for="scenarioSelect">Selecciona un escenario</label>
         <select id="scenarioSelect"></select>
         <div class="insight" id="scenarioInsight"></div>
       </div>
 
       <div class="card">
-        <h2 class="card-title">⚙️ Parámetros Globales</h2>
+        <h2 class="card-title">⚙️ Parámetros globales</h2>
         <div class="control-row">
           <div class="control-group">
             <label>β (eficiencia)</label>
@@ -517,7 +517,7 @@
         </div>
         <div class="control-row">
           <div class="control-group">
-            <label>φ (peso diversidad)</label>
+            <label>φ (peso de la diversidad)</label>
             <input id="phi" type="range" min="0.0" max="2.0" step="0.05">
             <div class="control-value" id="phiVal"></div>
           </div>
@@ -530,7 +530,7 @@
       </div>
 
       <div class="card">
-        <h2 class="card-title">🧪 Canal Sintético</h2>
+        <h2 class="card-title">🧪 Canal de datos sintéticos</h2>
         <div class="control-row">
           <div class="control-group">
             <label>Escala S (×)</label>
@@ -562,11 +562,11 @@
         <div class="legend">
           <div class="legend-item">
             <span class="legend-dot us"></span>
-            <span>US</span>
+            <span>EE. UU.</span>
           </div>
           <div class="legend-item">
             <span class="legend-dot cn"></span>
-            <span>CN</span>
+            <span>China</span>
           </div>
           <div class="legend-item">Q: calidad</div>
           <div class="legend-item">U: unidades</div>
@@ -579,7 +579,7 @@
     <!-- Main content -->
     <main>
       <div class="card">
-        <h2 class="card-title">📈 Métricas Clave (KPIs)</h2>
+        <h2 class="card-title">📈 Métricas clave (KPI)</h2>
         <div class="kpi-grid" id="kpis"></div>
       </div>
 
@@ -647,44 +647,44 @@
 /* Escenarios */
 const scenarios = {
   base: {
-    name: 'Escenario Base',
+    name: 'Escenario base',
     US: { U0: 400, alphaR: 5.0, deltaR: 0.80, s: 0.00682, kappa: 0.018, sigma: 0.002, Q0: 0.20,
           S: 0, psi: 0.70, chi: 1.30, deltaS: 0.70, wS: 0.40, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0 },
     CN: { U0: 2000, alphaR: 6.0, deltaR: 0.45, s: 0.01171, kappa: 0.014, sigma: 0.0015, Q0: 0.20,
           S: 0, psi: 0.65, chi: 1.20, deltaS: 0.60, wS: 0.35, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0 },
-    insight: 'Base reproducible: canal sintético apagado (S=0).'
+    insight: 'Escenario base reproducible: canal sintético desactivado (S=0).'
   },
   sim_us_equalizer: {
-    name: 'US: Sintético de alta fidelidad',
+    name: 'EE. UU.: datos sintéticos de alta fidelidad',
     US: { U0: 400, alphaR: 5.0, deltaR: 0.80, s: 0.00682, kappa: 0.018, sigma: 0.002, Q0: 0.20,
           S: 600, psi: 0.75, chi: 1.35, deltaS: 0.85, wS: 0.50, etaStar: 0.55, lambdaMix: 8.0, dSigmaSim: 0.0003 },
     CN: { U0: 2000, alphaR: 6.0, deltaR: 0.45, s: 0.01171, kappa: 0.014, sigma: 0.0015, Q0: 0.20,
           S: 250, psi: 0.65, chi: 1.25, deltaS: 0.65, wS: 0.40, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0001 },
-    insight: 'US compensa menor U con datos sintéticos de alta fidelidad/cobertura y mezcla sintonizada.'
+    insight: 'EE. UU. compensa un U menor con datos sintéticos de alta fidelidad y cobertura, y una mezcla ajustada.'
   },
   sim_cn_diversity: {
-    name: 'CN: Sim + Diversidad',
+    name: 'China: simulación + diversidad',
     US: { U0: 400, alphaR: 5.0, deltaR: 0.80, s: 0.00682, kappa: 0.018, sigma: 0.002, Q0: 0.20,
           S: 200, psi: 0.70, chi: 1.25, deltaS: 0.80, wS: 0.40, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0001 },
     CN: { U0: 2000, alphaR: 6.0, deltaR: 0.70, s: 0.01171, kappa: 0.014, sigma: 0.0015, Q0: 0.20,
           S: 500, psi: 0.70, chi: 1.35, deltaS: 0.85, wS: 0.50, etaStar: 0.55, lambdaMix: 8.0, dSigmaSim: 0.0002 },
-    insight: 'China sube diversidad real (δR) y añade sim de alta cobertura: t90 cae fuerte.'
+    insight: 'China aumenta la diversidad real (δR) y añade simulación de alta cobertura; en esta calibración, t90 se reduce considerablemente.'
   },
   diversity: {
-    name: 'CN: Mayor Diversidad (real)',
+    name: 'China: mayor diversidad (real)',
     US: { U0: 400, alphaR: 5.0, deltaR: 0.80, s: 0.00682, kappa: 0.018, sigma: 0.002, Q0: 0.20,
           S: 0, psi: 0.70, chi: 1.30, deltaS: 0.70, wS: 0.40, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0 },
     CN: { U0: 2000, alphaR: 6.0, deltaR: 0.70, s: 0.01171, kappa: 0.014, sigma: 0.0015, Q0: 0.20,
           S: 0, psi: 0.65, chi: 1.20, deltaS: 0.60, wS: 0.35, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0 },
-    insight: 'Incrementar δR en China acelera dramáticamente el aprendizaje (DIVERSIDAD>ESCALA).'
+    insight: 'Aumentar δR en China puede acelerar el aprendizaje en esta calibración (diversidad > escala).'
   },
   friction: {
-    name: 'US: Menor Fricción (real)',
+    name: 'EE. UU.: menor fricción (real)',
     US: { U0: 400, alphaR: 5.0, deltaR: 0.80, s: 0.00682, kappa: 0.018, sigma: 0.001, Q0: 0.20,
           S: 0, psi: 0.70, chi: 1.30, deltaS: 0.70, wS: 0.40, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0 },
     CN: { U0: 2000, alphaR: 6.0, deltaR: 0.45, s: 0.01171, kappa: 0.014, sigma: 0.0015, Q0: 0.20,
           S: 0, psi: 0.65, chi: 1.20, deltaS: 0.60, wS: 0.35, etaStar: 0.50, lambdaMix: 6.0, dSigmaSim: 0.0 },
-    insight: 'Bajar σ escala U pero no acelera mucho t90 si no sube diversidad o fidelidad.'
+    insight: 'Reducir σ aumenta U, pero modifica poco t90 si no crecen la diversidad o la fidelidad.'
   }
 };
 
@@ -872,46 +872,46 @@ function updateCharts(sim){
 
   charts.Q.data.labels = t;
   charts.Q.data.datasets = [
-    {label:'US — Q', data: sim.US.Q, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
-    {label:'CN — Q', data: sim.CN.Q, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'EE. UU. — Q', data: sim.US.Q, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'China — Q', data: sim.CN.Q, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
     {label:'Umbral Q=0.90', data: t.map(()=>0.90), borderColor:'#f59e0b', borderDash:[6,6], borderWidth:1.5, pointRadius:0}
   ];
   charts.Q.update();
 
   charts.U.data.labels = t;
   charts.U.data.datasets = [
-    {label:'US — U (k)', data: sim.US.U, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
-    {label:'CN — U (k)', data: sim.CN.U, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0}
+    {label:'EE. UU. — U (miles)', data: sim.US.U, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'China — U (miles)', data: sim.CN.U, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0}
   ];
   charts.U.update();
 
   charts.D.data.labels = t;
   charts.D.data.datasets = [
-    {label:'US — D', data: sim.US.D, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
-    {label:'CN — D', data: sim.CN.D, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0}
+    {label:'EE. UU. — D', data: sim.US.D, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'China — D', data: sim.CN.D, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0}
   ];
   charts.D.update();
 
   charts.M.data.labels = t;
   charts.M.data.datasets = [
-    {label:'US — m(η)', data: sim.US.m, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
-    {label:'CN — m(η)', data: sim.CN.m, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
-    {label:'US — η(t)', data: sim.US.eta, borderColor:'rgba(59,130,246,0.5)', borderDash:[5,5], tension:0.3, borderWidth:1.5, pointRadius:0},
-    {label:'CN — η(t)', data: sim.CN.eta, borderColor:'rgba(236,72,153,0.5)', borderDash:[5,5], tension:0.3, borderWidth:1.5, pointRadius:0}
+    {label:'EE. UU. — m(η)', data: sim.US.m, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'China — m(η)', data: sim.CN.m, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'EE. UU. — η(t)', data: sim.US.eta, borderColor:'rgba(59,130,246,0.5)', borderDash:[5,5], tension:0.3, borderWidth:1.5, pointRadius:0},
+    {label:'China — η(t)', data: sim.CN.eta, borderColor:'rgba(236,72,153,0.5)', borderDash:[5,5], tension:0.3, borderWidth:1.5, pointRadius:0}
   ];
   charts.M.update();
 
   charts.DE.data.labels = t;
   charts.DE.data.datasets = [
-    {label:'US — δ^eff', data: sim.US.deltaEff, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
-    {label:'CN — δ^eff', data: sim.CN.deltaEff, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0}
+    {label:'EE. UU. — δ^eff', data: sim.US.deltaEff, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'China — δ^eff', data: sim.CN.deltaEff, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0}
   ];
   charts.DE.update();
 
   charts.DF.data.labels = t;
   charts.DF.data.datasets = [
-    {label:'US — ΔD_eff', data: sim.US.dataEff, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
-    {label:'CN — ΔD_eff', data: sim.CN.dataEff, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0}
+    {label:'EE. UU. — ΔD_eff', data: sim.US.dataEff, borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,0.1)', tension:0.3, borderWidth:2, pointRadius:0},
+    {label:'China — ΔD_eff', data: sim.CN.dataEff, borderColor:'#ec4899', backgroundColor:'rgba(236,72,153,0.1)', tension:0.3, borderWidth:2, pointRadius:0}
   ];
   charts.DF.update();
 }
@@ -925,42 +925,42 @@ function updateKPIs(sim){
 
   kpis.innerHTML = `
     <div class="kpi-card">
-      <div class="kpi-title">t₉₀ (US)</div>
+      <div class="kpi-title">t₉₀ (EE. UU.)</div>
       <div class="kpi-value">${t90US===null? '—' : t90US}</div>
       <div class="kpi-subtitle">meses hasta Q≥0.90</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-title">t₉₀ (CN)</div>
+      <div class="kpi-title">t₉₀ (China)</div>
       <div class="kpi-value">${t90CN===null? '—' : t90CN}</div>
       <div class="kpi-subtitle">meses hasta Q≥0.90</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-title">Q final (US)</div>
+      <div class="kpi-title">Q final (EE. UU.)</div>
       <div class="kpi-value">${fmt(lastQUS,3)}</div>
       <div class="kpi-subtitle">calidad mes ${sim.t.length-1}</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-title">Q final (CN)</div>
+      <div class="kpi-title">Q final (China)</div>
       <div class="kpi-value">${fmt(lastQCN,3)}</div>
       <div class="kpi-subtitle">calidad mes ${sim.t.length-1}</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-title">U final (US)</div>
+      <div class="kpi-title">U final (EE. UU.)</div>
       <div class="kpi-value">${fmt(lastUUS,0)}k</div>
       <div class="kpi-subtitle">unidades desplegadas</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-title">U final (CN)</div>
+      <div class="kpi-title">U final (China)</div>
       <div class="kpi-value">${fmt(lastUCN,0)}k</div>
       <div class="kpi-subtitle">unidades desplegadas</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-title">D final (US)</div>
+      <div class="kpi-title">D final (EE. UU.)</div>
       <div class="kpi-value">${fmt(lastDUS,0)}</div>
       <div class="kpi-subtitle">datos acumulados</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-title">D final (CN)</div>
+      <div class="kpi-title">D final (China)</div>
       <div class="kpi-value">${fmt(lastDCN,0)}</div>
       <div class="kpi-subtitle">datos acumulados</div>
     </div>
@@ -984,5 +984,6 @@ populateScenarios();
 initSliders();
 rerun();
 </script>
+<script src="i18n.js"></script>
 </body>
 </html>

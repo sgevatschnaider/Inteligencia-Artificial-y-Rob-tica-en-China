@@ -51,7 +51,7 @@
 </style>
 </head>
 <body>
-<aside role="note" aria-label="Contexto editorial" style="position:fixed;right:1rem;bottom:1rem;z-index:99999;max-width:22rem;padding:.75rem 1rem;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:#071923;color:#fff;box-shadow:0 10px 35px rgba(0,0,0,.28);font:600 13px/1.35 system-ui,sans-serif"><a href="../index.html" style="color:#f4c45f;text-decoration:none">← Portada bilingüe / Bilingual home</a><span style="opacity:.78"> · Recurso ES, edición 2025</span></aside>
+<aside role="note" aria-label="Contexto editorial" style="position:fixed;right:1rem;bottom:1rem;z-index:99999;max-width:22rem;padding:.75rem 1rem;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:#071923;color:#fff;box-shadow:0 10px 35px rgba(0,0,0,.28);font:600 13px/1.35 system-ui,sans-serif"><a href="../index.html" style="color:#f4c45f;text-decoration:none">← Portada bilingüe / Bilingual home</a><span style="opacity:.78"> · Recurso bilingüe ES/EN · edición 2026</span></aside>
 <div class="bg"></div>
 <div class="container">
   <header>
@@ -70,7 +70,7 @@
         <div class="row"><div class="label"><span>β — Capital común (K)</span><span class="val" id="beta_val">0.30</span></div><input id="beta" type="range" min="0.05" max="0.8" step="0.01" value="0.30"/></div>
         <div class="row"><div class="label"><span>γ — Capital robótico (R·θ)</span><span class="val" id="gamma_val">0.30</span></div><input id="gamma" type="range" min="0.05" max="0.8" step="0.01" value="0.30"/></div>
 
-        <div id="sum_note" class="pill" style="margin-top:6px;display:block">α+β+γ = 1.00 → Constantes a escala</div>
+        <div id="sum_note" class="pill" style="margin-top:6px;display:block">α+β+γ = 1.00 → Rendimientos constantes a escala</div>
 
         <div class="section" style="margin-top:18px"><div class="sicon" style="background:linear-gradient(135deg,#10b981,#06b6d4)">📊</div><div class="stitle">Dotaciones</div></div>
         <div class="row"><div class="label"><span>L — Trabajo</span><span class="val" id="L_val">100</span></div><input id="L" type="range" min="1" max="200" step="1" value="100"/></div>
@@ -93,13 +93,13 @@
         </div>
 
         <div class="inline" style="margin-top:10px">
-          <button id="preset" class="btn">Preset: énfasis en aprendizaje</button>
+          <button id="preset" class="btn">Preajuste: énfasis en el aprendizaje</button>
           <button id="reset" class="btn" style="background:rgba(16,185,129,.12)">Reset</button>
         </div>
 
         <div class="small" style="margin-top:10px">
           <strong>θ(U,D;λ)</strong> = 1 + β<sub>θ</sub>·(1 − e<sup>−λ·(0.03U + 0.04D)</sup>).<br/>
-          Con λ bajo, la curva no se satura y T impacta más.
+          Con un λ bajo, la curva tarda más en saturarse y T tiene un efecto mayor.
         </div>
       </div>
     </aside>
@@ -117,7 +117,7 @@
           <div class="kcard"><h6>ΔY total (Y₂−Y₀)</h6><div class="kval o" id="gain_tot">—</div></div>
           <div class="kcard"><h6>% explicado por θ</h6><div class="kval" id="share_theta">—</div></div>
           <div class="kcard"><h6>MP<sub>R</sub> actual</h6><div class="kval" id="mpr0">—</div></div>
-          <div class="kcard"><h6>MP<sub>R</sub> post</h6><div class="kval" id="mpr1">—</div></div>
+          <div class="kcard"><h6>MP<sub>R</sub> posterior</h6><div class="kval" id="mpr1">—</div></div>
         </div>
 
         <div style="margin-top:10px">
@@ -125,8 +125,8 @@
         </div>
 
         <div class="hint">
-          <strong>Lectura:</strong> Y₁ = más uso **sin** aprender. Y₂ = uso + **aprendizaje**. La parte apilada resalta la
-          ganancia pura del <em>data flywheel</em> (Δθ). Probá bajar λ o marcar “Aislar aprendizaje”.
+          <strong>Lectura:</strong> Y₁ = más uso <strong>sin</strong> aprender. Y₂ = uso + <strong>aprendizaje</strong>. La parte apilada resalta la
+          ganancia pura del <em>data flywheel</em> (Δθ). Prueba a reducir λ o activa “Aislar aprendizaje”.
         </div>
       </div>
 
@@ -140,7 +140,7 @@
   
   <!-- ATRIBUCIÓN AGREGADA -->
   <footer style="text-align: center; padding-top: 20px; font-size: 13px; color: var(--muted);">
-    Elaborado por el profesor Sergio Gevastschnaider
+    Elaborado por el profesor Sergio Gevatschnaider
   </footer>
 </div>
 
@@ -387,5 +387,6 @@
   update();
 })();
 </script>
+<script src="i18n.js"></script>
 </body>
 </html>

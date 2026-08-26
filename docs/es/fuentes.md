@@ -35,6 +35,8 @@
 ### IA y robótica
 
 - International Federation of Robotics. [World Robotics 2025: China](https://ifr.org/downloads/press_docs/2025-09-25-IFR_press_release_China_in_English.pdf), datos de 2024.
+- International Federation of Robotics. [World Robotics 2025: Estados Unidos](https://ifr.org/downloads/press_docs/2025-09-25-IFR_press_release_Americas_in_English.pdf), instalaciones y stock operativo de 2024.
+- Unitree Robotics. [Ficha comercial del humanoide G1](https://shop.unitree.com/collections/humanoid-robot/products/unitree-g1), consultada para el precio de referencia publicado.
 - Stanford Institute for Human-Centered AI. [AI Index Report 2026: Research and Development](https://hai.stanford.edu/ai-index/2026-ai-index-report/research-and-development).
 - Stanford Institute for Human-Centered AI. [AI Index Report 2025](https://hai.stanford.edu/ai-index/2025-ai-index-report).
 
