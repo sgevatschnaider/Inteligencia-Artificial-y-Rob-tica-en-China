@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bilingual, evidence-led knowledge base on artificial intelligence, robotics, policy, industry, and society in China.">
+  <meta name="theme-color" content="#071923">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI and Robotics in China · Inteligencia Artificial y Robótica en China">
+  <meta property="og:description" content="Evidence, policy, industry, models, robotics, and governance—available in English and Spanish.">
+  <title>AI and Robotics in China · IA y Robótica en China</title>
+  <style>
+    :root {
+      --ink: #10242b;
+      --muted: #567078;
+      --paper: #f4f1e9;
+      --surface: #fffdf8;
+      --night: #071923;
+      --red: #d64136;
+      --gold: #e5b64b;
+      --jade: #2c756e;
+      --blue: #1d4f66;
+      --line: rgba(16, 36, 43, .14);
+      --shadow: 0 20px 60px rgba(7, 25, 35, .12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 85% 10%, rgba(229, 182, 75, .18), transparent 25rem),
+        linear-gradient(180deg, #f7f3e9 0, var(--paper) 45%, #ede8dc 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    body[data-language="es"] .en,
+    body[data-language="en"] .es { display: none !important; }
+
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .wrap { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+    .eyebrow { color: var(--red); font-size: .78rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      color: #fff;
+      background: rgba(7, 25, 35, .92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, .09);
+    }
+    .topbar-inner { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 760; text-decoration: none; }
+    .brand-mark { width: 34px; height: 34px; border-radius: 50%; background: conic-gradient(from 30deg, var(--gold), var(--red) 38%, #8f211c 62%, var(--gold)); box-shadow: 0 0 0 5px rgba(255,255,255,.06); }
+    .nav { display: flex; align-items: center; gap: 22px; }
+    .nav a { color: #dbe6e8; font-size: .9rem; text-decoration: none; }
+    .nav a:hover { color: #fff; }
+    .language-switch { display: inline-flex; padding: 4px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; background: rgba(255,255,255,.06); }
+    .language-switch button { border: 0; border-radius: 999px; padding: 7px 11px; color: #dbe6e8; background: transparent; cursor: pointer; font: inherit; font-size: .82rem; font-weight: 800; }
+    body[data-language="es"] #lang-es,
+    body[data-language="en"] #lang-en { color: var(--night); background: var(--gold); }
+
+    .hero { position: relative; overflow: hidden; color: #fff; background: var(--night); }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, rgba(214,65,54,.18), transparent 42%), repeating-linear-gradient(90deg, transparent 0 89px, rgba(255,255,255,.025) 90px); }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.35fr .65fr; gap: 64px; padding: 104px 0 88px; }
+    .hero h1 { max-width: 850px; margin: 14px 0 20px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3rem, 6.2vw, 6.3rem); font-weight: 500; letter-spacing: -.045em; line-height: .98; }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-lead { max-width: 760px; margin: 0; color: #c9d7da; font-size: clamp(1.05rem, 1.5vw, 1.26rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; color: #fff; text-decoration: none; font-weight: 750; }
+    .button.primary { color: var(--night); background: var(--gold); border-color: var(--gold); }
+    .button:hover { transform: translateY(-1px); }
+    .hero-aside { align-self: end; padding: 24px; border: 1px solid rgba(255,255,255,.13); border-radius: var(--radius); background: rgba(255,255,255,.055); }
+    .hero-aside p { margin: 0; color: #c9d7da; font-size: .92rem; }
+    .hero-aside strong { display: block; margin-bottom: 10px; color: #fff; font-family: Georgia, serif; font-size: 1.4rem; font-weight: 500; }
+
+    .stat-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: -34px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--line); box-shadow: var(--shadow); }
+    .stat { min-height: 175px; padding: 28px; background: var(--surface); }
+    .stat-value { display: block; margin-bottom: 6px; color: var(--red); font-family: Georgia, serif; font-size: clamp(2.3rem, 4vw, 3.9rem); line-height: 1; }
+    .stat-label { font-weight: 800; }
+    .stat small { display: block; margin-top: 8px; color: var(--muted); }
+
+    main section { padding: 92px 0 0; }
+    .section-head { display: grid; grid-template-columns: .7fr 1.3fr; gap: 48px; align-items: end; margin-bottom: 34px; }
+    .section-head h2 { margin: 7px 0 0; font-family: Georgia, serif; font-size: clamp(2.15rem, 4vw, 4rem); font-weight: 500; line-height: 1.05; letter-spacing: -.035em; }
+    .section-head p { max-width: 660px; margin: 0; color: var(--muted); font-size: 1.05rem; }
+
+    .layer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .layer { min-height: 270px; padding: 24px 20px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,253,248,.74); }
+    .layer-number { color: var(--red); font: 700 1rem Georgia, serif; }
+    .layer h3 { margin: 34px 0 12px; font-size: 1.06rem; line-height: 1.25; }
+    .layer p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+    .topic-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .topic { position: relative; min-height: 300px; overflow: hidden; padding: 32px; border-radius: var(--radius); color: #fff; background: var(--blue); text-decoration: none; }
+    .topic:nth-child(2) { background: var(--jade); }
+    .topic:nth-child(3) { background: #84352f; }
+    .topic:nth-child(4) { background: #3c454b; }
+    .topic::after { content: "↗"; position: absolute; right: 26px; bottom: 18px; color: rgba(255,255,255,.5); font-size: 2rem; }
+    .topic h3 { max-width: 430px; margin: 76px 0 10px; font-family: Georgia, serif; font-size: clamp(1.8rem, 3vw, 2.65rem); font-weight: 500; line-height: 1.06; }
+    .topic p { max-width: 470px; margin: 0; color: rgba(255,255,255,.78); }
+    .topic:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+
+    .resource-list { overflow: hidden; border-top: 1px solid var(--line); }
+    .resource { display: grid; grid-template-columns: 90px 1fr auto; gap: 22px; align-items: center; padding: 24px 6px; border-bottom: 1px solid var(--line); text-decoration: none; }
+    .resource-index { color: var(--red); font-family: Georgia, serif; font-size: 1.3rem; }
+    .resource h3 { margin: 0 0 4px; font-size: 1.05rem; }
+    .resource p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .resource-meta { display: flex; gap: 7px; }
+    .tag { padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .72rem; font-weight: 850; letter-spacing: .05em; }
+    .resource:hover h3 { color: var(--red); }
+
+    .method { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; padding: 52px; border-radius: var(--radius); color: #fff; background: var(--night); }
+    .method h2 { margin: 8px 0 14px; font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 500; line-height: 1.05; }
+    .method p { color: #c9d7da; }
+    .method ol { margin: 0; padding-left: 1.25rem; color: #e8eff0; }
+    .method li { margin-bottom: 13px; padding-left: 8px; }
+
+    footer { margin-top: 92px; padding: 46px 0; border-top: 1px solid var(--line); }
+    .footer-grid { display: flex; justify-content: space-between; gap: 32px; align-items: end; }
+    footer p { max-width: 680px; margin: 0; color: var(--muted); font-size: .9rem; }
+    footer a { color: var(--red); font-weight: 750; }
+
+    @media (max-width: 900px) {
+      .nav > a { display: none; }
+      .hero-grid, .section-head, .method { grid-template-columns: 1fr; gap: 26px; }
+      .hero-grid { padding: 78px 0 70px; }
+      .hero-aside { max-width: 540px; }
+      .layer-grid { grid-template-columns: repeat(2, 1fr); }
+      .layer:last-child { grid-column: 1 / -1; min-height: 210px; }
+    }
+    @media (max-width: 620px) {
+      .brand span:last-child { display: none; }
+      .stat-grid, .topic-grid, .layer-grid { grid-template-columns: 1fr; }
+      .stat { min-height: auto; }
+      .layer:last-child { grid-column: auto; }
+      .resource { grid-template-columns: 42px 1fr; }
+      .resource-meta { grid-column: 2; }
+      .method { padding: 30px; }
+      .footer-grid { display: block; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body data-language="es">
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top" aria-label="Inicio · Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>China · AI · Robotics</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#landscape"><span class="es">Panorama</span><span class="en">Landscape</span></a>
+        <a href="#topics"><span class="es">Temas</span><span class="en">Topics</span></a>
+        <a href="#resources"><span class="es">Recursos</span><span class="en">Resources</span></a>
+        <div class="language-switch" role="group" aria-label="Language selector">
+          <button id="lang-es" type="button" lang="es" aria-pressed="true">ES</button>
+          <button id="lang-en" type="button" lang="en" aria-pressed="false">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow"><span class="es">Base de conocimiento bilingüe</span><span class="en">Bilingual knowledge base</span></div>
+        <h1 class="es">IA y robótica en <em>China</em></h1>
+        <h1 class="en">AI and robotics in <em>China</em></h1>
+        <p class="hero-lead es">Política, modelos, automatización, IA encarnada y sociedad, explicados con fuentes fechadas y sin simplificaciones geopolíticas.</p>
+        <p class="hero-lead en">Policy, models, automation, embodied AI, and society—explained through dated sources and without geopolitical shortcuts.</p>
+        <div class="hero-actions">
+          <a class="button primary es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/README.es.md">Leer el panorama</a>
+          <a class="button primary en" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/README.en.md">Read the overview</a>
+          <a class="button es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China">Ver en GitHub</a>
+          <a class="button en" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China">View on GitHub</a>
+        </div>
+      </div>
+      <aside class="hero-aside">
+        <strong class="es">Una lectura por capas</strong>
+        <strong class="en">A layered reading</strong>
+        <p class="es">Este proyecto distingue política pública, capacidad técnica, adopción industrial, resultados comerciales y efectos sociales. Un anuncio no cuenta como despliegue y una demostración no cuenta como escala.</p>
+        <p class="en">This project separates public policy, technical capability, industrial adoption, commercial outcomes, and social effects. An announcement is not a deployment; a demonstration is not scale.</p>
+      </aside>
+    </div>
+  </div>
+
+  <main>
+    <div class="wrap stat-grid" aria-label="Key statistics">
+      <div class="stat"><span class="stat-value">295,045</span><span class="stat-label es">robots industriales instalados</span><span class="stat-label en">industrial robots installed</span><small class="es">China, 2024 · IFR</small><small class="en">China, 2024 · IFR</small></div>
+      <div class="stat"><span class="stat-value">54%</span><span class="stat-label es">de las instalaciones mundiales</span><span class="stat-label en">of global installations</span><small class="es">Datos de 2024 · IFR 2025</small><small class="en">2024 data · IFR 2025</small></div>
+      <div class="stat"><span class="stat-value">2.03M</span><span class="stat-label es">robots industriales operativos</span><span class="stat-label en">industrial robots in operation</span><small class="es">China, 2024 · IFR</small><small class="en">China, 2024 · IFR</small></div>
+    </div>
+
+    <section id="landscape">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow"><span class="es">Mapa analítico</span><span class="en">Analytical map</span></div><h2 class="es">Cinco capas, una transformación</h2><h2 class="en">Five layers, one transformation</h2></div>
+          <p class="es">China no es un actor único. Estas capas conectan planificación estatal, cómputo, modelos, máquinas y adopción, pero cada una posee métricas y restricciones propias.</p>
+          <p class="en">China is not a single actor. These layers connect state planning, compute, models, machines, and adoption, but each has its own metrics and constraints.</p>
+        </div>
+        <div class="layer-grid">
+          <article class="layer"><span class="layer-number">01</span><h3 class="es">Política y regulación</h3><h3 class="en">Policy and regulation</h3><p class="es">Planes nacionales, implementación local, datos, algoritmos y reglas sectoriales.</p><p class="en">National plans, local implementation, data, algorithms, and sectoral rules.</p></article>
+          <article class="layer"><span class="layer-number">02</span><h3 class="es">Cómputo e infraestructura</h3><h3 class="en">Compute and infrastructure</h3><p class="es">Chips, nube, energía, interconexión, software y restricciones de acceso.</p><p class="en">Chips, cloud, energy, interconnects, software, and access constraints.</p></article>
+          <article class="layer"><span class="layer-number">03</span><h3 class="es">Modelos y plataformas</h3><h3 class="en">Models and platforms</h3><p class="es">Qwen, DeepSeek, ERNIE, GLM, Kimi, Doubao, Pangu y Hunyuan.</p><p class="en">Qwen, DeepSeek, ERNIE, GLM, Kimi, Doubao, Pangu, and Hunyuan.</p></article>
+          <article class="layer"><span class="layer-number">04</span><h3 class="es">Robots e IA encarnada</h3><h3 class="en">Robots and embodied AI</h3><p class="es">Industrial, móvil, aéreo, cuadrúpedo y humanoide, con métricas distintas.</p><p class="en">Industrial, mobile, aerial, quadruped, and humanoid systems, each with distinct metrics.</p></article>
+          <article class="layer"><span class="layer-number">05</span><h3 class="es">Adopción e impacto</h3><h3 class="en">Adoption and impact</h3><p class="es">Manufactura, movilidad, salud, ciencia, plataformas, trabajo y derechos.</p><p class="en">Manufacturing, mobility, health, science, platforms, labour, and rights.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="topics">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow"><span class="es">Explorar</span><span class="en">Explore</span></div><h2 class="es">Temas esenciales</h2><h2 class="en">Essential topics</h2></div>
+          <p class="es">Documentos paralelos en español e inglés, escritos para conservar significado, precisión conceptual y matices regulatorios.</p>
+          <p class="en">Parallel English and Spanish documents written to preserve meaning, conceptual precision, and regulatory nuance.</p>
+        </div>
+        <div class="topic-grid">
+          <a class="topic es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/docs/es/politica-gobernanza.md"><div class="eyebrow">01 · Estado</div><h3>Política y gobernanza</h3><p>Del plan de 2017 a IA+, PIPL, algoritmos, síntesis profunda y etiquetado.</p></a>
+          <a class="topic en" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/docs/en/policy-governance.md"><div class="eyebrow">01 · State</div><h3>Policy and governance</h3><p>From the 2017 plan to AI Plus, PIPL, algorithms, deep synthesis, and labelling.</p></a>
+          <a class="topic es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/docs/es/empresas-modelos.md"><div class="eyebrow">02 · Mercado</div><h3>Empresas y modelos</h3><p>Modelos fundacionales, nube, semiconductores, distribución y economía.</p></a>
+          <a class="topic en" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/docs/en/companies-models.md"><div class="eyebrow">02 · Market</div><h3>Companies and models</h3><p>Foundation models, cloud, semiconductors, distribution, and economics.</p></a>
+          <a class="topic es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/docs/es/robotica-industria.md"><div class="eyebrow">03 · Físico</div><h3>Robótica e industria</h3><p>Escala industrial, robots móviles, cuadrúpedos, humanoides y datos de interacción.</p></a>
+          <a class="topic en" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/docs/en/robotics-industry.md"><div class="eyebrow">03 · Physical</div><h3>Robotics and industry</h3><p>Industrial scale, mobile robots, quadrupeds, humanoids, and interaction data.</p></a>
+          <a class="topic es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/docs/es/aplicaciones-etica.md"><div class="eyebrow">04 · Sociedad</div><h3>Aplicaciones y ética</h3><p>Movilidad, salud, plataformas, vigilancia, crédito social, trabajo y derechos.</p></a>
+          <a class="topic en" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/docs/en/applications-ethics.md"><div class="eyebrow">04 · Society</div><h3>Applications and ethics</h3><p>Mobility, health, platforms, surveillance, social credit, labour, and rights.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow"><span class="es">Archivo interactivo</span><span class="en">Interactive archive</span></div><h2 class="es">Informes y simuladores</h2><h2 class="en">Reports and simulators</h2></div>
+          <p class="es">Materiales originales en español, fechados y contextualizados. El catálogo inglés ofrece descripciones profesionales sin ocultar el idioma del recurso.</p>
+          <p class="en">Dated, contextualised source materials in Spanish. The English catalogue provides professional descriptions without obscuring the resource language.</p>
+        </div>
+        <div class="resource-list">
+          <a class="resource" href="recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html"><span class="resource-index">01</span><div><h3 class="es">La revolución robótica de China</h3><h3 class="en">China's Robotics Revolution</h3><p class="es">Historia, estrategia, empresas y aplicaciones.</p><p class="en">History, strategy, companies, and applications.</p></div><div class="resource-meta"><span class="tag">HTML</span><span class="tag">ES</span></div></a>
+          <a class="resource" href="recursos/IA_Automoviles_China.html"><span class="resource-index">02</span><div><h3 class="es">IA y vehículos autónomos</h3><h3 class="en">AI and Autonomous Vehicles</h3><p class="es">Infraestructura, percepción, regulación y modelos de despliegue.</p><p class="en">Infrastructure, perception, regulation, and deployment models.</p></div><div class="resource-meta"><span class="tag">HTML</span><span class="tag">ES</span></div></a>
+          <a class="resource" href="recursos/IA_Salud_China.html"><span class="resource-index">03</span><div><h3 class="es">IA en salud en China</h3><h3 class="en">AI in Chinese Healthcare</h3><p class="es">Diagnóstico, fármacos, hospitales y robótica médica.</p><p class="en">Diagnostics, drug discovery, hospitals, and medical robotics.</p></div><div class="resource-meta"><span class="tag">HTML</span><span class="tag">ES</span></div></a>
+          <a class="resource es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/recursos/README.md"><span class="resource-index">→</span><div><h3>Ver catálogo completo</h3><p>Presentación, datos comparativos y seis simuladores.</p></div><div class="resource-meta"><span class="tag">ÍNDICE</span></div></a>
+          <a class="resource en" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/resources/README.md"><span class="resource-index">→</span><div><h3>View the complete catalogue</h3><p>Presentation, comparative data, and six simulators.</p></div><div class="resource-meta"><span class="tag">INDEX</span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap method">
+        <div><div class="eyebrow"><span class="es">Criterio editorial</span><span class="en">Editorial standard</span></div><h2 class="es">Evidencia antes que eslóganes</h2><h2 class="en">Evidence before slogans</h2><p class="es">Las fuentes gubernamentales muestran lo que una política declara. La evidencia independiente permite estudiar implementación, resultados y controversias.</p><p class="en">Government sources establish what a policy says. Independent evidence is then used to assess implementation, outcomes, and controversy.</p></div>
+        <div><ol class="es"><li>Fechar cada cifra y cada versión de producto.</li><li>Separar objetivos, inversión, ventas y despliegue.</li><li>Distinguir pesos abiertos de código abierto.</li><li>Identificar anuncios empresariales como tales.</li><li>Definir términos controvertidos antes de evaluarlos.</li></ol><ol class="en"><li>Date every statistic and product version.</li><li>Separate targets, investment, sales, and deployment.</li><li>Distinguish open weights from open source.</li><li>Label corporate announcements as such.</li><li>Define contested terms before assessing them.</li></ol></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <p class="es">Mantenido por Sergio Gevatschnaider. Código bajo MIT; documentación original bajo CC BY 4.0. Última revisión editorial: 26 de agosto de 2026.</p>
+      <p class="en">Maintained by Sergio Gevatschnaider. Code under MIT; original documentation under CC BY 4.0. Last editorial review: 26 August 2026.</p>
+      <a class="es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/docs/es/fuentes.md">Fuentes y metodología</a><a class="en" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/docs/en/sources.md">Sources and methodology</a>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const body = document.body;
+      const esButton = document.getElementById('lang-es');
+      const enButton = document.getElementById('lang-en');
+      const setLanguage = (language) => {
+        body.dataset.language = language;
+        document.documentElement.lang = language;
+        esButton.setAttribute('aria-pressed', String(language === 'es'));
+        enButton.setAttribute('aria-pressed', String(language === 'en'));
+        try { localStorage.setItem('china-ai-language', language); } catch (_) {}
+      };
+      let saved;
+      try { saved = localStorage.getItem('china-ai-language'); } catch (_) {}
+      const preferred = saved || (navigator.language.toLowerCase().startsWith('es') ? 'es' : 'en');
+      setLanguage(preferred === 'en' ? 'en' : 'es');
+      esButton.addEventListener('click', () => setLanguage('es'));
+      enButton.addEventListener('click', () => setLanguage('en'));
+    })();
+  </script>
+</body>
+</html>

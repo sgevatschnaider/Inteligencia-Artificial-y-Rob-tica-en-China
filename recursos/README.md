@@ -1,146 +1,39 @@
-# 📁 Carpeta `recursos/`
+# Catálogo de recursos en español
 
-### Documentación técnica de archivos auxiliares (HTML, PDF, datasets y assets)
+**[English catalogue](../resources/README.md) · [Panorama en español](../README.es.md) · [Sitio interactivo](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)**
 
-La carpeta **`recursos/`** contiene todos los **archivos complementarios** necesarios para la visualización, demostración, análisis y documentación técnica del proyecto. Su objetivo es centralizar los materiales estáticos y dinámicos que acompañan los módulos principales del repositorio.
+Los materiales de esta carpeta fueron producidos principalmente durante **2025** y están disponibles en español. Se conservan como informes, visualizaciones y modelos fechados. Para cifras y contexto actualizado, consulta el [panorama de 2026](../README.es.md) y las [fuentes](../docs/es/fuentes.md).
 
----
+> **Criterio de lectura:** los informes sectoriales pueden contener estimaciones, proyecciones o anuncios empresariales propios de su fecha. No deben interpretarse automáticamente como datos observados en 2026.
 
-## 🧱 **Estructura del directorio**
+## Informes y presentación
 
-```
-recursos/
-│
-├── html/               # Visualizaciones interactivas, dashboards y demos
-├── pdf/                # Informes, documentos oficiales, papers y reportes técnicos
-├── data/               # Conjuntos de datos estructurados (CSV, JSON, XLSX)
-├── img/                # Imágenes, esquemas, diagramas y gráficos
-└── misc/               # Otros archivos auxiliares (scripts, plantillas, exportaciones)
-```
+| Recurso | Formato | Idioma | Acceso |
+|---|---|---|---|
+| **IA y robótica en China** — presentación general sobre estrategia, demografía, automatización y polos industriales. | PDF | ES | [Abrir](IA%20Y%20CHINA.pdf) |
+| **La revolución robótica de China** — introducción histórica, industrial y tecnológica. | HTML interactivo | ES | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html) |
+| **IA en vehículos autónomos** — ecosistema, infraestructura, percepción, regulación y empresas. | HTML interactivo | ES | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html) |
+| **IA en salud en China** — diagnóstico, descubrimiento de fármacos, hospitales y robótica médica. | HTML interactivo | ES | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Salud_China.html) |
+| **Datos comparativos sobre robótica** — visualización comparativa de adopción industrial. | HTML interactivo | ES | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Datos%20Comparativos%20sobre%20Rob%C3%B3tica.html) |
 
----
+## Simuladores y modelos interactivos
 
-## 🧩 **Descripción técnica de cada subcarpeta**
+| Recurso | Propósito | Acceso |
+|---|---|---|
+| **Capital robótico vs. capital común** | Explorar cómo automatización, aprendizaje y reinversión pueden modificar productividad y acumulación. | [Simulación](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Capital%20Rob%C3%B3tico%20vs%20Capital%20Com%C3%BAn%20%E2%80%94%20Efecto%20del%20Data%20Flywheel.html) |
+| **Teoría del capital robótico** | Exponer supuestos y relaciones del modelo conceptual. | [Documento](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Capital%20Rob%C3%B3tico%20vs.%20Capital%20Com%C3%BAn_Teor%C3%ADa.html) |
+| **Data Flywheel U→D→Q→U** | Representar el ciclo uso → datos → calidad → uso. | [Explorar](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Data%20Flywheel%20%28U%E2%86%92D%E2%86%92Q%E2%86%92U%29.html) |
+| **Modelo con datos reales y sintéticos** | Examinar cómo los datos sintéticos afectan volumen y calidad de entrenamiento. | [Explorar](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Robot_datos_sinteticos.html) |
+| **Simulación Data Flywheel** | Variar adopción, calidad de datos y rendimiento del modelo. | [Simular](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Simulacion_dataflywheel.html) |
+| **Componentes del Data Flywheel** | Separar la contribución de usuarios, datos, modelo y producto. | [Explorar](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Simulador%20Data%20Flywheel%20Componentes.html) |
 
-### 🔹 **`html/` – Visualizaciones y demos**
+## Limitaciones de los modelos
 
-Contiene:
+Los simuladores son herramientas pedagógicas, no pronósticos. Sus resultados dependen de parámetros y relaciones simplificadas. Un *data flywheel* efectivo exige que los datos sean pertinentes, legalmente utilizables y capaces de mejorar una métrica que genere valor. Más usuarios o más datos no garantizan mejor calidad.
 
-* Archivos **HTML estáticos o interactivos**
-* Dashboards generados con **Plotly, D3.js o Three.js**
-* Visualizaciones embebibles para GitHub Pages
+## Uso y contribución
 
-Uso recomendado:
-
-* Publicar estos HTML directamente en **GitHub Pages**
-  (ideal para visualizaciones de IA, mapas, timelines dinámicos o simuladores).
-
----
-
-### 🔹 **`pdf/` – Documentación técnica**
-
-Incluye:
-
-* Papers académicos
-* Informes regulatorios (PIPL, AI Plan, Made in China 2025)
-* Reportes de industria
-* Documentos citados en el repositorio
-
----
-
-### 🔹 **`data/` – Datasets**
-
-Formato sugerido:
-
-* `.csv` para datasets tabulares
-* `.json` para datos jerárquicos
-* `.xlsx` para hojas técnicas
-* `.parquet` para datos optimizados
-
-Cada dataset debería incluir su **diccionario de variables** en un archivo `.md`.
-
----
-
-### 🔹 **`img/` – Material gráfico**
-
-Para:
-
-* Infografías
-* Diagramas UML
-* Esquemas de arquitectura
-* Capturas de robots, LLMs, chipsets, sensores, etc.
-
-Buenas prácticas:
-
-* Preferir `.png` o `.svg`
-* Mantener nombres descriptivos:
-  `ascend_architecture_diagram.svg`, `unitree_b2_photo.png`
-
----
-
-### 🔹 **`misc/` – Archivos auxiliares**
-
-Puede contener:
-
-* Scripts de conversión
-* Plantillas de análisis
-* Documentos temporales o exportaciones
-
----
-
-## ⚙️ **Buenas prácticas para organizar `recursos/`**
-
-* Estructurar los nombres de archivo siguiendo el estándar:
-  `tema_subtema_año.ext`
-  Ejemplo:
-  `politicas_ai_plan_2017.pdf`
-
-* Mantener una jerarquía clara para facilitar la reutilización.
-
-* Evitar archivos sin descripción: cada recurso debe estar **documentado** aquí o dentro de su subcarpeta.
-
----
-
-## 🌐 **Uso con GitHub Pages (para archivos HTML)**
-
-Si querés visualizar los HTML online:
-
-1. Activá GitHub Pages en
-   **Settings → Pages → Deploy from branch**
-2. Seleccioná la rama: `main`
-3. Carpeta: `/root` o `/docs`
-4. Luego accesos así:
-   `https://tu-usuario.github.io/tu-repo/recursos/html/archivo.html`
-
----
-
-## 📌 **Propósito técnico de la carpeta**
-
-La carpeta **`recursos/`** centraliza todo el contenido que **no es código directamente ejecutable**, pero que:
-
-* aporta evidencia,
-* enriquece el análisis técnico,
-* soporta visualizaciones,
-* documenta políticas o datasets,
-* o permite reproducibilidad de resultados.
-
----
-
-## 🛠️ **Contribución**
-
-Si agregás archivos en `recursos/`:
-
-1. Usá nombres descriptivos.
-2. Actualizá este README si creás nuevas subcarpetas.
-3. Citá las fuentes en el archivo `resources.md` del root.
-
----
-
-## 📝 **Versión**
-
-Última actualización: **2025**
-
-
-
-
-
+- Accede a los HTML mediante GitHub Pages; no se requieren `htmlpreview` ni RawGitHack.
+- Cita el año del material y sus fuentes cuando reutilices una cifra.
+- Documenta los supuestos cuando agregues un modelo.
+- Consulta [CONTRIBUTING.md](../CONTRIBUTING.md) antes de aportar contenido.
