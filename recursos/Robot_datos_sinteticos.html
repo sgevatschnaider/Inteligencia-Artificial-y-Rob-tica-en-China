@@ -477,13 +477,14 @@
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 </style>
+<link rel="stylesheet" href="resource-theme.css">
 </head>
 <body>
 <aside role="note" aria-label="Contexto editorial" style="position:fixed;right:1rem;bottom:1rem;z-index:99999;max-width:22rem;padding:.75rem 1rem;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:#071923;color:#fff;box-shadow:0 10px 35px rgba(0,0,0,.28);font:600 13px/1.35 system-ui,sans-serif"><a href="../index.html" style="color:#f4c45f;text-decoration:none">← Portada bilingüe / Bilingual home</a><span style="opacity:.78"> · Recurso bilingüe ES/EN · edición 2026</span></aside>
 <div class="container">
   <header>
     <h1>🔄 Modelo de data flywheel — datos reales y sintéticos</h1>
-    <div class="subtitle">
+    <div class="model-note">Escenarios didácticos sin estimación empírica. Los parámetros nacionales no miden diferencias observadas de calidad de datos. D acumula datos; Q aprende del flujo efectivo de cada período.</div><div class="subtitle">
       Flujo de datos efectivo U↑D↑Q↑U con datos sintéticos (sim2real, mezcla óptima y reducción de fricción efectiva)
       <br>
       <code>ΔD<sup>eff</sup> = α<sub>R</sub>Uδ<sub>R</sub> + m(η)·S·ψ·χ</code> 
@@ -726,7 +727,7 @@ function simulateFlywheel(params, shared, tuning){
       const eta_t = denom>0 ? (dataSynth_raw / denom) : 0.0;
       const m_t = Math.exp(-p.lambdaMix * Math.pow(eta_t - etaStar_eff, 2));
 
-      const deltaEff = (shared.wR * p.deltaR) + (p.wS * m_t * psi_eff * chi_eff * p.deltaS);
+      const deltaEff = (shared.wR * p.deltaR) + (S_eff > 0 ? p.wS * m_t * psi_eff * chi_eff * p.deltaS : 0);
       const dataEff  = dataReal + m_t * dataSynth_eff;
 
       out.eta.push(eta_t); out.m.push(m_t); out.deltaEff.push(deltaEff); out.dataEff.push(dataEff);
@@ -736,17 +737,17 @@ function simulateFlywheel(params, shared, tuning){
       const learning = shared.beta * Math.pow(Math.max(dataEff,0), shared.theta)
                                    * Math.pow(Math.max(deltaEff,0), shared.phi)
                                    * (1 - Q);
-      Q = Math.min(1.0, Q + learning);
+      Q = Math.max(0, Math.min(1.0, Q + learning));
 
-      const sigmaEff = Math.max(0, p.sigma - (p.dSigmaSim || 0));
+      const sigmaEff = Math.max(0, p.sigma - (S_eff > 0 ? (p.dSigmaSim || 0) : 0));
       const growth = 1 + p.s + p.kappa * Q - sigmaEff;
       U = U * growth;
     }
     return out;
   }
 
-  const US = scenarios[currentScenario].US;
-  const CN = scenarios[currentScenario].CN;
+  const US = params.US;
+  const CN = params.CN;
 
   results.US = stepOneCountry(US);
   results.CN = stepOneCountry(CN);

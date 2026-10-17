@@ -5,6 +5,24 @@
     const fileName = decodeURIComponent(window.location.pathname.split('/').pop() || '');
 
     const common = {
+        "Modelo agregado didáctico. U0 y parámetros de calidad son supuestos; I anual usa magnitudes IFR de 2025. En modo flujo, D0 y ω solo afectan D; en modo stock también afectan el aprendizaje.": "Aggregate teaching model. U0 and data-quality parameters are assumptions; annual I uses 2025 IFR magnitudes. In flow mode, D0 and obsolescence only affect D; in stock mode they also affect learning.",
+        "Escenarios didácticos sin estimación empírica. Los parámetros nacionales no miden diferencias observadas de calidad de datos. D acumula datos; Q aprende del flujo efectivo de cada período.": "Teaching scenarios without empirical estimation. National parameters do not measure observed differences in data quality. D stores data; Q learns from the effective flow in each period.",
+        "USD 38 mil millones para 2035 (proyección de Goldman Sachs, 2024)": "USD 38 billion by 2035 (Goldman Sachs projection, 2024)",
+        "Se proyecta que el mercado de robots humanoides alcance USD 38 mil millones para 2035 (proyección de Goldman Sachs, 2024)": "The global humanoid market is projected to reach USD 38 billion by 2035 (Goldman Sachs, 2024)",
+        "Fuente: Goldman Sachs, proyección de 2024": "Source: Goldman Sachs, 2024 projection",
+        "En el ejemplo numérico, aproximadamente el 47% de la variación proviene de θ; no es una estimación empírica.": "In this numerical example, approximately 47% of the change comes from θ; this is not an empirical estimate.",
+        'Base de aprendizaje': 'Learning basis',
+        'Flujo de datos del período': 'Data flow in the period',
+        'Stock de datos con obsolescencia': 'Data stock with obsolescence',
+        'Antecedente de planificación (2021-2025) con objetivos específicos para la densidad de robots y la localización de componentes.': 'Historical plan (2021–2025), with targets for robot density and component localisation.',
+        'Animación Data Flywheel': 'Data Flywheel Animation',
+        'Proyección mundial de humanoides 2035': 'Global humanoid market projection for 2035',
+        'USD 38 mil millones': 'USD 38 billion',
+        'Estimación no comparable': 'Non-comparable estimate',
+        'Perímetro no homologado': 'Non-harmonised scope',
+        'Infraestructura informática para apoyo quirúrgico': 'Computing infrastructure for surgical support',
+        'Interactúa con los parámetros y observa cómo el aprendizaje supuesto en el modelo (': 'Adjust the parameters to explore the learning assumed in the model (',
+
         'Contexto editorial': 'Editorial context',
         '← Portada bilingüe / Bilingual home': '← Bilingual home / Portada bilingüe',
         '· Recurso bilingüe ES/EN · edición 2026': '· Bilingual ES/EN resource · 2026 edition',

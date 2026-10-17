@@ -2,7 +2,7 @@
 
 **[Español](../es/fuentes.md) · [Back to the overview](../../README.en.md)**
 
-Last reviewed: **26 August 2026**.
+Last reviewed: **17 October 2026**.
 
 ## Source hierarchy
 
@@ -43,7 +43,7 @@ Last reviewed: **26 August 2026**.
 ### Governance and society
 
 - Roberts, H., Cowls, J., Morley, J., Taddeo, M., Wang, V., and Floridi, L. [“The Chinese approach to artificial intelligence: an analysis of policy, ethics, and regulation”](https://doi.org/10.1007/s00146-020-00992-2). *AI & Society* 36, 2021.
-- Jiang, M. [“A brief prehistory of China's social credit system”](https://journals.sagepub.com/doi/10.1177/2057047320959856). *Emerging Media*, 2020.
+- Jiang, M. [“A brief prehistory of China's social credit system”](https://journals.sagepub.com/doi/10.1177/2057047320959856). *Communication and the Public*, 2020.
 
 ## Corrections to the previous version
 
@@ -56,3 +56,13 @@ Last reviewed: **26 August 2026**.
 ## Proposing a correction
 
 Open an [issue](https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/issues) and include the statement, proposed primary source, date of the underlying data, and reason for the change.
+
+## Actualización / Update, octubre / October 2026
+
+- [IFR World Robotics 2026 — China](https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf), datos / data 2025.
+- [IFR World Robotics 2026 — United States](https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-USA.pdf), datos / data 2025.
+- [XV Plan Quinquenal / 15th Five-Year Plan](https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf), texto oficial / official text.
+- [IEA Global EV Outlook 2026](https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade), datos / data 2025.
+- [Registro de indicadores / Indicator registry](../../data/indicadores-2026.json).
+
+The 2025 sector reports remain dated historical resources and link to the current overview.

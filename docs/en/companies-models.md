@@ -62,3 +62,16 @@ The market is marked by intense price competition. Sustainable performance shoul
 - [Huawei Pangu](https://www.huaweicloud.com/intl/en-us/product/pangu.html)
 
 Corporate sites establish the existence and stated description of products. They are not treated as independent proof of leadership, adoption, or economic performance.
+
+## Semiconductor supply-chain layers
+
+| Actor or layer | Distinct function | Relevant constraint |
+|---|---|---|
+| Huawei Ascend, Cambricon | Accelerator design and software platform | Memory, interconnects, tools and system availability |
+| SMIC | Contract manufacturing | Equipment, materials, yields and production capacity |
+| CXMT | DRAM memory | Process, quality, scale and workload suitability |
+| YMTC | NAND memory | Architecture, integration and production |
+| Packaging and equipment | Physical integration and fabrication | Suppliers, precision, lead times and maintenance |
+| Data centres and power | Operating infrastructure | Power, networks, cooling and utilisation |
+
+A chip specification does not measure full-system performance. Compare workload performance, memory, communication, energy efficiency and development tools. This is a functional map, not a version or capacity ranking.

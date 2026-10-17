@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from html.parser import HTMLParser
@@ -29,6 +30,7 @@ BILINGUAL_RESOURCES = {
     "Data Flywheel (U→D→Q→U).html",
     "Datos Comparativos sobre Robótica.html",
     "Robot_datos_sinteticos.html",
+    "Panorama_Industrial_2026.html",
     "Simulacion_dataflywheel.html",
     "Simulador Data Flywheel Componentes.html",
 }
@@ -52,8 +54,8 @@ class PageParser(HTMLParser):
             self.html_lang = values.get("lang")
         elif tag == "title":
             self.has_title = True
-        elif tag in {"a", "link", "script"}:
-            value = values.get("href") or values.get("src")
+        elif tag in {"a", "link", "script", "img", "object"}:
+            value = values.get("href") or values.get("src") or values.get("data")
             if value:
                 self.links.append(value)
 
@@ -112,8 +114,8 @@ def validate_html(errors: list[str]) -> None:
             target = local_target(source, raw_link)
             if target is not None and not target.exists():
                 errors.append(f"{source.relative_to(ROOT)} links to missing file: {raw_link}")
-    if resource_count != 10:
-        errors.append(f"Expected 10 HTML resources, found {resource_count}")
+    if resource_count != 11:
+        errors.append(f"Expected 11 HTML resources, found {resource_count}")
 
 
 def validate_required_files(errors: list[str]) -> None:
@@ -142,6 +144,17 @@ def main() -> int:
     validate_required_files(errors)
     validate_markdown(errors)
     validate_html(errors)
+    module = ROOT / "materiales/transformacion-industrial"
+    for name in ("index.html", "viewer.js", "viewer.css", "presentacion.pptx", "presentacion.pdf", "slides.json"):
+        if not (module / name).is_file():
+            errors.append(f"Presentation module is missing: {name}")
+    if (module / "slides.json").is_file():
+        slides = json.loads((module / "slides.json").read_text(encoding="utf-8"))["slides"]
+        if [slide["number"] for slide in slides] != list(range(1, 48)):
+            errors.append("Expected 47 presentation slides in order")
+        for slide in slides:
+            if not (module / slide["image"]).is_file():
+                errors.append(f"Missing slide image: {slide['image']}")
     if errors:
         print("Repository validation failed:")
         for error in errors:

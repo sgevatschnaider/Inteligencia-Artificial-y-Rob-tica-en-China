@@ -45,3 +45,11 @@ A balanced assessment separates:
 - [2025 AI Plus initiative](https://www.gov.cn/zhengce/content/202508/content_7037861.htm)
 - [Interim measures for generative AI](https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm)
 - [Measures for labelling AI-generated content](https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm)
+
+## 15th Five-Year Plan, 2026–2030
+
+The March 2026 official plan connects manufacturing upgrading, AI Plus, compute, algorithms, data and industrial capabilities. Chapters 12–14 address technology supply, applications and the development environment. The new-industry section includes integrated circuits, embodied intelligence and batteries.
+
+Policy priorities are not measurements of completed adoption. Assess instruments, implementation and outcomes by industry, firm and location.
+
+[Texto oficial / Official text](https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf).

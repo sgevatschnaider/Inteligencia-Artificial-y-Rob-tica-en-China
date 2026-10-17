@@ -148,7 +148,8 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition: none !important; }
     }
-  </style>
+  .lesson-feature{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;padding:35px;background:#fffdf8;border:1px solid var(--line);border-radius:16px}.lesson-cover img{display:block;width:100%;height:auto;border-radius:7px}.lesson-feature h2{font:500 clamp(2rem,4vw,3.6rem)/1.05 Georgia,serif;letter-spacing:-.04em;margin:16px 0}.lesson-feature p{color:var(--muted)}.feature-actions{display:flex;gap:24px;flex-wrap:wrap}.feature-actions a{color:var(--red);font-weight:750;text-decoration:none}@media(max-width:850px){.lesson-feature{grid-template-columns:1fr;padding:24px;gap:24px}}
+</style>
 </head>
 <body data-language="es">
   <header class="topbar">
@@ -178,7 +179,7 @@
         <p class="hero-lead es">Política, modelos, automatización, IA encarnada y sociedad, explicados con fuentes fechadas y sin simplificaciones geopolíticas.</p>
         <p class="hero-lead en">Policy, models, automation, embodied AI, and society—explained through dated sources and without geopolitical shortcuts.</p>
         <div class="hero-actions">
-          <a class="button primary es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/README.es.md">Leer el panorama</a>
+          <a class="button primary es" href="materiales/transformacion-industrial/">Abrir la presentación</a><a class="button primary en" href="materiales/transformacion-industrial/">Open the presentation</a><a class="button es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/README.es.md">Leer el panorama</a>
           <a class="button primary en" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/README.en.md">Read the overview</a>
           <a class="button es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China">Ver en GitHub</a>
           <a class="button en" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China">View on GitHub</a>
@@ -195,12 +196,13 @@
 
   <main>
     <div class="wrap stat-grid" aria-label="Key statistics">
-      <div class="stat"><span class="stat-value">295,045</span><span class="stat-label es">robots industriales instalados</span><span class="stat-label en">industrial robots installed</span><small class="es">China, 2024 · IFR</small><small class="en">China, 2024 · IFR</small></div>
-      <div class="stat"><span class="stat-value">54%</span><span class="stat-label es">de las instalaciones mundiales</span><span class="stat-label en">of global installations</span><small class="es">Datos de 2024 · IFR 2025</small><small class="en">2024 data · IFR 2025</small></div>
-      <div class="stat"><span class="stat-value">2.03M</span><span class="stat-label es">robots industriales operativos</span><span class="stat-label en">industrial robots in operation</span><small class="es">China, 2024 · IFR</small><small class="en">China, 2024 · IFR</small></div>
+      <div class="stat"><span class="stat-value">≈354.000</span><span class="stat-label es">robots industriales instalados</span><span class="stat-label en">industrial robots installed</span><small class="es">China, 2025 · IFR 2026</small><small class="en">China, 2025 · IFR 2026</small></div>
+      <div class="stat"><span class="stat-value">59%</span><span class="stat-label es">de las instalaciones mundiales</span><span class="stat-label en">of global installations</span><small class="es">Datos de 2025 · IFR 2026</small><small class="en">2025 data · IFR 2026</small></div>
+      <div class="stat"><span class="stat-value">55%</span><span class="stat-label es">proveedores chinos en su mercado</span><span class="stat-label en">Chinese suppliers in their market</span><small class="es">China, 2025 · IFR 2026</small><small class="en">China, 2025 · IFR 2026</small></div>
     </div>
 
-    <section id="landscape">
+    <section id="presentation"><div class="wrap lesson-feature"><a class="lesson-cover" href="materiales/transformacion-industrial/"><img src="materiales/transformacion-industrial/slides/slide-01.webp" alt="Portada de China tecnológica, transformación industrial" width="1280" height="720" loading="lazy"></a><div><div class="eyebrow"><span class="es">Material destacado</span><span class="en">Featured material</span></div><h2 class="es">La transformación industrial china</h2><h2 class="en">China’s industrial transformation</h2><p class="es">47 diapositivas sobre historia, redes productivas, fábricas, robótica, IA+ y límites tecnológicos. Presentación sin agenda ni afiliación institucional.</p><p class="en">47 slides on history, production networks, factories, robotics, AI Plus and technological constraints. A reusable presentation without an event schedule or institutional affiliation.</p><div class="feature-actions"><a href="materiales/transformacion-industrial/"><span class="es">Ver y presentar</span><span class="en">View and present</span> ↗</a><a href="recursos/Panorama_Industrial_2026.html"><span class="es">Explorar los datos</span><span class="en">Explore the data</span> ↗</a></div></div></div></section>
+<section id="landscape">
       <div class="wrap">
         <div class="section-head">
           <div><div class="eyebrow"><span class="es">Mapa analítico</span><span class="en">Analytical map</span></div><h2 class="es">Cinco capas, una transformación</h2><h2 class="en">Five layers, one transformation</h2></div>
@@ -248,10 +250,10 @@
           <a class="resource" href="recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html"><span class="resource-index">01</span><div><h3 class="es">La revolución robótica de China</h3><h3 class="en">China's Robotics Revolution</h3><p class="es">Historia, estrategia, empresas y aplicaciones.</p><p class="en">History, strategy, companies, and applications.</p></div><div class="resource-meta"><span class="tag">HTML</span><span class="tag">ES/EN</span></div></a>
           <a class="resource" href="recursos/IA_Automoviles_China.html"><span class="resource-index">02</span><div><h3 class="es">IA y vehículos autónomos</h3><h3 class="en">AI and Autonomous Vehicles</h3><p class="es">Infraestructura, percepción, regulación y modelos de despliegue.</p><p class="en">Infrastructure, perception, regulation, and deployment models.</p></div><div class="resource-meta"><span class="tag">HTML</span><span class="tag">ES/EN</span></div></a>
           <a class="resource" href="recursos/IA_Salud_China.html"><span class="resource-index">03</span><div><h3 class="es">IA en salud en China</h3><h3 class="en">AI in Chinese Healthcare</h3><p class="es">Diagnóstico, fármacos, hospitales y robótica médica.</p><p class="en">Diagnostics, drug discovery, hospitals, and medical robotics.</p></div><div class="resource-meta"><span class="tag">HTML</span><span class="tag">ES/EN</span></div></a>
-          <a class="resource" href="recursos/Datos%20Comparativos%20sobre%20Rob%C3%B3tica.html"><span class="resource-index">04</span><div><h3 class="es">Datos comparativos de robótica</h3><h3 class="en">Comparative Robotics Data</h3><p class="es">Adopción industrial China–EE. UU. con cifras IFR 2024.</p><p class="en">China–U.S. industrial adoption using IFR 2024 data.</p></div><div class="resource-meta"><span class="tag">HTML</span><span class="tag">ES/EN</span></div></a>
-          <a class="resource" href="recursos/Simulacion_dataflywheel.html"><span class="resource-index">05</span><div><h3 class="es">Simulación Data Flywheel</h3><h3 class="en">Data Flywheel Simulation</h3><p class="es">Ciclo interactivo de uso, datos, IA y mejora del producto.</p><p class="en">An interactive cycle of use, data, AI, and product improvement.</p></div><div class="resource-meta"><span class="tag">HTML</span><span class="tag">ES/EN</span></div></a>
-          <a class="resource es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/recursos/README.md"><span class="resource-index">→</span><div><h3>Ver catálogo completo</h3><p>Presentación, informes y seis simuladores bilingües.</p></div><div class="resource-meta"><span class="tag">ÍNDICE</span></div></a>
-          <a class="resource en" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/resources/README.md"><span class="resource-index">→</span><div><h3>View the complete catalogue</h3><p>Presentation, reports, and six bilingual simulators.</p></div><div class="resource-meta"><span class="tag">INDEX</span></div></a>
+          <a class="resource" href="recursos/Datos%20Comparativos%20sobre%20Rob%C3%B3tica.html"><span class="resource-index">04</span><div><h3 class="es">Datos comparativos de robótica</h3><h3 class="en">Comparative Robotics Data</h3><p class="es">Adopción industrial China–EE. UU. con cifras de 2025, IFR 2026.</p><p class="en">China–U.S. industrial adoption using IFR 2025 data.</p></div><div class="resource-meta"><span class="tag">HTML</span><span class="tag">ES/EN</span></div></a>
+          <a class="resource" href="recursos/Simulacion_dataflywheel.html"><span class="resource-index">05</span><div><h3 class="es">Animación Data Flywheel</h3><h3 class="en">Data Flywheel Animation</h3><p class="es">Ciclo interactivo de uso, datos, IA y mejora del producto.</p><p class="en">An interactive cycle of use, data, AI, and product improvement.</p></div><div class="resource-meta"><span class="tag">HTML</span><span class="tag">ES/EN</span></div></a>
+          <a class="resource es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/recursos/README.md"><span class="resource-index">→</span><div><h3>Ver catálogo completo</h3><p>Presentación, informes y seis recursos bilingües sobre aprendizaje.</p></div><div class="resource-meta"><span class="tag">ÍNDICE</span></div></a>
+          <a class="resource en" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/resources/README.md"><span class="resource-index">→</span><div><h3>View the complete catalogue</h3><p>Presentation, reports, and six bilingual learning resources.</p></div><div class="resource-meta"><span class="tag">INDEX</span></div></a>
         </div>
       </div>
     </section>
@@ -266,8 +268,8 @@
 
   <footer>
     <div class="wrap footer-grid">
-      <p class="es">Mantenido por Sergio Gevatschnaider. Código bajo MIT; documentación original bajo CC BY 4.0. Última revisión editorial: 26 de agosto de 2026.</p>
-      <p class="en">Maintained by Sergio Gevatschnaider. Code under MIT; original documentation under CC BY 4.0. Last editorial review: 26 August 2026.</p>
+      <p class="es">Mantenido por Sergio Gevatschnaider. Código bajo MIT; documentación original bajo CC BY 4.0. Última revisión editorial: 17 de octubre de 2026.</p>
+      <p class="en">Maintained by Sergio Gevatschnaider. Code under MIT; original documentation under CC BY 4.0. Last editorial review: 17 October 2026.</p>
       <a class="es" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/docs/es/fuentes.md">Fuentes y metodología</a><a class="en" href="https://github.com/sgevatschnaider/Inteligencia-Artificial-y-Rob-tica-en-China/blob/main/docs/en/sources.md">Sources and methodology</a>
     </div>
   </footer>

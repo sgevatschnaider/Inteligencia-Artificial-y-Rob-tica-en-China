@@ -4,7 +4,7 @@
 
 ## Liderazgo de escala
 
-China es el mayor mercado mundial de robots industriales. En 2024 instaló 295.045 unidades, el 54 % del total global, y alcanzó un parque operativo de 2.027.000 robots. Los proveedores chinos captaron el 57 % del mercado doméstico por primera vez.
+China es el mayor mercado mundial de robots industriales. En 2025 instaló unas 354.000 unidades, el 59 % del total mundial. Los proveedores chinos captaron el 55 % del mercado doméstico. Como antecedente, el parque operativo de 2.027.000 robots corresponde a 2024; no es una estimación del parque de 2025.
 
 La escala responde a una combinación de manufactura electrónica, automoción, metalmecánica, políticas de modernización, cadenas de suministro locales y presión demográfica y salarial. No significa que todas las fábricas estén igualmente automatizadas: la adopción difiere según provincia, tamaño de empresa y sector.
 
@@ -55,4 +55,8 @@ El *data flywheel* no es automático. Solo existe cuando el uso genera datos per
 - coste total de propiedad y período de recuperación;
 - incidentes de seguridad y cumplimiento de estándares.
 
-Fuente estadística principal: [IFR World Robotics 2025](https://ifr.org/downloads/press_docs/2025-09-25-IFR_press_release_China_in_English.pdf).
+Fuente estadística principal: [IFR World Robotics 2026](https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf).
+
+## Series y comparación temporal
+
+El mayor volumen de instalaciones puede coexistir con una menor cuota de proveedores locales: 57 % en 2024 y 55 % en 2025. La cuota doméstica no equivale al contenido nacional de cada componente. Las instalaciones estadounidenses alcanzaron unas 38.400 unidades en 2025. Consulta los [indicadores con fuentes](../../data/indicadores-2026.json) y el [panorama visual](../../recursos/Panorama_Industrial_2026.html).

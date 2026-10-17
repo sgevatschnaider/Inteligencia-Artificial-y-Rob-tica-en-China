@@ -1,0 +1,1135 @@
+{
+  "title": "China tecnológica: transformación industrial",
+  "author": "Sergio Gevatschnaider",
+  "slides": [
+    {
+      "number": 1,
+      "title": "CHINA TECNOLÓGICA",
+      "chapter": "Introducción",
+      "image": "slides/slide-01.webp",
+      "text": [
+        "CHINA",
+        "TECNOLÓGICA",
+        "De la fábrica del mundo",
+        "a la potencia tecnológica",
+        "SERGIO GEVATSCHNAIDER",
+        "TRANSFORMACIÓN INDUSTRIAL",
+        "ILUSTRACIÓN CONCEPTUAL"
+      ],
+      "notes": "Apertura. Pregunta a la audiencia: ¿qué creen que explica el éxito tecnológico chino: inventar, fabricar o coordinar? Aclarar que la fotografía es conceptual, no una planta china identificada.\nImagen conceptual generada para uso docente",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 2,
+      "title": "¿Cómo se construye una potencia tecnológica?",
+      "chapter": "Introducción",
+      "image": "slides/slide-02.webp",
+      "text": [
+        "LA PREGUNTA",
+        "¿Cómo se construye una potencia tecnológica?",
+        "La respuesta no cabe en una sola invención, una empresa ni una política.",
+        "01",
+        "INVENTAR",
+        "Descubrir, diseñar y desarrollar.",
+        "02",
+        "FABRICAR",
+        "Convertir ideas en productos fiables.",
+        "03",
+        "APRENDER",
+        "Mejorar con cada ciclo productivo.",
+        "04",
+        "COORDINAR",
+        "Conectar talento, proveedores y capital."
+      ],
+      "notes": "Tesis organizadora: la tecnología se convierte en capacidad económica al combinar invención, fabricación, aprendizaje y coordinación. La capacidad industrial acumulada es el elemento unificador de la clase.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 3,
+      "title": "Cinco preguntas sobre la transformación industrial",
+      "chapter": "Introducción",
+      "image": "slides/slide-03.webp",
+      "text": [
+        "RECORRIDO",
+        "Cinco preguntas sobre la transformación industrial",
+        "Historia, casos industriales y ejercicios para examinar mecanismos.",
+        "01",
+        "¿De dónde viene la capacidad?",
+        "Historia + UNIDO",
+        "02",
+        "¿Cómo funciona una fábrica avanzada?",
+        "Shougang + Midea",
+        "03",
+        "¿Por qué importan los robots?",
+        "IFR + Unitree + Xiaomi",
+        "04",
+        "¿Qué busca China hacia 2030?",
+        "AI+ + XV Plan",
+        "05",
+        "¿Dónde aparecen los límites?",
+        "Chips + demanda + exportaciones"
+      ],
+      "notes": "Dedicaremos aproximadamente 9 minutos a la historia y las redes, 22 a la fábrica y robótica, 13 a AI+ y el XV Plan, y el resto a tensiones y debate. Los casos se integran en la narración, no se suman al final.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 4,
+      "title": "MOVIMIENTO  01 HISTORIA",
+      "chapter": "Historia y redes",
+      "image": "slides/slide-04.webp",
+      "text": [
+        "MOVIMIENTO  01",
+        "HISTORIA",
+        "Antes de la IA,",
+        "hubo industria",
+        "La ventaja actual descansa en décadas de inversión, aprendizaje y redes productivas.",
+        "ILUSTRACIÓN CONCEPTUAL"
+      ],
+      "notes": "Conectar pasado y presente: la historia tecnológica china no empieza con robots humanoides ni con DeepSeek. Las reformas, apertura, integración comercial y política industrial crearon capacidades previas.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 5,
+      "title": "Cuatro etapas, una acumulación continua",
+      "chapter": "Historia y redes",
+      "image": "slides/slide-05.webp",
+      "text": [
+        "TRAYECTORIA INDUSTRIAL",
+        "Cuatro etapas, una acumulación continua",
+        "Periodización docente: las etapas se superponen y no implican cambios abruptos.",
+        "1978–2001",
+        "Reformas y apertura",
+        "Inversión, zonas especiales, capacidades iniciales",
+        "2001–2014",
+        "Integración mundial",
+        "Exportaciones, logística, proveedores y aprendizaje",
+        "2015–2025",
+        "Modernización industrial",
+        "Automatización, I+D, baterías y equipamiento",
+        "2026–2030",
+        "Convergencia inteligente",
+        "AI+, IA industrial, robótica y autonomía selectiva"
+      ],
+      "notes": "La periodización agrupa procesos superpuestos. El punto histórico más importante es el tránsito gradual desde aprender a producir dentro de redes internacionales hacia desarrollar conocimiento y tecnologías propias; no presentar estos procesos como lineales o completos.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 6,
+      "title": "De menos del 3 % a casi un tercio del mundo",
+      "chapter": "Historia y redes",
+      "image": "slides/slide-06.webp",
+      "text": [
+        "EL GRAN CAMBIO",
+        "De menos del 3 % a casi un tercio del mundo",
+        "Participación de China en el valor agregado manufacturero mundial.",
+        "×11,4",
+        "aumento de la cuota",
+        "relativa entre ambos años",
+        "La cuota mide valor agregado manufacturero, no productividad por trabajador."
+      ],
+      "notes": "Explicar con 100 dólares: en 1990 China aportaba 2,8 dólares del valor manufacturero mundial; en 2024, alrededor de 32. Esto revela escala, no liderazgo en todos los eslabones ni productividad por trabajador. Comparación de cuota relativa aproximada 32/2,8=11,4.\nFuente: UNIDO · International Yearbook of Industrial Statistics 2025\nFuentes y recursos:\nhttps://stat.unido.org/publications/international-yearbook-industrial-statistics-2025\nUNIDO estima 32,0 % para 2024. La razón 32/2,8 se redondea a 11,4 y describe el cambio de participación relativa.\nhttps://www.unido.org/sites/default/files/unido-publications/2025-11/UNIDO%20Industrial%20Statistics%20Yearbook%202025.pdf",
+      "sources": [
+        "https://stat.unido.org/publications/international-yearbook-industrial-statistics-2025",
+        "https://www.unido.org/sites/default/files/unido-publications/2025-11/UNIDO%20Industrial%20Statistics%20Yearbook%202025.pdf"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 7,
+      "title": "La fuerza de una fábrica depende de su ecosistema",
+      "chapter": "Historia y redes",
+      "image": "slides/slide-07.webp",
+      "text": [
+        "CAPACIDADES INDUSTRIALES",
+        "La fuerza de una fábrica depende de su ecosistema",
+        "El conocimiento está distribuido entre empresas y organizaciones.",
+        "PRODUCTO COMPLEJO",
+        "Universidades",
+        "Logística",
+        "Proveedores",
+        "Empresas",
+        "Financiación",
+        "Estado y ciudades",
+        "Las conexiones permiten compartir conocimiento, recursos y capacidad de respuesta."
+      ],
+      "notes": "Explicar que proveedores, universidades, técnicos, logística y Estado forman un sistema. No afirmar que la sola proximidad territorial garantiza innovación; importan calidad y cooperación.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 8,
+      "title": "Dos empresas diseñan la misma mano robótica",
+      "chapter": "Historia y redes",
+      "image": "slides/slide-08.webp",
+      "text": [
+        "EJERCICIO DIDÁCTICO 01",
+        "Dos empresas diseñan la misma mano robótica",
+        "Supuesto hipotético para ilustrar tiempos de coordinación con proveedores.",
+        "EMPRESA A",
+        "Proveedores dispersos",
+        "20 semanas",
+        "EMPRESA B",
+        "Red de proveedores integrada",
+        "8 semanas",
+        "La diferencia no es “inteligencia innata”: son coordinación, prototipos, aprendizaje y logística."
+      ],
+      "notes": "Descomponer el ejemplo en prototipo 8 vs 3 semanas, corrección 6 vs 2, validación 6 vs 3. La empresa B aprende más rápido en el escenario hipotético. Los valores son inventados; no atribuirlos a Shenzhen ni a Unitree.\nTiempos inventados para comparar mecanismos, NO resultados observados de fabricantes.",
+      "sources": [],
+      "hypothetical": true
+    },
+    {
+      "number": 9,
+      "title": "Planificación, experimentación local y competencia",
+      "chapter": "Historia y redes",
+      "image": "slides/slide-09.webp",
+      "text": [
+        "INSTITUCIONES Y COMPETENCIA",
+        "Planificación, experimentación local y competencia",
+        "La coordinación central convive con experimentación provincial y competencia empresarial.",
+        "ESTADO CENTRAL",
+        "Planes, estándares, prioridades",
+        "GOBIERNOS LOCALES",
+        "Parques, infraestructura, incentivos",
+        "EMPRESAS",
+        "Diseño, producción, competencia",
+        "PROVEEDORES",
+        "Componentes, plazos, mejoras",
+        "VENTAJA POTENCIAL: aprendizaje   /   RIESGO: sobreinversión y duplicación"
+      ],
+      "notes": "Explicar un gobierno local que construye un parque para atraer fabricantes de baterías; podrían llegar proveedores y trabajadores. Si muchas ciudades subsidian la misma industria simultáneamente, el sistema también puede generar exceso de capacidad. No identificar automáticamente política con resultado.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 10,
+      "title": "China es una red de polos tecnológicos",
+      "chapter": "Historia y redes",
+      "image": "slides/slide-10.webp",
+      "text": [
+        "GEOGRAFÍA INDUSTRIAL",
+        "China es una red de polos tecnológicos",
+        "Las especializaciones no son exclusivas: se superponen y cambian.",
+        "PEKÍN",
+        "Universidades, investigación, IA",
+        "SHANGHÁI / SUZHOU",
+        "Fabricación avanzada y equipos",
+        "SHENZHEN / GUANGDONG",
+        "Electrónica, hardware y vehículos",
+        "HANGZHOU",
+        "Plataformas digitales y software",
+        "HEFEI / WUHAN / CHENGDU",
+        "Polos industriales especializados"
+      ],
+      "notes": "Relacionar clúster con costos de coordinación. Shenzhen no es solo una ciudad de tecnología, sino un entorno de componentes, fabricantes y capital humano. Estas denominaciones no implican exclusividad sectorial.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 11,
+      "title": "MOVIMIENTO  02 LA FÁBRICA INTELIGENTE",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-11.webp",
+      "text": [
+        "MOVIMIENTO  02",
+        "LA FÁBRICA INTELIGENTE",
+        "Una máquina no",
+        "es una fábrica",
+        "Digitalización, automatización e IA son distintas capas de capacidad industrial.",
+        "ILUSTRACIÓN CONCEPTUAL"
+      ],
+      "notes": "Se entra a la parte técnica a través de casos de acero y refrigeración, mostrando que AI industrial también es metalurgia, calidad y mantenimiento. Imagen conceptual, no fotografía de una planta real.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 12,
+      "title": "Digitalización, automatización e inteligencia artificial",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-12.webp",
+      "text": [
+        "TRES IDEAS DISTINTAS",
+        "Digitalización, automatización e inteligencia artificial",
+        "Una fábrica puede hacer una de estas cosas sin realizar necesariamente las otras.",
+        "01",
+        "DIGITALIZAR",
+        "Registrar y conectar información",
+        "Sensores, datos, trazabilidad",
+        "02",
+        "AUTOMATIZAR",
+        "Ejecutar tareas con control",
+        "PLC, CNC, robots, actuadores",
+        "03",
+        "USAR IA",
+        "Inferir patrones y apoyar decisiones",
+        "Visión, predicción, optimización"
+      ],
+      "notes": "Ejemplo: instalar sensores digitaliza; programar un brazo de soldadura automatiza; analizar imágenes para identificar defectos puede requerir IA. No presentar IA generativa como requisito para la robótica industrial.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 13,
+      "title": "De una soldadura a una acción verificable",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-13.webp",
+      "text": [
+        "CADENA DE DECISIÓN",
+        "De una soldadura a una acción verificable",
+        "La IA ayuda a detectar: el control, la ingeniería y la seguridad siguen siendo esenciales.",
+        "1",
+        "SOLDADURA",
+        "Proceso físico",
+        "2",
+        "CÁMARA",
+        "Captura de imagen",
+        "3",
+        "MODELO",
+        "Anomalía estimada",
+        "4",
+        "VALIDACIÓN",
+        "Técnico / reglas",
+        "5",
+        "ACCIÓN",
+        "Reproceso / alerta",
+        "Un modelo no “ve” todos los defectos ni puede omitir la validación de calidad."
+      ],
+      "notes": "Este diagrama es hipotético. El sistema puede fallar con iluminación diferente, defectos no representados en entrenamiento o cambios de producto; aclarar falsos positivos y negativos.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 14,
+      "title": "¿Puede la IA ayudar a fabricar acero de mejor calidad?",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-14.webp",
+      "text": [
+        "CASO REAL · SHOUGANG",
+        "¿Puede la IA ayudar a fabricar acero de mejor calidad?",
+        "Beijing Shougang Cold Rolling · Global Lighthouse Network.",
+        "67",
+        "aplicaciones de tecnologías de fabricación avanzada",
+        "61 %",
+        "de ellas incorporaron IA",
+        "CASO DE INDUSTRIA TRADICIONAL",
+        "ILUSTRACIÓN CONCEPTUAL"
+      ],
+      "notes": "Shougang enfrenta exigencias de calidad más estrictas en acero para automoción y variedad de productos. El WEF comunica 67 casos tecnológicos, 61 % con IA. No atribuir todos los efectos a IA aislada: paquete de innovación industrial. Ilustración conceptual, no planta real.\nDatos reportados por World Economic Forum · Global Lighthouse Network 2025. Foto conceptual.\nFuentes y recursos:\nhttps://www.weforum.org/media/global-lighthouse-network-2025-world-economic-forum-recognizes-companies-transforming-manufacturing-through-innovation/",
+      "sources": [
+        "https://www.weforum.org/media/global-lighthouse-network-2025-world-economic-forum-recognizes-companies-transforming-manufacturing-through-innovation/"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 15,
+      "title": "Menos defectos; mayor eficiencia productiva",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-15.webp",
+      "text": [
+        "SHOUGANG · IMPACTO MEDIDO",
+        "Menos defectos; mayor eficiencia productiva",
+        "Resultados reportados por el estudio de caso WEF, no un ensayo causal controlado.",
+        "−35 %",
+        "Defectos de producto",
+        "+21,2 %",
+        "Eficiencia de la línea",
+        "−55 %",
+        "Reclamos de clientes",
+        "Si antes había 100 defectos, reducirlos 35 % equivale a tener 65."
+      ],
+      "notes": "Citar todos los porcentajes como resultados reportados por estudio de caso WEF. Según la misma ficha, ventas de acero de alta gama +36 %. El 100→65 es cálculo para enseñar porcentajes. Pregunta: ¿vale más fabricar toneladas adicionales o reducir defectos para automoción?\nEl ejemplo de 100 → 65 normaliza el porcentaje: NO son cifras absolutas de la planta.\nFuente: World Economic Forum, Global Lighthouse Network 2025\nFuentes y recursos:\nhttps://www.weforum.org/media/global-lighthouse-network-2025-world-economic-forum-recognizes-companies-transforming-manufacturing-through-innovation/",
+      "sources": [
+        "https://www.weforum.org/media/global-lighthouse-network-2025-world-economic-forum-recognizes-companies-transforming-manufacturing-through-innovation/"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 16,
+      "title": "Una fábrica que aprende a producir pedidos diferentes",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-16.webp",
+      "text": [
+        "CASO REAL · MIDEA",
+        "Una fábrica que aprende a producir pedidos diferentes",
+        "Midea General Refrigeration, Chongqing · Refrigeración y equipamiento industrial.",
+        "PRODUCCIÓN FLEXIBLE",
+        "79",
+        "usos digitales desplegados",
+        "Pedidos personalizados:",
+        "del 31 % al 87 %",
+        "ILUSTRACIÓN CONCEPTUAL"
+      ],
+      "notes": "En Midea Chongqing los pedidos personalizados pasaron del 31 % al 87 %, según WEF. La planta recurrió a 79 aplicaciones digitales basadas en aprendizaje automático, realidad aumentada y simulación. Enseñar que la digitalización ayuda a fabricar variedad, no solo volumen. Imagen conceptual, no planta real.\nFuente: World Economic Forum, Global Lighthouse Network 2025. Imagen conceptual.\nFuentes y recursos:\nhttps://www.weforum.org/media/global-lighthouse-network-2025-world-economic-forum-recognizes-companies-transforming-manufacturing-through-innovation/",
+      "sources": [
+        "https://www.weforum.org/media/global-lighthouse-network-2025-world-economic-forum-recognizes-companies-transforming-manufacturing-through-innovation/"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 17,
+      "title": "Personalizar sin sacrificar tiempos ni calidad",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-17.webp",
+      "text": [
+        "MIDEA · RESULTADOS",
+        "Personalizar sin sacrificar tiempos ni calidad",
+        "Caso WEF: indicadores reportados tras una transformación digital de la planta.",
+        "−81 %",
+        "Tiempo de configuración",
+        "−45 %",
+        "Tiempo de diseño",
+        "−31 %",
+        "Fallas posventa",
+        "Si configurar demandaba 100 minutos, una reducción del 81 % lo llevaría a 19 minutos."
+      ],
+      "notes": "Explicar lead time: tiempo que transcurre hasta completar una etapa. Midea ofrece el ejemplo de producción flexible y pedidos individualizados (batch size 1). No inferir de −81% que la productividad total aumentó exactamente ese porcentaje.\n100 → 19 es ilustración aritmética, no el tiempo absoluto informado por Midea.\nFuente: World Economic Forum, Global Lighthouse Network 2025\nFuentes y recursos:\nhttps://www.weforum.org/media/global-lighthouse-network-2025-world-economic-forum-recognizes-companies-transforming-manufacturing-through-innovation/",
+      "sources": [
+        "https://www.weforum.org/media/global-lighthouse-network-2025-world-economic-forum-recognizes-companies-transforming-manufacturing-through-innovation/"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 18,
+      "title": "China concentra el 59 % de las nuevas instalaciones",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-18.webp",
+      "text": [
+        "ROBÓTICA REAL · IFR",
+        "China concentra el 59 % de las nuevas instalaciones",
+        "Instalaciones de robots industriales en 2025. Categoría distinta de los humanoides.",
+        "354.000",
+        "Robots industriales instalados en China",
+        "59 %",
+        "Cuota de instalaciones mundiales",
+        "55 %",
+        "participación de proveedores chinos en su mercado doméstico"
+      ],
+      "notes": "Leer tres denominadores: 354.000 flujo anual en China; 59% sobre instalaciones globales; 195.000 suministrados por empresas chinas dentro del mercado chino y equivalen al 55% de sus instalaciones. No decir robots fabricados en China si no consta localización de fabricación; hablar de fabricantes chinos.\nFuente: IFR, World Robotics 2026 · Instalaciones anuales, no stock operativo.\nFuentes y recursos:\nhttps://ifr.org/ifr-press-releases/five-million-robots-now-operate-in-factories-globally\nEl comunicado IFR de China redondea a 354.000 y el de Estados Unidos proporciona 354.200. Se mantiene el redondeo pedagógico. La cuota doméstica de 55 % es un indicador independiente; no se presenta 195.000 como un conteo publicado exacto.\nhttps://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf\nhttps://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-USA.pdf",
+      "sources": [
+        "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf",
+        "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-USA.pdf",
+        "https://ifr.org/ifr-press-releases/five-million-robots-now-operate-in-factories-globally"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 19,
+      "title": "Un brazo industrial y un humanoide no miden lo mismo",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-19.webp",
+      "text": [
+        "DOS ROBÓTICAS",
+        "Un brazo industrial y un humanoide no miden lo mismo",
+        "El humanoide es atractivo visualmente; la adopción industrial masiva es otra evidencia.",
+        "ROBOT INDUSTRIAL · tarea repetible",
+        "HUMANOIDE · movilidad y manipulación",
+        "ILUSTRACIÓN CONCEPTUAL"
+      ],
+      "notes": "Aclarar que un video de caminar o bailar demuestra capacidades motrices bajo condiciones concretas. No demuestra autonomía general, tasa de fallos baja ni rentabilidad en una fábrica. Aquí distinguir robot industrial de humanoide.\nFotografías conceptuales generadas para uso docente.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 20,
+      "title": "Un humanoide es una red industrial condensada",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-20.webp",
+      "text": [
+        "CASO UNITREE · G1",
+        "Un humanoide es una red industrial condensada",
+        "Detrás del movimiento hay electrónica, motores, control, sensores y baterías.",
+        "ACTUADORES",
+        "Motores y transmisión",
+        "PERCEPCIÓN",
+        "Cámaras y sensores",
+        "CÓMPUTO",
+        "Chips y software",
+        "ENERGÍA",
+        "Baterías y gestión",
+        "CONTROL",
+        "Movimiento y equilibrio",
+        "ILUSTRACIÓN CONCEPTUAL"
+      ],
+      "notes": "Conectar humanoide con redes de proveedores. El G1 oficial tiene alrededor de 1,32 m y 35 kg según fabricante (las configuraciones varían). Utilizar su página oficial para enseñar el producto real. La ilustración de la diapositiva NO es el modelo específico; evitar atribuciones falsas.\nImagen conceptual; no representa al G1 real. Ver ficha oficial de Unitree.\nFuentes y recursos:\nhttps://www.unitree.com/g1/",
+      "sources": [
+        "https://www.unitree.com/g1/"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 21,
+      "title": "Un video impresionante no demuestra autonomía industrial",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-21.webp",
+      "text": [
+        "UNITREE · EVIDENCIA",
+        "Un video impresionante no demuestra autonomía industrial",
+        "Tres niveles de evidencia que no deben confundirse.",
+        "01",
+        "DEMOSTRACIÓN",
+        "Camina, baila o ejecuta una rutina.",
+        "¿Teleoperado? ¿Cuántos intentos?",
+        "02",
+        "CAPACIDAD TÉCNICA",
+        "Percibe, controla articulaciones, manipula objetos.",
+        "¿Con qué precisión y en qué entorno?",
+        "03",
+        "VALOR PRODUCTIVO",
+        "Trabaja con seguridad, continuidad y costo competitivo.",
+        "¿Cuál es su disponibilidad, fallo y costo?"
+      ],
+      "notes": "Esta diapositiva previene una extrapolación incorrecta: la IA física no equivale a bailar en un video. Pedir a alumnos pensar qué otras medidas hacen falta para evaluar un humanoide empleado en una línea industrial.\nReferencia técnica: Unitree G1, página oficial del producto · No prueba de autonomía general.\nFuentes y recursos:\nhttps://www.unitree.com/g1/",
+      "sources": [
+        "https://www.unitree.com/g1/"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 22,
+      "title": "Los mismos 20 robots, resultados diferentes",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-22.webp",
+      "text": [
+        "EJERCICIO DIDÁCTICO 02",
+        "Los mismos 20 robots, resultados diferentes",
+        "Hipótesis: igual número de trabajadores, turnos, complejidad y calidad requerida.",
+        "FÁBRICA A",
+        "100 trabajadores + 20 robots",
+        "1.000 piezas · 5 % defectos",
+        "950",
+        "piezas buenas al día",
+        "FÁBRICA B",
+        "100 trabajadores + 20 robots",
+        "1.150 piezas · 2 % defectos",
+        "1.127",
+        "piezas buenas al día",
+        "La fábrica B obtiene 177 piezas buenas más por día: +18,6 % sin comprar más robots."
+      ],
+      "notes": "Cálculos: A=1000*(1−0,05)=950; B=1150*(1−0,02)=1127; diferencia=177; aumento 177/950=18,63%. Las cifras son completamente hipotéticas. Explicar el papel de entrenamiento, mantenimiento, datos y gestión.\nEjemplo inventado para enseñar integración y calidad.",
+      "sources": [],
+      "hypothetical": true
+    },
+    {
+      "number": 23,
+      "title": "Más robots no significan automáticamente más productividad",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-23.webp",
+      "text": [
+        "LA LÓGICA ECONÓMICA",
+        "Más robots no significan automáticamente más productividad",
+        "Es necesario evaluar cinco condiciones antes de invertir.",
+        "01",
+        "CAPITAL",
+        "Precio e instalación",
+        "02",
+        "OPERACIÓN",
+        "Disponibilidad y fallas",
+        "03",
+        "PERSONAS",
+        "Ingeniería y capacitación",
+        "04",
+        "CALIDAD",
+        "Defectos y retrabajo",
+        "05",
+        "DEMANDA",
+        "Ventas para amortizar"
+      ],
+      "notes": "Utilizar 2-3 minutos en simulador, si hay conectividad: subir número de robots y luego modificar factor de aprendizaje. No confundir simulación de función de producción con datos empíricos sobre una firma china. Enlace al simulador: https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Capital%20Rob%C3%B3tico%20vs%20Capital%20Com%C3%BAn%20%E2%80%94%20Efecto%20del%20Data%20Flywheel.html\nEl simulador docente ilustra capital robótico y aprendizaje; no está estimado para China.",
+      "sources": [
+        "https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Capital%20Rob%C3%B3tico%20vs%20Capital%20Com%C3%BAn%20%E2%80%94%20Efecto%20del%20Data%20Flywheel.html"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 24,
+      "title": "De la electrónica al automóvil eléctrico",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-24.webp",
+      "text": [
+        "CASO · XIAOMI",
+        "De la electrónica al automóvil eléctrico",
+        "Un caso de transferencia de capacidades: software, hardware, proveedores e ingeniería.",
+        "ANTES",
+        "Electrónica y dispositivos conectados",
+        "TRANSFERENCIA",
+        "Diseño, software, cadena de suministro",
+        "NUEVO SECTOR",
+        "Automoción eléctrica y fábrica integrada",
+        "ILUSTRACIÓN CONCEPTUAL"
+      ],
+      "notes": "No afirmar que Xiaomi haya logrado superioridad universal ni utilizar marketing de ciclos productivos sin verificación. Este es un caso de transferencia de capacidades desde electrónica/soft a automóviles con regulaciones de seguridad más exigentes. Foto conceptual, no de planta Xiaomi.\nImagen conceptual · Caso empresarial: Xiaomi Auto\nFuente empresarial: Xiaomi Auto · documentación de su fábrica\nFuentes y recursos:\nhttps://www.xiaomiev.com/hyperfactory",
+      "sources": [
+        "https://www.xiaomiev.com/hyperfactory"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 25,
+      "title": "China convierte capacidades industriales en un nuevo sector",
+      "chapter": "Fábricas y robótica",
+      "image": "slides/slide-25.webp",
+      "text": [
+        "EL ECOSISTEMA DEL VEHÍCULO ELÉCTRICO",
+        "China convierte capacidades industriales en un nuevo sector",
+        "Automóviles eléctricos en China, BEV y PHEV. Datos de 2025.",
+        "≈ 16 M",
+        "Automóviles eléctricos producidos en China",
+        "≈ 75 %",
+        "Cuota de la producción mundial, 2025",
+        "> 2,5 M",
+        "Exportaciones de vehículos eléctricos de China, 2025",
+        "Baterías + motores + chips + software + proveedores + mercado = industria integrada"
+      ],
+      "notes": "Precisar que IEA reporta alrededor de 16 millones de EV producidos, casi 75% de output global y >2.5 millones exportados. Comparar con 13 millones vendidos en China si hay tiempo. No sumar producción, ventas y exportaciones en una identidad contable simplificada; son series y conceptos distintos.\nFuente: IEA, Global EV Outlook 2026 · BEV y PHEV; cifras redondeadas.\nFuentes y recursos:\nhttps://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade",
+      "sources": [
+        "https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 26,
+      "title": "MOVIMIENTO  03 IA + INDUSTRIA",
+      "chapter": "IA+ y adopción",
+      "image": "slides/slide-26.webp",
+      "text": [
+        "MOVIMIENTO  03",
+        "IA + INDUSTRIA",
+        "La inteligencia",
+        "artificial sale",
+        "del laboratorio",
+        "Su valor depende de datos, personas y procesos que puedan utilizarla.",
+        "ILUSTRACIÓN CONCEPTUAL"
+      ],
+      "notes": "Aclarar que AI+ es política de difusión transversal, no simplemente estimular modelos de frontera. La infraestructura informática existe junto a equipos productivos y redes de distribución.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 27,
+      "title": "Seis ámbitos de aplicación de la inteligencia artificial",
+      "chapter": "IA+ y adopción",
+      "image": "slides/slide-27.webp",
+      "text": [
+        "CONCEPTO OFICIAL · AI+",
+        "Seis ámbitos de aplicación de la inteligencia artificial",
+        "Consejo de Estado de China · Directrices de agosto de 2025.",
+        "1",
+        "CIENCIA",
+        "Descubrimiento y simulación",
+        "2",
+        "INDUSTRIA",
+        "Fabricación y procesos",
+        "3",
+        "CONSUMO",
+        "Productos y servicios",
+        "4",
+        "BIENESTAR",
+        "Salud y educación",
+        "5",
+        "GOBERNANZA",
+        "Gestión pública",
+        "6",
+        "COOPERACIÓN",
+        "Vínculos internacionales"
+      ],
+      "notes": "Ilustrar que AI+ se dirige a toda la economía, no a una industria aislada. Ciencia, industria, consumo, bienestar, gobernanza y cooperación; explicar qué es un agente IA con ejemplo de gestión de información, sin atribuir capacidades verificadas que no existan.\nFuente: Consejo de Estado de China · Directrices “AI+”, agosto 2025.\nFuentes y recursos:\nhttps://www.cac.gov.cn/2025-08/27/c_1758018277755538.htm",
+      "sources": [
+        "https://www.cac.gov.cn/2025-08/27/c_1758018277755538.htm"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 28,
+      "title": "Los objetivos de IA+ para 2027 y 2030",
+      "chapter": "IA+ y adopción",
+      "image": "slides/slide-28.webp",
+      "text": [
+        "AI+ · OBJETIVOS",
+        "Los objetivos de IA+ para 2027 y 2030",
+        "Penetración prevista de terminales inteligentes de nueva generación y aplicaciones de agentes de IA.",
+        ">70 %",
+        "Meta oficial para 2027",
+        ">90 %",
+        "Meta oficial para 2030",
+        "2035",
+        "Horizonte de economía y sociedad inteligentes",
+        "El indicador se refiere a terminales inteligentes y aplicaciones de agentes."
+      ],
+      "notes": "Definir cuidadosamente el indicador oficial. No extrapolar a productividad ni adopción real en 2026. Repetir la diferencia entre meta administrativa, gasto, instalación y resultado.\nFuente: Consejo de Estado · Orientaciones “AI+” (2025); traducción CSET.\nFuentes y recursos:\nhttps://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/",
+      "sources": [
+        "https://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 29,
+      "title": "¿Cómo ayuda la IA a evitar que una máquina se detenga?",
+      "chapter": "IA+ y adopción",
+      "image": "slides/slide-29.webp",
+      "text": [
+        "EJERCICIO DIDÁCTICO 03",
+        "¿Cómo ayuda la IA a evitar que una máquina se detenga?",
+        "Ejemplo HIPOTÉTICO de mantenimiento predictivo.",
+        "ANTES",
+        "160 h",
+        "paradas imprevistas anuales",
+        "DESPUÉS",
+        "80 h",
+        "paradas imprevistas anuales",
+        "−50 % de paradas NO implica +50 % de producción total."
+      ],
+      "notes": "Escenario de enseñanza inventado. Los sensores miden vibración; el modelo anticipa probabilidad de falla; el técnico inspecciona. Una reducción del 50% del downtime no se traduce automáticamente en 50% más de output: considerar si la máquina es un cuello de botella.\nSupuesto ilustrativo. Se requieren sensores + datos + modelo + técnicos para intervenir.",
+      "sources": [],
+      "hypothetical": true
+    },
+    {
+      "number": 30,
+      "title": "Las condiciones de uso de la IA industrial",
+      "chapter": "IA+ y adopción",
+      "image": "slides/slide-30.webp",
+      "text": [
+        "LA CONDICIÓN DE USO",
+        "Las condiciones de uso de la IA industrial",
+        "Adquirir un modelo no equivale a mejorar una fábrica.",
+        "DATOS",
+        "¿Sensores confiables?",
+        "MODELOS",
+        "¿Resuelven un problema?",
+        "PERSONAS",
+        "¿Quién valida y repara?",
+        "PROCESOS",
+        "¿Es posible aplicar la decisión?",
+        "La integración determina cómo se aprovecha una tecnología"
+      ],
+      "notes": "Conectar con Shougang y Midea. Si solo hay IA y no hay datos, técnicos o procesos, el producto puede carecer de valor. Aquí se recupera el factor de aprendizaje e integración de la clase.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 31,
+      "title": "MOVIMIENTO  04 ESTRATEGIA 2030",
+      "chapter": "Estrategia industrial",
+      "image": "slides/slide-31.webp",
+      "text": [
+        "MOVIMIENTO  04",
+        "ESTRATEGIA 2030",
+        "El XV Plan: nuevas",
+        "capacidades",
+        "productivas",
+        "El objetivo es transformar la composición tecnológica de la industria, no solo aumentar su volumen.",
+        "ILUSTRACIÓN CONCEPTUAL"
+      ],
+      "notes": "Introducir secuencia Made in China 2025, AI+ y XV Plan. El Plan del período 2026–2030 no prueba la ejecución de cada meta; referir siempre a documentos oficiales.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 32,
+      "title": "Tres instrumentos de modernización industrial",
+      "chapter": "Estrategia industrial",
+      "image": "slides/slide-32.webp",
+      "text": [
+        "TRES HORIZONTES POLÍTICOS",
+        "Tres instrumentos de modernización industrial",
+        "Son instrumentos distintos que se superponen y responden a necesidades cambiantes.",
+        "2015",
+        "MADE IN CHINA 2025",
+        "Actualizar industrias; equipos y componentes.",
+        "2025",
+        "INTELIGENCIA ARTIFICIAL+",
+        "Difundir IA a múltiples sectores de la economía.",
+        "2026–2030",
+        "XV PLAN QUINQUENAL",
+        "Integrar innovación, industria y seguridad tecnológica."
+      ],
+      "notes": "Explicar continuidad estratégica sin suponer éxito automático. 2015 orienta manufactura, 2025 orienta difusión de IA, 2026–2030 articula modernización de lo existente y apuesta por nuevas tecnologías.\nFuentes: documentos oficiales de política industrial, AI+ 2025 y XV Plan 2026–2030.\nFuentes y recursos:\nhttps://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/2026/2026_zt03/yw/202603/t20260314_1430877.html\nTexto oficial completo del XV Plan:\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+      "sources": [
+        "https://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/2026/2026_zt03/yw/202603/t20260314_1430877.html",
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 33,
+      "title": "“Fuerzas productivas de nueva calidad” · 新质生产力",
+      "chapter": "Estrategia industrial",
+      "image": "slides/slide-33.webp",
+      "text": [
+        "NUEVO CONCEPTO DE DESARROLLO",
+        "“Fuerzas productivas de nueva calidad” · 新质生产力",
+        "Tres horizontes industriales en el XV Plan Quinquenal.",
+        "01",
+        "MEJORAR LO EXISTENTE",
+        "Acero, maquinaria, química: calidad y eficiencia.",
+        "02",
+        "ESCALAR LO EMERGENTE",
+        "Robótica, vehículos inteligentes, nuevos materiales.",
+        "03",
+        "EXPLORAR EL FUTURO",
+        "IA encarnada, tecnologías cuánticas, 6G y otras."
+      ],
+      "notes": "Definir nuevo concepto: foco en desarrollo de capacidades basadas en innovación, calidad y productividad, no simple aumento de volumen. El término es político estratégico, no una medición estadística. Distinguir industrias emergentes de tecnologías aún exploratorias.\nFuente: XV Plan Quinquenal 2026–2030, texto oficial.\nFuentes y recursos:\nhttps://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/2026/2026_zt03/yw/202603/t20260314_1430877.html\nTexto oficial completo del XV Plan:\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+      "sources": [
+        "https://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/2026/2026_zt03/yw/202603/t20260314_1430877.html",
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 34,
+      "title": "Un plan no es una fábrica que ya funciona",
+      "chapter": "Estrategia industrial",
+      "image": "slides/slide-34.webp",
+      "text": [
+        "DE LA DECISIÓN AL DATO",
+        "Un plan no es una fábrica que ya funciona",
+        "Cómo juzgar un programa industrial con cuatro niveles diferentes.",
+        "01",
+        "ANUNCIO",
+        "Objetivos y prioridades",
+        "02",
+        "INSTRUMENTO",
+        "Reglas, presupuesto, incentivos",
+        "03",
+        "EJECUCIÓN",
+        "Plantas, contratos, capacitación",
+        "04",
+        "RESULTADO",
+        "Productividad, calidad, ventas",
+        "Cuatro niveles distintos: una meta oficial no demuestra que la inversión haya sido rentable."
+      ],
+      "notes": "Pedir a los alumnos identificar cuál de las cifras de la clase son flujos observados (robots 2025), cuáles son resultados reportados (WEF) y cuáles metas (AI+). Método clave de la clase.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 35,
+      "title": "MOVIMIENTO  05 GEOPOLÍTICA",
+      "chapter": "Límites y competencia",
+      "image": "slides/slide-35.webp",
+      "text": [
+        "MOVIMIENTO  05",
+        "GEOPOLÍTICA",
+        "La red también tiene",
+        "puntos débiles",
+        "La capacidad manufacturera puede coexistir con dependencia, sobreinversión y vulnerabilidad.",
+        "ILUSTRACIÓN CONCEPTUAL"
+      ],
+      "notes": "Conectar las capacidades industriales con geopolítica: los eslabones complementarios de una cadena pueden estar fuera del país. La ventaja de fabricación no garantiza autonomía en chips avanzados ni maquinaria.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 36,
+      "title": "Una pieza ausente detiene la línea entera",
+      "chapter": "Límites y competencia",
+      "image": "slides/slide-36.webp",
+      "text": [
+        "EJERCICIO DIDÁCTICO 04",
+        "Una pieza ausente detiene la línea entera",
+        "Ejemplo hipotético: se necesita un chip indispensable por dispositivo y no hay sustituto.",
+        "10.000",
+        "Capacidad semanal de la fábrica",
+        "6.000",
+        "Chips críticos disponibles",
+        "Producción posible: máximo 6.000 dispositivos  →  40 % de capacidad sin utilizar"
+      ],
+      "notes": "Cálculo: min(capacidad 10 mil, chip 6 mil) = 6 mil. 40% no utilizado. Restricción deliberadamente simplificada; la sustitución, inventarios, rediseños y comercio alteran el escenario. Conectar con export controls y vulnerabilidad semiconductora.\nSin inventarios de sustitución ni rediseño, el componente limitante gobierna el volumen.",
+      "sources": [],
+      "hypothetical": true
+    },
+    {
+      "number": 37,
+      "title": "China y Estados Unidos poseen fortalezas diferentes",
+      "chapter": "Límites y competencia",
+      "image": "slides/slide-37.webp",
+      "text": [
+        "RIVALIDAD TECNOLÓGICA",
+        "China y Estados Unidos poseen fortalezas diferentes",
+        "La competencia depende del eslabón analizado, no de un marcador único.",
+        "CHINA",
+        "ESTADOS UNIDOS",
+        "Escala de manufactura",
+        "Redes densas de proveedores",
+        "Instalaciones de robots",
+        "Baterías y vehículos eléctricos",
+        "Ecosistema de modelos de frontera",
+        "Nube y plataformas informáticas",
+        "Software y herramientas especializadas",
+        "Alianzas tecnológicas internacionales"
+      ],
+      "notes": "Precisar que este mapa no es un ranking universal. Diferenciar investigación de frontera, capacidades industriales y difusión tecnológica. Ambas economías poseen fortalezas y dependencias en ambas dimensiones; evitar simplificaciones.\nSon perfiles generales: existen capacidades y dependencias cruzadas en numerosos sectores.\nReferencias: UNIDO · IFR · Stanford HAI, AI Index 2026\nFuentes y recursos:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report",
+      "sources": [
+        "https://hai.stanford.edu/ai-index/2026-ai-index-report"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 38,
+      "title": "Una industria fuerte también puede crear sobrecapacidad",
+      "chapter": "Límites y competencia",
+      "image": "slides/slide-38.webp",
+      "text": [
+        "LA PARADOJA DEL ÉXITO",
+        "Una industria fuerte también puede crear sobrecapacidad",
+        "Ejemplo hipotético de capacidad instalada y demanda en unidades comparables.",
+        "CAPACIDAD INSTALADA",
+        "1.000.000",
+        "DEMANDA EFECTIVA",
+        "650.000",
+        "65 % de utilización  ·  35 % de capacidad ociosa"
+      ],
+      "notes": "Supuesto de capacidad 1 millón, demanda 650 mil, utilización 65%. No es una estadística china. Explicar cómo inversión simultánea en múltiples regiones puede acelerar innovación y generar exceso de capacidad y márgenes bajos.\nEjemplo hipotético. En la práctica, pueden intervenir exportaciones, inventarios y ciclos de inversión.",
+      "sources": [],
+      "hypothetical": true
+    },
+    {
+      "number": 39,
+      "title": "Más producción, competencia intensa y más exportaciones",
+      "chapter": "Límites y competencia",
+      "image": "slides/slide-39.webp",
+      "text": [
+        "CASO REAL · AUTOMÓVILES ELÉCTRICOS",
+        "Más producción, competencia intensa y más exportaciones",
+        "Automóviles eléctricos en 2025. Producción, ventas y exportaciones son series diferentes.",
+        "≈16 M",
+        "producción de vehículos eléctricos en China",
+        ">13 M",
+        "ventas domésticas en 2025",
+        ">2,5 M",
+        "exportaciones de China en 2025",
+        "La competencia de precios presiona márgenes: exportar puede ayudar a sostener ventas."
+      ],
+      "notes": "IEA: China produjo ~16m electric cars en 2025, vendió >13m domésticamente y exportó >2.5m. No convertir estas cifras en balance exacto de inventarios. Exportaciones se duplicaron en 2025. La IEA vincula fuerte competencia doméstica con márgenes presionados y búsqueda de mercados externos.\nFuente: IEA, Global EV Outlook 2026 · Cifras redondeadas, series con definiciones propias.\nFuentes y recursos:\nhttps://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade",
+      "sources": [
+        "https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 40,
+      "title": "Cuatro confusiones que debemos evitar",
+      "chapter": "Límites y competencia",
+      "image": "slides/slide-40.webp",
+      "text": [
+        "UNA LECTURA RIGUROSA",
+        "Cuatro confusiones que debemos evitar",
+        "Los datos oficiales, empresariales y pedagógicos tienen distinta fuerza probatoria.",
+        "01",
+        "ANUNCIO ≠ LOGRO",
+        "Un plan contiene metas, no resultados.",
+        "02",
+        "DEMO ≠ AUTONOMÍA",
+        "Un robot caminando no prueba trabajo rentable.",
+        "03",
+        "ROBOTS INSTALADOS ≠ PRODUCIDOS",
+        "Adopción y fabricación son magnitudes distintas.",
+        "04",
+        "CASO REPORTADO ≠ CAUSALIDAD",
+        "La mejora puede depender de varias tecnologías."
+      ],
+      "notes": "Repasar: metas AI+ no son adopción observada; video Unitree no prueba autonomía industrial; IFR mide instalaciones; WEF reporta resultados y no establece causalidad experimental. Promover alfabetización estadística y tecnológica.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 41,
+      "title": "¿Por qué China pudo construir una potencia tecnológica?",
+      "chapter": "Límites y competencia",
+      "image": "slides/slide-41.webp",
+      "text": [
+        "LA TESIS",
+        "¿Por qué China pudo construir una potencia tecnológica?",
+        "Una secuencia de capacidades, no una explicación monocausal.",
+        "01",
+        "HISTORIA",
+        "Acumular capacidad de producir",
+        "02",
+        "REDES",
+        "Conectar empresas y conocimientos",
+        "03",
+        "APRENDIZAJE",
+        "Mejorar diseño y procesos",
+        "04",
+        "TECNOLOGÍA",
+        "Integrar robots, datos e IA",
+        "05",
+        "RESULTADOS",
+        "Competir, innovar y enfrentar límites",
+        "La innovación se construye fabricando, coordinando y aprendiendo. No está garantizada."
+      ],
+      "notes": "Síntesis: la manufactura genera espacios de aprendizaje; las redes y políticas permiten coordinar; las nuevas tecnologías agregan valor cuando están integradas; semiconductores, demanda y rentabilidad marcan límites.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 42,
+      "title": "Lo que todavía necesitamos investigar",
+      "chapter": "Límites y competencia",
+      "image": "slides/slide-42.webp",
+      "text": [
+        "TRES PREGUNTAS PARA DISCUTIR",
+        "Lo que todavía necesitamos investigar",
+        "Tres perspectivas sobre el futuro tecnológico chino.",
+        "1",
+        "¿Qué parte de la ventaja china proviene de la escala y cuál de la innovación propia?",
+        "2",
+        "¿Cuándo un robot mejora la productividad y cuándo únicamente agrega costos?",
+        "3",
+        "¿Puede existir liderazgo industrial sin autonomía completa en chips avanzados?"
+      ],
+      "notes": "Dejar al menos 3-4 minutos para una pregunta si la clase ha avanzado según plan. Utilizar estas preguntas como recapitulación y puente a la clase 2 de modelos y robots inteligentes.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 43,
+      "title": "MODELOS Y ROBOTS INTELIGENTES DEL SISTEMA",
+      "chapter": "Modelos y fuentes",
+      "image": "slides/slide-43.webp",
+      "text": [
+        "MODELOS Y ROBOTS INTELIGENTES",
+        "DEL SISTEMA",
+        "INDUSTRIAL A LA",
+        "INTELIGENCIA",
+        "ENCARNADA",
+        "DeepSeek · Qwen · agentes · Unitree · UBTech",
+        "¿Qué pueden hacer realmente los modelos y los robots?",
+        "ILUSTRACIÓN CONCEPTUAL"
+      ],
+      "notes": "Anunciar segundo encuentro: modelos generativos, arquitecturas, agentes y robots. Imagen conceptual de humanoide, no equipo específico.",
+      "sources": [],
+      "hypothetical": false
+    },
+    {
+      "number": 44,
+      "title": "Estadísticas y organismos internacionales",
+      "chapter": "Modelos y fuentes",
+      "image": "slides/slide-44.webp",
+      "text": [
+        "FUENTES · I",
+        "Estadísticas y organismos internacionales",
+        "Bibliografía seleccionada para verificar los principales indicadores.",
+        "UNIDO · International Yearbook of Industrial Statistics 2025",
+        "Cuota mundial del valor agregado manufacturero.",
+        "↗",
+        "IFR · World Robotics 2026",
+        "Instalaciones de robots industriales en China y cuota mundial.",
+        "↗",
+        "IFR · China y Estados Unidos, World Robotics 2026",
+        "Instalaciones de 2025 y diferencias entre adopción y fabricación.",
+        "↗",
+        "IEA · Global EV Outlook 2026",
+        "Producción, ventas, exportación y baterías.",
+        "↗",
+        "Stanford HAI · AI Index 2026",
+        "Comparación internacional del desarrollo de IA.",
+        "↗"
+      ],
+      "notes": "Fuentes primarias y centros de estudios que respaldan cifras y comparaciones. Estos enlaces son clicables en modo presentación.\nFuentes y recursos:\nhttps://stat.unido.org/publications/international-yearbook-industrial-statistics-2025\nhttps://ifr.org/ifr-press-releases/five-million-robots-now-operate-in-factories-globally\nhttps://ifr.org/ifr-press-releases/news/robot-density-surges-in-europe-asia-and-americas\nhttps://www.iea.org/reports/global-ev-outlook-2026/executive-summary\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report",
+      "sources": [
+        "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+        "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf",
+        "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-USA.pdf",
+        "https://ifr.org/ifr-press-releases/five-million-robots-now-operate-in-factories-globally",
+        "https://ifr.org/ifr-press-releases/news/robot-density-surges-in-europe-asia-and-americas",
+        "https://stat.unido.org/publications/international-yearbook-industrial-statistics-2025",
+        "https://www.iea.org/reports/global-ev-outlook-2026/executive-summary",
+        "https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 45,
+      "title": "Casos empresariales y estudios de manufactura",
+      "chapter": "Modelos y fuentes",
+      "image": "slides/slide-45.webp",
+      "text": [
+        "FUENTES · II",
+        "Casos empresariales y estudios de manufactura",
+        "Los resultados deben atribuirse a las fuentes que los reportan.",
+        "World Economic Forum · Global Lighthouse Network 2025",
+        "Shougang: 67 aplicaciones, defectos −35 %, eficiencia +21,2 %.",
+        "↗",
+        "World Economic Forum · Global Lighthouse Network 2025",
+        "Midea Chongqing: 79 casos digitales, configuración −81 %.",
+        "↗",
+        "Unitree Robotics · Ficha oficial del G1",
+        "Componentes y capacidades técnicas declaradas por fabricante.",
+        "↗",
+        "Xiaomi Auto · Hyperfactory",
+        "Descripción corporativa de procesos y fabricación.",
+        "↗",
+        "IEA · Manufacturing and Trade 2026",
+        "La cadena del vehículo eléctrico y sus tensiones económicas.",
+        "↗"
+      ],
+      "notes": "Las imágenes de Shougang, Midea, Xiaomi y Unitree son conceptuales y no deben considerarse fotografías de sus instalaciones o equipos. Estudios de caso WEF reportados, no inferencia causal independiente.\nFuentes y recursos:\nhttps://www.weforum.org/media/global-lighthouse-network-2025-world-economic-forum-recognizes-companies-transforming-manufacturing-through-innovation/\nhttps://www.unitree.com/g1/\nhttps://www.xiaomiev.com/hyperfactory\nhttps://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade",
+      "sources": [
+        "https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade",
+        "https://www.unitree.com/g1/",
+        "https://www.weforum.org/media/global-lighthouse-network-2025-world-economic-forum-recognizes-companies-transforming-manufacturing-through-innovation/",
+        "https://www.xiaomiev.com/hyperfactory"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 46,
+      "title": "Documentos oficiales, economía y recursos docentes",
+      "chapter": "Modelos y fuentes",
+      "image": "slides/slide-46.webp",
+      "text": [
+        "FUENTES · III",
+        "Documentos oficiales, economía y recursos docentes",
+        "Textos de política y referencias para ampliar después de clase.",
+        "Consejo de Estado · Directrices AI+ (2025)",
+        "Metas y seis ámbitos de acción. Texto oficial chino.",
+        "↗",
+        "CSET Georgetown · Traducción técnica de AI+",
+        "Apoyo para interpretación de terminología oficial.",
+        "↗",
+        "NDRC · XV Plan Quinquenal 2026–2030",
+        "Estrategia de modernización e industrias del futuro.",
+        "↗",
+        "Banco Mundial · China Economic Update 2026",
+        "Demanda, reformas estructurales y crecimiento.",
+        "↗",
+        "Simulador del profesor · Capital robótico y aprendizaje",
+        "Experimento pedagógico, no estimación empírica.",
+        "↗"
+      ],
+      "notes": "Los ejemplos numéricos inventados se distinguen explícitamente en diapositivas 8, 22, 29, 36 y 38. Mantener AI+ metas separadas de adopción observada.\nFuentes y recursos:\nhttps://www.cac.gov.cn/2025-08/27/c_1758018277755538.htm\nhttps://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/\nhttps://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/2026/2026_zt03/yw/202603/t20260314_1430877.html\nhttps://www.worldbank.org/en/news/press-release/2026/07/07/rebalancing-growth-china-economic-update\nhttps://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Capital%20Rob%C3%B3tico%20vs%20Capital%20Com%C3%BAn%20%E2%80%94%20Efecto%20del%20Data%20Flywheel.html\nTexto oficial completo del XV Plan:\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+      "sources": [
+        "https://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/",
+        "https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Capital Robótico vs Capital Común — Efecto del Data Flywheel.html",
+        "https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Capital%20Rob%C3%B3tico%20vs%20Capital%20Com%C3%BAn%20%E2%80%94%20Efecto%20del%20Data%20Flywheel.html",
+        "https://www.cac.gov.cn/2025-08/27/c_1758018277755538.htm",
+        "https://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/2026/2026_zt03/yw/202603/t20260314_1430877.html",
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+        "https://www.worldbank.org/en/news/press-release/2026/07/07/rebalancing-growth-china-economic-update"
+      ],
+      "hypothetical": false
+    },
+    {
+      "number": 47,
+      "title": "GRACIAS Comprender las capacidades,",
+      "chapter": "Modelos y fuentes",
+      "image": "slides/slide-47.webp",
+      "text": [
+        "GRACIAS",
+        "Comprender las capacidades,",
+        "los mecanismos y los límites",
+        "Material elaborado por el profesor",
+        "Sergio Gevatschnaider",
+        "ILUSTRACIÓN CONCEPTUAL"
+      ],
+      "notes": "Diapositiva final con atribución expresa solicitada.",
+      "sources": [],
+      "hypothetical": false
+    }
+  ]
+}

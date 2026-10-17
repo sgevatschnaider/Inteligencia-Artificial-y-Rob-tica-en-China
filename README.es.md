@@ -2,7 +2,7 @@
 
 **[Portada bilingüe](README.md) · [English](README.en.md) · [Sitio interactivo](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)**
 
-Última revisión editorial: **26 de agosto de 2026**.
+Última revisión editorial: **17 de octubre de 2026**.
 
 ## Propósito y alcance
 
@@ -27,11 +27,11 @@ Fuente: [Stanford AI Index 2026](https://hai.stanford.edu/ai-index/2026-ai-index
 
 ### 2. La robótica industrial es la ventaja de escala más visible
 
-Según la Federación Internacional de Robótica, China instaló 295.045 robots industriales en 2024, equivalentes al 54 % de las instalaciones mundiales. El parque operativo superó los 2 millones de unidades. Por primera vez, los fabricantes chinos representaron la mayoría de las ventas en su mercado doméstico, con una participación del 57 %.
+Según IFR World Robotics 2026, China instaló unas 354.000 unidades en 2025, el 59 % de las instalaciones mundiales. Los proveedores chinos captaron el 55 % del mercado doméstico. El parque de 2.027.000 unidades corresponde a 2024 y se conserva como referencia histórica.
 
 Estas cifras describen robots industriales instalados; no deben confundirse con ventas de robots humanoides ni con capacidades generales de «IA física».
 
-Fuente: [IFR, World Robotics 2025](https://ifr.org/downloads/press_docs/2025-09-25-IFR_press_release_China_in_English.pdf).
+Fuente: [IFR, World Robotics 2026](https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf).
 
 ### 3. La política pasó de construir capacidades a desplegar IA
 
@@ -95,7 +95,7 @@ Lee [Aplicaciones, ética y sociedad](docs/es/aplicaciones-etica.md).
 
 ## Recursos interactivos
 
-Los informes sectoriales fueron producidos durante 2025 y se conservan como recursos fechados. Los diez recursos HTML incorporan desde 2026 un selector ES/EN, español revisado y traducción inglesa profesional; la presentación en PDF permanece en español. Sus cifras deben interpretarse junto con las fuentes y este panorama actualizado.
+Los informes sectoriales fueron producidos durante 2025 y se conservan como recursos fechados. Los once recursos HTML incorporan desde 2026 un selector ES/EN, español revisado y traducción inglesa profesional; la presentación en PDF permanece en español. Sus cifras deben interpretarse junto con las fuentes y este panorama actualizado.
 
 - [La revolución robótica de China — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html)
 - [IA en vehículos autónomos — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html)
@@ -119,3 +119,8 @@ Los informes sectoriales fueron producidos durante 2025 y se conservan como recu
 Mantenido por [Sergio Gevatschnaider](https://github.com/sgevatschnaider). Consulta [CITATION.cff](CITATION.cff) para citar el repositorio.
 
 El código se distribuye bajo [MIT](LICENSE). Los textos, tablas y materiales documentales originales se distribuyen bajo [CC BY 4.0](LICENSE-CONTENT.md), salvo que un archivo indique otra licencia.
+
+## Presentación y datos / Presentation and data
+
+- [Transformación industrial, PDF, PowerPoint y visor](materiales/transformacion-industrial/).
+- [Indicadores comparables y fuentes](recursos/Panorama_Industrial_2026.html).

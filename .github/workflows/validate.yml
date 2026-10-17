@@ -16,3 +16,5 @@ jobs:
         uses: actions/checkout@v4
       - name: Validate links and bilingual structure
         run: python scripts/validate_repo.py
+      - name: Validate model behavior and indicator sources
+        run: node scripts/check_models.cjs

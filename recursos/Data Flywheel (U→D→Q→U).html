@@ -43,12 +43,13 @@
   @media(max-width:1200px){.params-grid{grid-template-columns:1fr}.charts{grid-template-columns:1fr}}
   canvas{width:100%;height:280px !important;display:block}
 </style>
+<link rel="stylesheet" href="resource-theme.css">
 </head>
 <body>
 <aside role="note" aria-label="Contexto editorial" style="position:fixed;right:1rem;bottom:1rem;z-index:99999;max-width:22rem;padding:.75rem 1rem;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:#071923;color:#fff;box-shadow:0 10px 35px rgba(0,0,0,.28);font:600 13px/1.35 system-ui,sans-serif"><a href="../index.html" style="color:#f4c45f;text-decoration:none">← Portada bilingüe / Bilingual home</a><span style="opacity:.78"> · Recurso bilingüe ES/EN · edición 2026</span></aside>
 <div class="wrap">
   <header>
-    <h1>Simulador del Data Flywheel — EE. UU. vs. China</h1>
+    <div class="model-note">Modelo agregado didáctico. U0 y parámetros de calidad son supuestos; I anual usa magnitudes IFR de 2025. En modo flujo, D0 y ω solo afectan D; en modo stock también afectan el aprendizaje.</div><h1>Simulador del Data Flywheel — EE. UU. vs. China</h1>
     <div class="muted">Dos modos: <b>A</b> multiplicativo y <b>B</b> de acumulación y flujo con instalaciones de la IFR</div>
   </header>
 
@@ -57,7 +58,8 @@
     <div class="card">
       <fieldset>
         <legend>Modo y horizonte</legend>
-        <div class="row">
+        <div><label for="learningBasis">Base de aprendizaje</label><select id="learningBasis"><option value="flow">Flujo de datos del período</option><option value="stock">Stock de datos con obsolescencia</option></select></div>
+<div class="row">
           <label>Modo</label>
           <select id="mode">
             <option value="A">A — U' = U·(1 + s + κQ − σ)</option>
@@ -89,7 +91,7 @@
         <div class="row"><label>δ</label><input id="US_delta" type="number" step="0.01" min="0" max="1" value="0.80"></div>
         <div class="row modeA"><label>s (mes)</label><input id="US_s" type="number" step="0.0001" value="0.0068214934"></div>
         <div class="row modeA"><label>κ</label><input id="US_kappa" type="number" step="0.001" value="0.018"></div>
-        <div class="row modeB"><label>I anual (miles)</label><input id="US_Iy" type="number" step="0.1" value="34.2"></div>
+        <div class="row modeB"><label>I anual (miles)</label><input id="US_Iy" type="number" step="0.1" value="38.4"></div>
         <div class="row modeB"><label>γ</label><input id="US_gamma" type="number" step="0.001" value="0.018"></div>
         <div class="row"><label>σ</label><input id="US_sigma" type="number" step="0.0001" value="0.002"></div>
         <div class="row modeB"><label>ρ (mes)</label><input id="US_rho" type="number" step="0.0001" value="0"></div>
@@ -179,6 +181,7 @@ function switchMode(){
   simulateAndDraw();
 }
 $("mode").addEventListener("change",switchMode);
+$("learningBasis").addEventListener("change",simulateAndDraw);
 
 function simulateCountry(p,g,mode){
   const T=g.months; let U=p.U0, D=g.D0, Q=g.Q0;
@@ -187,7 +190,8 @@ function simulateCountry(p,g,mode){
   for(let t=0;t<T;t++){
     const dataGen=p.alpha*U*p.delta;
     D=(1-g.omega)*D + dataGen;
-    const dQ=g.beta*Math.pow(dataGen,g.theta)*Math.pow(p.delta,g.phi)*(1-Q);
+    const learningSignal=g.learningBasis === "stock" ? D : dataGen;
+    const dQ=g.beta*Math.pow(learningSignal,g.theta)*Math.pow(p.delta,g.phi)*(1-Q);
     Q=clamp(Q+dQ,0,1);
     
     if(mode==="A"){
@@ -252,7 +256,7 @@ function updateChartsToMonth(month){
 function simulateAndDraw(){
   const mode=$("mode").value;
   const g={months:+$("months").value,Q0:+$("Q0").value,D0:+$("D0").value,beta:+$("beta").value,
-           theta:+$("theta").value,phi:+$("phi").value,omega:+$("omega").value};
+           theta:+$("theta").value,phi:+$("phi").value,omega:+$("omega").value,learningBasis:$("learningBasis").value};
   const US={U0:+$("US_U0").value,alpha:+$("US_alpha").value,delta:+$("US_delta").value,
             s:+$("US_s").value,kappa:+$("US_kappa").value,sigma:+$("US_sigma").value,
             Iy:+$("US_Iy").value,gamma:+$("US_gamma").value,rho:+$("US_rho").value};
@@ -268,6 +272,7 @@ function simulateAndDraw(){
   animState.currentMonth=0;
 
   destroyCharts();
+  if(typeof Chart === "undefined"){fallbackDraw({us:USres,cn:CNres});["play","pause"].forEach(id=>$(id).disabled=true);return;}
   const common={responsive:true,maintainAspectRatio:true,animation:{duration:0},
     plugins:{legend:{labels:{color:"#e6ecff"}},tooltip:{mode:"index",intersect:false}},
     scales:{x:{grid:{color:"#1e2549"},ticks:{color:"#a9b0d6"}},
@@ -307,11 +312,11 @@ function applyScenario(key){
   
   $("US_delta").value=0.80; $("CN_delta").value=0.45;
   $("US_sigma").value=0.002; $("CN_sigma").value=0.0015;
-  $("CN_Iy").value=295.0; $("US_Iy").value=34.2;
+  $("CN_Iy").value=354.0; $("US_Iy").value=38.4;
 
   if(key==="cn_delta") {$("CN_delta").value=0.70;}
   if(key==="us_sigma") {$("US_sigma").value=0.001;}
-  if(key==="cn_Iplus") {$("CN_Iy").value=(295.0*1.20).toFixed(1);}
+  if(key==="cn_Iplus") {$("CN_Iy").value=(354.0*1.20).toFixed(1);}
   if(key==="us_delta") {$("US_delta").value=0.90;}
   if(key==="reset"){
     $("US_U0").value=400; $("CN_U0").value=2000;
@@ -364,46 +369,19 @@ document.querySelectorAll(".scenario").forEach(s=>s.addEventListener("click",()=
 switchMode();
 simulateAndDraw();
 
-// ---------------------------- Fallback sin Chart.js ---------------------------
-function drawSeries(ctx, data, color){
-  const w = ctx.canvas.clientWidth, h = ctx.canvas.clientHeight;
-  ctx.clearRect(0,0,w,h);
-  ctx.fillStyle = "#0e1430"; ctx.fillRect(0,0,w,h);
-  const max = Math.max(...data), min = Math.min(...data);
-  const n = Math.max(1, data.length-1);
-  const x = i => (i/n) * (w-20) + 10;
-  const y = v => h-10 - ( (v-min)/(max-min || 1) ) * (h-20);
-  ctx.strokeStyle = color; ctx.lineWidth = 2;
-  ctx.beginPath();
-  for(let i=0;i<data.length;i++){
-    const X=x(i), Y=y(data[i]);
-    if(i===0) ctx.moveTo(X,Y); else ctx.lineTo(X,Y);
-  }
-  ctx.stroke();
-  // axes
-  ctx.strokeStyle="#1c2450"; ctx.lineWidth=1;
-  ctx.beginPath(); ctx.moveTo(10,h-10); ctx.lineTo(w-10,h-10); ctx.stroke();
-  ctx.beginPath(); ctx.moveTo(10,10); ctx.lineTo(10,h-10); ctx.stroke();
-}
+// Fallback: curvas sobre la misma escala, sin dependencia de Chart.js.
 function fallbackDraw(sim){
-  const Qus=sim.us.Q, Qcn=sim.cn.Q;
-  const Uus=sim.us.U, Ucn=sim.cn.U;
-  const Dus=sim.us.D, Dcn=sim.cn.D;
-  const qctx = $("chartQ").getContext("2d");
-  const uctx = $("chartU").getContext("2d");
-  const dctx = $("chartD").getContext("2d");
-  drawSeries(qctx,Qus,"#7dd3fc"); drawSeries(qctx,Qcn,"#ef4444");
-  drawSeries(uctx,Uus,"#7dd3fc"); drawSeries(uctx,Ucn,"#ef4444");
-  drawSeries(dctx,Dus,"#7dd3fc"); drawSeries(dctx,Dcn,"#ef4444");
+  const pairs=[["chartQ",sim.us.Q,sim.cn.Q],["chartU",sim.us.U,sim.cn.U],["chartD",sim.us.D,sim.cn.D]];
+  pairs.forEach(([id,a,b])=>{
+    const canvas=$(id),ctx=canvas.getContext("2d"),w=canvas.width=700,h=canvas.height=330;
+    ctx.clearRect(0,0,w,h);ctx.fillStyle="#101D31";ctx.fillRect(0,0,w,h);
+    const max=Math.max(...a,...b,0.01)*1.08,base=h-35;
+    ctx.strokeStyle="#65788A";ctx.beginPath();ctx.moveTo(45,20);ctx.lineTo(45,base);ctx.lineTo(w-20,base);ctx.stroke();
+    [[a,"#7dd3fc"],[b,"#ef4444"]].forEach(([data,color])=>{ctx.strokeStyle=color;ctx.lineWidth=3;ctx.beginPath();data.forEach((v,i)=>{const x=45+i*(w-70)/(data.length-1),y=base-v/max*(h-65);i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();});
+    ctx.fillStyle="#fff";ctx.font="16px sans-serif";ctx.fillText("EE. UU. / China — horizonte completo",50,20);
+  });
+  $("kpi_qUS").textContent=sim.us.Q.at(-1).toFixed(3);$("kpi_qCN").textContent=sim.cn.Q.at(-1).toFixed(3);
 }
-window.addEventListener("load",()=>{
-  if(typeof Chart==="undefined"){
-    // Si Chart.js no cargó (offline/CDN bloqueado), pintamos fallback
-    const tmp = simulateAll(T,TAU);
-    fallbackDraw(tmp);
-  }
-});
-
 </script>
 <script src="i18n.js"></script>
 </body>

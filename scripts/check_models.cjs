@@ -1,0 +1,27 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),read=name=>fs.readFileSync(path.join(root,'recursos',name),'utf8');
+const synthetic=read('Robot_datos_sinteticos.html');
+const src=synthetic.slice(synthetic.indexOf('const scenarios ='),synthetic.indexOf('const scenarioSelect ='));
+const box={};vm.createContext(box);vm.runInContext(src,box);
+vm.runInContext('globalThis.input=scenarios.base;globalThis.shared=sharedParams;globalThis.tuning={SScale:1,psiAdj:0,chiAdj:0,etaStarAdj:0}',box);
+const base=vm.runInContext('simulateFlywheel(input,shared,tuning)',box);
+const changed=vm.runInContext('simulateFlywheel({US:{...input.US,U0:1},CN:{...input.CN,U0:1}},shared,tuning)',box);
+assert.notEqual(base.CN.U[0],changed.CN.U[0],'Supplied scenario parameters must control the simulation');
+const zeroSyntheticFidelity=vm.runInContext('simulateFlywheel(input,shared,{...tuning,psiAdj:.25,chiAdj:1})',box);
+assert.deepEqual(base.CN.Q,zeroSyntheticFidelity.CN.Q,'An empty synthetic channel cannot change quality through fidelity or coverage');
+assert.equal(base.CN.deltaEff[0],.6*.45,'Zero synthetic volume must use only real-data diversity');
+for(const side of [base.US,base.CN])assert(side.Q.every(q=>Number.isFinite(q)&&q>=0&&q<=1),'Quality must remain finite and bounded');
+const country=read('Data Flywheel (U→D→Q→U).html');
+const core=country.slice(country.indexOf('function simulateCountry'),country.indexOf('function destroyCharts'));
+const dynamic={};vm.createContext(dynamic);vm.runInContext('const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));function monthlyI(i){return i/12;}'+core,dynamic);
+dynamic.p={U0:2000,alpha:6,delta:.45,s:.0117,kappa:.014,sigma:.0015,Iy:354,rho:0,gamma:.014};
+dynamic.g={months:12,D0:100,Q0:.2,omega:0,beta:.003,theta:.6,phi:1.2,learningBasis:'flow'};
+const flow=vm.runInContext('simulateCountry(p,g,"B")',dynamic);dynamic.g={...dynamic.g,D0:1000000,omega:.99};
+assert.deepEqual(flow.Q,vm.runInContext('simulateCountry(p,g,"B").Q',dynamic),'Flow-learning mode must preserve its documented independence from stored data');
+dynamic.g={...dynamic.g,learningBasis:'stock'};
+assert.notDeepEqual(flow.Q,vm.runInContext('simulateCountry(p,g,"B").Q',dynamic),'Stock-learning mode must respond to stored data');
+assert(!country.includes('simulateAll(T,TAU)'),'Offline fallback must not call the removed undefined function');
+const indicators=JSON.parse(fs.readFileSync(path.join(root,'data/indicadores-2026.json'),'utf8'));
+for(const x of indicators.indicators){assert(Number.isFinite(x.value));assert(indicators.sources[x.source]?.url.startsWith('https://'));assert(x.data_year<=Number(indicators.reviewed.slice(0,4)));}
+console.log('Model checks passed: scenario inputs, empty synthetic channel, bounded quality, learning basis and sourced indicators.');

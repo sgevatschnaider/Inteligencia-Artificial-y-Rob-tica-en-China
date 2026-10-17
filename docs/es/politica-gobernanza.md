@@ -45,3 +45,11 @@ Una evaluación equilibrada debe separar:
 - [Iniciativa IA+ de 2025](https://www.gov.cn/zhengce/content/202508/content_7037861.htm)
 - [Medidas provisionales para IA generativa](https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm)
 - [Medidas de etiquetado de contenido de IA](https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm)
+
+## XV Plan Quinquenal 2026–2030
+
+El texto oficial de marzo de 2026 articula modernización manufacturera, IA+, cómputo, algoritmos, datos y capacidades industriales. Los capítulos 12–14 desarrollan oferta tecnológica, aplicación y condiciones de desarrollo. El recuadro de nuevas industrias aborda circuitos integrados, inteligencia encarnada y baterías.
+
+Una prioridad oficial no mide adopción realizada. La evaluación debe seguir instrumentos, ejecución y resultados por sector, empresa y territorio.
+
+[Texto oficial / Official text](https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf).

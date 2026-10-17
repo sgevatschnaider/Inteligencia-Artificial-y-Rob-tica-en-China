@@ -37,3 +37,9 @@ This timeline selects policy, industrial, and technological milestones. A date r
 National policy, technical availability, and productive adoption move at different speeds. A policy announcement is not implementation; a robot demonstration is not scaled production; and a model release does not by itself establish sustainable economic use.
 
 See [sources and methodology](sources.md).
+
+## 2026
+
+- March: official text of the [XV Plan 2026–2030](https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf).
+- September: [IFR World Robotics 2026](https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf) publishes 2025 installation data.
+- October: [industrial transformation presentation and viewer](../../materiales/transformacion-industrial/), with sources, PDF and PowerPoint.

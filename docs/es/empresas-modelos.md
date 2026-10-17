@@ -62,3 +62,16 @@ El mercado se caracteriza por competencia intensa de precios. Para evaluar soste
 - [Huawei Pangu](https://www.huaweicloud.com/intl/en-us/product/pangu.html)
 
 Los sitios corporativos respaldan la existencia y descripción declarada de productos. No se utilizan como prueba independiente de liderazgo, adopción o rendimiento económico.
+
+## Capas de la cadena de semiconductores
+
+| Actor o capa | Función que debe distinguirse | Restricción relevante |
+|---|---|---|
+| Huawei Ascend, Cambricon | Diseño de aceleradores y plataforma de software | Memoria, interconexión, herramientas y disponibilidad del sistema |
+| SMIC | Fabricación por contrato | Equipos, materiales, rendimiento y capacidad productiva |
+| CXMT | Memorias DRAM | Proceso, calidad, escala y adaptación a cargas de trabajo |
+| YMTC | Memorias NAND | Arquitectura, integración y producción |
+| Encapsulado y equipos | Integración física y fabricación | Proveedores, precisión, plazos y mantenimiento |
+| Centros de datos y energía | Operación de la infraestructura | Potencia disponible, redes, refrigeración y utilización |
+
+La capacidad de un chip aislado no mide el rendimiento de un sistema completo. Conviene comparar rendimiento por tarea, memoria, comunicación, eficiencia energética y herramientas de desarrollo. Esta tabla es un mapa funcional, no un ranking de versiones o capacidad disponible.

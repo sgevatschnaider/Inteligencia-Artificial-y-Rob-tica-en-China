@@ -1,0 +1,170 @@
+{
+  "reviewed": "2026-10-17",
+  "author": "Sergio Gevatschnaider",
+  "sources": {
+    "ifr_china_2026": {
+      "title": "IFR World Robotics 2026 — China",
+      "url": "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf",
+      "publication_date": "2026-09-24"
+    },
+    "ifr_us_2026": {
+      "title": "IFR World Robotics 2026 — USA",
+      "url": "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-USA.pdf",
+      "publication_date": "2026-09-24"
+    },
+    "ifr_china_2025": {
+      "title": "IFR World Robotics 2025 — China",
+      "url": "https://ifr.org/downloads/press_docs/2025-09-25-IFR_press_release_China_in_English.pdf",
+      "publication_date": "2025-09-25"
+    },
+    "unido_2025": {
+      "title": "UNIDO International Yearbook of Industrial Statistics 2025",
+      "url": "https://stat.unido.org/publications/international-yearbook-industrial-statistics-2025"
+    },
+    "iea_2026": {
+      "title": "IEA Global EV Outlook 2026 — Manufacturing and trade",
+      "url": "https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade"
+    },
+    "xv_plan": {
+      "title": "XV Plan Quinquenal 2026–2030, texto oficial",
+      "url": "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf"
+    }
+  },
+  "indicators": [
+    {
+      "id": "industrial_robot_installations_cn",
+      "label_es": "Robots industriales instalados en China",
+      "label_en": "Industrial robots installed in China",
+      "unit": "robots",
+      "data_year": 2025,
+      "value": 354000,
+      "precision": "rounded",
+      "source": "ifr_china_2026",
+      "kind": "observed",
+      "definition_es": "Flujo anual de instalaciones. El comunicado de China redondea a 354.000; el de Estados Unidos informa 354.200."
+    },
+    {
+      "id": "industrial_robot_installations_us",
+      "label_es": "Robots industriales instalados en Estados Unidos",
+      "label_en": "Industrial robots installed in the United States",
+      "unit": "robots",
+      "data_year": 2025,
+      "value": 38400,
+      "precision": "rounded",
+      "source": "ifr_us_2026",
+      "kind": "observed"
+    },
+    {
+      "id": "global_installation_share_cn",
+      "label_es": "Cuota china de instalaciones mundiales",
+      "label_en": "China share of global installations",
+      "unit": "percent",
+      "data_year": 2025,
+      "value": 59,
+      "source": "ifr_china_2026",
+      "kind": "observed"
+    },
+    {
+      "id": "domestic_supplier_share_cn",
+      "label_es": "Proveedores chinos en el mercado doméstico",
+      "label_en": "Chinese suppliers in the domestic market",
+      "unit": "percent",
+      "data_year": 2025,
+      "value": 55,
+      "source": "ifr_china_2026",
+      "kind": "observed"
+    },
+    {
+      "id": "industrial_robot_installations_cn",
+      "label_es": "Robots industriales instalados en China",
+      "label_en": "Industrial robots installed in China",
+      "unit": "robots",
+      "data_year": 2024,
+      "value": 295000,
+      "precision": "rounded",
+      "source": "ifr_china_2025",
+      "kind": "observed"
+    },
+    {
+      "id": "global_installation_share_cn",
+      "label_es": "Cuota china de instalaciones mundiales",
+      "label_en": "China share of global installations",
+      "unit": "percent",
+      "data_year": 2024,
+      "value": 54,
+      "source": "ifr_china_2025",
+      "kind": "observed"
+    },
+    {
+      "id": "domestic_supplier_share_cn",
+      "label_es": "Proveedores chinos en el mercado doméstico",
+      "label_en": "Chinese suppliers in the domestic market",
+      "unit": "percent",
+      "data_year": 2024,
+      "value": 57,
+      "source": "ifr_china_2025",
+      "kind": "observed"
+    },
+    {
+      "id": "operational_stock_cn",
+      "label_es": "Parque operativo histórico de China",
+      "label_en": "China historical operational stock",
+      "unit": "robots",
+      "data_year": 2024,
+      "value": 2027000,
+      "precision": "rounded",
+      "source": "ifr_china_2025",
+      "kind": "observed"
+    },
+    {
+      "id": "manufacturing_world_share_cn",
+      "label_es": "Cuota china del valor agregado manufacturero mundial",
+      "label_en": "China share of global manufacturing value added",
+      "unit": "percent",
+      "data_year": 2024,
+      "value": 32.0,
+      "source": "unido_2025",
+      "kind": "estimate"
+    },
+    {
+      "id": "electric_car_production_cn",
+      "label_es": "Automóviles eléctricos producidos en China",
+      "label_en": "Electric cars produced in China",
+      "unit": "cars",
+      "data_year": 2025,
+      "value": 16000000,
+      "precision": "rounded",
+      "source": "iea_2026",
+      "kind": "observed"
+    },
+    {
+      "id": "electric_car_production_world_share_cn",
+      "label_es": "Cuota china de producción mundial de automóviles eléctricos",
+      "label_en": "China share of global electric car production",
+      "unit": "percent",
+      "data_year": 2025,
+      "value": 75,
+      "precision": "nearly",
+      "source": "iea_2026",
+      "kind": "observed"
+    },
+    {
+      "id": "electric_car_exports_cn",
+      "label_es": "Exportaciones chinas de automóviles eléctricos",
+      "label_en": "China electric car exports",
+      "unit": "cars",
+      "data_year": 2025,
+      "value": 2500000,
+      "precision": "greater_than",
+      "source": "iea_2026",
+      "kind": "observed"
+    }
+  ],
+  "interpretation_es": [
+    "Instalaciones, producción y parque operativo son magnitudes distintas.",
+    "La nacionalidad del proveedor no identifica necesariamente dónde se fabricó cada robot.",
+    "Las cifras de parque de 2024 se conservan como históricas.",
+    "Los modelos del repositorio son escenarios didácticos, no estimaciones de estos indicadores.",
+    "Los automóviles eléctricos incluyen BEV y PHEV; las series de producción, ventas y exportaciones no forman un balance contable exacto."
+  ]
+}

@@ -4,7 +4,7 @@
 
 ## Leadership at scale
 
-China is the world's largest industrial-robot market. It installed 295,045 units in 2024—54% of the global total—and reached an operational stock of 2.027 million robots. Chinese suppliers captured 57% of the domestic market for the first time.
+China is the world's largest industrial-robot market. It installed about 354,000 units in 2025, 59% of the global total. Chinese suppliers held 55% of the domestic market. The operational stock of 2.027 million robots refers to 2024 and remains a historical observation.
 
 This scale reflects electronics manufacturing, automotive production, metalworking, modernisation policy, local supply chains, and demographic and wage pressures. It does not mean that every factory is equally automated: adoption differs by province, company size, and sector.
 
@@ -55,4 +55,8 @@ A data flywheel is not automatic. It exists only when use produces relevant data
 - total cost of ownership and payback period; and
 - safety incidents and standards compliance.
 
-Principal statistical source: [IFR World Robotics 2025](https://ifr.org/downloads/press_docs/2025-09-25-IFR_press_release_China_in_English.pdf).
+Principal statistical source: [IFR World Robotics 2026](https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf).
+
+## Comparable indicators
+
+Installation volume and domestic supplier share need separate denominators. The latter moved from 57% in 2024 to 55% in 2025. The United States installed about 38,400 robots in 2025. See the [source registry](../../data/indicadores-2026.json) and the [visual overview](../../recursos/Panorama_Industrial_2026.html).

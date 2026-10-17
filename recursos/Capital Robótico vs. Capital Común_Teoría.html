@@ -76,6 +76,7 @@
     footer { text-align: center; margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); }
     footer p { color: var(--text-light); opacity: 0.9; margin-bottom: 0.5rem; }
   </style>
+<link rel="stylesheet" href="resource-theme.css">
 </head>
 <body data-theme="dark">
 <aside role="note" aria-label="Contexto editorial" style="position:fixed;right:1rem;bottom:1rem;z-index:99999;max-width:22rem;padding:.75rem 1rem;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:#071923;color:#fff;box-shadow:0 10px 35px rgba(0,0,0,.28);font:600 13px/1.35 system-ui,sans-serif"><a href="../index.html" style="color:#f4c45f;text-decoration:none">← Portada bilingüe / Bilingual home</a><span style="opacity:.78"> · Recurso bilingüe ES/EN · edición 2026</span></aside>
@@ -83,7 +84,7 @@
   
   <div class="container">
     <header class="header">
-      <h1 class="main-title">Capital Robótico vs. Capital Común</h1>
+      <div class="model-note"><span class="es">Ejemplo reproducible: A=1; α=0,4; β=γ=0,3; L=K=R=100; U=D=40; βθ=0,5; λ=0,35; T=8. Se aumenta R un 15% y U,D por el multiplicador 1,15·[1+0,25(T−1)]. MP_R es una derivada parcial a θ fija.</span><span class="en">Reproducible example: A=1; α=0.4; β=γ=0.3; L=K=R=100; U=D=40; βθ=0.5; λ=0.35; T=8. R increases 15%, while U and D use multiplier 1.15·[1+0.25(T−1)]. MP_R is a partial derivative holding θ constant.</span></div><h1 class="main-title">Capital Robótico vs. Capital Común</h1>
       <p class="subtitle">Una simulación del impacto del Data Flywheel en la productividad total</p>
     </header>
 
@@ -92,7 +93,7 @@
         <div class="topic-card open">
             <div class="topic-header"><span class="topic-title">1. Propósito General del Simulador</span><i class="fas fa-chevron-down expand-icon"></i></div>
             <div class="topic-content">
-                <p>Este simulador busca cuantificar el efecto del aprendizaje tecnológico (Data Flywheel) sobre la productividad y el crecimiento económico.</p>
+                <p>Este simulador explora bajo supuestos el efecto del aprendizaje tecnológico (Data Flywheel) sobre la productividad y el crecimiento económico.</p>
                 <p>En otras palabras: <strong>¿cuánto del crecimiento de una economía proviene de invertir más en robots (capital físico) y cuánto proviene de aprender y mejorar con los datos (capital cognitivo o aprendizaje)?</strong></p>
             </div>
         </div>
@@ -181,7 +182,7 @@
             <div class="topic-header"><span class="topic-title">6. ¿Qué Dicen los Resultados?</span><i class="fas fa-chevron-down expand-icon"></i></div>
             <div class="topic-content">
                 <h4>(a) Crecimiento Total</h4>
-                <p>El crecimiento total del sistema fue de <strong>8.74</strong> (de 108.50 a 117.24), lo que representa un aumento del <strong>8.05%</strong>.</p>
+                <p>El crecimiento total del sistema fue de <strong>8.74</strong> (de 108.50 a 117.24), lo que representa un aumento del <strong>8.06%</strong>.</p>
                 <h4>(b) Descomposición del Crecimiento</h4>
                 <table>
                     <thead>
@@ -216,7 +217,7 @@
                 <p>Este simulador muestra la transición estructural de la economía moderna: ya no basta con invertir más dinero en máquinas (capital físico); ahora, la ventaja competitiva surge de aprender con los datos (capital cognitivo).</p>
                 <h4>Puntos Clave:</h4>
                 <ul>
-                    <li>Más del 45% del crecimiento provino del aprendizaje del sistema (θ).</li>
+                    <li>En el ejemplo numérico, aproximadamente el 47% de la variación proviene de θ; no es una estimación empírica.</li>
                     <li>El Data Flywheel convierte el uso de robots en una forma de entrenamiento: cada tarea genera información que mejora la productividad futura.</li>
                     <li>El sistema sigue mostrando rendimientos decrecientes marginales, lo que significa que el aprendizaje se vuelve más lento o costoso a medida que el sistema se perfecciona.</li>
                 </ul>

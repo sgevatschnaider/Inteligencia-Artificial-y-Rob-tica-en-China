@@ -3,13 +3,17 @@
 [![Website](https://img.shields.io/badge/GitHub_Pages-Explore-0f766e?style=flat-square&logo=github)](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)
 [![Español](https://img.shields.io/badge/idioma-español-f59e0b?style=flat-square)](README.es.md)
 [![English](https://img.shields.io/badge/language-English-2563eb?style=flat-square)](README.en.md)
-[![Last reviewed](https://img.shields.io/badge/last_reviewed-August_2026-334155?style=flat-square)](docs/en/sources.md)
+[![Last reviewed](https://img.shields.io/badge/last_reviewed-October_2026-334155?style=flat-square)](docs/en/sources.md)
 [![Code: MIT](https://img.shields.io/badge/code-MIT-16a34a?style=flat-square)](LICENSE)
 [![Content: CC BY 4.0](https://img.shields.io/badge/content-CC_BY_4.0-9333ea?style=flat-square)](LICENSE-CONTENT.md)
 
 **[Español](README.es.md) · [English](README.en.md) · [Interactive website / Sitio interactivo](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)**
 
 ---
+
+**[Transformación industrial: presentación, PDF y visor / Industrial transformation: presentation, PDF and viewer](materiales/transformacion-industrial/)**
+
+**[Indicadores con fuentes / Sourced indicators](recursos/Panorama_Industrial_2026.html)**
 
 ## English
 
@@ -45,18 +49,18 @@ China es, al mismo tiempo, un gran sistema de investigación, el mayor mercado m
 
 | Dimension | Evidence-based snapshot | Panorama basado en evidencia |
 |---|---|---|
-| Industrial robotics | China installed **295,045 industrial robots in 2024**, 54% of global installations, and operated just over 2 million units. | China instaló **295.045 robots industriales en 2024**, el 54 % del total mundial, y superó los 2 millones de unidades operativas. |
+| Industrial robotics | China installed **about 354,000 industrial robots in 2025**, 59% of global installations; Chinese suppliers held 55% of their domestic market. | China instaló **unas 354.000 unidades en 2025**, el 59 % del total mundial; los proveedores chinos captaron el 55 % de su mercado doméstico. |
 | AI research | China leads in AI publication volume, citations, and patent grants; the United States still produces more notable models. | China lidera en volumen de publicaciones, citas y patentes concedidas; Estados Unidos todavía produce más modelos considerados notables. |
 | Public policy | The 2025 **AI Plus** initiative moves the emphasis from capability building toward economy-wide deployment. | La iniciativa **IA+** de 2025 desplaza el énfasis desde la creación de capacidades hacia el despliegue transversal en la economía. |
 | Regulation | Generative-AI services, algorithmic recommendation, deep synthesis, data protection, and AI-content labelling form a layered governance regime. | Los servicios de IA generativa, la recomendación algorítmica, la síntesis profunda, la protección de datos y el etiquetado de contenido forman un régimen regulatorio por capas. |
 
-Primary references: [IFR World Robotics 2025](https://ifr.org/downloads/press_docs/2025-09-25-IFR_press_release_China_in_English.pdf), [Stanford AI Index 2026](https://hai.stanford.edu/ai-index/2026-ai-index-report/research-and-development), [State Council AI Plus initiative](https://www.gov.cn/zhengce/content/202508/content_7037861.htm), and [CAC rules for generative AI](https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm).
+Primary references: [IFR World Robotics 2026](https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf), [Stanford AI Index 2026](https://hai.stanford.edu/ai-index/2026-ai-index-report/research-and-development), [State Council AI Plus initiative](https://www.gov.cn/zhengce/content/202508/content_7037861.htm), and [CAC rules for generative AI](https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm).
 
 ## Featured resources · Recursos destacados
 
-All ten HTML resources now include an in-page ES/EN switch, professionally edited Spanish, and complete English translations. The PDF presentation remains in Spanish and is labelled accordingly. See the [English catalogue](resources/README.md).
+All eleven HTML resources now include an in-page ES/EN switch, professionally edited Spanish, and complete English translations. The PDF presentation remains in Spanish and is labelled accordingly. See the [English catalogue](resources/README.md).
 
-Los diez recursos HTML ahora incluyen un selector ES/EN, español revisado y traducción inglesa completa. La presentación en PDF permanece en español y está identificada como tal. Consulta el [catálogo en español](recursos/README.md).
+Los once recursos HTML ahora incluyen un selector ES/EN, español revisado y traducción inglesa completa. La presentación en PDF permanece en español y está identificada como tal. Consulta el [catálogo en español](recursos/README.md).
 
 - [China's Robotics Revolution / La revolución robótica de China — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html)
 - [AI and autonomous vehicles in China / IA y vehículos autónomos en China — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html)

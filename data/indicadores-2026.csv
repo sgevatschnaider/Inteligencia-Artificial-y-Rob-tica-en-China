@@ -1,0 +1,13 @@
+indicator,data_year,value,unit,kind,precision,source_url
+industrial_robot_installations_cn,2025,354000,robots,observed,rounded,https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf
+industrial_robot_installations_us,2025,38400,robots,observed,rounded,https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-USA.pdf
+global_installation_share_cn,2025,59,percent,observed,reported,https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf
+domestic_supplier_share_cn,2025,55,percent,observed,reported,https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf
+industrial_robot_installations_cn,2024,295000,robots,observed,rounded,https://ifr.org/downloads/press_docs/2025-09-25-IFR_press_release_China_in_English.pdf
+global_installation_share_cn,2024,54,percent,observed,reported,https://ifr.org/downloads/press_docs/2025-09-25-IFR_press_release_China_in_English.pdf
+domestic_supplier_share_cn,2024,57,percent,observed,reported,https://ifr.org/downloads/press_docs/2025-09-25-IFR_press_release_China_in_English.pdf
+operational_stock_cn,2024,2027000,robots,observed,rounded,https://ifr.org/downloads/press_docs/2025-09-25-IFR_press_release_China_in_English.pdf
+manufacturing_world_share_cn,2024,32.0,percent,estimate,reported,https://stat.unido.org/publications/international-yearbook-industrial-statistics-2025
+electric_car_production_cn,2025,16000000,cars,observed,rounded,https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade
+electric_car_production_world_share_cn,2025,75,percent,observed,nearly,https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade
+electric_car_exports_cn,2025,2500000,cars,observed,greater_than,https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade
