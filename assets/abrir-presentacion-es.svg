@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="160" viewBox="0 0 960 160" role="img" aria-labelledby="title desc">
+  <title id="title">ABRIR LA PRESENTACIÓN</title><desc id="desc">China tecnológica · 47 diapositivas · PDF y PowerPoint</desc>
+  <defs><linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102b39"/><stop offset="1" stop-color="#0c4245"/></linearGradient></defs>
+  <rect x="1" y="1" width="958" height="158" rx="24" fill="url(#panel)" stroke="#417172" stroke-width="2"/>
+  <rect x="1" y="37" width="5" height="86" rx="2.5" fill="#e8bd5e"/>
+  <circle cx="81" cy="80" r="38" fill="#e8bd5e"/>
+  <path d="M72 61 97 80 72 99Z" fill="#102b39"/>
+  <text x="145" y="73" fill="#ffffff" font-family="Segoe UI,Arial,sans-serif" font-size="31" font-weight="700" letter-spacing=".5">ABRIR LA PRESENTACIÓN</text>
+  <text x="145" y="109" fill="#c3d9d8" font-family="Segoe UI,Arial,sans-serif" font-size="20">China tecnológica · 47 diapositivas · PDF y PowerPoint</text>
+  <circle cx="876" cy="80" r="30" fill="#ffffff" fill-opacity=".08" stroke="#7aa6a4"/>
+  <path d="M862 80h27m-11-11 11 11-11 11" fill="none" stroke="#e8bd5e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

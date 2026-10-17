@@ -1,5 +1,11 @@
 # Catálogo de recursos en español
 
+<p align="center">
+  <a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/"><img src="../assets/abrir-presentacion-es.svg" width="760" alt="Abrir la presentación"></a>
+</p>
+
+[Abrir PDF](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pdf) · [Descargar PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pptx)
+
 **[English catalogue](../resources/README.md) · [Panorama en español](../README.es.md) · [Sitio interactivo](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)**
 
 Los materiales de esta carpeta fueron producidos principalmente durante **2025** y se conservan como informes, visualizaciones y modelos fechados. Los once recursos HTML incluyen un selector **ES/EN**, con español revisado y traducción inglesa profesional; la presentación en PDF permanece en español. Para cifras y contexto actualizado, consulta el [panorama de 2026](../README.es.md) y las [fuentes](../docs/es/fuentes.md).
@@ -10,11 +16,11 @@ Los materiales de esta carpeta fueron producidos principalmente durante **2025**
 
 | Recurso | Formato | Idioma | Acceso |
 |---|---|---|---|
-| **IA y robótica en China, archivo de 2025** — presentación histórica sobre estrategia, demografía, automatización y polos industriales. | PDF | ES | [Abrir](IA%20Y%20CHINA.pdf) |
+| **IA y robótica en China, archivo de 2025** — presentación histórica sobre estrategia, demografía, automatización y polos industriales. | PDF | ES | [Abrir](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA%20Y%20CHINA.pdf) |
 | **La revolución robótica de China** — introducción histórica, industrial y tecnológica. | HTML interactivo | ES/EN | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html) |
 | **IA en vehículos autónomos** — ecosistema, infraestructura, percepción, regulación y empresas. | HTML interactivo | ES/EN | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html) |
 | **IA en salud en China** — diagnóstico, descubrimiento de fármacos, hospitales y robótica médica. | HTML interactivo | ES/EN | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Salud_China.html) |
-| **Datos comparativos sobre robótica** — visualización comparativa de adopción industrial, actualizada con World Robotics 2025. | HTML interactivo | ES/EN | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Datos%20Comparativos%20sobre%20Rob%C3%B3tica.html) |
+| **Datos comparativos sobre robótica** — visualización comparativa de adopción industrial, actualizada con datos de 2025, World Robotics 2026. | HTML interactivo | ES/EN | [Abrir en GitHub Pages](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Datos%20Comparativos%20sobre%20Rob%C3%B3tica.html) |
 
 ## Simuladores y modelos interactivos
 
@@ -41,6 +47,6 @@ Los simuladores son herramientas pedagógicas, no pronósticos. Sus resultados d
 
 ## Material actualizado / Updated material
 
-- [Transformación industrial, visor, PDF y PowerPoint](../materiales/transformacion-industrial/).
-- [Panorama industrial e indicadores 2026](../recursos/Panorama_Industrial_2026.html).
+- [Transformación industrial, visor, PDF y PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/).
+- [Panorama industrial e indicadores 2026](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html).
 - [Indicadores CSV](../data/indicadores-2026.csv) y [JSON](../data/indicadores-2026.json).

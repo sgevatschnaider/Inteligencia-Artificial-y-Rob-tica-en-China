@@ -42,4 +42,4 @@ Consulta [fuentes y metodología](fuentes.md).
 
 - Marzo / March: texto oficial del [XV Plan 2026–2030](https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf).
 - Septiembre / September: [IFR World Robotics 2026](https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf) publica datos de instalaciones de 2025 / publishes 2025 installation data.
-- Octubre / October: presentación y visor de [transformación industrial](../../materiales/transformacion-industrial/), con fuentes, PDF y PowerPoint.
+- Octubre / October: presentación y visor de [transformación industrial](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/), con fuentes, PDF y PowerPoint.

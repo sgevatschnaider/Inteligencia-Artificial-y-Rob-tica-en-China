@@ -59,4 +59,4 @@ Fuente estadística principal: [IFR World Robotics 2026](https://ifr.org/downloa
 
 ## Series y comparación temporal
 
-El mayor volumen de instalaciones puede coexistir con una menor cuota de proveedores locales: 57 % en 2024 y 55 % en 2025. La cuota doméstica no equivale al contenido nacional de cada componente. Las instalaciones estadounidenses alcanzaron unas 38.400 unidades en 2025. Consulta los [indicadores con fuentes](../../data/indicadores-2026.json) y el [panorama visual](../../recursos/Panorama_Industrial_2026.html).
+El mayor volumen de instalaciones puede coexistir con una menor cuota de proveedores locales: 57 % en 2024 y 55 % en 2025. La cuota doméstica no equivale al contenido nacional de cada componente. Las instalaciones estadounidenses alcanzaron unas 38.400 unidades en 2025. Consulta los [indicadores con fuentes](../../data/indicadores-2026.json) y el [panorama visual](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html).

@@ -1,5 +1,11 @@
 # Artificial Intelligence and Robotics in China
 
+<p align="center">
+  <a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/"><img src="assets/abrir-presentacion-en.svg" width="760" alt="Open the presentation"></a>
+</p>
+
+[Download PDF](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pdf) · [PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pptx)
+
 **[Bilingual landing page](README.md) · [Español](README.es.md) · [Interactive website](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)**
 
 Editorial review date: **17 October 2026**.
@@ -122,5 +128,5 @@ Code is released under the [MIT License](LICENSE). Original prose, tables, and d
 
 ## Presentación y datos / Presentation and data
 
-- [Transformación industrial, PDF, PowerPoint y visor](materiales/transformacion-industrial/).
-- [Indicadores comparables y fuentes](recursos/Panorama_Industrial_2026.html).
+- [Industrial transformation: presentation, PDF and PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/).
+- [Comparable indicators and sources](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html).

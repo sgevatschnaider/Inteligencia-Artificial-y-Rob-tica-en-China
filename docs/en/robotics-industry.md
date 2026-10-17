@@ -59,4 +59,4 @@ Principal statistical source: [IFR World Robotics 2026](https://ifr.org/download
 
 ## Comparable indicators
 
-Installation volume and domestic supplier share need separate denominators. The latter moved from 57% in 2024 to 55% in 2025. The United States installed about 38,400 robots in 2025. See the [source registry](../../data/indicadores-2026.json) and the [visual overview](../../recursos/Panorama_Industrial_2026.html).
+Installation volume and domestic supplier share need separate denominators. The latter moved from 57% in 2024 to 55% in 2025. The United States installed about 38,400 robots in 2025. See the [source registry](../../data/indicadores-2026.json) and the [visual overview](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html).

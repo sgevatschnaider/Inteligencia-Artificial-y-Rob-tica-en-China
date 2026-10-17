@@ -1,5 +1,11 @@
 # AI and Robotics in China · Inteligencia Artificial y Robótica en China
 
+<p align="center">
+  <a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/"><img src="assets/abrir-presentacion-es.svg" width="760" alt="Abrir la presentación"></a>
+</p>
+
+[Abrir PDF](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pdf) · [Descargar PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pptx)
+
 [![Website](https://img.shields.io/badge/GitHub_Pages-Explore-0f766e?style=flat-square&logo=github)](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)
 [![Español](https://img.shields.io/badge/idioma-español-f59e0b?style=flat-square)](README.es.md)
 [![English](https://img.shields.io/badge/language-English-2563eb?style=flat-square)](README.en.md)
@@ -11,9 +17,9 @@
 
 ---
 
-**[Transformación industrial: presentación, PDF y visor / Industrial transformation: presentation, PDF and viewer](materiales/transformacion-industrial/)**
+**[Transformación industrial: presentación, PDF y visor / Industrial transformation: presentation, PDF and viewer](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/)**
 
-**[Indicadores con fuentes / Sourced indicators](recursos/Panorama_Industrial_2026.html)**
+**[Indicadores con fuentes / Sourced indicators](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html)**
 
 ## English
 
@@ -67,7 +73,7 @@ Los once recursos HTML ahora incluyen un selector ES/EN, español revisado y tra
 - [AI in Chinese healthcare / IA en la salud china — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Salud_China.html)
 - [Industrial-robotics comparison / Comparación de robótica industrial — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Datos%20Comparativos%20sobre%20Rob%C3%B3tica.html)
 - [Data-flywheel simulators / Simuladores de data flywheel — ES/EN](recursos/README.md#simuladores-y-modelos-interactivos)
-- [Presentation / Presentación: IA y robótica en China — ES, PDF](recursos/IA%20Y%20CHINA.pdf)
+- [Presentation / Presentación: IA y robótica en China — ES, PDF](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA%20Y%20CHINA.pdf)
 
 ## Editorial standard · Criterio editorial
 
