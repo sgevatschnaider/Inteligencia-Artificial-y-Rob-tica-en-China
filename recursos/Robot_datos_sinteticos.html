@@ -828,7 +828,48 @@ function initSliders(){
   scenarioSelect.onchange = ()=>{ currentScenario = scenarioSelect.value; scenarioInsight.textContent = scenarios[currentScenario].insight; rerun(); };
 }
 
+function fallbackChart(ctx,title){
+  const chart={
+    data:{labels:[],datasets:[]},
+    update(){
+      const canvas=ctx.canvas,parent=canvas.parentElement;
+      const width=canvas.width=Math.max(430,Math.floor(parent.clientWidth||650));
+      const height=canvas.height=270;
+      ctx.fillStyle='#0b1530';ctx.fillRect(0,0,width,height);
+      const left=50,right=18,top=38,bottom=36;
+      const availableWidth=width-left-right,availableHeight=height-top-bottom;
+      const series=this.data.datasets.filter(d=>Array.isArray(d.data)&&d.data.length>0);
+      const values=series.flatMap(d=>d.data.map(Number)).filter(Number.isFinite);
+      const min=Math.min(0,...values),max=Math.max(0.000001,...values);
+      const span=Math.max(max-min,0.000001),length=Math.max(2,...series.map(d=>d.data.length));
+      ctx.strokeStyle='#4d627a';ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(left,top);ctx.lineTo(left,height-bottom);ctx.lineTo(width-right,height-bottom);ctx.stroke();
+      ctx.fillStyle='#e6efff';ctx.font='bold 13px system-ui,sans-serif';ctx.textAlign='left';
+      ctx.fillText(title,18,20);
+      ctx.font='11px system-ui,sans-serif';ctx.fillStyle='#94a3b8';
+      for(let k=0;k<=4;k++){const y=top+(availableHeight*k/4);ctx.strokeStyle='rgba(148,163,184,.17)';ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(width-right,y);ctx.stroke();ctx.fillText((max-span*k/4).toFixed(max<=2?2:0),4,y+4);}
+      series.forEach((dataset,j)=>{
+        ctx.strokeStyle=dataset.borderColor||['#60a5fa','#f472b6','#f59e0b'][j%3];
+        ctx.lineWidth=2.5;ctx.beginPath();
+        dataset.data.forEach((raw,k)=>{const n=Number(raw);if(!Number.isFinite(n))return;const x=left+k*availableWidth/(length-1),y=top+(max-n)/span*availableHeight;k?ctx.lineTo(x,y):ctx.moveTo(x,y);});
+        ctx.stroke();
+        const legendX=left+j%3*Math.max(130,availableWidth/3),legendY=height-11+Math.floor(j/3)*0;
+        if(j<3){ctx.fillStyle=ctx.strokeStyle;ctx.fillRect(legendX,legendY-8,9,3);ctx.fillStyle='#dbe6f0';ctx.font='10px system-ui,sans-serif';ctx.fillText(String(dataset.label||'').slice(0,22),legendX+14,legendY);}
+      });
+    }
+  };
+  return chart;
+}
+function showOfflineMessage(){
+  if(document.getElementById('offline-charts-info'))return;
+  const note=document.createElement('p');
+  note.id='offline-charts-info';note.className='model-note';
+  note.textContent='Gráficos locales activos: la biblioteca externa no está disponible. Los cálculos y controles siguen funcionando.';
+  const target=document.querySelector('.main-grid main');
+  if(target)target.prepend(note);
+}
 function mkChart(ctx, label, ySuggestedMax=null){
+  if(typeof Chart==='undefined'){showOfflineMessage();return fallbackChart(ctx,label);}
   return new Chart(ctx, {
     type:'line',
     data:{labels:[], datasets:[]},

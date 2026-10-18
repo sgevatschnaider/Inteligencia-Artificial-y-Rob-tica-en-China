@@ -23,7 +23,11 @@
   header{padding:38px 20px;margin-bottom:28px;text-align:center;border-radius:24px;background:linear-gradient(135deg, rgba(59,130,246,.12), rgba(168,85,247,.12));border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px)}
   header h1{font-size:clamp(26px,4.5vw,46px);font-weight:700;background:linear-gradient(135deg,var(--blue),var(--purple),var(--green));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}
   header p{max-width:820px;margin:0 auto;color:var(--muted)}
-  .grid{display:grid;grid-template-columns:410px 1fr;gap:20px}
+  .grid{display:grid;grid-template-columns:410px minmax(0,1fr);gap:20px;align-items:start}
+  .result-column{min-width:0;display:grid;align-content:start;gap:18px}
+  .result-column>.card{min-width:0}
+  .result-column>.model-note{margin:0 0 2px}
+  .result-column canvas{max-width:100%;display:block}
   @media (max-width:1100px){.grid{grid-template-columns:1fr}}
   .card{background:var(--bg-card);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:20px;backdrop-filter:blur(10px)}
   .section{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1)}
@@ -52,7 +56,7 @@
 <link rel="stylesheet" href="resource-theme.css">
 </head>
 <body>
-<aside role="note" aria-label="Contexto editorial" style="position:fixed;right:1rem;bottom:1rem;z-index:99999;max-width:22rem;padding:.75rem 1rem;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:#071923;color:#fff;box-shadow:0 10px 35px rgba(0,0,0,.28);font:600 13px/1.35 system-ui,sans-serif"><a href="../index.html" style="color:#f4c45f;text-decoration:none">← Portada bilingüe / Bilingual home</a><span style="opacity:.78"> · Recurso bilingüe ES/EN · edición 2026</span></aside>
+<nav class="resource-toolbar" aria-label="Navegación del recurso"><a href="../index.html" style="color:#f4c45f;text-decoration:none">← Portada bilingüe / Bilingual home</a><span style="opacity:.78"> · Recurso bilingüe ES/EN · edición 2026</span></nav>
 <div class="bg"></div>
 <div class="container">
   <header>
@@ -106,7 +110,9 @@
     </aside>
 
     <!-- RESULTADOS -->
-    <div class="model-note"><span class="es">Experimento de estática comparativa. Los parámetros y el aumento de uso son supuestos didácticos; el modelo no estima la productividad de China. MP_R mantiene θ fija. El efecto total depende de cómo se relacionen robots, uso y datos.</span><span class="en">Comparative-static experiment. Parameters and the use increase are teaching assumptions, not estimates of Chinese productivity. MP_R holds θ constant. Total effects depend on the relationship between robots, use and data.</span></div><main>
+    <main class="result-column">
+      <div class="model-note"><span class="es">Experimento de estática comparativa. Los parámetros y el aumento de uso son supuestos didácticos; el modelo no estima la productividad de China. MP_R mantiene θ fija. El efecto total depende de cómo se relacionen robots, uso y datos.</span><span class="en">Comparative-static experiment. Parameters and the use increase are teaching assumptions, not estimates of Chinese productivity. MP_R holds θ constant. Total effects depend on the relationship between robots, use and data.</span></div>
+
       <div class="card">
         <div class="section"><div class="sicon" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">📈</div><div class="stitle">Producción y efecto del aprendizaje</div></div>
 
