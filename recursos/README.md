@@ -1,18 +1,14 @@
-# Catálogo de recursos en español
+# Catálogo de investigación y recursos interactivos
 
-<p align="center">
-  <a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/"><img src="../assets/abrir-presentacion-es.svg" width="760" alt="China tecnológica: transformación industrial · visor, PDF y PowerPoint"></a>
-</p>
+**[← Volver al sitio principal](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/) · [English](../resources/README.md)**
 
-[China tecnológica · PDF](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pdf) · [China tecnológica · PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pptx)
+El repositorio reúne once recursos HTML en español e inglés: cinco informes de investigación y seis modelos o simulaciones. Los informes originales de 2025 se conservan como archivo fechado; el panorama industrial de 2026 reúne indicadores más recientes.
 
-**[English catalogue](../resources/README.md) · [Panorama en español](../README.es.md) · [Sitio interactivo](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)**
+**[↗ Abrir los seis simuladores con sus botones de inicio](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/#simulations)** · **[↗ Explorar los informes](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/#reports)**
 
-Los materiales de esta carpeta fueron producidos principalmente durante **2025** y se conservan como informes, visualizaciones y modelos fechados. Los once recursos HTML incluyen un selector **ES/EN**, con español revisado y traducción inglesa profesional; la presentación ofrece PDF, PowerPoint y visor en español e inglés. Para cifras y contexto actualizado, consulta el [panorama de 2026](../README.es.md) y las [fuentes](../docs/es/fuentes.md).
+La presentación **China tecnológica: transformación industrial** (47 diapositivas, visor, PDF y PowerPoint) se encuentra en **[su propia página](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/)**, sin duplicar accesos en el catálogo.
 
-> **Criterio de lectura:** los informes sectoriales pueden contener estimaciones, proyecciones o anuncios empresariales propios de su fecha. No deben interpretarse automáticamente como datos observados en 2026.
-
-## Informes y presentación
+## Informes y archivos
 
 | Recurso | Formato | Idioma | Acceso |
 |---|---|---|---|
@@ -45,10 +41,6 @@ Los simuladores son herramientas pedagógicas, no pronósticos. Sus resultados d
 - Documenta los supuestos cuando agregues un modelo.
 - Consulta [CONTRIBUTING.md](../CONTRIBUTING.md) antes de aportar contenido.
 
-## Material actualizado / Updated material
+---
 
-- [Transformación industrial, visor, PDF y PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/).
-- [Panorama industrial e indicadores 2026](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html).
-- [Indicadores CSV](../data/indicadores-2026.csv) y [JSON](../data/indicadores-2026.json).
-
-[English presentation: slides, PDF and PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/)
+**Sergio Gevatschnaider** · [Fuentes y metodología](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=fuentes) · [Biblioteca temática](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/#topics) · Documentación CC BY 4.0.
