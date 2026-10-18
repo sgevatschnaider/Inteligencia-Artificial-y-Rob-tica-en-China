@@ -1,10 +1,10 @@
 # Artificial Intelligence and Robotics in China
 
 <p align="center">
-  <a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/"><img src="assets/abrir-presentacion-en.svg" width="760" alt="Open the presentation"></a>
+  <a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/"><img src="assets/abrir-presentacion-en.svg" width="760" alt="Open the presentation"></a>
 </p>
 
-[Download PDF](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pdf) · [PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pptx)
+[Download PDF](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/presentation.pdf) · [PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/presentation.pptx)
 
 **[Bilingual landing page](README.md) · [Español](README.es.md) · [Interactive website](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)**
 
@@ -101,7 +101,7 @@ Read [Applications, ethics, and society](docs/en/applications-ethics.md).
 
 ## Interactive resources
 
-The sector reports were produced during 2025 and remain available as dated materials. As of 2026, all eleven HTML resources include an in-page ES/EN switch, professionally edited Spanish, and complete English translations; the PDF presentation remains in Spanish. Their figures should be read alongside the sources and this updated overview.
+The sector reports were produced during 2025 and remain available as dated materials. As of 2026, all eleven HTML resources include an in-page ES/EN switch, professionally edited Spanish, and complete English translations; the presentation is available in English and Spanish. Their figures should be read alongside the sources and this updated overview.
 
 - [China's robotics revolution — Spanish/English](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html)
 - [AI and autonomous vehicles in China — Spanish/English](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html)
@@ -128,5 +128,5 @@ Code is released under the [MIT License](LICENSE). Original prose, tables, and d
 
 ## Presentación y datos / Presentation and data
 
-- [Industrial transformation: presentation, PDF and PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/).
+- [Industrial transformation: presentation, PDF and PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/).
 - [Comparable indicators and sources](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html).

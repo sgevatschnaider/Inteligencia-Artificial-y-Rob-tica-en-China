@@ -64,9 +64,9 @@ Primary references: [IFR World Robotics 2026](https://ifr.org/downloads/press_do
 
 ## Featured resources · Recursos destacados
 
-All eleven HTML resources now include an in-page ES/EN switch, professionally edited Spanish, and complete English translations. The PDF presentation remains in Spanish and is labelled accordingly. See the [English catalogue](resources/README.md).
+All eleven HTML resources now include an in-page ES/EN switch, professionally edited Spanish, and complete English translations. The presentation includes an English and a Spanish version, each with PDF, PowerPoint and a viewer. See the [English catalogue](resources/README.md).
 
-Los once recursos HTML ahora incluyen un selector ES/EN, español revisado y traducción inglesa completa. La presentación en PDF permanece en español y está identificada como tal. Consulta el [catálogo en español](recursos/README.md).
+Los once recursos HTML ahora incluyen un selector ES/EN, español revisado y traducción inglesa completa. La presentación ofrece PDF, PowerPoint y visor en español e inglés. Consulta el [catálogo en español](recursos/README.md).
 
 - [China's Robotics Revolution / La revolución robótica de China — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html)
 - [AI and autonomous vehicles in China / IA y vehículos autónomos en China — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html)
@@ -86,3 +86,5 @@ Los once recursos HTML ahora incluyen un selector ES/EN, español revisado y tra
 ---
 
 Maintained by [Sergio Gevatschnaider](https://github.com/sgevatschnaider). Contributions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md). Code is licensed under the [MIT License](LICENSE); original prose, tables, and documentation are licensed under [CC BY 4.0](LICENSE-CONTENT.md).
+
+[English presentation: slides, PDF and PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/)

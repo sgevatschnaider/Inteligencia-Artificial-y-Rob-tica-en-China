@@ -101,7 +101,7 @@ Lee [Aplicaciones, ética y sociedad](docs/es/aplicaciones-etica.md).
 
 ## Recursos interactivos
 
-Los informes sectoriales fueron producidos durante 2025 y se conservan como recursos fechados. Los once recursos HTML incorporan desde 2026 un selector ES/EN, español revisado y traducción inglesa profesional; la presentación en PDF permanece en español. Sus cifras deben interpretarse junto con las fuentes y este panorama actualizado.
+Los informes sectoriales fueron producidos durante 2025 y se conservan como recursos fechados. Los once recursos HTML incorporan desde 2026 un selector ES/EN, español revisado y traducción inglesa profesional; la presentación ofrece PDF, PowerPoint y visor en español e inglés. Sus cifras deben interpretarse junto con las fuentes y este panorama actualizado.
 
 - [La revolución robótica de China — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Introducci%C3%B3n%20rob%C3%B3tica%20en%20China.html)
 - [IA en vehículos autónomos — ES/EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/IA_Automoviles_China.html)
@@ -130,3 +130,5 @@ El código se distribuye bajo [MIT](LICENSE). Los textos, tablas y materiales do
 
 - [Transformación industrial, PDF, PowerPoint y visor](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/).
 - [Indicadores comparables y fuentes](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html).
+
+[English presentation: slides, PDF and PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/)

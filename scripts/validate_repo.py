@@ -144,17 +144,19 @@ def main() -> int:
     validate_required_files(errors)
     validate_markdown(errors)
     validate_html(errors)
-    module = ROOT / "materiales/transformacion-industrial"
-    for name in ("index.html", "viewer.js", "viewer.css", "presentacion.pptx", "presentacion.pdf", "slides.json"):
-        if not (module / name).is_file():
-            errors.append(f"Presentation module is missing: {name}")
-    if (module / "slides.json").is_file():
-        slides = json.loads((module / "slides.json").read_text(encoding="utf-8"))["slides"]
-        if [slide["number"] for slide in slides] != list(range(1, 48)):
-            errors.append("Expected 47 presentation slides in order")
-        for slide in slides:
-            if not (module / slide["image"]).is_file():
-                errors.append(f"Missing slide image: {slide['image']}")
+    base_module = ROOT / "materiales/transformacion-industrial"
+    for directory, stem in (("", "presentacion"), ("en", "presentation")):
+        module = base_module / directory
+        for name in ("index.html", f"{stem}.pptx", f"{stem}.pdf", "slides.json"):
+            if not (module / name).is_file():
+                errors.append(f"Presentation module is missing: {directory}/{name}")
+        if (module / "slides.json").is_file():
+            slides = json.loads((module / "slides.json").read_text(encoding="utf-8"))["slides"]
+            if [slide["number"] for slide in slides] != list(range(1, 48)):
+                errors.append(f"Expected 47 presentation slides in order: {directory or 'es'}")
+            for slide in slides:
+                if not (module / slide["image"]).is_file():
+                    errors.append(f"Missing slide image: {directory}/{slide['image']}")
     if errors:
         print("Repository validation failed:")
         for error in errors:

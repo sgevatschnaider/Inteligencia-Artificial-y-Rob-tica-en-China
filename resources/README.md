@@ -1,14 +1,14 @@
 # English Catalogue of Resources
 
 <p align="center">
-  <a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/"><img src="../assets/abrir-presentacion-en.svg" width="760" alt="Open the presentation"></a>
+  <a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/"><img src="../assets/abrir-presentacion-en.svg" width="760" alt="Open the presentation"></a>
 </p>
 
-[Download PDF](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pdf) · [PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pptx)
+[Download PDF](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/presentation.pdf) · [PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/presentation.pptx)
 
 **[Catálogo en español](../recursos/README.md) · [English overview](../README.en.md) · [Interactive website](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)**
 
-The source materials in `recursos/` were produced primarily during **2025** and remain available as dated reports, visualisations, and models. All eleven HTML resources provide an in-page **ES/EN** switch, professionally edited Spanish, and complete English translations; the PDF presentation remains in Spanish. For current figures and context, use the [2026 overview](../README.en.md) and [source policy](../docs/en/sources.md).
+The source materials in `recursos/` were produced primarily during **2025** and remain available as dated reports, visualisations, and models. All eleven HTML resources provide an in-page **ES/EN** switch, professionally edited Spanish, and complete English translations; the presentation is available in English and Spanish. For current figures and context, use the [2026 overview](../README.en.md) and [source policy](../docs/en/sources.md).
 
 > **Reading note:** sector reports may contain estimates, forecasts, or corporate announcements current at the time of writing. They should not automatically be treated as observed 2026 data.
 
@@ -45,8 +45,8 @@ The simulators are teaching tools, not forecasts. Results depend on simplified p
 - Document assumptions when contributing a model.
 - Read [CONTRIBUTING.md](../CONTRIBUTING.md) before submitting material.
 
-## Material actualizado / Updated material
+## Updated material
 
-- [Transformación industrial, visor, PDF y PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/).
-- [Panorama industrial e indicadores 2026](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html).
-- [Indicadores CSV](../data/indicadores-2026.csv) y [JSON](../data/indicadores-2026.json).
+- [Industrial transformation: slides, PDF and PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/).
+- [Industrial overview and 2026 indicators](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html).
+- [Indicators CSV](../data/indicadores-2026.csv) and [JSON](../data/indicadores-2026.json).

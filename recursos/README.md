@@ -8,7 +8,7 @@
 
 **[English catalogue](../resources/README.md) · [Panorama en español](../README.es.md) · [Sitio interactivo](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)**
 
-Los materiales de esta carpeta fueron producidos principalmente durante **2025** y se conservan como informes, visualizaciones y modelos fechados. Los once recursos HTML incluyen un selector **ES/EN**, con español revisado y traducción inglesa profesional; la presentación en PDF permanece en español. Para cifras y contexto actualizado, consulta el [panorama de 2026](../README.es.md) y las [fuentes](../docs/es/fuentes.md).
+Los materiales de esta carpeta fueron producidos principalmente durante **2025** y se conservan como informes, visualizaciones y modelos fechados. Los once recursos HTML incluyen un selector **ES/EN**, con español revisado y traducción inglesa profesional; la presentación ofrece PDF, PowerPoint y visor en español e inglés. Para cifras y contexto actualizado, consulta el [panorama de 2026](../README.es.md) y las [fuentes](../docs/es/fuentes.md).
 
 > **Criterio de lectura:** los informes sectoriales pueden contener estimaciones, proyecciones o anuncios empresariales propios de su fecha. No deben interpretarse automáticamente como datos observados en 2026.
 
@@ -50,3 +50,5 @@ Los simuladores son herramientas pedagógicas, no pronósticos. Sus resultados d
 - [Transformación industrial, visor, PDF y PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/).
 - [Panorama industrial e indicadores 2026](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html).
 - [Indicadores CSV](../data/indicadores-2026.csv) y [JSON](../data/indicadores-2026.json).
+
+[English presentation: slides, PDF and PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/)
