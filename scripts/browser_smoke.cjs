@@ -10,7 +10,7 @@ const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=
 const server=http.createServer((req,res)=>{
   let pathname;try{pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname)}catch{res.writeHead(400).end();return;}
   let target=path.resolve(ROOT,'.'+pathname);
-  if(!target.startsWith(ROOT+path.sep)){res.writeHead(403).end();return;}
+  if(target!==ROOT&&!target.startsWith(ROOT+path.sep)){res.writeHead(403).end();return;}
   if(fs.existsSync(target)&&fs.statSync(target).isDirectory())target=path.join(target,'index.html');
   if(!fs.existsSync(target)){res.writeHead(404).end('not found '+pathname);return;}
   res.writeHead(200,{'Content-Type':types[path.extname(target)]||'application/octet-stream','Cache-Control':'no-store'});
