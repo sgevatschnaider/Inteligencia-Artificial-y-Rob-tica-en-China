@@ -1,10 +1,10 @@
 # AI and Robotics in China · Inteligencia Artificial y Robótica en China
 
 <p align="center">
-  <a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/"><img src="assets/abrir-presentacion-es.svg" width="760" alt="Abrir la presentación"></a>
+  <a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/"><img src="assets/abrir-presentacion-es.svg" width="760" alt="China tecnológica: transformación industrial · visor, PDF y PowerPoint"></a>
 </p>
 
-[Abrir PDF](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pdf) · [Descargar PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pptx)
+[China tecnológica · PDF](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pdf) · [China tecnológica · PowerPoint](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/presentacion.pptx)
 
 [![Website](https://img.shields.io/badge/GitHub_Pages-Explore-0f766e?style=flat-square&logo=github)](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/)
 [![Español](https://img.shields.io/badge/idioma-español-f59e0b?style=flat-square)](README.es.md)

@@ -16,5 +16,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Validate links and bilingual structure
         run: python scripts/validate_repo.py
+      - name: Install PDF validation tools
+        run: python -m pip install --disable-pip-version-check pypdf
+      - name: Verify all 47 pages and slides in both PDF and PowerPoint files
+        run: python scripts/verify_decks.py
       - name: Validate model behavior and indicator sources
         run: node scripts/check_models.cjs

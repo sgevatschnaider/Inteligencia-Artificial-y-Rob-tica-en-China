@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from xml.etree import ElementTree
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -155,8 +156,16 @@ def main() -> int:
             if [slide["number"] for slide in slides] != list(range(1, 48)):
                 errors.append(f"Expected 47 presentation slides in order: {directory or 'es'}")
             for slide in slides:
-                if not (module / slide["image"]).is_file():
+                image_file = module / slide["image"]
+                if not image_file.is_file():
                     errors.append(f"Missing slide image: {directory}/{slide['image']}")
+                elif image_file.stat().st_size == 0:
+                    errors.append(f"Empty slide image: {directory}/{slide['image']}")
+                elif image_file.suffix.lower() == ".svg":
+                    try:
+                        ElementTree.parse(image_file)
+                    except ElementTree.ParseError as exc:
+                        errors.append(f"Invalid SVG slide: {directory}/{slide['image']}: {exc}")
     if errors:
         print("Repository validation failed:")
         for error in errors:
