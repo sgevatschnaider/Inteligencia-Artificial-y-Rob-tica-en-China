@@ -1,0 +1,55 @@
+name: Deploy static site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Check out the published source
+        uses: actions/checkout@v6
+      - name: Check site links and video JavaScript
+        run: |
+          python scripts/validate_repo.py
+          node scripts/check_site.cjs
+          node --check videolab/home.js
+          node --check videolab/app.js
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Prepare the static site without changing its content
+        run: |
+          mkdir _site
+          git archive --format=tar HEAD | tar --exclude='.github' -xf - -C _site
+          test -s _site/index.html
+          test -s _site/videolab/home.js
+      - name: Upload the static site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to the existing GitHub Pages site
+        id: deployment
+        uses: actions/deploy-pages@v4
