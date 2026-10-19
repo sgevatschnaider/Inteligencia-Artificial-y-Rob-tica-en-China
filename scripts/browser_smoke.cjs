@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
-// Chromium end-to-end smoke test. In addition to link checks, verify that
+// Chrome end-to-end smoke test (its H.264/AAC codecs are needed for the intro).
+// In addition to link checks, verify that
 // every interactive application visibly renders and reacts to user input.
 // Block third-party CDNs to test the local chart fallbacks.
 const http=require('node:http'), fs=require('node:fs'), path=require('node:path'), assert=require('node:assert/strict');
@@ -18,7 +19,7 @@ const server=http.createServer((req,res)=>{
 });
 async function run(){
 await new Promise(resolve=>server.listen(port,'127.0.0.1',resolve));
-const browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+const browser=await chromium.launch({channel:'chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
 const context=await browser.newContext({viewport:{width:1366,height:768}});
 await context.route('**/*',route=>new URL(route.request().url()).hostname==='127.0.0.1'?route.continue():route.abort());
 const sims=[
