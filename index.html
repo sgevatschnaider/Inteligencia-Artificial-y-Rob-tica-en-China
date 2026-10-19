@@ -154,17 +154,9 @@
 .hero-actions .button{gap:10px}.stat-grid{margin-bottom:4px}.lesson-feature{box-shadow:0 18px 58px #0b242a0d}.lesson-feature h2{font-size:clamp(1.85rem,3.25vw,3.2rem)}.feature-actions{gap:10px}.feature-actions .file-action{display:inline-flex;gap:10px;align-items:center;min-height:52px;padding:12px 16px;border:1px solid #d4e2df;border-radius:11px;background:#f0f7f5;color:#126e68;font-size:14px;text-decoration:none}.feature-actions .file-action:hover{background:#dceee9;transform:translateY(-2px)}.feature-actions .open-presentation{font-size:14px;min-height:52px}.secondary-readings{display:flex;flex-wrap:wrap;gap:12px;margin-top:23px}.secondary-readings a{border-radius:11px;background:#fffdf8;color:var(--jade);border:1px solid var(--line);font-weight:750;text-decoration:none;padding:12px 18px}.secondary-readings a:hover{background:#e1f0ea}.sim-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.sim-card{min-height:310px;display:flex;flex-direction:column;justify-content:space-between;gap:22px;background:linear-gradient(160deg,#ffffff,#eaf4f2);border:1px solid #d8e7e4;border-radius:21px;padding:25px;box-shadow:0 12px 28px #0719230a;transition:transform .2s,box-shadow .2s}.sim-card:hover{transform:translateY(-4px);box-shadow:0 19px 40px #07192319}.sim-card:nth-child(3n+2){background:linear-gradient(160deg,#fffdf8,#f4eee1)}.sim-card:nth-child(3n+3){background:linear-gradient(160deg,#fff,#e8edf2)}.sim-top{display:flex;align-items:center;justify-content:space-between}.sim-glyph{display:grid;place-items:center;width:51px;height:51px;border-radius:16px;background:#0f7772;color:#fff;font-size:28px;line-height:1;font-family:Georgia,serif}.sim-number{font-size:11px;letter-spacing:.14em;font-weight:800;color:#83999f}.sim-card h3{font:500 clamp(1.5rem,2.1vw,1.95rem)/1.18 Georgia,serif;letter-spacing:-.025em;margin:0 0 12px}.sim-card p{color:#637a82;font-size:13px;line-height:1.6;margin:0}.sim-button{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:49px;background:#0f7772;color:#fff;border-radius:12px;padding:10px 15px;text-decoration:none;font-weight:760;font-size:13px;transition:background .2s}.sim-button:hover{background:#085d59}.sim-arrow{display:grid;place-items:center;background:#ffffff22;border-radius:8px;width:30px;height:30px;font-size:17px}.reports{border:1px solid var(--line);background:#fffdf8;border-radius:21px;overflow:hidden}.report-row{display:grid;grid-template-columns:55px minmax(0,1fr) auto 30px;align-items:center;gap:20px;padding:23px 27px;border-bottom:1px solid var(--line);text-decoration:none;transition:background .2s}.report-row:last-child{border-bottom:0}.report-row:hover{background:#ecf4f1}.report-number{font:500 1.8rem Georgia,serif;color:#bb6755}.report-copy strong{display:block;font-size:16px;color:#17313b;line-height:1.3}.report-copy small{display:block;color:#6c7f85;margin-top:6px;font-size:12px;line-height:1.45}.report-tag{font-size:11px;font-weight:800;color:#166f6a;background:#e4f2ed;padding:7px 10px;border-radius:100px;white-space:nowrap}.report-arrow{font-size:22px;color:#176e66}
 @media(max-width:940px){.sim-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lesson-feature{gap:23px}.feature-actions .file-action{font-size:12px}}@media(max-width:620px){.sim-grid{grid-template-columns:1fr}.sim-card{min-height:260px}.report-row{grid-template-columns:36px minmax(0,1fr) 24px;padding:18px 13px;gap:12px}.report-tag{display:none!important}.lesson-feature{padding:18px}.feature-actions{gap:8px}.feature-actions .open-presentation,.feature-actions .file-action{min-height:45px;padding:10px 12px;font-size:12px}}
 
-    /* VideoLab feature – separate from slide viewers and simulators */
-    .videolab-feature { background:var(--night);color:#fff;border-radius:var(--radius);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;overflow:hidden; }
-    .videolab-feature h2 {font:400 clamp(2rem,3.4vw,3.55rem)/1.05 Georgia,serif;letter-spacing:-.035em;margin:10px 0 14px}
-    .videolab-feature p {color:#c8d8dc;margin-bottom:23px}
-    .videolab-feature .button{display:inline-flex}
-    .videolab-previews{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-    .videolab-previews a{aspect-ratio:16/10;position:relative;overflow:hidden;border-radius:14px;display:flex;align-items:end;text-decoration:none;background:linear-gradient(135deg,#27516a,#395f65);color:white;font-weight:800;font-size:.82rem;padding:12px}
-    .videolab-previews a:nth-child(2){background:linear-gradient(135deg,#593a50,#1f354d)}.videolab-previews a:nth-child(3){background:linear-gradient(135deg,#60451e,#384c54)}.videolab-previews a:nth-child(4){background:linear-gradient(135deg,#17464b,#4b806c)}
-    .videolab-previews img{position:absolute;width:100%;height:100%;object-fit:cover;inset:0;filter:brightness(.58)}.videolab-previews span{position:relative;z-index:1}
-    @media(max-width:800px){.videolab-feature{grid-template-columns:1fr;padding:26px}.videolab-previews{max-width:560px}}
   </style>
+  <link rel="stylesheet" href="videolab/home.css">
+  <script src="videolab/home.js" defer></script>
 </head>
 <body data-language="es">
   <header class="topbar">
@@ -175,7 +167,7 @@
       </a>
       <nav class="nav" aria-label="Main navigation">
         <a href="#presentation"><span class="es">Presentación</span><span class="en">Presentation</span></a>
-        <a href="videolab/"><span class="es">Videos</span><span class="en">Videos</span></a>
+        <a href="#videos"><span class="es">Videos</span><span class="en">Videos</span></a>
         <a href="#topics"><span class="es">Temas</span><span class="en">Topics</span></a>
         <a href="#simulations"><span class="es">Simuladores</span><span class="en">Simulators</span></a><a href="#reports"><span class="es">Informes</span><span class="en">Reports</span></a>
         <div class="language-switch" role="group" aria-label="Language selector">
@@ -197,6 +189,7 @@
         <div class="hero-actions">
           <a class="button primary es" href="#topics">Explorar la biblioteca <span aria-hidden="true">↗</span></a><a class="button primary en" href="#topics">Explore the library <span aria-hidden="true">↗</span></a>
           <a class="button es" href="#simulations">Modelos interactivos →</a><a class="button en" href="#simulations">Interactive models →</a>
+          <a class="button es" href="#videos">Ver videos <span aria-hidden="true">▶</span></a><a class="button en" href="#videos">Watch videos <span aria-hidden="true">▶</span></a>
         </div>
       </div>
       <aside class="hero-aside">
@@ -228,21 +221,33 @@
       </div>
     </div></section>
     
-    <section id="videos"><div class="wrap">
+    <section id="videos" aria-labelledby="videos-heading"><div class="wrap">
       <div class="videolab-feature">
-        <div><div class="eyebrow">VIDEOLAB · <span class="es">CUATRO CLASES</span><span class="en">FOUR LESSONS</span></div>
-          <h2 class="es">China tecnológica en movimiento</h2><h2 class="en">Technological China in motion</h2>
-          <p class="es">Videos de robots, fábricas, chips y ciudades inteligentes con fuentes, preguntas para la clase y límites de evidencia.</p>
-          <p class="en">Videos on robots, factories, chips and smart cities—with sources, discussion questions and evidence caveats.</p>
-          <a class="button primary es" href="videolab/?lang=es">Explorar la videoteca ↗</a>
-          <a class="button primary en" href="videolab/?lang=en">Explore the video library ↗</a>
+        <div class="videolab-heading"><div><div class="eyebrow">VIDEOLAB · <span class="es">SELECCIÓN PARA LAS CUATRO CLASES</span><span class="en">SELECTED FOR FOUR LESSONS</span></div>
+          <h2 id="videos-heading"><span class="es">China tecnológica<br>en movimiento</span><span class="en">Technological China<br>in motion</span></h2>
+          <p class="es">De los robots que ensamblan piezas a las máquinas que fabrican chips. Mirá una selección acá y explorá los 11 recursos de la videoteca.</p>
+          <p class="en">From robots assembling parts to the machines behind chips. Watch a selection here and explore all 11 resources in the video library.</p>
+        </div><div class="videolab-library"><a class="button primary es" href="videolab/?lang=es">Ver los 11 recursos ↗</a><a class="button primary en" href="videolab/?lang=en">Explore all 11 resources ↗</a><small class="es">Fuentes y guía docente · ES / EN</small><small class="en">Sources and teaching notes · ES / EN</small></div>
         </div>
         <div class="videolab-previews">
-          <a href="videolab/?clase=1"><img src="https://i.ytimg.com/vi/ub2gWviKZpk/hqdefault.jpg" loading="lazy" alt=""><span class="es">01 · Industria</span><span class="en">01 · Industry</span></a>
-          <a href="videolab/?clase=2"><img src="https://i.ytimg.com/vi/ssxdSVQN14I/hqdefault.jpg" loading="lazy" alt=""><span class="es">02 · Humanoides</span><span class="en">02 · Humanoids</span></a>
-          <a href="videolab/?clase=3"><img src="https://i.ytimg.com/vi/B2482h_TNwg/hqdefault.jpg" loading="lazy" alt=""><span class="es">03 · Semiconductores</span><span class="en">03 · Semiconductors</span></a>
-          <a href="videolab/?clase=4"><span class="es">04 · Aplicaciones</span><span class="en">04 · Applications</span></a>
+          <article class="videolab-card">
+            <a class="videolab-poster" href="https://www.youtube.com/watch?v=ub2gWviKZpk" data-home-video="ub2gWviKZpk" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/ub2gWviKZpk/hqdefault.jpg" loading="lazy" decoding="async" width="480" height="360" alt=""><span class="videolab-lesson"><span class="es">01 · Industria</span><span class="en">01 · Industry</span></span><span class="videolab-play" aria-hidden="true">▶</span><span class="videolab-title"><span class="es">Robots que fabrican robots</span><span class="en">Robots building robots</span></span></a>
+            <div class="videolab-caption"><p>Unitree Robotics · 2026</p><small class="es">Demostración empresarial · Ensamblaje con el G1</small><small class="en">Company demonstration · G1 assembly tasks</small><a href="videolab/?clase=1"><span class="es">Más de industria ↗</span><span class="en">More on industry ↗</span></a></div>
+          </article>
+          <article class="videolab-card">
+            <a class="videolab-poster" href="https://www.youtube.com/watch?v=ssxdSVQN14I" data-home-video="ssxdSVQN14I" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/ssxdSVQN14I/hqdefault.jpg" loading="lazy" decoding="async" width="480" height="360" alt=""><span class="videolab-lesson"><span class="es">02 · IA y humanoides</span><span class="en">02 · AI and humanoids</span></span><span class="videolab-play" aria-hidden="true">▶</span><span class="videolab-title"><span class="es">IRON: ¿por qué parece tan humano?</span><span class="en">IRON: why does it look so human?</span></span></a>
+            <div class="videolab-caption"><p>XPENG · 2025</p><small class="es">Demostración empresarial · Locomoción y control</small><small class="en">Company demonstration · Locomotion and control</small><a href="videolab/?clase=2"><span class="es">Más de humanoides ↗</span><span class="en">More on humanoids ↗</span></a></div>
+          </article>
+          <article class="videolab-card">
+            <a class="videolab-poster" href="https://www.youtube.com/watch?v=B2482h_TNwg" data-home-video="B2482h_TNwg" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/B2482h_TNwg/hqdefault.jpg" loading="lazy" decoding="async" width="480" height="360" alt=""><span class="videolab-lesson"><span class="es">03 · Semiconductores</span><span class="en">03 · Semiconductors</span></span><span class="videolab-play" aria-hidden="true">▶</span><span class="videolab-title"><span class="es">EUV: la máquina que fabrica chips</span><span class="en">EUV: the machine behind chips</span></span></a>
+            <div class="videolab-caption"><p>Branch Education · 2025</p><small class="es">Animación explicativa · Luz, óptica y precisión</small><small class="en">Explainer animation · Light, optics and precision</small><a href="videolab/?clase=3"><span class="es">Más de chips ↗</span><span class="en">More on chips ↗</span></a></div>
+          </article>
+          <article class="videolab-card">
+            <a class="videolab-poster videolab-agriculture" href="https://ag.dji.com/t50/video" target="_blank" rel="noopener noreferrer"><svg class="videolab-drone" viewBox="0 0 320 180" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M0 145h320M0 165h320M10 180l130-60m-55 60 65-60m10 60v-60m75 60-65-60m130 60-130-60" opacity=".22"/><path d="m130 77-50-25m110 25 50-25M130 92l-50 25m110-25 50 25" stroke-width="5"/><rect x="128" y="68" width="64" height="35" rx="12"/><ellipse cx="80" cy="49" rx="31" ry="8"/><ellipse cx="240" cy="49" rx="31" ry="8"/><ellipse cx="80" cy="120" rx="31" ry="8"/><ellipse cx="240" cy="120" rx="31" ry="8"/><path d="m145 103-6 17h42l-6-17"/></g></svg><span class="videolab-lesson"><span class="es">04 · Aplicaciones</span><span class="en">04 · Applications</span></span><span class="videolab-play" aria-hidden="true">↗</span><span class="videolab-title"><span class="es">Drones y agricultura de precisión</span><span class="en">Drones and precision farming</span></span></a>
+            <div class="videolab-caption"><p>DJI Agriculture · 2024</p><small class="es">Videos del fabricante · Abre en el sitio de DJI</small><small class="en">Manufacturer videos · Opens on DJI's website</small><a href="videolab/?clase=4"><span class="es">Más de aplicaciones ↗</span><span class="en">More on applications ↗</span></a></div>
+          </article>
         </div>
+        <p class="videolab-note es">Una demostración muestra capacidades; no prueba por sí sola productividad o despliegue a escala. Cada recurso tiene su fuente y una pregunta para analizarlo.</p><p class="videolab-note en">A demonstration shows capabilities; it does not establish productivity or deployment at scale. Each resource includes its source and a discussion question.</p>
       </div>
     </div></section>
     <section id="topics">
@@ -297,6 +302,8 @@
       <a class="es" href="lecturas/index.html?lang=es&amp;doc=fuentes">Fuentes y metodología</a><a class="en" href="lecturas/index.html?lang=en&amp;doc=sources">Sources and methodology</a>
     </div>
   </footer>
+
+  <dialog id="home-video-player" aria-labelledby="home-video-title"><div class="videolab-modal-head"><h2 id="home-video-title"></h2><button id="home-video-close" type="button"><span class="es">Cerrar ✕</span><span class="en">Close ✕</span></button></div><div id="home-video-screen"></div><div class="videolab-modal-foot"><p class="es">Si el reproductor no está disponible, abrí el video original.</p><p class="en">If playback is unavailable, open the original video.</p><a id="home-video-source" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><span class="es">Abrir en YouTube ↗</span><span class="en">Open on YouTube ↗</span></a></div></dialog>
 
   <script>
     (() => {

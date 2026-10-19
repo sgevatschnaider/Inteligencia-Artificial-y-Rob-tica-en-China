@@ -90,6 +90,19 @@ try{
  await page.goto('http://127.0.0.1:'+port+'/',{waitUntil:'domcontentloaded'});
  assert.equal(await page.locator('.sim-card').count(),6,'Homepage does not expose six simulation cards');
  assert.equal(await page.locator('.report-row').count(),5,'Homepage does not expose five reports');
+ assert.equal(await page.locator('#videos .videolab-card').count(),4,'Homepage video previews missing');
+ for(const lang of ['es','en']){
+  await page.locator('#lang-'+lang).click();
+  await page.locator('[data-home-video]').first().click();
+  assert.equal(await page.locator('#home-video-player[open]').count(),1,'Homepage video player did not open');
+  assert((await page.locator('#home-video-title').innerText()).includes(lang==='es'?'fabrican':'building'),'Homepage player title not translated');
+  assert((await page.locator('#home-video-source').getAttribute('href')).includes('watch?v=ub2gWviKZpk'),'Original video link missing');
+  await page.keyboard.press('Escape');
+  assert.equal(await page.locator('#home-video-screen iframe').count(),0,'Homepage player did not stop on close');
+ }
+ await page.setViewportSize({width:390,height:844});
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+2),'Homepage overflows on mobile');
+ await page.setViewportSize({width:1366,height:768});
  await page.goto('http://127.0.0.1:'+port+'/lecturas/index.html?lang=en&doc=companies-models',{waitUntil:'domcontentloaded'});
  await page.waitForSelector('.prose table');
  assert((await page.locator('.prose').innerText()).includes('DeepSeek'),'Research reader did not render full English content');

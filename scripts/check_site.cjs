@@ -10,7 +10,7 @@ const docs=[
   ['cronologia','timeline'],
   ['fuentes','sources']
 ];
-assert(home.includes('id="videos"')&&home.includes('href="videolab/"'),'Homepage VideoLab integration missing');
+assert(home.includes('id="videos"')&&home.includes('href="#videos"')&&home.includes('href="videolab/?lang=es"'),'Homepage VideoLab integration missing');
 for(const pathName of ['videolab/index.html','videolab/styles.css','videolab/catalog.js','videolab/app.js']){
  assert(fs.existsSync(path.join(root,pathName)),'Missing VideoLab file: '+pathName);
 }

@@ -1,0 +1,50 @@
+/* Homepage video section only: preserve the library, decks and simulators. */
+#videos { scroll-margin-top: 84px; }
+.videolab-feature { padding: 40px; border-radius: var(--radius); color: #fff; background: var(--night); overflow: hidden; }
+.videolab-feature .eyebrow { color: var(--gold); }
+.videolab-heading { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; margin-bottom: 30px; }
+.videolab-heading h2 { margin: 14px 0 18px; font: 400 clamp(2rem, 4vw, 3.55rem)/1.07 Georgia, serif; letter-spacing: -.035em; }
+.videolab-heading p { max-width: 640px; margin: 0; color: #c8d8dc; }
+.videolab-library { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; padding-bottom: 3px; }
+.videolab-library .button { white-space: nowrap; }
+.videolab-library small { color: #b1c5ca; font-size: .75rem; }
+.videolab-previews { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.videolab-card { min-width: 0; overflow: hidden; border: 1px solid #ffffff20; border-radius: 16px; background: #102c38; }
+.videolab-poster { position: relative; isolation: isolate; display: flex; align-items: end; aspect-ratio: 16/9; padding: 20px; background: linear-gradient(130deg, #28566c, #123339); color: #fff; text-decoration: none; }
+.videolab-card:nth-child(2) .videolab-poster { background: linear-gradient(130deg, #72516e, #23374d); }
+.videolab-card:nth-child(3) .videolab-poster { background: linear-gradient(130deg, #6d542d, #244350); }
+.videolab-poster::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, #07192333 20%, #07192326 45%, #071923f2 100%); }
+.videolab-poster img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transition: transform .25s; }
+.videolab-poster:hover img { transform: scale(1.035); }
+.videolab-lesson { position: absolute; top: 14px; left: 14px; border: 1px solid #ffffff38; border-radius: 99px; padding: 5px 10px; background: #071923c9; font-size: .7rem; font-weight: 750; }
+.videolab-play { position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; color: var(--night); background: var(--gold); font-size: 18px; box-shadow: 0 5px 25px #0004; }
+.videolab-title { position: relative; max-width: 95%; font: 500 clamp(1.2rem, 2.2vw, 1.65rem)/1.15 Georgia, serif; text-wrap: balance; }
+.videolab-caption { padding: 16px 20px 18px; }
+.videolab-caption p { margin: 0 0 3px; color: #f6f4e9; font-size: .85rem; font-weight: 750; }
+.videolab-caption small { display: block; color: #b4cad0; font-size: .74rem; }
+.videolab-caption a { display: inline-block; margin-top: 10px; color: #edc867; font-size: .79rem; font-weight: 750; text-underline-offset: 4px; }
+.videolab-agriculture { background: radial-gradient(ellipse at 50% 35%, #34847a, #153e3c 75%); }
+.videolab-drone { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; color: #a9e0c4; }
+.videolab-feature .videolab-note { max-width: 900px; margin: 24px 0 0; color: #b1c5ca; font-size: .79rem; }
+#home-video-player { width: min(960px, calc(100% - 24px)); max-height: calc(100dvh - 24px); padding: 0; overflow: auto; border: 1px solid #ffffff35; border-radius: 18px; color: #fff; background: var(--night); box-shadow: 0 25px 90px #0008; }
+#home-video-player::backdrop { background: #020e19d9; }
+.videolab-modal-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 22px; }
+.videolab-modal-head h2 { margin: 0; font-size: 1.1rem; }
+.videolab-modal-head button { flex-shrink: 0; padding: 9px 13px; border: 1px solid #ffffff55; border-radius: 9px; color: #fff; background: transparent; font: inherit; font-size: .8rem; cursor: pointer; }
+#home-video-screen { aspect-ratio: 16/9; background: #000; }
+#home-video-screen iframe { display: block; width: 100%; height: 100%; border: 0; }
+.videolab-modal-foot { padding: 16px 22px; }
+.videolab-modal-foot p { margin: 0 0 8px; color: #c8d8dc; font-size: .85rem; }
+.videolab-modal-foot a { color: var(--gold); font-weight: 750; }
+@media (max-width: 900px) {
+  .videolab-feature { padding: 28px; }
+  .videolab-heading { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 620px) {
+  .videolab-feature { padding: 20px; }
+  .videolab-previews { grid-template-columns: 1fr; gap: 18px; }
+  .videolab-poster { padding: 18px; }
+  .videolab-title { font-size: 1.35rem; }
+  .videolab-modal-head { padding: 14px; gap: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { .videolab-poster img { transition: none; } }
