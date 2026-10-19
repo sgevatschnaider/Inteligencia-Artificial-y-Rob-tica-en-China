@@ -157,6 +157,8 @@
   </style>
   <link rel="stylesheet" href="videolab/home.css">
   <script src="videolab/home.js" defer></script>
+  <link rel="stylesheet" href="assets/intro/intro.css">
+  <script src="assets/intro/intro.js" defer></script>
 </head>
 <body data-language="es">
   <header class="topbar">
@@ -192,12 +194,29 @@
           <a class="button es" href="#videos">Ver videos <span aria-hidden="true">▶</span></a><a class="button en" href="#videos">Watch videos <span aria-hidden="true">▶</span></a>
         </div>
       </div>
-      <aside class="hero-aside">
+      <div class="hero-media">
+        <figure class="intro-card" id="introduction">
+          <div class="intro-stage">
+            <a class="intro-cover" id="intro-play" href="assets/intro/china-tecnologica.mp4" aria-controls="intro-video">
+              <img src="assets/intro/china-tecnologica.webp" alt="Dragón y androide sobre una ciudad futurista · Dragon and android above a futuristic city" width="1280" height="720" fetchpriority="high">
+              <span class="intro-badge"><span class="es">China tecnológica</span><span class="en">Technological China</span></span>
+              <span class="intro-play-icon" aria-hidden="true">▶</span>
+              <span class="intro-action"><span class="es">Ver introducción</span><span class="en">Watch introduction</span><span class="intro-duration">10 s</span></span>
+            </a>
+            <video id="intro-video" class="intro-video" width="1280" height="720" controls playsinline muted preload="none" poster="assets/intro/china-tecnologica.webp" aria-labelledby="intro-caption" tabindex="0" hidden>
+              <span class="es">Tu navegador puede abrir el video desde el enlace de la portada.</span><span class="en">Your browser can open the video using the cover link.</span>
+            </video>
+          </div>
+          <figcaption id="intro-caption"><span class="intro-caption-mark" aria-hidden="true">✦</span><span class="es">Apertura visual generada con IA</span><span class="en">AI-generated visual introduction</span></figcaption>
+          <p class="intro-error" id="intro-error" role="status" hidden><span class="es">No se pudo iniciar el reproductor. </span><span class="en">Playback could not start. </span><a href="assets/intro/china-tecnologica.mp4"><span class="es">Abrir el video</span><span class="en">Open the video</span> ↗</a></p>
+        </figure>
+        <aside class="hero-aside">
         <strong class="es">Una lectura por capas</strong>
         <strong class="en">A layered reading</strong>
         <p class="es">Este proyecto distingue política pública, capacidad técnica, adopción industrial, resultados comerciales y efectos sociales. Un anuncio no cuenta como despliegue y una demostración no cuenta como escala.</p>
         <p class="en">This project separates public policy, technical capability, industrial adoption, commercial outcomes, and social effects. An announcement is not a deployment; a demonstration is not scale.</p>
-      </aside>
+        </aside>
+      </div>
     </div>
   </div>
 

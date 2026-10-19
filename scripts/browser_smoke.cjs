@@ -6,7 +6,7 @@
 const http=require('node:http'), fs=require('node:fs'), path=require('node:path'), assert=require('node:assert/strict');
 const {chromium}=require('playwright');
 const ROOT=path.resolve(__dirname,'..'),port=51377;
-const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.json':'application/json','.md':'text/markdown'};
+const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.json':'application/json','.md':'text/markdown','.mp4':'video/mp4','.webp':'image/webp'};
 const server=http.createServer((req,res)=>{
   let pathname;try{pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname)}catch{res.writeHead(400).end();return;}
   let target=path.resolve(ROOT,'.'+pathname);
@@ -87,7 +87,19 @@ try{
   await page.close();
  }
  const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ let introRequests=0;page.on('request',request=>{if(request.url().endsWith('/assets/intro/china-tecnologica.mp4'))introRequests++;});
  await page.goto('http://127.0.0.1:'+port+'/',{waitUntil:'domcontentloaded'});
+ assert.equal(introRequests,0,'Intro video should not download before a visitor clicks');
+ assert.equal(await page.locator('#intro-video').isVisible(),false,'Intro should show its poster initially');
+ const heroCopy=await page.locator('.hero-grid > div').first().boundingBox(),heroMedia=await page.locator('.hero-media').boundingBox();
+ assert(heroMedia.x>heroCopy.x+heroCopy.width-4,'Intro video should sit to the right of the heading on desktop');
+ await page.locator('#intro-play').focus();await page.keyboard.press('Enter');
+ await page.waitForFunction(()=>{const video=document.getElementById('intro-video');return video.currentTime>0&&!video.paused;});
+ assert(introRequests>0,'Intro video did not load on keyboard activation');
+ assert(await page.locator('#intro-video').evaluate(video=>video.muted&&video.controls&&!video.autoplay&&!video.loop),'Intro needs muted, user-controlled playback');
+ assert(await page.locator('#intro-video').evaluate(video=>Math.abs(video.duration-10)<.3),'Intro video duration is incorrect');
+ await page.locator('#intro-video').evaluate(video=>video.pause());
+ assert.equal(await page.locator('#intro-video').evaluate(video=>video.paused),true,'Intro did not pause');
  assert.equal(await page.locator('.sim-card').count(),6,'Homepage does not expose six simulation cards');
  assert.equal(await page.locator('.report-row').count(),5,'Homepage does not expose five reports');
  assert.equal(await page.locator('#videos .videolab-card').count(),4,'Homepage video previews missing');
@@ -102,6 +114,8 @@ try{
   assert.equal(await page.locator('#home-video-screen iframe').count(),0,'Homepage player did not stop on close');
  }
  await page.setViewportSize({width:390,height:844});
+ const mobileCopy=await page.locator('.hero-grid > div').first().boundingBox(),mobileMedia=await page.locator('.hero-media').boundingBox();
+ assert(mobileMedia.y>=mobileCopy.y+mobileCopy.height,'Intro should sit below the title on mobile');
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+2),'Homepage overflows on mobile');
  await page.setViewportSize({width:1366,height:768});
  await page.goto('http://127.0.0.1:'+port+'/lecturas/index.html?lang=en&doc=companies-models',{waitUntil:'domcontentloaded'});
