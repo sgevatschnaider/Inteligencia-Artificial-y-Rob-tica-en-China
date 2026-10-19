@@ -134,6 +134,7 @@ try{
  assert.equal(await videoPage.locator('#player-modal[open]').count(),1,'Click-to-load player did not open');
  assert((await videoPage.locator('#player-area iframe').getAttribute('src')).includes('youtube-nocookie.com/embed/'),'Wrong video embed');
  await videoPage.locator('#close-modal').click();
+ await videoPage.locator('#player-area iframe').waitFor({state:'detached'});
  assert.equal(await videoPage.locator('#player-area iframe').count(),0,'Player should unload on close');
  const external=videoPage.locator('#small-manufacturers a.watch');
  assert.equal(await external.getAttribute('target'),'_blank','External video must open in a new tab');
