@@ -38,3 +38,10 @@ Reports originally produced in 2025 remain available as dated resources. The 202
 ---
 
 **Sergio Gevatschnaider** · Last editorial review: October 2026. [Contribute](CONTRIBUTING.md) · [Cite the repository](CITATION.cff) · Code [MIT](LICENSE), original documentation [CC BY 4.0](LICENSE-CONTENT.md).
+
+## VideoLab · Technological China in motion
+
+**[↗ Open the bilingual video library](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=en)**
+
+Curated clips for four lessons: (1) industrial transformation, (2) AI and humanoids, (3) chips and supply chains, and (4) applications, safety and smart cities. Includes manufacturer footage and independent reporting, discussion prompts, evidence caveats, lesson filters and privacy-conscious, click-to-load YouTube playback. Other videos open on their original providers' websites; third-party video files are not republished.
+

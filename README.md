@@ -29,3 +29,7 @@ La biblioteca distingue metas gubernamentales, productos anunciados, adopción y
 ---
 
 **Sergio Gevatschnaider** · [Metodología / Methodology](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=fuentes) · [Contribuciones / Contributions](CONTRIBUTING.md) · [Citación / Citation](CITATION.cff) · Código MIT · Contenido CC BY 4.0.
+
+## VideoLab / Videoteca
+
+[ES — China tecnológica en movimiento](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=es) · [EN — Technological China in motion](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=en). Cuatro clases, videos con fuentes y preguntas de discusión; reproducción diferida de YouTube y acceso al video original.

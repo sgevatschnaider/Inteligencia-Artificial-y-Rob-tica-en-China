@@ -153,7 +153,18 @@
 /* Focused navigation and resource collections */
 .hero-actions .button{gap:10px}.stat-grid{margin-bottom:4px}.lesson-feature{box-shadow:0 18px 58px #0b242a0d}.lesson-feature h2{font-size:clamp(1.85rem,3.25vw,3.2rem)}.feature-actions{gap:10px}.feature-actions .file-action{display:inline-flex;gap:10px;align-items:center;min-height:52px;padding:12px 16px;border:1px solid #d4e2df;border-radius:11px;background:#f0f7f5;color:#126e68;font-size:14px;text-decoration:none}.feature-actions .file-action:hover{background:#dceee9;transform:translateY(-2px)}.feature-actions .open-presentation{font-size:14px;min-height:52px}.secondary-readings{display:flex;flex-wrap:wrap;gap:12px;margin-top:23px}.secondary-readings a{border-radius:11px;background:#fffdf8;color:var(--jade);border:1px solid var(--line);font-weight:750;text-decoration:none;padding:12px 18px}.secondary-readings a:hover{background:#e1f0ea}.sim-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.sim-card{min-height:310px;display:flex;flex-direction:column;justify-content:space-between;gap:22px;background:linear-gradient(160deg,#ffffff,#eaf4f2);border:1px solid #d8e7e4;border-radius:21px;padding:25px;box-shadow:0 12px 28px #0719230a;transition:transform .2s,box-shadow .2s}.sim-card:hover{transform:translateY(-4px);box-shadow:0 19px 40px #07192319}.sim-card:nth-child(3n+2){background:linear-gradient(160deg,#fffdf8,#f4eee1)}.sim-card:nth-child(3n+3){background:linear-gradient(160deg,#fff,#e8edf2)}.sim-top{display:flex;align-items:center;justify-content:space-between}.sim-glyph{display:grid;place-items:center;width:51px;height:51px;border-radius:16px;background:#0f7772;color:#fff;font-size:28px;line-height:1;font-family:Georgia,serif}.sim-number{font-size:11px;letter-spacing:.14em;font-weight:800;color:#83999f}.sim-card h3{font:500 clamp(1.5rem,2.1vw,1.95rem)/1.18 Georgia,serif;letter-spacing:-.025em;margin:0 0 12px}.sim-card p{color:#637a82;font-size:13px;line-height:1.6;margin:0}.sim-button{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:49px;background:#0f7772;color:#fff;border-radius:12px;padding:10px 15px;text-decoration:none;font-weight:760;font-size:13px;transition:background .2s}.sim-button:hover{background:#085d59}.sim-arrow{display:grid;place-items:center;background:#ffffff22;border-radius:8px;width:30px;height:30px;font-size:17px}.reports{border:1px solid var(--line);background:#fffdf8;border-radius:21px;overflow:hidden}.report-row{display:grid;grid-template-columns:55px minmax(0,1fr) auto 30px;align-items:center;gap:20px;padding:23px 27px;border-bottom:1px solid var(--line);text-decoration:none;transition:background .2s}.report-row:last-child{border-bottom:0}.report-row:hover{background:#ecf4f1}.report-number{font:500 1.8rem Georgia,serif;color:#bb6755}.report-copy strong{display:block;font-size:16px;color:#17313b;line-height:1.3}.report-copy small{display:block;color:#6c7f85;margin-top:6px;font-size:12px;line-height:1.45}.report-tag{font-size:11px;font-weight:800;color:#166f6a;background:#e4f2ed;padding:7px 10px;border-radius:100px;white-space:nowrap}.report-arrow{font-size:22px;color:#176e66}
 @media(max-width:940px){.sim-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lesson-feature{gap:23px}.feature-actions .file-action{font-size:12px}}@media(max-width:620px){.sim-grid{grid-template-columns:1fr}.sim-card{min-height:260px}.report-row{grid-template-columns:36px minmax(0,1fr) 24px;padding:18px 13px;gap:12px}.report-tag{display:none!important}.lesson-feature{padding:18px}.feature-actions{gap:8px}.feature-actions .open-presentation,.feature-actions .file-action{min-height:45px;padding:10px 12px;font-size:12px}}
-</style>
+
+    /* VideoLab feature – separate from slide viewers and simulators */
+    .videolab-feature { background:var(--night);color:#fff;border-radius:var(--radius);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;overflow:hidden; }
+    .videolab-feature h2 {font:400 clamp(2rem,3.4vw,3.55rem)/1.05 Georgia,serif;letter-spacing:-.035em;margin:10px 0 14px}
+    .videolab-feature p {color:#c8d8dc;margin-bottom:23px}
+    .videolab-feature .button{display:inline-flex}
+    .videolab-previews{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .videolab-previews a{aspect-ratio:16/10;position:relative;overflow:hidden;border-radius:14px;display:flex;align-items:end;text-decoration:none;background:linear-gradient(135deg,#27516a,#395f65);color:white;font-weight:800;font-size:.82rem;padding:12px}
+    .videolab-previews a:nth-child(2){background:linear-gradient(135deg,#593a50,#1f354d)}.videolab-previews a:nth-child(3){background:linear-gradient(135deg,#60451e,#384c54)}.videolab-previews a:nth-child(4){background:linear-gradient(135deg,#17464b,#4b806c)}
+    .videolab-previews img{position:absolute;width:100%;height:100%;object-fit:cover;inset:0;filter:brightness(.58)}.videolab-previews span{position:relative;z-index:1}
+    @media(max-width:800px){.videolab-feature{grid-template-columns:1fr;padding:26px}.videolab-previews{max-width:560px}}
+  </style>
 </head>
 <body data-language="es">
   <header class="topbar">
@@ -164,6 +175,7 @@
       </a>
       <nav class="nav" aria-label="Main navigation">
         <a href="#presentation"><span class="es">Presentación</span><span class="en">Presentation</span></a>
+        <a href="videolab/"><span class="es">Videos</span><span class="en">Videos</span></a>
         <a href="#topics"><span class="es">Temas</span><span class="en">Topics</span></a>
         <a href="#simulations"><span class="es">Simuladores</span><span class="en">Simulators</span></a><a href="#reports"><span class="es">Informes</span><span class="en">Reports</span></a>
         <div class="language-switch" role="group" aria-label="Language selector">
@@ -212,6 +224,24 @@
         <div class="feature-actions"><a class="open-presentation" data-presentation-link href="materiales/transformacion-industrial/"><span class="play-icon" aria-hidden="true">▶</span><span class="es">Abrir visor</span><span class="en">Open slide viewer</span><span aria-hidden="true">↗</span></a>
           <a class="file-action" data-presentation-file="pdf" href="materiales/transformacion-industrial/presentacion.pdf"><span aria-hidden="true">▤</span><span>PDF</span><span aria-hidden="true">↓</span></a>
           <a class="file-action" data-presentation-file="pptx" href="materiales/transformacion-industrial/presentacion.pptx"><span aria-hidden="true">▦</span><span>PowerPoint</span><span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </div></section>
+    
+    <section id="videos"><div class="wrap">
+      <div class="videolab-feature">
+        <div><div class="eyebrow">VIDEOLAB · <span class="es">CUATRO CLASES</span><span class="en">FOUR LESSONS</span></div>
+          <h2 class="es">China tecnológica en movimiento</h2><h2 class="en">Technological China in motion</h2>
+          <p class="es">Videos de robots, fábricas, chips y ciudades inteligentes con fuentes, preguntas para la clase y límites de evidencia.</p>
+          <p class="en">Videos on robots, factories, chips and smart cities—with sources, discussion questions and evidence caveats.</p>
+          <a class="button primary es" href="videolab/?lang=es">Explorar la videoteca ↗</a>
+          <a class="button primary en" href="videolab/?lang=en">Explore the video library ↗</a>
+        </div>
+        <div class="videolab-previews">
+          <a href="videolab/?clase=1"><img src="https://i.ytimg.com/vi/ub2gWviKZpk/hqdefault.jpg" loading="lazy" alt=""><span class="es">01 · Industria</span><span class="en">01 · Industry</span></a>
+          <a href="videolab/?clase=2"><img src="https://i.ytimg.com/vi/ssxdSVQN14I/hqdefault.jpg" loading="lazy" alt=""><span class="es">02 · Humanoides</span><span class="en">02 · Humanoids</span></a>
+          <a href="videolab/?clase=3"><img src="https://i.ytimg.com/vi/B2482h_TNwg/hqdefault.jpg" loading="lazy" alt=""><span class="es">03 · Semiconductores</span><span class="en">03 · Semiconductors</span></a>
+          <a href="videolab/?clase=4"><span class="es">04 · Aplicaciones</span><span class="en">04 · Applications</span></a>
         </div>
       </div>
     </div></section>

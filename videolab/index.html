@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071923">
+<meta name="description" content="VideoLab: videoteca bilingüe sobre la industria tecnológica de China, IA, robots, semiconductores y ciudades inteligentes.">
+<title>VideoLab · China tecnológica en movimiento</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="./catalog.js" defer></script>
+<script src="./app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#catalog">Saltar a los videos / Skip to videos</a>
+<header class="topbar">
+ <div class="wrap topbar-inner">
+  <a class="brand" href="../"><span class="mark" aria-hidden="true"></span><span>CHINA <strong>TECH</strong> <span class="brand-dim">/ VideoLab</span></span></a>
+  <nav aria-label="Navigation"><a href="../#presentation"><span data-es="Presentación" data-en="Presentation">Presentación</span></a><a href="../#simulations"><span data-es="Simuladores" data-en="Simulators">Simuladores</span></a><a href="../#reports"><span data-es="Informes" data-en="Reports">Informes</span></a></nav>
+  <div class="language" role="group" aria-label="Idioma / Language"><button id="set-es" type="button" aria-pressed="true">ES</button><button id="set-en" type="button" aria-pressed="false">EN</button></div>
+ </div>
+</header>
+<main>
+ <section class="hero"><div class="wrap hero-content">
+  <p class="eyebrow" data-es="LABORATORIO AUDIOVISUAL · 4 CLASES" data-en="AUDIOVISUAL LAB · 4 LESSONS">LABORATORIO AUDIOVISUAL · 4 CLASES</p>
+  <h1><span data-es="China tecnológica" data-en="Technological China">China tecnológica</span><em data-es="en movimiento." data-en="in motion.">en movimiento.</em></h1>
+  <p class="lede" data-es="Demostraciones, reportajes y animaciones seleccionados para comprender la transformación industrial de China. Del movimiento de un robot a las preguntas sobre productividad, competencia, seguridad y poder tecnológico." data-en="Curated demonstrations, reporting and animations for understanding China's industrial transformation. From a moving robot to deeper questions about productivity, competition, safety and technological power.">Demostraciones, reportajes y animaciones seleccionados para comprender la transformación industrial de China.</p>
+  <div class="hero-actions"><a class="button primary" href="#catalog"><span data-es="Explorar los videos" data-en="Explore videos">Explorar los videos</span> ↓</a><a class="button ghost" href="../"><span data-es="Volver a la biblioteca" data-en="Back to the library">Volver a la biblioteca</span> ↗</a></div>
+  <div class="stats"><span><strong id="video-total">11</strong><small data-es="recursos seleccionados" data-en="curated resources">recursos seleccionados</small></span><span><strong>04</strong><small data-es="clases temáticas" data-en="thematic lessons">clases temáticas</small></span><span><strong>ES / EN</strong><small data-es="guía bilingüe" data-en="bilingual guide">guía bilingüe</small></span></div>
+ </div></section>
+ <section class="intro wrap" aria-label="About VideoLab">
+  <div><p class="eyebrow" data-es="MIRAR · COMPARAR · COMPRENDER" data-en="WATCH · COMPARE · UNDERSTAND">MIRAR · COMPARAR · COMPRENDER</p><h2 data-es="Una videoteca para pensar, no solo mirar." data-en="A video library for thinking, not just watching.">Una videoteca para pensar, no solo mirar.</h2></div>
+  <p data-es="Cada ficha identifica la fuente y el tipo de evidencia, ofrece una pregunta de discusión y señala lo que el video NO demuestra. Las piezas de fabricantes se contrastan con reportajes independientes. No se descargan ni republican videos de terceros." data-en="Each entry identifies its source and evidence type, suggests a discussion question and explains what the footage does NOT prove. Manufacturer clips are balanced with independent reporting. Third-party videos are neither downloaded nor republished.">Cada ficha identifica la fuente y el tipo de evidencia, ofrece una pregunta de discusión y señala lo que el video NO demuestra.</p>
+ </section>
+ <section class="catalog-section" id="catalog"><div class="wrap">
+  <div class="section-title"><div><p class="eyebrow" data-es="EXPLORAR LA COLECCIÓN" data-en="EXPLORE THE COLLECTION">EXPLORAR LA COLECCIÓN</p><h2 data-es="Seleccioná una clase" data-en="Select a lesson">Seleccioná una clase</h2></div><p id="result-count" role="status" aria-live="polite"></p></div>
+  <div class="controls">
+   <div class="tabs" role="group" aria-label="Lesson filter"><button type="button" class="filter is-active" data-lesson="all" aria-pressed="true" data-es="Todas" data-en="All">Todas</button><button type="button" class="filter" data-lesson="1" aria-pressed="false">01 · <span data-es="Industria" data-en="Industry">Industria</span></button><button type="button" class="filter" data-lesson="2" aria-pressed="false">02 · <span data-es="IA y robots" data-en="AI & robots">IA y robots</span></button><button type="button" class="filter" data-lesson="3" aria-pressed="false">03 · <span data-es="Chips" data-en="Chips">Chips</span></button><button type="button" class="filter" data-lesson="4" aria-pressed="false">04 · <span data-es="Aplicaciones" data-en="Applications">Aplicaciones</span></button></div>
+   <div class="search-wrap"><label class="visually-hidden" for="search" data-es="Buscar por título, tema o fuente" data-en="Search title, topic or source">Buscar por título, tema o fuente</label><span aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off" data-placeholder-es="Buscar videos o empresas…" data-placeholder-en="Search videos or companies…" placeholder="Buscar videos o empresas…"></div>
+  </div>
+  <div class="lesson-line" id="lesson-info" aria-live="polite"></div>
+  <div id="video-grid" class="video-grid"></div>
+  <p class="empty" id="no-results" hidden data-es="No hay resultados para esa búsqueda. Probá otra palabra o seleccioná «Todas»." data-en="No results. Try another keyword or select ‘All’.">No hay resultados para esa búsqueda.</p>
+ </div></section>
+ <section class="teaching wrap"><div class="teaching-grid">
+  <div><p class="eyebrow" data-es="GUÍA PARA EL AULA" data-en="CLASSROOM GUIDE">GUÍA PARA EL AULA</p><h2 data-es="Del video al argumento" data-en="From footage to an argument">Del video al argumento</h2><p data-es="Secuencia sugerida: 30 segundos de contexto, 1–3 minutos de reproducción, 2 minutos de discusión y una conclusión basada en evidencia." data-en="Suggested sequence: 30 seconds of context, 1–3 minutes of viewing, 2 minutes of discussion and an evidence-based conclusion.">Secuencia sugerida: 30 segundos de contexto, 1–3 minutos de reproducción, 2 minutos de discusión y una conclusión basada en evidencia.</p></div>
+  <ol><li data-es="¿Qué vemos exactamente? Separar el prototipo, la demostración y el despliegue operativo." data-en="What exactly do we see? Distinguish prototype, demo and operational deployment.">¿Qué vemos exactamente?</li><li data-es="¿Qué no vemos? Fiabilidad, costos, fallas, seguridad y productividad a escala." data-en="What don't we see? Reliability, costs, failures, safety and scaled productivity.">¿Qué no vemos?</li><li data-es="¿Qué cambia económicamente? Trabajo, cadenas de suministro, inversión y competencia." data-en="What changes economically? Labor, supply chains, investment and competition.">¿Qué cambia económicamente?</li></ol>
+ </div></section>
+</main>
+<footer><div class="wrap foot"><div><strong>VideoLab · China tecnológica</strong><p data-es="Curaduría didáctica de Sergio Gevatschnaider. El material audiovisual pertenece a sus respectivos autores y plataformas." data-en="Educational curation by Sergio Gevatschnaider. Video rights belong to their respective creators and platforms.">Curaduría didáctica de Sergio Gevatschnaider. El material audiovisual pertenece a sus respectivos autores y plataformas.</p></div><a href="../" data-es="← Biblioteca principal" data-en="← Main library">← Biblioteca principal</a></div></footer>
+<dialog id="player-modal" aria-labelledby="modal-title"><div class="modal-top"><h2 id="modal-title"></h2><button id="close-modal" type="button" aria-label="Cerrar / Close">✕</button></div><div class="player-area" id="player-area"></div><div class="modal-bottom"><p id="modal-note"></p><a id="modal-source" target="_blank" rel="noopener noreferrer" href="#" data-es="Abrir en YouTube ↗" data-en="Open on YouTube ↗">Abrir en YouTube ↗</a></div></dialog>
+</body>
+</html>

@@ -12,6 +12,12 @@ Una biblioteca de investigación y materiales docentes sobre las capacidades tec
 
 El visor incluye índice, notas y fuentes por diapositiva. **[Acceder a la versión inglesa](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/).**
 
+## VideoLab · China tecnológica en movimiento
+
+**[↗ Abrir la videoteca bilingüe](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=es)**
+
+Galería curada para cuatro clases: (1) transformación industrial, (2) IA y humanoides, (3) chips y cadena tecnológica, y (4) aplicaciones, seguridad y ciudades inteligentes. Incluye videos de fabricantes, reportajes independientes, preguntas de discusión, límites de evidencia, filtros y un reproductor de YouTube que solo carga al pulsar «Reproducir». Los demás videos se abren desde sus páginas originales. No se redistribuyen archivos audiovisuales de terceros.
+
 ## Biblioteca temática
 
 | Lectura | Contenido |
