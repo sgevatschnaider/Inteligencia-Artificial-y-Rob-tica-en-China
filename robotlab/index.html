@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="Laboratorio interactivo de robótica humanoide: explorá productividad, consumo, batería y decisiones industriales con un modelo matemático educativo.">
+  <title>RobotLab — Laboratorio de Robótica Humanoide | China tecnológica</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  <script src="i18n.js" defer></script>
+  <script src="model.js" defer></script>
+  <script src="app.js" defer></script>
+
+
+</head>
+<body>
+  <svg aria-hidden="true" class="icon-sprite" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+    <symbol id="ic-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></symbol>
+    <symbol id="ic-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="ic-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 9a7 7 0 0 1 12-2l2 5M4 12l2 5a7 7 0 0 0 12-2"/></symbol>
+    <symbol id="ic-activity" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></symbol>
+    <symbol id="ic-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-12h-7z"/></symbol>
+    <symbol id="ic-battery" viewBox="0 0 24 24"><rect x="2" y="6" width="18" height="12" rx="3"/><path d="M22 10v4M6 10h7"/></symbol>
+    <symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+    <symbol id="ic-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 9a3 3 0 1 1 5 2.4c-1.2.9-2 1.2-2 3.1M12 18h.01"/></symbol>
+    <symbol id="ic-brain" viewBox="0 0 24 24"><path d="M12 5a4 4 0 0 0-7-1 4 4 0 0 0-2 6 4 4 0 0 0 2 7 4 4 0 0 0 7 2V5ZM12 5a4 4 0 0 1 7-1 4 4 0 0 1 2 6 4 4 0 0 1-2 7 4 4 0 0 1-7 2V5Z"/><path d="M8 8c2 0 3 1 4 3m4-3c-2 0-3 1-4 3m-4 5c2 0 3-1 4-3m4 3c-2 0-3-1-4-3"/></symbol>
+    <symbol id="ic-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="ic-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M7 15l4-5 4 3 5-7"/></symbol>
+    <symbol id="ic-book" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V4c-4-1-7-1-10 1Zm0 0v15"/></symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+  </svg>
+  <div class="orb orb-a" aria-hidden="true"></div><div class="orb orb-b" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="wrap navline">
+      <a class="brand" href="#inicio" aria-label="RobotLab, ir al inicio"><span class="brand-mark"><span class="brand-core"></span></span><span class="brand-text">ROBOT<span>LAB</span><small>CHINA TECH · 2026</small></span></a>
+      <nav class="navlinks" aria-label="Secciones del laboratorio"><a href="#laboratorio">Laboratorio</a><a href="#experimentos">Experimentos</a><a href="#analisis">Análisis</a><a href="#aprendizaje">Aprender</a></nav>
+      <div class="lab-toolbar"><div class="language-switch" role="group" aria-label="Idioma del laboratorio"><button id="set-es" type="button" lang="es" aria-pressed="true">ES</button><button id="set-en" type="button" lang="en" aria-pressed="false">EN</button></div><a class="return-link" href="../#simulations" aria-label="Volver a simuladores" title="Volver a simuladores"><span>Volver a simuladores</span><svg class="icon"><use href="#ic-arrow"/></svg></a></div>
+    </div>
+  </header>
+  <main id="inicio" class="wrap">
+    <section class="intro" aria-labelledby="main-title">
+      <div class="intro-main"><div class="eyebrow"><span class="eyebrow-dot"></span> LABORATORIO DE SIMULACIÓN <span class="eyebrow-index">/ EXPERIENCIA 01</span></div>
+        <h1 id="main-title">El futuro industrial <span>se aprende experimentando.</span></h1>
+        <p class="lead">Controlá un robot humanoide, explorá las decisiones de producción y descubrí por qué <strong>más velocidad no siempre significa mejor eficiencia.</strong></p>
+        <div class="intro-actions"><a href="#laboratorio" class="main-link">Entrar al laboratorio <svg class="icon"><use href="#ic-arrow"/></svg></a><a class="minor-link" href="#aprendizaje"><svg class="icon"><use href="#ic-book"/></svg> Cómo funciona</a></div>
+      </div>
+      <aside class="intro-aside" aria-label="Información del curso"><div class="intro-card-top">SERIE EDUCATIVA <span>01 / 04</span></div><div class="intro-card-icon"><svg class="icon"><use href="#ic-brain"/></svg></div><p>CHINA TECNOLÓGICA</p><strong>Robots, chips y la nueva revolución industrial</strong><span class="intro-card-foot">UBA<br>Docente: Sergio Gevatschnaider</span></aside>
+    </section>
+    <section class="section lab-section" id="laboratorio" aria-labelledby="lab-title">
+      <div class="section-top"><div><p class="section-eyebrow">01 / SIMULACIÓN EN VIVO</p><h2 id="lab-title">Estación de trabajo <span>humanoide</span></h2></div><div class="section-note"><span class="live-dot"></span> MODELO INTERACTIVO <span class="sep">·</span> RELOJ ×60</div></div>
+      <div class="lab-layout">
+        <div class="stage card" id="stage" data-active="false">
+          <div class="stage-grid" aria-hidden="true"></div><div class="stage-halo" aria-hidden="true"></div>
+          <div class="stage-top"><div class="stage-number">ESTACIÓN <b>R-01</b><small>LABORATORIO INDUSTRIAL</small></div><div id="stage-status" class="status-pill" role="status"><span class="status-pulse"></span><span id="state-label">EN ESPERA</span></div></div>
+          <div class="stage-readouts left-readouts" aria-hidden="true"><div>MODELO HUMANOIDE</div><div class="readout-value">R / 001</div><span>SIMULACIÓN<br>EDUCATIVA</span><div class="stage-rule"></div><div class="tiny-grid">0 1 0 1<br>1 0 0 1<br>0 1 1 0</div></div>
+          <div class="stage-readouts right-readouts" aria-hidden="true"><div>TELEMETRÍA</div><div class="readout-value" id="hud-power">330 W</div><span>ENERGÍA<br>EN TIEMPO REAL</span><div class="stage-rule"></div><div id="hud-speed" class="microvalue">1.00 ×</div></div>
+          <div class="robot-area" id="robot-area">
+            <div class="vertical-laser laser-left" aria-hidden="true"></div><div class="vertical-laser laser-right" aria-hidden="true"></div>
+            <div class="robot-shadow"></div>
+            <svg class="robot-svg" viewBox="0 0 300 470" role="img" aria-label="Robot humanoide estilizado, animado según velocidad y carga de trabajo" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e1f3ff"/><stop offset=".35" stop-color="#8faec2"/><stop offset=".7" stop-color="#45687e"/><stop offset="1" stop-color="#1c3247"/></linearGradient>
+                <linearGradient id="metalDark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#67899e"/><stop offset=".4" stop-color="#293f57"/><stop offset="1" stop-color="#13273c"/></linearGradient>
+                <linearGradient id="torso" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#d3eafb"/><stop offset=".28" stop-color="#8aa7bd"/><stop offset=".65" stop-color="#355471"/><stop offset="1" stop-color="#182e46"/></linearGradient>
+                <linearGradient id="visor" x1="0" y1="0" x2="1" y2=".7"><stop stop-color="#15243e"/><stop offset=".5" stop-color="#111928"/><stop offset="1" stop-color="#243b59"/></linearGradient>
+                <linearGradient id="cyanGlow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b0fff8"/><stop offset=".5" stop-color="#4eeedd"/><stop offset="1" stop-color="#228bd7"/></linearGradient>
+                <filter id="glow"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#00dbd5" flood-opacity=".12"/></filter>
+              </defs>
+              <g class="robot-bob" filter="url(#shadow)">
+                <g class="robot-leg robot-leg-back">
+                  <path d="M126 290 Q120 327 119 344 L109 396 Q103 408 117 413 L136 414 Q143 406 141 393 L148 337 L153 297Z" fill="url(#metalDark)" stroke="#7aaac2" stroke-width="2"/>
+                  <path d="M116 331 143 332 139 347 115 347Z" fill="#a9c8d5"/><circle cx="128" cy="342" r="6" fill="#263c51" stroke="#6ca9be" stroke-width="2"/>
+                  <path d="M110 401 139 402 146 425 Q131 433 101 427 L96 416Z" fill="url(#metal)" stroke="#92c1d4" stroke-width="2"/>
+                  <path d="M101 424 144 425" stroke="#57ebd8" stroke-width="2" opacity=".8"/>
+                </g>
+                <g class="robot-leg robot-leg-front">
+                  <path d="M157 290 182 292 Q185 317 185 343 L193 394 Q197 406 185 414 L166 414 Q157 409 159 396 L154 338 148 309Z" fill="url(#metal)" stroke="#8bb5c6" stroke-width="2"/>
+                  <path d="M159 331 186 330 191 347 160 347Z" fill="url(#metalDark)" stroke="#6c9db5" stroke-width="2"/>
+                  <circle cx="175" cy="341" r="8" fill="#213a50" stroke="#78a3b8" stroke-width="3"/><circle cx="175" cy="341" r="3" fill="#53e7d9"/>
+                  <path d="M166 399 193 401 204 424 Q191 435 157 428 L152 419Z" fill="url(#metal)" stroke="#b5cedc" stroke-width="2"/>
+                  <path d="M157 425 200 425" stroke="#57ebd8" stroke-width="2" opacity=".85"/>
+                </g>
+                <g class="robot-arm robot-arm-back">
+                  <rect x="95" y="159" width="35" height="50" rx="14" fill="url(#metalDark)" stroke="#81afc2" stroke-width="2"/>
+                  <path d="M99 200 126 201 122 251 97 252Z" fill="url(#metal)" stroke="#85b1c5" stroke-width="2"/><circle cx="110" cy="205" r="10" fill="#263e54" stroke="#63dece" stroke-width="2"/>
+                  <path d="M98 246 123 246 126 276 112 288 100 276Z" fill="url(#metalDark)"/><path d="M104 276 103 291 M112 283 115 296 M119 275 123 289" stroke="#85bbca" stroke-width="5" stroke-linecap="round"/>
+                </g>
+                <path d="M120 260 184 260 180 305 125 305Z" fill="url(#metalDark)" stroke="#7faec3" stroke-width="3"/>
+                <path d="M130 287 176 287 167 301 139 301Z" fill="#a9c5d7" opacity=".6"/>
+                <g class="robot-torso"><path d="M119 147Q150 135 183 147L202 174 190 246 178 276 122 276 109 245 101 177Z" fill="url(#torso)" stroke="#c8deeb" stroke-width="3"/>
+                  <path d="M121 166 180 166 190 187 179 224 166 246 135 246 119 221 110 187Z" fill="#203a51" stroke="#537b95" stroke-width="2"/>
+                  <path d="M126 176 174 176 180 190 171 219 132 219 121 190Z" fill="url(#metalDark)" stroke="#85aabf" stroke-width="2"/>
+                  <path d="M135 190 165 190 158 211 142 211Z" fill="url(#cyanGlow)" opacity=".90" filter="url(#glow)"/>
+                  <path d="M140 193 160 193 154 209 146 209Z" fill="#d6fff9" opacity=".75"/>
+                  <path d="M120 240H179" stroke="#8ab2c6" stroke-width="3"/><path d="M130 254H171" stroke="#4ce9dc" stroke-width="2" opacity=".9"/><path d="M130 264H169" stroke="#486f87" stroke-width="2"/>
+                  <circle cx="115" cy="183" r="3" fill="#4cfde3"/><circle cx="185" cy="183" r="3" fill="#4cfde3"/>
+                  <path d="M101 177Q104 165 118 160L129 174 123 197 107 204Z" fill="url(#metal)"/>
+                  <path d="M199 177Q196 165 182 160L172 174 177 197 193 204Z" fill="url(#metal)"/>
+                </g>
+                <g class="robot-arm robot-arm-front">
+                  <rect x="179" y="159" width="35" height="50" rx="14" fill="url(#metal)" stroke="#bad7e5" stroke-width="2"/>
+                  <path d="M184 201 210 201 216 250 190 254Z" fill="url(#metalDark)" stroke="#76a3b7" stroke-width="2"/>
+                  <path d="M194 215 210 215" stroke="#54eadd" stroke-width="3"/><circle cx="198" cy="206" r="10" fill="#1a344c" stroke="#61dbd2" stroke-width="2"/><circle cx="198" cy="206" r="3" fill="#c8fff9"/>
+                  <path d="M189 249 217 246 218 279 202 290 192 277Z" fill="url(#metal)" stroke="#b5d0dc" stroke-width="2"/>
+                  <path d="M195 278 193 297 M203 286 205 302 M212 278 217 294" stroke="#abcbd7" stroke-width="5" stroke-linecap="round"/>
+                </g>
+                <path d="M135 141V154Q151 165 166 154V140Z" fill="url(#metalDark)" stroke="#a4c5d3" stroke-width="2"/>
+                <g class="robot-head"><path d="M115 68Q114 46 133 37H166Q187 46 185 68L183 116Q171 135 151 138Q128 133 117 116Z" fill="url(#metal)" stroke="#d0e5ed" stroke-width="3"/>
+                  <path d="M125 66Q150 54 175 66L176 95Q151 103 124 95Z" fill="url(#visor)" stroke="#7ca9bd" stroke-width="2"/>
+                  <path d="M136 82H164" stroke="#4ffff0" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/><path d="M139 80H161" stroke="#efffff" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M133 109H168L162 119H138Z" fill="#2d4c63" stroke="#87adbd" stroke-width="1.5"/>
+                  <path d="M140 115H159" stroke="#61f7e3" stroke-width="2"/><path d="M130 43 137 37 162 37 171 43" stroke="#f6feff" opacity=".7" stroke-width="3"/>
+                  <rect x="109" y="75" width="10" height="25" rx="4" fill="url(#metalDark)" stroke="#75b2c8"/><rect x="182" y="75" width="10" height="25" rx="4" fill="url(#metalDark)" stroke="#75b2c8"/>
+                  <circle cx="114" cy="87" r="3" fill="#5bffe7"/><circle cx="187" cy="87" r="3" fill="#5bffe7"/>
+                </g>
+              </g>
+            </svg>
+            <div class="robot-glow-circle" aria-hidden="true"></div>
+          </div>
+          <div class="stage-floor" aria-hidden="true"><div class="floor-inner"></div><div class="floor-ring floor-ring-one"></div><div class="floor-ring floor-ring-two"></div></div>
+          <div class="stage-bottom"><div><span class="tiny-led"></span><span>UNIDAD ROBÓTICA <b>SIM-001</b></span></div><div class="stage-bottom-mid"><span class="signal-bars"><i></i><i></i><i></i><i></i><i></i></span> CONEXIÓN SIMULADA</div><div>VISTA <b>FRONTAL / 01</b></div></div>
+        </div>
+        <aside class="controls card" aria-label="Panel de control de la simulación"><div class="panel-top"><div><p class="label-eyebrow">CENTRO DE COMANDO</p><h3>Panel de control</h3></div><span class="control-corner"><svg class="icon"><use href="#ic-target"/></svg></span></div>
+          <p class="panel-description">Ajustá las variables y observá su efecto sobre la operación.</p>
+          <div class="control-list">
+            <div class="slider-block"><div class="slider-head"><label for="speed">Velocidad de movimiento</label><output id="speed-value" for="speed">1,00×</output></div><input type="range" id="speed" min="0.5" max="1.5" step="0.05" value="1"><div class="slider-foot"><span>0,5× · lenta</span><span>1,5× · rápida</span></div></div>
+            <div class="slider-block"><div class="slider-head"><label for="workload">Carga de trabajo</label><output id="workload-value" for="workload">1,00×</output></div><input type="range" id="workload" min="0.5" max="1.5" step="0.05" value="1"><div class="slider-foot"><span>0,5× · ligera</span><span>1,5× · intensa</span></div></div>
+            <div class="slider-block"><div class="slider-head"><label for="efficiency">Eficiencia energética relativa</label><output id="efficiency-value" for="efficiency">1,00×</output></div><input type="range" id="efficiency" min="0.7" max="1.3" step="0.05" value="1"><div class="slider-foot"><span>0,7×</span><span>1,3×</span></div></div>
+            <div class="slider-block slider-block-last"><div class="slider-head"><label for="initial-charge">Batería al reiniciar <span class="info-mini" title="Este valor se aplica al reiniciar, no durante la ejecución">ⓘ</span></label><output id="initial-charge-value" for="initial-charge">100%</output></div><input type="range" id="initial-charge" min="25" max="100" step="5" value="100"><div class="slider-foot"><span>25%</span><span>100%</span></div></div>
+          </div>
+          <div class="transport"><button id="start-btn" class="start-btn" type="button"><svg class="icon"><use href="#ic-play"/></svg><span>Iniciar simulación</span></button><div class="transport-secondary"><button id="pause-btn" type="button" class="ghost-btn"><svg class="icon"><use href="#ic-pause"/></svg> Pausar</button><button id="reset-btn" type="button" class="ghost-btn"><svg class="icon"><use href="#ic-refresh"/></svg> Reiniciar</button></div></div>
+          <div class="run-insight" id="run-insight"><span class="insight-icon">✦</span><p id="insight-text">Consejo: probá aumentar la velocidad y observá cómo cambia la productividad y el consumo.</p></div>
+        </aside>
+      </div>
+      <div class="metrics" aria-live="off">
+        <article class="metric card metric-one"><div class="metric-head"><span>PRODUCTIVIDAD</span><svg class="icon"><use href="#ic-activity"/></svg></div><div class="metric-main"><strong id="m-productivity">30,0</strong><span>tareas/h</span></div><div class="metric-bottom">Producción instantánea <span class="metric-dot"></span></div></article>
+        <article class="metric card"><div class="metric-head"><span>POTENCIA</span><svg class="icon"><use href="#ic-bolt"/></svg></div><div class="metric-main"><strong id="m-power">330</strong><span>watts</span></div><div class="metric-bottom">Consumo instantáneo <span class="metric-dot"></span></div></article>
+        <article class="metric card"><div class="metric-head"><span>BATERÍA</span><svg class="icon"><use href="#ic-battery"/></svg></div><div class="metric-main"><strong id="m-battery">100</strong><span>%</span></div><div class="charge-meter" aria-label="Porcentaje de batería"><div id="charge-fill"></div></div><div class="metric-bottom" id="m-energy">1000 Wh disponibles</div></article>
+        <article class="metric card"><div class="metric-head"><span>AUTONOMÍA</span><svg class="icon"><use href="#ic-clock"/></svg></div><div class="metric-main"><strong id="m-autonomy">3 h 02</strong><span>min</span></div><div class="metric-bottom">Estimación a ritmo actual</div></article>
+        <article class="metric card metric-emphasis"><div class="metric-head"><span>ENERGÍA POR TAREA</span><svg class="icon"><use href="#ic-target"/></svg></div><div class="metric-main"><strong id="m-wh-task">11,00</strong><span>Wh/tarea</span></div><div class="metric-bottom">Menos es mejor <span class="accent-asterisk">✳</span></div></article>
+      </div>
+      <div class="live-strip"><div><span class="little-label">TIEMPO SIMULADO</span><strong id="m-time" class="mono">00:00:00</strong></div><div><span class="little-label">TAREAS ACUMULADAS</span><strong id="m-tasks" class="mono">0,00</strong></div><div><span class="little-label">ACELERACIÓN TEMPORAL</span><strong class="mono">×60</strong></div><div><span class="little-label">ESTADO</span><strong id="m-state">En espera</strong></div></div>
+    </section>
+    <section class="section experiment-section" id="experimentos" aria-labelledby="experiment-title"><div class="section-top"><div><p class="section-eyebrow">02 / TOMÁ DECISIONES</p><h2 id="experiment-title">Tres estrategias. <span>Resultados distintos.</span></h2></div><p class="section-intro-right">Elegí un escenario para aplicar sus parámetros al laboratorio y compararlos.</p></div>
+      <div class="scenario-grid">
+        <button type="button" class="scenario-card" data-preset="production"><span class="scenario-index">01 / RENDIMIENTO</span><span class="scenario-symbol symbol-fast">↗</span><strong>Máxima<br>productividad</strong><span class="scenario-desc">Priorizá la cantidad de tareas por hora y analizá cuánto cuesta energéticamente.</span><span class="scenario-info"><span>67,5 tareas/h</span><span>495 W</span></span><span class="scenario-action">Probar escenario <svg class="icon"><use href="#ic-arrow"/></svg></span></button>
+        <button type="button" class="scenario-card" data-preset="autonomy"><span class="scenario-index">02 / AUTONOMÍA</span><span class="scenario-symbol symbol-energy">◌</span><strong>Menor<br>potencia</strong><span class="scenario-desc">Reducí el consumo instantáneo y descubrí el costo energético por unidad.</span><span class="scenario-info"><span>12,6 tareas/h</span><span>186 W</span></span><span class="scenario-action">Probar escenario <svg class="icon"><use href="#ic-arrow"/></svg></span></button>
+        <button type="button" class="scenario-card selected" data-preset="balanced" aria-pressed="true"><span class="scenario-index">03 / REFERENCIA</span><span class="scenario-symbol symbol-balance">◎</span><strong>Operación<br>equilibrada</strong><span class="scenario-desc">Usá el escenario de referencia para contrastar las otras configuraciones.</span><span class="scenario-info"><span>30,0 tareas/h</span><span>330 W</span></span><span class="scenario-action">Escenario seleccionado <svg class="icon"><use href="#ic-check"/></svg></span></button>
+      </div>
+      <aside class="guided-challenge card" aria-labelledby="challenge-title">
+        <div><p class="label-eyebrow">EXPERIMENTO GUIADO · 5 MINUTOS</p><h3 id="challenge-title">¿Qué estrategia completa más tareas con una batería?</h3><p>Compará los tres escenarios desde el 100% de carga. Anotá productividad, potencia y Wh por tarea. Hacé una predicción y contrastala con el modelo.</p></div>
+        <details><summary>Ver una pista y la respuesta</summary><p>Dividí los 1.000 Wh de la batería por los Wh necesarios para cada tarea. Con los parámetros de cada escenario, el modelo calcula:</p><ul id="challenge-results"></ul><p>La estrategia de máxima productividad también completa más tareas por carga en este ejemplo. La conclusión depende de estos supuestos, no describe un robot comercial.</p></details>
+      </aside>
+      <div class="discovery card"><div class="discovery-top"><span class="discovery-spark">✳</span><span>UN HALLAZGO CONTRAINTUITIVO</span></div><div class="discovery-content"><div><h3>Menos potencia <em>no siempre</em> significa más eficiencia.</h3><p>La estrategia de menor consumo usa menos watts, pero también realiza menos tareas. Observá la energía necesaria para completar <strong>una tarea</strong> en cada estrategia.</p></div><div class="bars-compare" id="scenario-bars" aria-label="Comparación de consumo en Wh por tarea"></div></div><p class="discovery-foot">Los valores provienen del mismo modelo matemático hipotético. Son resultados del ejercicio, no mediciones de robots comerciales.</p></div>
+    </section>
+    <section class="section data-section" id="analisis" aria-labelledby="data-title"><div class="section-top"><div><p class="section-eyebrow">03 / OBSERVÁ LOS DATOS</p><h2 id="data-title">El laboratorio <span>en números.</span></h2></div><div class="data-tools"><p class="section-intro-right">Los gráficos registran los valores calculados durante tu simulación.</p><button type="button" id="download-csv" class="download-btn">↓ Descargar datos CSV</button></div></div>
+      <div class="charts-grid"><article class="chart-card card"><div class="chart-heading"><div><span class="chart-tag chart-tag-mint"></span><h3>Nivel de batería</h3></div><span class="chart-unit">% restante</span></div><svg id="chart-battery" class="line-chart" viewBox="0 0 350 175" role="img" aria-label="Evolución del porcentaje de batería"></svg><div class="chart-bottom"><span>0 min</span><span>Tiempo simulado →</span></div></article>
+        <article class="chart-card card"><div class="chart-heading"><div><span class="chart-tag chart-tag-blue"></span><h3>Tareas acumuladas</h3></div><span class="chart-unit">tareas</span></div><svg id="chart-tasks" class="line-chart" viewBox="0 0 350 175" role="img" aria-label="Evolución de las tareas acumuladas"></svg><div class="chart-bottom"><span>0 min</span><span>Tiempo simulado →</span></div></article>
+        <article class="chart-card card"><div class="chart-heading"><div><span class="chart-tag chart-tag-violet"></span><h3>Potencia eléctrica</h3></div><span class="chart-unit">watts</span></div><svg id="chart-power" class="line-chart" viewBox="0 0 350 175" role="img" aria-label="Evolución de la potencia eléctrica"></svg><div class="chart-bottom"><span>0 min</span><span>Tiempo simulado →</span></div></article></div>
+      <div class="question-card card"><div class="question-heading"><span class="question-icon"><svg class="icon"><use href="#ic-help"/></svg></span><div><p class="label-eyebrow">DESAFÍO PARA ESTUDIANTES</p><h3>Antes de mover el control, ¿qué predicción harías?</h3></div></div><p>Si duplicáramos la velocidad manteniendo los demás parámetros constantes, ¿qué ocurriría con la potencia eléctrica en este modelo?</p><div class="quiz-options"><button type="button" class="quiz-option" data-answer="a">Se duplicaría exactamente.</button><button type="button" class="quiz-option" data-answer="b">Aumentaría, pero no necesariamente al doble.</button><button type="button" class="quiz-option" data-answer="c">Permanecería constante.</button></div><div id="quiz-feedback" class="quiz-feedback" role="status" aria-live="polite" hidden></div></div>
+    </section>
+    <section class="section education-section" id="aprendizaje" aria-labelledby="learning-title"><div class="section-top"><div><p class="section-eyebrow">04 / ENTENDÉ EL MODELO</p><h2 id="learning-title">La matemática <span>detrás del movimiento.</span></h2></div><p class="section-intro-right">Un modelo sencillo para aprender a pensar como analistas de sistemas industriales.</p></div>
+      <div class="formula-grid"><article class="formula card"><div class="formula-icon"><svg class="icon"><use href="#ic-activity"/></svg></div><p>PRODUCTIVIDAD</p><h3>P = 30 × s × w</h3><span>tareas por hora</span><div class="formula-rule"></div><small>Sube cuando aumentan la velocidad (s) o la carga de trabajo (w).</small></article>
+        <article class="formula card"><div class="formula-icon"><svg class="icon"><use href="#ic-bolt"/></svg></div><p>POTENCIA ELÉCTRICA</p><h3>W = (150 + 100s² + 80w) / e</h3><span>watts</span><div class="formula-rule"></div><small>La velocidad tiene un término cuadrático. La eficiencia (e) reduce la potencia.</small></article>
+        <article class="formula card"><div class="formula-icon"><svg class="icon"><use href="#ic-target"/></svg></div><p>ENERGÍA POR TAREA</p><h3>E / tarea = W / P</h3><span>Wh por tarea</span><div class="formula-rule"></div><small>Permite comparar cuánta energía necesita cada estrategia para producir una unidad.</small></article></div>
+      <div class="learning-bottom"><div class="learning-context card"><p class="label-eyebrow">INDUSTRIA Y TECNOLOGÍA</p><h3>¿Por qué estudiar robótica en China?</h3><p>La robótica humanoide conecta avances en inteligencia artificial, sensores, baterías, actuadores y automatización. Empresas chinas como Unitree y UBTECH forman parte de este ecosistema en desarrollo. En la práctica, las capacidades de cada equipo deben verificarse con documentación y ensayos independientes.</p><a href="../#topics" class="context-link">Explorar los materiales del curso <svg class="icon"><use href="#ic-arrow"/></svg></a></div>
+        <div class="learning-warning card"><span class="warning-label">IMPORTANTE · SUPUESTOS</span><h3>Un simulador no es un robot real.</h3><p>Todos los coeficientes, las ecuaciones y la capacidad de batería de 1.000 Wh son <strong>hipotéticos y educativos</strong>. No son especificaciones ni datos experimentales de Unitree, UBTECH u otros fabricantes.</p><div class="warning-separator"></div><p class="small-muted">Reloj acelerado: 1 segundo real = 60 segundos simulados. La carga inicial se aplica al reiniciar. Los cambios de parámetros afectan la operación futura, no alteran el pasado.</p></div></div>
+    </section>
+    <footer class="footer"><div class="footer-top"><div><span class="footer-logo">ROBOT<span>LAB</span></span><p>Aprender haciendo. Experimentar para comprender.</p></div><div class="footer-credit">CHINA TECNOLÓGICA<br>UBA<br><strong>Sergio Gevatschnaider</strong></div></div><div class="footer-lower"><span>Laboratorio educativo independiente · 2026</span><span>Diseñado para GitHub Pages · Sin dependencias externas</span></div></footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+
+</body>
+</html>

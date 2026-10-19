@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 470" role="img" aria-labelledby="title"><title id="title">RobotLab · Humanoid robotics laboratory</title><defs><radialGradient id="preview-bg"><stop stop-color="#164c55"/><stop offset="1" stop-color="#0b1a2b"/></radialGradient><pattern id="preview-grid" width="35" height="35" patternUnits="userSpaceOnUse"><path d="M35 0H0V35" fill="none" stroke="#64d5cf" stroke-opacity=".09"/></pattern></defs><rect width="640" height="470" fill="url(#preview-bg)"/><rect width="640" height="470" fill="url(#preview-grid)"/><g fill="none" stroke="#57dcc8"><circle cx="330" cy="235" r="188" opacity=".12"/><circle cx="330" cy="235" r="154" opacity=".2" stroke-dasharray="3 8"/><ellipse cx="335" cy="428" rx="160" ry="26" opacity=".25"/></g><g font-family="Arial,sans-serif" font-size="11" fill="#83c8c5" letter-spacing="2"><text x="30" y="35">ROBOTLAB / R-01</text><text x="30" y="430">SIM · 001</text><text x="507" y="35">s × w / e</text></g><svg x="195" y="2" width="280" height="440" viewBox="0 0 300 470">
+              <defs>
+                <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e1f3ff"/><stop offset=".35" stop-color="#8faec2"/><stop offset=".7" stop-color="#45687e"/><stop offset="1" stop-color="#1c3247"/></linearGradient>
+                <linearGradient id="metalDark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#67899e"/><stop offset=".4" stop-color="#293f57"/><stop offset="1" stop-color="#13273c"/></linearGradient>
+                <linearGradient id="torso" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#d3eafb"/><stop offset=".28" stop-color="#8aa7bd"/><stop offset=".65" stop-color="#355471"/><stop offset="1" stop-color="#182e46"/></linearGradient>
+                <linearGradient id="visor" x1="0" y1="0" x2="1" y2=".7"><stop stop-color="#15243e"/><stop offset=".5" stop-color="#111928"/><stop offset="1" stop-color="#243b59"/></linearGradient>
+                <linearGradient id="cyanGlow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b0fff8"/><stop offset=".5" stop-color="#4eeedd"/><stop offset="1" stop-color="#228bd7"/></linearGradient>
+                <filter id="glow"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#00dbd5" flood-opacity=".12"/></filter>
+              </defs>
+              <g class="robot-bob" filter="url(#shadow)">
+                <g class="robot-leg robot-leg-back">
+                  <path d="M126 290 Q120 327 119 344 L109 396 Q103 408 117 413 L136 414 Q143 406 141 393 L148 337 L153 297Z" fill="url(#metalDark)" stroke="#7aaac2" stroke-width="2"/>
+                  <path d="M116 331 143 332 139 347 115 347Z" fill="#a9c8d5"/><circle cx="128" cy="342" r="6" fill="#263c51" stroke="#6ca9be" stroke-width="2"/>
+                  <path d="M110 401 139 402 146 425 Q131 433 101 427 L96 416Z" fill="url(#metal)" stroke="#92c1d4" stroke-width="2"/>
+                  <path d="M101 424 144 425" stroke="#57ebd8" stroke-width="2" opacity=".8"/>
+                </g>
+                <g class="robot-leg robot-leg-front">
+                  <path d="M157 290 182 292 Q185 317 185 343 L193 394 Q197 406 185 414 L166 414 Q157 409 159 396 L154 338 148 309Z" fill="url(#metal)" stroke="#8bb5c6" stroke-width="2"/>
+                  <path d="M159 331 186 330 191 347 160 347Z" fill="url(#metalDark)" stroke="#6c9db5" stroke-width="2"/>
+                  <circle cx="175" cy="341" r="8" fill="#213a50" stroke="#78a3b8" stroke-width="3"/><circle cx="175" cy="341" r="3" fill="#53e7d9"/>
+                  <path d="M166 399 193 401 204 424 Q191 435 157 428 L152 419Z" fill="url(#metal)" stroke="#b5cedc" stroke-width="2"/>
+                  <path d="M157 425 200 425" stroke="#57ebd8" stroke-width="2" opacity=".85"/>
+                </g>
+                <g class="robot-arm robot-arm-back">
+                  <rect x="95" y="159" width="35" height="50" rx="14" fill="url(#metalDark)" stroke="#81afc2" stroke-width="2"/>
+                  <path d="M99 200 126 201 122 251 97 252Z" fill="url(#metal)" stroke="#85b1c5" stroke-width="2"/><circle cx="110" cy="205" r="10" fill="#263e54" stroke="#63dece" stroke-width="2"/>
+                  <path d="M98 246 123 246 126 276 112 288 100 276Z" fill="url(#metalDark)"/><path d="M104 276 103 291 M112 283 115 296 M119 275 123 289" stroke="#85bbca" stroke-width="5" stroke-linecap="round"/>
+                </g>
+                <path d="M120 260 184 260 180 305 125 305Z" fill="url(#metalDark)" stroke="#7faec3" stroke-width="3"/>
+                <path d="M130 287 176 287 167 301 139 301Z" fill="#a9c5d7" opacity=".6"/>
+                <g class="robot-torso"><path d="M119 147Q150 135 183 147L202 174 190 246 178 276 122 276 109 245 101 177Z" fill="url(#torso)" stroke="#c8deeb" stroke-width="3"/>
+                  <path d="M121 166 180 166 190 187 179 224 166 246 135 246 119 221 110 187Z" fill="#203a51" stroke="#537b95" stroke-width="2"/>
+                  <path d="M126 176 174 176 180 190 171 219 132 219 121 190Z" fill="url(#metalDark)" stroke="#85aabf" stroke-width="2"/>
+                  <path d="M135 190 165 190 158 211 142 211Z" fill="url(#cyanGlow)" opacity=".90" filter="url(#glow)"/>
+                  <path d="M140 193 160 193 154 209 146 209Z" fill="#d6fff9" opacity=".75"/>
+                  <path d="M120 240H179" stroke="#8ab2c6" stroke-width="3"/><path d="M130 254H171" stroke="#4ce9dc" stroke-width="2" opacity=".9"/><path d="M130 264H169" stroke="#486f87" stroke-width="2"/>
+                  <circle cx="115" cy="183" r="3" fill="#4cfde3"/><circle cx="185" cy="183" r="3" fill="#4cfde3"/>
+                  <path d="M101 177Q104 165 118 160L129 174 123 197 107 204Z" fill="url(#metal)"/>
+                  <path d="M199 177Q196 165 182 160L172 174 177 197 193 204Z" fill="url(#metal)"/>
+                </g>
+                <g class="robot-arm robot-arm-front">
+                  <rect x="179" y="159" width="35" height="50" rx="14" fill="url(#metal)" stroke="#bad7e5" stroke-width="2"/>
+                  <path d="M184 201 210 201 216 250 190 254Z" fill="url(#metalDark)" stroke="#76a3b7" stroke-width="2"/>
+                  <path d="M194 215 210 215" stroke="#54eadd" stroke-width="3"/><circle cx="198" cy="206" r="10" fill="#1a344c" stroke="#61dbd2" stroke-width="2"/><circle cx="198" cy="206" r="3" fill="#c8fff9"/>
+                  <path d="M189 249 217 246 218 279 202 290 192 277Z" fill="url(#metal)" stroke="#b5d0dc" stroke-width="2"/>
+                  <path d="M195 278 193 297 M203 286 205 302 M212 278 217 294" stroke="#abcbd7" stroke-width="5" stroke-linecap="round"/>
+                </g>
+                <path d="M135 141V154Q151 165 166 154V140Z" fill="url(#metalDark)" stroke="#a4c5d3" stroke-width="2"/>
+                <g class="robot-head"><path d="M115 68Q114 46 133 37H166Q187 46 185 68L183 116Q171 135 151 138Q128 133 117 116Z" fill="url(#metal)" stroke="#d0e5ed" stroke-width="3"/>
+                  <path d="M125 66Q150 54 175 66L176 95Q151 103 124 95Z" fill="url(#visor)" stroke="#7ca9bd" stroke-width="2"/>
+                  <path d="M136 82H164" stroke="#4ffff0" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/><path d="M139 80H161" stroke="#efffff" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M133 109H168L162 119H138Z" fill="#2d4c63" stroke="#87adbd" stroke-width="1.5"/>
+                  <path d="M140 115H159" stroke="#61f7e3" stroke-width="2"/><path d="M130 43 137 37 162 37 171 43" stroke="#f6feff" opacity=".7" stroke-width="3"/>
+                  <rect x="109" y="75" width="10" height="25" rx="4" fill="url(#metalDark)" stroke="#75b2c8"/><rect x="182" y="75" width="10" height="25" rx="4" fill="url(#metalDark)" stroke="#75b2c8"/>
+                  <circle cx="114" cy="87" r="3" fill="#5bffe7"/><circle cx="187" cy="87" r="3" fill="#5bffe7"/>
+                </g>
+              </g>
+            </svg></svg>

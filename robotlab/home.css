@@ -1,0 +1,15 @@
+/* The new laboratory stays within its own feature card. */
+.robotlab-feature{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:42px;overflow:hidden;margin:0 0 26px;padding:20px 42px 20px 20px;border:1px solid #315b61;border-radius:22px;color:#edf6fa;background:radial-gradient(ellipse at 5% 50%,#17474b,transparent 58%),#0d202d;box-shadow:0 16px 38px #07192312}
+.robotlab-preview{display:block;width:100%;height:auto;border-radius:15px;border:1px solid #4be4c327;background:#0c1c2b}
+.robotlab-feature .robotlab-kicker{color:#86ead5;font-size:10px;font-weight:800;letter-spacing:.16em;margin:0 0 13px}
+.robotlab-feature h3{margin:0 0 13px;color:#f1faf7;font:500 clamp(1.8rem,3.1vw,2.8rem)/1.09 Georgia,serif;letter-spacing:-.025em}
+.robotlab-feature h3 span{color:#8debd9}
+.robotlab-feature .robotlab-description{margin:0;color:#b3ccd3;font-size:14px;line-height:1.75;max-width:530px}
+.robotlab-chips{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0 24px}
+.robotlab-chips span{border:1px solid #3b5866;background:#16313d99;color:#ccebe7;font-size:10px;font-weight:750;border-radius:6px;padding:5px 8px}
+.robotlab-launch{display:inline-flex;align-items:center;gap:25px;min-height:49px;padding:12px 18px;border-radius:10px;background:#8bead5;color:#082c30;text-decoration:none;font-size:14px;font-weight:800;transition:transform .2s,background .2s}
+.robotlab-launch:hover{background:#a8f6e3;transform:translateY(-2px)}
+.robotlab-launch:focus-visible{outline:3px solid #f1c75c;outline-offset:5px}
+@media(max-width:850px){.robotlab-feature{gap:24px;padding:18px 25px 18px 18px}.robotlab-feature h3{font-size:1.9rem}.robotlab-feature .robotlab-description{font-size:13px}}
+@media(max-width:620px){.robotlab-feature{grid-template-columns:1fr;gap:23px;padding:18px}.robotlab-preview{max-height:290px;object-fit:contain}.robotlab-feature h3{font-size:2rem}.robotlab-chips{margin:17px 0 20px}.robotlab-launch{width:100%;justify-content:space-between}}
+@media(prefers-reduced-motion:reduce){.robotlab-launch{transition:none}}

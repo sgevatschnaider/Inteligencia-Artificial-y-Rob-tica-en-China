@@ -31,6 +31,8 @@ Galería curada para cuatro clases: (1) transformación industrial, (2) IA y hum
 
 ## Simuladores y materiales
 
+**[↗ Abrir RobotLab](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/robotlab/?lang=es)**: laboratorio bilingüe de robótica humanoide. Productividad, energía y autonomía, tres escenarios, experimento guiado y descarga CSV. Modelo educativo hipotético; no utiliza especificaciones de fabricantes.
+
 **[↗ Abrir laboratorio de simulaciones](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/#simulations)**: seis experiencias sobre capital robótico, datos sintéticos, aprendizaje acumulativo y el *data flywheel*, con botones individuales para iniciar cada modelo.
 
 **[↗ Explorar informes y datos](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/#reports)**: robótica industrial, vehículos autónomos, salud e indicadores de 2026.

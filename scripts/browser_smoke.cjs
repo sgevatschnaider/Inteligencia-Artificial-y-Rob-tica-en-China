@@ -7,6 +7,14 @@
 const http=require('node:http'), fs=require('node:fs'), path=require('node:path'), assert=require('node:assert/strict');
 const {chromium}=require('playwright');
 const ROOT=path.resolve(__dirname,'..'),port=51377;
+const robot=require('../robotlab/model.js');
+const baseline=robot.evaluate(robot.PRESETS.balanced);
+assert.equal(baseline.productivity,30);assert.equal(baseline.power,330);assert.equal(baseline.whPerTask,11);
+const firstStep=robot.advance(robot.initialize(),robot.PRESETS.balanced,30);
+const changedStep=robot.advance(firstStep,robot.PRESETS.production,30);
+assert.equal(changedStep.energyWh,587.5);assert.equal(changedStep.tasks,48.75);assert.equal(changedStep.simulatedSeconds,3600);
+const exhausted=robot.advance(robot.initialize(),robot.PRESETS.balanced,1000);
+assert.equal(exhausted.energyWh,0);assert.equal(exhausted.depleted,true);assert(Math.abs(exhausted.tasks-1000/11)<1e-8,'Battery cutoff should preserve energy per task');
 const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.json':'application/json','.md':'text/markdown','.mp4':'video/mp4','.webp':'image/webp'};
 const server=http.createServer((req,res)=>{
   let pathname;try{pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname)}catch{res.writeHead(400).end();return;}
@@ -90,6 +98,10 @@ try{
  const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
  let introRequests=0;page.on('request',request=>{if(request.url().endsWith('/assets/intro/china-tecnologica.mp4'))introRequests++;});
  await page.goto('http://127.0.0.1:'+port+'/',{waitUntil:'domcontentloaded'});
+ assert.equal(await page.locator('#robotlab-feature').count(),1,'RobotLab feature card missing');
+ await page.locator('.robotlab-preview').scrollIntoViewIfNeeded();
+ await page.waitForFunction(()=>{const img=document.querySelector('.robotlab-preview');return img.complete&&img.naturalWidth>0;});
+ assert.equal(await page.locator('.robotlab-preview').evaluate(img=>img.complete&&img.naturalWidth>0),true,'RobotLab preview failed to render');
  assert.equal(introRequests,0,'Intro video should not download before a visitor clicks');
  assert.equal(await page.locator('#intro-video').isVisible(),false,'Intro should show its poster initially');
  const heroCopy=await page.locator('.hero-grid > div').first().boundingBox(),heroMedia=await page.locator('.hero-media').boundingBox();
@@ -106,6 +118,7 @@ try{
  assert.equal(await page.locator('#videos .videolab-card').count(),4,'Homepage video previews missing');
  for(const lang of ['es','en']){
   await page.locator('#lang-'+lang).click();
+  assert((await page.locator('[data-robotlab-launch]').getAttribute('href')).endsWith('?lang='+lang),'RobotLab link should carry the selected language');
   await page.locator('[data-home-video]').first().click();
   assert.equal(await page.locator('#home-video-player[open]').count(),1,'Homepage video player did not open');
   assert((await page.locator('#home-video-title').innerText()).includes(lang==='es'?'fabrican':'building'),'Homepage player title not translated');
@@ -159,6 +172,62 @@ try{
  if(videoErrors.length)throw Error('VideoLab JS errors: '+videoErrors.join(' | '));
  await videoPage.close();
  console.log('PASS VideoLab: 11 videos, four filters, search, ES/EN, evidence guide, modal and responsive layout.');
+ // RobotLab: model conservation, real playback, pause, language changes and exported data.
+ const lab=await context.newPage(),labErrors=[];lab.on('pageerror',e=>labErrors.push(e.message));
+ const labResponse=await lab.goto('http://127.0.0.1:'+port+'/robotlab/?lang=es',{waitUntil:'load'});
+ assert.equal(labResponse.status(),200);
+ assert.equal(await lab.locator('html').getAttribute('lang'),'es');
+ assert(!(await lab.locator('body').innerText()).includes('Instituto Confucio'),'Removed affiliation remains visible');
+ assert.equal(await lab.locator('#m-productivity').innerText(),'30,0');
+ await lab.locator('#speed').focus();await lab.keyboard.press('ArrowRight');
+ assert.equal(await lab.locator('#m-productivity').innerText(),'31,5','Speed slider did not update productivity');
+ await lab.locator('[data-preset="production"]').click();
+ assert.equal(await lab.locator('#m-productivity').innerText(),'67,5');
+ assert.equal(await lab.locator('#m-power').innerText(),'495');
+ await lab.locator('#start-btn').click();
+ await lab.waitForFunction(()=>window.__robotLabDiagnostics.snapshot().time>60);
+ await lab.locator('#pause-btn').click();
+ const paused=await lab.evaluate(()=>window.__robotLabDiagnostics.snapshot());
+ await lab.waitForTimeout(120);
+ assert.deepEqual(await lab.evaluate(()=>window.__robotLabDiagnostics.snapshot()),paused,'Paused simulation continued advancing');
+ await lab.locator('#set-en').click();
+ assert.equal(await lab.locator('#m-state').innerText(),'Paused');
+ assert.equal(await lab.locator('#start-btn span').innerText(),'Resume simulation');
+ assert.equal(await lab.locator('#m-productivity').innerText(),'67.5');
+ assert.deepEqual(await lab.evaluate(()=>window.__robotLabDiagnostics.snapshot()),paused,'Changing language altered the simulation');
+ assert((await lab.locator('#main-title').innerText()).includes('experimentation'));
+ await lab.locator('[data-answer="b"]').click();
+ assert((await lab.locator('#quiz-feedback').innerText()).startsWith('Correct!'));
+ await lab.locator('.guided-challenge summary').click();
+ assert.equal(await lab.locator('#challenge-results li').count(),3);
+ assert((await lab.locator('#challenge-results').innerText()).includes('136.4'),'Guided comparison differs from the model');
+ await lab.locator('[data-preset="autonomy"]').click();
+ assert((await lab.locator('[data-preset="autonomy"] .scenario-action').innerText()).includes('Selected scenario'));
+ await lab.locator('#initial-charge').focus();await lab.keyboard.press('Home');
+ await lab.locator('#reset-btn').click();
+ assert.equal(await lab.locator('#m-battery').innerText(),'25');
+ assert.equal((await lab.evaluate(()=>window.__robotLabDiagnostics.snapshot())).energy,250);
+ await lab.locator('#start-btn').click();
+ await lab.waitForFunction(()=>window.__robotLabDiagnostics.snapshot().time>60);
+ await lab.locator('#pause-btn').click();
+ const downloadPromise=lab.waitForEvent('download');await lab.locator('#download-csv').click();
+ const download=await downloadPromise,csv=fs.readFileSync(await download.path(),'utf8').replace(/^\uFEFF/,'').trim().split(/\r?\n/).map(line=>line.split(','));
+ assert.equal(download.suggestedFilename(),'robotlab_datos_simulados.csv');
+ assert.equal(csv[0].length,10);assert(csv.length>=3,'CSV should contain simulation samples');
+ assert(Number(csv.at(-1)[0])>0&&Number(csv.at(-1)[2])<250,'CSV did not contain current simulated data');
+ for(const id of ['chart-battery','chart-tasks','chart-power'])assert(await lab.locator('#'+id+' path').count()>=2,'RobotLab chart missing: '+id);
+ await lab.locator('#set-es').click();
+ assert((await lab.locator('#quiz-feedback').innerText()).startsWith('¡Correcto!'));
+ assert.equal(await lab.locator('#m-state').innerText(),'En pausa');
+ await lab.setViewportSize({width:390,height:844});
+ assert(await lab.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),'RobotLab overflows on mobile');
+ assert(await lab.locator('.robot-svg').isVisible(),'Robot is missing on mobile');
+ await lab.locator('.return-link').click();
+ assert(lab.url().endsWith('/#simulations'),'RobotLab return link did not go back to simulators');
+ assert.equal(await lab.locator('.sim-card').count(),6);
+ if(labErrors.length)throw Error('RobotLab JavaScript errors: '+labErrors.join(' | '));
+ await lab.close();
+ console.log('PASS RobotLab: energy conservation, cutoff, controls, pause, ES/EN, guided experiment, charts, CSV, mobile and return navigation.');
 }finally{await context.close();await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 run().catch(e=>{console.error('BROWSER SMOKE FAILED:',e.stack||e);server.close();process.exitCode=1;});

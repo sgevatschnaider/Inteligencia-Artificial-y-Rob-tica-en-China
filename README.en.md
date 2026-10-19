@@ -25,6 +25,8 @@ The viewer includes a slide index, speaker notes, and per-slide sources. **[Open
 
 ## Simulators and materials
 
+**[↗ Open RobotLab](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/robotlab/?lang=en)**: bilingual humanoid robotics laboratory. Productivity, energy and battery life, three scenarios, a guided experiment and CSV export. A hypothetical educational model, not manufacturer specifications.
+
 **[↗ Open the interactive simulations](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/#simulations)**: six experiences exploring robotic capital, synthetic data, cumulative learning, and the data flywheel, with individual launch controls.
 
 **[↗ Browse reports and data](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/#reports)**: industrial robotics, autonomous vehicles, healthcare, and the 2026 indicators.
