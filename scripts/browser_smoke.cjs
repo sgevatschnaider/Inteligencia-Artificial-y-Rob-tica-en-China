@@ -96,6 +96,39 @@ try{
  if(errors.length)throw Error('Browser errors in homepage or research reader: '+errors.join(' | '));
  await page.close();
  console.log('PASS home: 6 simulations, 5 reports and English research reader.');
+ // VideoLab regression: gallery, bilingual labels, filters, click-to-load playback and mobile layout.
+ const videoPage=await context.newPage(),videoErrors=[];
+ videoPage.on('pageerror',e=>videoErrors.push(e.message));
+ const videoResponse=await videoPage.goto('http://127.0.0.1:'+port+'/videolab/',{waitUntil:'domcontentloaded'});
+ assert.equal(videoResponse.status(),200,'VideoLab route missing');
+ assert.equal(await videoPage.locator('.video-card').count(),11,'VideoLab should show 11 curated resources');
+ for(const [classNo,count] of [['1',3],['2',3],['3',2],['4',3]]){
+  await videoPage.locator('[data-lesson="'+classNo+'"]').click();
+  assert.equal(await videoPage.locator('.video-card').count(),count,'Wrong video count for lesson '+classNo);
+ }
+ await videoPage.locator('[data-lesson="all"]').click();
+ await videoPage.locator('#search').fill('robotaxi');
+ assert(await videoPage.locator('.video-card').count()>=1,'VideoLab search is not functional');
+ await videoPage.locator('#search').fill('');
+ await videoPage.locator('#set-en').click();
+ assert.equal(await videoPage.locator('html').getAttribute('lang'),'en','English language not applied');
+ assert.equal(await videoPage.locator('#set-en').getAttribute('aria-pressed'),'true');
+ await videoPage.locator('#set-es').click();
+ await videoPage.locator('.video-card').first().locator('.learn-toggle').click();
+ assert.equal(await videoPage.locator('.video-card').first().locator('.pedagogy').isVisible(),true,'Teaching guide did not expand');
+ await videoPage.locator('.video-card').first().locator('.watch').click();
+ assert.equal(await videoPage.locator('#player-modal[open]').count(),1,'Click-to-load player did not open');
+ assert((await videoPage.locator('#player-area iframe').getAttribute('src')).includes('youtube-nocookie.com/embed/'),'Wrong video embed');
+ await videoPage.locator('#close-modal').click();
+ assert.equal(await videoPage.locator('#player-area iframe').count(),0,'Player should unload on close');
+ const external=videoPage.locator('#small-manufacturers a.watch');
+ assert.equal(await external.getAttribute('target'),'_blank','External video must open in a new tab');
+ await videoPage.setViewportSize({width:390,height:844});
+ assert(await videoPage.locator('h1').isVisible(),'Mobile hero missing');
+ assert(await videoPage.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+2),'Mobile layout overflows horizontally');
+ if(videoErrors.length)throw Error('VideoLab JS errors: '+videoErrors.join(' | '));
+ await videoPage.close();
+ console.log('PASS VideoLab: 11 videos, four filters, search, ES/EN, evidence guide, modal and responsive layout.');
 }finally{await context.close();await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 run().catch(e=>{console.error('BROWSER SMOKE FAILED:',e.stack||e);server.close();process.exitCode=1;});

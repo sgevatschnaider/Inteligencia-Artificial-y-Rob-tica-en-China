@@ -10,6 +10,12 @@ const docs=[
   ['cronologia','timeline'],
   ['fuentes','sources']
 ];
+assert(home.includes('id="videos"')&&home.includes('href="videolab/"'),'Homepage VideoLab integration missing');
+for(const pathName of ['videolab/index.html','videolab/styles.css','videolab/catalog.js','videolab/app.js']){
+ assert(fs.existsSync(path.join(root,pathName)),'Missing VideoLab file: '+pathName);
+}
+const videoPage=read('videolab/index.html');
+assert(videoPage.includes('id="video-grid"')&&videoPage.includes('id="player-modal"'),'VideoLab gallery/player markup missing');
 assert(home.includes('id="presentation"'),'Missing featured presentation');
 assert(home.includes('id="simulations"'),'Missing simulations section');
 assert(home.includes('id="reports"'),'Missing reports section');
