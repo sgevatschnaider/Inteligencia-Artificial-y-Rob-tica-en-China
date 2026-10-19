@@ -98,6 +98,7 @@ try{
   assert((await page.locator('#home-video-title').innerText()).includes(lang==='es'?'fabrican':'building'),'Homepage player title not translated');
   assert((await page.locator('#home-video-source').getAttribute('href')).includes('watch?v=ub2gWviKZpk'),'Original video link missing');
   await page.keyboard.press('Escape');
+  await page.locator('#home-video-screen iframe').waitFor({state:'detached'});
   assert.equal(await page.locator('#home-video-screen iframe').count(),0,'Homepage player did not stop on close');
  }
  await page.setViewportSize({width:390,height:844});

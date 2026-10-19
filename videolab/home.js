@@ -37,6 +37,8 @@
     screen.replaceChildren();
     if (trigger) trigger.focus();
   });
+  // Escape fires cancel before the asynchronous close event: stop playback immediately.
+  dialog.addEventListener('cancel', () => screen.replaceChildren());
   document.querySelectorAll('.videolab-poster img').forEach(img => {
     const hide = () => { img.hidden = true; };
     img.addEventListener('error', hide, { once: true });
