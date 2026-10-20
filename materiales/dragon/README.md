@@ -18,7 +18,7 @@ Módulo de diez diapositivas. Corte documental: 20 de octubre de 2026.
 
 `slides.json` contiene el orden, la transcripción del texto visible, el esquema conceptual, las notas docentes, las fuentes por diapositiva y el registro de referencias. El PowerPoint conserva textos, fechas y comparaciones como objetos editables. Los fondos cinematográficos son ilustraciones conceptuales generadas y recompuestas con IA y no constituyen fotografías documentales, mapas ni evidencia de resultados económicos.
 
-El carácter de portada es **龙**, Unicode **U+9F99**, chino simplificado, pronunciado *lóng*. La forma tradicional es **龍**, U+9F8D. La portada usa texto tipográfico editable en lugar de un carácter dibujado por IA.
+El carácter de portada es **龙**, Unicode **U+9F99**, chino simplificado, pronunciado *lóng*. La forma tradicional es **龍**, U+9F8D. La portada usa texto tipográfico editable en lugar de un carácter dibujado por IA. El visor y la tarjeta incorporan un subconjunto local de Noto Sans SC para representar los sinogramas aunque el sistema no tenga una fuente china instalada. La licencia de la fuente se conserva en `fonts/`.
 
 La selección regulatoria distingue las fechas de aprobación, publicación y vigencia. Las notas delimitan los ámbitos de aplicación y separan prioridades políticas, compromisos contractuales, resultados e interpretación docente. El XV Plan se contrastó con el documento oficial de la NDRC de marzo de 2026, capítulos 12–14. No se presentan los objetivos del plan como resultados alcanzados.
 

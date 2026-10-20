@@ -2,14 +2,14 @@
 const http=require('node:http'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {chromium}=require('playwright');
 const root=path.resolve(__dirname,'..');
-const types={'.html':'text/html;charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.pdf':'application/pdf','.pptx':'application/vnd.openxmlformats-officedocument.presentationml.presentation'};
+const types={'.html':'text/html;charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.pdf':'application/pdf','.woff':'font/woff','.pptx':'application/vnd.openxmlformats-officedocument.presentationml.presentation'};
 const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(p!==root&&!p.startsWith(root+path.sep))return res.writeHead(403).end();if(fs.existsSync(p)&&fs.statSync(p).isDirectory())p=path.join(p,'index.html');if(!fs.existsSync(p))return res.writeHead(404).end();res.writeHead(200,{'Content-Type':types[path.extname(p)]||'application/octet-stream'});fs.createReadStream(p).pipe(res);});
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;
 let browser;try{try{browser=await chromium.launch({channel:'chrome',headless:true,args:['--no-sandbox']});}catch{browser=await chromium.launch({headless:true,args:['--no-sandbox']});}
 const errors=[];
 for(const viewport of [{width:1440,height:1000},{width:768,height:1024},{width:390,height:844}]){
  const page=await browser.newPage({viewport});page.on('pageerror',e=>errors.push(e.message));
- await page.goto(base+'/materiales/dragon/?lang=es#1');await page.waitForSelector('[data-page="10"]');
+ await page.goto(base+'/materiales/dragon/?lang=es#1');await page.waitForSelector('[data-page="10"]');await page.evaluate(()=>document.fonts.ready);assert(await page.evaluate(()=>document.fonts.check('30px DragonHan','龙')));
  if(process.env.DRAGON_SCREENSHOT_DIR){fs.mkdirSync(process.env.DRAGON_SCREENSHOT_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.DRAGON_SCREENSHOT_DIR,'cover-'+viewport.width+'.png'),fullPage:true});}
  assert.equal(await page.locator('[data-page]').count(),10);assert.equal(await page.locator('#slide-image').evaluate(im=>im.complete&&im.naturalWidth>0),true);
  assert(await page.locator('#previous').isDisabled());await page.locator('#next').click();assert.equal(await page.locator('#page').inputValue(),'2');

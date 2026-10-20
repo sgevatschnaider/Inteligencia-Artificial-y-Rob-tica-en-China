@@ -1,0 +1,5 @@
+© 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.
+
+Subset of Noto Sans SC, limited to characters used in this teaching module.
+Original source: https://github.com/notofonts/noto-cjk
+License: SIL Open Font License 1.1, included in LICENSE.txt.
