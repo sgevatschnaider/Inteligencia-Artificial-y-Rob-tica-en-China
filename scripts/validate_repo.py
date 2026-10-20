@@ -166,6 +166,20 @@ def main() -> int:
                         ElementTree.parse(image_file)
                     except ElementTree.ParseError as exc:
                         errors.append(f"Invalid SVG slide: {directory}/{slide['image']}: {exc}")
+    dragon = ROOT / "materiales/dragon"
+    for name in ("index.html", "viewer.js", "viewer.css", "slides.json", "fuentes.html", "presentacion.pdf", "presentacion.pptx"):
+        if not (dragon / name).is_file():
+            errors.append(f"Dragon module is missing: {name}")
+    if (dragon / "slides.json").is_file():
+        dragon_data = json.loads((dragon / "slides.json").read_text(encoding="utf-8"))
+        dragon_slides = dragon_data["slides"]
+        if [s["number"] for s in dragon_slides] != list(range(1, 11)):
+            errors.append("Expected 10 Dragon slides in order")
+        for slide in dragon_slides:
+            if not (dragon / slide["image"]).is_file():
+                errors.append(f"Missing Dragon slide image: {slide['image']}")
+            if not slide.get("notes") or not slide.get("source_ids"):
+                errors.append(f"Dragon slide {slide['number']} lacks notes or sources")
     if errors:
         print("Repository validation failed:")
         for error in errors:

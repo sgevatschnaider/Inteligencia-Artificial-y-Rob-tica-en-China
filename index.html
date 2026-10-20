@@ -160,6 +160,9 @@
   <link rel="stylesheet" href="robotlab/home.css">
   <link rel="stylesheet" href="assets/intro/intro.css">
   <script src="assets/intro/intro.js" defer></script>
+<style>
+.dragon-feature{margin-bottom:36px;background:#081b29;color:#f5f0e5;border-color:#263b48}.dragon-feature .eyebrow{color:#e4b86d}.dragon-feature h2{color:#f0ce91}.dragon-feature .feature-copy p{color:#b9c8ce}.dragon-feature .feature-copy .dragon-subtitle{color:#f2e5cc;font-size:1.08rem}.dragon-feature .feature-copy .dragon-attribution{font-size:12px;line-height:1.5;color:#ddc79e}.dragon-feature .feature-copy .dragon-language{font-size:11px;color:#a7bac3;margin-bottom:0}.dragon-feature .open-presentation{background:#aa7732}.dragon-feature .open-presentation:hover{background:#8d5c24}.dragon-feature .file-action{background:#122b3a;color:#f1d6a8;border-color:#3f5056}.dragon-feature .file-action:hover{background:#213c4b}.dragon-feature .lesson-cover img{box-shadow:0 8px 24px #0005}
+</style>
 </head>
 <body data-language="es">
   <header class="topbar">
@@ -228,7 +231,19 @@
       <div class="stat"><span class="stat-value">55%</span><span class="stat-label es">proveedores chinos en su mercado</span><span class="stat-label en">Chinese suppliers in their market</span><small class="es">China, 2025 · IFR 2026</small><small class="en">China, 2025 · IFR 2026</small></div>
     </div>
 
-    <section id="presentation"><div class="wrap lesson-feature">
+    <section id="presentation">
+    <div class="wrap lesson-feature dragon-feature" id="dragon">
+      <a class="lesson-cover" data-dragon-link href="materiales/dragon/" aria-label="Abrir El dragón, material en español"><img src="materiales/dragon/slides/slide-01.webp" alt="El dragón — 龙: el Estado estratégico y la transformación tecnológica de China" width="1920" height="1080" loading="lazy"></a>
+      <div class="feature-copy"><div class="eyebrow"><span class="es">Colección académica · Módulo 01 · 10 diapositivas</span><span class="en">Academic collection · Module 01 · 10 slides</span></div>
+        <h2 class="es">El dragón — <span lang="zh-Hans">龙</span></h2><h2 class="en">The dragon — <span lang="zh-Hans">龙</span></h2>
+        <p class="es dragon-subtitle">El Estado estratégico y la transformación tecnológica de China.</p><p class="en dragon-subtitle">The strategic state and China's technological transformation.</p>
+        <p class="es">Planificación, política industrial, coordinación institucional y construcción de capacidades tecnológicas.</p><p class="en">Planning, industrial policy, institutional coordination and technological capacity building.</p>
+        <p class="dragon-attribution" lang="es">Material elaborado por el profesor Sergio Gevatschnaider</p>
+        <div class="feature-actions"><a class="open-presentation" data-dragon-link href="materiales/dragon/"><span class="play-icon" aria-hidden="true">▶</span><span class="es">Abrir visor</span><span class="en">Open slide viewer</span><span aria-hidden="true">↗</span></a><a class="file-action" href="materiales/dragon/presentacion.pdf" target="_blank" rel="noopener"><span class="es">Ver PDF</span><span class="en">View PDF</span> ↗</a><a class="file-action" href="materiales/dragon/presentacion.pptx" download><span class="es">Descargar PowerPoint</span><span class="en">Download PowerPoint</span> ↓</a></div>
+        <p class="dragon-language es">Contenido en español · Notas docentes y fuentes originales</p><p class="dragon-language en">Spanish content · Teaching notes and original sources · English viewer interface</p>
+      </div>
+    </div>
+    <div class="wrap lesson-feature" id="transformacion-industrial">
       <a class="lesson-cover" data-presentation-link href="materiales/transformacion-industrial/" aria-label="Abrir visor de presentación"><img data-presentation-cover src="materiales/transformacion-industrial/slides/slide-01.webp" alt="China tecnológica: transformación industrial" width="1600" height="900" loading="lazy"></a>
       <div class="feature-copy"><div class="eyebrow"><span class="es">Presentación destacada · 47 diapositivas</span><span class="en">Featured presentation · 47 slides</span></div>
         <h2 class="es">China tecnológica:<br> transformación industrial</h2><h2 class="en">Technological China:<br> Industrial Transformation</h2>
@@ -342,6 +357,7 @@
       const enButton = document.getElementById('lang-en');
       const setLanguage = (language) => {
         body.dataset.language = language;
+        document.querySelectorAll('[data-dragon-link]').forEach(a=>{a.href='materiales/dragon/?lang='+language;a.setAttribute('aria-label',language==='en'?'Open The dragon, Spanish content':'Abrir El dragón, contenido en español');});
         document.querySelectorAll('[data-robotlab-launch]').forEach(a=>{a.href='robotlab/?lang='+language;});
         document.documentElement.lang = language;
         const presentationPath='materiales/transformacion-industrial/'+(language==='en'?'en/':'');
