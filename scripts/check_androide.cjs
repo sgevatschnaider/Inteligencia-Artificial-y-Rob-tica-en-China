@@ -146,8 +146,8 @@ async function capture(page, name, locator) {
       await page.waitForFunction(() => { const im = document.querySelector('#androide img'); return im.complete && im.naturalWidth > 0; });
       await page.evaluate(() => document.fonts.ready);
       await capture(page, 'home-androide-' + viewport.width, page.locator('#androide'));
-      const order = await page.evaluate(() => ['intro-video','dragon','androide','transformacion-industrial'].map(id => document.getElementById(id).getBoundingClientRect().top));
-      assert(order.every((value, index) => index === 0 || value > order[index - 1]), 'The academic collection order changed');
+      const order = await page.evaluate(() => [document.querySelector('.hero-media'), ...['dragon','androide','transformacion-industrial'].map(id => document.getElementById(id))].map(element => element.getBoundingClientRect().top + scrollY));
+      assert(order.every((value, index) => index === 0 || value > order[index - 1]), 'The academic collection order changed: ' + order.join(', '));
       assert.equal(await page.locator('#androide .androide-attribution').textContent(), 'Material elaborado por el profesor Sergio Gevatschnaider');
       assert.equal(await page.locator('a[href*="materiales/infraestructura"]').count(), 0, 'The future module must not have active links');
       await page.locator('#lang-en').click();
