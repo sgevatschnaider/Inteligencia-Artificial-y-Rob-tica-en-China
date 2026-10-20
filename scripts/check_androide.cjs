@@ -149,7 +149,7 @@ async function capture(page, name, locator) {
       const order = await page.evaluate(() => [document.querySelector('.hero-media'), ...['dragon','androide','transformacion-industrial'].map(id => document.getElementById(id))].map(element => element.getBoundingClientRect().top + scrollY));
       assert(order.every((value, index) => index === 0 || value > order[index - 1]), 'The academic collection order changed: ' + order.join(', '));
       assert.equal(await page.locator('#androide .androide-attribution').textContent(), 'Material elaborado por el profesor Sergio Gevatschnaider');
-      assert.equal(await page.locator('a[href*="materiales/infraestructura"]').count(), 0, 'The future module must not have active links');
+      assert((await page.locator('a[href*="materiales/infraestructura"]').count()) >= 3, 'The third module must be linked after the Android');
       await page.locator('#lang-en').click();
       assert((await page.locator('[data-androide-link]').first().getAttribute('href')).includes('lang=en'));
       assert((await page.locator('#androide .androide-language.en').innerText()).includes('Spanish content'));

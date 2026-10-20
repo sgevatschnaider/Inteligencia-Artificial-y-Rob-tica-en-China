@@ -15,8 +15,9 @@ Las presentaciones y sus descargas **PDF y PowerPoint** ya están integradas en 
 | **[China tecnológica: transformación industrial](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#transformacion-industrial)** | 47 diapositivas en castellano; también existe una [versión completa en inglés](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#transformacion-industrial). |
 | **[El dragón — 龙](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#dragon)** | 10 diapositivas sobre el Estado estratégico y la transformación tecnológica. Contenido en castellano; visor también con interfaz en inglés. |
 | **[El androide — 人形机器人](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#androide)** | 24 diapositivas sobre empresas tecnológicas e inteligencia artificial en China. Contenido en castellano; visor con interfaz bilingüe. |
+| **[La infraestructura — 基础设施](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#infraestructura)** | 32 diapositivas sobre ciencia, talento, universidades, energía, cómputo y capacidad industrial. Contenido en castellano; interfaz del visor también en inglés. |
 
-**Importante:** disponer de una interfaz en inglés no significa que las diapositivas de *El dragón* o *El androide* estén traducidas.
+**Importante:** disponer de una interfaz en inglés no significa que las diapositivas de *El dragón*, *El androide* o *La infraestructura* estén traducidas.
 
 ## Biblioteca temática
 

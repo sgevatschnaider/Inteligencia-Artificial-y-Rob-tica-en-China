@@ -165,6 +165,22 @@
 
 @font-face{font-family:AndroideHan;src:url('materiales/androide/fonts/androide-han.woff') format('woff');font-display:swap;unicode-range:U+2E80-9FFF,U+F900-FAFF}.androide-feature [lang="zh-Hans"]{font-family:AndroideHan,'Noto Sans SC',sans-serif;font-size:.68em;letter-spacing:.01em;display:inline-block}.androide-feature{margin-bottom:36px;background:#071d2b;color:#eaf6fa;border-color:#284957}.androide-feature .eyebrow{color:#64d4e7}.androide-feature h2{color:#e1f2f8}.androide-feature .feature-copy p{color:#b7ced8}.androide-feature .feature-copy .androide-subtitle{color:#e1f2f8;font-size:1.08rem}.androide-feature .feature-copy .androide-attribution{font-size:12px;line-height:1.5;color:#b4dae4}.androide-feature .feature-copy .androide-language{font-size:11px;color:#9fc4d3;margin-bottom:0}.androide-feature .open-presentation{background:#087e94}.androide-feature .open-presentation:hover{background:#05677c}.androide-feature .file-action{background:#102c3a;color:#c2eff7;border-color:#3d5967}.androide-feature .file-action:hover{background:#1b3e4e}.androide-feature .lesson-cover img{box-shadow:0 8px 24px #0005}
 </style>
+<style>
+@font-face{font-family:InfraCJK;src:url('materiales/androide/fonts/androide-han.woff') format('woff');font-display:swap;unicode-range:U+2E80-9FFF,U+F900-FAFF}
+.infraestructura-feature{margin-bottom:36px;background:#0a2430;color:#f6f0e7;border-color:#305366}
+.infraestructura-feature h2{color:#f3d38a}
+.infraestructura-feature .eyebrow{color:#e0b969}
+.infraestructura-feature .feature-copy p{color:#d1e0e3}
+.infraestructura-feature .infraestructura-attribution{font-weight:750;color:#f3d38a}
+.infraestructura-feature .infraestructura-language{font-size:.85rem;color:#bfd1d5}
+.infraestructura-feature .open-presentation{background:#bb8950;color:#061d2a;border-color:#d7af72}
+.infraestructura-feature .open-presentation:hover{background:#ebc784;color:#071d2b}
+.infraestructura-feature .file-action{background:#142f3d;color:#f3d79f;border-color:#41616d}
+.infraestructura-feature .file-action:hover{background:#254452}
+.infraestructura-feature [lang="zh-Hans"]{font-family:InfraCJK,'Noto Sans SC','Microsoft YaHei',sans-serif;letter-spacing:.01em}
+.infraestructura-feature .lesson-cover img{box-shadow:0 8px 24px #0004}
+@media(max-width:700px){.infraestructura-feature{padding:18px}.infraestructura-feature .feature-actions{gap:8px}.infraestructura-feature .file-action,.infraestructura-feature .open-presentation{min-height:45px;padding:10px 12px;font-size:12px}}
+</style>
 </head>
 <body data-language="es">
   <header class="topbar">
@@ -256,9 +272,25 @@
         <p class="androide-language es">Contenido en español · Notas docentes y fuentes originales</p><p class="androide-language en">Spanish content · Teaching notes and original sources · English viewer interface</p>
       </div>
     </div>
+        <div class="wrap lesson-feature infraestructura-feature" id="infraestructura">
+      <a class="lesson-cover" data-infraestructura-link href="materiales/infraestructura/?lang=es" aria-label="Abrir La infraestructura, contenido en español"><img src="materiales/infraestructura/slides/slide-01.webp" alt="La infraestructura — 基础设施: capital humano, ciencia, energía y capacidad industrial de China" width="1920" height="1080" loading="lazy"></a>
+      <div class="feature-copy">
+        <div class="eyebrow"><span class="es">Colección académica · Módulo 03 · 32 diapositivas</span><span class="en">Academic collection · Module 03 · 32 slides</span></div>
+        <h2 class="es">La infraestructura — <span lang="zh-Hans">基础设施</span></h2><h2 class="en">The infrastructure — <span lang="zh-Hans">基础设施</span></h2>
+        <p class="es infraestructura-subtitle">La base material, científica y humana de la revolución tecnológica china.</p><p class="en infraestructura-subtitle">The material, scientific and human foundations of China's technological transformation.</p>
+        <p class="es">Universidades, capital humano, investigación, semiconductores, energía, cómputo, fábricas y redes de proveedores: capacidades necesarias para innovar y producir a escala.</p><p class="en">Universities, scientific talent, research, semiconductors, energy, compute, factories and supplier networks: foundations for innovation and production at scale.</p>
+        <p class="infraestructura-attribution" lang="es">Material elaborado por el profesor Sergio Gevatschnaider</p>
+        <div class="feature-actions">
+          <a class="open-presentation" data-infraestructura-link href="materiales/infraestructura/?lang=es"><span class="play-icon" aria-hidden="true">▶</span><span class="es">Abrir visor</span><span class="en">Open slide viewer</span><span aria-hidden="true">↗</span></a>
+          <a class="file-action" href="materiales/infraestructura/presentacion.pdf" target="_blank" rel="noopener"><span class="es">Ver PDF</span><span class="en">View PDF</span> ↗</a>
+          <a class="file-action" href="materiales/infraestructura/presentacion.pptx" download><span class="es">Descargar PowerPoint</span><span class="en">Download PowerPoint</span> ↓</a>
+        </div>
+        <p class="infraestructura-language es">Contenido en español · Notas docentes y fuentes</p><p class="infraestructura-language en">Spanish-language slides and notes · English viewer interface only</p>
+      </div>
+    </div>
     <div class="wrap lesson-feature" id="transformacion-industrial">
       <a class="lesson-cover" data-presentation-link href="materiales/transformacion-industrial/" aria-label="Abrir visor de presentación"><img data-presentation-cover src="materiales/transformacion-industrial/slides/slide-01.webp" alt="China tecnológica: transformación industrial" width="1600" height="900" loading="lazy"></a>
-      <div class="feature-copy"><div class="eyebrow"><span class="es">Presentación destacada · 47 diapositivas</span><span class="en">Featured presentation · 47 slides</span></div>
+      <div class="feature-copy"><div class="eyebrow"><span class="es">Colección académica · Módulo 04 · 47 diapositivas por idioma</span><span class="en">Academic collection · Module 04 · 47 slides per language</span></div>
         <h2 class="es">China tecnológica:<br> transformación industrial</h2><h2 class="en">Technological China:<br> Industrial Transformation</h2>
         <p class="es">De la fábrica del mundo a los sistemas industriales inteligentes. Historia, redes productivas, robótica, inteligencia artificial y estrategia hacia 2030.</p>
         <p class="en">From the world's factory to intelligent industrial systems. History, production networks, robotics, AI, and strategy towards 2030.</p>
@@ -372,6 +404,7 @@
         body.dataset.language = language;
         document.querySelectorAll('[data-dragon-link]').forEach(a=>{a.href='materiales/dragon/?lang='+language;a.setAttribute('aria-label',language==='en'?'Open The dragon, Spanish content':'Abrir El dragón, contenido en español');});
         document.querySelectorAll('[data-androide-link]').forEach(a=>{a.href='materiales/androide/?lang='+language;a.setAttribute('aria-label',language==='en'?'Open The android, Spanish content':'Abrir El androide, contenido en español');});
+        document.querySelectorAll('[data-infraestructura-link]').forEach(a=>{a.href='materiales/infraestructura/?lang='+language;a.setAttribute('aria-label',language==='en'?'Open The infrastructure, Spanish-language slides':'Abrir La infraestructura, contenido en español');});
         document.querySelectorAll('[data-robotlab-launch]').forEach(a=>{a.href='robotlab/?lang='+language;});
         document.documentElement.lang = language;
         const presentationPath='materiales/transformacion-industrial/'+(language==='en'?'en/':'');

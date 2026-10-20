@@ -17,6 +17,7 @@ for(const pathName of ['videolab/index.html','videolab/styles.css','videolab/cat
 const videoPage=read('videolab/index.html');
 assert(videoPage.includes('id="video-grid"')&&videoPage.includes('id="player-modal"'),'VideoLab gallery/player markup missing');
 assert(home.includes('id="presentation"'),'Missing featured presentation');
+assert(home.includes('id="infraestructura"')&&home.includes('data-infraestructura-link'),'Missing third academic module');
 assert(home.includes('id="simulations"'),'Missing simulations section');
 assert(home.includes('id="robotlab-feature"')&&home.includes('data-robotlab-launch'),'Featured RobotLab entry missing');
 for(const file of ['index.html','styles.css','model.js','app.js','i18n.js','preview.svg','home.css'])assert(fs.existsSync(path.join(root,'robotlab',file)),'Missing RobotLab file: '+file);
