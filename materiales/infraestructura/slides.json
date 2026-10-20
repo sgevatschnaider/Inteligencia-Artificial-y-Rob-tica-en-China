@@ -1,0 +1,1444 @@
+{
+  "title": "La infraestructura — 基础设施",
+  "subtitle": "La base material, científica y humana de la revolución tecnológica china",
+  "author": "Sergio Gevatschnaider",
+  "attribution": "Material elaborado por el profesor Sergio Gevatschnaider",
+  "date": "2026-10-20",
+  "updated": "2026-10-20",
+  "language": "es",
+  "slides": [
+    {
+      "number": 1,
+      "title": "La infraestructura — 基础设施",
+      "chapter": "01 · Concepto y capacidades",
+      "text": [
+        "CHINA TECNOLÓGICA  ·  MÓDULO 03",
+        "01",
+        "LA INFRAESTRUCTURA",
+        "基础设施",
+        "JĪCHǓ SHÈSHĪ  ·  INFRAESTRUCTURA",
+        "La base material, científica y humana de la revolución tecnológica china",
+        "Universidades, talento, conocimiento, energía, cómputo y capacidad industrial.",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "OCTUBRE DE 2026  ·  ILUSTRACIÓN CONCEPTUAL CON IA"
+      ],
+      "notes": "Objetivo de aprendizaje\nPresentar las dimensiones de la infraestructura tecnológica.\n\nExplicación y contexto chino\nPresentar el tercer símbolo del video inicial. 基础设施 (jīchǔ shèshī) significa infraestructura, en chino simplificado. No se trata solamente de puertos o electricidad: la dimensión física convive con universidades, ciencia, personal cualificado, capacidades organizacionales y redes territoriales. Imagen conceptual generada con IA.\n\nEvidencia y precisiones\n基础设施 (jīchǔ shèshī) significa infraestructura. El término incluye redes, equipos e instituciones que sostienen otras actividades. 人力资本 (rénlì zīběn) es capital humano; 人才 (réncái), talento; 人才培养 (réncái péiyǎng), formación de talento; 科学研究 (kēxué yánjiū), investigación científica; 人工智能 (réngōng zhìnéng), inteligencia artificial. Educación, ciencia y talento se escriben 教育 · 科技 · 人才. La imagen no documenta un lugar real.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\n¿Qué capacidad humana necesita cada activo de la imagen?\n\nFuentes originales (corte: 20 de octubre de 2026)\nStanford HAI. AI Index Report 2026, capítulo 1\nhttps://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf\n\n中华人民共和国国民经济和社会发展第十五个五年规划纲要\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+      "sources": [
+        "https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf",
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf"
+      ],
+      "source_ids": [
+        "ai-index",
+        "plan15"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-01.webp",
+      "outline": [
+        "Presentar las dimensiones de la infraestructura tecnológica."
+      ],
+      "illustration": "Ilustración conceptual generada con IA. No documenta una institución o instalación real.",
+      "thesis": "Presentar las dimensiones de la infraestructura tecnológica."
+    },
+    {
+      "number": 2,
+      "title": "La infraestructura no es solo cemento",
+      "chapter": "01 · Concepto y capacidades",
+      "text": [
+        "MARCO CONCEPTUAL",
+        "La infraestructura no es solo cemento",
+        "La infraestructura productiva también contiene conocimiento organizado",
+        "FÍSICA",
+        "DIGITAL",
+        "Puertos, energía, ferrocarriles y plantas industriales",
+        "Cómputo, redes, datos y software industrial",
+        "HUMANA",
+        "CIENTÍFICA",
+        "Investigadores, ingenieros, técnicos y especialistas",
+        "Universidades, laboratorios y conocimiento transferible",
+        "Tesis: sin personas y conocimiento, la infraestructura física no produce innovación por sí sola.",
+        "02",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "MARCO CONCEPTUAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nDistinguir activos físicos, conocimiento y capacidades humanas.\n\nExplicación y contexto chino\nDiferenciar infraestructura física, digital, humana y científica. Es una clasificación analítica para comprender mecanismos complementarios: el hardware exige energía, redes y talento; las publicaciones requieren laboratorios, datos y acceso a recursos; producir demanda proveedores y equipos formados. No presentar como clasificación oficial única.\n\nEvidencia y precisiones\nLas cuatro dimensiones se superponen. Un laboratorio es un edificio con equipamiento, pero funciona gracias a científicos, técnicos, protocolos, software y organización. La disponibilidad de personas cualificadas es necesaria en muchos procesos, aunque su efecto depende de incentivos, mantenimiento y capacidad de coordinación.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nComparar una fábrica equipada sin mantenimiento con otra que forma personal.\n\nFuentes originales (corte: 20 de octubre de 2026)\n中华人民共和国国民经济和社会发展第十五个五年规划纲要\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf\n\nUNIDO. World Manufacturing Production and Trade Report Q4 2025\nhttps://stat.unido.org/manufacturing-news/unido-world-manufacturing-production-and-trade-report-q4-2025",
+      "sources": [
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+        "https://stat.unido.org/manufacturing-news/unido-world-manufacturing-production-and-trade-report-q4-2025"
+      ],
+      "source_ids": [
+        "plan15",
+        "unido"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-02.webp",
+      "outline": [
+        "Distinguir activos físicos, conocimiento y capacidades humanas."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Distinguir activos físicos, conocimiento y capacidades humanas."
+    },
+    {
+      "number": 3,
+      "title": "Cuatro capitales que se complementan",
+      "chapter": "01 · Concepto y capacidades",
+      "text": [
+        "EL SISTEMA COMPLETO",
+        "Cuatro capitales que se complementan",
+        "La capacidad tecnológica surge de relaciones, no de activos aislados",
+        "TALENTO",
+        "CIENCIA",
+        "INDUSTRIA",
+        "INFRAESTRUCTURA",
+        "→",
+        "→",
+        "→",
+        "Aprende",
+        "Descubre",
+        "Produce",
+        "Escala",
+        "Las flechas son simplificaciones didácticas: existen múltiples retroalimentaciones y cuellos de botella.",
+        "03",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "MARCO CONCEPTUAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nExplicar complementariedad y cuellos de botella.\n\nExplicación y contexto chino\nDemostrar que los componentes se retroalimentan: universidades forman personas que pasan a empresas; demanda industrial plantea preguntas de investigación; nuevas técnicas requieren energía y chips; cambios en mercados devuelven incentivos. La secuencia no es lineal ni determinista.\n\nEvidencia y precisiones\nLa cadena es una simplificación docente. La industria plantea problemas a la ciencia, la operación devuelve datos a los ingenieros y los cuellos de botella pueden aparecer en cualquier componente. Una inversión aislada no permite deducir un efecto causal ni una elasticidad de productividad.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\n¿Qué recurso limita el sistema si aumenta solo la inversión en equipos?\n\nFuentes originales (corte: 20 de octubre de 2026)\n中华人民共和国国民经济和社会发展第十五个五年规划纲要\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf\n\nUNIDO. World Manufacturing Production and Trade Report Q4 2025\nhttps://stat.unido.org/manufacturing-news/unido-world-manufacturing-production-and-trade-report-q4-2025",
+      "sources": [
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+        "https://stat.unido.org/manufacturing-news/unido-world-manufacturing-production-and-trade-report-q4-2025"
+      ],
+      "source_ids": [
+        "plan15",
+        "unido"
+      ],
+      "hypothetical": true,
+      "image": "slides/slide-03.webp",
+      "outline": [
+        "Explicar complementariedad y cuellos de botella."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Explicar complementariedad y cuellos de botella."
+    },
+    {
+      "number": 4,
+      "title": "La infraestructura invisible",
+      "chapter": "02 · Capital humano, universidades y ciencia",
+      "text": [
+        "CHINA TECNOLÓGICA  ·  MÓDULO 03",
+        "04",
+        "La infraestructura\ninvisible",
+        "China acumuló capacidades en matemáticas, ingeniería, investigación y formación técnica: la gente también es infraestructura.",
+        "CAPITAL HUMANO",
+        "Ilustración conceptual generada con IA",
+        "04",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "TALENTO E INVESTIGACIÓN"
+      ],
+      "notes": "Objetivo de aprendizaje\nIdentificar formación, experiencia y capacidades profesionales.\n\nExplicación y contexto chino\nSubrayar que infraestructura humana designa capacidades formadas, no equiparar personas con objetos. El talento necesita instituciones, condiciones laborales y equipos; no se mide solo por número de graduados. Introducir universidades, ciencia y formación profesional.\n\nEvidencia y precisiones\nLa formación incluye investigadores de IA, especialistas en datos, ingeniería electrónica y de software, semiconductores, robótica, control y técnicos industriales. También importa el conocimiento tácito adquirido en equipos. La movilidad internacional y la colaboración contribuyen a la circulación de capacidades; no se presupone un sistema uniforme entre regiones.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\n¿Qué se aprende en un aula y qué exige práctica con equipos?\n\nFuentes originales (corte: 20 de octubre de 2026)\n国务院关于印发《教育发展“十五五”规划》的通知\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjjzxgh/202609/t20260928_1407868.html\n\n上海人工智能实验室：高校专项博士生培养项目\nhttps://www.shlab.org.cn/enrollment",
+      "sources": [
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjjzxgh/202609/t20260928_1407868.html",
+        "https://www.shlab.org.cn/enrollment"
+      ],
+      "source_ids": [
+        "education",
+        "shlab-phd"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-04.webp",
+      "outline": [
+        "Identificar formación, experiencia y capacidades profesionales."
+      ],
+      "illustration": "Ilustración conceptual generada con IA. No documenta una institución o instalación real.",
+      "thesis": "Identificar formación, experiencia y capacidades profesionales."
+    },
+    {
+      "number": 5,
+      "title": "¿Dónde se produce conocimiento nuevo?",
+      "chapter": "02 · Capital humano, universidades y ciencia",
+      "text": [
+        "UNIVERSIDADES Y LABORATORIOS",
+        "¿Dónde se produce conocimiento nuevo?",
+        "Universidades, institutos públicos y laboratorios compartidos",
+        "清华大学",
+        "TSINGHUA",
+        "北京大学",
+        "PEKÍN",
+        "Modelos, IA interdisciplinaria y robótica",
+        "Computación, IA y ciencia fundamental",
+        "中国科学院",
+        "ACADEMIA CHINA DE CIENCIAS",
+        "上海人工智能实验室",
+        "SHANGHAI AI LAB",
+        "Investigación pública, automatización y física",
+        "Modelos, plataformas y ciencia interdisciplinaria",
+        "Ejemplos, no ranking de instituciones.",
+        "FUENTE: Instituciones oficiales",
+        "05",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "TALENTO E INVESTIGACIÓN"
+      ],
+      "notes": "Objetivo de aprendizaje\nClasificar instituciones por función y organización.\n\nExplicación y contexto chino\nIdentificar centros representativos sin afirmar que ocupan las primeras posiciones de un ranking. Tsinghua dispone de College of AI creado en abril de 2024; CAS Institute of Automation cubre reconocimiento de patrones, visión y sistemas de manufactura; Shanghai AI Lab se define como institución de investigación nueva. Peking University también es un actor importante de ciencias e informática, sin adjudicar cifras que no se comprobaron.\n\nEvidencia y precisiones\nTsinghua y Peking son universidades. CAS es una academia con institutos y universidades. Shanghai AI Laboratory es una institución de investigación diferente de Shanghai Jiao Tong University. Los ejemplos identifican funciones, sin establecer un ranking ni atribuir a una organización los resultados de otra.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nClasificar instituciones sin ordenarlas por prestigio.\n\nFuentes originales (corte: 20 de octubre de 2026)\nTsinghua University. Introduction, College of AI\nhttps://collegeai.tsinghua.edu.cn/en/About_Us/Introduction.htm\n\n北京大学人工智能研究院：研究院简介\nhttps://www.ai.pku.edu.cn/yjygk/yjyjj.htm\n\nChinese Academy of Sciences. Profile\nhttps://english.cas.cn/about-cas/profile/202512/t20251224_1141928.shtml\n\n上海人工智能实验室：关于我们\nhttps://www.shlab.org.cn/aboutus",
+      "sources": [
+        "https://collegeai.tsinghua.edu.cn/en/About_Us/Introduction.htm",
+        "https://www.ai.pku.edu.cn/yjygk/yjyjj.htm",
+        "https://english.cas.cn/about-cas/profile/202512/t20251224_1141928.shtml",
+        "https://www.shlab.org.cn/aboutus"
+      ],
+      "source_ids": [
+        "tsinghua",
+        "pku",
+        "cas",
+        "shlab"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-05.webp",
+      "outline": [
+        "Clasificar instituciones por función y organización."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Clasificar instituciones por función y organización."
+    },
+    {
+      "number": 6,
+      "title": "Tsinghua: una apuesta por investigación y talento",
+      "chapter": "02 · Capital humano, universidades y ciencia",
+      "text": [
+        "CHINA TECNOLÓGICA  ·  TALENTO Y UNIVERSIDADES",
+        "06",
+        "Tsinghua: una apuesta\npor investigación y talento",
+        "清华大学  ·  人工智能学院",
+        "Abril de 2024: creación del College of AI. Áreas declaradas: nuevos algoritmos, inteligencia encarnada, multimodalidad, IA y ciencia.",
+        "Fuente: Tsinghua University · información institucional",
+        "Ilustración conceptual con IA; no representa un campus identificado.",
+        "06",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "TALENTO E INVESTIGACIÓN"
+      ],
+      "notes": "Objetivo de aprendizaje\nRelacionar agenda universitaria y formación investigadora.\n\nExplicación y contexto chino\nTsinghua fundó el College of AI en abril de 2024, dirigido por Andrew Chi-Chih Yao. Según su propia documentación busca avances fundamentales y cultivo de talentos, incluidas inteligencia encarnada, multimodalidad y aplicaciones científicas. Esta es la descripción institucional de sus objetivos; no equivale a un resultado medido. Imagen visual conceptual; no fotografía de campus.\n\nEvidencia y precisiones\nCollege of AI y Tsinghua AIR son unidades distintas. El College fue creado en abril de 2024. Sus áreas declaradas incluyen algoritmos, inteligencia encarnada, multimodalidad e IA para la ciencia. Una agenda institucional y una nueva unidad académica no equivalen por sí mismas a resultados científicos o productivos.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nSeparar fecha de creación, agenda declarada y resultados medidos.\n\nFuentes originales (corte: 20 de octubre de 2026)\nTsinghua University. Introduction, College of AI\nhttps://collegeai.tsinghua.edu.cn/en/About_Us/Introduction.htm",
+      "sources": [
+        "https://collegeai.tsinghua.edu.cn/en/About_Us/Introduction.htm"
+      ],
+      "source_ids": [
+        "tsinghua"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-06.webp",
+      "outline": [
+        "Relacionar agenda universitaria y formación investigadora."
+      ],
+      "illustration": "Ilustración conceptual generada con IA. No documenta una institución o instalación real.",
+      "thesis": "Relacionar agenda universitaria y formación investigadora."
+    },
+    {
+      "number": 7,
+      "title": "Más allá de una universidad",
+      "chapter": "02 · Capital humano, universidades y ciencia",
+      "text": [
+        "ECOSISTEMA CIENTÍFICO",
+        "Más allá de una universidad",
+        "La innovación requiere diversidad institucional y disciplinas conectadas",
+        "PEKÍN",
+        "ZHEJIANG",
+        "Universidad de Pekín\nCiencia, computación, matemáticas",
+        "Universidad de Zhejiang\nIngeniería e investigación aplicada",
+        "SHANGHÁI",
+        "RED NACIONAL",
+        "Shanghai Jiao Tong University\nInvestigación e ingeniería",
+        "CAS + laboratorios especializados\nCiencia y automatización",
+        "Instituciones ilustrativas: los vínculos universidad–empresa deben investigarse por proyecto.",
+        "07",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "TALENTO E INVESTIGACIÓN"
+      ],
+      "notes": "Objetivo de aprendizaje\nReconocer diversidad institucional y territorial.\n\nExplicación y contexto chino\nPeking, Zhejiang y Shanghai Jiao Tong son ejemplos representativos, no selección por una clasificación comprobada. CAS no es una universidad: integra institutos de investigación. La conexión práctica con empresas puede tomar la forma de proyectos colaborativos, publicaciones coautoradas, graduados o laboratorios conjuntos. Verificar caso por caso.\n\nEvidencia y precisiones\nLas denominaciones son 北京大学, 浙江大学, 上海交通大学, 中国科学院 y 上海人工智能实验室. Las especializaciones se ilustran con documentación propia de cada institución. El talento y los recursos se distribuyen de forma desigual, y una lista breve no describe el sistema completo ni sus resultados.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\n¿Qué colaboración concreta conectaría una universidad con una empresa?\n\nFuentes originales (corte: 20 de octubre de 2026)\n北京大学人工智能研究院：研究院简介\nhttps://www.ai.pku.edu.cn/yjygk/yjyjj.htm\n\n浙江大学人工智能学院：学院简介\nhttps://ai.zju.edu.cn/2026/0211/c90212a3134283/page.htm\n\n上海交通大学成立人工智能研究院\nhttps://www.seiee.sjtu.edu.cn/index_news/2426.html\n\nChinese Academy of Sciences. Profile\nhttps://english.cas.cn/about-cas/profile/202512/t20251224_1141928.shtml\n\n上海人工智能实验室：关于我们\nhttps://www.shlab.org.cn/aboutus",
+      "sources": [
+        "https://www.ai.pku.edu.cn/yjygk/yjyjj.htm",
+        "https://ai.zju.edu.cn/2026/0211/c90212a3134283/page.htm",
+        "https://www.seiee.sjtu.edu.cn/index_news/2426.html",
+        "https://english.cas.cn/about-cas/profile/202512/t20251224_1141928.shtml",
+        "https://www.shlab.org.cn/aboutus"
+      ],
+      "source_ids": [
+        "pku",
+        "zju",
+        "sjtu",
+        "cas",
+        "shlab"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-07.webp",
+      "outline": [
+        "Reconocer diversidad institucional y territorial."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Reconocer diversidad institucional y territorial."
+    },
+    {
+      "number": 8,
+      "title": "China en la investigación de IA",
+      "chapter": "02 · Capital humano, universidades y ciencia",
+      "text": [
+        "EVIDENCIA INTERNACIONAL",
+        "China en la investigación de IA",
+        "Datos de Stanford AI Index 2026 · cifras con años y definiciones",
+        "41 / 100",
+        "35  vs.  59",
+        "artículos entre los 100 más citados de IA\ncon afiliación china · datos 2024",
+        "modelos de IA considerados notables en 2025\nChina vs. Estados Unidos",
+        "Estas métricas miden dimensiones distintas y no deben sumarse ni confundirse.",
+        "FUENTE: Stanford AI Index 2026",
+        "08",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "TALENTO E INVESTIGACIÓN"
+      ],
+      "notes": "Objetivo de aprendizaje\nComparar métricas con años y universos diferentes.\n\nExplicación y contexto chino\nEl volumen de investigación, la influencia por citas y el desarrollo de modelos son dimensiones diferentes. Conservar el año de observación y la definición de cada panel antes de comparar países.\n\nEvidencia y precisiones\nCorrección: el PDF oficial AI Index 2026 consigna 35 modelos notables con afiliación china y 59 estadounidense en 2025, con snapshot de Epoch del 22 de abril de 2026. El dato 41/100 corresponde a artículos más citados de 2024. La afiliación institucional puede contar un trabajo en varios países. Son universos distintos y no se suman.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nIdentificar el año, el denominador y la unidad antes de comparar.\n\nFuentes originales (corte: 20 de octubre de 2026)\nStanford HAI. AI Index Report 2026, capítulo 1\nhttps://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf",
+      "sources": [
+        "https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf"
+      ],
+      "source_ids": [
+        "ai-index"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-08.webp",
+      "outline": [
+        "Comparar métricas con años y universos diferentes."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Comparar métricas con años y universos diferentes."
+    },
+    {
+      "number": 9,
+      "title": "Muchos papers ≠ liderazgo en todas las dimensiones",
+      "chapter": "02 · Capital humano, universidades y ciencia",
+      "text": [
+        "LEER LOS DATOS CORRECTAMENTE",
+        "Muchos papers ≠ liderazgo en todas las dimensiones",
+        "Cómo evitar tres errores en la interpretación bibliométrica",
+        "PUBLICACIONES",
+        "CITAS",
+        "PATENTES Y MODELOS",
+        "Volumen científico\n≠ calidad individual",
+        "Influencia académica\n≠ producto comercial",
+        "Derechos y capacidades\n≠ adopción medida",
+        "La evaluación rigurosa combina calidad, reproducibilidad, colaboración, transferencia y uso.",
+        "09",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "TALENTO E INVESTIGACIÓN"
+      ],
+      "notes": "Objetivo de aprendizaje\nSeparar investigación, propiedad intelectual y adopción.\n\nExplicación y contexto chino\nEvitar inferir superioridad tecnológica universal de un solo indicador. Contar países con afiliación de autor, distinguir papers de revistas y conferencias, frecuencia de citas, patentes concedidas y rendimiento reproducible. En 2025 la industria global produjo más del 90% de modelos notables según AI Index, recordatorio de que universidades y empresas desempeñan roles diferentes.\n\nEvidencia y precisiones\nEn 2024, el AI Index registra 17,8 % de publicaciones de IA y 20,6 % de citas para China en su corpus, con 39,3 % de afiliación geográfica desconocida. Esos porcentajes dependen de cobertura y metadatos. Patentes solicitadas, concedidas, citas, modelos notables, reproducibilidad y adopción comercial son indicadores diferentes. Los modelos pueden estar desplegados, no son necesariamente prototipos.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\n¿Qué dato falta entre una patente y una afirmación de uso industrial?\n\nFuentes originales (corte: 20 de octubre de 2026)\nStanford HAI. AI Index Report 2026, capítulo 1\nhttps://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf",
+      "sources": [
+        "https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf"
+      ],
+      "source_ids": [
+        "ai-index"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-09.webp",
+      "outline": [
+        "Separar investigación, propiedad intelectual y adopción."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Separar investigación, propiedad intelectual y adopción."
+    },
+    {
+      "number": 10,
+      "title": "Educación, ciencia y talento",
+      "chapter": "02 · Capital humano, universidades y ciencia",
+      "text": [
+        "PLANIFICACIÓN DE CAPACIDADES",
+        "教育 · 科技 · 人才",
+        "Educación, ciencia y talento: una tríada estratégica en el XV Plan",
+        "教育",
+        "科技",
+        "人才",
+        "EDUCACIÓN",
+        "CIENCIA Y TECNOLOGÍA",
+        "TALENTO",
+        "Formar competencias y ampliar trayectorias",
+        "Producir y aplicar conocimiento",
+        "Atraer, formar y movilizar capacidades",
+        "Objetivo declarado de política pública; su ejecución debe evaluarse con evidencia posterior.",
+        "FUENTE: Texto oficial XV Plan 2026-2030",
+        "10",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "TALENTO E INVESTIGACIÓN"
+      ],
+      "notes": "Objetivo de aprendizaje\nLeer objetivos oficiales y mecanismos de política pública.\n\nExplicación y contexto chino\nEn el XV Plan Quinquenal 2026-2030 (capítulo sobre educación, ciencia y talento) se formula la integración estratégica de las tres dimensiones, el desarrollo de disciplinas emergentes como IA y circuitos integrados, y una coordinación de recursos formativos. Distinguir prioridades oficiales de resultados. Fuente original en chino.\n\nEvidencia y precisiones\nEl plan nacional general y el plan de educación son documentos diferentes. El capítulo 11 del XV Plan nacional integra educación, ciencia, tecnología y talento. El plan educativo tiene horizonte 2026–2030, decisión del Consejo de Estado del 22 de junio y publicación NDRC del 28 de septiembre. Se leen como objetivos y mecanismos declarados, no como cumplimiento comprobado.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nElegir una prioridad y proponer evidencia para evaluar su ejecución.\n\nFuentes originales (corte: 20 de octubre de 2026)\n中华人民共和国国民经济和社会发展第十五个五年规划纲要\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf\n\n国务院关于印发《教育发展“十五五”规划》的通知\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjjzxgh/202609/t20260928_1407868.html",
+      "sources": [
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjjzxgh/202609/t20260928_1407868.html"
+      ],
+      "source_ids": [
+        "plan15",
+        "education"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-10.webp",
+      "outline": [
+        "Leer objetivos oficiales y mecanismos de política pública."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Leer objetivos oficiales y mecanismos de política pública."
+    },
+    {
+      "number": 11,
+      "title": "¿Cómo se forma un investigador o ingeniero?",
+      "chapter": "02 · Capital humano, universidades y ciencia",
+      "text": [
+        "FORMACIÓN Y CARRERA CIENTÍFICA",
+        "¿Cómo se forma un investigador o ingeniero?",
+        "La cadena de capacidades incluye más que títulos universitarios",
+        "BASE",
+        "FORMACIÓN",
+        "1",
+        "2",
+        "Matemáticas, física, programación",
+        "Grado y posgrado interdisciplinario",
+        "LABORATORIO",
+        "INGENIERÍA",
+        "3",
+        "4",
+        "Datos, experimentos, revisión crítica",
+        "Prototipos, seguridad y equipos reales",
+        "Los técnicos especializados, los oficios industriales y la capacitación continua también cuentan.",
+        "11",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "TALENTO E INVESTIGACIÓN"
+      ],
+      "notes": "Objetivo de aprendizaje\nExplicar formación y aprendizaje a lo largo de la carrera.\n\nExplicación y contexto chino\nExplicar la infraestructura humana como un sistema de formación: preuniversitario, universidad, posgrado, investigación, industria, capacitación de técnicos, mantenimiento, personal de planta y aprendizaje permanente. Evitar idea de que un ingeniero de IA puede sustituir todos los perfiles de manufactura.\n\nEvidencia y precisiones\nUn caso concreto es la formación doctoral conjunta de Shanghai AI Laboratory y universidades: la matrícula y el título corresponden a la universidad, mientras el laboratorio aporta investigación. La trayectoria incluye experimentos, revisión crítica, trabajo en equipos, seguridad y actualización continua. Los técnicos y oficios industriales también sostienen la operación.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nDiseñar una trayectoria con formación técnica, seguridad y actualización.\n\nFuentes originales (corte: 20 de octubre de 2026)\n国务院关于印发《教育发展“十五五”规划》的通知\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjjzxgh/202609/t20260928_1407868.html\n\n上海人工智能实验室：高校专项博士生培养项目\nhttps://www.shlab.org.cn/enrollment",
+      "sources": [
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjjzxgh/202609/t20260928_1407868.html",
+        "https://www.shlab.org.cn/enrollment"
+      ],
+      "source_ids": [
+        "education",
+        "shlab-phd"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-11.webp",
+      "outline": [
+        "Explicar formación y aprendizaje a lo largo de la carrera."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Explicar formación y aprendizaje a lo largo de la carrera."
+    },
+    {
+      "number": 12,
+      "title": "Del paper al producto: una cadena exigente",
+      "chapter": "02 · Capital humano, universidades y ciencia",
+      "text": [
+        "TRANSFERENCIA TECNOLÓGICA",
+        "Del paper al producto: una cadena exigente",
+        "Universidades y empresas intercambian conocimiento durante todo el proceso",
+        "INVESTIGACIÓN",
+        "REPRODUCCIÓN",
+        "PROTOTIPO",
+        "ADOPCIÓN",
+        "→",
+        "→",
+        "→",
+        "Hipótesis y experimento",
+        "Datos y código verificables",
+        "Prueba en condiciones reales",
+        "Operación segura y rentable",
+        "Proceso iterativo: incentivos, inversión, pruebas, clientes y retorno de problemas hacia la investigación.",
+        "12",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "TALENTO E INVESTIGACIÓN"
+      ],
+      "notes": "Objetivo de aprendizaje\nComprender la transferencia como proceso iterativo.\n\nExplicación y contexto chino\nEjemplificar la diferencia entre un resultado académico reproducible, prototipo, piloto y sistema en operación. Un paper puede no tener traducción productiva; una innovación comercial también puede surgir sin paper. Barreras: fabricación, integración, seguridad, costos, usuarios y propiedad intelectual.\n\nEvidencia y precisiones\nLa transferencia incluye movilidad de personas, investigación conjunta, licencias, emprendimientos y circulación abierta de código y artículos. Tsinghua AIR y ByteDance establecieron un centro conjunto de grandes modelos en 2024. Los estudios de colaboración muestran asociaciones condicionadas e impactos heterogéneos. Las empresas necesitan capacidad de absorción, inversión y clientes; el recorrido tiene retornos e iteraciones.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nPedir un riesgo en cada transición y un retorno desde un piloto.\n\nFuentes originales (corte: 20 de octubre de 2026)\nTsinghua AIR y ByteDance: centro conjunto de grandes modelos\nhttps://air.tsinghua.edu.cn/info/1007/2311.htm\n\nHsu et al. Industry-University Collaboration and Commercializing Chinese Corporate Innovation\nhttps://doi.org/10.1287/mnsc.2022.00788\n\nDoes university-industry collaboration improve firm productivity? Evidence from China\nhttps://doi.org/10.1371/journal.pone.0305695",
+      "sources": [
+        "https://air.tsinghua.edu.cn/info/1007/2311.htm",
+        "https://doi.org/10.1287/mnsc.2022.00788",
+        "https://doi.org/10.1371/journal.pone.0305695"
+      ],
+      "source_ids": [
+        "air-bytedance",
+        "hsu",
+        "li"
+      ],
+      "hypothetical": true,
+      "image": "slides/slide-12.webp",
+      "outline": [
+        "Comprender la transferencia como proceso iterativo."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Comprender la transferencia como proceso iterativo."
+    },
+    {
+      "number": 13,
+      "title": "Un laboratorio conecta algoritmos y mundo físico",
+      "chapter": "02 · Capital humano, universidades y ciencia",
+      "text": [
+        "IA Y CIENCIA",
+        "Un laboratorio conecta algoritmos y mundo físico",
+        "La inteligencia artificial puede acelerar investigaciones, con límites",
+        "MODELOS",
+        "EXPERIMENTOS",
+        "VALIDACIÓN",
+        "Predicción y análisis de datos",
+        "Instrumentos y pruebas controladas",
+        "Replicación, incertidumbre y seguridad",
+        "Caso para discutir: IA para materiales o robótica requiere confirmar resultados mediante experimentación.",
+        "13",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "TALENTO E INVESTIGACIÓN"
+      ],
+      "notes": "Objetivo de aprendizaje\nDistinguir predicción y validación experimental.\n\nExplicación y contexto chino\nLaboratorios como Shanghai AI Lab y CAS trabajan entre otras áreas en AI for Science, multimodalidad y robótica; documentación institucional respalda los ámbitos de investigación, pero no garantiza hallazgos concretos en todos los campos. En ciencia la validación empírica es central.\n\nEvidencia y precisiones\nEn materiales o robótica, una predicción puede orientar experimentos sin sustituirlos. Se necesitan instrumentos, calibración, trazabilidad y evaluación de incertidumbre. Las agendas oficiales de CASIA o Shanghai AI Lab describen ámbitos de investigación. No deben presentarse como prueba independiente de un logro técnico concreto.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\n¿Qué experimento podría refutar la predicción de un modelo?\n\nFuentes originales (corte: 20 de octubre de 2026)\n多模态人工智能系统全国重点实验室\nhttps://ia.cas.cn/jgsz/kyxt/dmtrgzn/\n\n上海人工智能实验室：关于我们\nhttps://www.shlab.org.cn/aboutus",
+      "sources": [
+        "https://ia.cas.cn/jgsz/kyxt/dmtrgzn/",
+        "https://www.shlab.org.cn/aboutus"
+      ],
+      "source_ids": [
+        "casia-lab",
+        "shlab"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-13.webp",
+      "outline": [
+        "Distinguir predicción y validación experimental."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Distinguir predicción y validación experimental."
+    },
+    {
+      "number": 14,
+      "title": "Robótica: del simulador al entorno real",
+      "chapter": "02 · Capital humano, universidades y ciencia",
+      "text": [
+        "CHINA TECNOLÓGICA  ·  CIENCIA APLICADA",
+        "14",
+        "Robótica:\ndel simulador\nal entorno real",
+        "Los modelos aprenden con datos, pero los robots deben actuar frente a fricción, errores, contactos y riesgos reales.",
+        "SIMULACIÓN   →   PRUEBA   →   OPERACIÓN",
+        "Ilustración conceptual generada con IA",
+        "14",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "TALENTO E INVESTIGACIÓN"
+      ],
+      "notes": "Objetivo de aprendizaje\nEvaluar transferencia desde simulación al entorno real.\n\nExplicación y contexto chino\nLa simulación y los modelos generativos ayudan a entrenar, pero no garantizan transferencia sim-to-real, estabilidad o seguridad. Deben contrastarse con sensores, manipuladores reales, intervenciones humanas, ciclos de tarea y fallos. Un video sintético no es por definición simulación física de alta fidelidad. Imagen conceptual.\n\nEvidencia y precisiones\nEl paso de simulación a realidad depende de parámetros, contactos, percepción, distribución de tareas y seguridad. OpenVLA es una referencia internacional y no se atribuye como modelo exclusivamente chino. Un video generativo plausible no demuestra una simulación física correcta. Los ensayos deben incluir fallos y condiciones no vistas durante el entrenamiento.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nEnumerar fallos físicos que un video sintético no permite evaluar.\n\nFuentes originales (corte: 20 de octubre de 2026)\n多模态人工智能系统全国重点实验室\nhttps://ia.cas.cn/jgsz/kyxt/dmtrgzn/\n\nKim et al. OpenVLA: An Open-Source Vision-Language-Action Model\nhttps://arxiv.org/abs/2406.09246",
+      "sources": [
+        "https://ia.cas.cn/jgsz/kyxt/dmtrgzn/",
+        "https://arxiv.org/abs/2406.09246"
+      ],
+      "source_ids": [
+        "casia-lab",
+        "openvla"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-14.webp",
+      "outline": [
+        "Evaluar transferencia desde simulación al entorno real."
+      ],
+      "illustration": "Ilustración conceptual generada con IA. No documenta una institución o instalación real.",
+      "thesis": "Evaluar transferencia desde simulación al entorno real."
+    },
+    {
+      "number": 15,
+      "title": "La base material de la revolución",
+      "chapter": "03 · Energía, cómputo y manufactura",
+      "text": [
+        "CHINA TECNOLÓGICA  ·  MÓDULO 03",
+        "15",
+        "La base material\nde la revolución",
+        "A partir del conocimiento, la industria necesita energía, cómputo, fábricas, proveedores y redes logísticas.",
+        "INFRAESTRUCTURA FÍSICA",
+        "Ilustración conceptual generada con IA",
+        "15",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INFRAESTRUCTURA MATERIAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nRelacionar capacidades científicas y condiciones materiales.\n\nExplicación y contexto chino\nTransición desde infraestructura humana y científica a recursos industriales físicos. La misma política o algoritmo puede rendir muy distinto según fiabilidad eléctrica, conectividad, infraestructura de pruebas, acceso a materiales y capacidad productiva.\n\nEvidencia y precisiones\nEl mismo algoritmo de inspección puede producir resultados distintos según sensores, alimentación eléctrica y capacitación. Esta comparación es hipotética y no asigna un efecto empírico a China. El material complementa el bloque científico con las condiciones necesarias para operar y producir, sin sustituir conocimiento por una galería de instalaciones.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nConstruir un caso hipotético e identificar el recurso limitante.\n\nFuentes originales (corte: 20 de octubre de 2026)\nUNIDO. World Manufacturing Production and Trade Report Q4 2025\nhttps://stat.unido.org/manufacturing-news/unido-world-manufacturing-production-and-trade-report-q4-2025",
+      "sources": [
+        "https://stat.unido.org/manufacturing-news/unido-world-manufacturing-production-and-trade-report-q4-2025"
+      ],
+      "source_ids": [
+        "unido"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-15.webp",
+      "outline": [
+        "Relacionar capacidades científicas y condiciones materiales."
+      ],
+      "illustration": "Ilustración conceptual generada con IA. No documenta una institución o instalación real.",
+      "thesis": "Relacionar capacidades científicas y condiciones materiales."
+    },
+    {
+      "number": 16,
+      "title": "La energía es infraestructura de IA y manufactura",
+      "chapter": "03 · Energía, cómputo y manufactura",
+      "text": [
+        "ENERGÍA Y ELECTRIFICACIÓN",
+        "La energía es infraestructura de IA y manufactura",
+        "Un centro de datos y una fábrica necesitan potencia disponible y confiable",
+        "GENERACIÓN",
+        "RED",
+        "CONSUMO",
+        "Fuentes y mezcla eléctrica",
+        "Transmisión, estabilidad y acceso",
+        "Centros de datos, fábricas y transporte",
+        "No basta con sumar capacidad instalada: importan disponibilidad, costos, resiliencia y emisiones.",
+        "16",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INFRAESTRUCTURA MATERIAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nDistinguir potencia, energía y suministro efectivo.\n\nExplicación y contexto chino\nPrecisar que computación e industria dependen de energía, subestaciones y redes. Evitar inferir que más capacidad de generación equivale a energía disponible cerca del centro de datos o que toda la energía empleada es limpia. Factores operativos: ubicación, fiabilidad, refrigeración, demanda y costos.\n\nEvidencia y precisiones\nPotencia se expresa en MW y energía utilizada en MWh. La capacidad nacional de generación no garantiza una conexión local suficiente, suministro continuo o una mezcla limpia para cada centro. Importan red, respaldo, refrigeración, mantenimiento y clima. No se atribuye a la IA todo el consumo de un centro de datos.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nComparar dos centros de igual potencia y diferente utilización.\n\nFuentes originales (corte: 20 de octubre de 2026)\nIEA. Energy and AI: Energy demand from AI\nhttps://www.iea.org/reports/energy-and-ai/energy-demand-from-ai",
+      "sources": [
+        "https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai"
+      ],
+      "source_ids": [
+        "energy"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-16.webp",
+      "outline": [
+        "Distinguir potencia, energía y suministro efectivo."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Distinguir potencia, energía y suministro efectivo."
+    },
+    {
+      "number": 17,
+      "title": "De los chips al centro de datos",
+      "chapter": "03 · Energía, cómputo y manufactura",
+      "text": [
+        "INFRAESTRUCTURA DIGITAL",
+        "De los chips al centro de datos",
+        "La IA necesita una cadena de cómputo, memoria, interconexión y energía",
+        "ACELERADORES",
+        "MEMORIA",
+        "GPU y aceleradores especializados",
+        "Ancho de banda y capacidad",
+        "INTERCONEXIÓN",
+        "OPERACIÓN",
+        "Redes, comunicaciones y latencia",
+        "Energía, enfriamiento y software",
+        "La capacidad de un chip anunciada no equivale al rendimiento útil de un sistema completo.",
+        "17",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INFRAESTRUCTURA MATERIAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nEvaluar sistemas de cómputo completos.\n\nExplicación y contexto chino\nLa infraestructura de cómputo se compone de silicio, memoria HBM/DRAM, almacenamiento, redes, energía, refrigeración, frameworks de software y operadores. Aislar un benchmark de chip no captura acceso a volúmenes, rendimiento por watt, memoria, integración o herramientas de desarrollador.\n\nEvidencia y precisiones\nGPU, ASIC y NPU no son categorías excluyentes: una NPU puede implementarse como ASIC. Huawei Ascend/Atlas y Cambricon ilustran plataformas de aceleración. Para comparar rendimiento hay que fijar modelo, precisión numérica, lote, latencia y consumo. La memoria, interconexión, compiladores y operadores condicionan el resultado útil.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nFijar latencia y consumo antes de comparar aceleradores.\n\nFuentes originales (corte: 20 de octubre de 2026)\nIEA. Energy and AI: Energy demand from AI\nhttps://www.iea.org/reports/energy-and-ai/energy-demand-from-ai\n\nHuawei Ascend: hardware, CANN y herramientas\nhttps://www.hiascend.com/en/\n\n寒武纪：产品与技术\nhttps://www.cambricon.com/",
+      "sources": [
+        "https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai",
+        "https://www.hiascend.com/en/",
+        "https://www.cambricon.com/"
+      ],
+      "source_ids": [
+        "energy",
+        "huawei",
+        "cambricon"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-17.webp",
+      "outline": [
+        "Evaluar sistemas de cómputo completos."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Evaluar sistemas de cómputo completos."
+    },
+    {
+      "number": 18,
+      "title": "No hay autosuficiencia en una sola pieza",
+      "chapter": "03 · Energía, cómputo y manufactura",
+      "text": [
+        "SEMICONDUCTORES",
+        "No hay autosuficiencia en una sola pieza",
+        "Una cadena tecnológica integra varias especializaciones",
+        "DISEÑO",
+        "FABRICACIÓN",
+        "ENCAPSULADO",
+        "SISTEMAS",
+        "→",
+        "→",
+        "→",
+        "Arquitecturas, EDA y propiedad intelectual",
+        "Litografía, equipos, obleas y rendimiento",
+        "Montaje, prueba e integración de chips",
+        "Interconexión, software y aplicaciones",
+        "Esquema simplificado: DRAM y NAND son familias de memoria que recorren estas especializaciones.",
+        "18",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INFRAESTRUCTURA MATERIAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nDistinguir funciones y productos de semiconductores.\n\nExplicación y contexto chino\nDistinguir diseño de chips (Huawei Ascend, Cambricon, entre otros), fabricación (SMIC), memorias (CXMT, YMTC), equipos y encapsulado, herramientas de software, ingeniería y suministro energético. Se mencionan como ejemplos funcionales, sin inferir capacidad exacta de producción o rendimiento contemporáneo sin fuente técnica independiente. Estrangulamientos en una capa afectan al conjunto.\n\nEvidencia y precisiones\nHuawei Ascend y Cambricon ilustran diseño y plataformas; SMIC, fabricación por contrato; CXMT, DRAM; YMTC, NAND. Memoria es una familia de productos que también requiere diseño, fabricación, encapsulado y pruebas. EDA, equipos, materiales y rendimiento por oblea afectan distintas fases. Los ejemplos no prueban autosuficiencia integral ni paridad de rendimiento.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nUbicar actores sin confundir empresas, procesos y productos.\n\nFuentes originales (corte: 20 de octubre de 2026)\nHuawei Ascend: hardware, CANN y herramientas\nhttps://www.hiascend.com/en/\n\nSMIC. Annual Report 2025\nhttps://www.hkexnews.hk/listedco/listconews/sehk/2026/0408/2026040801181.pdf\n\n寒武纪：产品与技术\nhttps://www.cambricon.com/\n\nCXMT: memoria DRAM\nhttps://www.cxmt.com/en/\n\nYMTC: NAND y arquitectura Xtacking\nhttps://www.ymtc.com/en/",
+      "sources": [
+        "https://www.hiascend.com/en/",
+        "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0408/2026040801181.pdf",
+        "https://www.cambricon.com/",
+        "https://www.cxmt.com/en/",
+        "https://www.ymtc.com/en/"
+      ],
+      "source_ids": [
+        "huawei",
+        "smic",
+        "cambricon",
+        "cxmt",
+        "ymtc"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-18.webp",
+      "outline": [
+        "Distinguir funciones y productos de semiconductores."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Distinguir funciones y productos de semiconductores."
+    },
+    {
+      "number": 19,
+      "title": "La fábrica inteligente es una red, no un edificio",
+      "chapter": "03 · Energía, cómputo y manufactura",
+      "text": [
+        "ECOSISTEMA DE PROVEEDORES",
+        "La fábrica inteligente es una red, no un edificio",
+        "Componentes, integradores y clientes sostienen el aprendizaje productivo",
+        "1",
+        "SENSORES",
+        "Percepción y medición",
+        "2",
+        "MOTORES",
+        "Actuadores y precisión",
+        "SOFTWARE",
+        "Control, MES y datos",
+        "3",
+        "4",
+        "PROVEEDORES",
+        "Integración, calidad y mantenimiento",
+        "CLIENTES",
+        "5",
+        "Demanda, pruebas y retroalimentación",
+        "19",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INFRAESTRUCTURA MATERIAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nReconocer integración y redes de proveedores.\n\nExplicación y contexto chino\nCuando una empresa diseña un robot, su capacidad comercial depende de precisión de motores, suministros de sensores, servos, controladores, certificación y servicios postventa. Estos ecosistemas localizados reducen fricciones de prueba y reparación, pero también tienen vulnerabilidades a discontinuidades de suministros.\n\nEvidencia y precisiones\nMES significa sistema de ejecución de manufactura. Los componentes deben combinarse con trazabilidad, inspección visual, mantenimiento predictivo y estándares. Una planta con robots puede fallar si no calibra sensores o integra registros de defectos. La proximidad entre proveedores facilita coordinación bajo condiciones que deben examinarse por proyecto.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nBuscar la falla en una línea con sensores sin calibrar.\n\nFuentes originales (corte: 20 de octubre de 2026)\n六部门：2026年度智能工厂梯度培育行动\nhttps://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html",
+      "sources": [
+        "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html"
+      ],
+      "source_ids": [
+        "miit"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-19.webp",
+      "outline": [
+        "Reconocer integración y redes de proveedores."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Reconocer integración y redes de proveedores."
+    },
+    {
+      "number": 20,
+      "title": "Tres dimensiones de una fábrica inteligente",
+      "chapter": "03 · Energía, cómputo y manufactura",
+      "text": [
+        "TRANSFORMACIÓN FABRIL",
+        "Tres dimensiones de una fábrica inteligente",
+        "Digitalizar no es lo mismo que automatizar ni que aprender",
+        "01",
+        "02",
+        "03",
+        "DIGITALIZACIÓN",
+        "AUTOMATIZACIÓN",
+        "INTELIGENCIA",
+        "Registrar procesos y datos",
+        "Ejecutar tareas y controlar procesos",
+        "Usar modelos para adaptar decisiones",
+        "Sin medir calidad, ciclo y costos, la etiqueta “smart factory” puede ser solo marketing.",
+        "20",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INFRAESTRUCTURA MATERIAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nComparar digitalización, automatización e IA.\n\nExplicación y contexto chino\nExplicar: digitalización produce datos; automatización ejecuta reglas o tareas; inteligencia supone modelos o métodos que optimizan o adaptan decisiones dentro de ciertos límites. Se pueden combinar; una fábrica no necesita humanoides para ser altamente productiva.\n\nEvidencia y precisiones\nEstas tres dimensiones son un esquema docente propio y pueden coexistir. No son una secuencia obligatoria ni la clasificación oficial china. MIIT usa cuatro niveles institucionales: básico, avanzado, excelente y pionero. Incorporar IA requiere evaluar modelos y resultados, además de registrar datos o automatizar tareas.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nPedir una línea de base y métricas posteriores a la inversión.\n\nFuentes originales (corte: 20 de octubre de 2026)\n六部门：2026年度智能工厂梯度培育行动\nhttps://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html",
+      "sources": [
+        "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html"
+      ],
+      "source_ids": [
+        "miit"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-20.webp",
+      "outline": [
+        "Comparar digitalización, automatización e IA."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Comparar digitalización, automatización e IA."
+    },
+    {
+      "number": 21,
+      "title": "Robótica: una ventaja de escala verificable",
+      "chapter": "04 · Redes productivas, logística y escala",
+      "text": [
+        "EVIDENCIA INDUSTRIAL",
+        "Robótica: una ventaja de escala verificable",
+        "IFR World Robotics 2026 · instalaciones en China durante 2025",
+        "≈ 354.000",
+        "59 %",
+        "robots industriales instalados\nen China en 2025",
+        "participación en las instalaciones\nmundiales de robots industriales",
+        "No son cifras de robots humanoides ni de productividad por trabajador.",
+        "FUENTE: IFR 2026",
+        "21",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INFRAESTRUCTURA MATERIAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nInterpretar un flujo anual de instalaciones industriales.\n\nExplicación y contexto chino\nLa IFR informa aproximadamente 354.000 instalaciones nuevas de robots industriales en China durante 2025, equivalentes a 59% mundial. Las instalaciones son un flujo de unidades, no parque operativo ni cantidad de humanoides. Este indicador no demuestra en sí mismo retorno económico o productividad. La cuota de proveedores domésticos es otra métrica distinta (55%, 2025) que no debe confundirse.\n\nEvidencia y precisiones\nLa unidad es una instalación nueva de robot industrial durante 2025. El denominador del 59 % es mundial. El 55 % de proveedores nacionales en China es otra métrica y otro denominador. Ninguna cifra describe humanoides, producción de robots o productividad laboral. El flujo anual debe distinguirse del parque operativo.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nDiferenciar robot instalado, operativo y productivo.\n\nFuentes originales (corte: 20 de octubre de 2026)\nIFR. China Installs 59 Percent of World’s Industrial Robots\nhttps://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf",
+      "sources": [
+        "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf"
+      ],
+      "source_ids": [
+        "ifr"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-21.webp",
+      "outline": [
+        "Interpretar un flujo anual de instalaciones industriales."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Interpretar un flujo anual de instalaciones industriales."
+    },
+    {
+      "number": 22,
+      "title": "Puertos, ferrocarriles y corredores productivos",
+      "chapter": "04 · Redes productivas, logística y escala",
+      "text": [
+        "CHINA TECNOLÓGICA  ·  LOGÍSTICA Y TERRITORIO",
+        "22",
+        "Puertos, ferrocarriles\ny corredores productivos",
+        "La infraestructura puede reducir tiempos de transporte, conectar proveedores y facilitar la coordinación productiva.",
+        "Escala no equivale automáticamente a eficiencia: importan uso, costo y fiabilidad.",
+        "Ilustración conceptual generada con IA",
+        "22",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INFRAESTRUCTURA MATERIAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nEvaluar servicios logísticos y su fiabilidad.\n\nExplicación y contexto chino\nPresentar la logística como infraestructura habilitante: rutas, puertos, ferrocarriles y transporte dentro y entre clústeres. Diferenciar longitud de redes de capacidad efectiva de servicio; una inversión sobreconstruida puede tener bajo rendimiento. Imagen conceptual no fotografía real.\n\nEvidencia y precisiones\nEl efecto de la logística depende de congestión, utilización, intermodalidad, mantenimiento, costos y fiabilidad. Un corredor sobredimensionado puede tener baja utilización. Longitud de red y volumen de un puerto no miden por sí solos el servicio efectivo. La ilustración no documenta una instalación identificada.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nComparar tiempo puerta a puerta y variabilidad de entregas.\n\nFuentes originales (corte: 20 de octubre de 2026)\nUNIDO. World Manufacturing Production and Trade Report Q4 2025\nhttps://stat.unido.org/manufacturing-news/unido-world-manufacturing-production-and-trade-report-q4-2025\n\nWIPO. GII 2026: Top 100 Innovation Clusters\nhttps://www.wipo.int/web-publications/global-innovation-index-2026/en/gii-2026-ranking-of-world-s-top-100-innovation-clusters.html",
+      "sources": [
+        "https://stat.unido.org/manufacturing-news/unido-world-manufacturing-production-and-trade-report-q4-2025",
+        "https://www.wipo.int/web-publications/global-innovation-index-2026/en/gii-2026-ranking-of-world-s-top-100-innovation-clusters.html"
+      ],
+      "source_ids": [
+        "unido",
+        "clusters"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-22.webp",
+      "outline": [
+        "Evaluar servicios logísticos y su fiabilidad."
+      ],
+      "illustration": "Ilustración conceptual generada con IA. No documenta una institución o instalación real.",
+      "thesis": "Evaluar servicios logísticos y su fiabilidad."
+    },
+    {
+      "number": 23,
+      "title": "Clústeres y coordinación productiva",
+      "chapter": "04 · Redes productivas, logística y escala",
+      "text": [
+        "TERRITORIO INDUSTRIAL",
+        "Clústeres y coordinación productiva",
+        "No existe una sola “fábrica china”: hay especializaciones regionales",
+        "BEIJING",
+        "DELTA DEL YANGTSÉ",
+        "Instituciones y laboratorios",
+        "Manufactura avanzada, chips y finanzas",
+        "GRAN BAHÍA",
+        "HANGZHOU / HEFEI",
+        "Electrónica, hardware y exportación",
+        "Hangzhou: plataformas; Hefei: chips y vehículos",
+        "Son ejemplos ilustrativos de especialización; no fronteras tecnológicas exclusivas.",
+        "23",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INFRAESTRUCTURA MATERIAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nRelacionar clústeres y coordinación productiva.\n\nExplicación y contexto chino\nPedir que los alumnos piensen en viajes de técnicos, tiempo de reposición de componentes, calidad de proveedores y aprendizaje territorial. Beijing, región del Yangtsé (Shanghai-Suzhou-Hangzhou), Gran Bahía (Shenzhen-Guangzhou-Dongguan) y Hefei son referencias ilustrativas. No se afirma que los sectores estén restringidos a una sola ciudad.\n\nEvidencia y precisiones\nHangzhou forma parte del amplio sistema del delta del Yangtsé. La Gran Bahía es una región más amplia que un clúster estadístico concreto. WIPO identifica concentraciones de inventores, autores y capital de riesgo. Distinguir solicitudes PCT de patentes concedidas y tamaño de intensidad por habitante. Las localizaciones de la lámina son ejemplos, no fronteras exclusivas.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\n¿Qué conocimiento circula entre proveedores y qué barreras persisten?\n\nFuentes originales (corte: 20 de octubre de 2026)\nWIPO. GII 2026: Top 100 Innovation Clusters\nhttps://www.wipo.int/web-publications/global-innovation-index-2026/en/gii-2026-ranking-of-world-s-top-100-innovation-clusters.html\n\nWIPO. Global Innovation Index 2026\nhttps://www.wipo.int/pressroom/en/articles/2026/article_0014.html",
+      "sources": [
+        "https://www.wipo.int/web-publications/global-innovation-index-2026/en/gii-2026-ranking-of-world-s-top-100-innovation-clusters.html",
+        "https://www.wipo.int/pressroom/en/articles/2026/article_0014.html"
+      ],
+      "source_ids": [
+        "clusters",
+        "wipo"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-23.webp",
+      "outline": [
+        "Relacionar clústeres y coordinación productiva."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Relacionar clústeres y coordinación productiva."
+    },
+    {
+      "number": 24,
+      "title": "Vehículos eléctricos: cadena industrial y capacidad",
+      "chapter": "04 · Redes productivas, logística y escala",
+      "text": [
+        "CASO DE ESCALA PRODUCTIVA",
+        "Vehículos eléctricos: cadena industrial y capacidad",
+        "IEA Global EV Outlook 2026 · producción durante 2025",
+        "16 millones",
+        "≈ 75 %",
+        "autos eléctricos BEV y PHEV\nproducidos en China en 2025",
+        "participación aproximada en la\nproducción mundial de autos eléctricos",
+        "Volumen no equivale a rentabilidad; importa la capacidad usada y la presión competitiva.",
+        "FUENTE: IEA 2026",
+        "24",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INFRAESTRUCTURA MATERIAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nInterpretar producción geográfica de autos eléctricos.\n\nExplicación y contexto chino\nLa IEA indica cerca de 22 millones de automóviles eléctricos fabricados globalmente en 2025, de los cuales China produjo 16 millones (casi 75%). Esto permite discutir la integración de baterías, electrónica, ensamblaje, proveedores y logística. El informe también indica presión competitiva y producción que supera demanda doméstica. Evitar equiparar fabricación con marcas exclusivamente chinas.\n\nEvidencia y precisiones\nIEA estima producción geográfica de automóviles eléctricos BEV y PHEV, de fabricantes nacionales y extranjeros. Producción, ventas internas, exportaciones, matriculaciones y capacidad fabril son series diferentes. La categoría tampoco equivale a todos los vehículos de nueva energía de las estadísticas chinas. Los 16 millones y aproximadamente 75 % son cifras redondeadas de 2025.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\n¿Qué información falta para evaluar utilización y rentabilidad?\n\nFuentes originales (corte: 20 de octubre de 2026)\nIEA. Global EV Outlook 2026: Manufacturing and trade\nhttps://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade",
+      "sources": [
+        "https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade"
+      ],
+      "source_ids": [
+        "ev"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-24.webp",
+      "outline": [
+        "Interpretar producción geográfica de autos eléctricos."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Interpretar producción geográfica de autos eléctricos."
+    },
+    {
+      "number": 25,
+      "title": "Cuando la infraestructura produce datos útiles",
+      "chapter": "04 · Redes productivas, logística y escala",
+      "text": [
+        "CICLO DE APRENDIZAJE",
+        "Cuando la infraestructura produce datos útiles",
+        "Un data flywheel requiere calidad, trazabilidad y mejora demostrable",
+        "OPERACIÓN",
+        "DATOS",
+        "MODELO",
+        "MEJORA",
+        "→",
+        "→",
+        "→",
+        "Máquinas, decisiones, sensores",
+        "Errores, condiciones, resultados",
+        "Entrenamiento y evaluación",
+        "Cambios en costo, calidad y seguridad",
+        "La retroalimentación no es automática: se debe medir la mejora y gestionar riesgos.",
+        "25",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INFRAESTRUCTURA MATERIAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nExaminar condiciones del aprendizaje con datos.\n\nExplicación y contexto chino\nDistinguir datos exhaustivos de datos pertinentes. Un flywheel solo se sostiene si uso produce observaciones de calidad que generan mejora fiable y si la mejora crea adopción adicional. Hay sesgos, problemas de privacidad, seguridad, errores y falta de generalización. Relacionar con simuladores del GitHub sin confundir simulación con cifras reales.\n\nEvidencia y precisiones\nEl ciclo es un mecanismo didáctico condicionado, no una ley empírica. Los datos deben registrar errores y condiciones relevantes. Una evaluación fuera de muestra y una línea de base permiten comprobar mejoras de costo, calidad o seguridad. Una decisión algorítmica también puede cambiar la distribución de datos que se recogerán después.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nProponer una condición que rompa el ciclo y una prueba para detectarla.\n\nFuentes originales (corte: 20 de octubre de 2026)\nKim et al. OpenVLA: An Open-Source Vision-Language-Action Model\nhttps://arxiv.org/abs/2406.09246",
+      "sources": [
+        "https://arxiv.org/abs/2406.09246"
+      ],
+      "source_ids": [
+        "openvla"
+      ],
+      "hypothetical": true,
+      "image": "slides/slide-25.webp",
+      "outline": [
+        "Examinar condiciones del aprendizaje con datos."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Examinar condiciones del aprendizaje con datos."
+    },
+    {
+      "number": 26,
+      "title": "Qué medir antes de decir éxito",
+      "chapter": "04 · Redes productivas, logística y escala",
+      "text": [
+        "EVALUACIÓN DE INVERSIONES",
+        "Qué medir antes de decir “éxito”",
+        "Infraestructura instalada, usada y productiva son cosas distintas",
+        "CAPACIDAD",
+        "UTILIZACIÓN",
+        "MW, obleas/mes, equipos y m² útiles",
+        "Horas efectivas y carga operativa",
+        "RESULTADOS",
+        "EXTERNALIDADES",
+        "Calidad, costos, productividad y seguridad",
+        "Energía, emisiones y efectos territoriales",
+        "Más infraestructura puede aumentar capacidad sin aumentar proporcionalmente productividad.",
+        "26",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INFRAESTRUCTURA MATERIAL"
+      ],
+      "notes": "Objetivo de aprendizaje\nConstruir indicadores de capacidad, uso y resultados.\n\nExplicación y contexto chino\nUna planta terminada o un robot instalado es capacidad, no necesariamente producción útil. Para valorar rendimiento, analizar utilización, rendimiento de los equipos, costos, defectos, tiempo de parada, externalidades y retorno. Importa también comparar con escenarios contrafácticos: qué habría ocurrido sin inversión.\n\nEvidencia y precisiones\nUn conteo de chips sin período no mide capacidad. Obleas por mes aproxima capacidad fabril, pero también importa diámetro y mezcla de procesos. Productividad relaciona producto conforme e insumos. Incluir paradas, utilización, mantenimiento y energía por unidad. La evaluación causal de una inversión requiere contrafactual y costos ambientales.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nConstruir indicadores de unidades conformes por hora y consumo por unidad.\n\nFuentes originales (corte: 20 de octubre de 2026)\nUNIDO. World Manufacturing Production and Trade Report Q4 2025\nhttps://stat.unido.org/manufacturing-news/unido-world-manufacturing-production-and-trade-report-q4-2025\n\nIMF. 2025 Article IV Consultation with China\nhttps://www.imf.org/en/news/articles/2026/02/18/pr-26053-china-imf-executive-board-concludes-2025-article-iv-consultation",
+      "sources": [
+        "https://stat.unido.org/manufacturing-news/unido-world-manufacturing-production-and-trade-report-q4-2025",
+        "https://www.imf.org/en/news/articles/2026/02/18/pr-26053-china-imf-executive-board-concludes-2025-article-iv-consultation"
+      ],
+      "source_ids": [
+        "unido",
+        "imf"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-26.webp",
+      "outline": [
+        "Construir indicadores de capacidad, uso y resultados."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Construir indicadores de capacidad, uso y resultados."
+    },
+    {
+      "number": 27,
+      "title": "La escala china ofrece ventajas y riesgos",
+      "chapter": "05 · Fortalezas, límites y síntesis",
+      "text": [
+        "FORTALEZAS Y TENSIONES",
+        "La escala china ofrece ventajas y riesgos",
+        "El ecosistema no es homogéneo ni está libre de cuellos de botella",
+        "FORTALEZAS",
+        "TENSIONES",
+        "Redes industriales densas\nFormación e investigación\nCapacidad de producción\nDiversidad territorial y empresarial",
+        "Restricciones en chips y equipos\nSobrecapacidad en segmentos\nDemanda de energía y recursos\nDesigualdades y deuda local",
+        "La pregunta no es cuántos recursos tiene China, sino cómo se convierten en resultados.",
+        "27",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "BALANCE"
+      ],
+      "notes": "Objetivo de aprendizaje\nComparar fortalezas y restricciones por sector.\n\nExplicación y contexto chino\nAnalizar fortalezas y tensiones estructurales sin propaganda ni simplificaciones: escala, investigadores, integración de fabricantes, pero también restricciones geopolíticas, márgenes de ganancia, sobrecapacidad, impacto ambiental, inversión improductiva, deuda y diferencias entre territorios. Los efectos varían por sector y periodo.\n\nEvidencia y precisiones\nLas ventajas y riesgos varían por sector y región. Una restricción tecnológica no equivale a una predicción de estancamiento general. El FMI identifica inversión ineficiente y deuda local, sin demostrar que toda infraestructura sea improductiva. La competencia puede estimular aprendizaje y erosionar márgenes. La integración y la transferencia de conocimiento siguen siendo imperfectas.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nSeparar una restricción sectorial de una conclusión general sobre China.\n\nFuentes originales (corte: 20 de octubre de 2026)\nIEA. Global EV Outlook 2026: Manufacturing and trade\nhttps://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade\n\nIEA. Energy and AI: Energy demand from AI\nhttps://www.iea.org/reports/energy-and-ai/energy-demand-from-ai\n\nIMF. 2025 Article IV Consultation with China\nhttps://www.imf.org/en/news/articles/2026/02/18/pr-26053-china-imf-executive-board-concludes-2025-article-iv-consultation\n\nIMF. Local Government Finances in China: Policy Options to Tackle the Debt Overhang\nhttps://www.imf.org/en/publications/departmental-papers-policy-papers/issues/2026/09/24/local-government-finances-in-china-policy-options-to-tackle-the-debt-overhang-576484",
+      "sources": [
+        "https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade",
+        "https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai",
+        "https://www.imf.org/en/news/articles/2026/02/18/pr-26053-china-imf-executive-board-concludes-2025-article-iv-consultation",
+        "https://www.imf.org/en/publications/departmental-papers-policy-papers/issues/2026/09/24/local-government-finances-in-china-policy-options-to-tackle-the-debt-overhang-576484"
+      ],
+      "source_ids": [
+        "ev",
+        "energy",
+        "imf",
+        "imf-debt"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-27.webp",
+      "outline": [
+        "Comparar fortalezas y restricciones por sector."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Comparar fortalezas y restricciones por sector."
+    },
+    {
+      "number": 28,
+      "title": "El capital humano conecta a los tres pilares",
+      "chapter": "05 · Fortalezas, límites y síntesis",
+      "text": [
+        "SÍNTESIS VISUAL",
+        "El capital humano conecta a los tres pilares",
+        "Conocimiento, organizaciones e infraestructura se retroalimentan",
+        "EL DRAGÓN",
+        "EL ANDROIDE",
+        "INFRAESTRUCTURA",
+        "Estado: orienta",
+        "Empresas: innovan",
+        "Ecosistema: permite escalar",
+        "人才 + 大学 + 科研",
+        "Talento, universidades y ciencia",
+        "Los símbolos organizan la explicación; no agotan las relaciones causales.",
+        "28",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "BALANCE"
+      ],
+      "notes": "Objetivo de aprendizaje\nIntegrar los pilares mediante relaciones recíprocas.\n\nExplicación y contexto chino\nExplicar que talento, universidad y laboratorios forman un elemento transversal: el Estado promueve formación y recursos; las empresas necesitan conocimiento, investigan y contratan; la infraestructura física hace posible experimentar y desplegar. Nadie innova solo. Las tres metáforas no conforman un modelo causal suficiente sin competencia, mercados, instituciones y contexto histórico.\n\nEvidencia y precisiones\nLos conectores expresan relaciones recíprocas. El Estado define incentivos y bienes públicos; empresas, universidades, trabajadores y proveedores también generan conocimiento y plantean problemas. Talento y ciencia son capacidades transversales. Hay colaboración y tensiones, costos de coordinación y diferencias territoriales. Las metáforas organizan la exposición, no una explicación causal exhaustiva.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nSeguir un problema productivo hacia empresas, investigadores y política pública.\n\nFuentes originales (corte: 20 de octubre de 2026)\n中华人民共和国国民经济和社会发展第十五个五年规划纲要\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf\n\n国务院关于印发《教育发展“十五五”规划》的通知\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjjzxgh/202609/t20260928_1407868.html\n\nHsu et al. Industry-University Collaboration and Commercializing Chinese Corporate Innovation\nhttps://doi.org/10.1287/mnsc.2022.00788",
+      "sources": [
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjjzxgh/202609/t20260928_1407868.html",
+        "https://doi.org/10.1287/mnsc.2022.00788"
+      ],
+      "source_ids": [
+        "plan15",
+        "education",
+        "hsu"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-28.webp",
+      "outline": [
+        "Integrar los pilares mediante relaciones recíprocas."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Integrar los pilares mediante relaciones recíprocas."
+    },
+    {
+      "number": 29,
+      "title": "Cinco preguntas para investigar China",
+      "chapter": "05 · Fortalezas, límites y síntesis",
+      "text": [
+        "PREGUNTAS PARA LA CLASE",
+        "Cinco preguntas para investigar China",
+        "De una imagen espectacular a un argumento verificable",
+        "¿Qué talento exige un robot humanoide que funcione ocho horas diarias?",
+        "1",
+        "¿Cómo distinguir papers influyentes de productos ya adoptados?",
+        "2",
+        "¿Qué sucede si hay buenos modelos pero faltan chips, energía o datos?",
+        "3",
+        "¿Qué ventajas y riesgos genera concentrar proveedores en clústeres?",
+        "4",
+        "5",
+        "¿Qué indicador demostraría productividad, no solo capacidad instalada?",
+        "29",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "CIERRE"
+      ],
+      "notes": "Objetivo de aprendizaje\nFormular preguntas verificables para la clase.\n\nExplicación y contexto chino\nUsar esta diapositiva en debate, asignando una pregunta por grupo. Exigir evidencias originales y evitar anuncios empresariales como única prueba. Las preguntas refuerzan que la infraestructura incluye destrezas, materiales, electricidad, redes y aplicaciones reales.\n\nEvidencia y precisiones\nOcho horas diarias es una exigencia hipotética para discutir, no una autonomía atribuida a un robot comercial. Cada pregunta debe convertirse en una afirmación con unidad, período y evidencia. Separar demostraciones, anuncios, capacidad instalada y resultados observados permite formular investigación y ejercicios contrastables.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nTransformar una de las preguntas en una hipótesis contrastable.\n\nFuentes originales (corte: 20 de octubre de 2026)\nStanford HAI. AI Index Report 2026, capítulo 1\nhttps://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf\n\nIFR. China Installs 59 Percent of World’s Industrial Robots\nhttps://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf\n\nIEA. Global EV Outlook 2026: Manufacturing and trade\nhttps://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade",
+      "sources": [
+        "https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf",
+        "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf",
+        "https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade"
+      ],
+      "source_ids": [
+        "ai-index",
+        "ifr",
+        "ev"
+      ],
+      "hypothetical": true,
+      "image": "slides/slide-29.webp",
+      "outline": [
+        "Formular preguntas verificables para la clase."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Formular preguntas verificables para la clase."
+    },
+    {
+      "number": 30,
+      "title": "Investigación, talento y política industrial",
+      "chapter": "06 · Fuentes y cierre",
+      "text": [
+        "BIBLIOGRAFÍA DOCUMENTADA",
+        "Investigación, talento y política industrial",
+        "Fuentes originales y comparables · Octubre de 2026",
+        "STANFORD · AI Index 2026",
+        "Publicaciones, citas y modelos de IA",
+        "↗",
+        "TSINGHUA · College of AI",
+        "↗",
+        "Formación de investigadores y programas",
+        "CHINA · XV Plan Quinquenal",
+        "↗",
+        "Educación–ciencia–talento e infraestructura",
+        "SHANGHAI AI LAB",
+        "↗",
+        "Áreas y organización de investigación",
+        "CAS · Institute of Automation",
+        "Automatización, visión y laboratorios",
+        "↗",
+        "30",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "FUENTES"
+      ],
+      "notes": "Objetivo de aprendizaje\nIdentificar procedencia y alcance de fuentes.\n\nExplicación y contexto chino\nFuentes prioritarias consultadas: AI Index Report 2026 capítulo 1, Tsinghua CollegeAI, texto oficial XV Plan (chino), Shanghai AI Laboratory, Institute of Automation de la Academia China de Ciencias. Enlaces clicables y en notas. Las instituciones publican agendas institucionales: no confundirlas con resultados independientes.\n\nEvidencia y precisiones\nLas fuentes institucionales muestran organización y prioridades. El AI Index explicita su corpus y sus métricas. Las investigaciones académicas deben leerse con su muestra, método y límites. La bibliografía ampliada queda en las notas y en el registro web, además de los enlaces visibles de esta página.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nLocalizar una afirmación en su documento original.\n\nFuentes originales (corte: 20 de octubre de 2026)\nStanford HAI. AI Index Report 2026, capítulo 1\nhttps://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf\n\nTsinghua University. Introduction, College of AI\nhttps://collegeai.tsinghua.edu.cn/en/About_Us/Introduction.htm\n\n中华人民共和国国民经济和社会发展第十五个五年规划纲要\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf\n\n上海人工智能实验室：关于我们\nhttps://www.shlab.org.cn/aboutus\n\n中国科学院自动化研究所：2026年接收推荐免试生简章\nhttps://ia.cas.cn/yjsjy/zs/sszs/202507/t20250731_7899790.html",
+      "sources": [
+        "https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf",
+        "https://collegeai.tsinghua.edu.cn/en/About_Us/Introduction.htm",
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+        "https://www.shlab.org.cn/aboutus",
+        "https://ia.cas.cn/yjsjy/zs/sszs/202507/t20250731_7899790.html"
+      ],
+      "source_ids": [
+        "ai-index",
+        "tsinghua",
+        "plan15",
+        "shlab",
+        "casia"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-30.webp",
+      "outline": [
+        "Identificar procedencia y alcance de fuentes."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Identificar procedencia y alcance de fuentes."
+    },
+    {
+      "number": 31,
+      "title": "Industria, robots y electrificación",
+      "chapter": "06 · Fuentes y cierre",
+      "text": [
+        "DATOS Y PRODUCCIÓN",
+        "Industria, robots y electrificación",
+        "Distinguir año del dato y año del informe",
+        "IFR · World Robotics 2026",
+        "354.000 robots industriales en China, 2025",
+        "↗",
+        "IEA · Global EV Outlook 2026",
+        "16 millones de autos BEV/PHEV, 2025",
+        "↗",
+        "WIPO · GII 2026",
+        "Ecosistemas, clústeres y resultados de innovación",
+        "↗",
+        "CHINA · Plan educativo 2026–2030",
+        "Política educativa, documento oficial en chino",
+        "↗",
+        "Stanford · AI Index 2026",
+        "Distinción entre IA científica y modelos notables",
+        "↗",
+        "31",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "FUENTES"
+      ],
+      "notes": "Objetivo de aprendizaje\nAsociar indicadores con año, unidad y definición.\n\nExplicación y contexto chino\nIFR World Robotics 2026 ofrece instalaciones de 2025; IEA Global EV Outlook 2026 produce estimaciones de producción de EV en 2025; WIPO 2026 describe ecosistemas de innovación; documentos chinos de educación establecen objetivos para 2026–2030. Mantener la fecha de observación y la definición junto al número.\n\nEvidencia y precisiones\nMantener fecha del informe, año de observación y definición junto a cada indicador. IFR trata instalaciones industriales de 2025. IEA trata producción de automóviles eléctricos de 2025. WIPO usa indicadores de innovación y clústeres. Los planes de 2026–2030 establecen objetivos futuros. Las fuentes no se intercambian entre esas afirmaciones.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nExplicar por qué año de publicación y año del dato pueden diferir.\n\nFuentes originales (corte: 20 de octubre de 2026)\nIFR. China Installs 59 Percent of World’s Industrial Robots\nhttps://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf\n\nIEA. Global EV Outlook 2026: Manufacturing and trade\nhttps://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade\n\nWIPO. Global Innovation Index 2026\nhttps://www.wipo.int/pressroom/en/articles/2026/article_0014.html\n\n国务院关于印发《教育发展“十五五”规划》的通知\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjjzxgh/202609/t20260928_1407868.html\n\nStanford HAI. AI Index Report 2026, capítulo 1\nhttps://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf",
+      "sources": [
+        "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf",
+        "https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade",
+        "https://www.wipo.int/pressroom/en/articles/2026/article_0014.html",
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjjzxgh/202609/t20260928_1407868.html",
+        "https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf"
+      ],
+      "source_ids": [
+        "ifr",
+        "ev",
+        "wipo",
+        "education",
+        "ai-index"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-31.webp",
+      "outline": [
+        "Asociar indicadores con año, unidad y definición."
+      ],
+      "illustration": "Composición tipográfica o diagrama editable; relaciones didácticas.",
+      "thesis": "Asociar indicadores con año, unidad y definición."
+    },
+    {
+      "number": 32,
+      "title": "Sin ciencia y talento, no hay innovación sostenida",
+      "chapter": "06 · Fuentes y cierre",
+      "text": [
+        "CHINA TECNOLÓGICA  ·  SÍNTESIS DEL MÓDULO",
+        "32",
+        "Sin ciencia y talento,\nno hay innovación sostenida",
+        "Sin infraestructura productiva, esa innovación difícilmente alcanza escala industrial.",
+        "ESTADO  ·  EMPRESAS  ·  CIENCIA  ·  TALENTO  ·  INFRAESTRUCTURA",
+        "SIGUIENTE MÓDULO: TRANSFORMACIÓN INDUSTRIAL",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "Ilustración conceptual generada con IA"
+      ],
+      "notes": "Objetivo de aprendizaje\nSintetizar ciencia, talento e infraestructura productiva.\n\nExplicación y contexto chino\nCierre de tercer módulo: no reducir infraestructura a carreteras y fábricas; incluye científicos, formación, organización, capacidad digital, logística y electricidad. Las tres metáforas de la colección conectan con el cuarto módulo integrador de 47 diapositivas sobre transformación industrial. Reafirmar que escala instalada no demuestra productividad y que capacidad científica no es suficiente sin instituciones, empresas y procesos.\n\nEvidencia y precisiones\nLa ciencia y la formación contribuyen a innovar, pero convertir conocimiento en operación exige organizaciones, inversión, demanda y aprendizaje. La infraestructura instalada tampoco basta para demostrar productividad. Conectar esta conclusión con Transformación industrial, módulo integrador de 47 diapositivas, y pedir un ejemplo de complementariedad y una tensión entre los tres pilares.\n\nAlcance y límites\nLas relaciones didácticas requieren evidencia por sector, institución y período. Las prioridades oficiales no demuestran cumplimiento y los indicadores agregados no prueban causalidad ni productividad de una empresa.\n\nSugerencia para la exposición\nRetomar la pregunta central e identificar una complementariedad y una tensión.\n\nFuentes originales (corte: 20 de octubre de 2026)\n中华人民共和国国民经济和社会发展第十五个五年规划纲要\nhttps://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf\n\nUNIDO. World Manufacturing Production and Trade Report Q4 2025\nhttps://stat.unido.org/manufacturing-news/unido-world-manufacturing-production-and-trade-report-q4-2025\n\nHsu et al. Industry-University Collaboration and Commercializing Chinese Corporate Innovation\nhttps://doi.org/10.1287/mnsc.2022.00788",
+      "sources": [
+        "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+        "https://stat.unido.org/manufacturing-news/unido-world-manufacturing-production-and-trade-report-q4-2025",
+        "https://doi.org/10.1287/mnsc.2022.00788"
+      ],
+      "source_ids": [
+        "plan15",
+        "unido",
+        "hsu"
+      ],
+      "hypothetical": false,
+      "image": "slides/slide-32.webp",
+      "outline": [
+        "Sintetizar ciencia, talento e infraestructura productiva."
+      ],
+      "illustration": "Ilustración conceptual generada con IA. No documenta una institución o instalación real.",
+      "thesis": "Sintetizar ciencia, talento e infraestructura productiva."
+    }
+  ],
+  "source_registry": {
+    "ai-index": {
+      "title": "Stanford HAI. AI Index Report 2026, capítulo 1",
+      "date": "2026",
+      "language": "en",
+      "url": "https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf",
+      "evidence": "Bibliometría de 2024 y modelos notables de 2025, con universos y afiliaciones diferentes."
+    },
+    "tsinghua": {
+      "title": "Tsinghua University. Introduction, College of AI",
+      "date": "consulta 2026-10-20",
+      "language": "en",
+      "url": "https://collegeai.tsinghua.edu.cn/en/About_Us/Introduction.htm",
+      "evidence": "Creación en abril de 2024 y agenda institucional de investigación y formación."
+    },
+    "pku": {
+      "title": "北京大学人工智能研究院：研究院简介",
+      "date": "consulta 2026-10-20",
+      "language": "zh",
+      "url": "https://www.ai.pku.edu.cn/yjygk/yjyjj.htm",
+      "evidence": "Funciones de investigación del instituto de IA de Peking University."
+    },
+    "zju": {
+      "title": "浙江大学人工智能学院：学院简介",
+      "date": "2026-02-11",
+      "language": "zh",
+      "url": "https://ai.zju.edu.cn/2026/0211/c90212a3134283/page.htm",
+      "evidence": "Presentación institucional del centro y su agenda."
+    },
+    "sjtu": {
+      "title": "上海交通大学成立人工智能研究院",
+      "date": "consulta 2026-10-20",
+      "language": "zh",
+      "url": "https://www.seiee.sjtu.edu.cn/index_news/2426.html",
+      "evidence": "Instituto de IA de Shanghai Jiao Tong, distinto de Shanghai AI Laboratory."
+    },
+    "cas": {
+      "title": "Chinese Academy of Sciences. Profile",
+      "date": "2025-12",
+      "language": "en",
+      "url": "https://english.cas.cn/about-cas/profile/202512/t20251224_1141928.shtml",
+      "evidence": "Academia científica con red de institutos y universidades."
+    },
+    "casia": {
+      "title": "中国科学院自动化研究所：2026年接收推荐免试生简章",
+      "date": "2025-07-31",
+      "language": "zh",
+      "url": "https://ia.cas.cn/yjsjy/zs/sszs/202507/t20250731_7899790.html",
+      "evidence": "Formación e investigación del Institute of Automation."
+    },
+    "casia-lab": {
+      "title": "多模态人工智能系统全国重点实验室",
+      "date": "consulta 2026-10-20",
+      "language": "zh",
+      "url": "https://ia.cas.cn/jgsz/kyxt/dmtrgzn/",
+      "evidence": "Descripción oficial de investigación multimodal."
+    },
+    "shlab": {
+      "title": "上海人工智能实验室：关于我们",
+      "date": "consulta 2026-10-20",
+      "language": "zh",
+      "url": "https://www.shlab.org.cn/aboutus",
+      "evidence": "Laboratorio científico, distinto de una universidad individual."
+    },
+    "shlab-phd": {
+      "title": "上海人工智能实验室：高校专项博士生培养项目",
+      "date": "consulta 2026-10-20",
+      "language": "zh",
+      "url": "https://www.shlab.org.cn/enrollment",
+      "evidence": "Formación doctoral conjunta: universidad y laboratorio tienen funciones diferentes."
+    },
+    "plan15": {
+      "title": "中华人民共和国国民经济和社会发展第十五个五年规划纲要",
+      "date": "2026-03",
+      "language": "zh",
+      "url": "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+      "evidence": "Capítulo 11: educación, ciencia, tecnología y talento; objetivos oficiales."
+    },
+    "education": {
+      "title": "国务院关于印发《教育发展“十五五”规划》的通知",
+      "date": "2026-09-28",
+      "language": "zh",
+      "url": "https://www.ndrc.gov.cn/fggz/fzzlgh/gjjzxgh/202609/t20260928_1407868.html",
+      "evidence": "Plan educativo separado del plan nacional general; objetivos de 2026–2030."
+    },
+    "air-bytedance": {
+      "title": "Tsinghua AIR y ByteDance: centro conjunto de grandes modelos",
+      "date": "2024",
+      "language": "zh",
+      "url": "https://air.tsinghua.edu.cn/info/1007/2311.htm",
+      "evidence": "Ejemplo documentado de colaboración universidad-empresa."
+    },
+    "hsu": {
+      "title": "Hsu et al. Industry-University Collaboration and Commercializing Chinese Corporate Innovation",
+      "date": "2024/2025",
+      "language": "en",
+      "url": "https://doi.org/10.1287/mnsc.2022.00788",
+      "evidence": "Investigación sobre comercialización; evidencia histórica y condicionada."
+    },
+    "li": {
+      "title": "Does university-industry collaboration improve firm productivity? Evidence from China",
+      "date": "2024",
+      "language": "en",
+      "url": "https://doi.org/10.1371/journal.pone.0305695",
+      "evidence": "Resultados heterogéneos de colaboración y productividad."
+    },
+    "ifr": {
+      "title": "IFR. China Installs 59 Percent of World’s Industrial Robots",
+      "date": "2026-09-24",
+      "language": "en",
+      "url": "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf",
+      "evidence": "Aproximadamente 354.000 instalaciones industriales en China durante 2025 y 59 % mundial."
+    },
+    "ev": {
+      "title": "IEA. Global EV Outlook 2026: Manufacturing and trade",
+      "date": "2026",
+      "language": "en",
+      "url": "https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade",
+      "evidence": "Producción geográfica de automóviles eléctricos en 2025, BEV y PHEV."
+    },
+    "energy": {
+      "title": "IEA. Energy and AI: Energy demand from AI",
+      "date": "2025",
+      "language": "en",
+      "url": "https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai",
+      "evidence": "Demanda eléctrica y condiciones de operación de centros de datos."
+    },
+    "huawei": {
+      "title": "Huawei Ascend: hardware, CANN y herramientas",
+      "date": "consulta 2026-10-20",
+      "language": "en",
+      "url": "https://www.hiascend.com/en/",
+      "evidence": "Plataforma de aceleración e integración de hardware y software."
+    },
+    "smic": {
+      "title": "SMIC. Annual Report 2025",
+      "date": "2026-04-08",
+      "language": "en",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0408/2026040801181.pdf",
+      "evidence": "Fabricación por contrato, ecosistema de suministro y formación."
+    },
+    "cambricon": {
+      "title": "寒武纪：产品与技术",
+      "date": "consulta 2026-10-20",
+      "language": "zh",
+      "url": "https://www.cambricon.com/",
+      "evidence": "Productos y software de aceleración de IA."
+    },
+    "cxmt": {
+      "title": "CXMT: memoria DRAM",
+      "date": "consulta 2026-10-20",
+      "language": "en",
+      "url": "https://www.cxmt.com/en/",
+      "evidence": "Ejemplo funcional de fabricante de DRAM."
+    },
+    "ymtc": {
+      "title": "YMTC: NAND y arquitectura Xtacking",
+      "date": "consulta 2026-10-20",
+      "language": "en",
+      "url": "https://www.ymtc.com/en/",
+      "evidence": "Ejemplo funcional de memoria NAND y almacenamiento."
+    },
+    "miit": {
+      "title": "六部门：2026年度智能工厂梯度培育行动",
+      "date": "2026",
+      "language": "zh",
+      "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html",
+      "evidence": "Clasificación institucional de fábricas, distinta del esquema docente de tres dimensiones."
+    },
+    "wipo": {
+      "title": "WIPO. Global Innovation Index 2026",
+      "date": "2026",
+      "language": "en",
+      "url": "https://www.wipo.int/pressroom/en/articles/2026/article_0014.html",
+      "evidence": "Indicadores de innovación de dimensiones diferentes."
+    },
+    "clusters": {
+      "title": "WIPO. GII 2026: Top 100 Innovation Clusters",
+      "date": "2026",
+      "language": "en",
+      "url": "https://www.wipo.int/web-publications/global-innovation-index-2026/en/gii-2026-ranking-of-world-s-top-100-innovation-clusters.html",
+      "evidence": "Delimitación estadística de clústeres y concentración de actividad."
+    },
+    "unido": {
+      "title": "UNIDO. World Manufacturing Production and Trade Report Q4 2025",
+      "date": "2026",
+      "language": "en",
+      "url": "https://stat.unido.org/manufacturing-news/unido-world-manufacturing-production-and-trade-report-q4-2025",
+      "evidence": "Producción manufacturera e indicadores de actividad."
+    },
+    "imf": {
+      "title": "IMF. 2025 Article IV Consultation with China",
+      "date": "2026-02-18",
+      "language": "en",
+      "url": "https://www.imf.org/en/news/articles/2026/02/18/pr-26053-china-imf-executive-board-concludes-2025-article-iv-consultation",
+      "evidence": "Inversión, desequilibrios y limitaciones macroeconómicas."
+    },
+    "imf-debt": {
+      "title": "IMF. Local Government Finances in China: Policy Options to Tackle the Debt Overhang",
+      "date": "2026-09-24",
+      "language": "en",
+      "url": "https://www.imf.org/en/publications/departmental-papers-policy-papers/issues/2026/09/24/local-government-finances-in-china-policy-options-to-tackle-the-debt-overhang-576484",
+      "evidence": "Finanzas subnacionales y riesgos de inversión."
+    },
+    "openvla": {
+      "title": "Kim et al. OpenVLA: An Open-Source Vision-Language-Action Model",
+      "date": "2024",
+      "language": "en",
+      "url": "https://arxiv.org/abs/2406.09246",
+      "evidence": "Investigación internacional de control robótico; no se atribuye como desarrollo exclusivamente chino."
+    }
+  },
+  "illustrations": "Las escenas cinematográficas son ilustraciones conceptuales generadas con IA, no fotografías documentales."
+}

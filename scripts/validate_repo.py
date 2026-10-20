@@ -198,9 +198,27 @@ def main() -> int:
             for source_id in slide.get("source_ids", []):
                 if source_id not in registry:
                     errors.append(f"Android slide {slide['number']} references an unknown source: {source_id}")
+    infraestructura = ROOT / "materiales/infraestructura"
+    for name in ("index.html", "viewer.js", "viewer.css", "slides.json", "fuentes.html", "presentacion.pdf", "presentacion.pptx", "fonts/infraestructura-han.woff"):
+        if not (infraestructura / name).is_file():
+            errors.append(f"Infrastructure module is missing: {name}")
+    if (infraestructura / "slides.json").is_file():
+        infraestructura_data = json.loads((infraestructura / "slides.json").read_text(encoding="utf-8"))
+        infraestructura_slides = infraestructura_data["slides"]
+        if [slide["number"] for slide in infraestructura_slides] != list(range(1, 33)):
+            errors.append("Expected the original 32 Infrastructure slides in order")
+        registry = infraestructura_data.get("source_registry", {})
+        for slide in infraestructura_slides:
+            if not (infraestructura / slide["image"]).is_file():
+                errors.append(f"Missing Infrastructure slide image: {slide['image']}")
+            if not slide.get("notes") or not slide.get("text"):
+                errors.append(f"Infrastructure slide {slide['number']} lacks notes or transcript")
+            for source_id in slide.get("source_ids", []):
+                if source_id not in registry:
+                    errors.append(f"Infrastructure slide {slide['number']} references an unknown source: {source_id}")
     home = (ROOT / "index.html").read_text(encoding="utf-8")
-    if not home.index('id="dragon"') < home.index('id="androide"') < home.index('id="transformacion-industrial"'):
-        errors.append("The academic collection must place Android after Dragon and before Industrial Transformation")
+    if not home.index('id="dragon"') < home.index('id="androide"') < home.index('id="infraestructura"') < home.index('id="transformacion-industrial"'):
+        errors.append("The academic collection must place Dragon, Android, Infrastructure and Industrial Transformation in order")
     if errors:
         print("Repository validation failed:")
         for error in errors:
