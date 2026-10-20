@@ -96,6 +96,19 @@ try{
   await page.close();
  }
  const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ // README language links must override both the browser locale and a saved choice.
+ for(const language of ['es','en']){
+  await page.goto('http://127.0.0.1:'+port+'/?lang='+language+'#topics',{waitUntil:'domcontentloaded'});
+  assert.equal(await page.locator('html').getAttribute('lang'),language,'Explicit homepage language was ignored');
+  assert.equal(await page.locator('#lang-'+language).getAttribute('aria-pressed'),'true');
+  assert.equal(await page.evaluate(()=>localStorage.getItem('china-ai-language')),language);
+  assert.equal(new URL(page.url()).hash,'#topics');
+ }
+ await page.goto('http://127.0.0.1:'+port+'/?lang=invalid',{waitUntil:'domcontentloaded'});
+ assert.equal(await page.locator('html').getAttribute('lang'),'en','Invalid language should preserve the saved preference');
+ await page.locator('#lang-es').click();
+ await page.goto('http://127.0.0.1:'+port+'/',{waitUntil:'domcontentloaded'});
+ assert.equal(await page.locator('html').getAttribute('lang'),'es','Homepage should retain the manual language choice');
  let introRequests=0;page.on('request',request=>{if(request.url().endsWith('/assets/intro/china-tecnologica.mp4'))introRequests++;});
  await page.goto('http://127.0.0.1:'+port+'/',{waitUntil:'domcontentloaded'});
  assert.equal(await page.locator('#robotlab-feature').count(),1,'RobotLab feature card missing');

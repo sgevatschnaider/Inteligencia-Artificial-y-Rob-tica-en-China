@@ -370,7 +370,8 @@
       };
       let saved;
       try { saved = localStorage.getItem('china-ai-language'); } catch (_) {}
-      const preferred = saved || (navigator.language.toLowerCase().startsWith('es') ? 'es' : 'en');
+      const requested = new URLSearchParams(window.location.search).get('lang');
+      const preferred = (requested === 'es' || requested === 'en' ? requested : null) || saved || (navigator.language.toLowerCase().startsWith('es') ? 'es' : 'en');
       setLanguage(preferred === 'en' ? 'en' : 'es');
       esButton.addEventListener('click', () => setLanguage('es'));
       enButton.addEventListener('click', () => setLanguage('en'));
