@@ -180,6 +180,27 @@ def main() -> int:
                 errors.append(f"Missing Dragon slide image: {slide['image']}")
             if not slide.get("notes") or not slide.get("source_ids"):
                 errors.append(f"Dragon slide {slide['number']} lacks notes or sources")
+    androide = ROOT / "materiales/androide"
+    for name in ("index.html", "viewer.js", "viewer.css", "slides.json", "fuentes.html", "presentacion.pdf", "presentacion.pptx", "fonts/androide-han.woff"):
+        if not (androide / name).is_file():
+            errors.append(f"Android module is missing: {name}")
+    if (androide / "slides.json").is_file():
+        androide_data = json.loads((androide / "slides.json").read_text(encoding="utf-8"))
+        androide_slides = androide_data["slides"]
+        if [slide["number"] for slide in androide_slides] != list(range(1, 25)):
+            errors.append("Expected the original 24 Android slides in order")
+        registry = androide_data.get("source_registry", {})
+        for slide in androide_slides:
+            if not (androide / slide["image"]).is_file():
+                errors.append(f"Missing Android slide image: {slide['image']}")
+            if not slide.get("notes") or not slide.get("text"):
+                errors.append(f"Android slide {slide['number']} lacks notes or transcript")
+            for source_id in slide.get("source_ids", []):
+                if source_id not in registry:
+                    errors.append(f"Android slide {slide['number']} references an unknown source: {source_id}")
+    home = (ROOT / "index.html").read_text(encoding="utf-8")
+    if not home.index('id="dragon"') < home.index('id="androide"') < home.index('id="transformacion-industrial"'):
+        errors.append("The academic collection must place Android after Dragon and before Industrial Transformation")
     if errors:
         print("Repository validation failed:")
         for error in errors:

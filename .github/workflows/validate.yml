@@ -20,6 +20,8 @@ jobs:
         run: |
           node --check lecturas/reader.js
           node --check materiales/dragon/viewer.js
+          node --check materiales/androide/viewer.js
+          node --check scripts/check_androide.cjs
           node scripts/check_site.cjs
       - name: Install browser smoke-test dependencies
         run: |
@@ -28,9 +30,11 @@ jobs:
       - name: Test interactive resources and video playback in Chrome
         env:
           DRAGON_SCREENSHOT_DIR: artifacts/dragon
+          ANDROIDE_SCREENSHOT_DIR: artifacts/androide
         run: |
           node scripts/browser_smoke.cjs
           node scripts/check_dragon.cjs
+          node scripts/check_androide.cjs
       - name: Preserve Dragon browser review images
         if: always()
         uses: actions/upload-artifact@v4
@@ -38,11 +42,19 @@ jobs:
           name: dragon-browser-review
           path: artifacts/dragon
           if-no-files-found: ignore
+      - name: Preserve Android browser review images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: androide-browser-review
+          path: artifacts/androide
+          if-no-files-found: ignore
       - name: Install PDF validation tools
         run: python -m pip install --disable-pip-version-check pypdf
       - name: Verify all 47 pages and slides in both PDF and PowerPoint files
         run: |
           python scripts/verify_decks.py
           python scripts/verify_dragon.py
+          python scripts/verify_androide.py
       - name: Validate model behavior and indicator sources
         run: node scripts/check_models.cjs
