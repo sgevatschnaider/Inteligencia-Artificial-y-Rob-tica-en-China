@@ -1,0 +1,52 @@
+name: Assemble original infrastructure presentation (one-time)
+on:
+  push:
+    branches: [infraestructura-build-20261020]
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out temporary branch
+        uses: actions/checkout@v4
+      - name: Reassemble exact original PowerPoint from verified Git blobs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import os,json,base64,hashlib,urllib.request,zipfile
+          from pathlib import Path
+          shas=["5154d39135cad3625192a18e32a5df9b2eeff8e5","4b0e6d9c3774ec0872caa8475464cc86e3b21cd8","590d3f91b8dc8b38578635221ea5575caea8de4d","8934712eff8b5d63d479d628f4cb8c0056ee6b4b","786ea723acd759e4339afc7d881aea80c77e17d0","ee033c7951d1dd2efb284b514d09620c8bcddd8d","fafeb7ec122eab18830a5aacc7f0ccad34acc873","a1b89e50239ebf857489461f483dfb76b7728bd6","33dbdd85fdfc33f53ebe0fd46139fc2d041abdd5","8d76d615a515603c4aa6226b2a82516063ec28fe","ef5a294f6dc5a24c5ccb32c97e342c877f8065c8","b810599ab2b219be2d299791769f1298ef8bd3ca"]
+          p=Path("materiales/infraestructura/presentacion.pptx")
+          p.parent.mkdir(parents=True,exist_ok=True)
+          with p.open("wb") as output:
+              for i,sha in enumerate(shas,1):
+                  request=urllib.request.Request(
+                      f"https://api.github.com/repos/{os.environ['REPO']}/git/blobs/{sha}",
+                      headers={"Authorization": "Bearer "+os.environ["GH_TOKEN"],
+                               "Accept": "application/vnd.github+json",
+                               "X-GitHub-Api-Version": "2022-11-28"})
+                  with urllib.request.urlopen(request, timeout=75) as response:
+                      obj=json.load(response)
+                  part=base64.b64decode(obj["content"])
+                  checksum=hashlib.sha1(b"blob "+str(len(part)).encode()+b"\\0"+part).hexdigest()
+                  assert checksum==sha,(i,checksum,sha)
+                  output.write(part)
+          data=p.read_bytes()
+          assert len(data)==18297400,len(data)
+          assert hashlib.sha256(data).hexdigest()=="3dfc72c68213f8336a36ebf6f257f443384a58f743d51f80d21f522894435e7b"
+          with zipfile.ZipFile(p) as f:
+              assert f.testzip() is None
+              slides=[name for name in f.namelist() if name.startswith("ppt/slides/slide") and name.endswith(".xml") and name[16:-4].isdigit()]
+              assert len(slides)==32,len(slides)
+          print("32-slide PowerPoint verified, identical to source.")
+          PY
+      - name: Commit verified original PPTX to temporary branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add materiales/infraestructura/presentacion.pptx
+          git commit -m "Restore verified original infrastructure PowerPoint"
+          git push origin HEAD:infraestructura-build-20261020
