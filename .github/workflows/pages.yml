@@ -28,6 +28,7 @@ jobs:
           node --check videolab/home.js
           node --check videolab/app.js
           node --check materiales/dragon/viewer.js
+          node --check materiales/androide/viewer.js
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Prepare the static site without changing its content

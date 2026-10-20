@@ -162,6 +162,8 @@
   <script src="assets/intro/intro.js" defer></script>
 <style>
 @font-face{font-family:DragonHan;src:url('materiales/dragon/fonts/dragon-han.woff') format('woff');font-display:swap;unicode-range:U+2E80-9FFF,U+F900-FAFF}.dragon-feature [lang="zh-Hans"]{font-family:DragonHan,'Noto Sans SC',sans-serif}.dragon-feature{margin-bottom:36px;background:#081b29;color:#f5f0e5;border-color:#263b48}.dragon-feature .eyebrow{color:#e4b86d}.dragon-feature h2{color:#f0ce91}.dragon-feature .feature-copy p{color:#b9c8ce}.dragon-feature .feature-copy .dragon-subtitle{color:#f2e5cc;font-size:1.08rem}.dragon-feature .feature-copy .dragon-attribution{font-size:12px;line-height:1.5;color:#ddc79e}.dragon-feature .feature-copy .dragon-language{font-size:11px;color:#a7bac3;margin-bottom:0}.dragon-feature .open-presentation{background:#aa7732}.dragon-feature .open-presentation:hover{background:#8d5c24}.dragon-feature .file-action{background:#122b3a;color:#f1d6a8;border-color:#3f5056}.dragon-feature .file-action:hover{background:#213c4b}.dragon-feature .lesson-cover img{box-shadow:0 8px 24px #0005}
+
+@font-face{font-family:AndroideHan;src:url('materiales/androide/fonts/androide-han.woff') format('woff');font-display:swap;unicode-range:U+2E80-9FFF,U+F900-FAFF}.androide-feature [lang="zh-Hans"]{font-family:AndroideHan,'Noto Sans SC',sans-serif;font-size:.68em;letter-spacing:.01em;display:inline-block}.androide-feature{margin-bottom:36px;background:#071d2b;color:#eaf6fa;border-color:#284957}.androide-feature .eyebrow{color:#64d4e7}.androide-feature h2{color:#e1f2f8}.androide-feature .feature-copy p{color:#b7ced8}.androide-feature .feature-copy .androide-subtitle{color:#e1f2f8;font-size:1.08rem}.androide-feature .feature-copy .androide-attribution{font-size:12px;line-height:1.5;color:#b4dae4}.androide-feature .feature-copy .androide-language{font-size:11px;color:#9fc4d3;margin-bottom:0}.androide-feature .open-presentation{background:#087e94}.androide-feature .open-presentation:hover{background:#05677c}.androide-feature .file-action{background:#102c3a;color:#c2eff7;border-color:#3d5967}.androide-feature .file-action:hover{background:#1b3e4e}.androide-feature .lesson-cover img{box-shadow:0 8px 24px #0005}
 </style>
 </head>
 <body data-language="es">
@@ -241,6 +243,17 @@
         <p class="dragon-attribution" lang="es">Material elaborado por el profesor Sergio Gevatschnaider</p>
         <div class="feature-actions"><a class="open-presentation" data-dragon-link href="materiales/dragon/"><span class="play-icon" aria-hidden="true">▶</span><span class="es">Abrir visor</span><span class="en">Open slide viewer</span><span aria-hidden="true">↗</span></a><a class="file-action" href="materiales/dragon/presentacion.pdf" target="_blank" rel="noopener"><span class="es">Ver PDF</span><span class="en">View PDF</span> ↗</a><a class="file-action" href="materiales/dragon/presentacion.pptx" download><span class="es">Descargar PowerPoint</span><span class="en">Download PowerPoint</span> ↓</a></div>
         <p class="dragon-language es">Contenido en español · Notas docentes y fuentes originales</p><p class="dragon-language en">Spanish content · Teaching notes and original sources · English viewer interface</p>
+      </div>
+    </div>
+    <div class="wrap lesson-feature androide-feature" id="androide">
+      <a class="lesson-cover" data-androide-link href="materiales/androide/?lang=es" aria-label="Abrir El androide, contenido en español"><img src="materiales/androide/slides/slide-01.webp" alt="El androide — 人形机器人: empresas tecnológicas e inteligencia artificial en China" width="1920" height="1080" loading="lazy"></a>
+      <div class="feature-copy"><div class="eyebrow"><span class="es">Colección académica · Módulo 02 · 24 diapositivas</span><span class="en">Academic collection · Module 02 · 24 slides</span></div>
+        <h2 class="es">El androide — <span lang="zh-Hans">人形机器人</span></h2><h2 class="en">The android — <span lang="zh-Hans">人形机器人</span></h2>
+        <p class="es androide-subtitle">Las empresas tecnológicas y la revolución de la inteligencia artificial en China.</p><p class="en androide-subtitle">Technology companies and the artificial intelligence revolution in China.</p>
+        <p class="es">De DeepSeek y Qwen a Unitree y UBTECH: empresas, modelos fundacionales, robótica e inteligencia encarnada en el ecosistema tecnológico chino.</p><p class="en">From DeepSeek and Qwen to Unitree and UBTECH: companies, foundation models, robotics and embodied intelligence in China's technology ecosystem.</p>
+        <p class="androide-attribution" lang="es">Material elaborado por el profesor Sergio Gevatschnaider</p>
+        <div class="feature-actions"><a class="open-presentation" data-androide-link href="materiales/androide/?lang=es"><span class="play-icon" aria-hidden="true">▶</span><span class="es">Abrir visor</span><span class="en">Open slide viewer</span><span aria-hidden="true">↗</span></a><a class="file-action" href="materiales/androide/presentacion.pdf" target="_blank" rel="noopener"><span class="es">Ver PDF</span><span class="en">View PDF</span> ↗</a><a class="file-action" href="materiales/androide/presentacion.pptx" download><span class="es">Descargar PowerPoint</span><span class="en">Download PowerPoint</span> ↓</a></div>
+        <p class="androide-language es">Contenido en español · Notas docentes y fuentes originales</p><p class="androide-language en">Spanish content · Teaching notes and original sources · English viewer interface</p>
       </div>
     </div>
     <div class="wrap lesson-feature" id="transformacion-industrial">
@@ -358,6 +371,7 @@
       const setLanguage = (language) => {
         body.dataset.language = language;
         document.querySelectorAll('[data-dragon-link]').forEach(a=>{a.href='materiales/dragon/?lang='+language;a.setAttribute('aria-label',language==='en'?'Open The dragon, Spanish content':'Abrir El dragón, contenido en español');});
+        document.querySelectorAll('[data-androide-link]').forEach(a=>{a.href='materiales/androide/?lang='+language;a.setAttribute('aria-label',language==='en'?'Open The android, Spanish content':'Abrir El androide, contenido en español');});
         document.querySelectorAll('[data-robotlab-launch]').forEach(a=>{a.href='robotlab/?lang='+language;});
         document.documentElement.lang = language;
         const presentationPath='materiales/transformacion-industrial/'+(language==='en'?'en/':'');

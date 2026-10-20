@@ -1,0 +1,1517 @@
+{
+  "title": "El androide — 人形机器人",
+  "author": "Sergio Gevatschnaider",
+  "date": "2026-10-20",
+  "language": "es",
+  "slides": [
+    {
+      "number": 1,
+      "title": "El androide — 人形机器人",
+      "chapter": "01 · Marco conceptual",
+      "text": [
+        "CHINA TECNOLÓGICA  ·  MÓDULO 02",
+        "EL ANDROIDE",
+        "人形机器人",
+        "RÉNXÍNG JĪQÌRÉN  ·  ROBOT HUMANOIDE",
+        "Las empresas tecnológicas y la transformación de la inteligencia artificial en China",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "OCTUBRE DE 2026  ·  ILUSTRACIÓN CONCEPTUAL CON IA"
+      ],
+      "notes": "Concepto y contexto\nPresentar la metáfora: el androide no representa solamente a un robot; representa la empresa tecnológica china, que convierte ciencia e ingeniería en modelos, hardware, productos, servicios y despliegues. La escritura correcta de robot humanoide en chino simplificado es 人形机器人 (rénxíng jīqìrén); 机器人 significa robot genérico. La imagen es una ilustración conceptual generada con inteligencia artificial.\n\nPrecisiones y evidencia\n\n\nGuía docente\nPregunta de apertura: ¿qué decisiones toma una empresa entre una investigación prometedora y un producto que un cliente acepta pagar? Presentar el humanoide como símbolo de un ecosistema que también incluye software, aceleradores, nube y servicios.\n\nTerminología complementaria: 人工智能 (réngōng zhìnéng) significa inteligencia artificial y 科技企业 (kējì qǐyè), empresas tecnológicas.\n\nIlustración: escena conceptual generada con IA. No representa un producto, una empresa ni un despliegue real.\n\nFuentes originales (corte: 20 de octubre de 2026)\n人形机器人创新发展指导意见\nhttps://www.ncsti.gov.cn/zcfg/zcwj/202311/P020231103482413965397.pdf\n\nAn Yang et al. (2025). Qwen3 Technical Report\nhttps://arxiv.org/abs/2505.09388",
+      "sources": [
+        "https://www.ncsti.gov.cn/zcfg/zcwj/202311/P020231103482413965397.pdf",
+        "https://arxiv.org/abs/2505.09388"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "robot_miit_humanoids_2023",
+        "qwen3"
+      ],
+      "image": "slides/slide-01.webp",
+      "outline": [
+        "Empresas tecnológicas",
+        "Humanoides",
+        "IA generativa"
+      ],
+      "illustration": "Ilustración conceptual generada con IA. No representa un producto comercial ni un despliegue real.",
+      "thesis": "Empresas tecnológicas"
+    },
+    {
+      "number": 2,
+      "title": "¿Qué representa el androide?",
+      "chapter": "01 · Marco conceptual",
+      "text": [
+        "MÓDULO 02",
+        "02",
+        "¿Qué representa\nel androide?",
+        "No solo robots humanoides:",
+        "empresas que diseñan modelos de IA, fabrican robots y chips, compiten, comercializan y aprenden de su operación.",
+        "INNOVACIÓN",
+        "COMPETENCIA",
+        "APRENDIZAJE",
+        "Ilustración conceptual generada con IA",
+        "02",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "METÁFORA CONCEPTUAL"
+      ],
+      "notes": "Concepto y contexto\nEl androide es una metáfora de las organizaciones innovadoras: capital humano, laboratorios, ingeniería, mercados, proveedores, software y capacidad de ejecución. Evitar equivalencia estricta entre androide y todo el sector: es un recurso visual. El módulo aborda IA generativa, cómputo, robótica y movilidad.\n\nPrecisiones y evidencia\n\n\nGuía docente\nPedir un ejemplo de una capacidad interna de la empresa y otro de una dependencia externa. Distinguir decisión empresarial, incentivos públicos y demanda de clientes.\n\nIlustración: escena conceptual generada con IA. No representa un producto, una empresa ni un despliegue real.\n\nFuentes originales (corte: 20 de octubre de 2026)\nByteDance y Tsinghua AIR (2024). Joint Research Center on Scalable Intelligent Model Technology\nhttps://seed.bytedance.com/en/blog/bytedance-and-tsinghua-air-establish-joint-research-center-to-advance-industry-academia-research-collaboration-on-large-models\n\n华为 (2025). 华为宣布开源盘古7B稠密和72B混合专家模型\nhttps://www.huawei.com/cn/news/2025/7/pangu-opensource",
+      "sources": [
+        "https://seed.bytedance.com/en/blog/bytedance-and-tsinghua-air-establish-joint-research-center-to-advance-industry-academia-research-collaboration-on-large-models",
+        "https://www.huawei.com/cn/news/2025/7/pangu-opensource"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "bytedance-seed-tsinghua",
+        "huawei-pangu"
+      ],
+      "image": "slides/slide-02.webp",
+      "outline": [
+        "Empresas innovadoras",
+        "Competencia",
+        "Aprendizaje"
+      ],
+      "illustration": "Ilustración conceptual generada con IA. No representa un producto comercial ni un despliegue real.",
+      "thesis": "Empresas innovadoras"
+    },
+    {
+      "number": 3,
+      "title": "No todos los “robots” son lo mismo",
+      "chapter": "01 · Marco conceptual",
+      "text": [
+        "LENGUAJE Y PRECISIÓN",
+        "No todos los “robots” son lo mismo",
+        "Tres términos chinos para tres conceptos distintos",
+        "01",
+        "02",
+        "03",
+        "机器人",
+        "人形机器人",
+        "仿生人",
+        "jīqìrén",
+        "rénxíng jīqìrén",
+        "fǎngshēngrén",
+        "Robot, término general: brazo industrial, móvil, cuadrúpedo o humanoide.",
+        "Robot humanoide: morfología inspirada en el cuerpo humano.",
+        "Androide o ser humano artificial, habitual como idea narrativa o de ciencia ficción.",
+        "Para este módulo: «EL ANDROIDE» es la metáfora; 人形机器人 identifica el tipo de robot.",
+        "FUENTE: Lingüística y documentación de producto",
+        "03",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "LENGUAJE Y PRECISIÓN"
+      ],
+      "notes": "Concepto y contexto\n机器人 significa robot. 人形机器人 significa robot humanoide (literalmente robot de forma humana). 仿生人 puede usarse en contextos de androides/biónica, aunque los usos varían: no confundir con el sistema operativo Android, llamado 安卓. El término apropiado para Unitree G1, Walker S2 y similares es 人形机器人.\n\nPrecisiones y evidencia\n机器人 (jīqìrén) es el término general. 人形机器人 (rénxíng jīqìrén) se utiliza en documentación técnica china para robot humanoide. 仿生人 (fǎngshēngrén) evoca una persona artificial o androide y depende del contexto; no es una categoría estadística de IFR. En este curso, el androide funciona como símbolo visual de empresas que abarcan software, aceleradores, servicios y robots. La forma del cuerpo no determina por sí sola la autonomía, la función o el mercado.\n\nGuía docente\nPronunciar jīqìrén y rénxíng jīqìrén. Explicar que 人形 describe la forma humana y que 仿生人 tiene usos narrativos o contextuales. No es una clasificación estadística de robots.\n\nFuentes originales (corte: 20 de octubre de 2026)\nStandardization: robot definitions at ISO\nhttps://ifr.org/standardisation\n\n人形机器人 G1: 产品参数\nhttps://www.unitree.com/cn/g1/\n\n人形机器人创新发展指导意见\nhttps://www.ncsti.gov.cn/zcfg/zcwj/202311/P020231103482413965397.pdf",
+      "sources": [
+        "https://ifr.org/standardisation",
+        "https://www.unitree.com/cn/g1/",
+        "https://www.ncsti.gov.cn/zcfg/zcwj/202311/P020231103482413965397.pdf"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "robot_ifr_definitions",
+        "robot_unitree_g1_zh",
+        "robot_miit_humanoids_2023"
+      ],
+      "image": "slides/slide-03.webp",
+      "outline": [
+        "机器人",
+        "人形机器人",
+        "仿生人"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "机器人"
+    },
+    {
+      "number": 4,
+      "title": "Tres pilares, un sistema tecnológico",
+      "chapter": "01 · Marco conceptual",
+      "text": [
+        "EL MAPA DEL CURSO",
+        "Tres pilares, un sistema tecnológico",
+        "En este módulo hacemos zoom sobre las empresas",
+        "01",
+        "02",
+        "03",
+        "EL DRAGÓN",
+        "EL ANDROIDE",
+        "LA INFRAESTRUCTURA",
+        "Estado estratégico",
+        "Empresas tecnológicas",
+        "Ecosistema material",
+        "Orienta prioridades",
+        "Investigan e innovan",
+        "Permite fabricar y escalar",
+        "La innovación surge de la interacción entre Estado, competencia empresarial y capacidades industriales.",
+        "FUENTE: Marco conceptual del curso",
+        "04",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "EL MAPA DEL CURSO"
+      ],
+      "notes": "Concepto y contexto\nExplicar que el estado da objetivos e incentivos, las empresas responden mediante rivalidad, experimentos, errores y comercialización; la infraestructura y los proveedores hacen posible producir y escalar. La causalidad no es automática: hay sobrecapacidad, fallas, dependencia tecnológica y diferencias sectoriales.\n\nPrecisiones y evidencia\n\n\nGuía docente\nEl diagrama es un marco analítico del curso, no una estimación causal. Una misma empresa puede cooperar con un gobierno local, competir con otras firmas y depender de proveedores extranjeros.\n\nFuentes originales (corte: 20 de octubre de 2026)\n人形机器人创新发展指导意见\nhttps://www.ncsti.gov.cn/zcfg/zcwj/202311/P020231103482413965397.pdf\n\nByteDance y Tsinghua AIR (2024). Joint Research Center on Scalable Intelligent Model Technology\nhttps://seed.bytedance.com/en/blog/bytedance-and-tsinghua-air-establish-joint-research-center-to-advance-industry-academia-research-collaboration-on-large-models",
+      "sources": [
+        "https://www.ncsti.gov.cn/zcfg/zcwj/202311/P020231103482413965397.pdf",
+        "https://seed.bytedance.com/en/blog/bytedance-and-tsinghua-air-establish-joint-research-center-to-advance-industry-academia-research-collaboration-on-large-models"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "robot_miit_humanoids_2023",
+        "bytedance-seed-tsinghua"
+      ],
+      "image": "slides/slide-04.webp",
+      "outline": [
+        "Estado",
+        "Empresa",
+        "Infraestructura"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "Estado"
+    },
+    {
+      "number": 5,
+      "title": "Cinco capas de la empresa tecnológica",
+      "chapter": "02 · Empresas y modelos",
+      "text": [
+        "ARQUITECTURA INDUSTRIAL",
+        "Cinco capas de la empresa tecnológica",
+        "Una firma puede liderar una capa y depender de otra",
+        "MODELOS FUNDACIONALES",
+        "DeepSeek · Qwen · GLM",
+        "Algoritmos, datos, entrenamiento",
+        "CHIPS Y CÓMPUTO",
+        "Huawei Ascend · Cambricon",
+        "Aceleradores, memoria, interconexión",
+        "NUBE Y PLATAFORMAS",
+        "Alibaba Cloud · Tencent Cloud",
+        "Servicios, distribución, herramientas",
+        "PRODUCTOS Y SERVICIOS",
+        "Asistentes · industria · movilidad",
+        "Integración y monetización",
+        "IA FÍSICA / ROBÓTICA",
+        "Unitree · UBTECH · AgiBot",
+        "Percepción, acción y despliegue",
+        "LIDERAZGO EN UNA CAPA ≠ AUTONOMÍA EN TODA LA CADENA",
+        "FUENTE: Mapa analítico de la cadena de valor",
+        "05",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "ARQUITECTURA INDUSTRIAL"
+      ],
+      "notes": "Concepto y contexto\nSeparar modelo fundacional, infraestructura computacional, distribución, productos y control físico. Los nombres son ejemplos ilustrativos; no significan que todos operen exclusivamente en una capa. Mostrar dependencias de chips, nube, SDK, datos y clientes. No confundir base abierta por pesos con código fuente totalmente abierto.\n\nPrecisiones y evidencia\nLas cinco capas son un mapa funcional, no categorías empresariales exclusivas. Un proveedor puede desarrollar modelos, ofrecer cómputo e integrar aplicaciones a la vez. Ascend identifica cómputo y software asociado; Pangu identifica modelos de Huawei. Qwen y DeepSeek ilustran modelos fundacionales. La nube conecta capacidades con clientes y herramientas, pero la monetización exige resolver una necesidad concreta y cubrir costos. Para analizar una firma, preguntar qué desarrolla, qué compra, cómo distribuye su oferta y quién paga. En cada modelo con pesos accesibles se debe consultar la licencia concreta y distinguir pesos, código de inferencia, código de entrenamiento y datos. El módulo no atribuye autosuficiencia tecnológica a ninguna empresa.\n\nGuía docente\nRecorrer una aplicación desde su cliente hasta el modelo, la nube y el acelerador. Diferenciar capacidades propias, compras a proveedores y vías de distribución. El código disponible, los pesos y los datos de entrenamiento requieren revisiones de licencia distintas.\n\nFuentes originales (corte: 20 de octubre de 2026)\nAn Yang et al. (2025). Qwen3 Technical Report\nhttps://arxiv.org/abs/2505.09388\n\n华为 (2025). 华为宣布开源盘古7B稠密和72B混合专家模型\nhttps://www.huawei.com/cn/news/2025/7/pangu-opensource\n\n新松机器人: 产品与解决方案\nhttps://www.siasun.com/\n\n工业自动化: 汇川技术产品\nhttps://www.inovance.com/product",
+      "sources": [
+        "https://arxiv.org/abs/2505.09388",
+        "https://www.huawei.com/cn/news/2025/7/pangu-opensource",
+        "https://www.siasun.com/",
+        "https://www.inovance.com/product"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "qwen3",
+        "huawei-pangu",
+        "robot_siasun",
+        "robot_inovance"
+      ],
+      "image": "slides/slide-05.webp",
+      "outline": [
+        "Modelos",
+        "Chips",
+        "Nube",
+        "Aplicaciones",
+        "Robótica"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "Modelos"
+    },
+    {
+      "number": 6,
+      "title": "China no tiene una sola “IA”",
+      "chapter": "02 · Empresas y modelos",
+      "text": [
+        "EMPRESAS Y PLATAFORMAS",
+        "China no tiene una sola “IA”",
+        "Estrategias distintas en un mercado muy competitivo",
+        "DeepSeek",
+        "Alibaba · Qwen",
+        "ByteDance · Seed / Doubao",
+        "Zhipu · GLM",
+        "Razonamiento + eficiencia",
+        "Modelos + nube + apertura",
+        "Investigación + plataformas",
+        "Modelos + servicios empresariales",
+        "Tencent · Hunyuan",
+        "Moonshot · Kimi",
+        "MiniMax",
+        "Huawei · Pangu",
+        "Plataformas + contenido",
+        "Asistentes y agentes",
+        "Texto, voz, música y video",
+        "IA sectorial + cómputo",
+        "Un nombre comercial no equivale a una posición de liderazgo reproducible en todos los benchmarks.",
+        "FUENTES: informes técnicos y documentación oficial, 2024–2026",
+        "06",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "EMPRESAS Y PLATAFORMAS"
+      ],
+      "notes": "Concepto y contexto\nComparar objetivos estratégicos de diversas empresas. DeepSeek se hizo conocido por razonamiento RL; Alibaba Qwen modelos multilingües y oferta abierta en variantes; ByteDance integra IA en plataformas; Huawei combina Ascend con modelos sectoriales. No dar una clasificación numérica sin benchmark concreto, fecha y metodología.\n\nPrecisiones y evidencia\nEl cuadro ofrece ejemplos y no un ranking ni una descripción exhaustiva del mercado a octubre de 2026. DeepSeek y Qwen tienen informes técnicos propios; GLM, Kimi y MiniMax también publican investigación sobre modelos y agentes. ByteDance combina el equipo Seed y productos como Doubao con colaboración académica, documentada en SIA Lab con Tsinghua AIR. Tencent enlaza Hunyuan, nube y herramientas de contenido y aplicaciones. Huawei articula Pangu con Ascend. Las etiquetas de la lámina resumen estrategias y permiten comparar capas de negocio. No implican que cada firma actúe en una sola capa ni prueban éxito económico. Ejercicio: elegir dos actores y distinguir laboratorio, modelo, API, aplicación y canal de distribución. Las métricas comerciales de comunicados deben presentarse como declaraciones de la empresa.\n\nGuía docente\nComparar dos firmas por laboratorio, familia de modelos, API, aplicación y canal de distribución. Los informes citados son casos fechados, no una lista de las versiones más recientes ni un ranking del mercado.\n\nFuentes originales (corte: 20 de octubre de 2026)\nDeepSeek-AI (2025). DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning\nhttps://arxiv.org/abs/2501.12948v1\n\nAn Yang et al. (2025). Qwen3 Technical Report\nhttps://arxiv.org/abs/2505.09388\n\nByteDance y Tsinghua AIR (2024). Joint Research Center on Scalable Intelligent Model Technology\nhttps://seed.bytedance.com/en/blog/bytedance-and-tsinghua-air-establish-joint-research-center-to-advance-industry-academia-research-collaboration-on-large-models\n\nGLM-4.5 Team, Aohan Zeng et al. (2025). GLM-4.5: Agentic, Reasoning, and Coding (ARC) Foundation Models\nhttps://arxiv.org/abs/2508.06471\n\nTencent (2025). Global Rollout of Scenario-Based AI Capabilities\nhttps://www.tencent.com/tencent-announces-global-rollout-of-scenario-based-ai-capabilities-to-accelerate-industrial-efficiency/\n\nKimi Team (2025). Kimi K2: Open Agentic Intelligence\nhttps://arxiv.org/abs/2507.20534\n\nMiniMax (2025). MiniMax-M1: Scaling Test-Time Compute Efficiently with Lightning Attention\nhttps://arxiv.org/abs/2506.13585\n\nMiniMax. Modelos y productos multimodales, consulta 20 de octubre de 2026\nhttps://www.minimax.io/\n\n华为 (2025). 华为宣布开源盘古7B稠密和72B混合专家模型\nhttps://www.huawei.com/cn/news/2025/7/pangu-opensource",
+      "sources": [
+        "https://arxiv.org/abs/2501.12948v1",
+        "https://arxiv.org/abs/2505.09388",
+        "https://seed.bytedance.com/en/blog/bytedance-and-tsinghua-air-establish-joint-research-center-to-advance-industry-academia-research-collaboration-on-large-models",
+        "https://arxiv.org/abs/2508.06471",
+        "https://www.tencent.com/tencent-announces-global-rollout-of-scenario-based-ai-capabilities-to-accelerate-industrial-efficiency/",
+        "https://arxiv.org/abs/2507.20534",
+        "https://arxiv.org/abs/2506.13585",
+        "https://www.minimax.io/",
+        "https://www.huawei.com/cn/news/2025/7/pangu-opensource"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "deepseek-r1",
+        "qwen3",
+        "bytedance-seed-tsinghua",
+        "glm45",
+        "tencent-hunyuan",
+        "kimi-k2",
+        "minimax-m1",
+        "minimax-products",
+        "huawei-pangu"
+      ],
+      "image": "slides/slide-06.webp",
+      "outline": [
+        "DeepSeek",
+        "Qwen",
+        "Doubao",
+        "GLM",
+        "Hunyuan",
+        "Kimi",
+        "MiniMax",
+        "Pangu"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "DeepSeek"
+    },
+    {
+      "number": 7,
+      "title": "DeepSeek y Qwen: dos respuestas a la competencia",
+      "chapter": "02 · Empresas y modelos",
+      "text": [
+        "MODELOS FUNDACIONALES",
+        "DeepSeek y Qwen: dos respuestas a la competencia",
+        "Modelos y entrenamiento, no solo chatbots",
+        "DEEPSEEK · R1",
+        "ALIBABA · QWEN3",
+        "Razonamiento con aprendizaje por refuerzo. R1-Zero aplica RL a una base preentrenada, sin ajuste supervisado inicial. R1 añade datos de arranque y varias etapas. Pesos publicados.",
+        "Familia densa y Mixture-of-Experts (MoE). Estrategia multilingüe, razonamiento y distribución mediante nube, API y versiones con pesos accesibles.",
+        "RL · RAZONAMIENTO",
+        "MoE · MULTILINGÜISMO",
+        "FUENTE: DeepSeek-R1 2025 · Qwen3 2025",
+        "07",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "MODELOS FUNDACIONALES"
+      ],
+      "notes": "Concepto y contexto\nR1-Zero documenta capacidades emergentes por reinforcement learning en tareas de razonamiento, con limitaciones de legibilidad; R1 combina varias etapas. Qwen3 incorpora modelos densos y MoE. Ninguna afirmación implica que una familia supere otra en toda evaluación. Citar informes técnicos, conservar fechas y edición.\n\nPrecisiones y evidencia\nSe comparan dos publicaciones de 2025 como casos del proceso de innovación, sin presentarlas como las versiones más recientes. DeepSeek-R1-Zero aplica RL a una base ya preentrenada sin una fase inicial de ajuste supervisado. R1 añade datos de arranque y etapas adicionales. La experiencia explora cómo diseñar recompensas y aprovechar modelos previos. El informe Qwen3 documenta modelos densos y MoE y decisiones sobre razonamiento y distribución. MoE significa que se activa una parte de los expertos por token; parámetros totales y activos no son equivalentes. Un puntaje debe acompañarse de tarea, versión y protocolo. La publicación de pesos facilita ciertos usos y replicaciones, pero no reproduce por sí sola todos los datos y costos de entrenamiento. Pregunta: ¿qué decisiones de investigación cambian la capacidad y cuáles cambian la adopción del producto?\n\nGuía docente\nRL significa aprendizaje por refuerzo. En R1-Zero parte de una base ya preentrenada. MoE significa mezcla de expertos: un mecanismo de arquitectura, no una garantía automática de menor costo en toda configuración.\n\nFuentes originales (corte: 20 de octubre de 2026)\nDeepSeek-AI (2025). DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning\nhttps://arxiv.org/abs/2501.12948v1\n\nAn Yang et al. (2025). Qwen3 Technical Report\nhttps://arxiv.org/abs/2505.09388\n\nDeepSeek-AI et al. (2025). DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning. Nature 645, 633–638\nhttps://doi.org/10.1038/s41586-025-09422-z",
+      "sources": [
+        "https://arxiv.org/abs/2501.12948v1",
+        "https://arxiv.org/abs/2505.09388",
+        "https://doi.org/10.1038/s41586-025-09422-z"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "deepseek-r1",
+        "qwen3",
+        "deepseek-nature"
+      ],
+      "image": "slides/slide-07.webp",
+      "outline": [
+        "DeepSeek R1",
+        "Qwen3",
+        "RL",
+        "MoE"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "DeepSeek R1"
+    },
+    {
+      "number": 8,
+      "title": "El gran salto de escala es verificable",
+      "chapter": "03 · Mercados de robótica",
+      "text": [
+        "ROBÓTICA INDUSTRIAL",
+        "El gran salto de escala es verificable",
+        "Datos de instalaciones, no de ventas de humanoides",
+        "354.000",
+        "59 %",
+        "55 %",
+        "robots industriales instalados en China en 2025",
+        "de las instalaciones mundiales en 2025",
+        "cuota de proveedores chinos en su mercado interno",
+        "Robot industrial ≠ robot humanoide: los mercados y las métricas no son intercambiables.",
+        "FUENTE: IFR · World Robotics 2026, datos de 2025",
+        "08",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "ROBÓTICA INDUSTRIAL"
+      ],
+      "notes": "Concepto y contexto\nWorld Robotics 2026 informa unas 354 mil instalaciones industriales en China durante 2025, 59% de nuevas instalaciones mundiales y 55% del mercado doméstico abastecido por empresas chinas. El parque acumulado y la cantidad de humanoides son indicadores distintos. No atribuir este flujo a Unitree, UBTECH o robots humanoides.\n\nPrecisiones y evidencia\nLos tres indicadores describen el flujo de instalaciones industriales de 2025 publicado por IFR el 24/09/2026: aproximadamente 354.000 en China, 59% del total mundial y 55% de cuota de proveedores nacionales dentro de China. Los dos porcentajes tienen denominadores distintos. No representan parque acumulado, número de humanoides o ventas de un fabricante particular. Para analizar política industrial, separar la estadística observada de las interpretaciones causales o expectativas que acompañan el comunicado.\n\nGuía docente\nLos porcentajes tienen denominadores distintos: 59 % compara China con el mundo, mientras 55 % compara proveedores nacionales con todas las instalaciones dentro de China. Las tres cifras corresponden a 2025 y su publicación a 2026.\n\nFuentes originales (corte: 20 de octubre de 2026)\nChina Installs 59 Percent of World's Industrial Robots\nhttps://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf\n\nFive Million Robots now Operate in Factories Globally\nhttps://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally",
+      "sources": [
+        "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf",
+        "https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "robot_ifr_2026_china",
+        "robot_ifr_2026_world"
+      ],
+      "image": "slides/slide-08.webp",
+      "outline": [
+        "354000",
+        "59 %",
+        "55 %"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "354000"
+    },
+    {
+      "number": 9,
+      "title": "Cuatro mercados que no debemos confundir",
+      "chapter": "03 · Mercados de robótica",
+      "text": [
+        "TAXONOMÍA",
+        "Cuatro mercados que no debemos confundir",
+        "Tipología didáctica: aplicación, movilidad y morfología",
+        "BRAZOS INDUSTRIALES",
+        "MÓVILES / SERVICIO",
+        "Soldar, ensamblar, pintar, paletizar\nCeldas y robots de posición fija",
+        "Almacenes, inspección, limpieza\nAMR, logística y robots de servicio",
+        "CUADRÚPEDOS",
+        "HUMANOIDES",
+        "Inspección, seguridad, terrenos difíciles\nLocomoción y sensores de campo",
+        "Bipedestación, manos y tareas generales\nManipulación todavía en validación",
+        "No sumar “unidades” sin definir qué categoría, tarea, precio y contexto representan.",
+        "FUENTE: IFR · Unidad y denominador importan",
+        "09",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "TAXONOMÍA"
+      ],
+      "notes": "Concepto y contexto\nLos indicadores de robots industriales IFR son más comparables; unidades de robots de servicios, cuadrúpedos y humanoides son heterogéneas. Algunos robots móviles se comercializan por flota y servicio. No inferir autonomía general desde locomoción o del video de demostración.\n\nPrecisiones y evidencia\nLas cuatro familias ayudan a comparar aplicaciones, pero no constituyen una taxonomía ISO excluyente. Industrial alude a la aplicación y la manipulación; móvil, al desplazamiento; cuadrúpedo o humanoide, a la morfología. Un manipulador industrial puede instalarse sobre una base móvil. Galbot G1 ilustra manipulación móvil con ruedas, mientras que Fourier GR-3 expresa una orientación a la interacción. Comparar unidades requiere igualar período, función, modalidad de entrega y criterios de seguridad.\n\nGuía docente\nAplicación industrial, base móvil y morfología son ejes que pueden superponerse. Un manipulador industrial puede estar montado sobre una base móvil. Las cuatro agrupaciones son didácticas, no clases ISO mutuamente excluyentes.\n\nFuentes originales (corte: 20 de octubre de 2026)\nStandardization: robot definitions at ISO\nhttps://ifr.org/standardisation\n\n新松机器人: 产品与解决方案\nhttps://www.siasun.com/\n\nGalbot G1: 可泛化操作的具身大模型机器人\nhttps://www.galbot.com/g1/\n\nFourier GR-3: Robot Overview\nhttps://support.fftai.com/en/gr3/getting-started/general-information",
+      "sources": [
+        "https://ifr.org/standardisation",
+        "https://www.siasun.com/",
+        "https://www.galbot.com/g1/",
+        "https://support.fftai.com/en/gr3/getting-started/general-information"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "robot_ifr_definitions",
+        "robot_siasun",
+        "robot_galbot_g1",
+        "robot_fourier_gr3"
+      ],
+      "image": "slides/slide-09.webp",
+      "outline": [
+        "Industrial",
+        "AMR",
+        "Cuadrúpedos",
+        "Humanoides"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "Industrial"
+    },
+    {
+      "number": 10,
+      "title": "Un humanoide no es un chatbot con piernas",
+      "chapter": "04 · Empresas de robótica",
+      "text": [
+        "DEL SOFTWARE AL MUNDO FÍSICO",
+        "10",
+        "Un humanoide\nno es un chatbot\ncon piernas.",
+        "Debe percibir, decidir y actuar bajo límites físicos y de seguridad.",
+        "Ilustración conceptual generada con IA",
+        "10",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INTELIGENCIA ENCARNADA"
+      ],
+      "notes": "Concepto y contexto\nIntroducir la diferencia entre predecir secuencias digitales y actuar con sensores, fuerza, equilibrio, torques, latencia y riesgos físicos. Los LLM pueden apoyar planificación semántica, pero no reemplazan el control motor y la verificación de seguridad.\n\nPrecisiones y evidencia\nLa interacción física introduce observaciones incompletas, latencias y consecuencias materiales. Un robot debe estimar su situación y ejecutar acciones bajo límites de movimiento, fuerza, estabilidad y espacio. El modelo que entiende una instrucción puede proponer una tarea, mientras otros componentes realizan trayectorias y correcciones. Una salida verbal plausible no prueba que una pieza pueda agarrarse sin colisión. Para evaluar el sistema se deben definir tarea, objeto, entorno y asistencia humana. Esta lámina es una comparación didáctica, no una afirmación de que toda arquitectura robótica tenga los mismos módulos. La investigación VLA aporta una vía para relacionar instrucciones con control visuomotor, con evaluaciones delimitadas.\n\nGuía docente\nUsar el ejemplo de tomar una pieza resbaladiza. Una instrucción verbal puede definir la meta, pero el robot necesita estimación del estado, control de fuerzas, límites mecánicos y respuesta a fallos.\n\nIlustración: escena conceptual generada con IA. No representa un producto, una empresa ni un despliegue real.\n\nFuentes originales (corte: 20 de octubre de 2026)\nMoo Jin Kim et al. (2024). OpenVLA: An Open-Source Vision-Language-Action Model\nhttps://arxiv.org/abs/2406.09246\n\nSongming Liu et al. (2024/2025). RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation. ICLR 2025\nhttps://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html",
+      "sources": [
+        "https://arxiv.org/abs/2406.09246",
+        "https://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "openvla",
+        "rdt1b"
+      ],
+      "image": "slides/slide-10.webp",
+      "outline": [
+        "Sensor",
+        "Control",
+        "Seguridad"
+      ],
+      "illustration": "Ilustración conceptual generada con IA. No representa un producto comercial ni un despliegue real.",
+      "thesis": "Sensor"
+    },
+    {
+      "number": 11,
+      "title": "Cuatro empresas, cuatro apuestas distintas",
+      "chapter": "04 · Empresas de robótica",
+      "text": [
+        "ACTORES DE IA FÍSICA",
+        "Cuatro empresas, cuatro apuestas distintas",
+        "Marcas emblemáticas, no un ranking de madurez",
+        "UNITREE / 宇树",
+        "UBTECH / 优必选",
+        "G1: agilidad, plataforma humanoide e investigación",
+        "Walker S2: integración en escenarios industriales",
+        "AGIBOT / 智元",
+        "XPENG ROBOTICS",
+        "G2: fabricación y pruebas en líneas productivas",
+        "IRON: apuesta de IA física vinculada al ecosistema de movilidad",
+        "Una ficha comercial describe una propuesta; no prueba productividad sostenida ni generalización.",
+        "FUENTE: Fichas oficiales consultadas en octubre de 2026",
+        "11",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "ACTORES DE IA FÍSICA"
+      ],
+      "notes": "Concepto y contexto\nUnitree G1 es una plataforma destacada por movilidad y experimentación; UBTECH Walker S2 incorpora batería intercambiable y flujos fabriles; AgiBot anuncia mayor escala manufacturera; XPENG desarrolla el humanoide IRON. Estos ejemplos deben leerse según evidencia disponible, sin concluir que todos resuelven tareas generales de forma autónoma.\n\nPrecisiones y evidencia\nLos cuatro casos no agotan el sector. Unitree, UBTECH, AGIBOT y XPENG representan estrategias diferentes; Galbot y Fourier amplían el análisis a manipulación móvil e interacción. El 08/09/2026 XPENG anunció una línea de IRON y proyectó producción masiva para finales de 2026 y entregas para 2027. Al corte del módulo, esos planes siguen siendo futuros. La comparación debe preguntar por tareas, clientes, fallas, costos y condiciones de operación, sin convertir nombres de productos en un ranking de autonomía.\n\nGuía docente\nLos cuatro casos no agotan el sector. Galbot ilustra manipulación con base de ruedas y Fourier otra orientación hacia interacción y acompañamiento. La forma comercial del producto no acredita autonomía general ni eficacia en todos los entornos.\n\nFuentes originales (corte: 20 de octubre de 2026)\nUnitree G1: official specifications\nhttps://www.unitree.com/g1/\n\nUBTECH Walker S2: Autonomous Battery Swapping\nhttps://www.ubtrobot.com/en/humanoid/products/walker-s2\n\nAGIBOT's 15,000th Robot Rolls Off the Production Line\nhttps://www.agibot.com/article/231/detail/82.html\n\nIRON rolls off XPENG's new production line\nhttps://www.xpeng.com/news/01a080371029a057bc8e8a02a2c6012b\n\nGalbot G1: 可泛化操作的具身大模型机器人\nhttps://www.galbot.com/g1/\n\nFourier GR-3: Robot Overview\nhttps://support.fftai.com/en/gr3/getting-started/general-information",
+      "sources": [
+        "https://www.unitree.com/g1/",
+        "https://www.ubtrobot.com/en/humanoid/products/walker-s2",
+        "https://www.agibot.com/article/231/detail/82.html",
+        "https://www.xpeng.com/news/01a080371029a057bc8e8a02a2c6012b",
+        "https://www.galbot.com/g1/",
+        "https://support.fftai.com/en/gr3/getting-started/general-information"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "robot_unitree_g1",
+        "robot_ubtech_s2",
+        "robot_agibot_15000",
+        "robot_xpeng_iron_2026",
+        "robot_galbot_g1",
+        "robot_fourier_gr3"
+      ],
+      "image": "slides/slide-11.webp",
+      "outline": [
+        "Unitree",
+        "UBTECH",
+        "AgiBot",
+        "XPENG"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "Unitree"
+    },
+    {
+      "number": 12,
+      "title": "Unitree G1: movilidad no equivale a oficio",
+      "chapter": "04 · Empresas de robótica",
+      "text": [
+        "CASO EMPRESARIAL · 01",
+        "Unitree G1: movilidad no equivale a oficio",
+        "宇树科技 · Un producto humanoide para desarrollar capacidades",
+        "≈132 cm",
+        "Altura anunciada",
+        "≈35 kg",
+        "G1; EDU: ≈35 kg o más",
+        "23 / 23–43",
+        "G1 / G1 EDU (DoF)",
+        "Imagen de producto: Unitree Robotics",
+        "Datos declarados por el fabricante; verificar la configuración específica.",
+        "FUENTE: Unitree · ficha de G1",
+        "12",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "CASO EMPRESARIAL · 01"
+      ],
+      "notes": "Concepto y contexto\nLa ficha de Unitree describe G1 como un robot humanoide de aproximadamente 132 cm y 35 kg, con 23 a 43 grados de libertad según versión. La plataforma destaca locomoción y capacidades para investigación. Explicar por qué equilibrio dinámico y tareas de manipulación fina son desafíos diferentes: dedos, tacto, objeto, fricción, tolerancias, tiempos de ciclo.\n\nPrecisiones y evidencia\nLa ficha distingue G1 de G1 EDU: 23 frente a 23–43 grados de libertad según opciones. La altura es 1320 mm y el peso aproximado es 35 kg; el EDU puede pesar más. Son valores de configuración comercial. Las capacidades de las demostraciones no equivalen a todas las funciones incluidas en el producto. Unitree advierte que algunas siguen en desarrollo y prueba. Para estudiar manipulación, pedir precisión, tolerancias, tipo de objeto, rozamiento, tiempo de ciclo y registro de intervenciones humanas.\n\nGuía docente\nLa imagen final corresponde a un recurso oficial del G1, con derechos del fabricante. G1 base: 23 grados de libertad y aproximadamente 35 kg con batería. G1 EDU: 23–43 grados y aproximadamente 35 kg o más según configuración. La altura anunciada es 132 cm. La ficha advierte sobre funciones de muestra aún en desarrollo.\n\nImagen: Unitree Robotics. Recurso de producto obtenido de su ficha oficial G1. Derechos del fabricante. El recurso no queda cubierto por la licencia CC BY del texto docente.\n\nFuentes originales (corte: 20 de octubre de 2026)\nUnitree G1: official specifications\nhttps://www.unitree.com/g1/\n\n人形机器人 G1: 产品参数\nhttps://www.unitree.com/cn/g1/\n\nUnitree Robotics: imagen oficial del humanoide G1\nhttps://www.unitree.com/g1/",
+      "sources": [
+        "https://www.unitree.com/g1/",
+        "https://www.unitree.com/cn/g1/",
+        "https://www.unitree.com/g1/"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "robot_unitree_g1",
+        "robot_unitree_g1_zh",
+        "robot_unitree_image"
+      ],
+      "image": "slides/slide-12.webp",
+      "outline": [
+        "Unitree G1",
+        "Locomoción",
+        "Manipulación"
+      ],
+      "illustration": "Imagen oficial del G1: Unitree Robotics. Derechos del fabricante. Las prestaciones citadas son declaraciones comerciales.",
+      "thesis": "Unitree G1"
+    },
+    {
+      "number": 13,
+      "title": "UBTECH Walker S2: robot integrado en la fábrica",
+      "chapter": "04 · Empresas de robótica",
+      "text": [
+        "CASO EMPRESARIAL · 02",
+        "UBTECH Walker S2: robot integrado en la fábrica",
+        "优必选 · Energía, visión, manipulación y flujos industriales",
+        "≤3 min",
+        "15 kg",
+        "Visión estéreo",
+        "Cambio autónomo de batería declarado",
+        "Carga manipulada declarada",
+        "Percepción binocular RGB según la empresa",
+        "Un cambio de batería no demuestra operación autónoma y productiva 24/7 sin asistencia.",
+        "FUENTE: UBTECH · ficha oficial 2026",
+        "13",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "CASO EMPRESARIAL · 02"
+      ],
+      "notes": "Concepto y contexto\nUBTECH presenta Walker S2 con tecnología de cambio autónomo de batería en unos tres minutos, capacidad de manipulación anunciada de hasta 15 kg y visión estéreo binocular RGB. Son afirmaciones de producto de la empresa y deben diferenciarse de estudios independientes de disponibilidad, número de intervenciones, seguridad y costo. Su informe anual también describe la evolución del robot.\n\nPrecisiones y evidencia\nUBTECH declara para Walker S2 un intercambio autónomo de batería dentro de tres minutos y manipulación de carga de hasta 15 kg. La ficha industrial describe visión estéreo binocular RGB y no afirma 15 kg por cada brazo. El manual de la variante EDU especifica 15 kg como carga máxima conjunta de ambos brazos; no trasladar las demás especificaciones de esa variante al modelo industrial. La gestión energética resuelve una restricción operativa, mientras que fiabilidad, mantenimiento, seguridad y supervisión determinan la disponibilidad del sistema completo.\n\nGuía docente\nLa ficha industrial declara hasta 15 kg de carga manipulada y cambio de batería dentro de tres minutos. No convertir esa cifra en 15 kg por brazo. La capacidad y el procedimiento deben cotejarse con la versión del producto. Estas prestaciones declaradas no prueban productividad sostenida durante 24 horas.\n\nFuentes originales (corte: 20 de octubre de 2026)\nUBTECH Walker S2: Autonomous Battery Swapping\nhttps://www.ubtrobot.com/en/humanoid/products/walker-s2\n\nWalker S2: 工业人形机器人\nhttps://www.ubtrobot.com/cn/humanoid/products/walker-s2\n\nUBTECH Robotics: Annual Report 2025\nhttps://owebsite-cdn.ubtrobot.com/resources/file/2026/04/21/797179114676293.pdf\n\nWalker S2 EDU: 5. 产品组成\nhttps://docs.ubtrobot.com/walker-s2-edu/docs/user-guide/6/",
+      "sources": [
+        "https://www.ubtrobot.com/en/humanoid/products/walker-s2",
+        "https://www.ubtrobot.com/cn/humanoid/products/walker-s2",
+        "https://owebsite-cdn.ubtrobot.com/resources/file/2026/04/21/797179114676293.pdf",
+        "https://docs.ubtrobot.com/walker-s2-edu/docs/user-guide/6/"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "robot_ubtech_s2",
+        "robot_ubtech_s2_zh",
+        "robot_ubtech_annual_2025",
+        "robot_ubtech_s2_edu"
+      ],
+      "image": "slides/slide-13.webp",
+      "outline": [
+        "UBTECH Walker S2",
+        "Batería",
+        "Visión"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "UBTECH Walker S2"
+    },
+    {
+      "number": 14,
+      "title": "AgiBot: del prototipo al volumen anunciado",
+      "chapter": "04 · Empresas de robótica",
+      "text": [
+        "CASO EMPRESARIAL · 03",
+        "AgiBot: del prototipo al volumen anunciado",
+        "智元机器人 · Cómo interpretar un hito de fabricación",
+        "PRODUCIDO ≠ VENDIDO",
+        "15.000",
+        "Unidades fabricadas no prueban ventas cobradas ni uso productivo.",
+        "robot número 15.000 producido,\nsegún anuncio empresarial del 28/06/2026",
+        "PILOTO ≠ DESPLIEGUE",
+        "Una prueba fabril requiere mediciones independientes y repetición.",
+        "La cifra es una declaración del fabricante: no mezclar producción, entregas y parque operativo.",
+        "FUENTE: AgiBot · comunicaciones oficiales, junio 2026",
+        "14",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "CASO EMPRESARIAL · 03"
+      ],
+      "notes": "Concepto y contexto\nLa empresa anunció que su unidad robot número 15.000 salió de producción el 28 de junio de 2026. También informó resultados de una transmisión de prueba fabril de varios días. Es necesario distinguir un anuncio empresarial de producción acumulada, ventas, aceptación por clientes, disponibilidad productiva y costos reales. Las métricas declaradas de pruebas no son validación independiente.\n\nPrecisiones y evidencia\nAGIBOT anunció el 28/06/2026 que un G2 fue su unidad número 15.000. Es un hito acumulado de fabricación de su portafolio, que no equivale a 15.000 G2, ventas cobradas o robots instalados operativamente. El comunicado del 29/06 describe seis días de transmisión en Longcheer, Nanchang, con métricas de éxito declaradas por la empresa. Conviene conservar la atribución y exigir diseño de prueba, denominador, paradas y supervisión para comparar con la automatización convencional.\n\nGuía docente\nEl hito corresponde a la unidad acumulada número 15.000 del fabricante y su portafolio. La unidad del anuncio es un G2, pero ello no significa 15.000 G2, ni 15.000 bípedos, ni ventas cobradas o parque operativo auditado. La transmisión de seis días se describe en un comunicado del 29 de junio de 2026 y sigue siendo una declaración empresarial.\n\nFuentes originales (corte: 20 de octubre de 2026)\nAGIBOT's 15,000th Robot Rolls Off the Production Line\nhttps://www.agibot.com/article/231/detail/82.html\n\nAGIBOT Concludes Six-Day Real Factory Livestream\nhttps://www.agibot.com/article/231/detail/83.html",
+      "sources": [
+        "https://www.agibot.com/article/231/detail/82.html",
+        "https://www.agibot.com/article/231/detail/83.html"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "robot_agibot_15000",
+        "robot_agibot_factory"
+      ],
+      "image": "slides/slide-14.webp",
+      "outline": [
+        "AgiBot",
+        "15000",
+        "Validación"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "AgiBot"
+    },
+    {
+      "number": 15,
+      "title": "Cinco capas dentro de un humanoide",
+      "chapter": "05 · IA encarnada y aprendizaje",
+      "text": [
+        "ANATOMÍA DE UN SISTEMA",
+        "Cinco capas dentro de un humanoide",
+        "La autonomía emerge de sistemas integrados, no de un único modelo",
+        "SENTIDOS",
+        "Cámaras, profundidad, IMU, fuerza",
+        "01",
+        "PERCEPCIÓN",
+        "Objetos, geometría, estado y contexto",
+        "02",
+        "PLANIFICACIÓN",
+        "Metas, rutas, secuencias y restricciones",
+        "03",
+        "04",
+        "CONTROL",
+        "Políticas de movimiento y correcciones",
+        "ACTUADORES",
+        "Motores, reductores, pinzas y manos",
+        "05",
+        "Cada capa tiene latencia, incertidumbre, riesgos y requisitos de seguridad propios.",
+        "FUENTE: Esquema didáctico de arquitectura robótica",
+        "15",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "ANATOMÍA DE UN SISTEMA"
+      ],
+      "notes": "Concepto y contexto\nLos robots no operan únicamente con un modelo lingüístico. La pila de control incluye sensores de visión y propiocepción, estimación del estado, planificación de tareas, planificación motora, control en lazo cerrado y actuadores mecánicos. La conectividad, la seguridad funcional y la supervisión humana atraviesan todas las capas.\n\nPrecisiones y evidencia\nLas cinco capas descomponen funciones para estudiarlas. No describen un único diseño obligatorio. La percepción integra observaciones y estima aspectos relevantes del entorno; la planificación expresa acciones compatibles con una meta; el control ajusta su ejecución y los actuadores producen fuerzas y movimiento. Algunas arquitecturas aprendidas integran varias funciones y otras las separan. InternVLA-N1 es un ejemplo de separación entre planificación y ejecución en navegación. RDT-1B estudia otra arquitectura para manipulación bimanual. Seguridad y supervisión atraviesan el sistema completo. Ejercicio: identificar qué componente puede fallar si el robot reconoce la pieza correcta pero se le cae al levantarla. La solución puede exigir mejor agarre, sensado o control, además de mejorar el modelo semántico.\n\nGuía docente\nLa descomposición es funcional y didáctica. Algunas políticas integran varias funciones de percepción y decisión. Los actuadores, la latencia, la incertidumbre y los requisitos de seguridad mantienen consecuencias físicas aunque una política se entrene de extremo a extremo.\n\nFuentes originales (corte: 20 de octubre de 2026)\nMoo Jin Kim et al. (2024). OpenVLA: An Open-Source Vision-Language-Action Model\nhttps://arxiv.org/abs/2406.09246\n\nSongming Liu et al. (2024/2025). RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation. ICLR 2025\nhttps://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html\n\n人形机器人创新发展指导意见\nhttps://www.ncsti.gov.cn/zcfg/zcwj/202311/P020231103482413965397.pdf\n\n工业自动化: 汇川技术产品\nhttps://www.inovance.com/product",
+      "sources": [
+        "https://arxiv.org/abs/2406.09246",
+        "https://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html",
+        "https://www.ncsti.gov.cn/zcfg/zcwj/202311/P020231103482413965397.pdf",
+        "https://www.inovance.com/product"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "openvla",
+        "rdt1b",
+        "robot_miit_humanoids_2023",
+        "robot_inovance"
+      ],
+      "image": "slides/slide-15.webp",
+      "outline": [
+        "Sensores",
+        "Percepción",
+        "Planificación",
+        "Control",
+        "Actuación"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "Sensores"
+    },
+    {
+      "number": 16,
+      "title": "Percibir → decidir → actuar → comprobar",
+      "chapter": "05 · IA encarnada y aprendizaje",
+      "text": [
+        "INTELIGENCIA ENCARNADA · 具身智能",
+        "Percibir → decidir → actuar → comprobar",
+        "El movimiento transforma el entorno y genera observaciones nuevas",
+        "1",
+        "2",
+        "3",
+        "4",
+        "OBSERVAR",
+        "INTERPRETAR",
+        "ACTUAR",
+        "VERIFICAR",
+        "→",
+        "→",
+        "→",
+        "Cámaras y sensores",
+        "Estado del entorno",
+        "Política + control",
+        "¿Funcionó la tarea?",
+        "LAZO CERRADO: CADA ACCIÓN PRODUCE NUEVA INFORMACIÓN",
+        "FUENTE: Esquema pedagógico · OpenVLA 2024",
+        "16",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "INTELIGENCIA ENCARNADA · 具身智能"
+      ],
+      "notes": "Concepto y contexto\nA diferencia de generar texto o video, el control robótico es interactivo: el sistema observa, ejecuta un comando, mide consecuencias y corrige. El éxito depende de distancias, fricción, fuerza, latencia, precisión y seguridad. 具身智能 (jùshēn zhìnéng) es inteligencia encarnada.\n\nPrecisiones y evidencia\n具身智能 se lee jùshēn zhìnéng y se traduce aquí como inteligencia encarnada. El lazo de interacción vincula observación, acción y corrección. La acción altera el entorno y genera evidencia nueva para ajustar la siguiente decisión. Importa distinguir el entrenamiento de una política de su ejecución: durante entrenamiento se optimizan parámetros; durante operación se toman decisiones con información corriente. Los experimentos en navegación y manipulación permiten medir éxito y errores en condiciones concretas. Un ejemplo simple es desplazar un objeto y volver a localizarlo antes del siguiente movimiento. Un ensayo con un escenario acotado no establece desempeño en todas las superficies, cargas o iluminaciones.\n\nGuía docente\nSeguir el retorno del resultado de una acción hasta una nueva observación. El lazo de control no es una secuencia que termine en mover un motor: el sistema mide consecuencias y corrige. InternVLA-N1 aborda navegación y A1 manipulación, según el laboratorio.\n\nFuentes originales (corte: 20 de octubre de 2026)\nMoo Jin Kim et al. (2024). OpenVLA: An Open-Source Vision-Language-Action Model\nhttps://arxiv.org/abs/2406.09246\n\n上海人工智能实验室 (2025). 具身智能开源周：导航、操作、运动大模型及数据集批量上线\nhttps://www.shlab.org.cn/news/5444209\n\nIntern Robotics / Shanghai AI Laboratory (2025). InternVLA-N1: An Open Dual-System Vision-Language Navigation Foundation Model with Learned Latent Plans\nhttps://internrobotics.github.io/internvla-n1.github.io/",
+      "sources": [
+        "https://arxiv.org/abs/2406.09246",
+        "https://www.shlab.org.cn/news/5444209",
+        "https://internrobotics.github.io/internvla-n1.github.io/"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "openvla",
+        "shlab-internrobotics",
+        "internvla-n1"
+      ],
+      "image": "slides/slide-16.webp",
+      "outline": [
+        "Percepción",
+        "Acción",
+        "Feedback",
+        "具身智能"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "Percepción"
+    },
+    {
+      "number": 17,
+      "title": "VLA: cuando la IA debe mover un brazo",
+      "chapter": "05 · IA encarnada y aprendizaje",
+      "text": [
+        "MODELOS VISION–LANGUAGE–ACTION",
+        "VLA: cuando la IA debe mover un brazo",
+        "De una orden humana a acciones físicas contextualizadas",
+        "INSTRUCCIÓN",
+        "OBSERVACIÓN",
+        "POLÍTICA VLA",
+        "+",
+        "+",
+        "“Colocá la pieza azul\nen la bandeja.”",
+        "Imagen + estado\nde sensores",
+        "Predice acciones\ncondicionadas",
+        "ACCIONES → CONTROLADOR → MOTOR → NUEVA OBSERVACIÓN",
+        "Un VLA no garantiza seguridad funcional ni generalización fuera de su entrenamiento.",
+        "FUENTE: OpenVLA · investigación abierta, 2024",
+        "17",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "MODELOS VISION–LANGUAGE–ACTION"
+      ],
+      "notes": "Concepto y contexto\nVLA significa Vision–Language–Action. Aprende a asociar señales visuales y lenguaje con acciones físicas, usualmente a partir de demostraciones y afinación. OpenVLA es una referencia internacional para explicar la técnica; no es una tecnología exclusivamente china. El aprendizaje de la política y la ejecución segura de bajo nivel son problemas distintos.\n\nPrecisiones y evidencia\nVLA corresponde a Vision–Language–Action. El concepto vincula información visual e instrucciones con acciones de una política robótica. Las entradas concretas varían por arquitectura. OpenVLA es un antecedente internacional y no debe atribuirse a China. Como caso de investigación china, RDT-1B del equipo de Tsinghua condiciona una política de difusión con imágenes, lenguaje y propiocepción para manipulación bimanual. Su preprint apareció en2024 y la conferencia ICLR lo publicó en2025. InternVLA-N1 trata navegación; el anuncio chino de Shanghai AI Laboratory distingue A1 para manipulación. El diagrama de la lámina resume funciones y no describe literalmente cada modelo citado. Evaluar un VLA requiere especificar robot, tarea, acciones, datos y protocolo. Aprender una política no certifica seguridad funcional ni garantiza generalización fuera del ensayo.\n\nGuía docente\nUn esquema genérico puede incluir imágenes y propiocepción según la arquitectura. OpenVLA es un antecedente internacional, mientras RDT-1B ofrece un ejemplo de Tsinghua para manipulación bimanual. Predicción de acciones, control motor y validación de seguridad son niveles diferentes.\n\nFuentes originales (corte: 20 de octubre de 2026)\nMoo Jin Kim et al. (2024). OpenVLA: An Open-Source Vision-Language-Action Model\nhttps://arxiv.org/abs/2406.09246\n\nSongming Liu et al. (2024/2025). RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation. ICLR 2025\nhttps://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html\n\n上海人工智能实验室 (2025). 具身智能开源周：导航、操作、运动大模型及数据集批量上线\nhttps://www.shlab.org.cn/news/5444209",
+      "sources": [
+        "https://arxiv.org/abs/2406.09246",
+        "https://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html",
+        "https://www.shlab.org.cn/news/5444209"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "openvla",
+        "rdt1b",
+        "shlab-internrobotics"
+      ],
+      "image": "slides/slide-17.webp",
+      "outline": [
+        "VLA",
+        "Vision",
+        "Language",
+        "Action"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "VLA"
+    },
+    {
+      "number": 18,
+      "title": "El cuello de botella son los datos de interacción",
+      "chapter": "05 · IA encarnada y aprendizaje",
+      "text": [
+        "LA FRONTERA DE LA ROBÓTICA",
+        "El cuello de botella son los datos de interacción",
+        "Los robots necesitan secuencias percepción–acción–resultado",
+        "DEMOSTRACIÓN HUMANA",
+        "SIMULACIÓN",
+        "Teleoperación y aprendizaje por imitación",
+        "Escenarios virtuales y entrenamiento",
+        "DATOS DEL DESPLIEGUE",
+        "EVALUACIÓN",
+        "Errores, éxitos, cambios de entorno",
+        "Seguridad, repetición y transferencia",
+        "DATA FLYWHEEL ≠ PROGRESO AUTOMÁTICO: los datos deben ser útiles, seguros y diversos.",
+        "FUENTE: Investigación en IA encarnada, 2024–2026",
+        "18",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "LA FRONTERA DE LA ROBÓTICA"
+      ],
+      "notes": "Concepto y contexto\nUn robot necesita datos que vinculen percepción del mundo, acción ejecutada y su efecto. Las fuentes pueden ser demostraciones teleoperadas, simulación, video, datos sintéticos validados y operación real. Los datos visualmente plausibles no necesariamente codifican fuerzas o contactos correctos. La convergencia con generación de video es prometedora, pero hay una brecha entre plausibilidad y física. Remitir al simulador de data flywheel del curso.\n\nPrecisiones y evidencia\nLos datos útiles vinculan lo observado, la acción y sus consecuencias. La imitación aprende de demostraciones; el aprendizaje por refuerzo ajusta una política a partir de recompensas y experiencias. La simulación puede producir interacción controlada, pero su transferencia depende de representar suficientemente los aspectos relevantes del mundo real. Un modelo del mundo aprendido predice consecuencias a partir de observaciones y acciones. La fidelidad visual y la consistencia física son criterios distintos. RoboScape investiga cómo incorporar conocimiento físico a la generación; la v1 deja más pruebas en robots reales como trabajo futuro. La página china de Tsinghua y los recursos de Shanghai permiten discutir estas diferencias desde investigación local. Más datos pueden reforzar sesgos o errores si no se evalúan diversidad, calidad y transferencia. El Data Flywheel del curso es un modelo didáctico, no validación de una fábrica.\n\nGuía docente\nLa imitación aprende de demostraciones; el refuerzo utiliza recompensas y exploración. La simulación aporta transiciones controladas y los datos sintéticos requieren evaluar fidelidad, contactos y transferencia. Los modelos del mundo pueden predecir consecuencias condicionadas por acciones. Un video visualmente plausible no equivale por sí mismo a una simulación física válida.\n\nFuentes originales (corte: 20 de octubre de 2026)\nIntern Robotics / Shanghai AI Laboratory (2025). InternVLA-N1: An Open Dual-System Vision-Language Navigation Foundation Model with Learned Latent Plans\nhttps://internrobotics.github.io/internvla-n1.github.io/\n\nSongming Liu et al. (2024/2025). RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation. ICLR 2025\nhttps://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html\n\nYu Shang et al. (2025). RoboScape: Physics-informed Embodied World Model\nhttps://arxiv.org/abs/2506.23135\n\n清华大学 Future Intelligence Lab (2025). 理解世界还是预测未来？世界模型全面综述\nhttps://fi.ee.tsinghua.edu.cn/news/20/\n\nRobotLab del curso: laboratorio didáctico de robótica humanoide\nhttps://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/robotlab/",
+      "sources": [
+        "https://internrobotics.github.io/internvla-n1.github.io/",
+        "https://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html",
+        "https://arxiv.org/abs/2506.23135",
+        "https://fi.ee.tsinghua.edu.cn/news/20/",
+        "https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/robotlab/"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "internvla-n1",
+        "rdt1b",
+        "roboscape",
+        "tsinghua-worldmodels-zh",
+        "robotlab"
+      ],
+      "image": "slides/slide-18.webp",
+      "outline": [
+        "Imitación",
+        "Simulación",
+        "Datos físicos",
+        "Data Flywheel"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "Imitación"
+    },
+    {
+      "number": 19,
+      "title": "Cinco niveles de evidencia sobre un robot",
+      "chapter": "06 · Evaluación y síntesis",
+      "text": [
+        "MÉTODO PARA ANALIZAR VIDEOS",
+        "Cinco niveles de evidencia sobre un robot",
+        "Un clip espectacular no equivale a productividad industrial",
+        "01",
+        "VIDEO",
+        "Una acción visible",
+        "02",
+        "PRUEBA",
+        "Escenario identificado",
+        "03",
+        "PILOTO",
+        "Tareas medidas en contexto real",
+        "04",
+        "DESPLIEGUE",
+        "Operación repetida con clientes",
+        "05",
+        "PRODUCTIVIDAD",
+        "Costo, calidad, seguridad y retorno",
+        "Preguntá siempre: ¿qué se midió, durante cuánto tiempo y con qué intervención humana?",
+        "FUENTE: Guía de evaluación didáctica",
+        "19",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "MÉTODO PARA ANALIZAR VIDEOS"
+      ],
+      "notes": "Concepto y contexto\nDistinguir clips empresariales, pruebas en laboratorio, pilotos industriales, despliegue y productividad comprobada. Para hablar de adopción real, solicitar tasas de éxito, tareas por hora, intervención humana, paradas, incidentes, duración, costo total y evaluación independiente. Esto aplica también a los vídeos del propio VideoLab.\n\nPrecisiones y evidencia\nLa secuencia de cinco niveles es una guía didáctica del curso, no un estándar IFR o una certificación de seguridad. Una grabación puede incluir teleoperación, selección de tomas o un entorno preparado. Un piloto aporta mejor evidencia si explica tarea, duración, tasas de error, intervenciones y costos. Incluso cuando existe operación repetida, inferir productividad requiere un comparador, mediciones de calidad, paradas y mantenimiento.\n\nGuía docente\nProponer que el alumnado clasifique un video del curso. Solicitar tarea, duración, tasa de éxito, intervenciones humanas, incidentes, tiempo de ciclo, disponibilidad y costo total. Un ensayo puede ser útil sin constituir todavía una evaluación económica independiente.\n\nFuentes originales (corte: 20 de octubre de 2026)\nStandardization: robot definitions at ISO\nhttps://ifr.org/standardisation\n\nAGIBOT Concludes Six-Day Real Factory Livestream\nhttps://www.agibot.com/article/231/detail/83.html\n\nUBTECH Robotics: Annual Report 2025\nhttps://owebsite-cdn.ubtrobot.com/resources/file/2026/04/21/797179114676293.pdf",
+      "sources": [
+        "https://ifr.org/standardisation",
+        "https://www.agibot.com/article/231/detail/83.html",
+        "https://owebsite-cdn.ubtrobot.com/resources/file/2026/04/21/797179114676293.pdf"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "robot_ifr_definitions",
+        "robot_agibot_factory",
+        "robot_ubtech_annual_2025"
+      ],
+      "image": "slides/slide-19.webp",
+      "outline": [
+        "Video",
+        "Prueba",
+        "Piloto",
+        "Despliegue",
+        "Productividad"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "Video"
+    },
+    {
+      "number": 20,
+      "title": "Del laboratorio al ecosistema",
+      "chapter": "06 · Evaluación y síntesis",
+      "text": [
+        "EMPRESAS + INDUSTRIA",
+        "20",
+        "Del laboratorio\nal ecosistema",
+        "Las empresas innovan cuando pueden combinar:",
+        "chips y cómputo",
+        "talento y datos",
+        "fabricación y proveedores",
+        "integradores y clientes",
+        "Ilustración conceptual generada con IA",
+        "20",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "ECOSISTEMA INDUSTRIAL"
+      ],
+      "notes": "Concepto y contexto\nLa frontera tecnológica se vincula con infraestructura: acceso a aceleradores, software, cadenas de motores y sensores, sistemas de calidad, líneas de producción y clientes industriales. Un algoritmo o robot no produce valor económico por sí solo. Conectar con el siguiente módulo de infraestructura.\n\nPrecisiones y evidencia\nLos casos anteriores permiten relacionar investigación con organización industrial. Los informes de modelos muestran decisiones técnicas; los servicios de nube muestran vías de distribución; las colaboraciones documentan vínculos entre universidades y empresas. Huawei aporta un caso de articulación entre modelo y cómputo, y el acuerdo de ByteDance con Tsinghua AIR ofrece un ejemplo verificable de relación entre investigación e ingeniería empresarial. Esto apoya estudiar mecanismos, no una causalidad automática entre política, inversión y ventas. Para cada proyecto, reconstruir proveedores, insumos, talento, clientes e integración. Pregunta para la transición al módulo siguiente: ¿qué infraestructura y capacidades industriales necesita esta innovación para operar de forma repetida? El módulo futuro puede mencionarse como continuidad docente sin crear un enlace a contenido inexistente.\n\nLos casos de humanoides forman parte de un ecosistema mayor. SIASUN ofrece robots industriales, móviles y sistemas de integración; ESTUN combina robots y automatización; Inovance provee servodrives, servomotores, PLC y otros componentes. Por eso conviene estudiar proveedores, integradores y clientes junto con el modelo de IA. La presencia de un componente en un catálogo no demuestra su uso en un robot particular: esa relación necesita evidencia concreta.\n\nGuía docente\nIncluir proveedores de automatización como SIASUN y ESTUN y de servos, variadores y control como Inovance. No afirmar que un componente concreto esté instalado en un robot del módulo sin documentación de su integración.\n\nIlustración: escena conceptual generada con IA. No representa un producto, una empresa ni un despliegue real.\n\nFuentes originales (corte: 20 de octubre de 2026)\n华为 (2025). 华为宣布开源盘古7B稠密和72B混合专家模型\nhttps://www.huawei.com/cn/news/2025/7/pangu-opensource\n\nByteDance y Tsinghua AIR (2024). Joint Research Center on Scalable Intelligent Model Technology\nhttps://seed.bytedance.com/en/blog/bytedance-and-tsinghua-air-establish-joint-research-center-to-advance-industry-academia-research-collaboration-on-large-models\n\n新松机器人: 产品与解决方案\nhttps://www.siasun.com/\n\nESTUN industrial robots and automation portfolio\nhttps://en.estun.com/\n\n工业自动化: 汇川技术产品\nhttps://www.inovance.com/product",
+      "sources": [
+        "https://www.huawei.com/cn/news/2025/7/pangu-opensource",
+        "https://seed.bytedance.com/en/blog/bytedance-and-tsinghua-air-establish-joint-research-center-to-advance-industry-academia-research-collaboration-on-large-models",
+        "https://www.siasun.com/",
+        "https://en.estun.com/",
+        "https://www.inovance.com/product"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "huawei-pangu",
+        "bytedance-seed-tsinghua",
+        "robot_siasun",
+        "robot_estun",
+        "robot_inovance"
+      ],
+      "image": "slides/slide-20.webp",
+      "outline": [
+        "Cómputo",
+        "Proveedores",
+        "Cliente",
+        "Escala"
+      ],
+      "illustration": "Ilustración conceptual generada con IA. No representa un producto comercial ni un despliegue real.",
+      "thesis": "Cómputo"
+    },
+    {
+      "number": 21,
+      "title": "Más innovación también significa más tensiones",
+      "chapter": "06 · Evaluación y síntesis",
+      "text": [
+        "FORTALEZAS Y LÍMITES",
+        "Más innovación también significa más tensiones",
+        "La competencia acelera avances, pero no garantiza rentabilidad",
+        "FORTALEZAS",
+        "LÍMITES",
+        "• Ingeniería y velocidad de iteración\n• Escala de producción y proveedores\n• Variedad de empresas y modelos\n• Experimentación empresarial\n• Creciente acceso a herramientas",
+        "• Dependencia de componentes y cómputo\n• Datos físicos caros y poco diversos\n• Seguridad y fiabilidad operativa\n• Sobreinversión y presión de precios\n• Dificultad de monetizar pilotos",
+        "Una empresa con una gran demostración puede enfrentar aún un modelo de negocio no probado.",
+        "FUENTE: Síntesis analítica",
+        "21",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "FORTALEZAS Y LÍMITES"
+      ],
+      "notes": "Concepto y contexto\nEvaluar a las empresas de forma crítica: competir y anunciar demuestra actividad, no necesariamente rentabilidad ni productividad. La manufactura china permite prototipar rápido en ciertos sectores; existen dependencias en chips, sensores, software y baterías. Los humanoides enfrentan obstáculos en habilidad manual, datos, seguridad, mantenimiento e integración.\n\nPrecisiones y evidencia\nEsta lámina reúne mecanismos y desafíos, no una medición uniforme del desempeño de todas las empresas chinas. Las publicaciones técnicas describen resultados de investigación; los catálogos describen ofertas y los comunicados institucionales explican estrategias. Ninguno prueba por sí solo rentabilidad o productividad agregada. La existencia de inversión y competencia permite formular hipótesis sobre velocidad de iteración, pero su efecto económico requiere evidencia adicional. En robótica, revisar datos físicos, seguridad, mantenimiento e integración antes de extrapolar un piloto. Los obstáculos cambian por tarea y cadena de proveedores. Ejercicio: convertir cada fortaleza y cada límite en una pregunta verificable y especificar qué datos de operación o de costos harían falta para responderla.\n\nEl crecimiento agregado de instalaciones industriales no certifica el modelo de negocio de un humanoide. En las fichas técnicas, las capacidades dependen de postura, carga, entorno y configuración. La escala empresarial requiere repetibilidad, servicio posventa, suministro de componentes y criterios de evaluación. Evitar generalizar dependencias de chips, sensores o baterías a todo el sector: la exposición varía según el producto y la empresa.\n\nGuía docente\nLas fortalezas y los límites son una síntesis de mecanismos. El módulo no ofrece cuentas económicas comparables ni una estimación causal del efecto de competir. Formular sobreinversión y rentabilidad como riesgos a evaluar por sector y empresa, sin atribuir pérdidas a una firma sin sus resultados financieros.\n\nFuentes originales (corte: 20 de octubre de 2026)\nChina Installs 59 Percent of World's Industrial Robots\nhttps://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf\n\nMoo Jin Kim et al. (2024). OpenVLA: An Open-Source Vision-Language-Action Model\nhttps://arxiv.org/abs/2406.09246\n\nYu Shang et al. (2025). RoboScape: Physics-informed Embodied World Model\nhttps://arxiv.org/abs/2506.23135\n\nUBTECH Robotics: Annual Report 2025\nhttps://owebsite-cdn.ubtrobot.com/resources/file/2026/04/21/797179114676293.pdf\n\nFourier GR-3: Robot Overview\nhttps://support.fftai.com/en/gr3/getting-started/general-information",
+      "sources": [
+        "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf",
+        "https://arxiv.org/abs/2406.09246",
+        "https://arxiv.org/abs/2506.23135",
+        "https://owebsite-cdn.ubtrobot.com/resources/file/2026/04/21/797179114676293.pdf",
+        "https://support.fftai.com/en/gr3/getting-started/general-information"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "robot_ifr_2026_china",
+        "openvla",
+        "roboscape",
+        "robot_ubtech_annual_2025",
+        "robot_fourier_gr3"
+      ],
+      "image": "slides/slide-21.webp",
+      "outline": [
+        "Fortalezas",
+        "Límites",
+        "Rentabilidad"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "Fortalezas"
+    },
+    {
+      "number": 22,
+      "title": "La innovación no termina en un video",
+      "chapter": "06 · Evaluación y síntesis",
+      "text": [
+        "SÍNTESIS DEL MÓDULO",
+        "22",
+        "La innovación no\ntermina en un video.",
+        "El androide simboliza empresas que convierten conocimiento en tecnologías operativas.",
+        "El Estado orienta  ·  Las empresas innovan  ·  La infraestructura permite escalar",
+        "PRÓXIMO MÓDULO: LA INFRAESTRUCTURA",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "Ilustración conceptual generada con IA"
+      ],
+      "notes": "Concepto y contexto\nCierre: las empresas innovadoras son el segundo pilar junto al Estado y la infraestructura. Los modelos de IA y los robots humanoides ilustran capacidades muy dinámicas, pero su valor depende de la adopción y fiabilidad. El siguiente módulo estudia fábricas, proveedores, energía, logística, chips y centros de datos.\n\nPrecisiones y evidencia\n\n\nGuía docente\nVolver a la pregunta inicial: ¿qué prueba falta entre una demostración y una tecnología operativa que crea valor? El siguiente módulo se menciona como continuidad conceptual y no ofrece un enlace activo.\n\nIlustración: escena conceptual generada con IA. No representa un producto, una empresa ni un despliegue real.\n\nFuentes originales (corte: 20 de octubre de 2026)\nAn Yang et al. (2025). Qwen3 Technical Report\nhttps://arxiv.org/abs/2505.09388\n\nChina Installs 59 Percent of World's Industrial Robots\nhttps://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf\n\nAGIBOT Concludes Six-Day Real Factory Livestream\nhttps://www.agibot.com/article/231/detail/83.html",
+      "sources": [
+        "https://arxiv.org/abs/2505.09388",
+        "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf",
+        "https://www.agibot.com/article/231/detail/83.html"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "qwen3",
+        "robot_ifr_2026_china",
+        "robot_agibot_factory"
+      ],
+      "image": "slides/slide-22.webp",
+      "outline": [
+        "Empresas",
+        "Estado",
+        "Infraestructura"
+      ],
+      "illustration": "Ilustración conceptual generada con IA. No representa un producto comercial ni un despliegue real.",
+      "thesis": "Empresas"
+    },
+    {
+      "number": 23,
+      "title": "Fuentes primarias: robótica y despliegue",
+      "chapter": "07 · Fuentes",
+      "text": [
+        "BIBLIOGRAFÍA · EVIDENCIA",
+        "Fuentes primarias: robótica y despliegue",
+        "Documentos consultables y verificables · 20/10/2026",
+        "IFR · World Robotics 2026",
+        "China: instalaciones industriales de 2025",
+        "↗",
+        "Unitree · G1 / 宇树人形机器人",
+        "Ficha de características declaradas",
+        "↗",
+        "UBTECH · Walker S2 / 优必选",
+        "Especificaciones y funcionalidades de producto",
+        "↗",
+        "AgiBot · 15.000 robots",
+        "Anuncio empresarial de junio de 2026",
+        "↗",
+        "AgiBot · prueba en fábrica",
+        "↗",
+        "Comunicado empresarial: piloto y métricas",
+        "En el archivo PPTX se incluyen vínculos y referencias en las notas del profesor.",
+        "FUENTES: estadística sectorial y declaraciones empresariales",
+        "23",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "BIBLIOGRAFÍA · EVIDENCIA"
+      ],
+      "notes": "Concepto y contexto\nLista de referencia para consulta directa. IFR informa robots industriales, mientras que las cifras Unitree/UBTECH/AgiBot son anuncios o fichas empresariales. Esto es esencial para no confundir fuentes comerciales con evaluación independiente. Los enlaces se incluyen en las notas y en la versión de acompañamiento.\n\nPrecisiones y evidencia\nEste registro distingue estadísticas sectoriales de prestaciones y comunicados empresariales. IFR aporta instalaciones y definiciones. En los fabricantes, pedidos, capacidad, fabricación, entregas y parque operativo son magnitudes diferentes. Mantener la fecha original de los datos y el enlace a la fuente correspondiente.\n\nGuía docente\nSeparar una estadística sectorial de una ficha de producto, un anuncio de fabricación y una evaluación independiente. Abrir el documento correspondiente al indicador concreto y conservar año, definición y denominador.\n\nFuentes originales (corte: 20 de octubre de 2026)\nChina Installs 59 Percent of World's Industrial Robots\nhttps://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf\n\nStandardization: robot definitions at ISO\nhttps://ifr.org/standardisation\n\nUnitree G1: official specifications\nhttps://www.unitree.com/g1/\n\nUBTECH Walker S2: Autonomous Battery Swapping\nhttps://www.ubtrobot.com/en/humanoid/products/walker-s2\n\nAGIBOT's 15,000th Robot Rolls Off the Production Line\nhttps://www.agibot.com/article/231/detail/82.html\n\nAGIBOT Concludes Six-Day Real Factory Livestream\nhttps://www.agibot.com/article/231/detail/83.html\n\nIRON rolls off XPENG's new production line\nhttps://www.xpeng.com/news/01a080371029a057bc8e8a02a2c6012b",
+      "sources": [
+        "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf",
+        "https://ifr.org/standardisation",
+        "https://www.unitree.com/g1/",
+        "https://www.ubtrobot.com/en/humanoid/products/walker-s2",
+        "https://www.agibot.com/article/231/detail/82.html",
+        "https://www.agibot.com/article/231/detail/83.html",
+        "https://www.xpeng.com/news/01a080371029a057bc8e8a02a2c6012b"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "robot_ifr_2026_china",
+        "robot_ifr_definitions",
+        "robot_unitree_g1",
+        "robot_ubtech_s2",
+        "robot_agibot_15000",
+        "robot_agibot_factory",
+        "robot_xpeng_iron_2026"
+      ],
+      "image": "slides/slide-23.webp",
+      "outline": [
+        "IFR",
+        "Unitree",
+        "UBTECH",
+        "AgiBot"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "IFR"
+    },
+    {
+      "number": 24,
+      "title": "Fuentes científicas y conceptos técnicos",
+      "chapter": "07 · Fuentes",
+      "text": [
+        "BIBLIOGRAFÍA · INVESTIGACIÓN",
+        "Fuentes científicas y conceptos técnicos",
+        "Lecturas para ampliar el curso y preparar preguntas",
+        "DeepSeek-R1",
+        "DeepSeek-AI (2025) · RL y razonamiento",
+        "↗",
+        "Qwen3 Technical Report",
+        "An Yang et al. (2025) · Modelos densos y MoE",
+        "↗",
+        "OpenVLA",
+        "Kim et al. (2024) · Vision–Language–Action",
+        "↗",
+        "↗",
+        "Shanghai AI Laboratory",
+        "InternVLA-N1 / A1 · navegación y manipulación",
+        "Laboratorio del curso",
+        "↗",
+        "RobotLab · simulaciones didácticas",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "FUENTE: Literatura técnica",
+        "24",
+        "Material elaborado por el profesor Sergio Gevatschnaider",
+        "BIBLIOGRAFÍA · INVESTIGACIÓN"
+      ],
+      "notes": "Concepto y contexto\nCierre bibliográfico: DeepSeek R1 y Qwen3 son informes de modelos fundacionales chinos; OpenVLA es un antecedente internacional de Vision-Language-Action, no debe atribuirse a un laboratorio chino. Shanghai AI Laboratory desarrolla investigación relevante en IA encarnada. RobotLab del curso es simulación educativa, no hardware. Material docente preparado a octubre de 2026.\n\nPrecisiones y evidencia\nReferencias científicas principales: DeepSeek-AI(2025), Qwen3 de An Yang et al.(2025) y OpenVLA de Moo Jin Kim et al.(2024). La referencia de DeepSeek original usa autor corporativo; no debe citarse como Ren et al. Las notas amplían investigación china con RDT-1B de Tsinghua, publicado en ICLR2025, y RoboScape, además de la documentación de InternVLA-N1 y A1 de Shanghai AI Laboratory. Diferenciar informes técnicos, artículos de conferencia y anuncios institucionales. En todos los casos se conservan fechas de las investigaciones y se evita convertir resultados de laboratorio en adopción comercial. RobotLab ofrece simulación educativa del curso y no representa un robot real. Las referencias originales conservan la atribución de sus investigadores, instituciones y empresas.\n\nGuía docente\nCorregir la atribución original de DeepSeek-R1: la referencia de enero de 2025 identifica a DeepSeek-AI. Qwen3 corresponde a An Yang y colaboradores y OpenVLA a Moo Jin Kim y colaboradores. Distinguir informes técnicos, artículos de conferencia y comunicaciones institucionales. RobotLab es un recurso didáctico del curso.\n\nFuentes originales (corte: 20 de octubre de 2026)\nDeepSeek-AI (2025). DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning\nhttps://arxiv.org/abs/2501.12948v1\n\nAn Yang et al. (2025). Qwen3 Technical Report\nhttps://arxiv.org/abs/2505.09388\n\nMoo Jin Kim et al. (2024). OpenVLA: An Open-Source Vision-Language-Action Model\nhttps://arxiv.org/abs/2406.09246\n\n上海人工智能实验室 (2025). 具身智能开源周：导航、操作、运动大模型及数据集批量上线\nhttps://www.shlab.org.cn/news/5444209\n\nSongming Liu et al. (2024/2025). RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation. ICLR 2025\nhttps://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html\n\nYu Shang et al. (2025). RoboScape: Physics-informed Embodied World Model\nhttps://arxiv.org/abs/2506.23135\n\n清华大学 Future Intelligence Lab (2025). 理解世界还是预测未来？世界模型全面综述\nhttps://fi.ee.tsinghua.edu.cn/news/20/\n\nRobotLab del curso: laboratorio didáctico de robótica humanoide\nhttps://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/robotlab/",
+      "sources": [
+        "https://arxiv.org/abs/2501.12948v1",
+        "https://arxiv.org/abs/2505.09388",
+        "https://arxiv.org/abs/2406.09246",
+        "https://www.shlab.org.cn/news/5444209",
+        "https://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html",
+        "https://arxiv.org/abs/2506.23135",
+        "https://fi.ee.tsinghua.edu.cn/news/20/",
+        "https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/robotlab/"
+      ],
+      "hypothetical": false,
+      "source_ids": [
+        "deepseek-r1",
+        "qwen3",
+        "openvla",
+        "shlab-internrobotics",
+        "rdt1b",
+        "roboscape",
+        "tsinghua-worldmodels-zh",
+        "robotlab"
+      ],
+      "image": "slides/slide-24.webp",
+      "outline": [
+        "DeepSeek-R1",
+        "Qwen3",
+        "OpenVLA",
+        "InternVLA"
+      ],
+      "illustration": "Diagrama o composición tipográfica editable. La clasificación y las relaciones representan un esquema didáctico.",
+      "thesis": "DeepSeek-R1"
+    }
+  ],
+  "subtitle": "Las empresas tecnológicas y la transformación de la inteligencia artificial en China",
+  "attribution": "Material elaborado por el profesor Sergio Gevatschnaider",
+  "updated": "2026-10-20",
+  "source_registry": {
+    "deepseek-r1": {
+      "id": "deepseek-r1",
+      "title": "DeepSeek-AI (2025). DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2501.12948v1",
+      "year": 2025,
+      "date": "2025-01-22",
+      "language": "en",
+      "kind": "informe técnico original",
+      "evidence": "La v1 identifica a DeepSeek-AI como autor. R1-Zero aplica RL sin SFT inicial al modelo previamente entrenado; R1 incorpora datos de arranque y varias etapas. No significa aprendizaje sin preentrenamiento ni ausencia de datos."
+    },
+    "deepseek-nature": {
+      "id": "deepseek-nature",
+      "title": "DeepSeek-AI et al. (2025). DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning. Nature 645, 633–638",
+      "url": "https://doi.org/10.1038/s41586-025-09422-z",
+      "year": 2025,
+      "language": "en",
+      "kind": "artículo revisado por pares",
+      "evidence": "La ficha arXiv registra este DOI y la referencia de Nature. Usar la v1 para describir el informe de enero de 2025 y esta referencia para el artículo, sin mezclar títulos ni versiones."
+    },
+    "qwen3": {
+      "id": "qwen3",
+      "title": "An Yang et al. (2025). Qwen3 Technical Report",
+      "url": "https://arxiv.org/abs/2505.09388",
+      "year": 2025,
+      "date": "2025-05-14",
+      "language": "en",
+      "kind": "informe técnico original",
+      "evidence": "Familia con modelos densos y MoE, modos de razonamiento y respuesta directa y capacidades multilingües. El informe declara publicación bajo Apache 2.0. Mantener versión y fecha, sin presentarlo como catálogo exhaustivo de octubre de 2026."
+    },
+    "huawei-pangu": {
+      "id": "huawei-pangu",
+      "title": "华为 (2025). 华为宣布开源盘古7B稠密和72B混合专家模型",
+      "url": "https://www.huawei.com/cn/news/2025/7/pangu-opensource",
+      "year": 2025,
+      "date": "2025-06-30",
+      "language": "zh",
+      "kind": "comunicación empresarial primaria",
+      "evidence": "Anuncia Pangu 7B denso, Pangu Pro MoE 72B y tecnologías de inferencia basadas en Ascend. Permite distinguir la familia de modelos 盘古 de la plataforma de cómputo 昇腾. Es una declaración de Huawei, no prueba independiente de liderazgo o autosuficiencia."
+    },
+    "bytedance-seed-tsinghua": {
+      "id": "bytedance-seed-tsinghua",
+      "title": "ByteDance y Tsinghua AIR (2024). Joint Research Center on Scalable Intelligent Model Technology",
+      "url": "https://seed.bytedance.com/en/blog/bytedance-and-tsinghua-air-establish-joint-research-center-to-advance-industry-academia-research-collaboration-on-large-models",
+      "year": 2024,
+      "date": "2024-10-11",
+      "language": "en",
+      "kind": "comunicación institucional primaria",
+      "evidence": "Identifica Doubao (Seed) como equipo de investigación y documenta SIA Lab con Tsinghua AIR. Sustenta mostrar investigación y colaboración académica, además de distribución de productos. No acredita por sí sola resultados económicos del centro."
+    },
+    "tencent-hunyuan": {
+      "id": "tencent-hunyuan",
+      "title": "Tencent (2025). Global Rollout of Scenario-Based AI Capabilities",
+      "url": "https://www.tencent.com/tencent-announces-global-rollout-of-scenario-based-ai-capabilities-to-accelerate-industrial-efficiency/",
+      "year": 2025,
+      "date": "2025-09-16",
+      "language": "en",
+      "kind": "comunicación empresarial primaria",
+      "evidence": "Relaciona Hunyuan con Tencent Cloud, aplicaciones empresariales, generación de imagen/video/3D y productos. Las cifras de eficiencia del comunicado son declaraciones empresariales y no se necesitan para el módulo."
+    },
+    "glm45": {
+      "id": "glm45",
+      "title": "GLM-4.5 Team, Aohan Zeng et al. (2025). GLM-4.5: Agentic, Reasoning, and Coding (ARC) Foundation Models",
+      "url": "https://arxiv.org/abs/2508.06471",
+      "year": 2025,
+      "date": "2025-08-08",
+      "language": "en",
+      "kind": "informe técnico original",
+      "evidence": "Describe una familia MoE para agentes, razonamiento y programación. No usar sus posiciones en benchmarks como clasificación universal. El repositorio oficial zai-org/GLM-4.5 enlaza documentación de Zhipu AI.",
+      "support_url": "https://github.com/zai-org/GLM-4.5"
+    },
+    "kimi-k2": {
+      "id": "kimi-k2",
+      "title": "Kimi Team (2025). Kimi K2: Open Agentic Intelligence",
+      "url": "https://arxiv.org/abs/2507.20534",
+      "year": 2025,
+      "date": "2025-07-28",
+      "language": "en",
+      "kind": "informe técnico original",
+      "evidence": "Describe Kimi K2, modelo MoE con entrenamiento orientado a capacidades de agentes. El repositorio oficial identifica explícitamente a Moonshot AI como desarrollador. La revisión de 2026 no debe confundirse con el informe inicial de 2025.",
+      "support_url": "https://github.com/moonshotai/Kimi-K2"
+    },
+    "minimax-m1": {
+      "id": "minimax-m1",
+      "title": "MiniMax (2025). MiniMax-M1: Scaling Test-Time Compute Efficiently with Lightning Attention",
+      "url": "https://arxiv.org/abs/2506.13585",
+      "year": 2025,
+      "date": "2025-06-16",
+      "language": "en",
+      "kind": "informe técnico original",
+      "evidence": "Describe un modelo de razonamiento con arquitectura híbrida MoE/atención y RL. Aporta evidencia de investigación propia de MiniMax sin necesitar reproducir comparaciones comerciales."
+    },
+    "minimax-products": {
+      "id": "minimax-products",
+      "title": "MiniMax. Modelos y productos multimodales, consulta 20 de octubre de 2026",
+      "url": "https://www.minimax.io/",
+      "year": 2026,
+      "language": "en",
+      "kind": "catálogo empresarial primario",
+      "evidence": "El catálogo incluye lenguaje, video, voz y música. Sustenta la diversidad de líneas de producto; no acredita desempeño independiente ni rentabilidad."
+    },
+    "openvla": {
+      "id": "openvla",
+      "title": "Moo Jin Kim et al. (2024). OpenVLA: An Open-Source Vision-Language-Action Model",
+      "url": "https://arxiv.org/abs/2406.09246",
+      "year": 2024,
+      "date": "2024-06-13",
+      "language": "en",
+      "kind": "investigación original",
+      "evidence": "VLA entrenado con demostraciones robóticas para control visuomotor. Permite explicar relación entre imágenes, instrucciones y acciones. Antecedente internacional, no creación de un laboratorio chino. Sus evaluaciones no certifican seguridad funcional ni autonomía general."
+    },
+    "shlab-internrobotics": {
+      "id": "shlab-internrobotics",
+      "title": "上海人工智能实验室 (2025). 具身智能开源周：导航、操作、运动大模型及数据集批量上线",
+      "url": "https://www.shlab.org.cn/news/5444209",
+      "year": 2025,
+      "date": "2025-09-16",
+      "language": "zh",
+      "kind": "publicación institucional primaria de investigación",
+      "evidence": "Distingue InternVLA-N1 para navegación, InternVLA-A1 para manipulación, VLAC para evaluación/recompensa y herramientas de simulación/datos. Se deben especificar variantes. Los resultados declarados pertenecen a sus ensayos y no representan certificaciones comerciales."
+    },
+    "internvla-n1": {
+      "id": "internvla-n1",
+      "title": "Intern Robotics / Shanghai AI Laboratory (2025). InternVLA-N1: An Open Dual-System Vision-Language Navigation Foundation Model with Learned Latent Plans",
+      "url": "https://internrobotics.github.io/internvla-n1.github.io/",
+      "year": 2025,
+      "language": "en",
+      "kind": "proyecto e informe técnico original",
+      "evidence": "Separa planificación de navegación y ejecución local mediante dos sistemas. El informe enlazado muestra investigación de navegación y transferencia entre plataformas; no constituye prueba de manipulación general. Incluye datos generados en simulación.",
+      "paper_url": "https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf"
+    },
+    "rdt1b": {
+      "id": "rdt1b",
+      "title": "Songming Liu et al. (2024/2025). RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation. ICLR 2025",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html",
+      "year": 2025,
+      "language": "en",
+      "kind": "investigación original revisada por pares",
+      "evidence": "Equipo de Tsinghua University. Política de difusión condicionada por imágenes, lenguaje y propiocepción para manipulación bimanual. Las pruebas concretas no equivalen a autonomía fabril universal. Preprint de octubre de 2024, versión de conferencia 2025.",
+      "support_url": "https://rdt-robotics.github.io/rdt-robotics/",
+      "preprint_url": "https://arxiv.org/abs/2410.07864"
+    },
+    "roboscape": {
+      "id": "roboscape",
+      "title": "Yu Shang et al. (2025). RoboScape: Physics-informed Embodied World Model",
+      "url": "https://arxiv.org/abs/2506.23135",
+      "year": 2025,
+      "language": "en",
+      "kind": "investigación original",
+      "evidence": "Tsinghua University y Manifold AI estudian generación condicionada por acciones con información de profundidad y dinámica. La apariencia visual y la física son criterios distintos. La v1 reserva más pruebas en robots reales para trabajo futuro, por lo que no debe presentarse como simulador físico certificado ni despliegue comercial."
+    },
+    "tsinghua-worldmodels-zh": {
+      "id": "tsinghua-worldmodels-zh",
+      "title": "清华大学 Future Intelligence Lab (2025). 理解世界还是预测未来？世界模型全面综述",
+      "url": "https://fi.ee.tsinghua.edu.cn/news/20/",
+      "year": 2025,
+      "date": "2025-09-21",
+      "language": "zh",
+      "kind": "publicación institucional china de investigación",
+      "evidence": "Presenta el trabajo del equipo de Tsinghua sobre modelos del mundo y enlaza el artículo de ACM Computing Surveys DOI10.1145/3746449 y proyectos originales como RoboScape. Es una explicación institucional en chino, complementaria al artículo original."
+    },
+    "robot_ifr_2026_china": {
+      "id": "robot_ifr_2026_china",
+      "title": "China Installs 59 Percent of World's Industrial Robots",
+      "url": "https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf",
+      "year": 2026,
+      "date": "2026-09-24",
+      "language": "en",
+      "kind": "estadística sectorial primaria",
+      "publisher": "International Federation of Robotics",
+      "evidence": "El informe World Robotics 2026 registra aproximadamente 354.000 nuevas instalaciones de robots industriales en China durante 2025, equivalentes al 59% mundial. Los proveedores nacionales aportaron el 55% de las instalaciones chinas. Se trata de un flujo anual, no del parque acumulado ni del número de humanoides. Véanse las páginas 1 y 2 del comunicado.",
+      "accessed": "2026-10-20"
+    },
+    "robot_ifr_2026_world": {
+      "id": "robot_ifr_2026_world",
+      "title": "Five Million Robots now Operate in Factories Globally",
+      "url": "https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally",
+      "year": 2026,
+      "language": "en",
+      "kind": "estadística sectorial primaria",
+      "publisher": "International Federation of Robotics",
+      "evidence": "El resumen mundial confirma 354.000 nuevas instalaciones en China en 2025, una participación mundial del 59% y una cuota nacional del 55%. Registra 195.000 instalaciones de proveedores chinos.",
+      "accessed": "2026-10-20"
+    },
+    "robot_ifr_definitions": {
+      "id": "robot_ifr_definitions",
+      "title": "Standardization: robot definitions at ISO",
+      "url": "https://ifr.org/standardisation",
+      "year": 2026,
+      "language": "en",
+      "kind": "definiciones técnicas oficiales resumidas por asociación sectorial",
+      "publisher": "International Federation of Robotics",
+      "evidence": "La IFR aplica ISO 8373. Un robot industrial es un manipulador multipropósito reprogramable, con tres o más ejes, utilizado para automatización industrial. Puede estar fijo o montado sobre una base móvil. Un robot móvil se desplaza bajo su propio control y también puede admitir teleoperación.",
+      "accessed": "2026-10-20"
+    },
+    "robot_unitree_g1": {
+      "id": "robot_unitree_g1",
+      "title": "Unitree G1: official specifications",
+      "url": "https://www.unitree.com/g1/",
+      "year": 2026,
+      "language": "en",
+      "kind": "ficha técnica del fabricante",
+      "publisher": "Unitree Robotics",
+      "evidence": "La ficha declara una altura de 1320 mm. El G1 básico tiene aproximadamente 35 kg con batería y 23 grados de libertad. El G1 EDU tiene aproximadamente 35 kg o más y entre 23 y 43 grados de libertad según las opciones. Unitree advierte que algunas funciones mostradas siguen en desarrollo y prueba, y que los parámetros dependen de la configuración.",
+      "accessed": "2026-10-20"
+    },
+    "robot_unitree_g1_zh": {
+      "id": "robot_unitree_g1_zh",
+      "title": "人形机器人 G1: 产品参数",
+      "url": "https://www.unitree.com/cn/g1/",
+      "year": 2026,
+      "language": "zh-Hans",
+      "kind": "ficha técnica del fabricante",
+      "publisher": "宇树科技 / Unitree Robotics",
+      "evidence": "La tabla china corrobora la distinción entre G1 y G1 EDU, el peso y los grados de libertad. Utiliza 人形机器人 para robot humanoide y 模仿与强化学习 para aprendizaje por imitación y por refuerzo.",
+      "accessed": "2026-10-20"
+    },
+    "robot_ubtech_s2": {
+      "id": "robot_ubtech_s2",
+      "title": "UBTECH Walker S2: Autonomous Battery Swapping",
+      "url": "https://www.ubtrobot.com/en/humanoid/products/walker-s2",
+      "year": 2026,
+      "language": "en",
+      "kind": "ficha técnica del fabricante",
+      "publisher": "UBTECH Robotics",
+      "evidence": "UBTECH declara intercambio autónomo de batería dentro de tres minutos, manipulación de una carga de hasta 15 kg en un espacio de 0 a 1,8 metros y percepción binocular estéreo con cámaras RGB. La ficha industrial no expresa que sean 15 kg por brazo. Son prestaciones comerciales declaradas, no una auditoría independiente de productividad o disponibilidad.",
+      "accessed": "2026-10-20"
+    },
+    "robot_ubtech_s2_zh": {
+      "id": "robot_ubtech_s2_zh",
+      "title": "Walker S2: 工业人形机器人",
+      "url": "https://www.ubtrobot.com/cn/humanoid/products/walker-s2",
+      "year": 2026,
+      "language": "zh-Hans",
+      "kind": "ficha técnica del fabricante",
+      "publisher": "优必选 / UBTECH Robotics",
+      "evidence": "La ficha china oficial identifica a Walker S2 como robot humanoide industrial. Sirve para cotejar nombres y terminología con la versión inglesa.",
+      "accessed": "2026-10-20"
+    },
+    "robot_ubtech_annual_2025": {
+      "id": "robot_ubtech_annual_2025",
+      "title": "UBTECH Robotics: Annual Report 2025",
+      "url": "https://owebsite-cdn.ubtrobot.com/resources/file/2026/04/21/797179114676293.pdf",
+      "year": 2026,
+      "date": "2026-04-21",
+      "language": "en",
+      "kind": "informe corporativo anual",
+      "publisher": "UBTECH Robotics",
+      "evidence": "El informe del ejercicio 2025, publicado en 2026, reitera 52 grados de libertad, intercambio de batería en tres minutos y manipulación de una carga de hasta 15 kg para Walker S2. La capacidad anualizada, los pedidos y las entregas son indicadores diferentes del parque operativo.",
+      "accessed": "2026-10-20"
+    },
+    "robot_agibot_15000": {
+      "id": "robot_agibot_15000",
+      "title": "AGIBOT's 15,000th Robot Rolls Off the Production Line",
+      "url": "https://www.agibot.com/article/231/detail/82.html",
+      "year": 2026,
+      "date": "2026-06-28",
+      "language": "en",
+      "kind": "anuncio empresarial de producción acumulada",
+      "publisher": "AGIBOT / Zhiyuan Robotics",
+      "evidence": "La empresa anunció la salida de su unidad número 15.000 el 28 de junio de 2026; la unidad del hito es un G2. Es una cifra acumulada de fabricación del portafolio. No representa necesariamente 15.000 G2, ventas cobradas, humanoides bípedos o robots operativos auditados.",
+      "accessed": "2026-10-20"
+    },
+    "robot_agibot_factory": {
+      "id": "robot_agibot_factory",
+      "title": "AGIBOT Concludes Six-Day Real Factory Livestream",
+      "url": "https://www.agibot.com/article/231/detail/83.html",
+      "year": 2026,
+      "date": "2026-06-29",
+      "language": "en",
+      "kind": "comunicado empresarial de ensayo en fábrica",
+      "publisher": "AGIBOT / Zhiyuan Robotics",
+      "evidence": "El comunicado del 29 de junio de 2026 describe una transmisión de seis días en Longcheer, Nanchang. Declara más de 64 horas de operación, 64.828 tareas y 99,99% de éxito. Es un reporte de la empresa. Otro comunicado, del 28 de junio, menciona unas 100 horas acumuladas; los dos alcances no deben combinarse como si tuvieran el mismo denominador.",
+      "accessed": "2026-10-20"
+    },
+    "robot_xpeng_iron_2026": {
+      "id": "robot_xpeng_iron_2026",
+      "title": "IRON rolls off XPENG's new production line",
+      "url": "https://www.xpeng.com/news/01a080371029a057bc8e8a02a2c6012b",
+      "year": 2026,
+      "date": "2026-09-08",
+      "language": "en",
+      "kind": "anuncio empresarial de línea manufacturera y hoja de ruta",
+      "publisher": "XPENG",
+      "evidence": "XPENG anuncia la puesta en marcha de una línea de IRON el 8 de septiembre de 2026. Todavía programa producción masiva para finales de 2026 y lanzamiento y entregas para 2027. La fuente sustenta una apuesta empresarial y una hoja de ruta, sin demostrar disponibilidad comercial mundial ni autonomía general.",
+      "accessed": "2026-10-20"
+    },
+    "robot_xpeng_iron_zh": {
+      "id": "robot_xpeng_iron_zh",
+      "title": "小鹏机器人生产线正式启用，全球首位高阶通用人形机器人完成自动化总装并自主走下产线",
+      "url": "https://www.xiaopeng.com/news/company_news/5592.html",
+      "year": 2026,
+      "date": "2026-09-09",
+      "language": "zh-Hans",
+      "kind": "anuncio empresarial",
+      "publisher": "小鹏汽车 / XPENG",
+      "evidence": "Esta es la versión china del anuncio industrial de IRON. La calificación de robot de propósito general y la ejecución de tareas sin teleoperación son afirmaciones del fabricante que deben mantenerse atribuidas.",
+      "accessed": "2026-10-20"
+    },
+    "robot_galbot_g1": {
+      "id": "robot_galbot_g1",
+      "title": "Galbot G1: 可泛化操作的具身大模型机器人",
+      "url": "https://www.galbot.com/g1/",
+      "year": 2026,
+      "language": "zh-Hans/en",
+      "kind": "ficha técnica del fabricante",
+      "publisher": "银河通用 / Galbot",
+      "evidence": "El G1 tiene una base móvil omnidireccional de cuatro ruedas, dos brazos y efectores intercambiables. Es un ejemplo de manipulación móvil. La denominación comercial de humanoide no implica necesariamente locomoción bípeda.",
+      "accessed": "2026-10-20"
+    },
+    "robot_fourier_gr3": {
+      "id": "robot_fourier_gr3",
+      "title": "Fourier GR-3: Robot Overview",
+      "url": "https://support.fftai.com/en/gr3/getting-started/general-information",
+      "year": 2026,
+      "date": "2026-09-22",
+      "language": "en",
+      "kind": "documentación técnica del fabricante",
+      "publisher": "Fourier Intelligence",
+      "evidence": "La documentación presenta GR-3 como un Care-bot orientado a interacción y acompañamiento. Describe capacidades sensoriales y teleoperación. Ilustra una orientación empresarial diferente sin demostrar eficacia clínica o autonomía domiciliaria.",
+      "accessed": "2026-10-20"
+    },
+    "robot_siasun": {
+      "id": "robot_siasun",
+      "title": "新松机器人: 产品与解决方案",
+      "url": "https://www.siasun.com/",
+      "year": 2026,
+      "language": "zh-Hans",
+      "kind": "catálogo empresarial",
+      "publisher": "SIASUN / 新松机器人",
+      "evidence": "SIASUN ofrece robots industriales, móviles y especiales, además de sistemas de soldadura, montaje y logística. El catálogo permite ampliar el ecosistema más allá de los humanoides. Sus cifras promocionales de clientes y proyectos no se usan como resultados independientes.",
+      "accessed": "2026-10-20"
+    },
+    "robot_estun": {
+      "id": "robot_estun",
+      "title": "ESTUN industrial robots and automation portfolio",
+      "url": "https://en.estun.com/",
+      "year": 2026,
+      "language": "en",
+      "kind": "catálogo empresarial",
+      "publisher": "ESTUN",
+      "evidence": "El catálogo oficial enumera robots industriales ER y UNO, robots colaborativos, estaciones y componentes de automatización. El índice de búsqueda oficial confirmó estas líneas de productos; la apertura completa agotó el tiempo. No se extraen cifras de cuota de mercado o desempeño.",
+      "accessed": "2026-10-20"
+    },
+    "robot_inovance": {
+      "id": "robot_inovance",
+      "title": "工业自动化: 汇川技术产品",
+      "url": "https://www.inovance.com/product",
+      "year": 2026,
+      "language": "zh-Hans",
+      "kind": "catálogo empresarial",
+      "publisher": "Inovance / 汇川技术",
+      "evidence": "Inovance ofrece variadores, servodrives, servomotores, PLC y HMI para automatización industrial. Esto sustenta su papel como proveedor de componentes. No implica que sus componentes estén integrados en todos los robots del módulo. Se verificó contenido indexado de la página oficial, que es dinámica.",
+      "accessed": "2026-10-20"
+    },
+    "robot_miit_humanoids_2023": {
+      "id": "robot_miit_humanoids_2023",
+      "title": "人形机器人创新发展指导意见",
+      "url": "https://www.ncsti.gov.cn/zcfg/zcwj/202311/P020231103482413965397.pdf",
+      "year": 2023,
+      "language": "zh-Hans",
+      "kind": "política industrial primaria reproducida enportal público oficial",
+      "publisher": "Ministerio de Industria y Tecnología de la Información de China (MIIT); copia en NCSTI",
+      "evidence": "El documento utiliza 人形机器人 y distingue arquitectura inteligente, control del movimiento, actuadores y simulación. Sus objetivos para 2025 y 2027 son metas de política industrial, no resultados demostrados.",
+      "accessed": "2026-10-20"
+    },
+    "robot_ubtech_s2_edu": {
+      "id": "robot_ubtech_s2_edu",
+      "title": "Walker S2 EDU: 5. 产品组成",
+      "url": "https://docs.ubtrobot.com/walker-s2-edu/docs/user-guide/6/",
+      "year": 2026,
+      "language": "zh-Hans",
+      "kind": "manual técnico de la variante EDU",
+      "publisher": "UBTECH Robotics",
+      "evidence": "La tabla define 双臂最大负载 como carga máxima conjunta de ambos brazos, de 15 kg. Es el manual de la variante EDU; no trasladar automáticamente a la versión industrial sus dimensiones, sensores u otras especificaciones.",
+      "accessed": "2026-10-20"
+    },
+    "robotlab": {
+      "id": "robotlab",
+      "title": "RobotLab del curso: laboratorio didáctico de robótica humanoide",
+      "url": "https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/robotlab/",
+      "kind": "recurso educativo del curso",
+      "date": "2026-10-20",
+      "language": "es/en",
+      "evidence": "Simulación hipotética para explorar productividad, energía y autonomía. No reproduce especificaciones de un fabricante."
+    },
+    "robot_unitree_image": {
+      "id": "robot_unitree_image",
+      "title": "Unitree Robotics: imagen oficial del humanoide G1",
+      "url": "https://www.unitree.com/g1/",
+      "kind": "imagen de producto del fabricante",
+      "date": "Consulta 2026-10-20",
+      "language": "en",
+      "evidence": "Imagen de producto recuperada de la ficha oficial. Derechos de Unitree Robotics. No constituye evidencia de desempeño.",
+      "asset_url": "https://www.unitree.com/images/a20ba1ebc0724df8a8135744dee8bbea_2740x1720.jpg"
+    }
+  },
+  "illustrations": "Las escenas cinematográficas son conceptuales y generadas con IA. La diapositiva 12 utiliza una imagen oficial de Unitree G1, identificada y atribuida al fabricante."
+}
