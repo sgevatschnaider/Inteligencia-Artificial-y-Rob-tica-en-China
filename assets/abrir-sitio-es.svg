@@ -1,13 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="132" viewBox="0 0 600 132" role="img" aria-labelledby="title desc">
-  <title id="title">Abrir el sitio web en castellano</title>
-  <desc id="desc">Inteligencia Artificial y Robótica en China. Biblioteca, presentaciones y recursos.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="148" viewBox="0 0 600 148" role="img" aria-labelledby="title desc">
+  <title id="title">Entrar al sitio web en castellano</title>
+  <desc id="desc">Investigación, recursos interactivos, presentaciones y descargas PDF y PowerPoint.</desc>
   <defs><linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102b39"/><stop offset="1" stop-color="#0c4245"/></linearGradient></defs>
-  <rect x="1" y="1" width="598" height="130" rx="22" fill="url(#panel)" stroke="#417172" stroke-width="2"/>
-  <rect x="1" y="33" width="5" height="66" rx="2.5" fill="#e8bd5e"/>
-  <circle cx="64" cy="66" r="32" fill="#e8bd5e"/>
-  <text x="64" y="74" text-anchor="middle" fill="#102b39" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">ES</text>
-  <text x="116" y="60" fill="#ffffff" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="700">ABRIR SITIO WEB</text>
-  <text x="116" y="90" fill="#c3d9d8" font-family="Segoe UI,Arial,sans-serif" font-size="18">Castellano · Biblioteca y materiales</text>
-  <circle cx="548" cy="66" r="24" fill="#ffffff" fill-opacity=".08" stroke="#7aa6a4"/>
-  <path d="M537 66h22m-9-9 9 9-9 9" fill="none" stroke="#e8bd5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1" y="1" width="598" height="146" rx="24" fill="url(#panel)" stroke="#417172" stroke-width="2"/>
+  <rect x="1" y="36" width="5" height="76" rx="2.5" fill="#e8bd5e"/>
+  <circle cx="68" cy="74" r="36" fill="#e8bd5e"/>
+  <circle cx="68" cy="74" r="18" fill="none" stroke="#102b39" stroke-width="2.8"/>
+  <path d="M50 74h36M68 56c-7 10-7 26 0 36M68 56c7 10 7 26 0 36M54 65h28M54 83h28" fill="none" stroke="#102b39" stroke-width="2" stroke-linecap="round"/>
+  <text x="119" y="70" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="700" letter-spacing=".35">ENTRAR AL SITIO</text>
+  <text x="120" y="102" fill="#c3d9d8" font-family="Segoe UI,Arial,sans-serif" font-size="18">Castellano · Biblioteca y clases</text>
+  <circle cx="548" cy="74" r="26" fill="#fff" fill-opacity=".08" stroke="#7aa6a4"/>
+  <path d="M536 74h23m-9-9 9 9-9 9" fill="none" stroke="#e8bd5e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

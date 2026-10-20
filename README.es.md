@@ -1,48 +1,54 @@
 # Inteligencia Artificial y Robótica en China
 
-**[Inicio](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/) · [English](README.en.md) · [Repositorio](README.md)**
+<p align="center"><a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es"><img src="assets/abrir-sitio-es.svg" width="570" alt="Entrar al sitio web en castellano: investigación, clases y materiales"></a></p>
 
-Una biblioteca de investigación y materiales docentes sobre las capacidades tecnológicas de China: políticas industriales, inteligencia artificial, semiconductores, robots y aplicaciones. Combina análisis, evidencia fechada y recursos interactivos, distinguiendo objetivos oficiales, anuncios de empresas y resultados observados.
+**[English](README.en.md) · [Inicio del repositorio](README.md)**
 
-## Presentación destacada
+Una biblioteca de investigación y materiales docentes sobre las capacidades tecnológicas de China: política industrial, inteligencia artificial, semiconductores, robots y aplicaciones. Combina evidencia fechada, análisis crítico y recursos interactivos.
 
-**China tecnológica: transformación industrial** · 47 diapositivas, visor interactivo, PDF y PowerPoint.
+## Colección docente
 
-<p align="center"><a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/"><img src="assets/abrir-presentacion-es.svg" width="720" alt="Abrir China tecnológica: transformación industrial, visor, PDF y PowerPoint"></a></p>
+Las presentaciones y sus descargas **PDF y PowerPoint** ya están integradas en el sitio. Desde cada tarjeta se accede al visor, las notas y las fuentes, sin repetir grandes botones de presentación en este README.
 
-El visor incluye índice, notas y fuentes por diapositiva. **[Acceder a la versión inglesa](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/).**
+| Módulo | Alcance y acceso |
+|:---|:---|
+| **[China tecnológica: transformación industrial](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#transformacion-industrial)** | 47 diapositivas en castellano; también existe una [versión completa en inglés](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#transformacion-industrial). |
+| **[El dragón — 龙](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#dragon)** | 10 diapositivas sobre el Estado estratégico y la transformación tecnológica. Contenido en castellano; visor también con interfaz en inglés. |
+| **[El androide — 人形机器人](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#androide)** | 24 diapositivas sobre empresas tecnológicas e inteligencia artificial en China. Contenido en castellano; visor con interfaz bilingüe. |
 
-## VideoLab · China tecnológica en movimiento
-
-**[↗ Abrir la videoteca bilingüe](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=es)**
-
-Galería curada para cuatro clases: (1) transformación industrial, (2) IA y humanoides, (3) chips y cadena tecnológica, y (4) aplicaciones, seguridad y ciudades inteligentes. Incluye videos de fabricantes, reportajes independientes, preguntas de discusión, límites de evidencia, filtros y un reproductor de YouTube que solo carga al pulsar «Reproducir». Los demás videos se abren desde sus páginas originales. No se redistribuyen archivos audiovisuales de terceros.
+**Importante:** disponer de una interfaz en inglés no significa que las diapositivas de *El dragón* o *El androide* estén traducidas.
 
 ## Biblioteca temática
 
 | Lectura | Contenido |
-|---|---|
-| **[Política industrial y gobernanza](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=politica-gobernanza)** | Prioridades del Estado, IA+ y regulación. |
+|:---|:---|
+| **[Política industrial y gobernanza](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=politica-gobernanza)** | Prioridades estatales, IA+ y regulación. |
 | **[Empresas, modelos y chips](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=empresas-modelos)** | Qwen, DeepSeek, Huawei y la cadena de cómputo. |
 | **[Robótica e IA encarnada](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=robotica-industria)** | Robots industriales, humanoides y aplicaciones. |
 | **[Aplicaciones e impacto](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=aplicaciones-etica)** | Movilidad, salud, empleo y desafíos sociales. |
-| **[Cronología tecnológica](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=cronologia)** | Hitos industriales, políticos y científicos. |
+| **[Cronología tecnológica](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=cronologia)** | Hitos industriales, científicos y regulatorios. |
 | **[Fuentes y metodología](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=fuentes)** | Criterios de evidencia, referencias y correcciones. |
 
-## Simuladores y materiales
+## VideoLab · China tecnológica en movimiento
 
-**[↗ Abrir RobotLab](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/robotlab/?lang=es)**: laboratorio bilingüe de robótica humanoide. Productividad, energía y autonomía, tres escenarios, experimento guiado y descarga CSV. Modelo educativo hipotético; no utiliza especificaciones de fabricantes.
+**[Abrir la videoteca en castellano](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=es)**
 
-**[↗ Abrir laboratorio de simulaciones](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/#simulations)**: seis experiencias sobre capital robótico, datos sintéticos, aprendizaje acumulativo y el *data flywheel*, con botones individuales para iniciar cada modelo.
+Videoteca curada para cuatro clases: transformación industrial; inteligencia artificial y humanoides; semiconductores y cadenas tecnológicas; aplicaciones, seguridad y ciudades inteligentes. Incluye videos con fuentes, preguntas de discusión, criterios de evidencia y filtros. La reproducción de YouTube se activa al pulsar «Reproducir»; otros contenidos abren su página original. No se redistribuyen videos ajenos.
 
-**[↗ Explorar informes y datos](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/#reports)**: robótica industrial, vehículos autónomos, salud e indicadores de 2026.
+## Simuladores, informes y datos
 
-**[↗ Consultar indicadores y fuentes](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html)**: series comparables y límites de interpretación.
+**[RobotLab](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/robotlab/?lang=es)** es un laboratorio bilingüe de robótica humanoide con escenarios sobre productividad, energía y autonomía, experimento guiado y exportación CSV. Sus parámetros son didácticos e hipotéticos, no especificaciones de fabricantes.
+
+**[Laboratorio de simulaciones](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#simulations)** reúne seis experiencias sobre capital robótico, datos sintéticos, aprendizaje acumulativo y *data flywheel*.
+
+**[Informes y datos](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#reports)** cubre robótica industrial, vehículos autónomos, salud e indicadores, con acceso al [Panorama industrial de 2026](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html).
 
 ## Criterio editorial
 
-Los informes de 2025 se conservan como material fechado. Las cifras del panorama de 2026 indican el período observado y la fuente; los simuladores son modelos didácticos y no pronósticos. Para profundizar, consulta el [panorama analítico íntegro de octubre de 2026](PANORAMA-2026.es.md) y la [metodología](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=fuentes).
+Las metas gubernamentales, los anuncios comerciales, la adopción y los resultados observados se tratan por separado. Los informes históricos conservan su fecha; las cifras identifican períodos y fuentes; los simuladores no son pronósticos. Las imágenes conceptuales creadas con IA no deben interpretarse como fotografías documentales ni pruebas de capacidades reales.
+
+Para profundizar, consultar el [panorama analítico de octubre de 2026](PANORAMA-2026.es.md) y la [metodología](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=fuentes).
 
 ---
 
-**Sergio Gevatschnaider** · Última revisión editorial: octubre de 2026. [Cómo contribuir](CONTRIBUTING.md) · [Citar este repositorio](CITATION.cff) · Código [MIT](LICENSE) y documentación original [CC BY 4.0](LICENSE-CONTENT.md).
+**Sergio Gevatschnaider** · Última revisión editorial: octubre de 2026. [Cómo contribuir](CONTRIBUTING.md) · [Cómo citar](CITATION.cff) · Código [MIT](LICENSE) · Contenido original [CC BY 4.0](LICENSE-CONTENT.md).

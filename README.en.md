@@ -1,49 +1,54 @@
 # Artificial Intelligence and Robotics in China
 
-**[Home](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/) · [Español](README.es.md) · [Repository](README.md)**
+<p align="center"><a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en"><img src="assets/abrir-sitio-en.svg" width="570" alt="Open the English website: research, lessons and resources"></a></p>
 
-An open research and teaching library on China's technological capabilities: industrial policy, artificial intelligence, semiconductors, robotics, and real-world applications. It combines dated evidence, analytical context, and interactive resources while separating policy targets, company claims, and observed outcomes.
+**[Español](README.es.md) · [Repository home](README.md)**
 
-## Featured presentation
+An open research and teaching library on China's technological capabilities, from industrial policy, artificial intelligence, and semiconductors to robots and real-world applications. It combines dated evidence, critical analysis, and interactive educational resources.
 
-**Technological China: Industrial Transformation** · 47 slides, interactive viewer, PDF, and PowerPoint.
+## Teaching collection
 
-<p align="center"><a href="https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/en/"><img src="assets/abrir-presentacion-en.svg" width="720" alt="Open Technological China: Industrial Transformation, viewer, PDF and PowerPoint"></a></p>
+The website already includes slide viewers, teaching notes, references, and **PDF/PowerPoint** downloads. These are accessible within each featured lesson, without duplicating large presentation buttons in this README.
 
-The viewer includes a slide index, speaker notes, and per-slide sources. **[Open the Spanish version](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/transformacion-industrial/).**
+| Module | Scope and access |
+|:---|:---|
+| **[Technological China: Industrial Transformation](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#transformacion-industrial)** | A complete **47-slide English edition**, with a separate [47-slide Spanish edition](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#transformacion-industrial). |
+| **[The Dragon — 龙](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#dragon)** | 10 slides on the strategic state and China's technological transformation. **Spanish-language slides**; English viewer interface available. |
+| **[The Android — 人形机器人](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#androide)** | 24 slides on technology companies and AI in China. **Spanish-language slides**; English viewer interface available. |
+
+**Language note:** an English-language viewer interface does not mean that *The Dragon* or *The Android* slides have been translated.
 
 ## Research library
 
 | Article | Scope |
-|---|---|
+|:---|:---|
 | **[Policy and governance](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=policy-governance)** | State priorities, AI Plus, and regulation. |
-| **[Companies, models and chips](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=companies-models)** | Qwen, DeepSeek, Huawei, and the compute supply chain. |
+| **[Companies, models, and chips](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=companies-models)** | Qwen, DeepSeek, Huawei, and the computing supply chain. |
 | **[Robotics and embodied AI](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=robotics-industry)** | Industrial robots, humanoids, and applications. |
-| **[Applications and social impact](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=applications-ethics)** | Mobility, healthcare, work, and societal challenges. |
+| **[Applications and social impact](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=applications-ethics)** | Mobility, healthcare, jobs, and social challenges. |
 | **[Technology timeline](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=timeline)** | Industrial, policy, and scientific milestones. |
-| **[Sources and methodology](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=sources)** | Evidence criteria, references, and corrections. |
-
-## Simulators and materials
-
-**[↗ Open RobotLab](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/robotlab/?lang=en)**: bilingual humanoid robotics laboratory. Productivity, energy and battery life, three scenarios, a guided experiment and CSV export. A hypothetical educational model, not manufacturer specifications.
-
-**[↗ Open the interactive simulations](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/#simulations)**: six experiences exploring robotic capital, synthetic data, cumulative learning, and the data flywheel, with individual launch controls.
-
-**[↗ Browse reports and data](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/#reports)**: industrial robotics, autonomous vehicles, healthcare, and the 2026 indicators.
-
-**[↗ Read sourced indicators](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html)**: comparable series and interpretation limits.
-
-## Editorial standards
-
-Reports originally produced in 2025 remain available as dated resources. The 2026 overview identifies observation years and sources; simulators are teaching models rather than forecasts. For additional analysis, consult the [complete October 2026 research overview](PANORAMA-2026.en.md) and [sources and methodology](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=sources).
-
----
-
-**Sergio Gevatschnaider** · Last editorial review: October 2026. [Contribute](CONTRIBUTING.md) · [Cite the repository](CITATION.cff) · Code [MIT](LICENSE), original documentation [CC BY 4.0](LICENSE-CONTENT.md).
+| **[Sources and methodology](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=sources)** | Evidence standards, references, and corrections. |
 
 ## VideoLab · Technological China in motion
 
-**[↗ Open the bilingual video library](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=en)**
+**[Open VideoLab in English](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=en)**
 
-Curated clips for four lessons: (1) industrial transformation, (2) AI and humanoids, (3) chips and supply chains, and (4) applications, safety and smart cities. Includes manufacturer footage and independent reporting, discussion prompts, evidence caveats, lesson filters and privacy-conscious, click-to-load YouTube playback. Other videos open on their original providers' websites; third-party video files are not republished.
+A curated video library for four lessons: industrial transformation; AI and humanoids; semiconductors and technology supply chains; applications, safety, and smart cities. It includes sourced videos, discussion prompts, evidence caveats, and filters. YouTube playback is initiated only by the visitor; other videos open on the original providers' websites. Third-party video files are not redistributed.
 
+## Simulations, reports, and data
+
+**[RobotLab](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/robotlab/?lang=en)** is a bilingual humanoid robotics lab covering productivity, energy, battery life, three scenarios, a guided experiment, and CSV export. Its parameters are hypothetical teaching inputs, not manufacturer specifications.
+
+**[Interactive simulations](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#simulations)** presents six experiences exploring robotic capital, synthetic data, cumulative learning, and the *data flywheel*.
+
+**[Reports and data](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#reports)** covers industrial robotics, autonomous vehicles, healthcare, and dated indicators, including the [2026 Industrial Overview](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/recursos/Panorama_Industrial_2026.html).
+
+## Editorial standards
+
+Policy targets, product announcements, adoption, and observed outcomes are distinguished. Older reports retain their original dates; figures specify sources and observation periods; simulations are educational models rather than forecasts. AI-generated conceptual illustrations should not be treated as documentary photographs or proof of real-world deployment.
+
+For further detail, see the [October 2026 research overview](PANORAMA-2026.en.md) and [sources and methodology](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=sources).
+
+---
+
+**Sergio Gevatschnaider** · Last editorial review: October 2026. [Contribute](CONTRIBUTING.md) · [Cite this repository](CITATION.cff) · Code [MIT](LICENSE) · Original content [CC BY 4.0](LICENSE-CONTENT.md).

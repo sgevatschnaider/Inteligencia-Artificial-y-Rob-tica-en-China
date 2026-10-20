@@ -2,33 +2,50 @@
 
 ### Artificial Intelligence and Robotics in China
 
-Base de conocimiento abierta y bilingüe / Open bilingual research and teaching library.
+**Biblioteca abierta de investigación y docencia / Open research and teaching library.**  
+Política industrial, inteligencia artificial, semiconductores, robótica y transformación tecnológica de China. / Industrial policy, AI, semiconductors, robotics, and China's technological transformation.
 
-| Castellano | English |
-|---|---|
-| [![Abrir el sitio web en castellano](assets/abrir-sitio-es.svg)](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es) | [![Open the website in English](assets/abrir-sitio-en.svg)](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en) |
-| **[Panorama en castellano](README.es.md)** | **[English overview](README.en.md)** |
+## Explorar el sitio / Explore the website
+
+| **Castellano** | **English** |
+|:---:|:---:|
+| [![Entrar al sitio en castellano](assets/abrir-sitio-es.svg)](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es) | [![Open the English website](assets/abrir-sitio-en.svg)](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en) |
+| [Panorama en castellano](README.es.md) | [English overview](README.en.md) |
 | [Biblioteca temática](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#topics) | [Research library](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#topics) |
-| [Simuladores interactivos](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#simulations) | [Interactive simulations](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#simulations) |
+| [Simulaciones y RobotLab](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#simulations) | [Simulations and RobotLab](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#simulations) |
 | [Informes y datos](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#reports) | [Reports and data](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#reports) |
+| [Videoteca / VideoLab](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=es) | [Video library / VideoLab](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=en) |
 
-Las presentaciones, sus visores y las descargas **PDF y PowerPoint** están disponibles dentro del sitio. / Presentations, slide viewers, and **PDF and PowerPoint** downloads are available on the website.
+## Colección docente / Teaching collection
+
+Los visores, las notas, las fuentes y las descargas **PDF y PowerPoint** están reunidos dentro de la web, sin botones duplicados en esta portada. / Viewers, teaching notes, sources, and **PDF/PowerPoint** downloads are available on the website without duplicate download buttons here.
+
+| Material / Material | Contenido e idiomas / Content and languages | Acceder / Open |
+|:---|:---|:---|
+| **China tecnológica: transformación industrial** / **Technological China: Industrial Transformation** | **47 diapositivas por idioma**, versión integral en español e inglés. / **47 slides in each language**, fully bilingual. | [ES](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#transformacion-industrial) · [EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#transformacion-industrial) |
+| **El dragón — 龙** / **The Dragon** | **10 diapositivas en español**; la interfaz del visor puede verse en inglés. / **10 Spanish-language slides**; an English viewer interface is available. | [ES](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#dragon) · [EN interface](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#dragon) |
+| **El androide — 人形机器人** / **The Android** | **24 diapositivas en español**; interfaz del visor en ambos idiomas. / **24 Spanish-language slides**; bilingual viewer interface. | [ES](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#androide) · [EN interface](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#androide) |
 
 ## Investigación / Research
 
-| Castellano | English |
-|---|---|
-| [Política y regulación](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=politica-gobernanza) | [Policy and governance](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=policy-governance) |
-| [Empresas y modelos](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=empresas-modelos) | [Companies and models](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=companies-models) |
-| [Robótica](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=robotica-industria) | [Robotics](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=robotics-industry) |
-| [Aplicaciones](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=aplicaciones-etica) | [Applications](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=applications-ethics) |
+| **Español** | **English** |
+|:---|:---|
+| [Política y gobernanza](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=politica-gobernanza) | [Policy and governance](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=policy-governance) |
+| [Empresas, modelos y chips](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=empresas-modelos) | [Companies, models, and chips](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=companies-models) |
+| [Robótica e IA encarnada](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=robotica-industria) | [Robotics and embodied AI](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=robotics-industry) |
+| [Aplicaciones e impacto](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=aplicaciones-etica) | [Applications and impact](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=applications-ethics) |
+| [Cronología](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=cronologia) | [Timeline](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=timeline) |
+| [Fuentes y metodología](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=fuentes) | [Sources and methodology](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=sources) |
 
-La biblioteca distingue metas gubernamentales, productos anunciados, adopción y resultados comprobables. / The library separates policy targets, product announcements, adoption, and observable outcomes.
+**Criterio editorial / Editorial standard.** Se distinguen metas oficiales, anuncios comerciales, adopción y resultados comprobables. Las ilustraciones conceptuales no son evidencia documental y los simuladores son modelos didácticos, no predicciones. / Policy targets, commercial claims, adoption, and verifiable outcomes are treated separately. Conceptual illustrations are not documentary evidence; teaching simulations are not forecasts.
 
-## Videoteca / VideoLab
+## Experiencias interactivas / Interactive experiences
 
-[ES — China tecnológica en movimiento](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=es) · [EN — Technological China in motion](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=en). Cuatro clases, videos con fuentes y preguntas de discusión; reproducción diferida de YouTube y acceso al video original.
+[RobotLab — ES](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/robotlab/?lang=es) · [RobotLab — EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/robotlab/?lang=en) · [VideoLab — ES](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=es) · [VideoLab — EN](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/videolab/?lang=en) · [Simulaciones / Simulations](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#simulations)
+
+VideoLab reúne videos con fuentes, preguntas de discusión y reproducción de YouTube activada por el usuario. / VideoLab provides sourced videos, discussion prompts, and user-initiated YouTube playback.
 
 ---
 
-**Sergio Gevatschnaider** · [Metodología](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=es&doc=fuentes) / [Methodology](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/lecturas/index.html?lang=en&doc=sources) · [Contribuciones / Contributions](CONTRIBUTING.md) · [Citación / Citation](CITATION.cff) · Código MIT · Contenido CC BY 4.0.
+**Sergio Gevatschnaider** · Revisión editorial / Editorial review: **octubre / October 2026**.  
+[Panorama 2026 (ES)](PANORAMA-2026.es.md) · [2026 research overview (EN)](PANORAMA-2026.en.md) · [Contribuciones / Contributing](CONTRIBUTING.md) · [Citación / Citation](CITATION.cff) · Código / Code [MIT](LICENSE) · Contenido original / Original content [CC BY 4.0](LICENSE-CONTENT.md).
