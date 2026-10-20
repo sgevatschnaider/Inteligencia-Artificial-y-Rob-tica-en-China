@@ -61,7 +61,7 @@
   if(['ArrowRight','PageDown'].includes(e.key)){e.preventDefault();setPage(current+1);}
   if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();setPage(current-1);}
   if(e.key==='Home'){e.preventDefault();setPage(1);}if(e.key==='End'){e.preventDefault();setPage(deck.length);}
-  if(e.key.toLowerCase()==='f'&&!e.target.closest('button,a')){e.preventDefault();fullscreen();}
+  if(e.key.toLowerCase()==='f'){e.preventDefault();fullscreen();}
  });
  window.addEventListener('hashchange',()=>setPage(location.hash.slice(1)));
  fetch('slides.json').then(r=>{if(!r.ok)throw Error('metadata');return r.json();}).then(data=>{deck=data.slides;registry=data.source_registry;$('page').max=deck.length;$('page-total').textContent='/ '+deck.length;listSlides();setPage(location.hash.slice(1)||1);if(initialView==='sources')activate('sources');}).catch(()=>{$('search-status').textContent=word('No se pudo cargar el índice. Podés abrir el PDF.','The index could not load. You can open the PDF.');});
