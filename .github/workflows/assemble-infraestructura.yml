@@ -31,7 +31,7 @@ jobs:
                   with urllib.request.urlopen(request, timeout=75) as response:
                       obj=json.load(response)
                   part=base64.b64decode(obj["content"])
-                  checksum=hashlib.sha1(b"blob "+str(len(part)).encode()+b"\\0"+part).hexdigest()
+                  checksum=hashlib.sha1(b"blob "+str(len(part)).encode()+b"\0"+part).hexdigest()
                   assert checksum==sha,(i,checksum,sha)
                   output.write(part)
           data=p.read_bytes()
