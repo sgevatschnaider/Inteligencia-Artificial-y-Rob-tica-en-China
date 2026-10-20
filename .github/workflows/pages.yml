@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Check out the published source
         uses: actions/checkout@v6
+      - name: Restore the 32-slide source package (when needed)
+        run: python scripts/unpack_infraestructura.py
       - name: Check site links and video JavaScript
         run: |
           python scripts/validate_repo.py
@@ -29,12 +31,17 @@ jobs:
           node --check videolab/app.js
           node --check materiales/dragon/viewer.js
           node --check materiales/androide/viewer.js
+          node --check materiales/infraestructura/viewer.js
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Prepare the static site without changing its content
         run: |
           mkdir _site
           git archive --format=tar HEAD | tar --exclude='.github' -xf - -C _site
+          python _site/scripts/unpack_infraestructura.py
+          test -s _site/materiales/infraestructura/presentacion.pdf
+          test -s _site/materiales/infraestructura/presentacion.pptx
+          test -s _site/materiales/infraestructura/slides/slide-32.webp
           test -s _site/index.html
           test -s _site/videolab/home.js
       - name: Upload the static site
