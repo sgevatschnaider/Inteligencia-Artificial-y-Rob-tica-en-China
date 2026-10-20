@@ -152,7 +152,7 @@ async function capture(page, name, locator) {
       assert((await page.locator('a[href*="materiales/infraestructura"]').count()) >= 3, 'The third module must be linked after the Infrastructure');
       await page.locator('#lang-en').click();
       assert((await page.locator('[data-infraestructura-link]').first().getAttribute('href')).includes('lang=en'));
-      assert((await page.locator('#infraestructura .infraestructura-language.en').innerText()).includes('Spanish content'));
+      assert((await page.locator('#infraestructura .infraestructura-language.en').innerText()).includes('Spanish-language slides'));
       assert((await page.locator('[data-dragon-link]').first().getAttribute('href')).includes('lang=en'));
       assert((await page.locator('[data-presentation-link]').first().getAttribute('href')).includes('/en/'));
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Homepage horizontal overflow at ' + viewport.width);
