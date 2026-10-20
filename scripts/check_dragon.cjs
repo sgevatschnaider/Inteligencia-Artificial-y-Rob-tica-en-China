@@ -10,11 +10,12 @@ const errors=[];
 for(const viewport of [{width:1440,height:1000},{width:768,height:1024},{width:390,height:844}]){
  const page=await browser.newPage({viewport});page.on('pageerror',e=>errors.push(e.message));
  await page.goto(base+'/materiales/dragon/?lang=es#1');await page.waitForSelector('[data-page="10"]');
+ if(process.env.DRAGON_SCREENSHOT_DIR){fs.mkdirSync(process.env.DRAGON_SCREENSHOT_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.DRAGON_SCREENSHOT_DIR,'cover-'+viewport.width+'.png'),fullPage:true});}
  assert.equal(await page.locator('[data-page]').count(),10);assert.equal(await page.locator('#slide-image').evaluate(im=>im.complete&&im.naturalWidth>0),true);
  assert(await page.locator('#previous').isDisabled());await page.locator('#next').click();assert.equal(await page.locator('#page').inputValue(),'2');
  await page.locator('#page').fill('999');await page.locator('#page').dispatchEvent('change');assert.equal(await page.locator('#page').inputValue(),'10');assert(await page.locator('#next').isDisabled());
  await page.locator('#stage').focus();await page.keyboard.press('Home');assert.equal(await page.locator('#page').inputValue(),'1');await page.keyboard.press('ArrowRight');assert.equal(await page.locator('#page').inputValue(),'2');
- await page.locator('#stage').focus();await page.keyboard.press('f');assert(await page.evaluate(()=>!!document.fullscreenElement));await page.keyboard.press('Escape');await page.waitForFunction(()=>!document.fullscreenElement);
+ await page.locator('#stage').focus();await page.keyboard.press('f');assert(await page.evaluate(()=>!!document.fullscreenElement));await page.locator('#fullscreen').click();await page.waitForFunction(()=>!document.fullscreenElement);
  await page.locator('#search').fill('financiamiento');assert(await page.locator('[data-page]').count()>0);await page.locator('#search').fill('zzzzsincoincidencias');await page.waitForFunction(()=>document.querySelectorAll('[data-page]').length===0,{},{timeout:5000}).catch(async error=>{console.error('Search diagnostics',await page.locator('#search').inputValue(),await page.locator('#search-status').innerText(),errors);throw error;});assert.equal(await page.locator('[data-page]').count(),0);await page.locator('#search').fill('');
  await page.locator('[data-page="8"]').click();await page.locator('#show-sources').click();assert.equal(await page.locator('#source-links a').count(),5);assert((await page.locator('#speaker-notes').innerText()).includes('artículo 2'));
  await page.locator('#tab-sources').focus();await page.keyboard.press('ArrowLeft');assert(await page.locator('#pdf-panel').isVisible());assert((await page.locator('object').getAttribute('data')).includes('#page=8'));
@@ -29,6 +30,7 @@ const request=await browser.newContext();
 for(let n=1;n<=10;n++){const r=await request.request.get(base+'/materiales/dragon/slides/slide-'+String(n).padStart(2,'0')+'.webp');assert(r.ok());assert((await r.body()).length>1000);}
 for(const f of ['presentacion.pdf','presentacion.pptx','fuentes.html'])assert((await request.request.get(base+'/materiales/dragon/'+f)).ok());
 const page=await browser.newPage({viewport:{width:1366,height:1000}});await page.goto(base);await page.locator('#lang-en').click();assert((await page.locator('[data-dragon-link]').first().getAttribute('href')).includes('lang=en'));assert((await page.locator('[data-presentation-link]').first().getAttribute('href')).includes('/en/'));
+if(process.env.DRAGON_SCREENSHOT_DIR)await page.locator('#dragon').screenshot({path:path.join(process.env.DRAGON_SCREENSHOT_DIR,'home-dragon.png')});
 const order=await page.evaluate(()=>['intro-video','dragon','transformacion-industrial'].map(id=>document.getElementById(id).getBoundingClientRect().top));assert(order[0]<order[1]&&order[1]<order[2]);assert.equal(errors.length,0,errors.join('\n'));
 console.log('Dragon browser checks passed: desktop/tablet/mobile, English interface, search, notes, keyboard, fullscreen, assets and homepage order.');
 }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}})().catch(e=>{console.error(e);process.exitCode=1;});
