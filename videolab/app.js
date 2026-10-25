@@ -16,6 +16,7 @@
   function el(tag,className,text) { const node=document.createElement(tag); if(className)node.className=className;if(text!==undefined)node.textContent=text;return node; }
   function setLanguage(lang) {
     state.lang=lang==='en'?'en':'es';
+    document.querySelectorAll('[data-class2-path]').forEach(a=>a.href='../materiales/clase-2/'+a.dataset.class2Path+'?lang='+state.lang);
     document.documentElement.lang=state.lang;
     document.querySelectorAll('[data-es][data-en]').forEach(node => node.textContent=node.dataset[state.lang]);
     document.querySelectorAll('[data-placeholder-es]').forEach(node => node.placeholder=node.dataset['placeholder'+(state.lang==='en'?'En':'Es')]);

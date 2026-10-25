@@ -119,6 +119,7 @@
     document.documentElement.lang=language;
     document.documentElement.dataset.language=language;
     translatePage();
+    const extension=document.getElementById('class2-extension');if(extension){extension.textContent=language==='en'?'Class 2: costs and agents ↗':'Clase 2: costos y agentes ↗';extension.href='../materiales/clase-2/lab.html?lang='+language;}
     for (const code of ['es','en']) document.getElementById('set-'+code).setAttribute('aria-pressed',String(code===language));
     try { localStorage.setItem('china-ai-language',language); } catch (_) {}
     const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url);

@@ -15,6 +15,8 @@ The website already includes slide viewers, teaching notes, references, and **PD
 | **[Technological China: Industrial Transformation](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#transformacion-industrial)** | A complete **47-slide English edition**, with a separate [47-slide Spanish edition](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=es#transformacion-industrial). |
 | **[The Dragon — 龙](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#dragon)** | 10 slides on the strategic state and China's technological transformation. **Spanish-language slides**; English viewer interface available. |
 | **[The Android — 人形机器人](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/?lang=en#androide)** | 24 slides on technology companies and AI in China. **Spanish-language slides**; English viewer interface available. |
+| **[Class 2: models, agents and robotics](materiales/clase-2/index.html?lang=en)** | Two complete decks per language: foundations (22 slides) and China (46). PPTX, PDF, lab, separate videos and a 60-minute guide. |
+| **[Infrastructure — 基础设施](materiales/infraestructura/index.html?lang=en)** | 32 Spanish-language slides on talent, science and industrial capabilities; bilingual viewer interface. |
 
 **Language note:** an English-language viewer interface does not mean that *The Dragon* or *The Android* slides have been translated.
 

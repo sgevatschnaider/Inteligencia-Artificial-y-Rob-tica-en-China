@@ -35,7 +35,7 @@ function href(path){
 }
 function inline(line){
  let s=escape(line);
- s=s.replace(/\[([^\]]+)\]\(([^)]+)\)/g,function(_,label,target){const address=href(target),external=/^https?:/i.test(address);return '<a href="'+escape(address)+'"'+(external?' target="_blank" rel="noopener noreferrer"':'')+'>'+label+'</a>';});
+ s=s.replace(/\[([^\]]+)\]\(([^)]+)\)/g,function(_,label,target){const address=href(target.replace(/&amp;/g,'&')),external=/^https?:/i.test(address);return '<a href="'+escape(address)+'"'+(external?' target="_blank" rel="noopener noreferrer"':'')+'>'+label+'</a>';});
  return s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/(^|[^*])\*([^*]+)\*/g,'$1<em>$2</em>');
 }
 function render(md){

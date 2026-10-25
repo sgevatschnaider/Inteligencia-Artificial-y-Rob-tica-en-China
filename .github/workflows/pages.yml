@@ -30,6 +30,10 @@ jobs:
           node --check materiales/dragon/viewer.js
           node --check materiales/androide/viewer.js
           node --check materiales/infraestructura/viewer.js
+          node --check materiales/clase-2/common.js
+          node --check materiales/clase-2/reader.js
+          node --check materiales/clase-2/lab.js
+          node materiales/clase-2/tests/model.test.cjs
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Prepare the static site without changing its content

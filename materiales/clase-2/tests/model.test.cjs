@@ -1,0 +1,10 @@
+const assert=require('node:assert/strict'),m=require('../model.js');
+const p={s:1,w:1,e:1,battery:1000,availability:.85,success:.95,hours:4000,capex:80000,residual:0,years:5,fixed:12000,electricity:.15,variable:.05};
+const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-6,`${a} != ${b}`);
+const b=m.business(p);near(b.q,30);near(b.power,330);near(b.valid,96900);near(b.annual,33268.3);near(b.unit,33268.3/96900);
+const low=m.business({...p,success:.7});near(low.annual,b.annual);assert.ok(low.unit>b.unit);near(m.business({...p,battery:2000}).unit,b.unit);
+const ef=m.evaluate({...p,e:2});near(ef.power,b.power/2);near(ef.optimum,b.optimum);
+const star=m.evaluate({...p,s:b.optimum});assert.ok(m.evaluate({...p,s:b.optimum-.01}).wh>star.wh);assert.ok(m.evaluate({...p,s:b.optimum+.01}).wh>star.wh);
+const end=m.advance(m.initial(1000),p,1e9);near(end.energy,0);near(end.seconds,1000/330*3600);near(end.attempts,1000/11);near(end.valid,end.attempts*.95);
+near(m.advance(end,p,900).attempts,end.attempts);assert.throws(()=>m.business({...p,residual:80001}));assert.throws(()=>m.business({...p,hours:9000}));assert.throws(()=>m.evaluate({...p,s:0}));assert.throws(()=>m.advance(end,p,-1));
+console.log('PASS: baseline, denominator effects, efficiency, optimum, exact depletion and invalid inputs');

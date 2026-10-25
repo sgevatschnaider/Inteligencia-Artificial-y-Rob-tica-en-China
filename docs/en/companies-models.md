@@ -75,3 +75,7 @@ Corporate sites establish the existence and stated description of products. They
 | Data centres and power | Operating infrastructure | Power, networks, cooling and utilisation |
 
 A chip specification does not measure full-system performance. Compare workload performance, memory, communication, energy efficiency and development tools. This is a functional map, not a version or capacity ranking.
+
+## Class 2: models and agent systems
+
+[Decks and teaching notes](../../materiales/clase-2/index.html?lang=en) · [Agent foundations](../../materiales/clase-2/reader.html?deck=agents&lang=en) · [Tools and evidence exercise](../../materiales/clase-2/lab.html?lang=en).

@@ -75,3 +75,7 @@ Los sitios corporativos respaldan la existencia y descripción declarada de prod
 | Centros de datos y energía | Operación de la infraestructura | Potencia disponible, redes, refrigeración y utilización |
 
 La capacidad de un chip aislado no mide el rendimiento de un sistema completo. Conviene comparar rendimiento por tarea, memoria, comunicación, eficiencia energética y herramientas de desarrollo. Esta tabla es un mapa funcional, no un ranking de versiones o capacidad disponible.
+
+## Clase 2: modelos y sistemas agente
+
+[Presentaciones y notas](../../materiales/clase-2/index.html?lang=es) · [Fundamentos de agentes](../../materiales/clase-2/reader.html?deck=agents&lang=es) · [Ejercicio de herramientas y evidencia](../../materiales/clase-2/lab.html?lang=es).
