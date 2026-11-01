@@ -141,8 +141,11 @@ try{
   assert.equal(await page.locator('#home-video-screen iframe').count(),0,'Homepage player did not stop on close');
  }
  await page.setViewportSize({width:390,height:844});
- const mobileCopy=await page.locator('.hero-grid > div').first().boundingBox(),mobileMedia=await page.locator('.hero-media').boundingBox();
- assert(mobileMedia.y>=mobileCopy.y+mobileCopy.height,'Intro should sit below the title on mobile');
+ // Read both rectangles in one frame: smooth scrolling can move the viewport
+ // between separate protocol calls after the video dialog restores focus.
+ await page.waitForFunction(()=>innerWidth===390&&getComputedStyle(document.querySelector('.hero-grid')).gridTemplateColumns.split(' ').length===1);
+ const {mobileCopy,mobileMedia}=await page.evaluate(()=>({mobileCopy:document.querySelector('.hero-grid > div').getBoundingClientRect().toJSON(),mobileMedia:document.querySelector('.hero-media').getBoundingClientRect().toJSON()}));
+ assert(mobileMedia.y>=mobileCopy.y+mobileCopy.height-1,'Intro should sit below the title on mobile: '+JSON.stringify({mobileCopy,mobileMedia}));
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+2),'Homepage overflows on mobile');
  await page.setViewportSize({width:1366,height:768});
  await page.goto('http://127.0.0.1:'+port+'/lecturas/index.html?lang=en&doc=companies-models',{waitUntil:'domcontentloaded'});
