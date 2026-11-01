@@ -27,6 +27,9 @@ jobs:
           node --check materiales/clase-2/lab.js
           node --check materiales/clase-2/videos.js
           node materiales/clase-2/tests/model.test.cjs
+          node scripts/check_class3_model.cjs
+          node --check materiales/clase-3/ppt-1/reader.js
+          node --check materiales/clase-3/ppt-1/videos.js
           node --check scripts/check_infraestructura.cjs
           node --check scripts/check_androide.cjs
           node scripts/check_site.cjs
@@ -46,6 +49,7 @@ jobs:
           node scripts/check_androide.cjs
           node scripts/check_infraestructura.cjs
           node scripts/check_class2.cjs
+          node scripts/check_class3.cjs
       - name: Preserve Dragon browser review images
         if: always()
         uses: actions/upload-artifact@v4
@@ -83,5 +87,6 @@ jobs:
           python scripts/verify_androide.py
           python scripts/verify_infraestructura.py
           python scripts/verify_class2.py
+          python scripts/verify_class3.py
       - name: Validate model behavior and indicator sources
         run: node scripts/check_models.cjs

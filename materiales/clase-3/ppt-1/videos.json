@@ -1,0 +1,172 @@
+[
+  {
+    "id": "shenzhen-france24",
+    "videoId": "2ZimUaptniM",
+    "source": "FRANCE 24 Español",
+    "audio": "Español / Spanish",
+    "slides": [
+      6,
+      24
+    ],
+    "title": {
+      "es": "Shenzhen: la ciudad con la que China desafía a Silicon Valley",
+      "en": "Shenzhen: the city challenging Silicon Valley"
+    },
+    "type": {
+      "es": "Reportaje · recurso principal",
+      "en": "Report · main resource"
+    },
+    "context": {
+      "es": "Transformación urbana e industrial, empresas, talento y vigilancia. Duración informada en la guía: 06:39.",
+      "en": "Urban and industrial transformation, firms, talent and surveillance. Duration supplied in the guide: 06:39."
+    },
+    "objective": {
+      "es": "Relacionar capacidades industriales, innovación y desafíos sociales.",
+      "en": "Connect industrial capabilities, innovation and social challenges."
+    },
+    "question": {
+      "es": "¿La ventaja procede de empresas individuales o de las complementariedades del ecosistema?",
+      "en": "Does the advantage come from individual firms or ecosystem complementarities?"
+    },
+    "caveat": {
+      "es": "Enlace y metadatos aportados por la guía. La disponibilidad y reproducción no pudieron confirmarse automáticamente.",
+      "en": "Link and metadata supplied by the guide. Availability and playback could not be confirmed automatically."
+    }
+  },
+  {
+    "id": "future-factory",
+    "videoId": "eLmaIbb13GM",
+    "source": "Bloomberg Originals · Hello World",
+    "audio": "Inglés / English",
+    "slides": [
+      24
+    ],
+    "title": {
+      "es": "Inside China’s Future Factory",
+      "en": "Inside China’s Future Factory"
+    },
+    "type": {
+      "es": "Reportaje histórico · manufactura",
+      "en": "Historical report · manufacturing"
+    },
+    "context": {
+      "es": "Ashlee Vance explora emprendimientos, mercados electrónicos y redes de manufactura rápida en Shenzhen.",
+      "en": "Ashlee Vance explores startups, electronics markets and rapid manufacturing networks in Shenzhen."
+    },
+    "objective": {
+      "es": "Analizar proximidad de proveedores, costos de coordinación y velocidad de iteración.",
+      "en": "Examine supplier proximity, coordination costs and iteration speed."
+    },
+    "question": {
+      "es": "¿Qué cambia en el tiempo de desarrollo cuando los talleres y componentes están próximos?",
+      "en": "How does proximity to workshops and components change development time?"
+    },
+    "caveat": {
+      "es": "Perspectiva histórica. El enlace se conserva de la guía; reproducción pendiente de comprobación en YouTube.",
+      "en": "Historical perspective. Link retained from the guide. Playback still needs checking on YouTube."
+    }
+  },
+  {
+    "id": "wired-shenzhen",
+    "videoId": "SGJ5cZnoodY",
+    "source": "WIRED · Future Cities",
+    "audio": "Inglés / English",
+    "slides": [
+      6,
+      17,
+      24
+    ],
+    "title": {
+      "es": "Shenzhen: The Silicon Valley of Hardware",
+      "en": "Shenzhen: The Silicon Valley of Hardware"
+    },
+    "type": {
+      "es": "Documental · profundización",
+      "en": "Documentary · further study"
+    },
+    "context": {
+      "es": "Documental de 2016 sobre prototipado, componentes y cultura shanzhai. Recurso para estudio fuera de clase.",
+      "en": "A 2016 documentary on prototyping, components and shanzhai culture. Suitable for study outside class."
+    },
+    "objective": {
+      "es": "Distinguir imitación, adaptación, experimentación y desarrollo de productos.",
+      "en": "Distinguish imitation, adaptation, experimentation and product development."
+    },
+    "question": {
+      "es": "¿Cuándo facilita la ingeniería inversa el aprendizaje y cuándo puede limitar la innovación?",
+      "en": "When does reverse engineering support learning, and when might it limit innovation?"
+    },
+    "caveat": {
+      "es": "WIRED confirma el documental y su contexto histórico. La reproducción del enlace específico no pudo verificarse.",
+      "en": "WIRED confirms the documentary and its historical context. Playback at this specific link could not be verified."
+    }
+  },
+  {
+    "id": "qwen-reuters",
+    "videoId": "3iLT5IlIBBY",
+    "source": "Reuters",
+    "audio": "Inglés / English",
+    "slides": [
+      23,
+      25
+    ],
+    "title": {
+      "es": "Alibaba releases AI model it says surpasses DeepSeek",
+      "en": "Alibaba releases AI model it says surpasses DeepSeek"
+    },
+    "type": {
+      "es": "Noticia · lectura crítica de IA",
+      "en": "News · critical AI literacy"
+    },
+    "context": {
+      "es": "Anuncio de Qwen 2.5 de enero de 2025. La superioridad es una afirmación de Alibaba que exige evaluación independiente.",
+      "en": "A January 2025 Qwen 2.5 announcement. Superiority is Alibaba's claim and requires independent evaluation."
+    },
+    "objective": {
+      "es": "Diferenciar anuncios empresariales de evidencia comparativa independiente.",
+      "en": "Distinguish company announcements from independent comparative evidence."
+    },
+    "question": {
+      "es": "¿Qué versiones, tareas, métricas y protocolos permitirían validar la comparación?",
+      "en": "Which versions, tasks, metrics and protocols would validate the comparison?"
+    },
+    "caveat": {
+      "es": "El título y el enlace se identificaron en la página de YouTube. No se verificó reproducción ni subtitulado.",
+      "en": "Title and link identified on the YouTube page. Playback and captions were not verified."
+    }
+  },
+  {
+    "id": "byd-europe",
+    "videoId": "vgCYYrhL-kE",
+    "source": "Bloomberg Television",
+    "audio": "Inglés / English",
+    "slides": [
+      22,
+      28
+    ],
+    "title": {
+      "es": "Why this Chinese EV terrifies Europe’s carmakers",
+      "en": "Why this Chinese EV terrifies Europe’s carmakers"
+    },
+    "type": {
+      "es": "Análisis empresarial · electrificación",
+      "en": "Business analysis · electrification"
+    },
+    "context": {
+      "es": "La guía lo relaciona con BYD y Denza Z9GT en Europa. Conecta integración productiva y competencia internacional.",
+      "en": "The guide links it to BYD and the Denza Z9GT in Europe, connecting production integration and international competition."
+    },
+    "objective": {
+      "es": "Examinar capacidades de ingeniería, baterías, escala y comercialización.",
+      "en": "Examine engineering, batteries, scale and commercialisation capabilities."
+    },
+    "question": {
+      "es": "¿Qué capacidades de la cadena de suministro pueden sostener una ventaja competitiva?",
+      "en": "Which supply-chain capabilities could sustain a competitive advantage?"
+    },
+    "caveat": {
+      "es": "El título y el enlace se identificaron en la página de YouTube. Su disponibilidad regional puede variar.",
+      "en": "Title and link identified on the YouTube page. Regional availability may vary."
+    }
+  }
+]

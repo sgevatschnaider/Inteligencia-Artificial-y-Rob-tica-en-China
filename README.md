@@ -51,3 +51,10 @@ VideoLab reúne videos con fuentes, preguntas de discusión y reproducción de Y
 
 **Sergio Gevatschnaider** · Revisión editorial / Editorial review: **octubre / October 2026**.  
 [Panorama 2026 (ES)](PANORAMA-2026.es.md) · [2026 research overview (EN)](PANORAMA-2026.en.md) · [Contribuciones / Contributing](CONTRIBUTING.md) · [Citación / Citation](CITATION.cff) · Código / Code [MIT](LICENSE) · Contenido original / Original content [CC BY 4.0](LICENSE-CONTENT.md).
+
+
+## Clase 3 / Class 3
+
+[PPT 1 y laboratorio (ES)](materiales/clase-3/index.html?lang=es) · [PPT 1 and laboratory (EN)](materiales/clase-3/index.html?lang=en)
+
+35 diapositivas por idioma, PowerPoint editable, PDF, visor con notas y fuentes, simulador y cinco videos vinculados a la presentación. / 35 slides per language, editable PowerPoint, PDF, slides with notes and sources, simulator and five videos linked to the presentation.

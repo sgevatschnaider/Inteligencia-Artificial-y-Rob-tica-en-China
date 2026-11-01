@@ -1,0 +1,12 @@
+[
+  {
+    "id": "ppt-1",
+    "title": {
+      "es": "De la fábrica del mundo a la frontera de la innovación",
+      "en": "From the world's factory to the innovation frontier"
+    },
+    "slides": 35,
+    "videos": 5,
+    "path": "ppt-1/index.html"
+  }
+]
