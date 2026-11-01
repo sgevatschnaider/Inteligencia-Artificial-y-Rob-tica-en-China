@@ -55,9 +55,13 @@ Las pruebas de navegador necesitan Playwright y Chrome, como el flujo de validac
 
 [Acceder / Open](ppt-2/index.html) · 44 diapositivas por idioma, laboratorio MoE y agentes, ocho recursos audiovisuales. / 44 slides per language, MoE and agents lab, eight audiovisual resources.
 
-Colección: 79 diapositivas por idioma, dos laboratorios y trece referencias audiovisuales. / Collection: 79 slides per language, two laboratories and thirteen audiovisual references.
+Colección: 124 diapositivas por idioma, tres laboratorios y veintiuna referencias audiovisuales. / Collection: 124 slides per language, three laboratories and twenty-one audiovisual references.
 
 ```bash
 node scripts/check_ppt2_model.cjs
 node scripts/check_class3_ppt2.cjs
 ```
+
+## PPT 3: Semiconductores / Semiconductors
+
+[Acceder / Open](ppt-3/index.html) · 45 diapositivas por idioma, ocho controles y ocho recursos audiovisuales. / 45 slides per language, eight controls and eight audiovisual references.

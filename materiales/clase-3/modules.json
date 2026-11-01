@@ -18,5 +18,15 @@
     "slides": 44,
     "videos": 8,
     "path": "ppt-2/index.html"
+  },
+  {
+    "id": "ppt-3",
+    "title": {
+      "es": "La batalla por los chips",
+      "en": "The battle for chips"
+    },
+    "slides": 45,
+    "videos": 8,
+    "path": "ppt-3/index.html"
   }
 ]
