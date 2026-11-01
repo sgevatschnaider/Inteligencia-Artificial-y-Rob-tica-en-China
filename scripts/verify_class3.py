@@ -25,4 +25,4 @@ for module in modules:
  es=(B/'lab.html').read_text();en=(B/'lab-en.html').read_text()
  assert re.findall(r'data:image/[^\"\')]+',es)==re.findall(r'data:image/[^\"\')]+',en),'Embedded visual asset differs across translations'
  assert 'window.'+tag+'_DATA=' in (B/'data.js').read_text()
-print('Class 3 files verified: 248 slide views and PDF pages, bilingual notes, all video associations and intact embedded images.')
+print(f'Class 3 files verified: {2*sum(m["slides"] for m in modules)} slide views and PDF pages, bilingual notes, all video associations and intact embedded images.')

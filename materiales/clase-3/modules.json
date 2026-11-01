@@ -28,5 +28,15 @@
     "slides": 45,
     "videos": 8,
     "path": "ppt-3/index.html"
+  },
+  {
+    "id": "ppt-4",
+    "title": {
+      "es": "Robótica china e inteligencia incorporada",
+      "en": "Chinese robotics and embodied AI"
+    },
+    "slides": 45,
+    "videos": 8,
+    "path": "ppt-4/index.html"
   }
 ]
