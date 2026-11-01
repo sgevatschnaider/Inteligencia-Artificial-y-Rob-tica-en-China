@@ -1,0 +1,293 @@
+[
+  {
+    "id": "deepseek-news",
+    "videoId": "PqPAhR5qTxQ",
+    "url": "https://www.youtube.com/watch?v=PqPAhR5qTxQ",
+    "source": "Reuters",
+    "audio": "Audio original · Original audio",
+    "slides": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "title": {
+      "es": "DeepSeek y la competencia global",
+      "en": "DeepSeek and global competition"
+    },
+    "objective": {
+      "es": "Separar reacción financiera, capacidad técnica y costos.",
+      "en": "Separate financial reactions, technical capability and costs."
+    },
+    "question": {
+      "es": "¿Qué evidencia demostraría una ventaja sostenible?",
+      "en": "What evidence would establish a lasting advantage?"
+    },
+    "type": {
+      "es": "Recurso audiovisual contextual",
+      "en": "Contextual audiovisual resource"
+    },
+    "context": {
+      "es": "Recurso de la guía original, vinculado a las diapositivas indicadas.",
+      "en": "Resource from the original guide, linked to the indicated slides."
+    },
+    "caveat": {
+      "es": "Metadatos de la guía aportada. Reproducción y subtítulos sujetos al proveedor; no se confirmó la reproducción automática.",
+      "en": "Metadata supplied in the original guide. Playback and captions depend on the provider; automated playback was not confirmed."
+    }
+  },
+  {
+    "id": "attention",
+    "videoId": "eMlx5fFNoYc",
+    "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+    "source": "3Blue1Brown",
+    "audio": "Audio original · Original audio",
+    "slides": [
+      9,
+      10
+    ],
+    "title": {
+      "es": "Atención en Transformers",
+      "en": "Attention in Transformers"
+    },
+    "objective": {
+      "es": "Relacionar representaciones, contexto y atención.",
+      "en": "Connect representations, context and attention."
+    },
+    "question": {
+      "es": "¿Qué se calcula antes de generar el siguiente token?",
+      "en": "What is computed before generating the next token?"
+    },
+    "type": {
+      "es": "Recurso audiovisual contextual",
+      "en": "Contextual audiovisual resource"
+    },
+    "context": {
+      "es": "Recurso de la guía original, vinculado a las diapositivas indicadas.",
+      "en": "Resource from the original guide, linked to the indicated slides."
+    },
+    "caveat": {
+      "es": "Metadatos de la guía aportada. Reproducción y subtítulos sujetos al proveedor; no se confirmó la reproducción automática.",
+      "en": "Metadata supplied in the original guide. Playback and captions depend on the provider; automated playback was not confirmed."
+    }
+  },
+  {
+    "id": "moe",
+    "videoId": "sYDlVVyJYn4",
+    "url": "https://www.youtube.com/watch?v=sYDlVVyJYn4",
+    "source": "IBM Technology",
+    "audio": "Audio original · Original audio",
+    "slides": [
+      11,
+      12,
+      15,
+      16
+    ],
+    "title": {
+      "es": "Mixture of Experts",
+      "en": "Mixture of Experts"
+    },
+    "objective": {
+      "es": "Distinguir parámetros totales, activos y balance del router.",
+      "en": "Distinguish total and active parameters and router balance."
+    },
+    "question": {
+      "es": "¿Por qué activar menos parámetros no equivale al costo total del sistema?",
+      "en": "Why do fewer active parameters not determine total system cost?"
+    },
+    "type": {
+      "es": "Recurso audiovisual contextual",
+      "en": "Contextual audiovisual resource"
+    },
+    "context": {
+      "es": "Recurso de la guía original, vinculado a las diapositivas indicadas.",
+      "en": "Resource from the original guide, linked to the indicated slides."
+    },
+    "caveat": {
+      "es": "Metadatos de la guía aportada. Reproducción y subtítulos sujetos al proveedor; no se confirmó la reproducción automática.",
+      "en": "Metadata supplied in the original guide. Playback and captions depend on the provider; automated playback was not confirmed."
+    }
+  },
+  {
+    "id": "qwen35",
+    "videoId": null,
+    "url": "https://frontiermodels.cc/video/qwen-3-5-the-next-next-model/",
+    "source": "Sam Witteveen · Frontier Models",
+    "audio": "Audio original · Original audio",
+    "slides": [
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "title": {
+      "es": "Qwen3.5: arquitectura y aplicaciones",
+      "en": "Qwen3.5: architecture and applications"
+    },
+    "objective": {
+      "es": "Comparar multimodalidad, arquitectura y despliegue.",
+      "en": "Compare multimodality, architecture and deployment."
+    },
+    "question": {
+      "es": "¿Qué afirmaciones requieren validación independiente?",
+      "en": "Which claims require independent validation?"
+    },
+    "type": {
+      "es": "Recurso audiovisual contextual",
+      "en": "Contextual audiovisual resource"
+    },
+    "context": {
+      "es": "Recurso de la guía original, vinculado a las diapositivas indicadas.",
+      "en": "Resource from the original guide, linked to the indicated slides."
+    },
+    "caveat": {
+      "es": "Metadatos de la guía aportada. Reproducción y subtítulos sujetos al proveedor; no se confirmó la reproducción automática.",
+      "en": "Metadata supplied in the original guide. Playback and captions depend on the provider; automated playback was not confirmed."
+    }
+  },
+  {
+    "id": "rag",
+    "videoId": "T-D1OfcDW1M",
+    "url": "https://www.youtube.com/watch?v=T-D1OfcDW1M",
+    "source": "IBM Technology",
+    "audio": "Audio original · Original audio",
+    "slides": [
+      29,
+      30
+    ],
+    "title": {
+      "es": "Retrieval-Augmented Generation",
+      "en": "Retrieval-Augmented Generation"
+    },
+    "objective": {
+      "es": "Seguir recuperación, contexto y generación.",
+      "en": "Follow retrieval, context and generation."
+    },
+    "question": {
+      "es": "¿Puede una recuperación incorrecta producir una respuesta convincente?",
+      "en": "Can incorrect retrieval produce a convincing answer?"
+    },
+    "type": {
+      "es": "Recurso audiovisual contextual",
+      "en": "Contextual audiovisual resource"
+    },
+    "context": {
+      "es": "Recurso de la guía original, vinculado a las diapositivas indicadas.",
+      "en": "Resource from the original guide, linked to the indicated slides."
+    },
+    "caveat": {
+      "es": "Metadatos de la guía aportada. Reproducción y subtítulos sujetos al proveedor; no se confirmó la reproducción automática.",
+      "en": "Metadata supplied in the original guide. Playback and captions depend on the provider; automated playback was not confirmed."
+    }
+  },
+  {
+    "id": "agents",
+    "videoId": "F8NKVhkZZWI",
+    "url": "https://www.youtube.com/watch?v=F8NKVhkZZWI",
+    "source": "IBM Technology",
+    "audio": "Audio original · Original audio",
+    "slides": [
+      32,
+      33
+    ],
+    "title": {
+      "es": "Qué son los agentes de IA",
+      "en": "What are AI agents?"
+    },
+    "objective": {
+      "es": "Identificar herramientas, memoria, acciones y retroalimentación.",
+      "en": "Identify tools, memory, actions and feedback."
+    },
+    "question": {
+      "es": "¿Qué diferencia una respuesta de un sistema que actúa?",
+      "en": "What separates a response from a system that acts?"
+    },
+    "type": {
+      "es": "Recurso audiovisual contextual",
+      "en": "Contextual audiovisual resource"
+    },
+    "context": {
+      "es": "Recurso de la guía original, vinculado a las diapositivas indicadas.",
+      "en": "Resource from the original guide, linked to the indicated slides."
+    },
+    "caveat": {
+      "es": "Metadatos de la guía aportada. Reproducción y subtítulos sujetos al proveedor; no se confirmó la reproducción automática.",
+      "en": "Metadata supplied in the original guide. Playback and captions depend on the provider; automated playback was not confirmed."
+    }
+  },
+  {
+    "id": "patterns",
+    "videoId": "GDm_uH6VxPY",
+    "url": "https://www.youtube.com/watch?v=GDm_uH6VxPY",
+    "source": "Google Cloud Tech",
+    "audio": "Audio original · Original audio",
+    "slides": [
+      34,
+      35,
+      36,
+      37
+    ],
+    "title": {
+      "es": "Patrones de sistemas multiagente",
+      "en": "Multi-agent system patterns"
+    },
+    "objective": {
+      "es": "Comparar secuencia, paralelismo, supervisión y debate.",
+      "en": "Compare sequences, parallelism, supervision and debate."
+    },
+    "question": {
+      "es": "¿Qué patrón permite verificar mejor esta tarea?",
+      "en": "Which pattern best supports verification for this task?"
+    },
+    "type": {
+      "es": "Recurso audiovisual contextual",
+      "en": "Contextual audiovisual resource"
+    },
+    "context": {
+      "es": "Recurso de la guía original, vinculado a las diapositivas indicadas.",
+      "en": "Resource from the original guide, linked to the indicated slides."
+    },
+    "caveat": {
+      "es": "Metadatos de la guía aportada. Reproducción y subtítulos sujetos al proveedor; no se confirmó la reproducción automática.",
+      "en": "Metadata supplied in the original guide. Playback and captions depend on the provider; automated playback was not confirmed."
+    }
+  },
+  {
+    "id": "smolagents",
+    "videoId": "dSGS6-iGhyo",
+    "url": "https://www.youtube.com/watch?v=dSGS6-iGhyo",
+    "source": "Hugging Face",
+    "audio": "Audio original · Original audio",
+    "slides": [
+      35,
+      36,
+      37
+    ],
+    "title": {
+      "es": "Agentes con herramientas y código",
+      "en": "Agents with tools and code"
+    },
+    "objective": {
+      "es": "Analizar límites de ejecución y pruebas de resultados.",
+      "en": "Examine execution limits and result tests."
+    },
+    "question": {
+      "es": "¿Qué debe comprobar un evaluador independiente?",
+      "en": "What should an independent evaluator check?"
+    },
+    "type": {
+      "es": "Recurso audiovisual contextual",
+      "en": "Contextual audiovisual resource"
+    },
+    "context": {
+      "es": "Recurso de la guía original, vinculado a las diapositivas indicadas.",
+      "en": "Resource from the original guide, linked to the indicated slides."
+    },
+    "caveat": {
+      "es": "Metadatos de la guía aportada. Reproducción y subtítulos sujetos al proveedor; no se confirmó la reproducción automática.",
+      "en": "Metadata supplied in the original guide. Playback and captions depend on the provider; automated playback was not confirmed."
+    }
+  }
+]

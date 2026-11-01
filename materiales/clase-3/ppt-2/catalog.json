@@ -1,0 +1,622 @@
+{
+  "es": [
+    {
+      "number": 1,
+      "title": "INTELIGENCIA\nARTIFICIAL\nCHINA",
+      "text": "CHINA · TECNOLOGÍA · FRONTERA DE IA\n\nINTELIGENCIA\nARTIFICIAL\nCHINA\n\nDeepSeek · Qwen · Agentes\nArquitecturas, eficiencia y aplicaciones\n\nSergio Gevatschnaider",
+      "notes": "Esta unidad profundiza las arquitecturas de los modelos fundacionales chinos y las metodologías de agente. Alcance: DeepSeek-V3, R1, Qwen3 y Qwen3.5; operadores de sistemas agentivos; límites de evaluación, riesgos y economía del despliegue. Diseño propio de la serie China Tecnológica.\n\nFuentes:\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report",
+      "image": "slides/es/01.webp"
+    },
+    {
+      "number": 2,
+      "title": "El ecosistema chino de IA",
+      "text": "BLOQUE 01 / 07\n\nEl ecosistema chino de IA\n\nDe la investigación al despliegue\n\n¿En qué dimensiones compite China y dónde están sus restricciones?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "Inicio del bloque 1. ¿En qué dimensiones compite China y dónde están sus restricciones? La exposición debe conectar el fundamento conceptual con la evidencia china y con los resultados del simulador, sin tratar estos últimos como predicciones.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/es/02.webp"
+    },
+    {
+      "number": 3,
+      "title": "La nueva competencia no es una carrera única",
+      "text": "01 · ECOSISTEMA DE IA\n\nLa nueva competencia no es una carrera única\n\nCapacidad técnica, disponibilidad, infraestructura y adopción son dimensiones distintas.\n\nSERGIO GEVATSCHNAIDER\n\n03 / 44\n\nFuentes: Stanford AI Index 2026 · Documentación oficial\n\n01\n\nFrontera de modelos\n\nRazonamiento, código, multimodalidad y robustez: cada capacidad requiere una prueba diferente.\n\n02\n\nEcosistema abierto\n\nPesos accesibles, herramientas, comunidades, despliegue y adaptación especializada.\n\n03\n\nInfraestructura\n\nCómputo, memorias, redes, datos, energía, talento y software.\n\n04\n\nAdopción\n\nIntegración empresarial, productividad real, gobernanza y seguridad.\n\nLa potencia económica de la IA depende tanto de la tecnología como de su difusión.",
+      "notes": "La nueva competencia no es una carrera única. Capacidad técnica, disponibilidad, infraestructura y adopción son dimensiones distintas.\n\nDesarrollo para el expositor: Frontera de modelos: Razonamiento, código, multimodalidad y robustez: cada capacidad requiere una prueba diferente. Ecosistema abierto: Pesos accesibles, herramientas, comunidades, despliegue y adaptación especializada. Infraestructura: Cómputo, memorias, redes, datos, energía, talento y software. Adopción: Integración empresarial, productividad real, gobernanza y seguridad.\n\nInterpretación: La potencia económica de la IA depende tanto de la tecnología como de su difusión.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+      "image": "slides/es/03.webp"
+    },
+    {
+      "number": 4,
+      "title": "IA Index 2026: evidencia comparada",
+      "text": "01 · ECOSISTEMA DE IA\n\nIA Index 2026: evidencia comparada\n\nContar lanzamientos no equivale a medir liderazgo agregado.\n\nSERGIO GEVATSCHNAIDER\n\n04 / 44\n\nFuentes: Stanford AI Index 2026 · Documentación oficial\n\n59\n\nModelos notables de EE. UU. identificados en 2025\n\n35\n\nModelos notables con afiliación china en 2025\n\nLos valores no implican equivalencia de calidad, costo o rendimiento entre familias.\n\nDatos de 2025 publicados en AI Index 2026; la atribución por afiliación puede superponerse.",
+      "notes": "Stanford AI Index 2026, capítulo 1, página impresa 16, figura 1.1.1: 59 modelos notables de Estados Unidos y 35 de China en 2025. Instantánea de Epoch AI del 22 de abril de 2026. Las afiliaciones nacionales pueden superponerse. Los recuentos no equivalen a calidad media ni a una clasificación de rendimiento.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance\nhttps://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf",
+      "image": "slides/es/04.webp"
+    },
+    {
+      "number": 5,
+      "title": "Mapa del ecosistema de IA chino",
+      "text": "01 · ECOSISTEMA DE IA\n\nMapa del ecosistema de IA chino\n\nEmpresas, investigación, plataformas y aplicaciones forman un sistema heterogéneo.\n\nSERGIO GEVATSCHNAIDER\n\n05 / 44\n\nFuentes: Stanford AI Index 2026 · Documentación oficial\n\n01\n\nDeepSeek\n\nArquitectura eficiente y modelos de razonamiento.\n\n02\n\nAlibaba / Qwen\n\nFamilia de modelos abiertos, nube y agentes multimodales.\n\n03\n\nBaidu / ERNIE\n\nModelos, servicios de búsqueda y ecosistemas empresariales.\n\n04\n\nTencent / Hunyuan\n\nAplicaciones, servicios y plataforma de IA.\n\nEvitar describir a China como una única entidad empresarial.",
+      "notes": "Mapa del ecosistema de IA chino. Empresas, investigación, plataformas y aplicaciones forman un sistema heterogéneo.\n\nDesarrollo para el expositor: DeepSeek: Arquitectura eficiente y modelos de razonamiento. Alibaba / Qwen: Familia de modelos abiertos, nube y agentes multimodales. Baidu / ERNIE: Modelos, servicios de búsqueda y ecosistemas empresariales. Tencent / Hunyuan: Aplicaciones, servicios y plataforma de IA.\n\nInterpretación: Evitar describir a China como una única entidad empresarial.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+      "image": "slides/es/05.webp"
+    },
+    {
+      "number": 6,
+      "title": "De los laboratorios a las industrias",
+      "text": "01 · ECOSISTEMA DE IA\n\nDe los laboratorios a las industrias\n\nEl valor se captura cuando la IA resuelve actividades medibles.\n\nSERGIO GEVATSCHNAIDER\n\n06 / 44\n\nFuentes: Stanford AI Index 2026 · Documentación oficial\n\nInvestigación\n\nArquitectura y entrenamiento\n\nModelo\n\nPreentrenamiento y alineación\n\nIntegración\n\nHerramientas y datos\n\nProceso\n\nTrabajo reconfigurado\n\nMedición\n\nCalidad, tiempo y costo\n\nLa adopción requiere rediseñar procesos, no solo contratar una API.",
+      "notes": "De los laboratorios a las industrias. El valor se captura cuando la IA resuelve actividades medibles.\n\nDesarrollo para el expositor: Investigación: Arquitectura y entrenamiento Modelo: Preentrenamiento y alineación Integración: Herramientas y datos Proceso: Trabajo reconfigurado Medición: Calidad, tiempo y costo\n\nInterpretación: La adopción requiere rediseñar procesos, no solo contratar una API.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+      "image": "slides/es/06.webp"
+    },
+    {
+      "number": 7,
+      "title": "Fortalezas y restricciones",
+      "text": "01 · ECOSISTEMA DE IA\n\nFortalezas y restricciones\n\nLa eficiencia algorítmica responde parcialmente a limitaciones de infraestructura.\n\nSERGIO GEVATSCHNAIDER\n\n07 / 44\n\nFuentes: Stanford AI Index 2026 · Documentación oficial\n\nA\n\nFORTALEZAS\n\nTalento técnico, manufactura, demanda, ecosistemas de software abierto, experimentación y velocidad de integración.\n\nB\n\nRESTRICCIONES\n\nDisponibilidad de chips avanzados, memorias, infraestructura, seguridad, calidad de datos y acceso a mercados.\n\nCapacidad de modelo ≠ disponibilidad de hardware ≠ productividad.",
+      "notes": "Fortalezas y restricciones. La eficiencia algorítmica responde parcialmente a limitaciones de infraestructura.\n\nDesarrollo para el expositor: FORTALEZAS: Talento técnico, manufactura, demanda, ecosistemas de software abierto, experimentación y velocidad de integración. RESTRICCIONES: Disponibilidad de chips avanzados, memorias, infraestructura, seguridad, calidad de datos y acceso a mercados.\n\nInterpretación: Capacidad de modelo ≠ disponibilidad de hardware ≠ productividad.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+      "image": "slides/es/07.webp"
+    },
+    {
+      "number": 8,
+      "title": "La arquitectura de los modelos",
+      "text": "BLOQUE 02 / 07\n\nLa arquitectura de los modelos\n\nCómo aprenden, procesan y generan\n\n¿Dónde se sitúa la innovación detrás de las marcas?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "Inicio del bloque 2. ¿Dónde se sitúa la innovación detrás de las marcas? La exposición debe conectar el fundamento conceptual con la evidencia china y con los resultados del simulador, sin tratar estos últimos como predicciones.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/es/08.webp"
+    },
+    {
+      "number": 9,
+      "title": "Del texto a los tokens",
+      "text": "02 · FUNDAMENTOS TÉCNICOS\n\nDel texto a los tokens\n\nLa tokenización y los embeddings cambian lenguaje por representación numérica.\n\nSERGIO GEVATSCHNAIDER\n\n09 / 44\n\nFuentes: Transformers · IBM MoE · documentación de Qwen y DeepSeek\n\nEntrada\n\nTexto, imagen u otra señal\n\nTokens\n\nUnidades discretizadas\n\nEmbeddings\n\nVectores de representación\n\nBloques\n\nAtención y proyecciones\n\nSalida\n\nPredicción condicionada\n\nNo confundir token, palabra y parámetro.",
+      "notes": "Del texto a los tokens. La tokenización y los embeddings cambian lenguaje por representación numérica.\n\nDesarrollo para el expositor: Entrada: Texto, imagen u otra señal Tokens: Unidades discretizadas Embeddings: Vectores de representación Bloques: Atención y proyecciones Salida: Predicción condicionada\n\nInterpretación: No confundir token, palabra y parámetro.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.ibm.com/think/topics/mixture-of-experts\nhttps://arxiv.org/abs/2412.19437",
+      "image": "slides/es/09.webp"
+    },
+    {
+      "number": 10,
+      "title": "Transformer: atención y contexto",
+      "text": "02 · FUNDAMENTOS TÉCNICOS\n\nTransformer: atención y contexto\n\nLa atención conecta posiciones y construye representaciones dependientes del contexto.\n\nSERGIO GEVATSCHNAIDER\n\n10 / 44\n\nFuentes: Transformers · IBM MoE · documentación de Qwen y DeepSeek\n\n01\n\nConsulta (Q)\n\nQué información requiere la posición actual.\n\n02\n\nClave (K)\n\nCómo se identifica cada posición potencialmente relevante.\n\n03\n\nValor (V)\n\nQué contenido se combina en la representación.\n\n04\n\nEnmascarado\n\nEvita que el decodificador vea tokens futuros al predecir.\n\nEl costo de atención depende de longitud y arquitectura.",
+      "notes": "Transformer: atención y contexto. La atención conecta posiciones y construye representaciones dependientes del contexto.\n\nDesarrollo para el expositor: Consulta (Q): Qué información requiere la posición actual. Clave (K): Cómo se identifica cada posición potencialmente relevante. Valor (V): Qué contenido se combina en la representación. Enmascarado: Evita que el decodificador vea tokens futuros al predecir.\n\nInterpretación: El costo de atención depende de longitud y arquitectura.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.ibm.com/think/topics/mixture-of-experts\nhttps://arxiv.org/abs/2412.19437",
+      "image": "slides/es/10.webp"
+    },
+    {
+      "number": 11,
+      "title": "Dense frente a Mixture of Experts",
+      "text": "02 · FUNDAMENTOS TÉCNICOS\n\nDense frente a Mixture of Experts\n\nCapacidad total y trabajo activado son magnitudes diferentes.\n\nSERGIO GEVATSCHNAIDER\n\n11 / 44\n\nFuentes: Transformers · IBM MoE · documentación de Qwen y DeepSeek\n\n01\n\nDENSO\n\nLos bloques densos aplican sus parámetros a cada token. Escalamiento directo de cómputo con tamaño del bloque.\n\n02\n\nMoE\n\nUn router dirige cada token a un subconjunto de expertos. Mayor capacidad potencial con cómputo escaso por token.\n\nMoE exige balanceo de carga y comunicación entre dispositivos.",
+      "notes": "Dense frente a Mixture of Experts. Capacidad total y trabajo activado son magnitudes diferentes.\n\nDesarrollo para el expositor: DENSO: Los bloques densos aplican sus parámetros a cada token. Escalamiento directo de cómputo con tamaño del bloque. MoE: Un router dirige cada token a un subconjunto de expertos. Mayor capacidad potencial con cómputo escaso por token.\n\nInterpretación: MoE exige balanceo de carga y comunicación entre dispositivos.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.ibm.com/think/topics/mixture-of-experts\nhttps://arxiv.org/abs/2412.19437",
+      "image": "slides/es/11.webp"
+    },
+    {
+      "number": 12,
+      "title": "Cómo funciona el router MoE",
+      "text": "02 · FUNDAMENTOS TÉCNICOS\n\nCómo funciona el router MoE\n\nLa elección top-k convierte un problema de asignación en una arquitectura computacional.\n\nSERGIO GEVATSCHNAIDER\n\n12 / 44\n\nFuentes: Transformers · IBM MoE · documentación de Qwen y DeepSeek\n\nTOKEN\n\nVector de entrada\n\nROUTER\n\nPuntajes y top-2\n\nCOMBINACIÓN\n\nSuma ponderada de salidas\n\nEXPERTO 1\n\nSeleccionado\n\nEXPERTO 2\n\nSeleccionado\n\nEXPERTO 3\n\nNo seleccionado\n\nEXPERTO 4\n\nNo seleccionado\n\nEsquema top-2 ilustrativo. Los expertos son subredes aprendidas, sin roles temáticos garantizados.",
+      "notes": "Cómo funciona el router MoE. La elección top-k convierte un problema de asignación en una arquitectura computacional.\n\nDesarrollo para el expositor: Token: Estado vectorial Router: Puntúa expertos Top-k: Selecciona rutas Expertos: Transforman estado Combina: Integra salidas\n\nInterpretación: El simulador HTML permitirá alterar k, carga y especialización.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nEl esquema muestra top-2 entre cuatro expertos ilustrados. Los expertos reales son subredes aprendidas, no necesariamente especialistas temáticos. El simulador usa ocho etiquetas temáticas como analogía pedagógica.\n\nFuentes:\nhttps://www.ibm.com/think/topics/mixture-of-experts\nhttps://arxiv.org/abs/2412.19437",
+      "image": "slides/es/12.webp"
+    },
+    {
+      "number": 13,
+      "title": "Multimodalidad y acción",
+      "text": "02 · FUNDAMENTOS TÉCNICOS\n\nMultimodalidad y acción\n\nUn agente multimodal integra percepción, lenguaje, herramientas y respuestas.\n\nSERGIO GEVATSCHNAIDER\n\n13 / 44\n\nFuentes: Transformers · IBM MoE · documentación de Qwen y DeepSeek\n\n01\n\nImagen / video\n\nRepresentaciones visuales y temporales.\n\n02\n\nTexto / código\n\nRazonamiento y generación simbólica.\n\n03\n\nHerramientas\n\nAPIs, archivos, navegación y ejecución restringida.\n\n04\n\nAcción\n\nInterfaces, automatizaciones y resultados observables.\n\nUn modelo multimodal no es necesariamente un agente autónomo.",
+      "notes": "Multimodalidad y acción. Un agente multimodal integra percepción, lenguaje, herramientas y respuestas.\n\nDesarrollo para el expositor: Imagen / video: Representaciones visuales y temporales. Texto / código: Razonamiento y generación simbólica. Herramientas: APIs, archivos, navegación y ejecución restringida. Acción: Interfaces, automatizaciones y resultados observables.\n\nInterpretación: Un modelo multimodal no es necesariamente un agente autónomo.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.ibm.com/think/topics/mixture-of-experts\nhttps://arxiv.org/abs/2412.19437",
+      "image": "slides/es/13.webp"
+    },
+    {
+      "number": 14,
+      "title": "DeepSeek: eficiencia y razonamiento",
+      "text": "BLOQUE 03 / 07\n\nDeepSeek: eficiencia y razonamiento\n\nEl diseño importa tanto como la escala\n\n¿Qué aportan V3 y R1 y qué no prueban sus resultados?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "Inicio del bloque 3. ¿Qué aportan V3 y R1 y qué no prueban sus resultados? La exposición debe conectar el fundamento conceptual con la evidencia china y con los resultados del simulador, sin tratar estos últimos como predicciones.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/es/14.webp"
+    },
+    {
+      "number": 15,
+      "title": "DeepSeek‑V3: arquitectura escasa",
+      "text": "03 · CASO DEEPSEEK\n\nDeepSeek‑V3: arquitectura escasa\n\nEl reporte original documenta un gran modelo MoE con activación reducida.\n\nSERGIO GEVATSCHNAIDER\n\n15 / 44\n\nFuentes: DeepSeek‑V3 Technical Report · Nature (R1)\n\n671 B\n\nParámetros totales reportados\n\n37 B\n\nParámetros activados por token\n\nLos valores no implican equivalencia de calidad, costo o rendimiento entre familias.\n\nCifras de DeepSeek‑V3 (reporte de diciembre 2024); no extrapolar a versiones posteriores.",
+      "notes": "DeepSeek‑V3: arquitectura escasa. El reporte original documenta un gran modelo MoE con activación reducida.\n\nDesarrollo para el expositor: 671 B: Parámetros totales reportados 37 B: Parámetros activados por token\n\nInterpretación: Cifras de DeepSeek‑V3 (reporte de diciembre 2024); no extrapolar a versiones posteriores.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z",
+      "image": "slides/es/15.webp"
+    },
+    {
+      "number": 16,
+      "title": "DeepSeek‑V3: innovaciones clave",
+      "text": "03 · CASO DEEPSEEK\n\nDeepSeek‑V3: innovaciones clave\n\nLa eficiencia proviene de varias decisiones de arquitectura y entrenamiento.\n\nSERGIO GEVATSCHNAIDER\n\n16 / 44\n\nFuentes: DeepSeek‑V3 Technical Report · Nature (R1)\n\n01\n\nMLA\n\nMulti-head Latent Attention: compresión de estados K/V.\n\n02\n\nDeepSeekMoE\n\nEspecialización y activación selectiva de expertos.\n\n03\n\nBalanceo\n\nMétodos para distribuir tráfico de tokens.\n\n04\n\nMTP\n\nObjetivo de predicción de múltiples tokens en entrenamiento.\n\nEl diseño se evalúa como sistema, no como una cifra de parámetros.",
+      "notes": "DeepSeek‑V3: innovaciones clave. La eficiencia proviene de varias decisiones de arquitectura y entrenamiento.\n\nDesarrollo para el expositor: MLA: Multi-head Latent Attention: compresión de estados K/V. DeepSeekMoE: Especialización y activación selectiva de expertos. Balanceo: Métodos para distribuir tráfico de tokens. MTP: Objetivo de predicción de múltiples tokens en entrenamiento.\n\nInterpretación: El diseño se evalúa como sistema, no como una cifra de parámetros.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z",
+      "image": "slides/es/16.webp"
+    },
+    {
+      "number": 17,
+      "title": "El costo no es una cifra universal",
+      "text": "03 · CASO DEEPSEEK\n\nEl costo no es una cifra universal\n\nHoras de GPU publicadas no equivalen al costo integral de un proyecto.\n\nSERGIO GEVATSCHNAIDER\n\n17 / 44\n\nFuentes: DeepSeek‑V3 Technical Report · Nature (R1)\n\nA\n\nLO REPORTADO\n\nEl informe V3 declara 2,788 millones de horas de GPU H800 para el entrenamiento completo descrito.\n\nB\n\nLO NO INCLUIDO EN ESA CIFRA\n\nInvestigación previa, exploración de arquitectura, datos, personal, infraestructura y otras fases operativas.\n\nEvitar presentar costos estimados de entrenamiento como costo total auditado.",
+      "notes": "El costo no es una cifra universal. Horas de GPU publicadas no equivalen al costo integral de un proyecto.\n\nDesarrollo para el expositor: LO REPORTADO: El informe V3 declara 2,788 millones de horas de GPU H800 para el entrenamiento completo descrito. LO NO INCLUIDO EN ESA CIFRA: Investigación previa, exploración de arquitectura, datos, personal, infraestructura y otras fases operativas.\n\nInterpretación: Evitar presentar costos estimados de entrenamiento como costo total auditado.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z",
+      "image": "slides/es/17.webp"
+    },
+    {
+      "number": 18,
+      "title": "DeepSeek‑R1: aprendizaje por refuerzo",
+      "text": "03 · CASO DEEPSEEK\n\nDeepSeek‑R1: aprendizaje por refuerzo\n\nEl razonamiento se puede reforzar mediante recompensas sobre tareas verificables.\n\nSERGIO GEVATSCHNAIDER\n\n18 / 44\n\nFuentes: DeepSeek‑V3 Technical Report · Nature (R1)\n\nProblema\n\nEjercicio verificable\n\nRespuestas\n\nTrayectorias candidatas\n\nRecompensa\n\nCorrección verificable\n\nActualización\n\nAjuste de política\n\nEvaluación\n\nGeneralización / fallos\n\nIteración del entrenamiento\n\nNo equivale a pensamiento humano ni garantiza veracidad.",
+      "notes": "DeepSeek‑R1: aprendizaje por refuerzo. El razonamiento se puede reforzar mediante recompensas sobre tareas verificables.\n\nDesarrollo para el expositor: Problema: Ejercicio verificable Respuestas: Trayectorias candidatas Recompensa: Corrección verificable Actualización: Ajuste de política Evaluación: Generalización / fallos\n\nInterpretación: No equivale a pensamiento humano ni garantiza veracidad.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://arxiv.org/abs/2501.12948",
+      "image": "slides/es/18.webp"
+    },
+    {
+      "number": 19,
+      "title": "R1‑Zero, R1 y destilación",
+      "text": "03 · CASO DEEPSEEK\n\nR1‑Zero, R1 y destilación\n\nDistinguir experimento de RL, ajuste práctico y transferencia de capacidades.\n\nSERGIO GEVATSCHNAIDER\n\n19 / 44\n\nFuentes: DeepSeek‑V3 Technical Report · Nature (R1)\n\n01\n\nR1-Zero\n\nRL extensivo sin SFT inicial; emergen conductas útiles y problemas de legibilidad.\n\n02\n\nR1\n\nFases de arranque en frío, supervisión y RL para mejorar utilidad y claridad.\n\n03\n\nDestilación\n\nModelos menores entrenados a partir de trazas / salidas de sistemas mayores.\n\n04\n\nCautela\n\nEvaluar longitud, costo, errores, sesgos y seguridad por tarea.\n\nNature 2025 documenta el trabajo de DeepSeek‑R1.",
+      "notes": "R1‑Zero, R1 y destilación. Distinguir experimento de RL, ajuste práctico y transferencia de capacidades.\n\nDesarrollo para el expositor: R1-Zero: RL extensivo sin SFT inicial; emergen conductas útiles y problemas de legibilidad. R1: Fases de arranque en frío, supervisión y RL para mejorar utilidad y claridad. Destilación: Modelos menores entrenados a partir de trazas / salidas de sistemas mayores. Cautela: Evaluar longitud, costo, errores, sesgos y seguridad por tarea.\n\nInterpretación: Nature 2025 documenta el trabajo de DeepSeek‑R1.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://arxiv.org/abs/2501.12948",
+      "image": "slides/es/19.webp"
+    },
+    {
+      "number": 20,
+      "title": "Qwen: una familia de arquitecturas",
+      "text": "BLOQUE 04 / 07\n\nQwen: una familia de arquitecturas\n\nModelos abiertos y capacidades multimodales\n\n¿Qué cambia entre Qwen3 y Qwen3.5?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "Inicio del bloque 4. ¿Qué cambia entre Qwen3 y Qwen3.5? La exposición debe conectar el fundamento conceptual con la evidencia china y con los resultados del simulador, sin tratar estos últimos como predicciones.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/es/20.webp"
+    },
+    {
+      "number": 21,
+      "title": "Qwen3: pensar o responder",
+      "text": "04 · CASO QWEN\n\nQwen3: pensar o responder\n\nLos modos híbridos permiten administrar deliberación y latencia.\n\nSERGIO GEVATSCHNAIDER\n\n21 / 44\n\nFuentes: Alibaba Group · Qwen Team, 2025–2026\n\n01\n\nNO-THINKING\n\nRespuestas directas para solicitudes simples, conversación y tareas de baja complejidad.\n\n02\n\nTHINKING\n\nMayor procesamiento deliberativo para razonamiento, código y cadenas de decisiones.\n\nEl modo adecuado depende de dificultad, presupuesto y fiabilidad.",
+      "notes": "Qwen3: pensar o responder. Los modos híbridos permiten administrar deliberación y latencia.\n\nDesarrollo para el expositor: NO-THINKING: Respuestas directas para solicitudes simples, conversación y tareas de baja complejidad. THINKING: Mayor procesamiento deliberativo para razonamiento, código y cadenas de decisiones.\n\nInterpretación: El modo adecuado depende de dificultad, presupuesto y fiabilidad.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://qwen.ai/blog?id=qwen3.5\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120",
+      "image": "slides/es/21.webp"
+    },
+    {
+      "number": 22,
+      "title": "Qwen3.5: arquitectura multimodal",
+      "text": "04 · CASO QWEN\n\nQwen3.5: arquitectura multimodal\n\nEl anuncio de 2026 presenta una combinación de atención híbrida y expertos dispersos.\n\nSERGIO GEVATSCHNAIDER\n\n22 / 44\n\nFuentes: Alibaba Group · Qwen Team, 2025–2026\n\n397 B\n\nParámetros totales del modelo anunciado\n\n17 B\n\nParámetros activos por paso de propagación\n\nLos valores no implican equivalencia de calidad, costo o rendimiento entre familias.\n\nQwen3.5‑397B‑A17B: cifras declaradas por Alibaba (febrero 2026).",
+      "notes": "Qwen3.5: arquitectura multimodal. El anuncio de 2026 presenta una combinación de atención híbrida y expertos dispersos.\n\nDesarrollo para el expositor: 397 B: Parámetros totales del modelo anunciado 17 B: Parámetros activos por paso de propagación\n\nInterpretación: Qwen3.5‑397B‑A17B: cifras declaradas por Alibaba (febrero 2026).\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://qwen.ai/blog?id=qwen3.5\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://huggingface.co/Qwen/Qwen3.5-397B-A17B",
+      "image": "slides/es/22.webp"
+    },
+    {
+      "number": 23,
+      "title": "¿Por qué atención híbrida?",
+      "text": "04 · CASO QWEN\n\n¿Por qué atención híbrida?\n\nLas arquitecturas buscan balancear contexto, memoria y rendimiento.\n\nSERGIO GEVATSCHNAIDER\n\n23 / 44\n\nFuentes: Alibaba Group · Qwen Team, 2025–2026\n\n01\n\nAtención estándar\n\nInteracciones ricas entre tokens con costo de contexto creciente.\n\n02\n\nAtención lineal\n\nReduce ciertos costos mediante estados recurrentes o formulaciones alternativas.\n\n03\n\nCombinación\n\nIntercala bloques para preservar capacidades y eficiencia.\n\n04\n\nCondiciones\n\nLos resultados cambian por hardware, longitud y cargas de trabajo.\n\nNo hay una superioridad universal independiente de la tarea.",
+      "notes": "¿Por qué atención híbrida?. Las arquitecturas buscan balancear contexto, memoria y rendimiento.\n\nDesarrollo para el expositor: Atención estándar: Interacciones ricas entre tokens con costo de contexto creciente. Atención lineal: Reduce ciertos costos mediante estados recurrentes o formulaciones alternativas. Combinación: Intercala bloques para preservar capacidades y eficiencia. Condiciones: Los resultados cambian por hardware, longitud y cargas de trabajo.\n\nInterpretación: No hay una superioridad universal independiente de la tarea.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://qwen.ai/blog?id=qwen3.5\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://huggingface.co/Qwen/Qwen3.5-397B-A17B",
+      "image": "slides/es/23.webp"
+    },
+    {
+      "number": 24,
+      "title": "Agentes nativos y percepción multimodal",
+      "text": "04 · CASO QWEN\n\nAgentes nativos y percepción multimodal\n\nTexto e imagen se integran con decisiones y herramientas.\n\nSERGIO GEVATSCHNAIDER\n\n24 / 44\n\nFuentes: Alibaba Group · Qwen Team, 2025–2026\n\nPercibir\n\nTexto, imagen, video\n\nInterpretar\n\nRepresentación multimodal\n\nPlanificar\n\nRuta de ejecución\n\nActuar\n\nHerramienta autorizada\n\nVerificar\n\nResultado observable\n\nContinuar con una nueva observación\n\nAgencia requiere orquestación y límites, no solo arquitectura multimodal.",
+      "notes": "Agentes nativos y percepción multimodal. Texto e imagen se integran con decisiones y herramientas.\n\nDesarrollo para el expositor: Percibir: Texto, imagen, video Interpretar: Representación multimodal Planificar: Ruta de ejecución Actuar: Herramienta autorizada Verificar: Resultado observable\n\nInterpretación: Agencia requiere orquestación y límites, no solo arquitectura multimodal.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://qwen.ai/blog?id=qwen3.5\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120",
+      "image": "slides/es/24.webp"
+    },
+    {
+      "number": 25,
+      "title": "Comparación académica: DeepSeek y Qwen",
+      "text": "04 · CASO QWEN\n\nComparación académica: DeepSeek y Qwen\n\nComparar por objetivos de diseño y documentación, no por marketing.\n\nSERGIO GEVATSCHNAIDER\n\n25 / 44\n\nFuentes: Alibaba Group · Qwen Team, 2025–2026\n\nA\n\nDEEPSEEK\n\nÉnfasis en eficiencia arquitectónica MoE/MLA y desarrollo de razonamiento RL, especialmente V3 y R1.\n\nB\n\nQWEN\n\nFamilia amplia, modos híbridos de razonamiento, variantes densas/MoE y modelos multimodales con enfoque agentivo.\n\nLa evaluación válida exige misma fecha, benchmark, hardware y protocolo.",
+      "notes": "Comparación académica: DeepSeek y Qwen. Comparar por objetivos de diseño y documentación, no por marketing.\n\nDesarrollo para el expositor: DEEPSEEK: Énfasis en eficiencia arquitectónica MoE/MLA y desarrollo de razonamiento RL, especialmente V3 y R1. QWEN: Familia amplia, modos híbridos de razonamiento, variantes densas/MoE y modelos multimodales con enfoque agentivo.\n\nInterpretación: La evaluación válida exige misma fecha, benchmark, hardware y protocolo.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://qwen.ai/blog?id=qwen3.5\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120",
+      "image": "slides/es/25.webp"
+    },
+    {
+      "number": 26,
+      "title": "Razonamiento, optimización y costo",
+      "text": "BLOQUE 05 / 07\n\nRazonamiento, optimización y costo\n\nDe la probabilidad a la verificación\n\n¿Cuándo merece la pena pensar más y cuándo conviene una herramienta?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "Inicio del bloque 5. ¿Cuándo merece la pena pensar más y cuándo conviene una herramienta? La exposición debe conectar el fundamento conceptual con la evidencia china y con los resultados del simulador, sin tratar estos últimos como predicciones.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/es/26.webp"
+    },
+    {
+      "number": 27,
+      "title": "Entrenar no es inferir",
+      "text": "05 · RAZONAMIENTO Y ECONOMÍA\n\nEntrenar no es inferir\n\nEl gasto de entrenamiento no describe el costo marginal de cada consulta.\n\nSERGIO GEVATSCHNAIDER\n\n27 / 44\n\nFuentes: Nature R1 · Qwen3 / Qwen3.5 · Stanford AI Index\n\n01\n\nENTRENAMIENTO\n\nActualización de pesos con grandes conjuntos de datos, optimizador, infraestructura y experimentación.\n\n02\n\nINFERENCIA\n\nGeneración de tokens; costos de cómputo, memoria, latencia, concurrencia y salida.\n\nUn sistema barato por consulta puede ser caro por tarea completada.",
+      "notes": "Entrenar no es inferir. El gasto de entrenamiento no describe el costo marginal de cada consulta.\n\nDesarrollo para el expositor: ENTRENAMIENTO: Actualización de pesos con grandes conjuntos de datos, optimizador, infraestructura y experimentación. INFERENCIA: Generación de tokens; costos de cómputo, memoria, latencia, concurrencia y salida.\n\nInterpretación: Un sistema barato por consulta puede ser caro por tarea completada.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "image": "slides/es/27.webp"
+    },
+    {
+      "number": 28,
+      "title": "Presupuesto de razonamiento",
+      "text": "05 · RAZONAMIENTO Y ECONOMÍA\n\nPresupuesto de razonamiento\n\nMás tokens de deliberación pueden mejorar tareas difíciles y encarecer su ejecución.\n\nSERGIO GEVATSCHNAIDER\n\n28 / 44\n\nFuentes: Nature R1 · Qwen3 / Qwen3.5 · Stanford AI Index\n\n01\n\nCalidad\n\nTasa de éxito validado contra criterios independientes.\n\n02\n\nLatencia\n\nTiempo hasta solución aceptada, no solo primeros tokens.\n\n03\n\nConsumo\n\nTokens, GPU, memoria, búsquedas y reintentos.\n\n04\n\nRiesgo\n\nErrores prolongados, bucles y falsa confianza.\n\nEl simulador ajusta dificultad y presupuesto en un modelo conceptual.",
+      "notes": "Presupuesto de razonamiento. Más tokens de deliberación pueden mejorar tareas difíciles y encarecer su ejecución.\n\nDesarrollo para el expositor: Calidad: Tasa de éxito validado contra criterios independientes. Latencia: Tiempo hasta solución aceptada, no solo primeros tokens. Consumo: Tokens, GPU, memoria, búsquedas y reintentos. Riesgo: Errores prolongados, bucles y falsa confianza.\n\nInterpretación: El simulador ajusta dificultad y presupuesto en un modelo conceptual.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "image": "slides/es/28.webp"
+    },
+    {
+      "number": 29,
+      "title": "RAG: recuperar antes de responder",
+      "text": "05 · RAZONAMIENTO Y ECONOMÍA\n\nRAG: recuperar antes de responder\n\nLa recuperación enlaza la generación con documentos y fuentes verificables.\n\nSERGIO GEVATSCHNAIDER\n\n29 / 44\n\nFuentes: Nature R1 · Qwen3 / Qwen3.5 · Stanford AI Index\n\nPregunta\n\nSolicitud concreta\n\nBúsqueda\n\nÍndice o repositorio\n\nEvidencia\n\nPasajes relevantes\n\nSíntesis\n\nRespuesta fundamentada\n\nCitas\n\nTrazabilidad / control\n\nUn documento recuperado puede contener instrucciones maliciosas.",
+      "notes": "RAG: recuperar antes de responder. La recuperación enlaza la generación con documentos y fuentes verificables.\n\nDesarrollo para el expositor: Pregunta: Solicitud concreta Búsqueda: Índice o repositorio Evidencia: Pasajes relevantes Síntesis: Respuesta fundamentada Citas: Trazabilidad / control\n\nInterpretación: Un documento recuperado puede contener instrucciones maliciosas.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "image": "slides/es/29.webp"
+    },
+    {
+      "number": 30,
+      "title": "Fine-tuning, RAG y herramientas",
+      "text": "05 · RAZONAMIENTO Y ECONOMÍA\n\nFine-tuning, RAG y herramientas\n\nTres soluciones distintas para problemas distintos.\n\nSERGIO GEVATSCHNAIDER\n\n30 / 44\n\nFuentes: Nature R1 · Qwen3 / Qwen3.5 · Stanford AI Index\n\n01\n\nFine-tuning\n\nAdaptar estilo, formato y patrones de tarea.\n\n02\n\nRAG\n\nConsultar conocimiento variable y rastreable.\n\n03\n\nTool use\n\nRealizar operaciones y consultar estados externos.\n\n04\n\nReglas\n\nGarantizar restricciones donde una política exacta es preferible.\n\nElegir según necesidad de actualización, seguridad y costo.",
+      "notes": "Fine-tuning, RAG y herramientas. Tres soluciones distintas para problemas distintos.\n\nDesarrollo para el expositor: Fine-tuning: Adaptar estilo, formato y patrones de tarea. RAG: Consultar conocimiento variable y rastreable. Tool use: Realizar operaciones y consultar estados externos. Reglas: Garantizar restricciones donde una política exacta es preferible.\n\nInterpretación: Elegir según necesidad de actualización, seguridad y costo.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "image": "slides/es/30.webp"
+    },
+    {
+      "number": 31,
+      "title": "Economía de inferencia",
+      "text": "05 · RAZONAMIENTO Y ECONOMÍA\n\nEconomía de inferencia\n\nOptimizar costo por tarea bien resuelta, no solo precio por millón de tokens.\n\nSERGIO GEVATSCHNAIDER\n\n31 / 44\n\nFuentes: Nature R1 · Qwen3 / Qwen3.5 · Stanford AI Index\n\n01\n\nCoste efectivo\n\nModelo + herramientas + verificación + reintentos.\n\n02\n\nRendimiento\n\nTareas correctas por unidad de tiempo / presupuesto.\n\n03\n\nEscalabilidad\n\nConcurrencia, caché, cuantización y batching.\n\n04\n\nGobernanza\n\nPrivacidad, auditoría, licencias y procesos.\n\nUna decisión de arquitectura es también una decisión organizacional.",
+      "notes": "Economía de inferencia. Optimizar costo por tarea bien resuelta, no solo precio por millón de tokens.\n\nDesarrollo para el expositor: Coste efectivo: Modelo + herramientas + verificación + reintentos. Rendimiento: Tareas correctas por unidad de tiempo / presupuesto. Escalabilidad: Concurrencia, caché, cuantización y batching. Gobernanza: Privacidad, auditoría, licencias y procesos.\n\nInterpretación: Una decisión de arquitectura es también una decisión organizacional.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "image": "slides/es/31.webp"
+    },
+    {
+      "number": 32,
+      "title": "Agentes y sistemas multiagente",
+      "text": "BLOQUE 06 / 07\n\nAgentes y sistemas multiagente\n\nDe responder preguntas a ejecutar flujos\n\n¿Cómo se transforma un modelo en una arquitectura operativa?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "Inicio del bloque 6. ¿Cómo se transforma un modelo en una arquitectura operativa? La exposición debe conectar el fundamento conceptual con la evidencia china y con los resultados del simulador, sin tratar estos últimos como predicciones.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/es/32.webp"
+    },
+    {
+      "number": 33,
+      "title": "Qué es un agente de IA",
+      "text": "06 · AGENTES INTELIGENTES\n\nQué es un agente de IA\n\nUn bucle que observa, decide, usa herramientas y verifica el estado.\n\nSERGIO GEVATSCHNAIDER\n\n33 / 44\n\nFuentes: Hugging Face Agents Course · Stanford · publicaciones de evaluación\n\nEstado\n\nContexto y meta\n\nPlan\n\nSiguiente acción\n\nHerramienta\n\nOperación permitida\n\nObservación\n\nResultado comprobable\n\nControl\n\nContinuar o detener\n\nContinuar con una nueva observación\n\nAutonomía no es ausencia de supervisión.",
+      "notes": "Qué es un agente de IA. Un bucle que observa, decide, usa herramientas y verifica el estado.\n\nDesarrollo para el expositor: Estado: Contexto y meta Plan: Siguiente acción Herramienta: Operación permitida Observación: Resultado comprobable Control: Continuar o detener\n\nInterpretación: Autonomía no es ausencia de supervisión.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nLa flecha de retorno expresa la continuidad del bucle. Control también puede detener la ejecución.\n\nFuentes:\nhttps://huggingface.co/learn/agents-course/unit0/introduction\nhttps://arxiv.org/abs/2311.12983",
+      "image": "slides/es/33.webp"
+    },
+    {
+      "number": 34,
+      "title": "Arquitecturas de coordinación",
+      "text": "06 · AGENTES INTELIGENTES\n\nArquitecturas de coordinación\n\nLa especialización introduce sobrecostos y nuevas superficies de fallo.\n\nSERGIO GEVATSCHNAIDER\n\n34 / 44\n\nFuentes: Hugging Face Agents Course · Stanford · publicaciones de evaluación\n\n01\n\nAgente único\n\nSencillo de operar, rápido para tareas acotadas.\n\n02\n\nSecuencial\n\nCadena de especialidades con entrega explícita.\n\n03\n\nParalelo\n\nTareas independientes ejecutadas simultáneamente.\n\n04\n\nJerárquico\n\nSupervisor distribuye y valida la ejecución.\n\nPreferir menor complejidad compatible con la tarea.",
+      "notes": "Tres arquitecturas de coordinación. La especialización introduce sobrecostos y nuevas superficies de fallo.\n\nDesarrollo para el expositor: Agente único: Sencillo de operar, rápido para tareas acotadas. Secuencial: Cadena de especialidades con entrega explícita. Paralelo: Tareas independientes ejecutadas simultáneamente. Jerárquico: Supervisor distribuye y valida la ejecución.\n\nInterpretación: Preferir menor complejidad compatible con la tarea.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://huggingface.co/learn/agents-course/unit0/introduction\nhttps://arxiv.org/abs/2311.12983",
+      "image": "slides/es/34.webp"
+    },
+    {
+      "number": 35,
+      "title": "El agente investigador",
+      "text": "06 · AGENTES INTELIGENTES\n\nEl agente investigador\n\nUna investigación reproducible necesita rutas y trazabilidad.\n\nSERGIO GEVATSCHNAIDER\n\n35 / 44\n\nFuentes: Hugging Face Agents Course · Stanford · publicaciones de evaluación\n\nPregunta\n\nHipótesis delimitada\n\nFuentes\n\nRecuperación y prioridad\n\nContraste\n\nFecha y validez\n\nSíntesis\n\nDistinción de evidencia\n\nAuditoría\n\nCitas y lagunas\n\nLas citas falsas son un modo de fallo a medir explícitamente.",
+      "notes": "El agente investigador. Una investigación reproducible necesita rutas y trazabilidad.\n\nDesarrollo para el expositor: Pregunta: Hipótesis delimitada Fuentes: Recuperación y prioridad Contraste: Fecha y validez Síntesis: Distinción de evidencia Auditoría: Citas y lagunas\n\nInterpretación: Las citas falsas son un modo de fallo a medir explícitamente.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://huggingface.co/learn/agents-course/unit0/introduction\nhttps://arxiv.org/abs/2311.12983",
+      "image": "slides/es/35.webp"
+    },
+    {
+      "number": 36,
+      "title": "Agente matemático y evaluador",
+      "text": "06 · AGENTES INTELIGENTES\n\nAgente matemático y evaluador\n\nSeparar propuesta, cálculo y verificación reduce errores ocultos.\n\nSERGIO GEVATSCHNAIDER\n\n36 / 44\n\nFuentes: Hugging Face Agents Course · Stanford · publicaciones de evaluación\n\nPROPONENTE\n\nProblema y supuestos\n\nCALCULADOR\n\nCódigo o prueba en sandbox\n\nEVALUADOR\n\nCriterios y pruebas independientes\n\nSi falla: revisar la propuesta\n\nSUPERVISOR: límites de recursos y reintentos\n\nUn evaluador del mismo modelo puede compartir sesgos. Incluir pruebas deterministas.",
+      "notes": "Agente matemático y evaluador. Separar propuesta, cálculo y verificación reduce errores ocultos.\n\nDesarrollo para el expositor: Proponente: Formaliza problema y suposiciones. Calculador: Ejecuta cálculos o pruebas en entorno controlado. Evaluador: Compara resultados con criterios y casos de prueba. Supervisor: Gestiona reintentos y límite de recursos.\n\nInterpretación: Un evaluador del mismo modelo puede compartir sesgos; usar tests deterministas.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://huggingface.co/learn/agents-course/unit0/introduction\nhttps://arxiv.org/abs/2311.12983",
+      "image": "slides/es/36.webp"
+    },
+    {
+      "number": 37,
+      "title": "MCP, herramientas y permisos",
+      "text": "06 · AGENTES INTELIGENTES\n\nMCP, herramientas y permisos\n\nLas interfaces estructuradas facilitan conexión; no eliminan riesgos.\n\nSERGIO GEVATSCHNAIDER\n\n37 / 44\n\nFuentes: Hugging Face Agents Course · Stanford · publicaciones de evaluación\n\n01\n\nEsquema\n\nEntradas tipadas y salidas comprensibles.\n\n02\n\nPermisos\n\nMínimo privilegio y aprobación en acciones sensibles.\n\n03\n\nEstado\n\nRegistros de cada acción y resultados.\n\n04\n\nSandbox\n\nAislamiento, límites de recursos y reproducibilidad.\n\nNo dejar que texto recuperado se convierta en instrucción privilegiada.",
+      "notes": "MCP, herramientas y permisos. Las interfaces estructuradas facilitan conexión; no eliminan riesgos.\n\nDesarrollo para el expositor: Esquema: Entradas tipadas y salidas comprensibles. Permisos: Mínimo privilegio y aprobación en acciones sensibles. Estado: Registros de cada acción y resultados. Sandbox: Aislamiento, límites de recursos y reproducibilidad.\n\nInterpretación: No dejar que texto recuperado se convierta en instrucción privilegiada.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://huggingface.co/learn/agents-course/unit0/introduction\nhttps://arxiv.org/abs/2311.12983",
+      "image": "slides/es/37.webp"
+    },
+    {
+      "number": 38,
+      "title": "Evaluación, seguridad y despliegue",
+      "text": "BLOQUE 07 / 07\n\nEvaluación, seguridad y despliegue\n\nDe la demostración a un sistema confiable\n\n¿Cómo probar capacidad, costo y seguridad sin confundir métricas?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "Inicio del bloque 7. ¿Cómo probar capacidad, costo y seguridad sin confundir métricas? La exposición debe conectar el fundamento conceptual con la evidencia china y con los resultados del simulador, sin tratar estos últimos como predicciones.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/es/38.webp"
+    },
+    {
+      "number": 39,
+      "title": "Benchmarks: qué miden y qué no",
+      "text": "07 · EVALUACIÓN Y APLICACIÓN\n\nBenchmarks: qué miden y qué no\n\nUna mejora en un benchmark no constituye garantía en casos reales.\n\nSERGIO GEVATSCHNAIDER\n\n39 / 44\n\nFuentes: Stanford AI Index 2026 · GAIA · OSWorld · OWASP\n\n01\n\nCapacidad\n\nConjunto de tareas, criterios y protocolos.\n\n02\n\nContaminación\n\nRiesgo de ejemplos vistos en entrenamiento.\n\n03\n\nGeneralización\n\nPruebas nuevas, distribución cambiante.\n\n04\n\nMétrica final\n\nExactitud, tasa de éxito, robustez y costo.\n\nRegistrar versión, fecha y condiciones de ejecución.",
+      "notes": "Benchmarks: qué miden y qué no. Una mejora en un benchmark no constituye garantía en casos reales.\n\nDesarrollo para el expositor: Capacidad: Conjunto de tareas, criterios y protocolos. Contaminación: Riesgo de ejemplos vistos en entrenamiento. Generalización: Pruebas nuevas, distribución cambiante. Métrica final: Exactitud, tasa de éxito, robustez y costo.\n\nInterpretación: Registrar versión, fecha y condiciones de ejecución.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2311.12983\nhttps://arxiv.org/abs/2404.07972\nhttps://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "image": "slides/es/39.webp"
+    },
+    {
+      "number": 40,
+      "title": "Evaluar agentes es evaluar trayectorias",
+      "text": "07 · EVALUACIÓN Y APLICACIÓN\n\nEvaluar agentes es evaluar trayectorias\n\nMedir el proceso y la ejecución, no solo la respuesta final.\n\nSERGIO GEVATSCHNAIDER\n\n40 / 44\n\nFuentes: Stanford AI Index 2026 · GAIA · OSWorld · OWASP\n\nObjetivo\n\nEstado esperado\n\nEjecución\n\nAcciones y evidencias\n\nPruebas\n\nResultados observables\n\nCosto\n\nTiempo, tokens y fallos\n\nRevisión\n\nAceptación / rechazo\n\nBenchmarks como GAIA u OSWorld proponen tareas con herramientas.",
+      "notes": "Evaluar agentes es evaluar trayectorias. Medir el proceso y la ejecución, no solo la respuesta final.\n\nDesarrollo para el expositor: Objetivo: Estado esperado Ejecución: Acciones y evidencias Pruebas: Resultados observables Costo: Tiempo, tokens y fallos Revisión: Aceptación / rechazo\n\nInterpretación: Benchmarks como GAIA u OSWorld proponen tareas con herramientas.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2311.12983\nhttps://arxiv.org/abs/2404.07972\nhttps://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "image": "slides/es/40.webp"
+    },
+    {
+      "number": 41,
+      "title": "Seguridad: inyección y acciones",
+      "text": "07 · EVALUACIÓN Y APLICACIÓN\n\nSeguridad: inyección y acciones\n\nInstrucciones hostiles pueden viajar dentro de documentos o resultados.\n\nSERGIO GEVATSCHNAIDER\n\n41 / 44\n\nFuentes: Stanford AI Index 2026 · GAIA · OSWorld · OWASP\n\n01\n\nPrompt injection\n\nFuentes de menor confianza intentan alterar el plan.\n\n02\n\nExfiltración\n\nDatos sensibles enviados a destinos no autorizados.\n\n03\n\nHerramientas\n\nAcciones con permisos excesivos.\n\n04\n\nDefensas\n\nAislamiento, validación, registros y confirmación.\n\nEl filtrado de texto por sí solo no garantiza protección.",
+      "notes": "Seguridad: inyección y acciones. Instrucciones hostiles pueden viajar dentro de documentos o resultados.\n\nDesarrollo para el expositor: Prompt injection: Fuentes de menor confianza intentan alterar el plan. Exfiltración: Datos sensibles enviados a destinos no autorizados. Herramientas: Acciones con permisos excesivos. Defensas: Aislamiento, validación, registros y confirmación.\n\nInterpretación: El filtrado de texto por sí solo no garantiza protección.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2311.12983\nhttps://arxiv.org/abs/2404.07972\nhttps://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "image": "slides/es/41.webp"
+    },
+    {
+      "number": 42,
+      "title": "Caso aplicado: atención industrial",
+      "text": "07 · EVALUACIÓN Y APLICACIÓN\n\nCaso aplicado: atención industrial\n\nAgentes con fuentes, reglas, revisión humana y retorno medible.\n\nSERGIO GEVATSCHNAIDER\n\n42 / 44\n\nFuentes: Stanford AI Index 2026 · GAIA · OSWorld · OWASP\n\nIncidencia\n\nConsulta operativa\n\nRAG\n\nManual / procedimiento\n\nAgente\n\nClasifica y propone\n\nHumano\n\nAutoriza si procede\n\nRegistro\n\nResultado y métricas\n\nEl caso es un diseño conceptual, no una implementación real.",
+      "notes": "Caso aplicado: atención industrial. Agentes con fuentes, reglas, revisión humana y retorno medible.\n\nDesarrollo para el expositor: Incidencia: Consulta operativa RAG: Manual / procedimiento Agente: Clasifica y propone Humano: Autoriza si procede Registro: Resultado y métricas\n\nInterpretación: El caso es un diseño conceptual, no una implementación real.\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2311.12983\nhttps://arxiv.org/abs/2404.07972\nhttps://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "image": "slides/es/42.webp"
+    },
+    {
+      "number": 43,
+      "title": "Diseño de adopción responsable",
+      "text": "07 · EVALUACIÓN Y APLICACIÓN\n\nDiseño de adopción responsable\n\nUn programa serio une rendimiento técnico con economía institucional.\n\nSERGIO GEVATSCHNAIDER\n\n43 / 44\n\nFuentes: Stanford AI Index 2026 · GAIA · OSWorld · OWASP\n\n01\n\nPiloto\n\nAlcance estrecho y datos representativos.\n\n02\n\nEvaluación\n\nComparación frente a base humana o regla simple.\n\n03\n\nGobierno\n\nPrivacidad, derechos y permisos.\n\n04\n\nEscala\n\nCapacidad, soporte y seguimiento continuo.\n\nLa pregunta relevante: ¿qué procesos cambian de verdad?",
+      "notes": "Diseño de adopción responsable. Un programa serio une rendimiento técnico con economía institucional.\n\nDesarrollo para el expositor: Piloto: Alcance estrecho y datos representativos. Evaluación: Comparación frente a base humana o regla simple. Gobierno: Privacidad, derechos y permisos. Escala: Capacidad, soporte y seguimiento continuo.\n\nInterpretación: La pregunta relevante: ¿qué procesos cambian de verdad?\n\nDurante la clase invitar a distinguir evidencias reales de decisiones de modelado e ilustrar con casos propios de negocios, investigación, educación e industria.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2311.12983\nhttps://arxiv.org/abs/2404.07972\nhttps://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "image": "slides/es/43.webp"
+    },
+    {
+      "number": 44,
+      "title": "La frontera no es\nsolo un modelo.\nEs un sistema.",
+      "text": "CONCLUSIÓN · CHINA Y LA FRONTERA DE LA IA\n\nLa frontera no es\nsolo un modelo.\nEs un sistema.\n\nArquitectura · datos · hardware · agentes · evaluación · instituciones\n\nSergio Gevatschnaider",
+      "notes": "Conclusión transversal. Profundizar tres tensiones: capacidad versus costo, autonomía versus interdependencia, y demostración versus fiabilidad real. Conectar a la simulación HTML complementaria: rutas MoE, presupuesto de razonamiento y coordinación multiagente como laboratorio conceptual reproductible; no se ejecutan los pesos de DeepSeek ni Qwen en el navegador. Bibliografía: Stanford AI Index 2026, DeepSeek V3, Nature R1, Qwen3.5 Alibaba y Hugging Face Agents Course.\n\nFuentes:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://qwen.ai/blog?id=qwen3.5\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://www.ibm.com/think/topics/retrieval-augmented-generation\nhttps://www.ibm.com/think/topics/mixture-of-experts\nhttps://huggingface.co/learn/agents-course/unit0/introduction\nhttps://arxiv.org/abs/2308.03688\nhttps://arxiv.org/abs/2311.12983\nhttps://genai.owasp.org/llmrisk/llm01-prompt-injection/\nhttps://arxiv.org/abs/2404.07972",
+      "image": "slides/es/44.webp"
+    }
+  ],
+  "en": [
+    {
+      "number": 1,
+      "title": "CHINESE\nARTIFICIAL\nINTELLIGENCE",
+      "text": "CHINA · TECHNOLOGY · AI FRONTIER\n\nCHINESE\nARTIFICIAL\nINTELLIGENCE\n\nDeepSeek · Qwen · Agents\nArchitectures, efficiency and applications\n\nSergio Gevatschnaider",
+      "notes": "The cover is a conceptual AI-generated illustration. The module compares documented architectures and separates model capability from operational systems.\n\nSources:\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report",
+      "image": "slides/en/01.webp"
+    },
+    {
+      "number": 2,
+      "title": "China's AI ecosystem",
+      "text": "BLOCK 01 / 07\n\nChina's AI ecosystem\n\nFrom research to deployment\n\nWhere does China compete, and where does it face constraints?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "The first block distinguishes technical capability, infrastructure, openness and adoption. These dimensions need separate evidence.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/en/02.webp"
+    },
+    {
+      "number": 3,
+      "title": "AI competition has multiple dimensions",
+      "text": "01 · AI ECOSYSTEM\n\nAI competition has multiple dimensions\n\nTechnical capability, availability, infrastructure and adoption are distinct dimensions.\n\nSERGIO GEVATSCHNAIDER\n\n03 / 44\n\nSources: Stanford AI Index 2026 · Official documentation\n\n01\n\nModel frontier\n\nReasoning, code, multimodality and robustness require different tests.\n\n02\n\nOpen ecosystem\n\nAccessible weights, tools, communities, deployment and specialised adaptation.\n\n03\n\nInfrastructure\n\nComputing, memory, networks, data, energy, talent and software.\n\n04\n\nAdoption\n\nBusiness integration, measured productivity, governance and safety.\n\nAI's economic impact depends on both technology and diffusion.",
+      "notes": "Technology competition has several dimensions. Accessible model weights do not by themselves establish a fully open-source licence or reliable deployment.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+      "image": "slides/en/03.webp"
+    },
+    {
+      "number": 4,
+      "title": "AI Index 2026: comparative evidence",
+      "text": "01 · AI ECOSYSTEM\n\nAI Index 2026: comparative evidence\n\nCounting releases does not measure overall leadership.\n\nSERGIO GEVATSCHNAIDER\n\n04 / 44\n\nSources: Stanford AI Index 2026 · Official documentation\n\n59\n\nNotable U.S. models identified in 2025\n\n35\n\nNotable models with Chinese affiliation in 2025\n\nThese figures do not establish equal quality, cost or performance across families.\n\n2025 data in AI Index 2026. National affiliations may overlap.",
+      "notes": "The 2026 AI Index reports 59 notable U.S. models and 35 Chinese models released in 2025, using an Epoch AI snapshot from 22 April 2026. National affiliations can overlap. The counts do not measure average model quality. See chapter 1, printed page 16, Figure 1.1.1.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance\nhttps://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf",
+      "image": "slides/en/04.webp"
+    },
+    {
+      "number": 5,
+      "title": "Mapping China's AI ecosystem",
+      "text": "01 · AI ECOSYSTEM\n\nMapping China's AI ecosystem\n\nFirms, research, platforms and applications form a heterogeneous system.\n\nSERGIO GEVATSCHNAIDER\n\n05 / 44\n\nSources: Stanford AI Index 2026 · Official documentation\n\n01\n\nDeepSeek\n\nEfficient architectures and reasoning models.\n\n02\n\nAlibaba / Qwen\n\nOpen model families, cloud and multimodal agents.\n\n03\n\nBaidu / ERNIE\n\nModels, search services and business ecosystems.\n\n04\n\nTencent / Hunyuan\n\nApplications, services and an AI platform.\n\nChinese firms have different strategies and capabilities.",
+      "notes": "Companies have different business models and capabilities. The list is illustrative and does not rank all Chinese AI developers.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+      "image": "slides/en/05.webp"
+    },
+    {
+      "number": 6,
+      "title": "From laboratories to industry",
+      "text": "01 · AI ECOSYSTEM\n\nFrom laboratories to industry\n\nAI creates value by solving measurable tasks.\n\nSERGIO GEVATSCHNAIDER\n\n06 / 44\n\nSources: Stanford AI Index 2026 · Official documentation\n\nResearch\n\nArchitecture and training\n\nModel\n\nPretraining and alignment\n\nIntegration\n\nTools and data\n\nProcess\n\nRedesigned work\n\nMeasurement\n\nQuality, time and cost\n\nAdoption requires process redesign as well as access to models.",
+      "notes": "The sequence connects research, models, integration, work processes and measurement. Real development is iterative. Access to an API does not alone establish productivity gains.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+      "image": "slides/en/06.webp"
+    },
+    {
+      "number": 7,
+      "title": "Strengths and constraints",
+      "text": "01 · AI ECOSYSTEM\n\nStrengths and constraints\n\nAlgorithmic efficiency can partially address infrastructure constraints.\n\nSERGIO GEVATSCHNAIDER\n\n07 / 44\n\nSources: Stanford AI Index 2026 · Official documentation\n\nA\n\nSTRENGTHS\n\nTechnical talent, manufacturing, demand, open software ecosystems, experimentation and rapid integration.\n\nB\n\nCONSTRAINTS\n\nAdvanced chips, memory, infrastructure, safety, data quality and access to markets.\n\nModel capability ≠ hardware availability ≠ productivity.",
+      "notes": "Algorithmic improvements can reduce some resource needs, while memory, networking, deployment and organisational constraints remain. Avoid claims of complete hardware independence.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+      "image": "slides/en/07.webp"
+    },
+    {
+      "number": 8,
+      "title": "Model architectures",
+      "text": "BLOCK 02 / 07\n\nModel architectures\n\nHow models learn, process and generate\n\nWhere does the innovation behind the brands take place?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "The architecture block explains representations, attention, sparse routing and multimodality. Brand names do not identify a single architecture.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/en/08.webp"
+    },
+    {
+      "number": 9,
+      "title": "From text to tokens",
+      "text": "02 · TECHNICAL FOUNDATIONS\n\nFrom text to tokens\n\nTokenisation and embeddings turn language into numerical representations.\n\nSERGIO GEVATSCHNAIDER\n\n09 / 44\n\nSources: Transformers · IBM MoE · Qwen and DeepSeek documentation\n\nInput\n\nText, image or another signal\n\nTokens\n\nDiscrete units\n\nEmbeddings\n\nRepresentation vectors\n\nBlocks\n\nAttention and projections\n\nOutput\n\nConditional prediction\n\nTokens, words and parameters are different concepts.",
+      "notes": "Tokenisation maps input into discrete representations. Embeddings are vectors, while parameters are learned weights. Multimodal inputs require appropriate encoders and representations.\n\nSources:\nhttps://www.ibm.com/think/topics/mixture-of-experts\nhttps://arxiv.org/abs/2412.19437",
+      "image": "slides/en/09.webp"
+    },
+    {
+      "number": 10,
+      "title": "Transformers: attention and context",
+      "text": "02 · TECHNICAL FOUNDATIONS\n\nTransformers: attention and context\n\nAttention links positions and builds representations that depend on context.\n\nSERGIO GEVATSCHNAIDER\n\n10 / 44\n\nSources: Transformers · IBM MoE · Qwen and DeepSeek documentation\n\n01\n\nQuery (Q)\n\nWhat information does the current position seek?\n\n02\n\nKey (K)\n\nHow does each position identify relevant information?\n\n03\n\nValue (V)\n\nWhat content enters the combined representation?\n\n04\n\nMasking\n\nPrevents a decoder from attending to future tokens during prediction.\n\nAttention cost depends on sequence length and architecture.",
+      "notes": "For standard scaled dot-product attention, Attention(Q,K,V) = softmax(QKᵀ/√d_k + mask)V. A causal mask blocks future positions. Query, key and value vectors are learned projections. Details vary across architectures.\n\nSources:\nhttps://www.ibm.com/think/topics/mixture-of-experts\nhttps://arxiv.org/abs/2412.19437",
+      "image": "slides/en/10.webp"
+    },
+    {
+      "number": 11,
+      "title": "Dense models and Mixture of Experts",
+      "text": "02 · TECHNICAL FOUNDATIONS\n\nDense models and Mixture of Experts\n\nTotal capacity differs from the computation activated per token.\n\nSERGIO GEVATSCHNAIDER\n\n11 / 44\n\nSources: Transformers · IBM MoE · Qwen and DeepSeek documentation\n\n01\n\nDENSE\n\nDense blocks apply their parameters to every token. Computation scales with the block size.\n\n02\n\nMoE\n\nA router directs each token to a subset of experts, combining large total capacity with sparse activation.\n\nMoE requires load balancing and communication across devices.",
+      "notes": "An MoE layer routes tokens to selected learned neural sub-networks. Actual experts are not necessarily identifiable as mathematics, vision or security specialists. Sparse activation does not remove memory, communication or load-balancing requirements.\n\nSources:\nhttps://www.ibm.com/think/topics/mixture-of-experts\nhttps://arxiv.org/abs/2412.19437",
+      "image": "slides/en/11.webp"
+    },
+    {
+      "number": 12,
+      "title": "How an MoE router works",
+      "text": "02 · TECHNICAL FOUNDATIONS\n\nHow an MoE router works\n\nTop-k routing assigns each token to selected computational paths.\n\nSERGIO GEVATSCHNAIDER\n\n12 / 44\n\nSources: Transformers · IBM MoE · Qwen and DeepSeek documentation\n\nTOKEN\n\nInput vector\n\nROUTER\n\nScores and top-2\n\nCOMBINATION\n\nWeighted output sum\n\nEXPERT 1\n\nSelected\n\nEXPERT 2\n\nSelected\n\nEXPERT 3\n\nNot selected\n\nEXPERT 4\n\nNot selected\n\nIllustrative top-2 routing. Experts are learned sub-networks without guaranteed topic labels.",
+      "notes": "The diagram shows an illustrative top-2 selection from four displayed experts. Selected outputs are combined with routing weights. Real MoE models may include shared experts, other routing rules and more experts. The simulator uses eight symbolic experts, whose topic names are teaching labels.\n\nSources:\nhttps://www.ibm.com/think/topics/mixture-of-experts\nhttps://arxiv.org/abs/2412.19437",
+      "image": "slides/en/12.webp"
+    },
+    {
+      "number": 13,
+      "title": "Multimodality and action",
+      "text": "02 · TECHNICAL FOUNDATIONS\n\nMultimodality and action\n\nA multimodal agent combines perception, language, tools and responses.\n\nSERGIO GEVATSCHNAIDER\n\n13 / 44\n\nSources: Transformers · IBM MoE · Qwen and DeepSeek documentation\n\n01\n\nImage / video\n\nVisual and temporal representations.\n\n02\n\nText / code\n\nReasoning and symbolic generation.\n\n03\n\nTools\n\nAPIs, files, browsing and restricted execution.\n\n04\n\nAction\n\nInterfaces, automation and observable outcomes.\n\nA multimodal model does not by itself constitute an autonomous agent.",
+      "notes": "Multimodality describes input and representation capabilities. An agent also requires orchestration, tools, state management and control over actions.\n\nSources:\nhttps://www.ibm.com/think/topics/mixture-of-experts\nhttps://arxiv.org/abs/2412.19437",
+      "image": "slides/en/13.webp"
+    },
+    {
+      "number": 14,
+      "title": "DeepSeek: efficiency and reasoning",
+      "text": "BLOCK 03 / 07\n\nDeepSeek: efficiency and reasoning\n\nDesign matters alongside scale\n\nWhat do V3 and R1 contribute, and what do their results leave unproven?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "The DeepSeek block focuses on the documented V3 and R1 releases. It does not present these versions as the latest available models.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/en/14.webp"
+    },
+    {
+      "number": 15,
+      "title": "DeepSeek-V3: sparse architecture",
+      "text": "03 · DEEPSEEK\n\nDeepSeek-V3: sparse architecture\n\nThe original report documents a large MoE model with reduced activation.\n\nSERGIO GEVATSCHNAIDER\n\n15 / 44\n\nSources: DeepSeek‑V3 Technical Report · Nature (R1)\n\n671 B\n\nReported total parameters\n\n37 B\n\nParameters activated per token\n\nThese figures do not establish equal quality, cost or performance across families.\n\nDeepSeek-V3, December 2024 report. Do not extrapolate to later versions.",
+      "notes": "The V3 technical report states 671 billion total parameters and 37 billion activated per token. These figures describe that release and do not establish a hardware-memory requirement or a universal quality ranking.\n\nSources:\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z",
+      "image": "slides/en/15.webp"
+    },
+    {
+      "number": 16,
+      "title": "DeepSeek-V3: key innovations",
+      "text": "03 · DEEPSEEK\n\nDeepSeek-V3: key innovations\n\nSeveral architecture and training decisions contribute to efficiency.\n\nSERGIO GEVATSCHNAIDER\n\n16 / 44\n\nSources: DeepSeek‑V3 Technical Report · Nature (R1)\n\n01\n\nMLA\n\nMulti-head Latent Attention compresses key/value states.\n\n02\n\nDeepSeekMoE\n\nSpecialisation and selective expert activation.\n\n03\n\nBalancing\n\nMethods for distributing token traffic.\n\n04\n\nMTP\n\nA multi-token prediction training objective.\n\nEvaluate the whole system alongside parameter counts.",
+      "notes": "V3 combines MLA, DeepSeekMoE, load-balancing methods and multi-token prediction. Evaluate these as interacting architecture and training choices.\n\nSources:\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z",
+      "image": "slides/en/16.webp"
+    },
+    {
+      "number": 17,
+      "title": "Training cost requires a defined scope",
+      "text": "03 · DEEPSEEK\n\nTraining cost requires a defined scope\n\nPublished GPU hours do not describe the complete cost of a project.\n\nSERGIO GEVATSCHNAIDER\n\n17 / 44\n\nSources: DeepSeek‑V3 Technical Report · Nature (R1)\n\nA\n\nWHAT THE REPORT STATES\n\nThe V3 report describes 2.788 million H800 GPU hours for its documented training stages.\n\nB\n\nWHAT THIS FIGURE EXCLUDES\n\nEarlier research, architecture exploration, data work, staff, infrastructure and other operating stages.\n\nA training-cost estimate is different from a fully audited project cost.",
+      "notes": "The report gives 2.788 million H800 GPU hours for the documented training stages. It excludes earlier architecture and research experiments. GPU hours, an assumed rental cost and a fully audited organisational project budget are different quantities.\n\nSources:\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z",
+      "image": "slides/en/17.webp"
+    },
+    {
+      "number": 18,
+      "title": "DeepSeek-R1: reinforcement learning",
+      "text": "03 · DEEPSEEK\n\nDeepSeek-R1: reinforcement learning\n\nRewards on verifiable tasks can reinforce reasoning behaviours.\n\nSERGIO GEVATSCHNAIDER\n\n18 / 44\n\nSources: DeepSeek‑V3 Technical Report · Nature (R1)\n\nProblem\n\nVerifiable exercise\n\nResponses\n\nCandidate trajectories\n\nReward\n\nVerifiable correctness\n\nUpdate\n\nPolicy adjustment\n\nEvaluation\n\nGeneralisation and failures\n\nTraining iteration\n\nThis does not establish human-like thought or guarantee truth.",
+      "notes": "Reward feedback updates the training policy and the sampling process. The held-out evaluation remains separate from training feedback. Verifiable reward tasks do not establish truthfulness on arbitrary questions.\n\nSources:\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://arxiv.org/abs/2501.12948",
+      "image": "slides/en/18.webp"
+    },
+    {
+      "number": 19,
+      "title": "R1-Zero, R1 and distillation",
+      "text": "03 · DEEPSEEK\n\nR1-Zero, R1 and distillation\n\nDistinguish the RL experiment, the practical training pipeline and capability transfer.\n\nSERGIO GEVATSCHNAIDER\n\n19 / 44\n\nSources: DeepSeek‑V3 Technical Report · Nature (R1)\n\n01\n\nR1-Zero\n\nExtensive RL without initial SFT produces useful behaviours and readability problems.\n\n02\n\nR1\n\nCold-start, supervised and RL stages improve utility and clarity.\n\n03\n\nDistillation\n\nSmaller models learn from traces or outputs of larger systems.\n\n04\n\nCaution\n\nEvaluate length, cost, errors, bias and safety for each task.\n\nNature published the DeepSeek-R1 study in 2025.",
+      "notes": "R1-Zero explored reinforcement learning without an initial supervised fine-tuning stage. R1 adds practical cold-start and other training stages. Distillation transfers behaviour to smaller models. The related Nature paper appeared in 2025.\n\nSources:\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://arxiv.org/abs/2501.12948",
+      "image": "slides/en/19.webp"
+    },
+    {
+      "number": 20,
+      "title": "Qwen: a family of architectures",
+      "text": "BLOCK 04 / 07\n\nQwen: a family of architectures\n\nOpen models and multimodal capabilities\n\nWhat changes between Qwen3 and Qwen3.5?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "Qwen is a family with multiple variants. This block discusses Qwen3 and the documented Qwen3.5-397B-A17B release rather than asserting a single current best model.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/en/20.webp"
+    },
+    {
+      "number": 21,
+      "title": "Qwen3: deliberation or a direct answer",
+      "text": "04 · QWEN\n\nQwen3: deliberation or a direct answer\n\nHybrid modes help manage reasoning effort and latency.\n\nSERGIO GEVATSCHNAIDER\n\n21 / 44\n\nSources: Alibaba Group · Qwen Team, 2025–2026\n\n01\n\nNON-THINKING\n\nDirect responses for simple requests, conversation and tasks with low complexity.\n\n02\n\nTHINKING\n\nMore deliberative processing for reasoning, code and decision sequences.\n\nChoose the mode according to difficulty, budget and reliability.",
+      "notes": "Thinking and non-thinking modes trade processing effort against latency and task needs. Extra reasoning tokens do not guarantee correct answers.\n\nSources:\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://qwen.ai/blog?id=qwen3.5\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120",
+      "image": "slides/en/21.webp"
+    },
+    {
+      "number": 22,
+      "title": "Qwen3.5: multimodal architecture",
+      "text": "04 · QWEN\n\nQwen3.5: multimodal architecture\n\nThe 2026 announcement combines hybrid attention with sparse experts.\n\nSERGIO GEVATSCHNAIDER\n\n22 / 44\n\nSources: Alibaba Group · Qwen Team, 2025–2026\n\n397 B\n\nTotal parameters in the announced model\n\n17 B\n\nParameters activated per forward pass\n\nThese figures do not establish equal quality, cost or performance across families.\n\nQwen3.5-397B-A17B. Figures reported by Alibaba in February 2026.",
+      "notes": "Alibaba announced Qwen3.5-397B-A17B in February 2026 with 397 billion total and 17 billion active parameters. The official model card describes its hybrid and sparse architecture. Treat vendor benchmark claims separately from independent evaluation.\n\nSources:\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://qwen.ai/blog?id=qwen3.5\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://huggingface.co/Qwen/Qwen3.5-397B-A17B",
+      "image": "slides/en/22.webp"
+    },
+    {
+      "number": 23,
+      "title": "Why hybrid attention?",
+      "text": "04 · QWEN\n\nWhy hybrid attention?\n\nArchitectures balance context, memory and performance.\n\nSERGIO GEVATSCHNAIDER\n\n23 / 44\n\nSources: Alibaba Group · Qwen Team, 2025–2026\n\n01\n\nStandard attention\n\nRich interactions among tokens, with costs that grow with context.\n\n02\n\nLinear attention\n\nReduces selected costs using recurrent states or alternative formulations.\n\n03\n\nCombination\n\nInterleaves blocks to retain capabilities and improve efficiency.\n\n04\n\nConditions\n\nResults depend on hardware, sequence length and workload.\n\nPerformance advantages depend on the task and execution conditions.",
+      "notes": "Hybrid architectures combine different attention or recurrent mechanisms. Performance depends on workload, context length, hardware and implementation. A claim about one benchmark does not generalise to all tasks.\n\nSources:\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://qwen.ai/blog?id=qwen3.5\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://huggingface.co/Qwen/Qwen3.5-397B-A17B",
+      "image": "slides/en/23.webp"
+    },
+    {
+      "number": 24,
+      "title": "Native agents and multimodal perception",
+      "text": "04 · QWEN\n\nNative agents and multimodal perception\n\nText and images support decisions and tool use.\n\nSERGIO GEVATSCHNAIDER\n\n24 / 44\n\nSources: Alibaba Group · Qwen Team, 2025–2026\n\nPerceive\n\nText, images and video\n\nInterpret\n\nMultimodal representation\n\nPlan\n\nExecution path\n\nAct\n\nAuthorised tool\n\nVerify\n\nObservable outcome\n\nContinue with a new observation\n\nAgentic systems require orchestration and boundaries as well as multimodal models.",
+      "notes": "The observe, interpret, plan, act and verify loop is an operational design. Verification can trigger another observation or a stop. A multimodal model alone does not implement this orchestration.\n\nSources:\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://qwen.ai/blog?id=qwen3.5\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120",
+      "image": "slides/en/24.webp"
+    },
+    {
+      "number": 25,
+      "title": "DeepSeek and Qwen: an academic comparison",
+      "text": "04 · QWEN\n\nDeepSeek and Qwen: an academic comparison\n\nCompare documented design objectives and evidence.\n\nSERGIO GEVATSCHNAIDER\n\n25 / 44\n\nSources: Alibaba Group · Qwen Team, 2025–2026\n\nA\n\nDEEPSEEK\n\nArchitectural efficiency with MoE and MLA, and reinforcement learning for reasoning, particularly in V3 and R1.\n\nB\n\nQWEN\n\nA broad family with hybrid reasoning modes, dense and MoE variants, and multimodal models for agentic applications.\n\nA valid comparison needs the same date, benchmark, hardware and protocol.",
+      "notes": "Compare specific releases under the same tasks, dates, budgets and protocols. The table describes documented design emphases and is not a universal ranking.\n\nSources:\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://qwen.ai/blog?id=qwen3.5\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120",
+      "image": "slides/en/25.webp"
+    },
+    {
+      "number": 26,
+      "title": "Reasoning, optimisation and cost",
+      "text": "BLOCK 05 / 07\n\nReasoning, optimisation and cost\n\nFrom probability to verification\n\nWhen is more reasoning worthwhile, and when is a tool more appropriate?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "This block separates training, inference, retrieval, tool use and end-to-end cost. Use independent outcome criteria rather than token counts alone.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/en/26.webp"
+    },
+    {
+      "number": 27,
+      "title": "Training and inference",
+      "text": "05 · REASONING AND ECONOMICS\n\nTraining and inference\n\nTraining expenditure does not describe the marginal cost of a query.\n\nSERGIO GEVATSCHNAIDER\n\n27 / 44\n\nSources: Nature R1 · Qwen3 / Qwen3.5 · Stanford AI Index\n\n01\n\nTRAINING\n\nWeight updates using large datasets, optimisation, infrastructure and experimentation.\n\n02\n\nINFERENCE\n\nToken generation incurs computing, memory, latency, concurrency and output costs.\n\nA low query price can coexist with a high cost per completed task.",
+      "notes": "Training updates weights. Inference generates outputs using an existing model, sometimes with retrieval, tools and additional computation. Include retries and verification when measuring the cost of a completed task.\n\nSources:\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "image": "slides/en/27.webp"
+    },
+    {
+      "number": 28,
+      "title": "Reasoning budgets",
+      "text": "05 · REASONING AND ECONOMICS\n\nReasoning budgets\n\nMore deliberation tokens can help difficult tasks while increasing cost.\n\nSERGIO GEVATSCHNAIDER\n\n28 / 44\n\nSources: Nature R1 · Qwen3 / Qwen3.5 · Stanford AI Index\n\n01\n\nQuality\n\nSuccess validated against independent criteria.\n\n02\n\nLatency\n\nTime to an accepted solution, including completion.\n\n03\n\nConsumption\n\nTokens, GPU work, memory, searches and retries.\n\n04\n\nRisk\n\nProlonged errors, loops and unwarranted confidence.\n\nThe simulator adjusts difficulty and reasoning budgets in a conceptual model.",
+      "notes": "Quality, latency, resource consumption and residual risk require separate metrics. The simulator scores are synthetic teaching indices, not measured probabilities of task success.\n\nSources:\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "image": "slides/en/28.webp"
+    },
+    {
+      "number": 29,
+      "title": "RAG: retrieval before generation",
+      "text": "05 · REASONING AND ECONOMICS\n\nRAG: retrieval before generation\n\nRetrieval connects generation with documents and traceable sources.\n\nSERGIO GEVATSCHNAIDER\n\n29 / 44\n\nSources: Nature R1 · Qwen3 / Qwen3.5 · Stanford AI Index\n\nQuestion\n\nA specific request\n\nSearch\n\nIndex or repository\n\nEvidence\n\nRelevant passages\n\nSynthesis\n\nGrounded response\n\nCitations\n\nTraceability and checking\n\nRetrieved documents may contain malicious instructions.",
+      "notes": "RAG retrieves evidence and conditions a generated answer on it. Source attribution does not prove that citations support every claim. Retrieved content remains lower-trust data and may contain malicious instructions.\n\nSources:\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "image": "slides/en/29.webp"
+    },
+    {
+      "number": 30,
+      "title": "Fine-tuning, RAG and tools",
+      "text": "05 · REASONING AND ECONOMICS\n\nFine-tuning, RAG and tools\n\nDifferent approaches address different problems.\n\nSERGIO GEVATSCHNAIDER\n\n30 / 44\n\nSources: Nature R1 · Qwen3 / Qwen3.5 · Stanford AI Index\n\n01\n\nFine-tuning\n\nAdapt style, format and task patterns.\n\n02\n\nRAG\n\nRetrieve changing, traceable knowledge.\n\n03\n\nTool use\n\nPerform operations and inspect external state.\n\n04\n\nRules\n\nEnforce constraints when an exact policy is preferable.\n\nChoose according to update needs, safety and cost.",
+      "notes": "Fine-tuning changes model weights or adapters, retrieval supplies external evidence, tools execute operations, and deterministic rules enforce exact constraints. These approaches can be combined.\n\nSources:\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "image": "slides/en/30.webp"
+    },
+    {
+      "number": 31,
+      "title": "The economics of inference",
+      "text": "05 · REASONING AND ECONOMICS\n\nThe economics of inference\n\nOptimise cost per correctly completed task alongside token prices.\n\nSERGIO GEVATSCHNAIDER\n\n31 / 44\n\nSources: Nature R1 · Qwen3 / Qwen3.5 · Stanford AI Index\n\n01\n\nEffective cost\n\nModel, tools, verification and retries.\n\n02\n\nThroughput\n\nCorrect tasks per unit of time or budget.\n\n03\n\nScaling\n\nConcurrency, caching, quantisation and batching.\n\n04\n\nGovernance\n\nPrivacy, auditing, licences and processes.\n\nArchitecture choices also affect how organisations work.",
+      "notes": "Effective task cost includes models, tools, verification and retries. Measure success using a separate acceptance test before estimating cost per accepted task. A synthetic quality index is not a success probability.\n\nSources:\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "image": "slides/en/31.webp"
+    },
+    {
+      "number": 32,
+      "title": "Agents and multi-agent systems",
+      "text": "BLOCK 06 / 07\n\nAgents and multi-agent systems\n\nFrom answering questions to executing workflows\n\nHow does a model become part of an operational architecture?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "Agent systems connect models to tools, state and control. The following architectures are illustrative operational designs.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/en/32.webp"
+    },
+    {
+      "number": 33,
+      "title": "An AI agent",
+      "text": "06 · INTELLIGENT AGENTS\n\nAn AI agent\n\nA loop that observes, decides, uses tools and checks state.\n\nSERGIO GEVATSCHNAIDER\n\n33 / 44\n\nSources: Hugging Face Agents Course · Stanford · evaluation studies\n\nState\n\nContext and goal\n\nPlan\n\nNext action\n\nTool\n\nPermitted operation\n\nObservation\n\nVerifiable result\n\nControl\n\nContinue or stop\n\nContinue with a new observation\n\nAutonomy still requires supervision.",
+      "notes": "The control node either returns to the state and planning loop or stops. Tools run only with permitted inputs and authority. Observation is evidence to inspect rather than an instruction to trust automatically.\n\nSources:\nhttps://huggingface.co/learn/agents-course/unit0/introduction\nhttps://arxiv.org/abs/2311.12983",
+      "image": "slides/en/33.webp"
+    },
+    {
+      "number": 34,
+      "title": "Coordination architectures",
+      "text": "06 · INTELLIGENT AGENTS\n\nCoordination architectures\n\nSpecialisation introduces overhead and additional failure modes.\n\nSERGIO GEVATSCHNAIDER\n\n34 / 44\n\nSources: Hugging Face Agents Course · Stanford · evaluation studies\n\n01\n\nSingle agent\n\nSimple to operate and fast for bounded tasks.\n\n02\n\nSequential\n\nA chain of specialised stages with explicit handoffs.\n\n03\n\nParallel\n\nIndependent tasks executed simultaneously.\n\n04\n\nHierarchical\n\nA supervisor allocates and validates work.\n\nUse the simplest architecture that meets the task requirements.",
+      "notes": "Four coordination patterns are shown: single-agent, sequential, parallel and hierarchical. Parallel execution is appropriate for independent subtasks. Additional agents introduce communication and coordination overhead.\n\nSources:\nhttps://huggingface.co/learn/agents-course/unit0/introduction\nhttps://arxiv.org/abs/2311.12983",
+      "image": "slides/en/34.webp"
+    },
+    {
+      "number": 35,
+      "title": "A research agent",
+      "text": "06 · INTELLIGENT AGENTS\n\nA research agent\n\nReproducible research needs a clear workflow and traceability.\n\nSERGIO GEVATSCHNAIDER\n\n35 / 44\n\nSources: Hugging Face Agents Course · Stanford · evaluation studies\n\nQuestion\n\nA bounded hypothesis\n\nSources\n\nRetrieval and prioritisation\n\nComparison\n\nDate and validity\n\nSynthesis\n\nDistinguish evidence\n\nAudit\n\nCitations and gaps\n\nMeasure fabricated citations as an explicit failure mode.",
+      "notes": "A research workflow prioritises sources, checks dates and provenance, distinguishes evidence from inference, and audits citations and gaps. Generated citations must be checked against actual sources.\n\nSources:\nhttps://huggingface.co/learn/agents-course/unit0/introduction\nhttps://arxiv.org/abs/2311.12983",
+      "image": "slides/en/35.webp"
+    },
+    {
+      "number": 36,
+      "title": "A mathematical agent and evaluator",
+      "text": "06 · INTELLIGENT AGENTS\n\nA mathematical agent and evaluator\n\nSeparating proposals, calculations and verification exposes hidden errors.\n\nSERGIO GEVATSCHNAIDER\n\n36 / 44\n\nSources: Hugging Face Agents Course · Stanford · evaluation studies\n\nPROPOSER\n\nProblem and assumptions\n\nCALCULATOR\n\nCode or proof in a sandbox\n\nEVALUATOR\n\nIndependent criteria and tests\n\nOn failure: revise the proposal\n\nSUPERVISOR: resource and retry limits\n\nA model evaluator may share the same biases. Include deterministic tests.",
+      "notes": "The proposer, calculator and evaluator perform distinct functions under a supervisor with retry and resource limits. Failed tests return to the proposal stage. Deterministic checks provide evidence independent of a model evaluator.\n\nSources:\nhttps://huggingface.co/learn/agents-course/unit0/introduction\nhttps://arxiv.org/abs/2311.12983",
+      "image": "slides/en/36.webp"
+    },
+    {
+      "number": 37,
+      "title": "MCP, tools and permissions",
+      "text": "06 · INTELLIGENT AGENTS\n\nMCP, tools and permissions\n\nStructured interfaces support connectivity while risks remain.\n\nSERGIO GEVATSCHNAIDER\n\n37 / 44\n\nSources: Hugging Face Agents Course · Stanford · evaluation studies\n\n01\n\nSchema\n\nTyped inputs and understandable outputs.\n\n02\n\nPermissions\n\nLeast privilege and approvals for sensitive actions.\n\n03\n\nState\n\nLogs of each action and result.\n\n04\n\nSandbox\n\nIsolation, resource limits and reproducibility.\n\nRetrieved text must retain its lower trust level.",
+      "notes": "MCP standardises interactions between clients and servers, including tool descriptions and messages. It does not itself grant appropriate authority, guarantee safe content or replace isolation. Apply permissions and validate results at the application boundary.\n\nSources:\nhttps://huggingface.co/learn/agents-course/unit0/introduction\nhttps://arxiv.org/abs/2311.12983",
+      "image": "slides/en/37.webp"
+    },
+    {
+      "number": 38,
+      "title": "Evaluation, safety and deployment",
+      "text": "BLOCK 07 / 07\n\nEvaluation, safety and deployment\n\nFrom demonstrations to reliable systems\n\nHow can capability, cost and safety be tested with distinct metrics?\n\nSERGIO GEVATSCHNAIDER",
+      "notes": "Evaluation separates model capability, agent execution and safety. A demonstration is evidence of a particular run rather than a deployment guarantee.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2412.19437\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240",
+      "image": "slides/en/38.webp"
+    },
+    {
+      "number": 39,
+      "title": "Benchmarks: scope and limitations",
+      "text": "07 · EVALUATION AND APPLICATION\n\nBenchmarks: scope and limitations\n\nBenchmark improvements do not guarantee performance on real tasks.\n\nSERGIO GEVATSCHNAIDER\n\n39 / 44\n\nSources: Stanford AI Index 2026 · GAIA · OSWorld · OWASP\n\n01\n\nCapability\n\nTask sets, criteria and protocols.\n\n02\n\nContamination\n\nThe risk that training included test examples.\n\n03\n\nGeneralisation\n\nNew tests and changing distributions.\n\n04\n\nFinal metrics\n\nAccuracy, success rate, robustness and cost.\n\nRecord the version, date and execution conditions.",
+      "notes": "Record the model version, task set, date, hardware and evaluation protocol. Benchmark contamination and changing task distributions limit extrapolation to production.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2311.12983\nhttps://arxiv.org/abs/2404.07972\nhttps://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "image": "slides/en/39.webp"
+    },
+    {
+      "number": 40,
+      "title": "Evaluating agents means testing trajectories",
+      "text": "07 · EVALUATION AND APPLICATION\n\nEvaluating agents means testing trajectories\n\nMeasure the process and execution as well as the final answer.\n\nSERGIO GEVATSCHNAIDER\n\n40 / 44\n\nSources: Stanford AI Index 2026 · GAIA · OSWorld · OWASP\n\nGoal\n\nExpected state\n\nExecution\n\nActions and evidence\n\nTests\n\nObservable results\n\nCost\n\nTime, tokens and failures\n\nReview\n\nAccept or reject\n\nGAIA and OSWorld include tasks involving tools.",
+      "notes": "Evaluate trajectories as well as final answers: tool calls, state changes, failures, retries, time and cost. GAIA and OSWorld have different task environments and scoring procedures.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2311.12983\nhttps://arxiv.org/abs/2404.07972\nhttps://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "image": "slides/en/40.webp"
+    },
+    {
+      "number": 41,
+      "title": "Safety: injection and actions",
+      "text": "07 · EVALUATION AND APPLICATION\n\nSafety: injection and actions\n\nHostile instructions can arrive inside documents or tool results.\n\nSERGIO GEVATSCHNAIDER\n\n41 / 44\n\nSources: Stanford AI Index 2026 · GAIA · OSWorld · OWASP\n\n01\n\nPrompt injection\n\nLower-trust sources try to redirect the plan.\n\n02\n\nExfiltration\n\nSensitive data sent to unauthorised destinations.\n\n03\n\nTools\n\nActions with excessive permissions.\n\n04\n\nDefences\n\nIsolation, validation, logs and approval.\n\nText filtering alone does not guarantee protection.",
+      "notes": "Prompt injection arrives through lower-trust content and can lead to unwanted actions or data disclosure. Least privilege, isolation, validation, human gates where needed and auditing provide multiple controls, without a universal safety guarantee.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2311.12983\nhttps://arxiv.org/abs/2404.07972\nhttps://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "image": "slides/en/41.webp"
+    },
+    {
+      "number": 42,
+      "title": "An industrial support example",
+      "text": "07 · EVALUATION AND APPLICATION\n\nAn industrial support example\n\nCombine agents, sources, rules, human review and measurable returns.\n\nSERGIO GEVATSCHNAIDER\n\n42 / 44\n\nSources: Stanford AI Index 2026 · GAIA · OSWorld · OWASP\n\nIncident\n\nOperational query\n\nRAG\n\nManual or procedure\n\nAgent\n\nClassify and propose\n\nHuman\n\nAuthorise when appropriate\n\nRecord\n\nOutcome and metrics\n\nThis is a conceptual design, not an implemented system.",
+      "notes": "This is a conceptual industrial-support workflow. A person approves actions when required. The record should include evidence and outcomes so that safety and economic performance can be evaluated.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2311.12983\nhttps://arxiv.org/abs/2404.07972\nhttps://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "image": "slides/en/42.webp"
+    },
+    {
+      "number": 43,
+      "title": "Designing responsible adoption",
+      "text": "07 · EVALUATION AND APPLICATION\n\nDesigning responsible adoption\n\nA sound programme connects technical performance with institutional economics.\n\nSERGIO GEVATSCHNAIDER\n\n43 / 44\n\nSources: Stanford AI Index 2026 · GAIA · OSWorld · OWASP\n\n01\n\nPilot\n\nNarrow scope and representative data.\n\n02\n\nEvaluation\n\nCompare against a human baseline or a simple rule.\n\n03\n\nGovernance\n\nPrivacy, rights and permissions.\n\n04\n\nScale\n\nCapacity, support and continuous monitoring.\n\nWhich processes actually change?",
+      "notes": "Begin with representative tasks and a meaningful baseline. Scale according to measured outcomes, permissions, support requirements and ongoing monitoring.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://arxiv.org/abs/2311.12983\nhttps://arxiv.org/abs/2404.07972\nhttps://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "image": "slides/en/43.webp"
+    },
+    {
+      "number": 44,
+      "title": "The frontier is\na complete\nsystem.",
+      "text": "CHINA AND THE AI FRONTIER\n\nThe frontier is\na complete\nsystem.\n\nArchitecture · data · hardware · agents · evaluation · institutions\n\nSergio Gevatschnaider",
+      "notes": "The AI frontier combines architecture, data, hardware, agent orchestration, evaluation and institutions. Use this systems perspective to connect PPT 2 with the economic mechanisms in PPT 1.\n\nSources:\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report\nhttps://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance\nhttps://arxiv.org/abs/2412.19437\nhttps://www.nature.com/articles/s41586-025-09422-z\nhttps://www.alibabagroup.com/en-US/document-1960233590314762240\nhttps://qwen.ai/blog?id=qwen3.5\nhttps://www.alibabagroup.com/en-US/document-1853940226976645120\nhttps://www.ibm.com/think/topics/retrieval-augmented-generation\nhttps://www.ibm.com/think/topics/mixture-of-experts\nhttps://huggingface.co/learn/agents-course/unit0/introduction\nhttps://arxiv.org/abs/2308.03688\nhttps://arxiv.org/abs/2311.12983\nhttps://genai.owasp.org/llmrisk/llm01-prompt-injection/\nhttps://arxiv.org/abs/2404.07972",
+      "image": "slides/en/44.webp"
+    }
+  ]
+}

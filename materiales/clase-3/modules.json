@@ -8,5 +8,15 @@
     "slides": 35,
     "videos": 5,
     "path": "ppt-1/index.html"
+  },
+  {
+    "id": "ppt-2",
+    "title": {
+      "es": "Inteligencia artificial china: DeepSeek, Qwen y agentes",
+      "en": "Chinese artificial intelligence: DeepSeek, Qwen and agents"
+    },
+    "slides": 44,
+    "videos": 8,
+    "path": "ppt-2/index.html"
   }
 ]

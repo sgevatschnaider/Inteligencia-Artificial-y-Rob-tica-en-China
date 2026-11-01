@@ -1,0 +1,6 @@
+'use strict';
+const assert=require('node:assert/strict');const {IDS,LIMITS,SETUPS,simulate,clean}=require('../materiales/clase-3/ppt-2/model.cjs');
+for(const values of Object.values(SETUPS)){const c=Object.fromEntries(IDS.map((id,i)=>[id,values[i]])),r=simulate(c);assert.deepEqual(r,simulate({...c}));assert.equal(r.history.length,c.steps);assert.equal(r.loads.reduce((a,b)=>a+b),c.k*c.steps);let prev=0;for(const row of r.history){assert.equal(new Set(row.expertIds).size,c.k);assert.ok(row.expertIds.every(i=>i>=0&&i<8));for(const k of ['quality','risk','normalizedCost'])assert.ok(Number.isFinite(row[k])&&row[k]>=0&&row[k]<=100);assert.ok(row.cost>prev);prev=row.cost;}assert.deepEqual(simulate(c,3).history,r.history.slice(0,3));}
+const invalid=clean({k:999,bal:-20,difficulty:NaN,reason:Infinity,verify:-2,nagents:70,steps:NaN});for(const id of IDS)assert.ok(invalid[id]>=LIMITS[id][0]&&invalid[id]<=LIMITS[id][1]);
+const base=Object.fromEntries(IDS.map((id,i)=>[id,SETUPS.balance[i]]));const a=simulate(base).history.at(-1),b=simulate({...base,verify:100}).history.at(-1);assert.ok(b.risk<a.risk&&b.cost>a.cost);
+console.log('PPT 2 model passed: deterministic routing, top-k conservation, bounded indices, reproducible prefixes, input limits and verification tradeoff.');

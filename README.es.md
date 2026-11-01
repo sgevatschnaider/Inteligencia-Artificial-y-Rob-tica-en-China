@@ -56,4 +56,4 @@ Para profundizar, consultar el [panorama analítico de octubre de 2026](PANORAMA
 **Sergio Gevatschnaider** · Última revisión editorial: octubre de 2026. [Cómo contribuir](CONTRIBUTING.md) · [Cómo citar](CITATION.cff) · Código [MIT](LICENSE) · Contenido original [CC BY 4.0](LICENSE-CONTENT.md).
 
 
-[Clase 3: PPT 1 y laboratorio / Class 3: PPT 1 and lab](materiales/clase-3/index.html) · ES/EN, 35 diapositivas/slides, PPTX/PDF, simulador/simulator y/and videos.
+[Clase 3: PPT 1 + 2 y laboratorios / Class 3: PPT 1 + 2 and labs](materiales/clase-3/index.html) · ES/EN, 79 diapositivas/slides, PPTX/PDF, simulador/simulator y/and videos.

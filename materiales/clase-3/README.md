@@ -50,3 +50,14 @@ node scripts/check_class3.cjs
 ```
 
 Las pruebas de navegador necesitan Playwright y Chrome, como el flujo de validación existente. `BROWSER_EXECUTABLE` permite indicar otro Chromium compatible. / Browser checks require Playwright and Chrome, as in the existing validation workflow. `BROWSER_EXECUTABLE` selects another compatible Chromium executable.
+
+## PPT 2: IA china / Chinese AI
+
+[Acceder / Open](ppt-2/index.html) · 44 diapositivas por idioma, laboratorio MoE y agentes, ocho recursos audiovisuales. / 44 slides per language, MoE and agents lab, eight audiovisual resources.
+
+Colección: 79 diapositivas por idioma, dos laboratorios y trece referencias audiovisuales. / Collection: 79 slides per language, two laboratories and thirteen audiovisual references.
+
+```bash
+node scripts/check_ppt2_model.cjs
+node scripts/check_class3_ppt2.cjs
+```
