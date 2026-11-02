@@ -1,0 +1,14 @@
+(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.China2030Model=factory();})(typeof globalThis!=='undefined'?globalThis:this,function(){'use strict';
+const controls=[['rd',1,6,.1,2.8],['talent',20,100,1,65],['adoption',20,100,1,58],['chips',20,100,1,68],['energy',20,100,1,74],['demand',20,100,1,61],['trade',20,100,1,65],['coord',20,100,1,67]];
+const presets={base:{},productivity:{rd:4.1,talent:82,adoption:85,coord:78},shock:{chips:30,trade:30,energy:55},rebalance:{demand:90,coord:82,trade:60},integrated:{rd:4.2,talent:85,adoption:87,chips:84,energy:88,demand:85,trade:78,coord:88}};
+const assumptions=Object.freeze({model:'ppt6-v1-original-equations',quarters:20,baseYear:2026,baseQuarter:1,baseIndex:100,intervals:19,riskAgeing:.005,innovationIntercept:.012,productivityIntercept:.008,diffusionIntercept:.013,innovationWeights:[.005,.003,.004,.003,.0015],productivityWeights:[.0015,.0025,.004,.0025,.003,.0025,-.002],diffusionWeights:[.003,.005,.003,.002,.002],riskWeights:[.32,.18,.30,.20],riskSlopes:[.75,.70,.8,.8],riskOffsets:[5,8,7,5],innovationClamp:[-.008,.034],productivityClamp:[-.009,.027],diffusionClamp:[-.008,.033]});
+const clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
+function normalise(input={}){return Object.fromEntries(controls.map(([k,min,max,step,value])=>{const n=Number(input[k]??value);return[k,Number(clamp(min+Math.round(((Number.isFinite(n)?n:value)-min)/step)*step,min,max).toFixed(5))]}));}
+function preset(id='base'){if(!Object.hasOwn(presets,id))throw new RangeError('Unknown scenario');return normalise(presets[id]);}
+function compute(input,t=0){const v=normalise(input);t=clamp(Math.round(Number(t)||0),0,19);const rd=(v.rd-2.8)/3,ta=(v.talent-65)/35,ad=(v.adoption-58)/42,ch=(v.chips-68)/32,en=(v.energy-74)/26,de=(v.demand-61)/39,tr=(v.trade-65)/35,co=(v.coord-67)/33;
+ const rateI=clamp(.012+.005*rd+.003*ta+.004*ad+.003*ch+.0015*co,-.008,.034),rateP=clamp(.008+.0015*rd+.0025*ta+.004*ad+.0025*en+.003*de+.0025*co-.002*Math.max(0,-tr),-.009,.027),rateD=clamp(.013+.003*ta+.005*ad+.003*ch+.002*en+.002*co,-.008,.033);
+ const innovation=100*Math.pow(1+rateI,t),productivity=100*Math.pow(1+rateP,t),diffusion=100*Math.pow(1+rateD,t);
+ const risks={chip:clamp((100-v.chips)*.75+5,0,100),energy:clamp((100-v.energy)*.70+8,0,100),trade:clamp((100-v.trade)*.8+7,0,100),demand:clamp((100-v.demand)*.8+5,0,100)},riskBase=risks.chip*.32+risks.energy*.18+risks.trade*.30+risks.demand*.20,riskAgeFactor=1+.005*t,risk=clamp(riskBase*riskAgeFactor,0,100),highest=Math.max(...Object.values(risks)),tensions=Object.keys(risks).filter(k=>Math.abs(risks[k]-highest)<1e-9);
+ return{t,year:2026+Math.floor(t/4),quarter:1+t%4,innovation,productivity,diffusion,risk,risks,rateI,rateP,rateD,riskBase,riskAgeFactor,tensions};}
+function series(input){return Array.from({length:20},(_,t)=>compute(input,t));}
+return Object.freeze({controls,presets,assumptions,normalise,preset,compute,series});});

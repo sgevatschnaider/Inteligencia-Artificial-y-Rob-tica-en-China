@@ -56,4 +56,4 @@ For further detail, see the [October 2026 research overview](PANORAMA-2026.en.md
 **Sergio Gevatschnaider** · Last editorial review: October 2026. [Contribute](CONTRIBUTING.md) · [Cite this repository](CITATION.cff) · Code [MIT](LICENSE) · Original content [CC BY 4.0](LICENSE-CONTENT.md).
 
 
-[Clase 3: PPT 1 + 2 + 3 + 4 + 5 y laboratorios / Class 3: PPT 1 + 2 + 3 + 4 + 5 and labs](materiales/clase-3/index.html) · ES/EN, 217 diapositivas/slides, PPTX/PDF, simulador/simulator y/and videos.
+[Clase 3: PPT 1 + 2 + 3 + 4 + 5 + 6 y laboratorios / Class 3: PPT 1 + 2 + 3 + 4 + 5 + 6 and labs](materiales/clase-3/index.html) · ES/EN, 265 diapositivas/slides, PPTX/PDF, simulador/simulator y/and videos.

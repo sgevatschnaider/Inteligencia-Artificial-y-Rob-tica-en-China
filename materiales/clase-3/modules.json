@@ -48,5 +48,15 @@
     "slides": 48,
     "videos": 8,
     "path": "ppt-5/index.html"
+  },
+  {
+    "id": "ppt-6",
+    "title": {
+      "es": "China 2030: geoeconomía y competencia tecnológica",
+      "en": "China 2030: geoeconomics and technological competition"
+    },
+    "slides": 48,
+    "videos": 8,
+    "path": "ppt-6/index.html"
   }
 ]

@@ -55,7 +55,7 @@ Las pruebas de navegador necesitan Playwright y Chrome, como el flujo de validac
 
 [Acceder / Open](ppt-2/index.html) · 44 diapositivas por idioma, laboratorio MoE y agentes, ocho recursos audiovisuales. / 44 slides per language, MoE and agents lab, eight audiovisual resources.
 
-Colección: 217 diapositivas por idioma, cinco laboratorios y treinta y siete referencias audiovisuales. / Collection: 217 slides per language, five laboratories and thirty-seven audiovisual references.
+Colección: 265 diapositivas por idioma, seis laboratorios y cuarenta y cinco referencias audiovisuales. / Collection: 265 slides per language, six laboratories and forty-five audiovisual references.
 
 ```bash
 node scripts/check_ppt2_model.cjs
@@ -73,3 +73,7 @@ node scripts/check_class3_ppt2.cjs
 ## PPT 5: Vehículos eléctricos, baterías y fábricas / Electric vehicles, batteries and factories
 
 [Acceder / Open](ppt-5/index.html) · 48 diapositivas por idioma y ocho recursos audiovisuales. / 48 slides per language and eight audiovisual resources.
+
+## PPT 6: China 2030 / Geoeconomics and technological competition
+
+[Acceder / Open](ppt-6/index.html) · 48 diapositivas por idioma y ocho recursos audiovisuales. / 48 slides per language and eight audiovisual resources.
