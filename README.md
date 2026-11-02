@@ -55,6 +55,6 @@ VideoLab reúne videos con fuentes, preguntas de discusión y reproducción de Y
 
 ## Clase 3 / Class 3
 
-[PPT 1 + 2 + 3 + 4 y laboratorios (ES)](materiales/clase-3/index.html?lang=es) · [PPT 1 + 2 + 3 + 4 and laboratories (EN)](materiales/clase-3/index.html?lang=en)
+[PPT 1 + 2 + 3 + 4 + 5 y laboratorios (ES)](materiales/clase-3/index.html?lang=es) · [PPT 1 + 2 + 3 + 4 + 5 and laboratories (EN)](materiales/clase-3/index.html?lang=en)
 
-169 diapositivas por idioma, PowerPoint editable, PDF, visor con notas y fuentes, cuatro simuladores y veintinueve recursos audiovisuales vinculados a la presentación. / 169 slides per language, editable PowerPoint, PDF, slides with notes and sources, four simulators and twenty-nine audiovisual resources linked to the presentation.
+217 diapositivas por idioma, PowerPoint editable, PDF, visor con notas y fuentes, cinco simuladores y treinta y siete recursos audiovisuales vinculados a la presentación. / 217 slides per language, editable PowerPoint, PDF, slides with notes and sources, five simulators and thirty-seven audiovisual resources linked to the presentation.

@@ -1,0 +1,103 @@
+{
+  "source_archive": "China_Tecnologica_PPT5_Repositorio_Completo_Sergio_Gevatschnaider(1).zip",
+  "source_archive_sha256": "35e0446bf0d40b9e826c95e8fccc36381471ab4e9b61d91703f3ffa9633b0e61",
+  "slides_per_language": 48,
+  "scenarios": 5,
+  "parameters": 8,
+  "quarters": 20,
+  "audiovisual_resources": 8,
+  "qr_urls_match_original_hyperlinks": true,
+  "qr_codes": [
+    {
+      "file": "word/media/image2.png",
+      "url": "https://www.iea.org/events/global-ev-outlook-2026"
+    },
+    {
+      "file": "word/media/image3.png",
+      "url": "https://www.youtube.com/watch?v=7Mr0Pgv1uU0"
+    },
+    {
+      "file": "word/media/image4.png",
+      "url": "https://fullycharged.show/episodes/inside-the-worlds-biggest-and-most-secret-battery-factory-catl/"
+    },
+    {
+      "file": "word/media/image5.png",
+      "url": "https://www.youtube.com/watch?v=CGQwqWqzkNA"
+    },
+    {
+      "file": "word/media/image6.png",
+      "url": "https://www.youtube.com/watch?v=4BHKVdLSSs0"
+    },
+    {
+      "file": "word/media/image7.png",
+      "url": "https://eletric-vehicles.com/videos/xiaomi/xiaomi-factory-tour-wny6wikk/"
+    },
+    {
+      "file": "word/media/image8.png",
+      "url": "https://www.youtube.com/watch?v=E05dyAJv4L4"
+    },
+    {
+      "file": "word/media/image9.png",
+      "url": "https://www.scmp.com/video/business/2169399/behind-scenes-byd-auto-chinas-biggest-electric-vehicle-factory"
+    }
+  ],
+  "original_files": {
+    "China_Tecnologica_PPT5_Sergio_Gevatschnaider.pptx": "7e207c0bbd5300de619a0217de587538ab0f6bbac4d9c3f25d51f0e8f2f620dc",
+    "China_Tecnologica_PPT5_Simulador_Vista_Previa.jpg": "7b88ba231525f0adcc8bdd89d8bc8483fc217c9a9d5e726f804d7bcc91c221d7",
+    "China_Tecnologica_PPT5_Simulador_Interactivo.html": "f04109ae97f4a913a7308374383d735134eccc4ed958cf0de7c41558eb2f6358",
+    "China_Tecnologica_PPT5_Vista_Previa.jpg": "7571bc4a501cdb7fe42af74f3f1b02f01dc6dd3f54183cee641845cfcbb142c3",
+    "SHA256SUMS_PPT5.txt": "52d9d12d87bd9d4aa9c9d1a3cb2b7ea41cbec88de20105789bfafc230eba752d",
+    "LEEME_Repositorio_China_Tecnologica_PPT5.txt": "307a851872acaf73adf88570eb412f8e722a98393ff8f9008c07c04dd3441ff7",
+    "VERIFICACION_PPT5.json": "b2dfa6ec359e6666afa44d3879b9cdbf6be49fb9fd60c7c14c4fc1978ffa6c2e",
+    "China_Tecnologica_PPT5_Guia_Audiovisual_Sergio_Gevatschnaider.docx": "0c0ea8ca9eaa419f89ae63972d52caf04a0b6e3f9c0b29fbb87d1b400e5acfdb"
+  },
+  "model_version": "ppt5-v2-material-balance",
+  "corrections": {
+    "ifr_source": "https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally",
+    "diagrams": [
+      17,
+      20,
+      24,
+      29,
+      32,
+      39,
+      40,
+      44
+    ],
+    "material_balance": "processed = good + rejects = packs consumed",
+    "energy_balance": "MWh/month = processed * kWh/processed / 1000",
+    "presets": "Common equations; no hidden scenario bonuses"
+  },
+  "audiovisual_limitations": {
+    "full_playback_verified": false,
+    "captions_verified": false,
+    "publisher_access_restrictions": [
+      "SCMP: automated retrieval returned 403",
+      "YouTube: retrieval restricted or throttled"
+    ]
+  },
+  "final_downloads_sha256": {
+    "China_Tecnologica_PPT5_ES.pptx": "4d3f1858254fef98c9f97cdf77232a381e348628057e82635cbdfb7bcff9ee7b",
+    "Guia_Audiovisual_Original_ES.docx": "0c0ea8ca9eaa419f89ae63972d52caf04a0b6e3f9c0b29fbb87d1b400e5acfdb",
+    "China_Tecnologica_PPT5_EN.pdf": "152fa45891631be8b2c71590e5920128caead7556e1af90a79b4af4cb3836392",
+    "China_Tecnologica_PPT5_EN.pptx": "bedc58e2f9eaa93ec2f8f02e0ef728fee6158e36ed698fc91dfdf1334615f2b4",
+    "China_Tecnologica_PPT5_ES.pdf": "8f591ef0351f49c50d0f18331b22d41c99619e269a2fb5944fb9bec657489202"
+  },
+  "visual_review": {
+    "source_slides": 48,
+    "final_views": 96,
+    "slide_41_typography_corrected": true
+  },
+  "presentation_checks": {
+    "es": {
+      "receipt_sha256": "fba0add60346e7894d6d0951360a8a84870be8e6b7eab8d0cbb1ae2e2921d008",
+      "slide_count": 48,
+      "result": "passed"
+    },
+    "en": {
+      "receipt_sha256": "5fd9874ae5b6319e557d4d8f01b721ae5c2fcdae9033bd3ac61e0e49dc798077",
+      "slide_count": 48,
+      "result": "passed"
+    }
+  }
+}

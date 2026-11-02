@@ -1,0 +1,13 @@
+(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.EVFactoryModel=factory();})(typeof globalThis!=='undefined'?globalThis:this,function(){'use strict';
+const controls=[['cap',5000,50000,500,18000],['packs',4000,50000,500,17000],['demand',4000,50000,500,19000],['availability',60,99,1,88],['performance',60,99,1,91],['quality',75,100,1,96],['automation',0,100,5,55],['energy',200,1200,20,540]];
+const presets={base:{},robots:{availability:94,performance:96,quality:98,automation:85,cap:20000},shock:{packs:9000,cap:22000,demand:22000},demand:{demand:34000,packs:26500,cap:20000},integrated:{cap:26500,packs:26500,demand:28500,availability:94,performance:95,quality:99,automation:90,energy:440}};
+const assumptions=Object.freeze({model:'ppt5-v2-material-balance',quarters:20,learningRate:.0075,packGrowth:.01,demandGrowth:.014,automationCapacity:.16,energyLearning:.0045,energyFloor:.78,packsPerProcessedVehicle:1});
+function normalise(input={}){return Object.fromEntries(controls.map(([k,min,max,step,value])=>{const raw=Number(input[k]??value),finite=Number.isFinite(raw)?raw:value;return[k,Math.max(min,Math.min(max,min+Math.round((finite-min)/step)*step))]}));}
+function preset(id='base'){if(!Object.hasOwn(presets,id))throw new RangeError('Unknown scenario');return normalise(presets[id]);}
+function compute(input,t=0){const p=normalise(input);t=Math.max(0,Math.min(19,Math.round(Number(t)||0)));const a=p.automation/100,A=p.availability/100,P=p.performance/100,Q=p.quality/100;
+const learning=1+.0075*t*(.45+.55*a),automationFactor=1+.16*(a-.55),grossCapacity=p.cap*learning*automationFactor*A*P,capacity=grossCapacity*Q,packs=p.packs*(1+.01*t),goodPackCapacity=packs*Q,demand=p.demand*(1+.014*t);
+const processed=Math.min(grossCapacity,packs,demand/Q),production=processed*Q,rejects=processed-production,energyPerUnit=p.energy*Math.max(.78,1-.0045*t*(.4+.6*a)),energyMwh=processed*energyPerUnit/1000,energyPerGood=energyMwh*1000/production,oee=A*P*Q,utilization=processed/grossCapacity;
+const limits={plant:capacity,batteries:goodPackCapacity,demand},minimum=Math.min(...Object.values(limits)),bottlenecks=Object.keys(limits).filter(k=>Math.abs(limits[k]-minimum)<=1e-9*Math.max(1,minimum));
+return {t,grossCapacity,capacity,packs,goodPackCapacity,demand,processed,production,rejects,packConsumption:processed,unusedPacks:packs-processed,oee,energyMwh,energyPerUnit,energyPerGood,utilization,coverage:production/demand,bottlenecks};}
+function series(input){return Array.from({length:20},(_,t)=>compute(input,t));}
+return Object.freeze({controls,presets,assumptions,normalise,preset,compute,series});});

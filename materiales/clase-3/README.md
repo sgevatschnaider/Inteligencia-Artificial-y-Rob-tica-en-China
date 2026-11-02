@@ -55,7 +55,7 @@ Las pruebas de navegador necesitan Playwright y Chrome, como el flujo de validac
 
 [Acceder / Open](ppt-2/index.html) · 44 diapositivas por idioma, laboratorio MoE y agentes, ocho recursos audiovisuales. / 44 slides per language, MoE and agents lab, eight audiovisual resources.
 
-Colección: 169 diapositivas por idioma, cuatro laboratorios y veintinueve referencias audiovisuales. / Collection: 169 slides per language, four laboratories and twenty-nine audiovisual references.
+Colección: 217 diapositivas por idioma, cinco laboratorios y treinta y siete referencias audiovisuales. / Collection: 217 slides per language, five laboratories and thirty-seven audiovisual references.
 
 ```bash
 node scripts/check_ppt2_model.cjs
@@ -69,3 +69,7 @@ node scripts/check_class3_ppt2.cjs
 ## PPT 4: Robótica e IA incorporada / Robotics and embodied AI
 
 [Acceder / Open](ppt-4/index.html) · 45 diapositivas por idioma, ocho parámetros y ocho videos. / 45 slides per language, eight parameters and eight videos.
+
+## PPT 5: Vehículos eléctricos, baterías y fábricas / Electric vehicles, batteries and factories
+
+[Acceder / Open](ppt-5/index.html) · 48 diapositivas por idioma y ocho recursos audiovisuales. / 48 slides per language and eight audiovisual resources.
