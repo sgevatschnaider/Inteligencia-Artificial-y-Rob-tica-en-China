@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laboratorio 4 · China 2030: drones, espacio y energía</title>
+<style>
+:root{--bg:#07111f;--panel:#101e30;--panel2:#14263b;--line:#263b53;--text:#eef5fc;--muted:#9eb0c5;--cyan:#58d5e8;--blue:#6ea5ff;--gold:#f3bd63;--green:#52d6a0;--red:#ff737e;--purple:#b59bff;--shadow:0 16px 42px rgba(0,0,0,.24)}
+body.light{--bg:#eef3f8;--panel:#fff;--panel2:#f5f8fc;--line:#d6e0ea;--text:#17283b;--muted:#5d7187;--cyan:#087f99;--blue:#356ed0;--gold:#a96808;--green:#14835b;--red:#c43f50;--purple:#7351b6;--shadow:0 12px 32px rgba(30,55,80,.09)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(1000px 520px at 80% -10%,rgba(30,91,125,.25),transparent 62%),var(--bg);color:var(--text);font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;transition:background .2s,color .2s}
+button,input,select{font:inherit}button{cursor:pointer}.wrap{max-width:1500px;margin:auto;padding:26px 24px 48px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:22px;margin-bottom:18px}.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--cyan);font-weight:850}
+h1{font-size:clamp(27px,4vw,43px);line-height:1.05;margin:9px 0 10px;letter-spacing:-.04em}.subtitle{max-width:950px;color:var(--muted);font-size:15px}
+.author{white-space:nowrap;border:1px solid var(--line);background:var(--panel);padding:10px 13px;border-radius:12px;color:var(--muted);font-size:11px}.author b{color:var(--text);display:block;font-size:13px;margin-top:3px}
+.header-actions{display:flex;align-items:flex-start;gap:8px}.theme{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:10px 12px;border-radius:11px;font-weight:750;font-size:12px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.tab{border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:12px 17px;border-radius:12px;font-size:13px;font-weight:850}.tab.active{color:#fff;border-color:#278ca6;background:linear-gradient(135deg,#12647c,#244f86);box-shadow:0 0 0 2px rgba(88,213,232,.12) inset}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.pill{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 11px;font-size:11px;color:var(--muted)}.pill strong{color:var(--cyan)}
+.panel{background:linear-gradient(160deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px}.panel h2{font-size:17px;margin:0 0 5px;letter-spacing:-.02em}.panel h3{font-size:13px;margin:0 0 8px}.hint{font-size:12px;color:var(--muted);margin:0 0 14px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.section-head small{color:var(--muted);font-size:11px}
+.grid{display:grid;grid-template-columns:1.45fr .8fr;gap:17px;align-items:start}.side{display:grid;gap:17px}.leftcol{display:grid;gap:17px}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:9px 13px;border-radius:10px;font-size:12px;font-weight:800}.btn.primary{background:linear-gradient(135deg,#087e99,#2563a8);border-color:#2ca9c5;color:white}.btn.gold{background:#4a3519;border-color:#90672e;color:#ffe0a5}.btn:disabled{opacity:.42;cursor:not-allowed}
+.scenarios{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 14px}.scenario{border:1px solid var(--line);background:var(--panel2);color:var(--muted);padding:8px 11px;border-radius:9px;font-size:11px;font-weight:800}.scenario.active{border-color:var(--cyan);color:var(--text);box-shadow:0 0 0 1px rgba(88,213,232,.13) inset}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:14px 0}.kpi{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:11px;min-width:0}.kpi label{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}.kpi strong{font-size:clamp(19px,2.2vw,27px);display:block;letter-spacing:-.04em;white-space:nowrap}.kpi em{font-size:10px;color:var(--muted);font-style:normal}
+.cyan{color:var(--cyan)}.green{color:var(--green)}.goldtxt{color:var(--gold)}.red{color:var(--red)}.purple{color:var(--purple)}
+.control{display:grid;gap:5px;margin:12px 0}.control label{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted)}.control label b{color:var(--cyan);font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--cyan)}.scale{display:flex;justify-content:space-between;color:var(--muted);font-size:10px;opacity:.8}.control-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px}
+.chartbox{background:var(--bg);border:1px solid var(--line);border-radius:13px;padding:12px;min-width:0}.chartbox h3{font-size:12px;margin:0 0 7px}canvas{width:100%;height:220px;display:block}.charts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.chartwide{grid-column:1/-1}
+.status{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:var(--muted)}.dot{width:8px;height:8px;border-radius:50%;background:var(--gold);display:inline-block}.dot.ok{background:var(--green)}.dot.warn{background:var(--gold)}
+.readout{display:grid;grid-template-columns:1fr 1fr;gap:9px}.readout div{background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:10px}.readout small{display:block;color:var(--muted);font-size:10px}.readout b{font-size:17px}
+.note{border-left:3px solid var(--cyan);background:rgba(65,164,190,.08);padding:11px 13px;border-radius:0 10px 10px 0;color:var(--muted);font-size:12px}.note strong{color:var(--text)}
+.formula{font-family:Georgia,serif;color:var(--text);font-size:18px;text-align:center;padding:12px;background:var(--bg);border:1px solid var(--line);border-radius:10px;margin:9px 0}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.flow div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 7px;text-align:center;font-size:10px;color:var(--muted)}.flow b{display:block;color:var(--text);font-size:11px;margin-bottom:4px}
+.refs{display:grid;gap:10px}.refs a{color:var(--cyan);text-decoration:none;overflow-wrap:anywhere}.refs a:hover{text-decoration:underline}
+.hidden{display:none!important}footer{margin-top:22px;color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--panel);border:1px solid var(--cyan);color:var(--text);padding:12px 15px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.2s;pointer-events:none;z-index:9;font-size:12px}
+.toast.show{opacity:1;transform:translateY(0)}.legend{display:flex;gap:13px;flex-wrap:wrap;color:var(--muted);font-size:10px;margin-top:7px}.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.stage-list{display:grid;gap:7px}.stage{display:grid;grid-template-columns:32px 1fr;gap:9px;align-items:start;background:var(--bg);border:1px solid var(--line);padding:9px;border-radius:10px}.stage span{width:27px;height:27px;display:grid;place-items:center;border-radius:8px;background:rgba(88,213,232,.12);color:var(--cyan);font-weight:900}.stage b{font-size:12px;display:block}.stage small{font-size:10px;color:var(--muted)}
+@media(max-width:1050px){.grid{grid-template-columns:1fr}.side{grid-template-columns:1fr 1fr}.side .wide{grid-column:span 2}}
+@media(max-width:700px){.wrap{padding:17px 12px 32px}header{display:block}.header-actions{margin-top:14px;justify-content:space-between}.grid{grid-template-columns:1fr}.side{grid-template-columns:1fr}.side .wide{grid-column:auto}.kpis{grid-template-columns:repeat(2,1fr)}.charts{grid-template-columns:1fr}.chartwide{grid-column:auto}.control-grid{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}.panel{padding:14px}}
+.course-nav{display:flex;flex-wrap:wrap;gap:18px;padding:16px 4%;background:#071923;color:#d8e9fa}.course-nav a{color:#8de7db;font:600 15px system-ui}html{scroll-behavior:smooth}*{box-sizing:border-box}canvas{max-width:100%}@media(max-width:600px){h1{overflow-wrap:anywhere}.course-nav{gap:12px}}:focus-visible{outline:3px solid #f3bd63;outline-offset:3px}</style>
+</head>
+<body><nav class="course-nav" aria-label="Navegación de la clase"><a href="../index.html">← Clase 4</a><a href="index.html">Presentación</a><a href="guide.html">Guía y modelo</a><a href="../videos.html#modulo-4">Videos</a></nav>
+<div class="wrap">
+<header>
+ <div>
+  <div class="eyebrow">China tecnológica · Clase 4 · Laboratorio interactivo 04</div>
+  <h1>Drones, espacio y energía</h1>
+  <div class="subtitle">Explorá cómo se construyen nuevas industrias a partir de aeronaves, navegación satelital, infraestructura orbital y tecnologías energéticas. Modificá supuestos, ejecutá escenarios y evaluá sus límites económicos y técnicos.</div>
+  <div class="pills">
+   <span class="pill"><strong>Módulo A:</strong> Economía de baja altitud</span>
+   <span class="pill"><strong>Módulo B:</strong> BeiDou y economía espacial</span>
+   <span class="pill"><strong>Módulo C:</strong> Hidrógeno y fusión</span>
+  </div>
+ </div>
+ <div class="header-actions">
+  <div class="author">AUTORÍA<b>Material elaborado por Sergio Gevatschnaider</b></div>
+  <button class="theme" id="themeBtn">☼ Modo claro</button>
+ </div>
+</header>
+
+<nav class="tabs">
+ <button class="tab active" data-tab="air">01 · Drones y eVTOL</button>
+ <button class="tab" data-tab="space">02 · BeiDou y espacio</button>
+ <button class="tab" data-tab="energy">03 · Hidrógeno y fusión</button>
+</nav>
+
+<!-- LOW ALTITUDE ECONOMY -->
+<section id="air" class="module">
+ <div class="grid">
+  <main class="leftcol">
+   <section class="panel">
+    <div class="section-head"><div><h2>Laboratorio A · Operaciones de baja altitud</h2><p class="hint">Administrá una flota, asigná misiones y observá cómo interactúan autonomía, demanda, clima, infraestructura y regulación.</p></div><span class="status"><i class="dot ok" id="airDot"></i><span id="airStatus">Lista para iniciar</span></span></div>
+    <div class="note"><strong>Modelo didáctico:</strong> simula una operación urbana ficticia. No representa rutas autorizadas, prestaciones certificadas ni datos operativos de EHang o de la CAAC. La certificación de una aeronave no equivale a una red irrestricta de taxis aéreos.</div>
+    <div class="scenarios" id="airScenarios">
+     <button class="scenario active" data-scenario="city">Ciudad · entregas</button>
+     <button class="scenario" data-scenario="emergency">Emergencias</button>
+     <button class="scenario" data-scenario="evtol">eVTOL · pasajeros</button>
+     <button class="scenario" data-scenario="weather">Clima adverso</button>
+    </div>
+    <div class="control-grid">
+     <div class="control"><label for="fleet"><span>Vehículos disponibles</span><b id="fleetVal">8</b></label><input id="fleet" type="range" min="2" max="20" step="1" value="8"><div class="scale"><span>2</span><span>20</span></div></div>
+     <div class="control"><label for="demand"><span>Demanda de misiones por hora</span><b id="demandVal">12</b></label><input id="demand" type="range" min="2" max="30" step="1" value="12"><div class="scale"><span>2</span><span>30</span></div></div>
+     <div class="control"><label for="distance"><span>Distancia media (km, solo ida)</span><b id="distanceVal">8</b></label><input id="distance" type="range" min="2" max="30" step="1" value="8"><div class="scale"><span>2 km</span><span>30 km</span></div></div>
+     <div class="control"><label for="battery"><span>Batería nominal (kWh)</span><b id="batteryVal">3,0</b></label><input id="battery" type="range" min="1" max="80" step="0.5" value="3"><div class="scale"><span>1</span><span>80</span></div></div>
+     <div class="control"><label for="weather"><span>Índice de adversidad meteorológica</span><b id="weatherVal">0,15</b></label><input id="weather" type="range" min="0" max="1" step="0.01" value="0.15"><div class="scale"><span>Condiciones favorables</span><span>Adversas</span></div></div>
+     <div class="control"><label for="reserve"><span>Reserva mínima de batería</span><b id="reserveVal">25%</b></label><input id="reserve" type="range" min="10" max="45" step="1" value="25"><div class="scale"><span>10%</span><span>45%</span></div></div>
+     <div class="control"><label for="chargers"><span>Puestos de carga</span><b id="chargersVal">4</b></label><input id="chargers" type="range" min="1" max="12" step="1" value="4"><div class="scale"><span>1</span><span>12</span></div></div>
+     <div class="control"><label for="regulation"><span>Restricción operacional</span><b id="regulationVal">20%</b></label><input id="regulation" type="range" min="0" max="70" step="1" value="20"><div class="scale"><span>Menor</span><span>Mayor</span></div></div>
+    </div>
+    <div class="btnrow">
+     <button class="btn primary" id="airStart">▶ Iniciar turno</button><button class="btn" id="airPause">Ⅱ Pausar</button><button class="btn" id="airStep">＋ Avanzar 10 minutos</button><button class="btn" id="airReset">↻ Reiniciar</button><button class="btn gold" id="airExport">↓ Exportar CSV</button>
+    </div>
+    <div class="kpis">
+     <div class="kpi"><label>Misiones completadas</label><strong class="green" id="airDone">0</strong><em>servicios exitosos</em></div>
+     <div class="kpi"><label>Misiones pendientes</label><strong class="goldtxt" id="airQueue">0</strong><em>en espera</em></div>
+     <div class="kpi"><label>Energía consumida</label><strong class="cyan" id="airEnergy">0,0</strong><em>kWh</em></div>
+     <div class="kpi"><label>Incidentes simulados</label><strong class="red" id="airIncidents">0</strong><em>eventos aleatorios</em></div>
+    </div>
+    <div class="charts">
+     <div class="chartbox"><h3>Flota en tiempo real</h3><canvas id="fleetChart" width="760" height="260"></canvas><div class="legend"><span><i style="background:#58d5e8"></i>Vuelo</span><span><i style="background:#f3bd63"></i>Carga</span><span><i style="background:#52d6a0"></i>Disponible</span><span><i style="background:#ff737e"></i>Fuera de servicio</span></div></div>
+     <div class="chartbox"><h3>Mapa operacional esquemático</h3><canvas id="airMap" width="760" height="260"></canvas><div class="legend"><span><i style="background:#58d5e8"></i>Vehículo</span><span><i style="background:#52d6a0"></i>Base</span><span><i style="background:#f3bd63"></i>Destino</span></div></div>
+     <div class="chartbox chartwide"><h3>Producción acumulada y demanda pendiente</h3><canvas id="airHistory" width="1200" height="260"></canvas></div>
+    </div>
+   </section>
+   <section class="panel">
+    <h2>Cadena de valor: una aeronave no crea una industria por sí sola</h2><p class="hint">La operación depende de capacidades complementarias.</p>
+    <div class="flow">
+     <div><b>01 · PLATAFORMA</b>Motores, batería y sensores</div><div><b>02 · NAVEGACIÓN</b>BeiDou, mapas y enlaces</div><div><b>03 · OPERACIÓN</b>Rutas, flotas y mantenimiento</div><div><b>04 · ESPACIO AÉREO</b>Control, permisos y seguridad</div><div><b>05 · USUARIO</b>Demanda y costo por misión</div>
+    </div>
+   </section>
+  </main>
+  <aside class="side">
+   <section class="panel">
+    <h2>Estado de la operación</h2><p class="hint">Indicadores calculados en cada paso de 10 minutos.</p>
+    <div class="readout">
+     <div><small>Tiempo simulado</small><b id="airClock">08:00</b></div><div><small>Vehículos en vuelo</small><b id="airFlying">0</b></div>
+     <div><small>Vehículos cargando</small><b id="airCharging">0</b></div><div><small>Disponibilidad de flota</small><b id="airAvailability">100%</b></div>
+     <div><small>Tiempo medio de misión</small><b id="airDuration">—</b></div><div><small>Misiones bloqueadas</small><b id="airRejected">0</b></div>
+    </div>
+    <p class="hint" id="airInterpret" style="margin-top:12px">Iniciá el turno para observar la interacción entre demanda, capacidad y carga.</p>
+   </section>
+   <section class="panel">
+    <h2>Restricciones y seguridad</h2><p class="hint">Un servicio se habilita cuando cumple simultáneamente las condiciones del modelo.</p>
+    <div class="stage-list">
+     <div class="stage"><span>1</span><div><b>Autonomía</b><small>Energía suficiente para ida, vuelta y reserva.</small></div></div>
+     <div class="stage"><span>2</span><div><b>Infraestructura</b><small>Disponibilidad de puestos de carga y operación.</small></div></div>
+     <div class="stage"><span>3</span><div><b>Meteorología</b><small>El clima aumenta consumo y probabilidad de incidente.</small></div></div>
+     <div class="stage"><span>4</span><div><b>Regulación</b><small>Una fracción de misiones puede quedar bloqueada por restricciones.</small></div></div>
+    </div>
+   </section>
+   <section class="panel">
+    <h2>Referencia: EHang EH216-S</h2><p class="hint">Hito presentado en el PPT 4: distinguir certificación y operación.</p>
+    <div class="readout">
+     <div><small>2023</small><b>Certificado de tipo</b></div><div><small>2024</small><b>Certificado de producción</b></div><div><small>2025</small><b>Certificados de operador</b></div><div><small>Configuración</small><b>eVTOL · 2 plazas</b></div>
+    </div>
+    <p class="hint" style="margin-top:10px">Los certificados habilitan etapas diferentes; no implican por sí solos una red nacional de taxis aéreos irrestricta.</p>
+    <div class="refs"><a href="https://www.ehang.com/news/1198.html" target="_blank" rel="noopener">EHang · información de certificación</a><a href="https://ir.ehang.com/news-releases/news-release-details/ehangs-eh216-s-evtol-operators-obtain-air-operator-certificates/" target="_blank" rel="noopener">Certificados de operador</a></div>
+   </section>
+  </aside>
+ </div>
+</section>
+
+<!-- BEIDOU AND SPACE -->
+<section id="space" class="module hidden">
+ <div class="grid">
+  <main class="leftcol">
+   <section class="panel">
+    <div class="section-head"><div><h2>Laboratorio B · BeiDou: posicionamiento, navegación y tiempo</h2><p class="hint">Explorá cómo visibilidad satelital, obstrucciones y multitrayectoria condicionan un servicio PNT.</p></div><span class="status"><i class="dot ok"></i> Modelo conceptual</span></div>
+    <div class="note"><strong>Alcance:</strong> este es un modelo geométrico y estadístico simplificado. No reproduce la constelación, cobertura, señales ni prestaciones reales de BeiDou; los valores no deben interpretarse como especificaciones oficiales.</div>
+    <div class="control-grid">
+     <div class="control"><label for="satCount"><span>Satélites en el escenario</span><b id="satCountVal">10</b></label><input id="satCount" type="range" min="4" max="16" step="1" value="10"><div class="scale"><span>4</span><span>16</span></div></div>
+     <div class="control"><label for="obstruction"><span>Obstrucción del horizonte</span><b id="obstructionVal">20%</b></label><input id="obstruction" type="range" min="0" max="80" step="1" value="20"><div class="scale"><span>Cielo abierto</span><span>Urbano denso</span></div></div>
+     <div class="control"><label for="multipath"><span>Multitrayectoria / reflexión</span><b id="multipathVal">0,20</b></label><input id="multipath" type="range" min="0" max="1" step="0.01" value="0.2"><div class="scale"><span>Baja</span><span>Alta</span></div></div>
+     <div class="control"><label for="receiver"><span>Entorno del receptor</span><b id="receiverVal">Suburbano</b></label><input id="receiver" type="range" min="0" max="2" step="1" value="1"><div class="scale"><span>Abierto</span><span>Urbano denso</span></div></div>
+    </div>
+    <div class="btnrow"><button class="btn primary" id="pntRun">▶ Simular 24 horas</button><button class="btn" id="pntReset">↻ Restablecer</button><button class="btn gold" id="pntExport">↓ Exportar CSV</button></div>
+    <div class="kpis">
+     <div class="kpi"><label>Disponibilidad PNT</label><strong class="green" id="pntAvail">—</strong><em>muestras con ≥4 satélites</em></div>
+     <div class="kpi"><label>Error horizontal medio</label><strong class="cyan" id="pntError">—</strong><em>metros · modelo ilustrativo</em></div>
+     <div class="kpi"><label>Satélites visibles</label><strong class="goldtxt" id="pntVisible">—</strong><em>promedio por muestra</em></div>
+     <div class="kpi"><label>Desviación temporal</label><strong class="purple" id="pntTime">—</strong><em>nanosegundos · modelo</em></div>
+    </div>
+    <div class="charts">
+     <div class="chartbox"><h3>Geometría satelital esquemática</h3><canvas id="orbitChart" width="760" height="300"></canvas></div>
+     <div class="chartbox"><h3>Visibilidad de satélites durante 24 horas</h3><canvas id="visibilityChart" width="760" height="300"></canvas></div>
+     <div class="chartbox chartwide"><h3>Error horizontal estimado por muestra</h3><canvas id="errorChart" width="1200" height="260"></canvas></div>
+    </div>
+   </section>
+   <section class="panel">
+    <h2>De la órbita al servicio: cadena de valor espacial</h2><p class="hint">El valor económico no termina en el lanzamiento; depende de transformar datos en aplicaciones útiles.</p>
+    <div class="flow">
+     <div><b>01 · LANZAMIENTO</b>Cohetes y centros</div><div><b>02 · SATÉLITES</b>Fabricación y cargas útiles</div><div><b>03 · OPERACIÓN</b>Órbita y estaciones</div><div><b>04 · DATOS</b>Comunicación y observación</div><div><b>05 · SERVICIOS</b>Agro, clima y logística</div>
+    </div>
+    <div class="scenarios" id="spaceUses"><button class="scenario active" data-use="agro">Agricultura</button><button class="scenario" data-use="drone">Drones y eVTOL</button><button class="scenario" data-use="grid">Red eléctrica</button><button class="scenario" data-use="logistics">Logística</button></div>
+    <div class="readout"><div><small>Función PNT principal</small><b id="useFunction">Guiado de maquinaria y georreferencia</b></div><div><small>Valor de sistema</small><b id="useValue">Trazabilidad de labores</b></div></div>
+   </section>
+  </main>
+  <aside class="side">
+   <section class="panel">
+    <h2>Lectura del sistema PNT</h2><p class="hint">Positioning · Navigation · Timing</p>
+    <div class="stage-list">
+     <div class="stage"><span>1</span><div><b>Posicionamiento</b><small>Estimar dónde está un objeto.</small></div></div>
+     <div class="stage"><span>2</span><div><b>Navegación</b><small>Calcular cómo se desplaza y hacia dónde.</small></div></div>
+     <div class="stage"><span>3</span><div><b>Tiempo</b><small>Sincronizar redes, transacciones y sistemas críticos.</small></div></div>
+    </div>
+    <div class="formula">Disponibilidad = P(N<sub>visibles</sub> ≥ 4)</div>
+    <p class="hint">Cuatro satélites son una regla didáctica simplificada para resolver posición tridimensional y reloj; la calidad real depende de geometría, señal, receptor y entorno.</p>
+   </section>
+   <section class="panel">
+    <h2>Hitos espaciales del PPT 4</h2>
+    <div class="stage-list">
+     <div class="stage"><span>2025</span><div><b>Tianwen-2</b><small>Lanzamiento: 29 de mayo de 2025.</small></div></div>
+     <div class="stage"><span>2026</span><div><b>Asteroide 2016 HO3</b><small>Observación cercana y caracterización.</small></div></div>
+     <div class="stage"><span>Futuro</span><div><b>Retorno de muestras</b><small>Objetivo de la siguiente fase de la misión.</small></div></div>
+    </div>
+    <p class="hint" style="margin-top:10px">El retorno de muestras es un objetivo futuro, no un resultado ya alcanzado.</p>
+    <div class="refs"><a href="https://english.cas.cn/newsroom/cas_media/202505/t20250529_1044726.shtml" target="_blank" rel="noopener">CAS · lanzamiento de Tianwen-2</a><a href="https://www.ecns.cn/m/cns-wire/2026-07-06/detail-ihffyeqp1389885.shtml" target="_blank" rel="noopener">Actualización sobre la misión · julio de 2026</a><a href="https://english.www.gov.cn/news/202609/16/content_WS6aa9df1dc6d00ca5f9a0d396.html" target="_blank" rel="noopener">BeiDou · cooperación y aplicaciones internacionales</a></div>
+   </section>
+   <section class="panel">
+    <h2>Preguntas de análisis</h2>
+    <p class="hint">¿Por qué una constelación de satélites no genera valor económico automáticamente?</p>
+    <p class="hint">¿Qué infraestructura complementaria necesita un servicio PNT para drones, logística o redes eléctricas?</p>
+    <p class="hint">¿Qué diferencias existen entre disponibilidad, precisión e integridad?</p>
+   </section>
+  </aside>
+ </div>
+</section>
+
+<!-- ENERGY -->
+<section id="energy" class="module hidden">
+ <div class="grid">
+  <main class="leftcol">
+   <section class="panel">
+    <div class="section-head"><div><h2>Laboratorio C1 · Economía de la electrólisis</h2><p class="hint">Calculá producción diaria, costo energético y emisiones de hidrógeno a partir de electricidad.</p></div><span class="status"><i class="dot ok"></i> Balance simplificado</span></div>
+    <div class="note"><strong>Idea clave:</strong> el hidrógeno es un vector energético. La electrólisis convierte electricidad y agua en hidrógeno y oxígeno; su huella depende de la fuente eléctrica, el rendimiento y la utilización del equipo.</div>
+    <div class="scenarios" id="h2Scenarios"><button class="scenario active" data-h2="renewable">Electricidad renovable</button><button class="scenario" data-h2="mixed">Red eléctrica mixta</button><button class="scenario" data-h2="carbon">Electricidad intensiva en carbono</button></div>
+    <div class="control-grid">
+     <div class="control"><label for="power"><span>Potencia del electrolizador (MW)</span><b id="powerVal">20</b></label><input id="power" type="range" min="1" max="100" step="1" value="20"><div class="scale"><span>1 MW</span><span>100 MW</span></div></div>
+     <div class="control"><label for="utilization"><span>Factor de utilización</span><b id="utilVal">65%</b></label><input id="utilization" type="range" min="10" max="100" step="1" value="65"><div class="scale"><span>10%</span><span>100%</span></div></div>
+     <div class="control"><label for="efficiency"><span>Consumo eléctrico específico</span><b id="effVal">52</b></label><input id="efficiency" type="range" min="45" max="70" step="1" value="52"><div class="scale"><span>45 kWh/kg</span><span>70 kWh/kg</span></div></div>
+     <div class="control"><label for="price"><span>Precio eléctrico (USD/MWh)</span><b id="priceVal">45</b></label><input id="price" type="range" min="10" max="200" step="1" value="45"><div class="scale"><span>10</span><span>200</span></div></div>
+     <div class="control"><label for="carbon"><span>Intensidad de carbono (kg CO₂/kWh)</span><b id="carbonVal">0,08</b></label><input id="carbon" type="range" min="0" max="1.2" step="0.01" value="0.08"><div class="scale"><span>0</span><span>1,2</span></div></div>
+     <div class="control"><label for="om"><span>Otros costos (USD/kg H₂)</span><b id="omVal">1,10</b></label><input id="om" type="range" min="0" max="4" step="0.05" value="1.1"><div class="scale"><span>0</span><span>4</span></div></div>
+    </div>
+    <div class="kpis">
+     <div class="kpi"><label>Producción diaria</label><strong class="green" id="h2Production">—</strong><em>kg H₂ / día</em></div>
+     <div class="kpi"><label>Costo variable estimado</label><strong class="cyan" id="h2Cost">—</strong><em>USD / kg H₂</em></div>
+     <div class="kpi"><label>Emisiones estimadas</label><strong class="goldtxt" id="h2Emissions">—</strong><em>kg CO₂ / kg H₂</em></div>
+     <div class="kpi"><label>Agua de proceso</label><strong class="purple" id="h2Water">—</strong><em>litros / día · aprox.</em></div>
+    </div>
+    <div class="charts">
+     <div class="chartbox"><h3>Costo estimado según precio de electricidad</h3><canvas id="h2CostChart" width="760" height="270"></canvas></div>
+     <div class="chartbox"><h3>Emisiones según intensidad de carbono</h3><canvas id="h2CarbonChart" width="760" height="270"></canvas></div>
+    </div>
+   </section>
+   <section class="panel">
+    <div class="section-head"><div><h2>Laboratorio C2 · Fusión: el desafío del confinamiento</h2><p class="hint">Explorá el producto triple de Lawson como indicador físico conceptual.</p></div><span class="status"><i class="dot warn"></i> Investigación experimental</span></div>
+    <div class="note"><strong>Precisión científica:</strong> la duración de un pulso de plasma no es lo mismo que el tiempo de confinamiento energético. El récord de duración de EAST citado en el PPT no debe interpretarse como una medición de τ<sub>E</sub> ni como generación comercial de electricidad.</div>
+    <div class="control-grid">
+     <div class="control"><label for="temperature"><span>Temperatura del plasma (keV)</span><b id="tempVal">15</b></label><input id="temperature" type="range" min="3" max="30" step="0.5" value="15"><div class="scale"><span>3 keV</span><span>30 keV</span></div></div>
+     <div class="control"><label for="density"><span>Densidad (10²⁰ partículas/m³)</span><b id="densityVal">1,0</b></label><input id="density" type="range" min="0.2" max="3" step="0.05" value="1"><div class="scale"><span>0,2</span><span>3,0</span></div></div>
+     <div class="control"><label for="confinement"><span>Confinamiento energético τE (s)</span><b id="tauVal">2,0</b></label><input id="confinement" type="range" min="0.2" max="5" step="0.1" value="2"><div class="scale"><span>0,2 s</span><span>5 s</span></div></div>
+    </div>
+    <div class="kpis">
+     <div class="kpi"><label>Producto triple nTτ</label><strong class="cyan" id="triple">—</strong><em>10²⁰ keV·s/m³</em></div>
+     <div class="kpi"><label>Fracción de referencia</label><strong class="green" id="lawson">—</strong><em>umbral ilustrativo</em></div>
+     <div class="kpi"><label>Temperatura</label><strong class="goldtxt" id="tempOut">—</strong><em>keV</em></div>
+     <div class="kpi"><label>Tiempo energético</label><strong class="purple" id="tauOut">—</strong><em>segundos</em></div>
+    </div>
+    <div class="chartbox"><h3>Producto triple al variar el confinamiento energético</h3><canvas id="fusionChart" width="1200" height="260"></canvas></div>
+   </section>
+  </main>
+  <aside class="side">
+   <section class="panel">
+    <h2>Cómo interpretar el hidrógeno</h2><p class="hint">La producción física no determina por sí sola la competitividad.</p>
+    <div class="formula">kg H₂/día = (MW × 1.000 × 24 × utilización) / kWh por kg</div>
+    <div class="formula">Costo eléctrico = kWh/kg × USD/MWh / 1.000</div>
+    <p class="hint">El costo mostrado suma electricidad y otros costos variables ingresados por el usuario. No incluye CAPEX, financiamiento, compresión, almacenamiento, transporte, impuestos ni costos de conexión.</p>
+    <div class="note">La electrólisis no es automáticamente libre de emisiones: la electricidad de entrada define gran parte de su huella.</div>
+   </section>
+   <section class="panel">
+    <h2>Fusión: lectura física</h2><p class="hint">Producto triple simplificado: densidad × temperatura × tiempo de confinamiento energético.</p>
+    <div class="formula">nTτ<sub>E</sub> = n × T × τ<sub>E</sub></div>
+    <p class="hint">El indicador se compara con un valor de referencia didáctico del orden de 3 × 10²¹ keV·s·m⁻³ para una condición de referencia D-T. El criterio exacto depende del régimen, composición, impurezas y balance energético completo.</p>
+    <p class="hint">Superar el indicador no demuestra ignición, ganancia neta de ingeniería ni viabilidad de una central.</p>
+   </section>
+   <section class="panel">
+    <h2>Hitos de energía citados en el PPT 4</h2>
+    <div class="readout">
+     <div><small>EAST · enero 2025</small><b>1.066 s</b></div><div><small>Electrólisis global 2025</small><b>Más de 4 GW</b></div><div><small>Nuevas instalaciones</small><b>China ≈75%</b></div><div><small>Horizonte tecnológico</small><b>Distinto</b></div>
+    </div>
+    <p class="hint" style="margin-top:10px">Son datos de contexto presentados en el PPT: una marca experimental de plasma no equivale a electricidad comercial; capacidad instalada de electrólisis no equivale a producción efectiva.</p>
+    <div class="refs"><a href="https://english.cas.cn/newsroom/cas_media/202501/t20250121_899052.shtml" target="_blank" rel="noopener">CAS · EAST</a><a href="https://www.iea.org/reports/global-hydrogen-review-2026/executive-summary" target="_blank" rel="noopener">AIE · Global Hydrogen Review 2026</a></div>
+   </section>
+  </aside>
+ </div>
+</section>
+
+<footer><span>Laboratorio educativo · Escenarios y modelos simplificados · No representa una operación aérea real, prestaciones oficiales de BeiDou ni una instalación energética comercial.</span><span>Material elaborado por Sergio Gevatschnaider</span></footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+"use strict";
+const $=id=>document.getElementById(id),fmt=(x,d=1)=>Number(x).toLocaleString("es-AR",{minimumFractionDigits:d,maximumFractionDigits:d}),clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+function rng(seed){let s=seed>>>0;return ()=>{s=(1664525*s+1013904223)>>>0;return s/4294967296}}
+function gauss(r){let u=Math.max(1e-9,r()),v=r();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)}
+function toast(msg){const e=$("toast");e.textContent=msg;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),2300)}
+function downloadCSV(name,rows){const csv=rows.map(r=>r.map(v=>String(v??"").replaceAll('"','""')).map(v=>/[,"\n;]/.test(v)?`"${v}"`:v).join(";")).join("\n");const blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function canvas(id){const c=$(id),ctx=c.getContext("2d");ctx.clearRect(0,0,c.width,c.height);return {ctx,w:c.width,h:c.height}}
+function axes(ctx,w,h,xlab,ylab){const line=getComputedStyle(document.body).getPropertyValue("--line").trim(),muted=getComputedStyle(document.body).getPropertyValue("--muted").trim();ctx.strokeStyle=line;for(let i=0;i<5;i++){let y=20+i*(h-55)/4;ctx.beginPath();ctx.moveTo(43,y);ctx.lineTo(w-12,y);ctx.stroke()}ctx.fillStyle=muted;ctx.font="11px Arial";ctx.fillText(ylab,6,13);ctx.fillText(xlab,w-100,h-5)}
+function line(ctx,pts,color,width=2){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.stroke()}
+function setTab(name){document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));document.querySelectorAll(".module").forEach(s=>s.classList.toggle("hidden",s.id!==name));if(name==="space")renderPnt();if(name==="energy"){h2Calc();fusionCalc()}}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
+$("themeBtn").addEventListener("click",()=>{document.body.classList.toggle("light");$("themeBtn").textContent=document.body.classList.contains("light")?"☾ Modo oscuro":"☼ Modo claro";renderAir();renderPnt();h2Calc();fusionCalc()});
+
+/* A. LOW ALTITUDE ECONOMY */
+let air=null,airTimer=null;
+const airPresets={
+ city:{fleet:8,demand:12,distance:8,battery:3,weather:.15,reserve:25,chargers:4,regulation:20,kind:"drone"},
+ emergency:{fleet:10,demand:9,distance:12,battery:5,weather:.1,reserve:30,chargers:5,regulation:10,kind:"drone"},
+ evtol:{fleet:6,demand:8,distance:18,battery:60,weather:.12,reserve:30,chargers:4,regulation:35,kind:"evtol"},
+ weather:{fleet:8,demand:12,distance:8,battery:3,weather:.72,reserve:35,chargers:3,regulation:55,kind:"drone"}
+};
+function airParams(){return {fleet:+$("fleet").value,demand:+$("demand").value,distance:+$("distance").value,battery:+$("battery").value,weather:+$("weather").value,reserve:+$("reserve").value/100,chargers:+$("chargers").value,regulation:+$("regulation").value/100,kind:air?.kind||"drone"}}
+function setAirLabels(){const pairs=[["fleet","fleetVal"],["demand","demandVal"],["distance","distanceVal"],["battery","batteryVal"],["weather","weatherVal"],["chargers","chargersVal"],["regulation","regulationVal"]];pairs.forEach(([a,b])=>$(b).textContent=a==="battery"?fmt(+$ (a).value,1):a==="weather"?fmt(+$ (a).value,2):a==="regulation"?$(a).value+"%":$(a).value);$("reserveVal").textContent=$("reserve").value+"%"}
+function stopAir(){if(airTimer){clearInterval(airTimer);airTimer=null}}
+function initAir(){
+ stopAir();const p=airParams(),rand=rng(41027);
+ air={t:0,kind:p.kind,units:Array.from({length:p.fleet},(_,i)=>({id:i+1,soc:.78+rand()*.2,status:"idle",remaining:0,mission:null,charge:0})),queue:[],done:0,rejected:0,incidents:0,energy:0,generated:0,history:[],durationTotal:0,durationCount:0,rand,active:false,missionId:0};
+ air.history.push({t:0,done:0,queue:0,energy:0,incidents:0});
+ $("airStatus").textContent="En pausa";$("airDot").className="dot warn";renderAir()
+}
+function airTick(){
+ if(!air||air.t>=480)return;const p=airParams(),dt=10;air.t+=dt;
+ // Fractional arrival rate in missions per ten-minute interval, without truncation.
+ const expected=p.demand*dt/60;let arrivals=Math.floor(expected);if(air.rand()<expected-arrivals)arrivals++;
+ for(let j=0;j<arrivals;j++){
+  air.generated++;const dist=clamp(p.distance*(.65+air.rand()*.7),2,35),load=air.kind==="evtol"?1:0.2+air.rand()*.8;
+  air.queue.push({id:++air.missionId,distance:dist,load,created:air.t,blocked:air.rand()<p.regulation*.45});
+ }
+ // Advance missions and charging.
+ air.units.forEach(u=>{
+  if(u.status==="flight"){
+   u.remaining-=dt;
+   if(u.remaining<=0){
+    const m=u.mission;
+    if(air.rand()<m.risk){air.incidents++;u.status="maintenance";u.remaining=20+air.rand()*30}
+    else{air.done++;air.durationTotal+=air.t-m.created;air.durationCount++ ;u.status="idle"}
+    u.mission=null;
+   }
+  }else if(u.status==="charging"){
+   const chargeRate=air.kind==="evtol"?p.battery*.12:p.battery*.28;
+   u.soc=Math.min(1,u.soc+(chargeRate*dt/60)/Math.max(.1,p.battery));
+   if(u.soc>=.94)u.status="idle";
+  }else if(u.status==="maintenance"){
+   u.remaining-=dt;if(u.remaining<=0){u.status="idle";u.soc=clamp(u.soc,0,1)}
+  }
+ });
+ // Assign charge ports to idle units with low charge.
+ let charging=air.units.filter(u=>u.status==="charging").length;
+ air.units.filter(u=>u.status==="idle"&&u.soc<.62).sort((a,b)=>a.soc-b.soc).forEach(u=>{if(charging<p.chargers){u.status="charging";charging++}});
+ // Dispatch jobs to feasible idle vehicles. Strict conditions leave some jobs waiting.
+ const speed=air.kind==="evtol"?115:52,energyPerKm=air.kind==="evtol"?.52:.045,service=air.kind==="evtol"?8:5;
+ air.units.filter(u=>u.status==="idle").forEach(u=>{
+  if(!air.queue.length)return;
+  const idx=air.queue.findIndex(m=>!m.blocked);
+  if(idx<0)return;
+  const m=air.queue[idx],weatherFactor=1+p.weather*.75,payloadFactor=1+m.load*.28;
+  const kwh=2*m.distance*energyPerKm*weatherFactor*payloadFactor;
+  const required=kwh+p.reserve*p.battery;
+  if(u.soc*p.battery<required)return;
+  air.queue.splice(idx,1);u.soc=clamp(u.soc-kwh/p.battery,0,1);air.energy+=kwh;
+  const duration=(2*m.distance/speed*60)+service;
+  const risk=clamp(.004+p.weather*.075+p.regulation*.018,0,.18);
+  u.status="flight";u.remaining=duration;u.mission={...m,kwh,risk};
+ });
+ air.history.push({t:air.t,done:air.done,queue:air.queue.length,energy:air.energy,incidents:air.incidents});
+ if(air.t>=480){air.t=480;stopAir();air.active=false;$("airStatus").textContent="Turno finalizado";$("airDot").className="dot ok";toast("Turno de ocho horas finalizado. Podés exportar los resultados o reiniciar.");}
+ renderAir();
+}
+function renderAir(){
+ if(!air)return;setAirLabels();const p=airParams(),units=air.units,counts={flight:0,charging:0,idle:0,maintenance:0};units.forEach(u=>counts[u.status]++);
+ $("airDone").textContent=air.done;$("airQueue").textContent=air.queue.length;$("airEnergy").textContent=fmt(air.energy,1);$("airIncidents").textContent=air.incidents;
+ $("airClock").textContent=String(8+Math.floor(air.t/60)).padStart(2,"0")+":"+String(air.t%60).padStart(2,"0");
+ $("airFlying").textContent=counts.flight;$("airCharging").textContent=counts.charging;$("airAvailability").textContent=fmt((counts.idle+counts.flight+counts.charging)/units.length*100,0)+"%";
+ $("airDuration").textContent=air.durationCount?fmt(air.durationTotal/air.durationCount,0)+" min":"—";$("airRejected").textContent=air.queue.filter(m=>m.blocked).length;
+ const blocked=air.queue.filter(m=>m.blocked).length;
+ $("airInterpret").textContent=air.t===0?"Iniciá el turno para observar la interacción entre demanda, capacidad y carga.":`A las ${$("airClock").textContent}, hay ${air.queue.length} misiones pendientes (${blocked} restringidas por el escenario), ${counts.flight} vehículos en vuelo y ${counts.charging} cargando.`;
+ drawFleet();drawAirMap();drawAirHistory();
+}
+function drawFleet(){
+ const {ctx,w,h}=canvas("fleetChart");axes(ctx,w,h,"estado","vehículos");const c=[["flight","#58d5e8"],["charging","#f3bd63"],["idle","#52d6a0"],["maintenance","#ff737e"]];let max=air.units.length,base=h-35,top=28,barW=52,gap=28,start=65;
+ c.forEach(([k,col],i)=>{const n=air.units.filter(u=>u.status===k).length,x=start+i*(barW+gap),bh=n/max*(base-top);ctx.fillStyle=col;ctx.fillRect(x,base-bh,barW,bh);ctx.fillStyle=getComputedStyle(document.body).getPropertyValue("--text").trim();ctx.font="12px Arial";ctx.textAlign="center";ctx.fillText(n,x+barW/2,base-bh-7);ctx.fillStyle=getComputedStyle(document.body).getPropertyValue("--muted").trim();ctx.fillText(({flight:"Vuelo",charging:"Carga",idle:"Libre",maintenance:"Taller"})[k],x+barW/2,h-12)});ctx.textAlign="left";
+}
+function drawAirMap(){
+ const {ctx,w,h}=canvas("airMap"),muted=getComputedStyle(document.body).getPropertyValue("--muted").trim();ctx.strokeStyle=getComputedStyle(document.body).getPropertyValue("--line").trim();ctx.lineWidth=1;
+ for(let x=30;x<w;x+=48){ctx.beginPath();ctx.moveTo(x,20);ctx.lineTo(x,h-20);ctx.stroke()}for(let y=20;y<h;y+=40){ctx.beginPath();ctx.moveTo(20,y);ctx.lineTo(w-20,y);ctx.stroke()}
+ const bx=w*.5,by=h*.5;ctx.fillStyle="#52d6a0";ctx.beginPath();ctx.arc(bx,by,11,0,Math.PI*2);ctx.fill();ctx.fillStyle=muted;ctx.font="11px Arial";ctx.fillText("BASE",bx+15,by+4);
+ air.units.forEach((u,i)=>{const a=(i/air.units.length)*Math.PI*2,dx=bx+Math.cos(a)*175,dy=by+Math.sin(a)*85;if(u.status==="flight"){ctx.strokeStyle="#58d5e8";ctx.beginPath();ctx.moveTo(bx,by);ctx.lineTo(dx,dy);ctx.stroke();ctx.fillStyle="#58d5e8";ctx.beginPath();ctx.arc(dx,dy,5,0,Math.PI*2);ctx.fill()}else if(u.status==="charging"){ctx.fillStyle="#f3bd63";ctx.fillRect(bx-24+i*3,by+18,4,9)}else{ctx.fillStyle=u.status==="maintenance"?"#ff737e":"#52d6a0";ctx.beginPath();ctx.arc(dx,dy,3,0,Math.PI*2);ctx.fill()}});
+ air.queue.slice(0,12).forEach((m,i)=>{ctx.fillStyle=m.blocked?"#ff737e":"#f3bd63";ctx.beginPath();ctx.arc(35+(i%6)*25,30+Math.floor(i/6)*19,4,0,Math.PI*2);ctx.fill()});
+}
+function drawAirHistory(){
+ const {ctx,w,h}=canvas("airHistory");axes(ctx,w,h,"minutos de turno","misiones");const hist=air.history,base=h-34,top=24,max=Math.max(5,...hist.map(x=>x.done+x.queue));const pts=hist.map((x,i)=>[45+x.t/480*(w-60),base-x.done/max*(base-top)]),q=hist.map((x,i)=>[45+x.t/480*(w-60),base-(x.done+x.queue)/max*(base-top)]);line(ctx,pts,"#52d6a0",3);line(ctx,q,"#f3bd63",2);ctx.fillStyle="#52d6a0";ctx.fillText("Completadas",55,15);ctx.fillStyle="#f3bd63";ctx.fillText("Completadas + pendientes",160,15);
+}
+function startAir(){if(!air)initAir();if(air.t>=480)initAir();if(airTimer)return;air.active=true;$("airStatus").textContent="Simulación en curso";$("airDot").className="dot ok";airTimer=setInterval(airTick,450)}
+$("airStart").addEventListener("click",startAir);$("airPause").addEventListener("click",()=>{stopAir();if(air){air.active=false;$("airStatus").textContent="En pausa";$("airDot").className="dot warn"}});
+$("airStep").addEventListener("click",()=>{if(!air)initAir();stopAir();air.active=false;airTick();$("airStatus").textContent=air.t>=480?"Turno finalizado":"Avance manual"});
+$("airReset").addEventListener("click",()=>{initAir();toast("Turno reiniciado con los parámetros actuales.")});
+$("airExport").addEventListener("click",()=>{if(!air){toast("Iniciá primero la simulación.");return}downloadCSV("laboratorio_4_economia_baja_altitud.csv",[["minuto","misiones_completadas","misiones_pendientes","energia_kwh","incidentes"],...air.history.map(x=>[x.t,x.done,x.queue,x.energy,x.incidents??0])]);});
+["fleet","demand","distance","battery","weather","reserve","chargers","regulation"].forEach(id=>$(id).addEventListener("input",()=>{setAirLabels();initAir();toast("Parámetros cambiados: turno reiniciado para mantener unidades coherentes.")}));
+document.querySelectorAll("#airScenarios .scenario").forEach(b=>b.addEventListener("click",()=>{stopAir();document.querySelectorAll("#airScenarios .scenario").forEach(x=>x.classList.toggle("active",x===b));const p=airPresets[b.dataset.scenario];if(air)air.kind=p.kind;Object.entries(p).forEach(([k,v])=>{if(k!=="kind")$(k).value=v});initAir();air.kind=p.kind;renderAir();toast("Escenario cargado: "+b.textContent+".")}));
+
+/* B. BEIDOU / SPACE */
+let pntSamples=[],pntRand=rng(2906),spaceUse="agro";
+function pntConfig(){return {sats:+$("satCount").value,obs:+$("obstruction").value/100,multi:+$("multipath").value,receiver:+$("receiver").value}}
+function runPnt(){
+ const p=pntConfig(),rand=rng(20261115+p.sats*31+Math.round(p.obs*100)+Math.round(p.multi*100)),samples=[];
+ const env=[.05,.18,.38][p.receiver],obstruction=clamp(p.obs+env,0,.9);
+ for(let i=0;i<48;i++){
+  const visible=clamp(Math.round(p.sats*(1-obstruction)+gauss(rand)*1.25),0,p.sats);
+  const dop=visible>=4?2.0*(6/visible)*(1+obstruction*1.25):null;
+  const error=dop===null?null:2.4*dop*(1+p.multi*2.1)*(1+Math.abs(gauss(rand))*.12);
+  const time=visible>=4?8*(1+p.multi*.8)*(6/visible):null;
+  samples.push({hour:i*.5,visible,error,time,dop});
+ }
+ pntSamples=samples;renderPnt();toast("Se generaron 48 muestras para el día simulado.");
+}
+function renderPnt(){
+ const p=pntConfig();$("satCountVal").textContent=p.sats;$("obstructionVal").textContent=Math.round(p.obs*100)+"%";$("multipathVal").textContent=fmt(p.multi,2);$("receiverVal").textContent=["Abierto","Suburbano","Urbano denso"][p.receiver];
+ if(!pntSamples.length)runPnt(false);
+ const good=pntSamples.filter(x=>x.visible>=4),avg=good.length?good.reduce((s,x)=>s+x.error,0)/good.length:null,vis=pntSamples.reduce((s,x)=>s+x.visible,0)/pntSamples.length,t=good.length?good.reduce((s,x)=>s+x.time,0)/good.length:null;
+ $("pntAvail").textContent=fmt(good.length/pntSamples.length*100,1)+"%";$("pntError").textContent=avg===null?"Sin solución":fmt(avg,1)+" m";$("pntVisible").textContent=fmt(vis,1);$("pntTime").textContent=t===null?"—":fmt(t,1)+" ns";
+ drawOrbit();drawVisibility();drawError();
+}
+function drawOrbit(){
+ const {ctx,w,h}=canvas("orbitChart"),cx=w/2,cy=h/2+3,muted=getComputedStyle(document.body).getPropertyValue("--muted").trim();ctx.strokeStyle=getComputedStyle(document.body).getPropertyValue("--line").trim();ctx.lineWidth=1;[42,85,130,180].forEach(r=>{ctx.beginPath();ctx.ellipse(cx,cy,r,r*.48,0,0,Math.PI*2);ctx.stroke()});
+ ctx.fillStyle="#2e75aa";ctx.beginPath();ctx.arc(cx,cy,32,0,Math.PI*2);ctx.fill();ctx.fillStyle="#d8e9fa";ctx.font="11px Arial";ctx.textAlign="center";ctx.fillText("TIERRA",cx,cy+4);
+ const p=pntConfig();for(let i=0;i<p.sats;i++){const a=(i/p.sats)*Math.PI*2-.7,rx=90+(i%3)*33,ry=43+(i%3)*14,x=cx+Math.cos(a)*rx,y=cy+Math.sin(a)*ry;ctx.fillStyle="#58d5e8";ctx.beginPath();ctx.arc(x,y,5,0,Math.PI*2);ctx.fill();if(i%2===0){ctx.strokeStyle="rgba(88,213,232,.38)";ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(x,y);ctx.stroke()}}
+ ctx.fillStyle="#f3bd63";ctx.beginPath();ctx.arc(cx+5,cy-33,6,0,Math.PI*2);ctx.fill();ctx.fillStyle=muted;ctx.textAlign="left";ctx.fillText("Receptor",cx+16,cy-34);ctx.fillText("Constelación esquemática · no a escala",16,h-12);ctx.textAlign="left";
+}
+function drawVisibility(){
+ const {ctx,w,h}=canvas("visibilityChart");axes(ctx,w,h,"hora local simulada","satélites visibles");const base=h-35,top=24,max=pntConfig().sats,pts=pntSamples.map(s=>[45+s.hour/24*(w-60),base-s.visible/max*(base-top)]);line(ctx,pts,"#58d5e8",2.5);ctx.strokeStyle="#f3bd63";ctx.setLineDash([5,4]);const y=base-4/max*(base-top);ctx.beginPath();ctx.moveTo(45,y);ctx.lineTo(w-15,y);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle="#f3bd63";ctx.font="10px Arial";ctx.fillText("Umbral didáctico: 4 visibles",50,y-7);
+}
+function drawError(){
+ const {ctx,w,h}=canvas("errorChart");axes(ctx,w,h,"hora simulada","error horizontal (m)");const vals=pntSamples.filter(x=>x.error!==null),max=Math.max(10,...vals.map(x=>x.error)),base=h-34,top=24;ctx.beginPath();ctx.strokeStyle="#b59bff";ctx.lineWidth=2.5;let segment=false;for(const s of pntSamples){if(s.error===null){segment=false;continue}const x=45+s.hour/24*(w-60),y=base-s.error/max*(base-top);if(segment)ctx.lineTo(x,y);else ctx.moveTo(x,y);segment=true}ctx.stroke();ctx.fillStyle="#ff737e";pntSamples.filter(x=>x.error===null).forEach(s=>{const x=45+s.hour/24*(w-60);ctx.beginPath();ctx.arc(x,base-2,3,0,Math.PI*2);ctx.fill()});
+}
+function updateUse(use){spaceUse=use;const d={agro:["Guiado de maquinaria y georreferencia","Trazabilidad de labores"],drone:["Navegación y sincronización","Seguridad y coordinación de flotas"],grid:["Sincronización temporal de redes","Estabilidad y monitoreo"],logistics:["Seguimiento de activos y rutas","Trazabilidad de cargas"]}[use];$("useFunction").textContent=d[0];$("useValue").textContent=d[1];document.querySelectorAll("#spaceUses .scenario").forEach(b=>b.classList.toggle("active",b.dataset.use===use))}
+["satCount","obstruction","multipath","receiver"].forEach(id=>$(id).addEventListener("input",()=>runPnt()));
+$("pntRun").addEventListener("click",runPnt);$("pntReset").addEventListener("click",()=>{$("satCount").value=10;$("obstruction").value=20;$("multipath").value=.2;$("receiver").value=1;runPnt()});
+$("pntExport").addEventListener("click",()=>downloadCSV("laboratorio_4_beidou_pnt_escenario_sintetico.csv",[["hora","satelites_visibles","error_horizontal_m","desviacion_tiempo_ns","dop"],...pntSamples.map(s=>[s.hour,s.visible,s.error,s.time,s.dop])]));document.querySelectorAll("#spaceUses .scenario").forEach(b=>b.addEventListener("click",()=>updateUse(b.dataset.use)));
+
+/* C1. HYDROGEN */
+function h2Calc(){
+ const power=+$("power").value,util=+$("utilization").value/100,eff=+$("efficiency").value,price=+$("price").value,carbon=+$("carbon").value,om=+$("om").value;
+ const daily=power*1000*24*util/eff,cost=eff*price/1000+om,emissions=eff*carbon+.2,water=daily*10;
+ $("powerVal").textContent=power;$("utilVal").textContent=Math.round(util*100)+"%";$("effVal").textContent=eff;$("priceVal").textContent=price;$("carbonVal").textContent=fmt(carbon,2);$("omVal").textContent=fmt(om,2);
+ $("h2Production").textContent=fmt(daily,0);$("h2Cost").textContent=fmt(cost,2);$("h2Emissions").textContent=fmt(emissions,2);$("h2Water").textContent=fmt(water,0);
+ drawH2Cost();drawH2Carbon();
+}
+function drawH2Cost(){const {ctx,w,h}=canvas("h2CostChart");axes(ctx,w,h,"precio eléctrico (USD/MWh)","USD/kg");const eff=+$("efficiency").value,om=+$("om").value,base=h-35,top=24;const pts=[];for(let p=10;p<=200;p+=5)pts.push([45+(p-10)/190*(w-60),base-(eff*p/1000+om)/18*(base-top)]);line(ctx,pts,"#58d5e8",3);const current=+$("price").value,x=45+(current-10)/190*(w-60);ctx.strokeStyle="#f3bd63";ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(x,top);ctx.lineTo(x,base);ctx.stroke();ctx.setLineDash([])}
+function drawH2Carbon(){const {ctx,w,h}=canvas("h2CarbonChart");axes(ctx,w,h,"intensidad eléctrica (kg CO₂/kWh)","kg CO₂/kg H₂");const eff=+$("efficiency").value,base=h-35,top=24,pts=[];for(let c=0;c<=1.2;c+=.03)pts.push([45+c/1.2*(w-60),base-(eff*c+.2)/85*(base-top)]);line(ctx,pts,"#f3bd63",3);const current=+$("carbon").value,x=45+current/1.2*(w-60);ctx.strokeStyle="#58d5e8";ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(x,top);ctx.lineTo(x,base);ctx.stroke();ctx.setLineDash([])}
+["power","utilization","efficiency","price","carbon","om"].forEach(id=>$(id).addEventListener("input",h2Calc));
+document.querySelectorAll("#h2Scenarios .scenario").forEach(b=>b.addEventListener("click",()=>{const p={renewable:{price:35,carbon:.03,utilization:55},mixed:{price:65,carbon:.38,utilization:75},carbon:{price:45,carbon:.85,utilization:85}}[b.dataset.h2];Object.entries(p).forEach(([k,v])=>$(k).value=v);document.querySelectorAll("#h2Scenarios .scenario").forEach(x=>x.classList.toggle("active",x===b));h2Calc()}));
+
+/* C2. FUSION CONCEPT */
+function fusionCalc(){const T=+$("temperature").value,n=+$("density").value,tau=+$("confinement").value,product=n*T*tau,ref=30,ratio=product/ref;$("tempVal").textContent=fmt(T,1);$("densityVal").textContent=fmt(n,2);$("tauVal").textContent=fmt(tau,1);$("triple").textContent=fmt(product,1);$("lawson").textContent=fmt(ratio*100,1)+"%";$("tempOut").textContent=fmt(T,1);$("tauOut").textContent=fmt(tau,1);drawFusion()}
+function drawFusion(){const {ctx,w,h}=canvas("fusionChart");axes(ctx,w,h,"τE (s)","producto triple / 10²⁰");const T=+$("temperature").value,n=+$("density").value,base=h-35,top=24,pts=[];for(let t=.2;t<=5.001;t+=.1){const v=n*T*t;pts.push([45+(t-.2)/4.8*(w-60),base-v/450*(base-top)])}line(ctx,pts,"#b59bff",3);const current=+$("confinement").value,x=45+(current-.2)/4.8*(w-60),y=base-(n*T*current)/450*(base-top);ctx.fillStyle="#58d5e8";ctx.beginPath();ctx.arc(x,y,6,0,Math.PI*2);ctx.fill();const threshold=30;const ty=base-threshold/450*(base-top);ctx.strokeStyle="#f3bd63";ctx.setLineDash([5,4]);ctx.beginPath();ctx.moveTo(45,ty);ctx.lineTo(w-15,ty);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle="#f3bd63";ctx.font="10px Arial";ctx.fillText("Referencia ilustrativa (30)",50,ty-7)}
+["temperature","density","confinement"].forEach(id=>$(id).addEventListener("input",fusionCalc));
+
+/* INIT */
+function init(){initAir();runPnt();updateUse("agro");h2Calc();fusionCalc()}
+init();
+</script>
+</body>
+</html>

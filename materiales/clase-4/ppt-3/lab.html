@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laboratorio 3 · Neurotecnología, biotecnología e IA para la ciencia</title>
+<style>
+:root{
+ --bg:#07111f;--panel:#101e30;--panel2:#14263b;--line:#263b53;--text:#eef5fc;--muted:#9eb0c5;
+ --cyan:#58d5e8;--blue:#6ea5ff;--gold:#f3bd63;--green:#52d6a0;--red:#ff737e;--purple:#b59bff;
+ --shadow:0 16px 42px rgba(0,0,0,.24)
+}
+body.light{
+ --bg:#eef3f8;--panel:#fff;--panel2:#f5f8fc;--line:#d6e0ea;--text:#17283b;--muted:#5d7187;
+ --cyan:#087f99;--blue:#356ed0;--gold:#a96808;--green:#14835b;--red:#c43f50;--purple:#7351b6;
+ --shadow:0 12px 32px rgba(30,55,80,.09)
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1000px 520px at 80% -10%,rgba(30,91,125,.25),transparent 62%),var(--bg);color:var(--text);font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;transition:background .2s,color .2s}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.wrap{max-width:1480px;margin:auto;padding:26px 24px 48px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:22px;margin-bottom:18px}
+.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--cyan);font-weight:850}
+h1{font-size:clamp(27px,4vw,43px);line-height:1.05;margin:9px 0 10px;letter-spacing:-.04em}
+.subtitle{max-width:900px;color:var(--muted);font-size:15px}
+.author{white-space:nowrap;border:1px solid var(--line);background:var(--panel);padding:10px 13px;border-radius:12px;color:var(--muted);font-size:11px}
+.author b{color:var(--text);display:block;font-size:13px;margin-top:3px}
+.header-actions{display:flex;align-items:flex-start;gap:8px}
+.theme{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:10px 12px;border-radius:11px;font-weight:750;font-size:12px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+.tab{border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:12px 17px;border-radius:12px;font-size:13px;font-weight:850}
+.tab.active{color:#fff;border-color:#278ca6;background:linear-gradient(135deg,#12647c,#244f86);box-shadow:0 0 0 2px rgba(88,213,232,.12) inset}
+body.light .tab.active{color:white}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+.pill{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 11px;font-size:11px;color:var(--muted)}
+.pill strong{color:var(--cyan)}
+.panel{background:linear-gradient(160deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px}
+.panel h2{font-size:17px;margin:0 0 5px;letter-spacing:-.02em}
+.panel h3{font-size:13px;margin:0 0 8px}
+.hint{font-size:12px;color:var(--muted);margin:0 0 14px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.section-head small{color:var(--muted);font-size:11px}
+.grid{display:grid;grid-template-columns:1.45fr .8fr;gap:17px;align-items:start}
+.side{display:grid;gap:17px}
+.leftcol{display:grid;gap:17px}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:9px 13px;border-radius:10px;font-size:12px;font-weight:800}
+.btn.primary{background:linear-gradient(135deg,#087e99,#2563a8);border-color:#2ca9c5;color:white}
+.btn.gold{background:#4a3519;border-color:#90672e;color:#ffe0a5}
+.btn.ghost{background:transparent}
+.btn:disabled{opacity:.42;cursor:not-allowed}
+.scenarios{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 14px}
+.scenario{border:1px solid var(--line);background:var(--panel2);color:var(--muted);padding:8px 11px;border-radius:9px;font-size:11px;font-weight:800}
+.scenario.active{border-color:var(--cyan);color:var(--text);box-shadow:0 0 0 1px rgba(88,213,232,.13) inset}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:14px 0}
+.kpi{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:11px;min-width:0}
+.kpi label{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.kpi strong{font-size:clamp(19px,2.2vw,27px);display:block;letter-spacing:-.04em;white-space:nowrap}
+.kpi em{font-size:10px;color:var(--muted);font-style:normal}
+.cyan{color:var(--cyan)}.green{color:var(--green)}.goldtxt{color:var(--gold)}.red{color:var(--red)}.purple{color:var(--purple)}
+.control{display:grid;gap:5px;margin:12px 0}
+.control label{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted)}
+.control label b{color:var(--cyan);font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--cyan)}
+.scale{display:flex;justify-content:space-between;color:var(--muted);font-size:10px;opacity:.8}
+.control-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px}
+.chartbox{background:var(--bg);border:1px solid var(--line);border-radius:13px;padding:12px;min-width:0}
+.chartbox h3{font-size:12px;margin:0 0 7px}
+canvas{width:100%;height:210px;display:block}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.chart-tall canvas{height:245px}
+.status{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--gold);display:inline-block}
+.dot.ok{background:var(--green)}.dot.warn{background:var(--gold)}
+.readout{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.readout div{background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:10px}
+.readout small{display:block;color:var(--muted);font-size:10px}
+.readout b{font-size:17px}
+.note{border-left:3px solid var(--cyan);background:rgba(65,164,190,.08);padding:11px 13px;border-radius:0 10px 10px 0;color:var(--muted);font-size:12px}
+.note strong{color:var(--text)}
+.formula{font-family:Georgia,serif;color:var(--text);font-size:17px;text-align:center;padding:12px;background:var(--bg);border:1px solid var(--line);border-radius:10px;margin:9px 0}
+.matrix{display:grid;grid-template-columns:70px 1fr 1fr;gap:5px;text-align:center;font-size:11px}
+.matrix div{padding:10px 7px;border-radius:7px;background:var(--bg);border:1px solid var(--line)}
+.matrix .head{color:var(--muted);font-weight:800}
+.matrix .v{font-size:19px;font-weight:900}
+table{width:100%;border-collapse:collapse;font-size:11px}
+th,td{padding:8px 7px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--muted);font-weight:800}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:rgba(88,213,232,.07)}
+tbody tr.selected{background:rgba(88,213,232,.13);outline:1px solid var(--cyan)}
+.badge{display:inline-block;padding:3px 7px;border-radius:999px;background:rgba(82,214,160,.12);color:var(--green);font-size:10px;font-weight:800}
+.badge.warn{background:rgba(243,189,99,.12);color:var(--gold)}
+.badge.red{background:rgba(255,115,126,.12);color:var(--red)}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+.flow div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 7px;text-align:center;font-size:10px;color:var(--muted)}
+.flow b{display:block;color:var(--text);font-size:11px;margin-bottom:4px}
+.refs{display:grid;gap:9px}
+.refs a{color:var(--cyan);text-decoration:none;overflow-wrap:anywhere}
+.refs a:hover{text-decoration:underline}
+.hidden{display:none!important}
+footer{margin-top:22px;color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--panel);border:1px solid var(--cyan);color:var(--text);padding:12px 15px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.2s;pointer-events:none;z-index:9;font-size:12px}
+.toast.show{opacity:1;transform:translateY(0)}
+@media(max-width:1050px){.grid{grid-template-columns:1fr}.side{grid-template-columns:1fr 1fr}.side .wide{grid-column:span 2}}
+@media(max-width:700px){.wrap{padding:17px 12px 32px}header{display:block}.header-actions{margin-top:14px;justify-content:space-between}.grid{grid-template-columns:1fr}.side{grid-template-columns:1fr}.side .wide{grid-column:auto}.kpis{grid-template-columns:repeat(2,1fr)}.charts{grid-template-columns:1fr}.control-grid{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}.panel{padding:14px}}
+.course-nav{display:flex;flex-wrap:wrap;gap:18px;padding:16px 4%;background:#071923;color:#d8e9fa}.course-nav a{color:#8de7db;font:600 15px system-ui}html{scroll-behavior:smooth}*{box-sizing:border-box}canvas{max-width:100%}@media(max-width:600px){h1{overflow-wrap:anywhere}.course-nav{gap:12px}}:focus-visible{outline:3px solid #f3bd63;outline-offset:3px}</style>
+</head>
+<body><nav class="course-nav" aria-label="Navegación de la clase"><a href="../index.html">← Clase 4</a><a href="index.html">Presentación</a><a href="guide.html">Guía y modelo</a><a href="../videos.html#modulo-3">Videos</a></nav>
+<div class="wrap">
+<header>
+ <div>
+  <div class="eyebrow">China tecnológica · Clase 4 · Laboratorio interactivo 03</div>
+  <h1>Neurotecnología, biotecnología e IA para la ciencia</h1>
+  <div class="subtitle">Dos fronteras de convergencia: decodificar señales neuronales para controlar dispositivos y utilizar modelos de IA para explorar candidatos biológicos que deben validarse experimentalmente.</div>
+  <div class="pills">
+   <span class="pill"><strong>Módulo A:</strong> BCI y clasificación de señales sintéticas</span>
+   <span class="pill"><strong>Módulo B:</strong> AI for Science y aprendizaje activo</span>
+   <span class="pill"><strong>Enfoque:</strong> modelos didácticos reproducibles</span>
+  </div>
+ </div>
+ <div class="header-actions">
+  <div class="author">AUTORÍA<b>Material elaborado por Sergio Gevatschnaider</b></div>
+  <button class="theme" id="themeBtn">☼ Modo claro</button>
+ </div>
+</header>
+
+<nav class="tabs">
+ <button class="tab active" data-tab="bci">01 · Interfaz cerebro-computadora</button>
+ <button class="tab" data-tab="science">02 · AI for Science</button>
+</nav>
+
+<!-- BCI MODULE -->
+<section id="bci" class="module">
+ <div class="grid">
+  <main class="leftcol">
+   <section class="panel">
+    <div class="section-head">
+     <div><h2>Laboratorio A · Del patrón neuronal a la acción</h2><p class="hint">Clasificá dos clases de imaginación motora a partir de señales EEG completamente sintéticas.</p></div>
+     <span class="status"><i class="dot ok"></i> Datos sintéticos</span>
+    </div>
+    <div class="note"><strong>Qué representa:</strong> un flujo conceptual BCI: adquisición → extracción de características → clasificación → orden de control. No son registros clínicos, ni datos del implante NEO, ni una herramienta médica.</div>
+    <div class="scenarios" id="bciScenarios">
+     <button class="scenario active" data-noise="0.35" data-n="180">Señal limpia</button>
+     <button class="scenario" data-noise="0.85" data-n="180">Ruido moderado</button>
+     <button class="scenario" data-noise="1.45" data-n="180">Ruido elevado</button>
+     <button class="scenario" data-noise="0.65" data-n="70">Muestra pequeña</button>
+    </div>
+    <div class="control-grid">
+     <div class="control">
+      <label for="noise"><span>Ruido de adquisición</span><b id="noiseVal">0,35</b></label>
+      <input id="noise" type="range" min="0.1" max="1.8" step="0.05" value="0.35">
+      <div class="scale"><span>Señal limpia</span><span>Mucho ruido</span></div>
+     </div>
+     <div class="control">
+      <label for="samples"><span>Épocas sintéticas</span><b id="samplesVal">180</b></label>
+      <input id="samples" type="range" min="60" max="360" step="20" value="180">
+      <div class="scale"><span>60</span><span>360</span></div>
+     </div>
+     <div class="control">
+      <label for="threshold"><span>Umbral de decisión</span><b id="thresholdVal">0,50</b></label>
+      <input id="threshold" type="range" min="0.25" max="0.75" step="0.01" value="0.50">
+      <div class="scale"><span>Más sensible a clase derecha</span><span>Más conservador</span></div>
+     </div>
+     <div class="control">
+      <label for="seed"><span>Semilla reproducible</span><b id="seedVal">2026</b></label>
+      <input id="seed" type="range" min="1" max="9999" step="1" value="2026">
+      <div class="scale"><span>1</span><span>9999</span></div>
+     </div>
+    </div>
+    <div class="btnrow">
+     <button class="btn primary" id="trainBci">▶ Generar datos, entrenar y evaluar</button>
+     <button class="btn" id="newBci">↻ Nueva muestra</button>
+     <button class="btn gold" id="exportBci">↓ Exportar resultados CSV</button>
+    </div>
+    <div class="kpis">
+     <div class="kpi"><label>Exactitud</label><strong class="cyan" id="acc">—</strong><em>conjunto de prueba</em></div>
+     <div class="kpi"><label>Sensibilidad</label><strong class="green" id="sens">—</strong><em>clase derecha</em></div>
+     <div class="kpi"><label>Especificidad</label><strong class="goldtxt" id="spec">—</strong><em>clase izquierda</em></div>
+     <div class="kpi"><label>ROC - AUC</label><strong class="purple" id="auc">—</strong><em>discriminación</em></div>
+    </div>
+    <div class="charts">
+     <div class="chartbox"><h3>Señal EEG sintética · época seleccionada</h3><canvas id="eegChart" width="760" height="260"></canvas></div>
+     <div class="chartbox"><h3>Potencia por banda y canal</h3><canvas id="bandChart" width="760" height="260"></canvas></div>
+     <div class="chartbox"><h3>Curva ROC del clasificador</h3><canvas id="rocChart" width="760" height="260"></canvas></div>
+     <div class="chartbox"><h3>Matriz de confusión · conjunto de prueba</h3>
+      <div class="matrix" style="margin-top:24px">
+       <div class="head">Real / Pred.</div><div class="head">Izquierda</div><div class="head">Derecha</div>
+       <div class="head">Izquierda</div><div><span class="v green" id="tn">—</span><br>TN</div><div><span class="v red" id="fp">—</span><br>FP</div>
+       <div class="head">Derecha</div><div><span class="v red" id="fn">—</span><br>FN</div><div><span class="v green" id="tp">—</span><br>TP</div>
+      </div>
+      <p class="hint" style="margin-top:17px">Clase 0: imaginación de mano izquierda. Clase 1: imaginación de mano derecha. Los valores se calculan sobre datos reservados para prueba.</p>
+     </div>
+    </div>
+   </section>
+   <section class="panel">
+    <div class="section-head"><div><h2>La cadena de procesamiento</h2><p class="hint">Relación entre el modelo simulado y la arquitectura conceptual del PPT 3.</p></div></div>
+    <div class="flow">
+     <div><b>01 · SEÑAL</b>EEG sintético en C3 y C4</div>
+     <div><b>02 · ADQUISICIÓN</b>Muestreo y ruido</div>
+     <div><b>03 · FEATURES</b>Potencia mu y beta</div>
+     <div><b>04 · IA</b>Regresión logística</div>
+     <div><b>05 · CONTROL</b>Predicción de clase</div>
+    </div>
+    <p class="hint" style="margin:12px 0 0">La señal se resume mediante cuatro características: potencia mu (8–13 Hz) y beta (14–28 Hz) en dos canales simulados. El clasificador aprende a distinguir patrones estadísticos, no pensamientos libres.</p>
+   </section>
+  </main>
+  <aside class="side">
+   <section class="panel">
+    <h2>Resultado de una época</h2><p class="hint">Elegí una observación del conjunto de prueba para ver su clasificación.</p>
+    <div class="control">
+     <label for="epochSelect"><span>Época de prueba</span><b id="epochLabel">—</b></label>
+     <input id="epochSelect" type="range" min="0" max="20" step="1" value="0">
+    </div>
+    <div class="readout">
+     <div><small>Clase real</small><b id="trueClass">—</b></div>
+     <div><small>Predicción</small><b id="predClass">—</b></div>
+     <div><small>Probabilidad clase derecha</small><b id="probClass">—</b></div>
+     <div><small>Resultado</small><b id="correctClass">—</b></div>
+    </div>
+    <p class="hint" id="bciInterpret" style="margin-top:12px">Entrená el modelo para visualizar la interpretación.</p>
+   </section>
+   <section class="panel">
+    <h2>Modelo matemático</h2><p class="hint">Clasificación binaria con regresión logística.</p>
+    <div class="formula">P(y=1|x) = 1 / (1 + e<sup>−(β₀+β·x)</sup>)</div>
+    <p class="hint">Las características se estandarizan usando solo el conjunto de entrenamiento. El umbral transforma la probabilidad en una clase. La curva ROC evalúa varios umbrales.</p>
+    <div class="note">Una BCI real requiere protocolos, calibración individual, evaluación clínica y gestión de riesgos. Esta simulación solo ilustra una cadena de procesamiento.</div>
+   </section>
+   <section class="panel">
+    <h2>Contexto del PPT 3</h2><p class="hint">El caso NEO se presenta como aplicación clínica específica, no como lectura general del cerebro.</p>
+    <div class="readout">
+     <div><small>Implante NEO</small><b>8 electrodos</b></div>
+     <div><small>Uso descrito</small><b>Mano / guante</b></div>
+     <div><small>Hoja de ruta BCI</small><b>2027</b></div>
+     <div><small>Horizonte declarado</small><b>2030</b></div>
+    </div>
+    <p class="hint" style="margin-top:10px">La simulación no reproduce NEO ni atribuye métricas de precisión al dispositivo.</p>
+   </section>
+  </aside>
+ </div>
+</section>
+
+<!-- AI FOR SCIENCE MODULE -->
+<section id="science" class="module hidden">
+ <div class="grid">
+  <main class="leftcol">
+   <section class="panel">
+    <div class="section-head">
+     <div><h2>Laboratorio B · Diseño molecular y aprendizaje activo</h2><p class="hint">Simulá un ciclo de diseño, selección, ensayo y actualización de un modelo predictivo.</p></div>
+     <span class="status"><i class="dot ok"></i> Espacio biológico sintético</span>
+    </div>
+    <div class="note"><strong>Importante:</strong> los candidatos y sus resultados son completamente sintéticos. No se generan secuencias de proteínas, no se predice afinidad real y no se sustituye ningún ensayo biológico. El objetivo es estudiar estrategias de selección experimental.</div>
+    <div class="control-grid">
+     <div class="control">
+      <label for="budget"><span>Presupuesto de ensayos</span><b id="budgetVal">16</b></label>
+      <input id="budget" type="range" min="6" max="24" step="1" value="16">
+      <div class="scale"><span>6 ensayos</span><span>24 ensayos</span></div>
+     </div>
+     <div class="control">
+      <label for="beta"><span>Exploración UCB (β)</span><b id="betaVal">1,00</b></label>
+      <input id="beta" type="range" min="0" max="2.5" step="0.05" value="1">
+      <div class="scale"><span>Explotación</span><span>Exploración</span></div>
+     </div>
+     <div class="control">
+      <label for="toxWeight"><span>Penalización de riesgo</span><b id="toxVal">0,30</b></label>
+      <input id="toxWeight" type="range" min="0" max="1" step="0.05" value="0.3">
+      <div class="scale"><span>Sin penalización</span><span>Alta penalización</span></div>
+     </div>
+     <div class="control">
+      <label for="assayNoise"><span>Ruido del ensayo</span><b id="assayVal">0,04</b></label>
+      <input id="assayNoise" type="range" min="0" max="0.15" step="0.005" value="0.04">
+      <div class="scale"><span>Ensayo preciso</span><span>Ensayo ruidoso</span></div>
+     </div>
+    </div>
+    <div class="scenarios" id="scienceStrategies">
+     <button class="scenario active" data-strategy="ucb">Aprendizaje activo · UCB</button>
+     <button class="scenario" data-strategy="random">Selección aleatoria</button>
+    </div>
+    <div class="btnrow">
+     <button class="btn primary" id="newCampaign">↻ Nueva campaña</button>
+     <button class="btn" id="nextAssay">＋ Realizar siguiente ensayo</button>
+     <button class="btn gold" id="compareStrategies">⇄ Comparar estrategias</button>
+     <button class="btn" id="exportScience">↓ Exportar CSV</button>
+    </div>
+    <div class="kpis">
+     <div class="kpi"><label>Ensayos realizados</label><strong class="cyan" id="nAssays">4</strong><em id="budgetRemain">incluye 4 iniciales</em></div>
+     <div class="kpi"><label>Mejor actividad observada</label><strong class="green" id="bestActivity">—</strong><em>índice sintético 0–1</em></div>
+     <div class="kpi"><label>Riesgo del mejor candidato</label><strong class="goldtxt" id="bestRisk">—</strong><em>índice sintético 0–1</em></div>
+     <div class="kpi"><label>Incertidumbre media</label><strong class="purple" id="uncertainty">—</strong><em>desviación estándar GP</em></div>
+    </div>
+    <div class="charts">
+     <div class="chartbox"><h3>Predicción e incertidumbre de candidatos</h3><canvas id="candidateChart" width="760" height="260"></canvas></div>
+     <div class="chartbox"><h3>Actividad observada por ensayo</h3><canvas id="historyChart" width="760" height="260"></canvas></div>
+     <div class="chartbox" style="grid-column:1/-1"><h3>Comparación de estrategias · mejor actividad observada promedio</h3><canvas id="compareChart" width="1200" height="270"></canvas></div>
+    </div>
+   </section>
+   <section class="panel">
+    <div class="section-head"><div><h2>Ranking de candidatos</h2><p class="hint">Seleccioná una fila para inspeccionar sus descriptores y decidir si querés ensayarla.</p></div><span class="pill" id="rankMode">Estrategia: UCB</span></div>
+    <div style="overflow-x:auto">
+     <table>
+      <thead><tr><th>Candidato</th><th>Estructura</th><th>Estabilidad</th><th>Solubilidad</th><th>Manufactura</th><th>Riesgo</th><th>Predicción</th><th>Incertidumbre</th><th>UCB ajustado</th><th>Estado</th></tr></thead>
+      <tbody id="candidateRows"></tbody>
+     </table>
+    </div>
+    <div class="readout" style="margin-top:12px">
+     <div><small>Candidato seleccionado</small><b id="selectedId">—</b></div>
+     <div><small>Actividad predicha</small><b id="selectedPred">—</b></div>
+     <div><small>Incertidumbre estimada</small><b id="selectedSd">—</b></div>
+     <div><small>Utilidad ajustada</small><b id="selectedUcb">—</b></div>
+    </div>
+   </section>
+  </main>
+  <aside class="side">
+   <section class="panel">
+    <h2>El ciclo AI for Science</h2><p class="hint">Una IA amplía el espacio de búsqueda; el experimento produce evidencia.</p>
+    <div class="flow" style="grid-template-columns:repeat(2,1fr)">
+     <div><b>01 · PREGUNTA</b>Función deseada</div>
+     <div><b>02 · MODELO</b>Diseño y predicción</div>
+     <div><b>03 · SELECCIÓN</b>Candidatos prioritarios</div>
+     <div><b>04 · ENSAYO</b>Medición experimental</div>
+     <div style="grid-column:1/-1"><b>05 · ITERACIÓN</b>Actualizar modelo y volver a decidir</div>
+    </div>
+    <p class="hint" style="margin-top:12px">Este laboratorio modela la etapa de selección y experimentación, no el plegamiento de proteínas ni la interacción molecular real.</p>
+   </section>
+   <section class="panel">
+    <h2>Modelo matemático</h2><p class="hint">Proceso gaussiano + adquisición UCB.</p>
+    <div class="formula">UCB(x) = μ(x) + βσ(x) − λR(x)</div>
+    <p class="hint"><strong>μ(x):</strong> actividad estimada por el modelo.</p>
+    <p class="hint"><strong>σ(x):</strong> incertidumbre predictiva.</p>
+    <p class="hint"><strong>β:</strong> balance entre explorar y explotar.</p>
+    <p class="hint"><strong>R(x):</strong> riesgo sintético; λ controla su penalización.</p>
+    <div class="note">El proceso gaussiano usa un kernel RBF sobre descriptores normalizados. La actividad verdadera permanece oculta hasta realizar el ensayo simulado.</div>
+   </section>
+   <section class="panel">
+    <h2>Casos científicos del PPT 3</h2><p class="hint">La simulación se inspira en el ciclo metodológico, no replica estas plataformas.</p>
+    <div class="refs">
+     <div><strong>AiCE · CAS / 2025</strong><br><span class="hint">Ingeniería proteica con restricciones estructurales y evolutivas.</span><br><a href="https://english.cas.cn/newsroom/headlines/202512/t20251225_1142319.shtml" target="_blank" rel="noopener">Fuente de la Academia China de Ciencias</a></div>
+     <div><strong>Void-X · CAS / 2026</strong><br><span class="hint">Diseño generativo de interfaces proteína–proteína.</span><br><a href="https://english.cas.cn/newsroom/research-news/202606/t20260611_1161564.shtml" target="_blank" rel="noopener">Fuente de la Academia China de Ciencias</a></div>
+     <div><strong>ScienceOne 100 · CAS / 2026</strong><br><span class="hint">Sistema de modelos y agentes de apoyo a investigación multidisciplinaria.</span><br><a href="https://english.cas.cn/newsroom/cas-in-media/202604/t20260429_1158251.shtml" target="_blank" rel="noopener">Fuente de la Academia China de Ciencias</a></div>
+     <div><strong>BCI · Directrices oficiales / 2025</strong><br><a href="https://www.miit.gov.cn/jgsj/kjs/wjfb/art/2025/art_438e059801414869abc50abdb06eeac6.html" target="_blank" rel="noopener">Ministerio de Industria y Tecnología de la Información</a></div>
+     <div><strong>NEO · evidencia clínica y regulatoria</strong><br><a href="https://www.nature.com/articles/s41587-026-03101-8" target="_blank" rel="noopener">Nature Biotechnology</a></div>
+    </div>
+   </section>
+   <section class="panel">
+    <h2>Lectura crítica</h2><p class="hint">No confundir estos niveles de evidencia.</p>
+    <div class="readout">
+     <div><small>Predicción computacional</small><b>Hipótesis</b></div>
+     <div><small>Ensayo sintético</small><b>Demostración didáctica</b></div>
+     <div><small>Validación biológica</small><b>Experimento real</b></div>
+     <div><small>Uso clínico / industrial</small><b>Evaluación y escala</b></div>
+    </div>
+   </section>
+  </aside>
+ </div>
+</section>
+
+<footer>
+ <span>Laboratorio educativo · Señales y candidatos sintéticos · No es un sistema clínico ni una herramienta de diseño biológico real.</span>
+ <span>Material elaborado por Sergio Gevatschnaider</span>
+</footer>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const fmt=(x,d=2)=>Number(x).toLocaleString("es-AR",{minimumFractionDigits:d,maximumFractionDigits:d});
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+function rng(seed){let s=seed>>>0;return ()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296}}
+function gaussian(rand){let u=Math.max(1e-12,rand()),v=rand();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)}
+function toast(msg){let e=$("toast");e.textContent=msg;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),2300)}
+function canvas(id){const c=$(id),ctx=c.getContext("2d");ctx.clearRect(0,0,c.width,c.height);return {c,ctx,w:c.width,h:c.height}}
+function chartAxes(ctx,w,h,xLabel="",yLabel=""){
+ ctx.strokeStyle=getComputedStyle(document.body).getPropertyValue("--line").trim();ctx.lineWidth=1;
+ for(let i=0;i<5;i++){let y=18+i*(h-48)/4;ctx.beginPath();ctx.moveTo(42,y);ctx.lineTo(w-12,y);ctx.stroke()}
+ ctx.fillStyle=getComputedStyle(document.body).getPropertyValue("--muted").trim();ctx.font="11px Arial";ctx.fillText(yLabel,7,13);ctx.fillText(xLabel,w-100,h-5)
+}
+function drawLine(ctx,pts,color,width=2){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();pts.forEach((p,i)=>{if(i===0)ctx.moveTo(p[0],p[1]);else ctx.lineTo(p[0],p[1])});ctx.stroke()}
+function setTab(name){
+ document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
+ document.querySelectorAll(".module").forEach(s=>s.classList.toggle("hidden",s.id!==name));
+ if(name==="science")renderScience();
+}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
+$("themeBtn").addEventListener("click",()=>{document.body.classList.toggle("light");$("themeBtn").textContent=document.body.classList.contains("light")?"☾ Modo oscuro":"☼ Modo claro";if(bciResult)renderBci();if(science)renderScience()});
+
+/* ---------------- BCI: synthetic EEG + logistic regression ---------------- */
+let bciResult=null, selectedEpoch=0;
+function bandPower(sig,lo,hi,fs){
+ const N=sig.length;let power=0,count=0;
+ for(let k=Math.ceil(lo*N/fs);k<=Math.floor(hi*N/fs);k++){
+  let re=0,im=0;for(let n=0;n<N;n++){let a=2*Math.PI*k*n/N;re+=sig[n]*Math.cos(a);im-=sig[n]*Math.sin(a)}
+  power+=(re*re+im*im)/(N*N);count++;
+ }
+ return Math.log(1e-7+power/Math.max(1,count));
+}
+function makeEpoch(label,noise,rand,id){
+ const fs=128,N=256,signals=[[],[]],phases=[rand()*6.28,rand()*6.28,rand()*6.28,rand()*6.28];
+ const contra=label===0?1:0; // left imagined hand -> right channel; right imagined hand -> left channel
+ const gains=[.72+.56*rand(),.72+.56*rand()]; // variabilidad entre canales y épocas
+ for(let n=0;n<N;n++){
+  const t=n/fs;
+  for(let ch=0;ch<2;ch++){
+   const desync=ch===contra?.76:1.0;
+   const mu=(.92*gains[ch]*desync)*Math.sin(2*Math.PI*10*t+phases[ch]);
+   const beta=(.50*gains[ch]*(.58+.42*desync))*Math.sin(2*Math.PI*20*t+phases[ch+2]);
+   const harmonic=.12*Math.sin(2*Math.PI*6*t+phases[ch]*.7);
+   const mains=.08*Math.sin(2*Math.PI*50*t+phases[ch]*1.3);
+   signals[ch].push(mu+beta+harmonic+mains+noise*gaussian(rand));
+  }
+ }
+ const f=[bandPower(signals[0],8,13,fs),bandPower(signals[0],14,28,fs),bandPower(signals[1],8,13,fs),bandPower(signals[1],14,28,fs)];
+ return {id,label,signals,features:f,fs};
+}
+function sigmoid(z){if(z>30)return 1;if(z< -30)return 0;return 1/(1+Math.exp(-z))}
+function trainLogistic(train){
+ const d=train[0].features.length,means=Array(d).fill(0),stds=Array(d).fill(0);
+ train.forEach(r=>r.features.forEach((v,j)=>means[j]+=v/train.length));
+ train.forEach(r=>r.features.forEach((v,j)=>stds[j]+=(v-means[j])**2/train.length));
+ for(let j=0;j<d;j++)stds[j]=Math.sqrt(stds[j])||1;
+ const X=train.map(r=>r.features.map((v,j)=>(v-means[j])/stds[j]));
+ const y=train.map(r=>r.label),w=Array(d+1).fill(0);
+ const lr=.11,reg=.015;
+ for(let epoch=0;epoch<950;epoch++){
+  const grad=Array(d+1).fill(0);
+  for(let i=0;i<X.length;i++){
+   const z=w[0]+X[i].reduce((s,v,j)=>s+v*w[j+1],0),err=sigmoid(z)-y[i];
+   grad[0]+=err;for(let j=0;j<d;j++)grad[j+1]+=err*X[i][j];
+  }
+  w[0]-=lr*grad[0]/X.length;
+  for(let j=0;j<d;j++)w[j+1]-=lr*(grad[j+1]/X.length+reg*w[j+1]);
+ }
+ return {w,means,stds,predict:r=>sigmoid(w[0]+r.features.reduce((s,v,j)=>s+((v-means[j])/(stds[j]||1))*w[j+1],0))};
+}
+function rocAuc(rows){
+ const sorted=[...rows].sort((a,b)=>b.prob-a.prob);let pos=rows.filter(r=>r.label===1).length,neg=rows.length-pos;
+ if(!pos||!neg)return {auc:0,pts:[[0,0],[1,1]]};
+ let tp=0,fp=0,pts=[[0,0]];
+ for(let i=0;i<sorted.length;){let j=i;while(j<sorted.length&&sorted[j].prob===sorted[i].prob){if(sorted[j].label)tp++;else fp++;j++}pts.push([fp/neg,tp/pos]);i=j}
+ let auc=0;for(let i=1;i<pts.length;i++)auc+=(pts[i][0]-pts[i-1][0])*(pts[i][1]+pts[i-1][1])/2;
+ return {auc,pts};
+}
+function trainBci(){
+ const noise=+$("noise").value,n=+$("samples").value,seed=+$("seed").value,rand=rng(seed);
+ const rows=[];for(let i=0;i<n;i++)rows.push(makeEpoch(i%2,noise,rand,i+1));
+ // deterministic shuffle, then stratified split
+ const by=[rows.filter(r=>r.label===0),rows.filter(r=>r.label===1)];
+ by.forEach(a=>{for(let i=a.length-1;i>0;i--){let j=Math.floor(rand()*(i+1));[a[i],a[j]]=[a[j],a[i]]}});
+ const train=[],test=[];by.forEach(a=>{const cut=Math.max(1,Math.floor(a.length*.72));train.push(...a.slice(0,cut));test.push(...a.slice(cut))});
+ const model=trainLogistic(train);
+ test.forEach(r=>r.prob=model.predict(r));
+ const threshold=+$("threshold").value;
+ test.forEach(r=>r.pred=r.prob>=threshold?1:0);
+ const tn=test.filter(r=>r.label===0&&r.pred===0).length,fp=test.filter(r=>r.label===0&&r.pred===1).length;
+ const fn=test.filter(r=>r.label===1&&r.pred===0).length,tp=test.filter(r=>r.label===1&&r.pred===1).length;
+ const auc=rocAuc(test);
+ bciResult={noise,n,seed,train,test,model,metrics:{tn,fp,fn,tp,acc:(tn+tp)/test.length,sens:tp/(tp+fn||1),spec:tn/(tn+fp||1),auc:auc.auc,roc:auc.pts},threshold};
+ selectedEpoch=0;
+ $("epochSelect").max=Math.max(0,test.length-1);$("epochSelect").value=0;
+ renderBci();toast("Clasificador entrenado y evaluado sobre datos de prueba.");
+}
+function renderBci(){
+ if(!bciResult)return;
+ const m=bciResult.metrics;
+ $("acc").textContent=fmt(m.acc*100,1)+"%";$("sens").textContent=fmt(m.sens*100,1)+"%";$("spec").textContent=fmt(m.spec*100,1)+"%";$("auc").textContent=fmt(m.auc,3);
+ ["tn","fp","fn","tp"].forEach(k=>$(k).textContent=m[k]);
+ $("noiseVal").textContent=fmt(+$("noise").value,2);$("samplesVal").textContent=$("samples").value;$("thresholdVal").textContent=fmt(+$("threshold").value,2);$("seedVal").textContent=$("seed").value;
+ drawEEG();drawBands();drawROC();renderEpoch();
+}
+function drawEEG(){
+ const {ctx,w,h}=canvas("eegChart");chartAxes(ctx,w,h,"tiempo (s)","amplitud");
+ const r=bciResult.test[selectedEpoch];if(!r)return;
+ const colors=["#58d5e8","#f3bd63"],offsets=[h*.37,h*.72],N=r.signals[0].length;
+ r.signals.forEach((sig,ch)=>{
+  const pts=sig.map((v,i)=>[42+i/(N-1)*(w-58),offsets[ch]-v*27]);
+  drawLine(ctx,pts,colors[ch],1.5);
+ });
+ ctx.fillStyle=colors[0];ctx.font="12px Arial";ctx.fillText("C3 · hemisferio izquierdo",50,28);
+ ctx.fillStyle=colors[1];ctx.fillText("C4 · hemisferio derecho",50,h*.57);
+}
+function drawBands(){
+ const {ctx,w,h}=canvas("bandChart");chartAxes(ctx,w,h,"banda y canal","log-potencia");
+ const r=bciResult.test[selectedEpoch];if(!r)return;
+ const vals=r.features.map(v=>v),labels=["C3 μ","C3 β","C4 μ","C4 β"],min=Math.min(...vals)-.5,max=Math.max(...vals)+.5;
+ const base=h-35,top=30,barW=74,gap=42,start=65;
+ vals.forEach((v,i)=>{
+  const bh=(v-min)/(max-min)*(base-top),x=start+i*(barW+gap);
+  ctx.fillStyle=i<2?"#58d5e8":"#b59bff";ctx.fillRect(x,base-bh,barW,bh);
+  ctx.fillStyle=getComputedStyle(document.body).getPropertyValue("--text").trim();ctx.font="11px Arial";ctx.textAlign="center";ctx.fillText(labels[i],x+barW/2,h-13);ctx.fillText(fmt(v,2),x+barW/2,base-bh-7);
+ });
+ ctx.textAlign="left";
+}
+function drawROC(){
+ const {ctx,w,h}=canvas("rocChart");chartAxes(ctx,w,h,"FPR","TPR");
+ const left=45,top=22,ww=w-65,hh=h-55;
+ ctx.strokeStyle=getComputedStyle(document.body).getPropertyValue("--muted").trim();ctx.setLineDash([5,5]);ctx.beginPath();ctx.moveTo(left,top+hh);ctx.lineTo(left+ww,top);ctx.stroke();ctx.setLineDash([]);
+ const pts=bciResult.metrics.roc.map(p=>[left+p[0]*ww,top+hh-p[1]*hh]);drawLine(ctx,pts,"#b59bff",3);
+ ctx.fillStyle=getComputedStyle(document.body).getPropertyValue("--text").trim();ctx.font="12px Arial";ctx.fillText("AUC = "+fmt(bciResult.metrics.auc,3),w-130,20);
+}
+function renderEpoch(){
+ const r=bciResult.test[selectedEpoch];if(!r)return;
+ $("epochLabel").textContent=(selectedEpoch+1)+" / "+bciResult.test.length;
+ $("trueClass").textContent=r.label===0?"Izquierda":"Derecha";$("predClass").textContent=r.pred===0?"Izquierda":"Derecha";
+ $("probClass").textContent=fmt(r.prob*100,1)+"%";$("correctClass").textContent=r.pred===r.label?"Correcta":"Error";
+ $("correctClass").style.color=r.pred===r.label?"var(--green)":"var(--red)";
+ $("bciInterpret").textContent=`La probabilidad estimada para la clase derecha es ${fmt(r.prob*100,1)}%. Con umbral ${fmt(bciResult.threshold,2)}, el sistema asigna la clase ${r.pred===0?"izquierda":"derecha"}.`;
+ drawEEG();drawBands();
+}
+$("trainBci").addEventListener("click",trainBci);
+$("newBci").addEventListener("click",()=>{$("seed").value=(+$("seed").value+137)%9999||1;trainBci()});
+$("epochSelect").addEventListener("input",()=>{if(!bciResult)return;selectedEpoch=+$("epochSelect").value;renderEpoch()});
+$("threshold").addEventListener("input",()=>{if(!bciResult)return;const t=+$("threshold").value;bciResult.threshold=t;bciResult.test.forEach(r=>r.pred=r.prob>=t?1:0);const rows=bciResult.test;const tn=rows.filter(r=>r.label===0&&r.pred===0).length,fp=rows.filter(r=>r.label===0&&r.pred===1).length,fn=rows.filter(r=>r.label===1&&r.pred===0).length,tp=rows.filter(r=>r.label===1&&r.pred===1).length;bciResult.metrics={...bciResult.metrics,tn,fp,fn,tp,acc:(tn+tp)/rows.length,sens:tp/(tp+fn||1),spec:tn/(tn+fp||1)};renderBci()});
+["noise","samples","seed"].forEach(id=>$(id).addEventListener("input",()=>{if(id==="noise")$("noiseVal").textContent=fmt(+$("noise").value,2);if(id==="samples")$("samplesVal").textContent=$("samples").value;if(id==="seed")$("seedVal").textContent=$("seed").value}));
+document.querySelectorAll("#bciScenarios .scenario").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("#bciScenarios .scenario").forEach(x=>x.classList.remove("active"));b.classList.add("active");$("noise").value=b.dataset.noise;$("samples").value=b.dataset.n;trainBci()}));
+$("exportBci").addEventListener("click",()=>{
+ if(!bciResult){toast("Primero entrená el clasificador.");return}
+ const rows=[["id","clase_real","probabilidad_derecha","clase_predicha","correcta"],...bciResult.test.map(r=>[r.id,r.label,r.prob,r.pred,r.pred===r.label?1:0])];
+ downloadCSV("laboratorio_BCI_resultados_sinteticos.csv",rows);
+});
+function downloadCSV(name,rows){const csv=rows.map(r=>r.map(v=>String(v??"").replaceAll('"','""')).map(v=>/[,"\n;]/.test(v)?`"${v}"`:v).join(";")).join("\n");const blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+
+/* ---------------- AI for Science: synthetic design space + Gaussian process ---------------- */
+let science=null,selectedCandidate=null,comparison=null,scienceCampaignNumber=0;
+function candidateTrue(c){
+ const interaction=Math.exp(-((c.structure-c.stability)**2)/.07);
+ const raw=.25*c.structure+.25*c.stability+.19*c.solubility+.17*c.manufacture+.14*interaction-.20*c.risk+.055*Math.sin(5*c.solubility+2*c.structure);
+ return clamp(raw+.08,.02,.98);
+}
+function makeCandidates(seed=771){
+ const rand=rng(seed),out=[];
+ for(let i=0;i<90;i++){
+  const c={id:"P-"+String(i+1).padStart(3,"0"),structure:rand(),stability:rand(),solubility:rand(),manufacture:rand(),risk:rand()*.8+.05};
+  c.truth=candidateTrue(c);out.push(c);
+ }
+ return out;
+}
+function kernel(a,b){
+ const x=["structure","stability","solubility","manufacture","risk"];
+ let d=0;for(const k of x)d+=(a[k]-b[k])**2;
+ return .16*Math.exp(-d/(2*.32*.32));
+}
+function cholesky(A){
+ const n=A.length,L=Array.from({length:n},()=>Array(n).fill(0));
+ for(let i=0;i<n;i++)for(let j=0;j<=i;j++){
+  let s=A[i][j];for(let k=0;k<j;k++)s-=L[i][k]*L[j][k];
+  if(i===j)L[i][j]=Math.sqrt(Math.max(s,1e-10));else L[i][j]=s/L[j][j];
+ }
+ return L;
+}
+function cholSolve(L,b){
+ const n=b.length,y=Array(n).fill(0),x=Array(n).fill(0);
+ for(let i=0;i<n;i++){let s=b[i];for(let j=0;j<i;j++)s-=L[i][j]*y[j];y[i]=s/L[i][i]}
+ for(let i=n-1;i>=0;i--){let s=y[i];for(let j=i+1;j<n;j++)s-=L[j][i]*x[j];x[i]=s/L[i][i]}
+ return x;
+}
+function gpPredict(observations,candidates,noise=+$("assayNoise").value){
+ if(observations.length<2)return candidates.map(c=>({mean:.55,sd:.4}));
+ const n=observations.length,A=Array.from({length:n},()=>Array(n).fill(0)),y=observations.map(o=>o.measured-.5);
+ for(let i=0;i<n;i++)for(let j=0;j<n;j++)A[i][j]=kernel(observations[i].candidate,observations[j].candidate)+(i===j?Math.max(1e-8,observations[i].noiseVar??noise*noise):0);
+ const L=cholesky(A),alpha=cholSolve(L,y);
+ return candidates.map(c=>{
+  const k=observations.map(o=>kernel(o.candidate,c));
+  const mean=.5+k.reduce((s,v,i)=>s+v*alpha[i],0);
+  const v=cholSolve(L,k);
+  const variance=Math.max(.0025,kernel(c,c)-k.reduce((s,x,i)=>s+x*v[i],0));
+  return {mean:clamp(mean,0,1),sd:Math.sqrt(variance)};
+ });
+}
+function newScience(){
+ const campaignSeed=771+(scienceCampaignNumber++*37);
+ const rand=rng(campaignSeed*17+33);
+ const pool=makeCandidates(campaignSeed);
+ const observations=[],used=new Set();
+ // Four initial experiments spread across the candidate design space.
+ for(let i=0;i<4;i++){
+  let idx=Math.floor((i+.5)*pool.length/4);while(used.has(idx))idx++;
+  used.add(idx);const c=pool[idx],measured=clamp(c.truth+gaussian(rand)*(+$("assayNoise").value),0,1);
+  observations.push({candidate:c,noiseVar:(+$("assayNoise").value)**2,measured,step:i+1});
+ }
+ science={pool,observations,used,rand,history:[Math.max(...observations.map(o=>o.measured))],strategy:"ucb",seed:campaignSeed};
+ selectedCandidate=null;comparison=null;
+ document.querySelectorAll("#scienceStrategies .scenario").forEach(b=>b.classList.toggle("active",b.dataset.strategy==="ucb"));
+ renderScience();toast("Nueva campaña reproducible creada con cuatro ensayos iniciales.");
+}
+function predictions(){
+ const remaining=science.pool.filter(c=>!science.used.has(science.pool.indexOf(c)));
+ const pred=gpPredict(science.observations,remaining);
+ const beta=+$("beta").value,lambda=+$("toxWeight").value;
+ return remaining.map((c,i)=>({...c,mean:pred[i].mean,sd:pred[i].sd,ucb:pred[i].mean+beta*pred[i].sd-lambda*c.risk}));
+}
+function nextExperiment(){
+ if(!science)return;
+ const budget=+$("budget").value;
+ if(science.observations.length>=budget){toast("Se alcanzó el presupuesto de ensayos.");return}
+ const cand=predictions();if(!cand.length)return;
+ const strategy=science.strategy;
+ let chosen;
+ if(strategy==="random")chosen=cand[Math.floor(science.rand()*cand.length)];
+ else chosen=cand.reduce((a,b)=>b.ucb>a.ucb?b:a,cand[0]);
+ const idx=science.pool.findIndex(c=>c.id===chosen.id);science.used.add(idx);
+ const measured=clamp(chosen.truth+gaussian(science.rand)*(+$("assayNoise").value),0,1);
+ science.observations.push({candidate:science.pool[idx],noiseVar:(+$("assayNoise").value)**2,measured,step:science.observations.length+1});
+ science.history.push(Math.max(...science.observations.map(o=>o.measured)));
+ selectedCandidate=chosen.id;renderScience();
+ toast(`Ensayo ${science.observations.length}: ${chosen.id} · actividad medida ${fmt(measured,3)}.`);
+}
+function selectCandidate(id){selectedCandidate=id;renderScience()}
+function renderScience(){
+ if(!science)return;
+ $("budgetVal").textContent=$("budget").value;$("betaVal").textContent=fmt(+$("beta").value,2);$("toxVal").textContent=fmt(+$("toxWeight").value,2);$("assayVal").textContent=fmt(+$("assayNoise").value,3);
+ const obs=science.observations,budget=+$("budget").value,best=obs.reduce((a,b)=>b.measured>a.measured?b:a,obs[0]);
+ const pred=predictions(),avg=pred.length?pred.reduce((s,c)=>s+c.sd,0)/pred.length:0;
+ $("nAssays").textContent=obs.length;$("budgetRemain").textContent=`${Math.max(0,budget-obs.length)} ensayos disponibles`;
+ $("bestActivity").textContent=fmt(best.measured,3);$("bestRisk").textContent=fmt(best.candidate.risk,3);$("uncertainty").textContent=fmt(avg,3);
+ $("nextAssay").disabled=obs.length>=budget||pred.length===0;
+ $("rankMode").textContent="Estrategia: "+(science.strategy==="ucb"?"UCB / aprendizaje activo":"Aleatoria");
+ const sorted=[...pred].sort((a,b)=>b.ucb-a.ucb);
+ $("candidateRows").innerHTML=sorted.slice(0,12).map(c=>`<tr data-id="${c.id}" class="${selectedCandidate===c.id?"selected":""}">
+ <td><strong>${c.id}</strong></td><td>${fmt(c.structure,2)}</td><td>${fmt(c.stability,2)}</td><td>${fmt(c.solubility,2)}</td><td>${fmt(c.manufacture,2)}</td><td>${fmt(c.risk,2)}</td><td>${fmt(c.mean,3)}</td><td>${fmt(c.sd,3)}</td><td>${fmt(c.ucb,3)}</td><td><span class="badge ${c.risk>.65?"red":"warn"}">No ensayado</span></td></tr>`).join("");
+ $("candidateRows").querySelectorAll("tr").forEach(tr=>tr.addEventListener("click",()=>selectCandidate(tr.dataset.id)));
+ const chosen=sorted.find(c=>c.id===selectedCandidate)||sorted[0];
+ if(chosen){selectedCandidate=chosen.id;$("selectedId").textContent=chosen.id;$("selectedPred").textContent=fmt(chosen.mean,3);$("selectedSd").textContent=fmt(chosen.sd,3);$("selectedUcb").textContent=fmt(chosen.ucb,3)}
+ else {$("selectedId").textContent="Campaña completa";$("selectedPred").textContent="—";$("selectedSd").textContent="—";$("selectedUcb").textContent="—"}
+ drawCandidateChart(sorted.slice(0,12));drawHistory();drawComparison();
+}
+function drawCandidateChart(list){
+ const {ctx,w,h}=canvas("candidateChart");chartAxes(ctx,w,h,"candidatos","actividad / UCB");
+ if(!list.length)return;
+ const max=Math.max(...list.map(c=>c.ucb),1),base=h-32,top=25,barW=30,gap=17;
+ list.forEach((c,i)=>{
+  const x=48+i*(barW+gap),bh=(c.mean/ max)*(base-top);
+  ctx.fillStyle="#58d5e8";ctx.fillRect(x,base-bh,barW,bh);
+  const ysd=(c.sd/max)*(base-top);
+  ctx.strokeStyle="#b59bff";ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(x+barW/2,base-bh-ysd);ctx.lineTo(x+barW/2,base-bh+ysd);ctx.stroke();
+  ctx.fillStyle=getComputedStyle(document.body).getPropertyValue("--muted").trim();ctx.font="9px Arial";ctx.textAlign="center";ctx.fillText(c.id.replace("P-",""),x+barW/2,h-12);
+ });
+ ctx.textAlign="left";ctx.fillStyle="#58d5e8";ctx.fillText("Media predicha",48,15);ctx.fillStyle="#b59bff";ctx.fillText("± incertidumbre",155,15);
+}
+function drawHistory(){
+ const {ctx,w,h}=canvas("historyChart");chartAxes(ctx,w,h,"n.º de ensayo","mejor actividad");
+ const hist=science.history,base=h-32,top=24,pts=hist.map((v,i)=>[48+i/(Math.max(1,hist.length-1))*(w-65),base-v*(base-top)]);
+ drawLine(ctx,pts,"#52d6a0",3);
+ pts.forEach(p=>{ctx.fillStyle="#52d6a0";ctx.beginPath();ctx.arc(p[0],p[1],3.5,0,Math.PI*2);ctx.fill()});
+ ctx.fillStyle=getComputedStyle(document.body).getPropertyValue("--muted").trim();ctx.font="10px Arial";ctx.fillText("Ensayos: "+hist.length,50,15);
+}
+function runCampaign(strategy,seed,budget,beta,lambda,noise){
+ const pool=makeCandidates(seed),rand=rng(seed*17+33),used=new Set(),obs=[];
+ for(let i=0;i<4;i++){let idx=Math.floor((i+.5)*pool.length/4);while(used.has(idx))idx++;used.add(idx);obs.push({candidate:pool[idx],noiseVar:noise*noise,measured:clamp(pool[idx].truth+gaussian(rand)*noise,0,1)})}
+ const curve=[Math.max(...obs.map(o=>o.measured))];
+ for(let step=4;step<budget;step++){
+  const remaining=pool.filter(c=>!used.has(pool.indexOf(c)));
+  let chosen;
+  if(strategy==="random")chosen=remaining[Math.floor(rand()*remaining.length)];
+  else{
+   const ps=gpPredict(obs,remaining,noise);let best=-Infinity;
+   remaining.forEach((c,i)=>{const score=ps[i].mean+beta*ps[i].sd-lambda*c.risk;if(score>best){best=score;chosen=c}});
+  }
+  used.add(pool.indexOf(chosen));
+  obs.push({candidate:chosen,noiseVar:noise*noise,measured:clamp(chosen.truth+gaussian(rand)*noise,0,1)});
+  curve.push(Math.max(curve[curve.length-1],obs[obs.length-1].measured));
+ }
+ return curve;
+}
+function compare(){
+ const budget=+$("budget").value,beta=+$("beta").value,lambda=+$("toxWeight").value,noise=+$("assayNoise").value,reps=8;
+ const active=Array.from({length:budget-3},()=>0),random=Array.from({length:budget-3},()=>0);
+ for(let r=0;r<reps;r++){
+  const a=runCampaign("ucb",500+r*13,budget,beta,lambda,noise),b=runCampaign("random",500+r*13,budget,beta,lambda,noise);
+  a.forEach((v,i)=>active[i]+=v/reps);b.forEach((v,i)=>random[i]+=v/reps);
+ }
+ comparison={active,random};drawComparison();toast("Comparación completada: 8 campañas por estrategia, mismo presupuesto.");
+}
+function drawComparison(){
+ const {ctx,w,h}=canvas("compareChart");chartAxes(ctx,w,h,"ensayos acumulados","mejor actividad media");
+ if(!comparison){ctx.fillStyle=getComputedStyle(document.body).getPropertyValue("--muted").trim();ctx.font="13px Arial";ctx.fillText("Presioná «Comparar estrategias» para ejecutar ocho campañas por método.",55,120);return}
+ const base=h-32,top=24,max=1,draw=arr=>arr.map((v,i)=>[48+i/(Math.max(1,arr.length-1))*(w-65),base-v/max*(base-top)]);
+ drawLine(ctx,draw(comparison.active),"#58d5e8",3);drawLine(ctx,draw(comparison.random),"#f3bd63",3);
+ ctx.fillStyle="#58d5e8";ctx.font="11px Arial";ctx.fillText("Aprendizaje activo (UCB)",50,15);ctx.fillStyle="#f3bd63";ctx.fillText("Búsqueda aleatoria",220,15);
+}
+$("newCampaign").addEventListener("click",newScience);
+document.querySelectorAll("#scienceStrategies .scenario").forEach(b=>b.addEventListener("click",()=>{
+ if(!science)return;
+ science.strategy=b.dataset.strategy;
+ document.querySelectorAll("#scienceStrategies .scenario").forEach(x=>x.classList.toggle("active",x===b));
+ renderScience();
+ toast("Estrategia seleccionada: "+(science.strategy==="ucb"?"aprendizaje activo UCB":"selección aleatoria")+".");
+}));
+$("nextAssay").addEventListener("click",nextExperiment);
+$("compareStrategies").addEventListener("click",compare);
+$("exportScience").addEventListener("click",()=>{
+ if(!science){toast("Primero iniciá una campaña.");return}
+ const rows=[["ensayo","candidato","estructura","estabilidad","solubilidad","manufactura","riesgo","actividad_medida"],...science.observations.map((o,i)=>[i+1,o.candidate.id,o.candidate.structure,o.candidate.stability,o.candidate.solubility,o.candidate.manufacture,o.candidate.risk,o.measured])];
+ downloadCSV("laboratorio_AI_for_Science_campana_sintetica.csv",rows);
+});
+["budget","beta","toxWeight","assayNoise"].forEach(id=>$(id).addEventListener("input",()=>{
+ $("budgetVal").textContent=$("budget").value;$("betaVal").textContent=fmt(+$("beta").value,2);$("toxVal").textContent=fmt(+$("toxWeight").value,2);$("assayVal").textContent=fmt(+$("assayNoise").value,3);
+ if(science)renderScience();
+}));
+$("budget").addEventListener("change",()=>{if(science&&science.observations.length>+$("budget").value)toast("El presupuesto quedó por debajo de los ensayos ya realizados; no se eliminan observaciones.")});
+$("seed").addEventListener("input",()=>{if(science)toast("La semilla BCI no modifica la campaña molecular actual.")});
+
+/* Initial state */
+trainBci();
+newScience();
+</script>
+</body>
+</html>

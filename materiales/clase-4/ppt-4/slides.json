@@ -1,0 +1,354 @@
+{
+  "title": "Drones, espacio y energía: China 2030",
+  "slides": [
+    {
+      "number": 1,
+      "title": "Drones, espacio y energía",
+      "image": "slides/01.webp",
+      "subtitle": "China 2030: sistemas, operaciones y evidencia",
+      "items": [
+        [
+          "Movilidad y espacio",
+          "Aeronaves, navegación y servicios orbitales."
+        ],
+        [
+          "Energía",
+          "Electrólisis industrial y fusión experimental."
+        ]
+      ],
+      "takeaway": "El valor económico depende de la operación completa del sistema.",
+      "notes": "",
+      "sources": [
+        "https://ir.ehang.com/news-releases/news-release-details/ehangs-eh216-s-evtol-operators-obtain-air-operator-certificates/",
+        "https://www.iea.org/reports/global-hydrogen-review-2026/production"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Economía de baja altitud",
+      "image": "slides/02.webp",
+      "subtitle": "Mercados con riesgos y grados de madurez distintos",
+      "items": [
+        [
+          "Drones profesionales",
+          "Inspección, agricultura, cartografía y emergencias."
+        ],
+        [
+          "Logística aérea",
+          "Rutas y operaciones con necesidades específicas."
+        ],
+        [
+          "eVTOL de pasajeros",
+          "Operaciones delimitadas por certificación, sitios y procedimientos."
+        ],
+        [
+          "Sistema",
+          "Navegación, infraestructura, seguros, mantenimiento y gestión aérea."
+        ]
+      ],
+      "takeaway": "Autonomía de vuelo no equivale a viabilidad comercial.",
+      "notes": "",
+      "sources": [
+        "https://ir.ehang.com/news-releases/news-release-details/ehangs-eh216-s-evtol-operators-obtain-air-operator-certificates/",
+        "https://english.www.gov.cn/news/202605/14/content_WS6a0512c0c6d00ca5f9a0aedf.html"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Cadena operacional aérea",
+      "image": "slides/03.webp",
+      "subtitle": "Una aeronave necesita infraestructura y demanda",
+      "items": [
+        [
+          "Plataforma",
+          "Batería, motores, sensores y redundancia."
+        ],
+        [
+          "Navegación",
+          "Posicionamiento, mapas y comunicaciones."
+        ],
+        [
+          "Operación",
+          "Programación, carga, mantenimiento y rutas."
+        ],
+        [
+          "Autorización y demanda",
+          "Espacio aéreo, meteorología y costo por misión."
+        ]
+      ],
+      "takeaway": "El laboratorio incluye energía de ida y regreso y reserva sobre capacidad nominal.",
+      "notes": "",
+      "sources": [
+        "https://ir.ehang.com/news-releases/news-release-details/ehangs-eh216-s-evtol-operators-obtain-air-operator-certificates/"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "EH216-S y certificación",
+      "image": "slides/04.webp",
+      "subtitle": "Cada aprobación responde una pregunta diferente",
+      "items": [
+        [
+          "2023 · tipo",
+          "Aprobación del diseño."
+        ],
+        [
+          "2024 · producción",
+          "Autorización del sistema de fabricación."
+        ],
+        [
+          "2025 · operadores",
+          "Certificados para servicios bajo condiciones autorizadas."
+        ],
+        [
+          "Alcance",
+          "Aeronave eléctrica de dos plazas y operación delimitada."
+        ]
+      ],
+      "takeaway": "Certificación no implica una red nacional de taxis aéreos de uso irrestricto.",
+      "notes": "",
+      "sources": [
+        "https://ir.ehang.com/news-releases/news-release-details/ehangs-eh216-s-evtol-operators-obtain-air-operator-certificates/"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Regulación y seguridad operacional",
+      "image": "slides/05.webp",
+      "subtitle": "La gestión del riesgo forma parte del sistema tecnológico",
+      "items": [
+        [
+          "Aeronavegabilidad",
+          "Diseño, componentes y ensayos."
+        ],
+        [
+          "Operador y sitio",
+          "Procedimientos y capacidad organizacional."
+        ],
+        [
+          "Espacio aéreo",
+          "Separación, coordinación y comunicaciones."
+        ],
+        [
+          "Evidencia operacional",
+          "Meteorología, fallas e incidentes registrados."
+        ]
+      ],
+      "takeaway": "La CAAC informó una unidad de seguridad de baja altitud en mayo de 2026.",
+      "notes": "",
+      "sources": [
+        "https://english.www.gov.cn/news/202605/14/content_WS6a0512c0c6d00ca5f9a0aedf.html"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "BeiDou: posición, navegación y tiempo",
+      "image": "slides/06.webp",
+      "subtitle": "Infraestructura transversal para movilidad y sistemas críticos",
+      "items": [
+        [
+          "Posicionamiento",
+          "Estimar dónde está un receptor."
+        ],
+        [
+          "Navegación",
+          "Apoyar la trayectoria y el desplazamiento."
+        ],
+        [
+          "Tiempo",
+          "Sincronizar redes y operaciones."
+        ],
+        [
+          "Calidad de solución",
+          "Geometría, señales, obstrucciones y multitrayectoria."
+        ]
+      ],
+      "takeaway": "Cuatro satélites son un mínimo convencional, no una garantía de precisión.",
+      "notes": "",
+      "sources": [
+        "https://english.www.gov.cn/news/202505/18/content_WS6829e872c6d0868f4e8f29ff.html"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "La cadena de valor espacial",
+      "image": "slides/07.webp",
+      "subtitle": "Los datos deben convertirse en servicios utilizables",
+      "items": [
+        [
+          "Lanzamiento",
+          "Cohetes y centros de operación."
+        ],
+        [
+          "Satélites",
+          "Fabricación, cargas útiles y estaciones terrestres."
+        ],
+        [
+          "Operación y datos",
+          "Gestión orbital, comunicación y observación."
+        ],
+        [
+          "Servicios",
+          "Agro, clima, logística y análisis de riesgos."
+        ]
+      ],
+      "takeaway": "Los estándares facilitan coordinación. No prueban rentabilidad de todas las empresas.",
+      "notes": "",
+      "sources": [
+        "https://english.www.gov.cn/news/202604/24/content_WS69eb4f6cc6d00ca5f9a0a9fe.html"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Tianwen-2 y los cuerpos menores",
+      "image": "slides/08.webp",
+      "subtitle": "Misión de retorno de muestras y posterior exploración cometaria",
+      "items": [
+        [
+          "2025",
+          "Lanzamiento el 29 de mayo, hora de China."
+        ],
+        [
+          "2016 HO3",
+          "Asteroide Kamoʻoalewa, objetivo de observación y muestreo."
+        ],
+        [
+          "Retorno",
+          "El plan prevé devolver muestras a la Tierra en 2027."
+        ],
+        [
+          "311P/PANSTARRS",
+          "Objetivo posterior, condicionado por las fases previas."
+        ]
+      ],
+      "takeaway": "Distinguir trayectoria planificada, observación, muestreo y retorno efectivo.",
+      "notes": "La fecha de lanzamiento puede aparecer como 28 de mayo en UTC. Se evita presentar una previsión como una misión completada. La actualización de julio de 2026 se documenta como noticia, no como retorno de muestras.",
+      "sources": [
+        "https://english.cas.cn/newsroom/cas_media/202505/t20250529_1044726.shtml"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Hidrógeno y fusión",
+      "image": "slides/09.webp",
+      "subtitle": "Un vector industrial y una fuente en investigación",
+      "items": [
+        [
+          "Hidrógeno",
+          "La electrólisis consume electricidad para producir un vector energético."
+        ],
+        [
+          "Producción",
+          "kg/día = MW × 1.000 × 24 × utilización / (kWh/kg)."
+        ],
+        [
+          "Emisiones",
+          "Dependen de la electricidad y del alcance de la contabilidad."
+        ],
+        [
+          "Fusión",
+          "Confinamiento, materiales y balance energético siguen siendo retos."
+        ]
+      ],
+      "takeaway": "Capacidad instalada, producción efectiva y energía neta son indicadores distintos.",
+      "notes": "",
+      "sources": [
+        "https://www.iea.org/reports/global-hydrogen-review-2026/production",
+        "https://english.cas.cn/newsroom/cas_media/202501/t20250121_899052.shtml"
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Cómo interpretar los hitos",
+      "image": "slides/10.webp",
+      "subtitle": "Fechas, unidades y denominadores explícitos",
+      "items": [
+        [
+          "1.066 segundos",
+          "Plasma de alto confinamiento en EAST, enero de 2025."
+        ],
+        [
+          "Más de 4 GW",
+          "Capacidad mundial instalada de electrólisis al cierre de 2025, según AIE 2026."
+        ],
+        [
+          "Participación china",
+          "Casi tres cuartas partes de las nuevas instalaciones de electrólisis en 2025."
+        ],
+        [
+          "Advertencia",
+          "GW de potencia no son toneladas de producción ni energía generada."
+        ]
+      ],
+      "takeaway": "El récord de EAST no significa electricidad comercial ni balance neto positivo.",
+      "notes": "",
+      "sources": [
+        "https://www.iea.org/reports/global-hydrogen-review-2026/production",
+        "https://english.cas.cn/newsroom/cas_media/202501/t20250121_899052.shtml"
+      ]
+    },
+    {
+      "number": 11,
+      "title": "China 2030 y América Latina",
+      "image": "slides/11.webp",
+      "subtitle": "Las oportunidades se evalúan por eslabón y capacidad",
+      "items": [
+        [
+          "Drones",
+          "Operación segura, mantenimiento y análisis de datos."
+        ],
+        [
+          "Espacio",
+          "Servicios geoespaciales vinculados con necesidades locales."
+        ],
+        [
+          "Energía",
+          "Electricidad, infraestructura, costo y demanda industrial."
+        ],
+        [
+          "Desarrollo",
+          "Formación, estándares, investigación y evidencia económica."
+        ]
+      ],
+      "takeaway": "¿Qué capacidad local permitiría participar sin depender de un único proveedor?",
+      "notes": "",
+      "sources": [
+        "https://english.www.gov.cn/news/202505/18/content_WS6829e872c6d0868f4e8f29ff.html",
+        "https://www.iea.org/reports/global-hydrogen-review-2026/production"
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Fuentes y experimentos de cierre",
+      "image": "slides/12.webp",
+      "subtitle": "Consulta las fuentes completas en la guía de cada módulo",
+      "items": [
+        [
+          "Aviación",
+          "EHang y CAAC: certificados, operación y seguridad."
+        ],
+        [
+          "Espacio",
+          "CAS y autoridades espaciales: objetivos y estado de las misiones."
+        ],
+        [
+          "Energía",
+          "CAS: EAST. AIE: Global Hydrogen Review 2026."
+        ],
+        [
+          "Laboratorio",
+          "Comparar demanda, reserva, visibilidad satelital y carbono eléctrico."
+        ]
+      ],
+      "takeaway": "En el modelo de fusión, el producto triple no calcula ganancia ni potencia eléctrica.",
+      "notes": "",
+      "sources": [
+        "https://ir.ehang.com/news-releases/news-release-details/ehangs-eh216-s-evtol-operators-obtain-air-operator-certificates/",
+        "https://english.www.gov.cn/news/202605/14/content_WS6a0512c0c6d00ca5f9a0aedf.html",
+        "https://english.cas.cn/newsroom/cas_media/202505/t20250529_1044726.shtml",
+        "https://english.cas.cn/newsroom/cas_media/202501/t20250121_899052.shtml",
+        "https://www.iea.org/reports/global-hydrogen-review-2026/production"
+      ]
+    }
+  ]
+}

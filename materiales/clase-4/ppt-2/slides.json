@@ -1,0 +1,204 @@
+{
+  "title": "6G y computación cuántica",
+  "slides": [
+    {
+      "number": 1,
+      "title": "6G y computación cuántica",
+      "image": "slides/01.webp",
+      "subtitle": "Infraestructuras de investigación con horizontes distintos",
+      "items": [
+        [
+          "Redes",
+          "Capacidad, latencia, cobertura y percepción integrada."
+        ],
+        [
+          "Cómputo",
+          "Amplitudes, interferencia, entrelazamiento y medición."
+        ]
+      ],
+      "takeaway": "Separar requisitos, demostraciones experimentales y servicio comercial.",
+      "notes": "",
+      "sources": [
+        "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "5G y el marco IMT-2030",
+      "image": "slides/02.webp",
+      "subtitle": "6G: objetivos de desarrollo, sin prestaciones garantizadas",
+      "items": [
+        [
+          "Comunicación",
+          "Mayor capacidad e inmersión, condicionadas por espectro y despliegue."
+        ],
+        [
+          "Percepción integrada",
+          "La red puede combinar comunicaciones y detección del entorno."
+        ],
+        [
+          "IA y conectividad",
+          "IA aplicada a la red y soporte para servicios de IA."
+        ],
+        [
+          "Latencia",
+          "La interfaz radio es solo una parte de la latencia extremo a extremo."
+        ]
+      ],
+      "takeaway": "0,1–1 ms es un objetivo de latencia radio en el marco ITU, no de Internet completo.",
+      "notes": "M.2160 incluye objetivos 50–200 Gbit/s de tasa pico según escenario. No son velocidades comerciales disponibles para cada usuario. ITU sigue el proceso IMT-2030.",
+      "sources": [
+        "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Arquitectura integrada de red",
+      "image": "slides/03.webp",
+      "subtitle": "Terrestre, aérea y satelital, con funciones distribuidas",
+      "items": [
+        [
+          "Acceso",
+          "Estaciones terrestres, plataformas aéreas y enlaces satelitales."
+        ],
+        [
+          "Transporte y núcleo",
+          "Autenticación, movilidad, encaminamiento y recursos."
+        ],
+        [
+          "Edge y nube",
+          "Procesamiento cercano o remoto según latencia y costo."
+        ],
+        [
+          "Sensores e IA",
+          "Percepción y control con seguridad, consumo y privacidad."
+        ]
+      ],
+      "takeaway": "Un enlace satelital añade retardo de propagación y restricciones de capacidad.",
+      "notes": "",
+      "sources": [
+        "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
+        "https://www.huawei.com/en/huaweitech/future-technologies/6g-isac-ow"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Investigación, estándares y despliegue",
+      "image": "slides/04.webp",
+      "subtitle": "El horizonte 2030 organiza el proceso internacional",
+      "items": [
+        [
+          "Investigación",
+          "Demostraciones bajo condiciones específicas de laboratorio."
+        ],
+        [
+          "Evaluación",
+          "Requisitos, candidatos de interfaz y metodologías comparables."
+        ],
+        [
+          "Ecosistema chino",
+          "Universidades, operadores y fabricantes participan en la carrera tecnológica."
+        ],
+        [
+          "Adopción",
+          "Depende de espectro, terminales, inversión y casos de uso sostenibles."
+        ]
+      ],
+      "takeaway": "Un prototipo 6G no demuestra cobertura comercial ni rentabilidad.",
+      "notes": "",
+      "sources": [
+        "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
+        "https://www.huawei.com/en/huaweitech/future-technologies/6g-isac-ow"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Un qubit: amplitud, fase y medición",
+      "image": "slides/05.webp",
+      "subtitle": "|ψ⟩ = α|0⟩ + β|1⟩, con |α|² + |β|² = 1",
+      "items": [
+        [
+          "Probabilidad",
+          "P(0) = |α|² y P(1) = |β|² en la base computacional."
+        ],
+        [
+          "Interferencia",
+          "La fase relativa modifica el resultado de operaciones posteriores."
+        ],
+        [
+          "Entrelazamiento",
+          "Correlaciones de un estado conjunto que no se factoriza."
+        ],
+        [
+          "Límites",
+          "Medir no revela todas las amplitudes ni permite señalización instantánea."
+        ]
+      ],
+      "takeaway": "H·H|0⟩ = |0⟩. En Bell, P(00) = P(11) = 1/2.",
+      "notes": "Una superposición no equivale a leer simultáneamente todas las respuestas. El estado reducido de un qubit entrelazado puede estar en el interior de la esfera de Bloch.",
+      "sources": [
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Plataformas cuánticas y evidencia",
+      "image": "slides/06.webp",
+      "subtitle": "La tarea experimental determina el significado de la ventaja",
+      "items": [
+        [
+          "Fotónica",
+          "Jiuzhang estudia tareas especializadas de muestreo con fotones."
+        ],
+        [
+          "Superconductores",
+          "Zuchongzhi utiliza circuitos superconductores."
+        ],
+        [
+          "Comunicaciones",
+          "La distribución de claves y las redes cuánticas son otra aplicación."
+        ],
+        [
+          "Sensores",
+          "La metrología cuántica no equivale a cómputo cuántico universal."
+        ]
+      ],
+      "takeaway": "Ventaja en una tarea específica no demuestra utilidad general ni criptografía rota.",
+      "notes": "El simulador de compuertas no reproduce muestreo bosónico ni hardware real. Comparar también algoritmos clásicos, corrección de errores y costo total.",
+      "sources": [
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Dos experimentos para interpretar la frontera",
+      "image": "slides/07.webp",
+      "subtitle": "Congestión de red y circuitos de uno o dos qubits",
+      "items": [
+        [
+          "Red",
+          "Aumentar demanda hasta superar la capacidad y observar la inestabilidad."
+        ],
+        [
+          "Interferencia",
+          "Preparar |+⟩, aplicar Z y luego H. Explicar el cambio final."
+        ],
+        [
+          "Bell",
+          "Preparar |Φ+⟩, muestrear y comparar con la distribución teórica."
+        ],
+        [
+          "Ruido",
+          "Introducir mezcla de medición y distinguirla de la evolución ideal."
+        ]
+      ],
+      "takeaway": "¿Qué resultado depende de la física y cuál de los supuestos del modelo?",
+      "notes": "",
+      "sources": [
+        "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
+      ]
+    }
+  ]
+}

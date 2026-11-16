@@ -1,0 +1,289 @@
+{
+  "title": "Neurotecnología, biotecnología e IA",
+  "slides": [
+    {
+      "number": 1,
+      "title": "La nueva frontera de la inteligencia",
+      "image": "slides/01.webp",
+      "subtitle": "Neurotecnología, biotecnología e IA para la ciencia",
+      "items": [
+        [
+          "Neurotecnología",
+          "Medición de señales y control de dispositivos."
+        ],
+        [
+          "Biotecnología",
+          "Diseño molecular, experimentación y validación."
+        ]
+      ],
+      "takeaway": "¿Cómo transforma una predicción computacional la evidencia experimental?",
+      "notes": "",
+      "sources": [
+        "https://newsroom.fudan.edu.cn/en/2026/0317/c344a148424/page.psp",
+        "https://english.genetics.cas.cn/news_/researchnews/202507/t20250707_1046906.html"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Dos fronteras y un ciclo de evidencia",
+      "image": "slides/02.webp",
+      "subtitle": "Las señales neuronales y las moléculas requieren modelos distintos",
+      "items": [
+        [
+          "BCI",
+          "Registrar señales, extraer características y decodificar tareas definidas."
+        ],
+        [
+          "Biotecnología con IA",
+          "Explorar secuencias, estructuras e interfaces moleculares."
+        ],
+        [
+          "Ciclo común",
+          "Medir, modelar, experimentar y contrastar."
+        ],
+        [
+          "Diferencias",
+          "Riesgos, escalas temporales, datos y regulación específicos."
+        ]
+      ],
+      "takeaway": "La convergencia de métodos no elimina las diferencias biológicas.",
+      "notes": "",
+      "sources": [
+        "https://newsroom.fudan.edu.cn/en/2026/0317/c344a148424/page.psp",
+        "https://english.genetics.cas.cn/news_/researchnews/202507/t20250707_1046906.html"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Una interfaz cerebro-computadora",
+      "image": "slides/03.webp",
+      "subtitle": "La señal neuronal se convierte en una acción mediante calibración",
+      "items": [
+        [
+          "Adquisición",
+          "EEG no invasivo, ECoG o registros intracorticales, según dispositivo."
+        ],
+        [
+          "Procesamiento",
+          "Muestreo, filtrado y extracción de características."
+        ],
+        [
+          "Decodificación",
+          "Modelo entrenado con tareas y usuarios definidos."
+        ],
+        [
+          "Control y feedback",
+          "Cursor, prótesis o guante. El usuario recibe retroalimentación."
+        ]
+      ],
+      "takeaway": "BCI no significa lectura ilimitada de pensamientos.",
+      "notes": "EEG tiene señal indirecta y sensibilidad a artefactos. Los implantes requieren cirugía y evaluación clínica. El laboratorio usa señales sintéticas, no EEG de pacientes.",
+      "sources": [
+        "https://newsroom.fudan.edu.cn/en/2026/0317/c344a148424/page.psp"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "NEO: evidencia clínica delimitada",
+      "image": "slides/04.webp",
+      "subtitle": "Sistema de compensación de función motora de la mano",
+      "items": [
+        [
+          "Dispositivo",
+          "Interfaz implantable epidural con ocho electrodos."
+        ],
+        [
+          "Tarea",
+          "Decodificar intención motora y controlar un guante neumático."
+        ],
+        [
+          "Evidencia",
+          "Fudan informa aprobación de registro en China en marzo de 2026."
+        ],
+        [
+          "Alcance",
+          "Uso e indicaciones definidos. No implica recuperación universal."
+        ]
+      ],
+      "takeaway": "Separar autorización del dispositivo, eficacia individual y acceso al tratamiento.",
+      "notes": "",
+      "sources": [
+        "https://newsroom.fudan.edu.cn/en/2026/0317/c344a148424/page.psp"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Estrategia industrial BCI de China",
+      "image": "slides/05.webp",
+      "subtitle": "Directrices de 2025 con metas para 2027 y 2030",
+      "items": [
+        [
+          "2025",
+          "Siete organismos publican directrices para el sector."
+        ],
+        [
+          "2027 · meta",
+          "Avances tecnológicos, estándares y 2–3 clústeres industriales."
+        ],
+        [
+          "2030 · meta",
+          "Ecosistema y 2–3 firmas con influencia internacional."
+        ]
+      ],
+      "takeaway": "Las metas oficiales expresan intención de política, no resultados alcanzados.",
+      "notes": "",
+      "sources": [
+        "https://www.miit.gov.cn/jgsj/kjs/wjfb/art/2025/art_438e059801414869abc50abdb06eeac6.html"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Secuencia, diseño y ensayo",
+      "image": "slides/06.webp",
+      "subtitle": "La IA ordena candidatos. El ensayo determina su comportamiento",
+      "items": [
+        [
+          "Información",
+          "Secuencia, estructura y función buscada."
+        ],
+        [
+          "Predicción",
+          "Modelos proponen variantes bajo restricciones."
+        ],
+        [
+          "Experimento",
+          "Síntesis y ensayos de actividad y estabilidad."
+        ],
+        [
+          "Validación",
+          "Repetición, seguridad, manufactura y evaluación del uso final."
+        ]
+      ],
+      "takeaway": "Una predicción de afinidad no equivale a un medicamento aprobado.",
+      "notes": "",
+      "sources": [
+        "https://english.genetics.cas.cn/news_/researchnews/202507/t20250707_1046906.html",
+        "https://english.sioc.ac.cn/rh/rp/202606/t20260610_1161552.html"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "AiCE y Void-X",
+      "image": "slides/07.webp",
+      "subtitle": "Dos contribuciones metodológicas de grupos de CAS",
+      "items": [
+        [
+          "AiCE · 2025",
+          "Ingeniería proteica con restricciones estructurales y evolutivas sobre plegamiento inverso."
+        ],
+        [
+          "Void-X · 2026",
+          "Modelo generativo que diseña interfaces desde interacciones atómicas."
+        ],
+        [
+          "Comparación",
+          "Identificar tarea, conjunto de ensayo y validación experimental."
+        ],
+        [
+          "Transferencia",
+          "Demostrar reproducibilidad y utilidad fuera del conjunto de desarrollo."
+        ]
+      ],
+      "takeaway": "Dos estudios no prueban la existencia de una plataforma clínica general.",
+      "notes": "",
+      "sources": [
+        "https://english.genetics.cas.cn/news_/researchnews/202507/t20250707_1046906.html",
+        "https://english.sioc.ac.cn/rh/rp/202606/t20260610_1161552.html"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "IA para la ciencia",
+      "image": "slides/08.webp",
+      "subtitle": "ScienceOne 100 y el ciclo de investigación aumentado",
+      "items": [
+        [
+          "Pregunta",
+          "Hipótesis, literatura y selección del problema."
+        ],
+        [
+          "Modelo",
+          "Predicción con supuestos y estimación de incertidumbre."
+        ],
+        [
+          "Experimento",
+          "Instrumentos y ensayos con controles."
+        ],
+        [
+          "Análisis",
+          "Contraste, trazabilidad y actualización de la hipótesis."
+        ]
+      ],
+      "takeaway": "CAS presentó ScienceOne 100 en abril de 2026. Sus anuncios requieren evaluación independiente.",
+      "notes": "",
+      "sources": [
+        "https://english.cas.cn/newsroom/cas-in-media/202604/t20260429_1158251.shtml"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Adopción, riesgos y límites",
+      "image": "slides/09.webp",
+      "subtitle": "Las etapas de madurez no son intercambiables",
+      "items": [
+        [
+          "Investigación",
+          "Prueba de concepto y validez del método."
+        ],
+        [
+          "Validación",
+          "Replicación, población, seguridad y controles."
+        ],
+        [
+          "Regulación",
+          "Autorización de usos definidos."
+        ],
+        [
+          "Escala",
+          "Costos, acceso, estabilidad productiva y resultados."
+        ]
+      ],
+      "takeaway": "Privacidad neuronal, bioseguridad y reproducibilidad atraviesan todo el ciclo.",
+      "notes": "",
+      "sources": [
+        "https://newsroom.fudan.edu.cn/en/2026/0317/c344a148424/page.psp",
+        "https://english.cas.cn/newsroom/cas-in-media/202604/t20260429_1158251.shtml"
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Experimentos y preguntas de cierre",
+      "image": "slides/10.webp",
+      "subtitle": "Dos laboratorios dentro de un mismo módulo",
+      "items": [
+        [
+          "BCI sintética",
+          "Comparar ruido y tamaño muestral con evaluación fuera de entrenamiento."
+        ],
+        [
+          "Clasificación",
+          "Mover el umbral y explicar sensibilidad, especificidad y ROC-AUC."
+        ],
+        [
+          "Candidatos",
+          "Comparar selección UCB y aleatoria con igual presupuesto."
+        ],
+        [
+          "Incertidumbre",
+          "Distinguir mejor medición observada de mejor actividad verdadera."
+        ]
+      ],
+      "takeaway": "¿Qué evidencia adicional necesitarías antes de una aplicación clínica o industrial?",
+      "notes": "",
+      "sources": [
+        "https://newsroom.fudan.edu.cn/en/2026/0317/c344a148424/page.psp",
+        "https://english.genetics.cas.cn/news_/researchnews/202507/t20250707_1046906.html"
+      ]
+    }
+  ]
+}

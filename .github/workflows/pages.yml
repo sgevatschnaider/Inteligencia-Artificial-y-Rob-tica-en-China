@@ -25,6 +25,7 @@ jobs:
         run: |
           python scripts/validate_repo.py
           node scripts/check_site.cjs
+          node scripts/check_class4_models.mjs
           node --check videolab/home.js
           node --check videolab/app.js
           node --check materiales/dragon/viewer.js

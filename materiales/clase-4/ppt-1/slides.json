@@ -1,0 +1,227 @@
+{
+  "title": "El automóvil inteligente y la fábrica del futuro",
+  "slides": [
+    {
+      "number": 1,
+      "title": "El automóvil inteligente y la fábrica del futuro",
+      "image": "slides/01.webp",
+      "subtitle": "Software, datos y manufactura avanzada en China",
+      "items": [
+        [
+          "Vehículo",
+          "Arquitectura, asistencia a la conducción y actualizaciones"
+        ],
+        [
+          "Fábrica",
+          "Robótica, control de calidad y capacidad productiva"
+        ]
+      ],
+      "takeaway": "¿Cómo se coordinan estas tecnologías para crear valor?",
+      "notes": "",
+      "sources": [
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Cuatro transformaciones industriales",
+      "image": "slides/02.webp",
+      "subtitle": "La competitividad depende de su integración",
+      "items": [
+        [
+          "Electrificación",
+          "Batería, electrónica de potencia, motor y recarga."
+        ],
+        [
+          "Software",
+          "Computación centralizada o zonal, aplicaciones y actualizaciones OTA."
+        ],
+        [
+          "Datos e IA",
+          "Percepción, mantenimiento, planificación y mejora del producto."
+        ],
+        [
+          "Manufactura",
+          "Robótica, logística, trazabilidad y control de calidad."
+        ]
+      ],
+      "takeaway": "Una mejora aislada puede desplazar el cuello de botella.",
+      "notes": "",
+      "sources": [
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Vehículo definido por software",
+      "image": "slides/03.webp",
+      "subtitle": "Una arquitectura conceptual con funciones actualizables",
+      "items": [
+        [
+          "Hardware",
+          "Sensores, actuadores, batería y unidades de cómputo."
+        ],
+        [
+          "Plataforma",
+          "Sistema operativo, comunicaciones y separación de funciones críticas."
+        ],
+        [
+          "Aplicaciones",
+          "Conducción asistida, cabina y servicios, con validación específica."
+        ],
+        [
+          "Actualizaciones OTA",
+          "Distribución remota con gestión de versiones y ciberseguridad."
+        ]
+      ],
+      "takeaway": "La actualización remota exige validación de seguridad durante todo el ciclo de vida.",
+      "notes": "No todos los vehículos usan una única computadora. La centralización y la arquitectura zonal son opciones de diseño. Una aplicación no debe poder comprometer funciones críticas.",
+      "sources": [
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Huawei en el ecosistema automotor",
+      "image": "slides/04.webp",
+      "subtitle": "Proveedor de tecnologías y plataformas",
+      "items": [
+        [
+          "Conducción asistida",
+          "Sensores, percepción, planificación y control, según versión y vehículo."
+        ],
+        [
+          "Cabina inteligente",
+          "Interfaz, conectividad e integración de servicios."
+        ],
+        [
+          "Computación y software",
+          "Plataformas para integrar funciones del vehículo."
+        ],
+        [
+          "Nube y vehículo",
+          "Datos y actualizaciones bajo requisitos de privacidad y seguridad."
+        ]
+      ],
+      "takeaway": "Distinguir proveedor tecnológico, fabricante y operador.",
+      "notes": "",
+      "sources": [
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/advanced-driving-system",
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Asistencia, automatización y responsabilidad",
+      "image": "slides/05.webp",
+      "subtitle": "Los niveles SAE se definen por la tarea y el dominio operacional",
+      "items": [
+        [
+          "L0–L2 · conductor",
+          "El conductor supervisa el entorno y responde por la conducción."
+        ],
+        [
+          "L3 · condicional",
+          "El sistema realiza la tarea dentro de su dominio. Puede solicitar intervención."
+        ],
+        [
+          "L4 · alta",
+          "El sistema resuelve la contingencia dentro de su dominio operacional."
+        ],
+        [
+          "L5 · plena",
+          "Automatización en todas las condiciones viales que conduciría una persona."
+        ]
+      ],
+      "takeaway": "Un nombre comercial no establece el nivel de automatización.",
+      "notes": "Corrección del original: no atribuir responsabilidad permanente al conductor en todos los niveles. L4 puede operar con dominio limitado, sin ser autonomía universal.",
+      "sources": [
+        "https://www.sae.org/blog/sae-j3016-update",
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/advanced-driving-system"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "La fábrica como sistema de producción",
+      "image": "slides/06.webp",
+      "subtitle": "El laboratorio representa estaciones en serie con buffers finitos",
+      "items": [
+        [
+          "Capacidad ideal",
+          "60 / tiempo de ciclo en minutos = unidades por hora."
+        ],
+        [
+          "Disponibilidad A",
+          "Tiempo operativo / tiempo planificado."
+        ],
+        [
+          "Rendimiento P",
+          "Ciclo ideal × unidades totales / tiempo operativo."
+        ],
+        [
+          "Calidad Q",
+          "Unidades buenas / unidades totales."
+        ]
+      ],
+      "takeaway": "OEE = A × P × Q. La salida real también depende del suministro y de los buffers.",
+      "notes": "Definiciones convencionales de OEE. En el laboratorio, OEE es un indicador aproximado de línea a partir de la estación limitante, no un dato empírico de BYD.",
+      "sources": []
+    },
+    {
+      "number": 7,
+      "title": "Cadenas de valor y geoeconomía",
+      "image": "slides/07.webp",
+      "subtitle": "Los costos y las capacidades se distribuyen entre sectores",
+      "items": [
+        [
+          "Recursos y química",
+          "Minerales, procesamiento y materiales activos."
+        ],
+        [
+          "Baterías y vehículo",
+          "Celdas, pack, integración y seguridad."
+        ],
+        [
+          "Software y servicios",
+          "Chips, datos, validación y mantenimiento."
+        ],
+        [
+          "Infraestructura",
+          "Red eléctrica, recarga, estándares y comercio."
+        ]
+      ],
+      "takeaway": "Para América Latina: identificar capacidades concretas antes de inferir oportunidades.",
+      "notes": "Las oportunidades son hipótesis de especialización, no pronósticos de inversión o empleo.",
+      "sources": [
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Síntesis y experimento",
+      "image": "slides/08.webp",
+      "subtitle": "Una fábrica más rápida puede seguir produciendo menos",
+      "items": [
+        [
+          "1 · Comparar",
+          "Ejecutar el escenario base y el de fábrica con IA con la misma semilla."
+        ],
+        [
+          "2 · Intervenir",
+          "Cambiar capacidad de buffers, suministro o confiabilidad."
+        ],
+        [
+          "3 · Medir",
+          "Registrar unidades buenas, rechazo, WIP y OEE."
+        ],
+        [
+          "4 · Explicar",
+          "Identificar si la restricción está en proceso, suministro o calidad."
+        ]
+      ],
+      "takeaway": "¿Qué cambia al optimizar una estación que no es el cuello de botella?",
+      "notes": "Fuentes y recursos por módulo en la guía web. Los parámetros del laboratorio son sintéticos.",
+      "sources": []
+    }
+  ]
+}

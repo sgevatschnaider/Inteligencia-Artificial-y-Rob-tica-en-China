@@ -58,3 +58,14 @@ VideoLab reúne videos con fuentes, preguntas de discusión y reproducción de Y
 [PPT 1 + 2 + 3 + 4 + 5 + 6 y laboratorios (ES)](materiales/clase-3/index.html?lang=es) · [PPT 1 + 2 + 3 + 4 + 5 + 6 and laboratories (EN)](materiales/clase-3/index.html?lang=en)
 
 265 diapositivas por idioma, PowerPoint editable, PDF, visor con notas y fuentes, seis simuladores y cuarenta y cinco recursos audiovisuales vinculados a la presentación. / 265 slides per language, editable PowerPoint, PDF, slides with notes and sources, six simulators and forty-five audiovisual resources linked to the presentation.
+
+
+
+## Clase 4 · Nuevas fronteras industriales
+
+[Clase 4 publicada](https://sgevatschnaider.github.io/Inteligencia-Artificial-y-Rob-tica-en-China/materiales/clase-4/) reúne cuatro PPTX editables y sus PDF (37 diapositivas), cinco laboratorios, la videoteca por módulo y las guías docentes.
+
+- [Índice](materiales/clase-4/index.html)
+- [Guía docente](materiales/clase-4/guia-docente.html)
+- [Videoteca](materiales/clase-4/videos.html)
+- [Correcciones, pruebas y límites de verificación](materiales/clase-4/informe-validacion.md)
