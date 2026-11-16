@@ -1,0 +1,48 @@
+name: Build Class 4 English materials
+on:
+  push:
+    branches: [main]
+    paths:
+      - "materiales/clase-4/**"
+      - "scripts/build_class4_en.py"
+      - ".github/workflows/class4-en.yml"
+      - "qa/class4-en/**"
+permissions:
+  contents: write
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install python-pptx pillow reportlab pypdf
+      - name: Build English decks, PDFs, covers and labs
+        run: python scripts/build_class4_en.py
+      - name: Commit generated deliverables
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add materiales/clase-4/covers \
+            materiales/clase-4/ppt-*/presentation.en.pptx \
+            materiales/clase-4/ppt-*/presentation.en.pdf \
+            materiales/clase-4/ppt-*/lab.en.html \
+            materiales/clase-4/ppt-1/lab-sdv.en.html \
+            materiales/clase-4/guide-audiovisual.en.pdf \
+            qa/class4-en/manifest.json
+          if git diff --cached --quiet; then
+            echo "No generated changes."
+          else
+            git commit -m "Build English Class 4 decks, PDFs, covers and labs"
+            git push origin HEAD:main
+          fi
