@@ -1,0 +1,219 @@
+{
+  "module": 2,
+  "title": "6G and Quantum Computing",
+  "short_title": "6G & quantum computing",
+  "overview": "Intelligent networks, integrated connectivity and new computing paradigms in the technological competition toward 2030.",
+  "guide": {
+    "objective": "Separate 6G research goals and network models from commercial service, and understand quantum amplitudes, phase, entanglement and measurement.",
+    "procedure": [
+      "Run the same traffic demand under the 5G baseline and the hypothetical 6G architecture.",
+      "Increase demand until service capacity is exceeded; observe latency and overload.",
+      "Prepare a single-qubit state, apply H, Z and H, and compare measurement probabilities.",
+      "Prepare a Bell state and compare observed frequencies with the theoretical distribution.",
+      "Change measurement noise and explain why sampling noise differs from unitary evolution."
+    ],
+    "model": "Network: λ and μ are requests per second, with utilization ρ = λ/μ. For λ < μ, the M/M/1 mean time in system is 1/(μ−λ) seconds, plus a fixed transport/processing component. For ρ ≥ 1, M/M/1 has no steady state; the displayed overload penalty is a bounded heuristic. Quantum: normalized complex state vector; gates H, X, Z, S, Rz and CNOT; Pᵢ = |aᵢ|². Measurement noise uses the simplified mixture (1−p)Pᵢ + p/2ⁿ.",
+    "limitations": "The 6G scenario is hypothetical. Requests are not radio bits and the model does not simulate radio propagation. M/M/1 time includes service time, not only queue waiting. Repeated measurements sample copies of the prepared state; they do not reuse one collapsed physical system. The noise mixture is not a decoherence model. Concurrence and Bloch-vector values describe the ideal state.",
+    "questions": [
+      "Why does queueing delay rise sharply as demand approaches service capacity?",
+      "What does H followed by H do to |0⟩?",
+      "Why does a Bell state produce only 00 and 11 in the ideal case?",
+      "How can Z change a later measurement result even when the immediate probabilities are unchanged?"
+    ],
+    "answers": "H followed by H returns the initial state. A Bell state |Φ+⟩ produces 00 and 11 with probability one half each, absent noise. Z changes the relative phase of |+⟩; a later H converts that phase difference into a measurable probability difference."
+  },
+  "slides": [
+    {
+      "number": 1,
+      "title": "6G and Quantum Computing",
+      "subtitle": "Research infrastructures with different time horizons.",
+      "items": [
+        [
+          "Networks",
+          "Capacity, latency, coverage and integrated sensing."
+        ],
+        [
+          "Computing",
+          "Amplitudes, interference, entanglement and measurement."
+        ]
+      ],
+      "takeaway": "Separate requirements, experimental demonstrations and commercial services.",
+      "notes": "Introduce two distinct frontiers. Both depend on research ecosystems, but their physical principles, maturity and routes to deployment are different.",
+      "sources": [
+        "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "5G and the IMT-2030 Framework",
+      "subtitle": "6G development goals are not guaranteed service performance.",
+      "items": [
+        [
+          "Communications",
+          "Higher capacity and immersion, subject to spectrum and deployment."
+        ],
+        [
+          "Integrated sensing",
+          "Networks may combine communication with environmental sensing."
+        ],
+        [
+          "AI and connectivity",
+          "AI applied to network operation and support for AI services."
+        ],
+        [
+          "Latency",
+          "The radio interface is only one component of end-to-end latency."
+        ]
+      ],
+      "takeaway": "0.1–1 ms is a radio-interface target in the ITU framework, not a guarantee for the whole Internet.",
+      "notes": "Recommendation ITU-R M.2160 includes peak-rate objectives of 50–200 Gbit/s depending on scenario. These are not commercial speeds available to every user. ITU is conducting the IMT-2030 process.",
+      "sources": [
+        "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Integrated Network Architecture",
+      "subtitle": "Terrestrial, aerial and satellite layers with distributed functions.",
+      "items": [
+        [
+          "Access",
+          "Terrestrial stations, aerial platforms and satellite links."
+        ],
+        [
+          "Transport and core",
+          "Authentication, mobility, routing and resource management."
+        ],
+        [
+          "Edge and cloud",
+          "Near-device or remote processing according to latency and cost."
+        ],
+        [
+          "Sensors and AI",
+          "Perception and control subject to safety, energy and privacy constraints."
+        ]
+      ],
+      "takeaway": "A satellite link adds propagation delay and capacity constraints.",
+      "notes": "Explain why latency depends on the entire path: radio access, transport, core, processing location, propagation and congestion. A satellite link can improve coverage but may add substantial propagation delay.",
+      "sources": [
+        "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
+        "https://www.huawei.com/en/huaweitech/future-technologies/6g-isac-ow"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Research, Standards and Deployment",
+      "subtitle": "The 2030 horizon organizes an international process.",
+      "items": [
+        [
+          "Research",
+          "Demonstrations under specific laboratory conditions."
+        ],
+        [
+          "Evaluation",
+          "Requirements, candidate interfaces and comparable methods."
+        ],
+        [
+          "Chinese ecosystem",
+          "Universities, operators and manufacturers participate in the technology race."
+        ],
+        [
+          "Adoption",
+          "Depends on spectrum, devices, investment and sustainable use cases."
+        ]
+      ],
+      "takeaway": "A 6G prototype does not demonstrate commercial coverage or profitability.",
+      "notes": "Distinguish a research prototype, standardization, spectrum allocation, network deployment, terminal availability and a viable business model.",
+      "sources": [
+        "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
+        "https://www.huawei.com/en/huaweitech/future-technologies/6g-isac-ow"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "A Qubit: Amplitude, Phase and Measurement",
+      "subtitle": "|ψ⟩ = α|0⟩ + β|1⟩, with |α|² + |β|² = 1.",
+      "items": [
+        [
+          "Probability",
+          "P(0) = |α|² and P(1) = |β|² in the computational basis."
+        ],
+        [
+          "Interference",
+          "Relative phase changes the outcome of later operations."
+        ],
+        [
+          "Entanglement",
+          "Correlations of a joint state that cannot be factorized."
+        ],
+        [
+          "Limits",
+          "Measurement does not reveal all amplitudes or enable instant signaling."
+        ]
+      ],
+      "takeaway": "H·H|0⟩ = |0⟩. For a Bell state, P(00) = P(11) = 1/2.",
+      "notes": "A superposition is not equivalent to reading all possible answers simultaneously. The reduced state of one qubit in an entangled pair may lie inside the Bloch sphere.",
+      "sources": [
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Quantum Platforms and Evidence",
+      "subtitle": "The experimental task determines what an advantage means.",
+      "items": [
+        [
+          "Photonic",
+          "Jiuzhang studies specialized photon-sampling tasks."
+        ],
+        [
+          "Superconducting",
+          "Zuchongzhi uses superconducting circuits."
+        ],
+        [
+          "Communications",
+          "Quantum key distribution and quantum networks are different applications."
+        ],
+        [
+          "Sensors",
+          "Quantum metrology is not the same as universal quantum computing."
+        ]
+      ],
+      "takeaway": "An advantage on one specific task does not prove general usefulness or broken cryptography.",
+      "notes": "The gate simulator does not reproduce boson sampling or real hardware. Compare classical algorithms, error correction, reliability and total cost as well as headline performance.",
+      "sources": [
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Two Experiments for Interpreting the Frontier",
+      "subtitle": "Network congestion and one- or two-qubit circuits.",
+      "items": [
+        [
+          "Network",
+          "Increase demand beyond capacity and observe instability."
+        ],
+        [
+          "Interference",
+          "Prepare |+⟩, apply Z and then H. Explain the final change."
+        ],
+        [
+          "Bell",
+          "Prepare |Φ+⟩, sample it and compare with the theoretical distribution."
+        ],
+        [
+          "Noise",
+          "Add measurement noise and distinguish it from ideal unitary evolution."
+        ]
+      ],
+      "takeaway": "Which result comes from the physics, and which depends on the model assumptions?",
+      "notes": "Ask students to identify which elements are physical principles and which are simplified engineering assumptions in the simulator.",
+      "sources": [
+        "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
+      ]
+    }
+  ]
+}

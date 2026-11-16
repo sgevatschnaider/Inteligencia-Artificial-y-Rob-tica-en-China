@@ -1,0 +1,308 @@
+{
+  "module": 3,
+  "title": "Neurotechnology, Biotechnology and AI for Science",
+  "short_title": "Neurotechnology & AI for Science",
+  "overview": "From neural-signal acquisition to molecular design, experimentation and scientific discovery.",
+  "guide": {
+    "objective": "Understand two distinct convergences: neural signals decoded into device control, and AI models used to explore biological candidates that still require experimental validation.",
+    "procedure": [
+      "Generate synthetic EEG data and inspect the two simulated classes.",
+      "Change acquisition noise, sample size and decision threshold; compare test metrics and ROC-AUC.",
+      "Inspect a test epoch and distinguish its true label, prediction and predicted probability.",
+      "Run an active-learning campaign and compare UCB with random selection under the same experiment budget.",
+      "Explain why an observed best candidate is not necessarily the candidate with the highest true activity."
+    ],
+    "model": "BCI: two synthetic EEG channels sampled at 128 Hz, 256 samples per epoch; logarithmic μ- and β-band power features; stratified 72/28 train/test split; standardization on training data only; regularized logistic regression. ROC-AUC groups tied scores correctly. Molecular candidates: normalized descriptors, an RBF-kernel Gaussian process and UCB acquisition μ(x)+βσ(x)−λR(x).",
+    "limitations": "No patient recordings or real molecules are used. Synthetic signal power is not clinical EEG. The NEO example is a specific clinical application; the simulator does not reproduce NEO or attribute accuracy metrics to it. The candidate model does not predict protein folding, binding affinity, pharmacology or clinical efficacy. Eight campaigns compare strategies; the best measured activity is not the hidden true activity.",
+    "questions": [
+      "How does the decision threshold affect sensitivity and specificity?",
+      "Why can the best observed candidate be a noisy measurement?",
+      "What is the difference between exploration and exploitation in UCB?",
+      "What evidence is needed between computational prediction and clinical or industrial use?"
+    ],
+    "answers": "Changing the threshold changes sensitivity and specificity, but does not change the score ranking and therefore does not by itself change ROC-AUC. A single high measurement may reflect noise. Active learning can improve sample efficiency, but does not guarantee that UCB beats random selection in every campaign."
+  },
+  "slides": [
+    {
+      "number": 1,
+      "title": "The New Frontier of Intelligence",
+      "subtitle": "Neurotechnology, biotechnology and AI for science.",
+      "items": [
+        [
+          "Neurotechnology",
+          "Signal measurement and device control."
+        ],
+        [
+          "Biotechnology",
+          "Molecular design, experimentation and validation."
+        ]
+      ],
+      "takeaway": "How does a computational prediction become experimental evidence?",
+      "notes": "Opening slide. Introduce two converging but distinct frontiers: neural interfaces and AI-assisted biological design. Keep the distinction between prediction, experiment, regulation and scale visible throughout.",
+      "sources": [
+        "https://newsroom.fudan.edu.cn/en/2026/0317/c344a148424/page.psp",
+        "https://english.genetics.cas.cn/news_/researchnews/202507/t20250707_1046906.html"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Two Frontiers, One Evidence Cycle",
+      "subtitle": "Neural signals and molecules require different models.",
+      "items": [
+        [
+          "BCI",
+          "Record signals, extract features and decode defined tasks."
+        ],
+        [
+          "AI-enabled biotechnology",
+          "Explore sequences, structures and molecular interfaces."
+        ],
+        [
+          "Shared cycle",
+          "Measure, model, experiment and compare."
+        ],
+        [
+          "Differences",
+          "Risks, time scales, data and regulation remain domain-specific."
+        ]
+      ],
+      "takeaway": "Methodological convergence does not erase biological differences.",
+      "notes": "In a BCI, activity is recorded and decoded to enable interaction. In biotechnology, AI explores molecular candidates and processes that must be validated experimentally. The sequence is conceptual, not a universal recipe.",
+      "sources": [
+        "https://newsroom.fudan.edu.cn/en/2026/0317/c344a148424/page.psp",
+        "https://english.genetics.cas.cn/news_/researchnews/202507/t20250707_1046906.html"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "A Brain–Computer Interface",
+      "subtitle": "A neural signal becomes an action through calibration.",
+      "items": [
+        [
+          "Acquisition",
+          "Non-invasive EEG, ECoG or intracortical recordings, depending on the device."
+        ],
+        [
+          "Processing",
+          "Sampling, filtering and feature extraction."
+        ],
+        [
+          "Decoding",
+          "A model trained for defined tasks and users."
+        ],
+        [
+          "Control and feedback",
+          "Cursor, prosthesis or glove; the user receives feedback."
+        ]
+      ],
+      "takeaway": "A BCI does not mean unrestricted thought reading.",
+      "notes": "EEG is an indirect signal and is sensitive to artifacts. Implants require surgery and clinical evaluation. The laboratory uses synthetic signals, not patient EEG. The performance of a BCI depends on population, protocol, calibration and context.",
+      "sources": [
+        "https://newsroom.fudan.edu.cn/en/2026/0317/c344a148424/page.psp"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "NEO: Bounded Clinical Evidence",
+      "subtitle": "A hand-motor function compensation system.",
+      "items": [
+        [
+          "Device",
+          "Epidural implantable interface with eight electrodes."
+        ],
+        [
+          "Task",
+          "Decode motor intention and control a pneumatic glove."
+        ],
+        [
+          "Evidence",
+          "Fudan reported registration approval in China in March 2026."
+        ],
+        [
+          "Scope",
+          "Defined use and indications; no universal recovery claim."
+        ]
+      ],
+      "takeaway": "Separate device authorization, individual efficacy and access to treatment.",
+      "notes": "Nature Biotechnology reported on 17 April 2026 that China approved the NEO implant by Neuracle for a specific application in people with paralysis. The device records signals associated with intended hand movement; they are decoded to control a robotic glove. The report describes eight electrodes and an implant above the dura. Do not claim general efficacy or open-ended thought reading.",
+      "sources": [
+        "https://newsroom.fudan.edu.cn/en/2026/0317/c344a148424/page.psp",
+        "https://www.nature.com/articles/s41587-026-03101-8"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "China’s BCI Industrial Strategy",
+      "subtitle": "2025 guidelines set targets for 2027 and 2030.",
+      "items": [
+        [
+          "2025",
+          "Seven government bodies published guidelines for the sector."
+        ],
+        [
+          "2027 · Target",
+          "Technology, standards and two to three industrial clusters."
+        ],
+        [
+          "2030 · Target",
+          "An industrial ecosystem and two to three internationally influential firms."
+        ]
+      ],
+      "takeaway": "Official targets express policy intent, not achieved results.",
+      "notes": "The 2025 Chinese guidelines set goals for 2027 and 2030. Present these as official targets, not verified outcomes. The strategy combines sensors, chips, software, clinical evaluation, production and standards.",
+      "sources": [
+        "https://www.miit.gov.cn/jgsj/kjs/wjfb/art/2025/art_438e059801414869abc50abdb06eeac6.html"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "From Biological Sequence to Product",
+      "subtitle": "AI accelerates exploration; experiments determine what works.",
+      "items": [
+        [
+          "Sequence",
+          "DNA / proteins."
+        ],
+        [
+          "Model",
+          "Prediction and design."
+        ],
+        [
+          "Laboratory",
+          "Synthesis and testing."
+        ],
+        [
+          "Evidence",
+          "Activity, safety and scale."
+        ]
+      ],
+      "takeaway": "A predicted affinity is not an approved medicine.",
+      "notes": "The conceptual workflow is to identify a desired function, use sequence or structural information, generate candidates, synthesize them, and test activity, stability, safety and scalability. Do not mistake computational affinity for demonstrated biological performance.",
+      "sources": [
+        "https://english.genetics.cas.cn/news_/researchnews/202507/t20250707_1046906.html",
+        "https://english.sioc.ac.cn/rh/rp/202606/t20260610_1161552.html",
+        "https://www.nature.com/articles/s44222-025-00349-8",
+        "https://www.nature.com/articles/s41586-026-10328-7"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "AiCE and Void-X",
+      "subtitle": "Two methodological contributions from CAS research groups.",
+      "items": [
+        [
+          "AiCE · 2025",
+          "Protein engineering that incorporates structural and evolutionary constraints into inverse-folding models."
+        ],
+        [
+          "Void-X · 2026",
+          "A generative model for protein–protein interface design at atomic scale."
+        ],
+        [
+          "Comparison",
+          "Identify the task, test set and experimental validation."
+        ],
+        [
+          "Transfer",
+          "Demonstrate reproducibility and usefulness beyond the development set."
+        ]
+      ],
+      "takeaway": "Two studies do not establish a general clinical platform.",
+      "notes": "AiCE was presented by the Chinese Academy of Sciences in 2025 as a protein-engineering strategy combining structural and evolutionary constraints. Void-X, from the Shanghai Institute of Organic Chemistry, was presented in 2026 as a generative model for protein–protein interface design. Distinguish methodological contributions from demonstrated commercial or clinical use.",
+      "sources": [
+        "https://english.cas.cn/newsroom/headlines/202512/t20251225_1142319.shtml",
+        "https://english.cas.cn/newsroom/research-news/202606/t20260611_1161564.shtml"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "AI for Science",
+      "subtitle": "ScienceOne 100 and the augmented research cycle.",
+      "items": [
+        [
+          "Question",
+          "Hypotheses, literature and problem selection."
+        ],
+        [
+          "Model",
+          "Prediction and design with explicit assumptions and uncertainty."
+        ],
+        [
+          "Experiment",
+          "Instruments and controlled tests."
+        ],
+        [
+          "Analysis",
+          "Comparison, traceability and hypothesis updates."
+        ]
+      ],
+      "takeaway": "CAS announced ScienceOne 100 in April 2026; independent evaluation remains necessary.",
+      "notes": "AI for Science applies computational models, AI and automation to stages of scientific work; it does not remove critical judgment or experimental validation. CAS announced ScienceOne 100 in April 2026 as a system of specialized models and tools for multidisciplinary research.",
+      "sources": [
+        "https://english.cas.cn/newsroom/cas-in-media/202604/t20260429_1158251.shtml"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Adoption, Risks and Limits",
+      "subtitle": "Maturity stages are not interchangeable.",
+      "items": [
+        [
+          "Research",
+          "Proof of concept and method validity."
+        ],
+        [
+          "Validation",
+          "Replication, population, safety and controls."
+        ],
+        [
+          "Regulation",
+          "Authorization for defined uses."
+        ],
+        [
+          "Scale",
+          "Production, access, costs and outcomes."
+        ]
+      ],
+      "takeaway": "Neural privacy, biosafety and reproducibility cut across the entire cycle.",
+      "notes": "Use an evidence-and-maturity matrix. Research is not a product; regulatory authorization is limited to the approved use; industrial scale requires stable production, cost control, access and productivity. Discuss neuroprivacy, informed consent, dual use, bias and traceability.",
+      "sources": [
+        "https://newsroom.fudan.edu.cn/en/2026/0317/c344a148424/page.psp",
+        "https://english.cas.cn/newsroom/cas-in-media/202604/t20260429_1158251.shtml"
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Five Takeaways",
+      "subtitle": "Neurotechnology and biotechnology are converging frontiers, not automatic promises.",
+      "items": [
+        [
+          "01 · Measure",
+          "Signal and data quality condition every inference."
+        ],
+        [
+          "02 · Model",
+          "AI expands the search space but also introduces error and uncertainty."
+        ],
+        [
+          "03 · Experiment",
+          "A useful prediction requires physical or biological validation."
+        ],
+        [
+          "04 · Scale",
+          "Economic advantage requires production, regulation and adoption."
+        ],
+        [
+          "05 · Evaluate",
+          "Privacy, safety, access and reproducibility matter."
+        ]
+      ],
+      "takeaway": "Which links in these value chains could Argentina and Latin America develop?",
+      "notes": "Close by distinguishing research, validation, industrialization and outcomes. Invite discussion of regional capabilities: bioinformatics, clinical trials, biomedical data, agricultural biotechnology, protein design, instrumentation and digital services.",
+      "sources": [
+        "https://newsroom.fudan.edu.cn/en/2026/0317/c344a148424/page.psp",
+        "https://english.genetics.cas.cn/news_/researchnews/202507/t20250707_1046906.html"
+      ]
+    }
+  ]
+}

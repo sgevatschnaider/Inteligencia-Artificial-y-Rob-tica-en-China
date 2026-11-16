@@ -1,0 +1,376 @@
+{
+  "module": 4,
+  "title": "Drones, Space and Energy: China 2030",
+  "short_title": "Drones, space & energy",
+  "overview": "Low-altitude economy, BeiDou, space exploration, hydrogen and experimental fusion.",
+  "guide": {
+    "objective": "Evaluate emerging industries as complete systems, distinguishing aircraft performance, navigation infrastructure, mission status and energy indicators.",
+    "procedure": [
+      "Run a baseline fleet scenario and record completed and pending missions.",
+      "Change demand, distance, weather, battery reserve and charging infrastructure one at a time.",
+      "Run the 24-hour BeiDou/PNT scenario and inspect satellite visibility and estimated error.",
+      "Calculate hydrogen output, partial cost and emissions under different electricity mixes.",
+      "Change plasma density, temperature and energy-confinement time; explain what the triple product does and does not show."
+    ],
+    "model": "Aircraft: 10-minute steps over 480 minutes; demand arrivals are modeled per step. Mission energy is E = 2d × e_km × weather factor × load factor. Dispatch requires SOC × nominal battery ≥ mission energy + reserve × nominal battery. PNT: 48 synthetic samples, simplified geometry and a four-satellite teaching threshold. Hydrogen: kg/day = MW × 1,000 × 24 × utilization / (kWh/kg). Partial cost = electricity use × USD/MWh / 1,000 + other variable costs. Emissions = specific electricity use × grid carbon intensity + a synthetic fixed component. Fusion: nTτE in 10²⁰ keV·s/m³, with an illustrative reference value of 30.",
+    "limitations": "Aircraft and risk parameters are not calibrated; do not use the model for real operations or safety decisions. PNT does not use real ephemerides or solve GNSS equations. Hydrogen cost is not full LCOH; the fixed emissions component is synthetic. Water use is an approximate process assumption, not total plant consumption. The fusion triple product does not calculate Q, ignition, net engineering gain or electricity generation.",
+    "questions": [
+      "Why does an aircraft not create an industry by itself?",
+      "What is the difference between PNT availability, accuracy and integrity?",
+      "Why does installed electrolyzer capacity not equal actual hydrogen production?",
+      "Why is EAST’s plasma-duration record not evidence of commercial electricity generation?"
+    ],
+    "answers": "Aviation depends on navigation, infrastructure, regulation, maintenance and demand. PNT availability is not the same as positional accuracy or integrity. Hydrogen output depends on utilization, efficiency and electricity supply. Plasma duration and the Lawson triple product are research indicators; they do not establish net electric output or commercial operation."
+  },
+  "slides": [
+    {
+      "number": 1,
+      "title": "Drones, Space and Energy",
+      "subtitle": "China 2030: systems, operations and evidence.",
+      "items": [
+        [
+          "Mobility and space",
+          "Aircraft, navigation and orbital services."
+        ],
+        [
+          "Energy",
+          "Industrial electrolysis and experimental fusion."
+        ]
+      ],
+      "takeaway": "Economic value depends on the complete operation of the system.",
+      "notes": "Opening slide. Frame the class around the complementarity of platforms, infrastructure, operations, regulation, demand and energy. Avoid treating a technology announcement as proof of an industry.",
+      "sources": [
+        "https://ir.ehang.com/news-releases/news-release-details/ehangs-eh216-s-evtol-operators-obtain-air-operator-certificates/",
+        "https://www.iea.org/reports/global-hydrogen-review-2026/production"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "The Low-Altitude Economy",
+      "subtitle": "Markets differ in maturity, risk and regulation.",
+      "items": [
+        [
+          "Established market",
+          "Professional drones for inspection, agriculture, mapping, emergencies and energy."
+        ],
+        [
+          "Selective expansion",
+          "Air logistics on specialized routes and for specific needs."
+        ],
+        [
+          "Limited deployment",
+          "Passenger eVTOL operations bounded by certification, sites and procedures."
+        ],
+        [
+          "System economics",
+          "Aircraft, navigation, vertiports, insurance, maintenance and airspace management."
+        ]
+      ],
+      "takeaway": "Flight autonomy does not equal commercial viability.",
+      "notes": "Distinguish professional drone services, specialized logistics and passenger eVTOL. Each has different technical requirements, regulation, insurance and unit economics.",
+      "sources": [
+        "https://ir.ehang.com/news-releases/news-release-details/ehangs-eh216-s-evtol-operators-obtain-air-operator-certificates/",
+        "https://english.www.gov.cn/news/202605/14/content_WS6a0512c0c6d00ca5f9a0aedf.html"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "The Air-Operations Value Chain",
+      "subtitle": "An aircraft alone does not create an industry.",
+      "items": [
+        [
+          "Platform",
+          "Battery, motors, sensors and redundancy."
+        ],
+        [
+          "Navigation",
+          "Positioning, maps and communications."
+        ],
+        [
+          "Operations",
+          "Scheduling, charging, maintenance and routes."
+        ],
+        [
+          "Airspace and users",
+          "Control, permits, safety, demand and mission cost."
+        ]
+      ],
+      "takeaway": "The bottleneck is often operational, regulatory or economic—not flight range.",
+      "notes": "A viable service requires an end-to-end system. Mission economics must include the return leg, battery reserve, charging availability, maintenance, insurance and authorized operating conditions.",
+      "sources": [
+        "https://ir.ehang.com/news-releases/news-release-details/ehangs-eh216-s-evtol-operators-obtain-air-operator-certificates/"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "EHang EH216-S: From Prototype to Certification",
+      "subtitle": "Three different approvals and a bounded commercial deployment.",
+      "items": [
+        [
+          "2023 · Type certificate",
+          "Design approved."
+        ],
+        [
+          "2024 · Production certificate",
+          "Manufacturing system authorized."
+        ],
+        [
+          "2025 · Operator certificates",
+          "Paid services under authorized conditions."
+        ],
+        [
+          "Scope",
+          "Two-seat electric eVTOL with defined operating routes and conditions."
+        ]
+      ],
+      "takeaway": "Certification does not mean an unrestricted nationwide air-taxi network.",
+      "notes": "Separate type certification, production approval and operator authorization. These are different regulatory questions. Do not infer unrestricted passenger operations from the existence of certificates.",
+      "sources": [
+        "https://www.ehang.com/news/1198.html",
+        "https://ir.ehang.com/news-releases/news-release-details/ehangs-eh216-s-evtol-operators-obtain-air-operator-certificates/",
+        "https://www.propulsionwatch.com/certification-records/ehang-eh216-s-caac"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Regulation Is Part of the Technology",
+      "subtitle": "Commercial aviation requires risk management, certification and traceable operations.",
+      "items": [
+        [
+          "Airworthiness",
+          "Design, components, redundancy and testing."
+        ],
+        [
+          "Operator and site",
+          "Procedures, authorizations and organizational capability."
+        ],
+        [
+          "Airspace",
+          "Routes, separation, coordination and communications."
+        ],
+        [
+          "Risk and evidence",
+          "Weather, failures, response and incident records."
+        ]
+      ],
+      "takeaway": "In May 2026, China reported a dedicated low-altitude-economy safety unit within CAAC.",
+      "notes": "Emphasize that regulation is not an external afterthought. It is part of the technical system and determines which operations are permitted.",
+      "sources": [
+        "https://english.www.gov.cn/news/202605/14/content_WS6a0512c0c6d00ca5f9a0aedf.html",
+        "https://www.ehang.com/news/1198.html"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "BeiDou: Navigation, Timing and Technological Sovereignty",
+      "subtitle": "A cross-sector infrastructure for mobility, energy, logistics and drones.",
+      "items": [
+        [
+          "Positioning",
+          "Where an object is."
+        ],
+        [
+          "Navigation",
+          "How it moves."
+        ],
+        [
+          "Timing",
+          "Critical synchronization."
+        ],
+        [
+          "PNT",
+          "Positioning · Navigation · Timing."
+        ]
+      ],
+      "takeaway": "China renewed its official push for international BeiDou applications in 2026.",
+      "notes": "Explain PNT as a service stack. Availability, accuracy and integrity are different metrics; performance depends on geometry, signal quality, obstructions, multipath and receiver design.",
+      "sources": [
+        "https://english.www.gov.cn/news/202609/16/content_WS6aa9df1dc6d00ca5f9a0d396.html",
+        "https://english.www.gov.cn/news/202505/18/content_WS6829e872c6d0868f4e8f29ff.html"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "The Space Value Chain",
+      "subtitle": "From launching satellites to selling services.",
+      "items": [
+        [
+          "Launch",
+          "Rockets and launch centers."
+        ],
+        [
+          "Satellites",
+          "Manufacturing and payloads."
+        ],
+        [
+          "Operations",
+          "Orbit and ground stations."
+        ],
+        [
+          "Data and services",
+          "Communications, Earth observation, agriculture, weather and logistics."
+        ]
+      ],
+      "takeaway": "Standards support coordination; they do not prove every company is profitable.",
+      "notes": "The value chain extends beyond launch. Economic value is created when orbital data becomes reliable, usable services for terrestrial users.",
+      "sources": [
+        "https://english.www.gov.cn/news/202604/24/content_WS69eb4f6cc6d00ca5f9a0a9fe.html",
+        "https://english.www.gov.cn/news/202511/26/content_WS6926a9c5c6d00ca5f9a07ce9.html"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Tianwen-2: Engineering for Small-Body Exploration",
+      "subtitle": "A mission with two destinations: sample return and later comet exploration.",
+      "items": [
+        [
+          "2025 · Launch",
+          "Launched on 29 May, China time."
+        ],
+        [
+          "2016 HO3",
+          "Kamoʻoalewa asteroid: observation and sampling target."
+        ],
+        [
+          "2027+ · Next phase",
+          "Sample return to Earth is planned, not yet completed."
+        ],
+        [
+          "311P/PANSTARRS",
+          "Later target, conditional on earlier mission phases."
+        ]
+      ],
+      "takeaway": "Distinguish planned trajectory, observation, sampling and completed sample return.",
+      "notes": "The launch date may appear as 28 May in UTC. A July 2026 update reported the spacecraft’s encounter with the asteroid environment; sample recovery remains a future objective. Do not present a planned return as a completed result.",
+      "sources": [
+        "https://www.ecns.cn/m/cns-wire/2026-07-06/detail-ihffyeqp1389885.shtml",
+        "https://english.cas.cn/newsroom/cas_media/202505/t20250529_1044726.shtml"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Advanced Energy: Two Routes, Different Horizons",
+      "subtitle": "Hydrogen has industrial applications; fusion remains experimental research.",
+      "items": [
+        [
+          "Hydrogen · Energy carrier",
+          "Electrolysis and electricity input; storage, transport and end use; cost and firm demand."
+        ],
+        [
+          "Fusion · Potential energy source",
+          "Magnetic plasma confinement, temperature, stability, materials and energy balance."
+        ],
+        [
+          "Industrial scaling",
+          "Capacity, utilization, cost and demand."
+        ],
+        [
+          "Research and engineering",
+          "Confinement, materials and net-energy challenges."
+        ]
+      ],
+      "takeaway": "The energy transition requires installed capacity, actual use, cost and profitability to be distinguished.",
+      "notes": "Hydrogen is an energy carrier, not a primary energy source. Electrolysis consumes electricity. Fusion is a potential future energy source but remains an engineering and research challenge.",
+      "sources": [
+        "https://www.iea.org/reports/global-hydrogen-review-2026/executive-summary",
+        "https://english.cas.cn/newsroom/cas_media/202501/t20250121_899052.shtml"
+      ]
+    },
+    {
+      "number": 10,
+      "title": "EAST and Electrolysis: Reading the Milestones",
+      "subtitle": "A laboratory record is not a commercial power plant.",
+      "items": [
+        [
+          "1,066 seconds",
+          "High-confinement plasma in EAST, January 2025."
+        ],
+        [
+          "More than 4 GW",
+          "Global installed electrolyzer capacity in 2025, according to the IEA."
+        ],
+        [
+          "Nearly 75%",
+          "China’s share of new global electrolyzer installations in 2025."
+        ],
+        [
+          "Interpretation",
+          "Fusion is not commercial electricity; electrolysis is not zero-emission if the input electricity is carbon-intensive."
+        ]
+      ],
+      "takeaway": "The EAST record does not demonstrate commercial electricity or positive net energy.",
+      "notes": "Keep units and denominators explicit. GW is power capacity, not tonnes of hydrogen or energy generated. A plasma-duration record is not a net-electricity measurement.",
+      "sources": [
+        "https://english.cas.cn/newsroom/cas_media/202501/t20250121_899052.shtml",
+        "https://www.iea.org/reports/global-hydrogen-review-2026/executive-summary"
+      ]
+    },
+    {
+      "number": 11,
+      "title": "Five Takeaways: China 2030",
+      "subtitle": "Industrial frontiers depend on ecosystems, applications and evidence.",
+      "items": [
+        [
+          "01 · Drones",
+          "Advantage scales when operations are safe and demand exists."
+        ],
+        [
+          "02 · eVTOL",
+          "Certification does not guarantee immediate mass adoption."
+        ],
+        [
+          "03 · Space",
+          "Orbital data creates value when it becomes a service."
+        ],
+        [
+          "04 · Energy",
+          "Do not confuse research, installed capacity and profitability."
+        ],
+        [
+          "05 · Latin America",
+          "Opportunities in agriculture, navigation, analytics and services."
+        ]
+      ],
+      "takeaway": "Where can Latin America build its own capabilities in these technology chains?",
+      "notes": "Invite a discussion of local capabilities and realistic value-chain entry points: geospatial services, agricultural analytics, maintenance, energy infrastructure, software and operational standards.",
+      "sources": [
+        "https://english.www.gov.cn/news/202611/03/content_WS6ae99fcfc6d00ca5f9a0e126.html"
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Primary Sources and Verification Criteria",
+      "subtitle": "Separate announcements, certificates, actual operations, experiments and targets.",
+      "items": [
+        [
+          "CAAC · Air safety",
+          "english.www.gov.cn · 14 May 2026."
+        ],
+        [
+          "EHang · Operator certificate",
+          "ehang.com · 31 March 2025."
+        ],
+        [
+          "CNSA · Commercial space",
+          "english.www.gov.cn · 24 April 2026."
+        ],
+        [
+          "CAS and IEA",
+          "Tianwen-2, EAST and Global Hydrogen Review 2026; plus NDRC and BeiDou sources."
+        ]
+      ],
+      "takeaway": "The fusion triple product does not calculate engineering gain or electric power.",
+      "notes": "Use the sources to check the date, unit, scope and status of each claim. Keep announced goals, certifications, operations and experimental results separate.",
+      "sources": [
+        "https://english.www.gov.cn/news/202605/14/content_WS6a0512c0c6d00ca5f9a0aedf.html",
+        "https://www.ehang.com/news/1198.html",
+        "https://english.www.gov.cn/news/202604/24/content_WS69eb4f6cc6d00ca5f9a0a9fe.html",
+        "https://english.cas.cn/newsroom/cas_media/202505/t20250529_1044726.shtml",
+        "https://english.cas.cn/newsroom/cas_media/202501/t20250121_899052.shtml",
+        "https://www.iea.org/reports/global-hydrogen-review-2026/executive-summary",
+        "https://english.www.gov.cn/news/202611/03/content_WS6ae99fcfc6d00ca5f9a0e126.html",
+        "https://english.www.gov.cn/news/202609/16/content_WS6aa9df1dc6d00ca5f9a0d396.html"
+      ]
+    }
+  ]
+}

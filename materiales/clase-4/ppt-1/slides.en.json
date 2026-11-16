@@ -1,0 +1,241 @@
+{
+  "module": 1,
+  "title": "The Smart Vehicle and the Factory of the Future",
+  "short_title": "Smart vehicles & smart factories",
+  "overview": "Software, data, electrification and advanced manufacturing in China.",
+  "guide": {
+    "objective": "Understand how electrification, software, data and AI interact across vehicle architecture and factory operations.",
+    "procedure": [
+      "Read each slide and state a prediction before changing any parameter.",
+      "Run the balanced baseline scenario and record output, rejects, work in process and OEE.",
+      "Change one parameter at a time: supply interval, buffer capacity or reliability.",
+      "Repeat with the same random seed, compare scenarios and explain the bottleneck.",
+      "Export the results and distinguish model output from external evidence."
+    ],
+    "model": "A discrete-event production line runs for 480 simulated minutes in 0.25-minute steps. Stations have cycle times, finite buffers, failures, repairs and quality rejects. Hourly reliability r is converted to a per-step failure probability: 1 − r^(Δt/60). Seed 20261115 makes runs reproducible. Ideal station capacity is 60 / cycle time (units per hour). Line OEE is an educational approximation based on the bottleneck station.",
+    "limitations": "The model discretizes time and is not calibrated to a real factory. The AI-factory scenario changes assumed parameters; it does not establish a causal effect of AI. Work in process includes queues and units being processed. Lost supply is recorded separately. OEE is not an audited BYD or industry metric.",
+    "questions": [
+      "What happens when a station that is not the bottleneck becomes faster?",
+      "How much does predictive maintenance improve final good output?",
+      "What changes when buffer capacity is reduced?",
+      "Can OEE rise while the number of conforming vehicles falls?"
+    ],
+    "answers": "Speeding up a non-bottleneck station may not increase final throughput. Buffers absorb variation but cannot remove a persistent capacity constraint. A technology investment matters only when it changes the binding constraint or reduces losses at the relevant stage."
+  },
+  "slides": [
+    {
+      "number": 1,
+      "title": "The Smart Vehicle and the Factory of the Future",
+      "subtitle": "Software, data and advanced manufacturing in China.",
+      "items": [
+        [
+          "Vehicle",
+          "Architecture, driver assistance and over-the-air updates."
+        ],
+        [
+          "Factory",
+          "Robotics, quality control and production capacity."
+        ]
+      ],
+      "takeaway": "How do these technologies work together to create value?",
+      "notes": "Opening slide. Frame the vehicle and the factory as connected digital and physical systems. The economic result depends on coordination across hardware, software, data, suppliers and production operations.",
+      "sources": [
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Four Industrial Transformations",
+      "subtitle": "Competitiveness depends on their integration.",
+      "items": [
+        [
+          "Electrification",
+          "Battery, power electronics, motor and charging."
+        ],
+        [
+          "Software",
+          "Centralized or zonal computing, applications and OTA updates."
+        ],
+        [
+          "Data and AI",
+          "Perception, maintenance, planning and product improvement."
+        ],
+        [
+          "Manufacturing",
+          "Robotics, logistics, traceability and quality control."
+        ]
+      ],
+      "takeaway": "An isolated improvement can simply move the bottleneck.",
+      "notes": "Explain that these four transformations are complements. A better battery, faster software or faster robot does not guarantee higher system output if another stage constrains the process.",
+      "sources": [
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "The Software-Defined Vehicle",
+      "subtitle": "A conceptual architecture with updateable functions.",
+      "items": [
+        [
+          "Hardware",
+          "Sensors, actuators, battery and computing units."
+        ],
+        [
+          "Platform",
+          "Operating system, communications and separation of safety-critical functions."
+        ],
+        [
+          "Applications",
+          "Driver assistance, cockpit and services, each requiring specific validation."
+        ],
+        [
+          "OTA updates",
+          "Remote distribution with version management and cybersecurity."
+        ]
+      ],
+      "takeaway": "Remote updates require safety validation throughout the vehicle life cycle.",
+      "notes": "Not every vehicle uses a single computer. Centralized and zonal architectures are alternative design choices. An application must not be able to compromise safety-critical functions. OTA updates require rollback, cybersecurity and validation.",
+      "sources": [
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Huawei in the Automotive Ecosystem",
+      "subtitle": "A technology and platform supplier.",
+      "items": [
+        [
+          "Assisted driving",
+          "Sensors, perception, planning and control, depending on vehicle and version."
+        ],
+        [
+          "Smart cockpit",
+          "Interface, connectivity and service integration."
+        ],
+        [
+          "Computing and software",
+          "Platforms that integrate vehicle functions."
+        ],
+        [
+          "Cloud and vehicle",
+          "Data and updates subject to privacy and security requirements."
+        ]
+      ],
+      "takeaway": "Distinguish the technology supplier, the vehicle manufacturer and the operator.",
+      "notes": "Use Huawei as an example of a technology supplier within a broader ecosystem. Do not conflate the supplier's role with the automaker's legal and operational responsibilities.",
+      "sources": [
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/advanced-driving-system",
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Assistance, Automation and Responsibility",
+      "subtitle": "SAE levels are defined by the task and the operational domain.",
+      "items": [
+        [
+          "L0–L2 · Driver",
+          "The driver supervises the environment and remains responsible for driving."
+        ],
+        [
+          "L3 · Conditional",
+          "The system performs the driving task within its domain and may request intervention."
+        ],
+        [
+          "L4 · High automation",
+          "The system handles fallback within its operational domain."
+        ],
+        [
+          "L5 · Full automation",
+          "Automation in all road conditions that a human driver could manage."
+        ]
+      ],
+      "takeaway": "A commercial name does not establish the level of automation.",
+      "notes": "Correct a common misconception: the driver is not permanently responsible in every level. Level 4 can operate within a limited operational design domain; it is not universal autonomy.",
+      "sources": [
+        "https://www.sae.org/blog/sae-j3016-update",
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/advanced-driving-system"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "The Factory as a Production System",
+      "subtitle": "The laboratory represents serial stations with finite buffers.",
+      "items": [
+        [
+          "Ideal capacity",
+          "60 / cycle time in minutes = units per hour."
+        ],
+        [
+          "Availability A",
+          "Operating time / planned production time."
+        ],
+        [
+          "Performance P",
+          "Ideal cycle time × total units / operating time."
+        ],
+        [
+          "Quality Q",
+          "Good units / total units."
+        ]
+      ],
+      "takeaway": "OEE = A × P × Q. Actual output also depends on supply and buffers.",
+      "notes": "Use conventional OEE definitions. In the laboratory, OEE is an approximate line indicator based on the bottleneck station, not empirical data from BYD. Distinguish local station efficiency from end-to-end throughput.",
+      "sources": []
+    },
+    {
+      "number": 7,
+      "title": "Value Chains and Geoeconomics",
+      "subtitle": "Costs and capabilities are distributed across sectors.",
+      "items": [
+        [
+          "Resources and chemistry",
+          "Minerals, processing and active materials."
+        ],
+        [
+          "Batteries and vehicles",
+          "Cells, packs, integration and safety."
+        ],
+        [
+          "Software and services",
+          "Chips, data, validation and maintenance."
+        ],
+        [
+          "Infrastructure",
+          "Electric grid, charging, standards and trade."
+        ]
+      ],
+      "takeaway": "For Latin America, identify concrete capabilities before inferring opportunities.",
+      "notes": "Treat regional opportunities as hypotheses for specialization, not forecasts of investment or employment. Ask which local suppliers, skills and institutions could occupy specific value-chain segments.",
+      "sources": [
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Summary and Experiment",
+      "subtitle": "A faster factory can still produce fewer good units.",
+      "items": [
+        [
+          "1 · Compare",
+          "Run the baseline and AI-factory scenarios with the same random seed."
+        ],
+        [
+          "2 · Intervene",
+          "Change buffer capacity, supply or reliability."
+        ],
+        [
+          "3 · Measure",
+          "Record good units, rejects, WIP and OEE."
+        ],
+        [
+          "4 · Explain",
+          "Identify whether the constraint is processing, supply or quality."
+        ]
+      ],
+      "takeaway": "What changes when you optimize a station that is not the bottleneck?",
+      "notes": "The model parameters are synthetic. Have students explain the mechanism behind the observed result rather than merely reporting which scenario produced the largest number.",
+      "sources": []
+    }
+  ]
+}
