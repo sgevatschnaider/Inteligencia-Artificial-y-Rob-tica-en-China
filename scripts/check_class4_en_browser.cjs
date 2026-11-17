@@ -27,7 +27,7 @@ const server=http.createServer((req,res)=>{
    if(i===2){const x=await page.evaluate(()=>{setTab('quantum');qPreset('bell');return {c:concurrence(),p:probs()}});assert(Math.abs(x.c-1)<1e-12);assert(Math.abs(x.p[0]-.5)<1e-12);}
    if(i===3){const x=await page.evaluate(()=>{trainBci();return bciResult.metrics.acc});assert(x>=0&&x<=1);}
    if(i===4){const x=await page.evaluate(()=>{setTab('energy');$('power').value=20;$('utilization').value=65;$('efficiency').value=52;h2Calc();return $('h2Production').textContent});assert.equal(x,'6,000');}
-   if(i===5){const before=await page.locator('#result').innerText();await page.locator('#speed').fill('120');await page.locator('#speed').dispatchEvent('input');assert.notEqual(await page.locator('#result').innerText(),before);assert((await page.locator('#result').innerText()).includes('Braking'));}
+   if(i===5){const before=await page.locator('#result').innerText();await page.locator('#speed').evaluate(el=>{el.value='120';el.dispatchEvent(new Event('input',{bubbles:true}));});assert.notEqual(await page.locator('#result').innerText(),before);assert((await page.locator('#result').innerText()).includes('Braking'));}
    await page.screenshot({path:path.join(out,`lab-${i}.png`)});
    assert.deepEqual(errors,[],suffix);
    results.push({path:suffix,browser_errors:errors.length,status:'passed'});

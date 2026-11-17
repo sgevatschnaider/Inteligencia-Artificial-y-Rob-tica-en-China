@@ -7,6 +7,7 @@ on:
       - "scripts/build_class4_en.py"
       - "scripts/verify_class4_en.py"
       - "scripts/check_class4_models.mjs"
+      - "scripts/check_class4_en_browser.cjs"
       - "tests/test_class4_en.py"
       - ".github/workflows/class4-en.yml"
       - "qa/class4-en/**"

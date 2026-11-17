@@ -289,7 +289,11 @@
     "Se realizaron ${q.shotNumber} mediciones con ${(+$('noise').value)}% de mezcla de ruido.": "${q.shotNumber} measurements were performed with ${(+$('noise').value)}% noise mixture.",
     "Elegí «Medir» o «1.000 mediciones» para muestrear resultados.": "Choose Measure or 1,000 shots to sample results.",
     "Las operaciones unitarias conservan la normalización.": "Unitary operations preserve normalization.",
-    "Bloch reducido:": "Reduced Bloch vector:"
+    "Bloch reducido:": "Reduced Bloch vector:",
+    "Para dos qubits se utiliza el espacio de estados {|00⟩, |01⟩, |10⟩, |11⟩}. Se aplica álgebra lineal compleja de puertas H, X, Z, S, Rz y CNOT. El estado de Bell se obtiene preparando |00⟩, aplicando H al primer qubit y después CNOT (control qubit 0).": "For two qubits, the state space is {|00⟩, |01⟩, |10⟩, |11⟩}. The model applies complex linear algebra for H, X, Z, S, Rz and CNOT gates. Prepare the Bell state from |00⟩ by applying H to the first qubit and then CNOT (control qubit 0).",
+    "+ p/2ⁿ. No simula hardware cuántico real ni un canal físico completo. Las correlaciones y la medida de entrelazamiento se refieren al estado ideal previo al ruido.": "+ p/2ⁿ. This does not simulate real quantum hardware or a complete physical channel. Correlations and the entanglement measure refer to the ideal state before noise.",
+    "\\n\\nNormalización:": "\\n\\nNormalization:",
+    "estado,amplitud_real,amplitud_imaginaria,probabilidad_ideal,probabilidad_con_ruido,mediciones": "state,real_amplitude,imaginary_amplitude,ideal_probability,noisy_probability,measurements"
   },
   "lab3": {
     "Laboratorio 3 · Neurotecnología, biotecnología e IA para la ciencia": "Lab 3 · Neurotechnology, Biotechnology and AI for Science",
@@ -479,7 +483,8 @@
     "Con umbral": "With threshold",
     "el sistema asigna la clase": "the system assigns the class",
     "izquierda": "left",
-    "derecha": "right"
+    "derecha": "right",
+    "n.º de ensayo": "trial number"
   },
   "lab4": {
     "Laboratorio 4 · China 2030: drones, espacio y energía": "Lab 4 · China 2030: Drones, Space and Energy",
@@ -754,7 +759,15 @@
     "Completadas + pendientes": "Completed + pending",
     "Completadas": "Completed",
     "Avance manual": "Manual step",
-    "A las ${$(\"airClock\").textContent}, hay ${air.queue.length} misiones pendientes (${blocked} restringidas por el escenario), ${counts.flight} vehículos en vuelo y ${counts.charging} cargando.": "At ${$(\"airClock\").textContent}, there are ${air.queue.length} pending missions (${blocked} restricted by the scenario), ${counts.flight} vehicles in flight and ${counts.charging} charging."
+    "A las ${$(\"airClock\").textContent}, hay ${air.queue.length} misiones pendientes (${blocked} restringidas por el escenario), ${counts.flight} vehículos en vuelo y ${counts.charging} cargando.": "At ${$(\"airClock\").textContent}, there are ${air.queue.length} pending missions (${blocked} restricted by the scenario), ${counts.flight} vehicles in flight and ${counts.charging} charging.",
+    "TIERRA": "EARTH",
+    "hora local simulada": "simulated local hour",
+    "hora simulada": "simulated hour",
+    "Estabilidad y monitoreo": "Stability and monitoring",
+    "Seguimiento de activos y rutas": "Asset and route tracking",
+    "Trazabilidad de cargas": "Cargo traceability",
+    "producto triple / 10²⁰": "triple product / 10²⁰",
+    "Referencia ilustrativa (30)": "Illustrative reference (30)"
   },
   "labSdv": {
     "Latencia y detención · China tecnológica": "Latency and Stopping Distance · Technological China",
@@ -783,6 +796,8 @@
     "Exportar y justificar cada unidad.": "Export the results and justify every unit.",
     "Supuestos: piso horizontal, desaceleración constante μg tras la respuesta, sin aerodinámica, pendiente, fallas de sensores ni dinámica del vehículo. No representa un sistema ADAS concreto ni determina distancias seguras para conducción real.": "Assumptions: level road, constant deceleration μg after the response, no aerodynamics, slope, sensor failures or vehicle dynamics. This does not represent a specific ADAS system or determine safe real-world driving distances.",
     "Material elaborado por Sergio Gevatschnaider · Instituto Confucio UBA · Revisión 15/11/2026": "Prepared by Sergio Gevatschnaider · Revised 15 Nov 2026",
-    "Modelos didácticos con supuestos explícitos. Recursos audiovisuales en sus canales originales.": "Educational models with explicit assumptions. Audiovisual resources remain on their original channels."
+    "Modelos didácticos con supuestos explícitos. Recursos audiovisuales en sus canales originales.": "Educational models with explicit assumptions. Audiovisual resources remain on their original channels.",
+    "El tiempo de respuesta agrega percepción, decisión y actuación.": "Response time includes perception, decision and actuation.",
+    "Distancia de respuesta, frenado y detención según velocidad": "Response, braking and stopping distance versus speed"
   }
 }
