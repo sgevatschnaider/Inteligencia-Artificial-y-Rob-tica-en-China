@@ -52,12 +52,12 @@
     {
       "path": "materiales/clase-4/ppt-1/presentation.en.pptx",
       "bytes": 148797,
-      "sha256": "21631abf2d96681cdfb5ac4ff6590b2648c511b312962135b818999fb29544d7"
+      "sha256": "bb6d17743f9b355218d8edeab5fc19f531f4437e8167cae400f34e8d4ad29666"
     },
     {
       "path": "materiales/clase-4/ppt-1/presentation.en.pdf",
       "bytes": 627267,
-      "sha256": "2ec4f27aac8224500c232e131433b234be5b22fd26ea44ea0917ba6b675306c1"
+      "sha256": "35fffbb04f5ada0fd47f80a117d4f17adc6c72a77e8039f29ef4f2b4b6fe9e56"
     },
     {
       "path": "materiales/clase-4/ppt-1/lab.en.html",
@@ -66,8 +66,8 @@
     },
     {
       "path": "materiales/clase-4/ppt-1/lab-sdv.en.html",
-      "bytes": 3313,
-      "sha256": "a998b3d96cc5099dc060bd3293c37e98e9be741d065e1844da30a032b6699585"
+      "bytes": 3296,
+      "sha256": "4a82ec192da99183c0894d8918413bbab20914e0e829d730c6398ec02d6c0a9f"
     },
     {
       "path": "materiales/clase-4/ppt-1/sdv.en.js",
@@ -82,17 +82,17 @@
     {
       "path": "materiales/clase-4/ppt-2/presentation.en.pptx",
       "bytes": 201744,
-      "sha256": "758f7efee625e5d426a2988932bba07b613f230af47e2b44581c0595cd259f28"
+      "sha256": "33b59e2e1f95e44eac8d27d43a37cdaddfd5969c9e01a51c6c0bf25e9cfdc108"
     },
     {
       "path": "materiales/clase-4/ppt-2/presentation.en.pdf",
       "bytes": 640306,
-      "sha256": "0008bfc47c8fdbd272ea4a7895f3c73d09140c65ee1747d97fad7d65fe8c7c20"
+      "sha256": "11dc78321839777974ff451ce9ee721195aac180c77ff95ada80552b4be71c37"
     },
     {
       "path": "materiales/clase-4/ppt-2/lab.en.html",
-      "bytes": 41449,
-      "sha256": "d289335fc7e5beb9eb60421eed8fcbe83d563317d2492f7e73cb7aa9173fbdcd"
+      "bytes": 41427,
+      "sha256": "afe68db34f5374a03c5684cb25f99460e1becc1a4f4f6ca76cc70bf017ef8603"
     },
     {
       "path": "materiales/clase-4/covers/module-3.png",
@@ -102,17 +102,17 @@
     {
       "path": "materiales/clase-4/ppt-3/presentation.en.pptx",
       "bytes": 209654,
-      "sha256": "ca8823e4db85cdfbdd6895930e388b811c96a296153d9fa9f4c951f171ef1753"
+      "sha256": "785d0765f9d609e2b470294941a566e81f0bc59c8513bb3ca3f4921d88ea65d9"
     },
     {
       "path": "materiales/clase-4/ppt-3/presentation.en.pdf",
       "bytes": 789129,
-      "sha256": "9c657f6326e0831c3c116f5d954b94a09d5a4523b40bf43900f98deeabc50973"
+      "sha256": "6953daf65210285601601bdb93eec3bc57f62cde5598c525fc1730b737621a59"
     },
     {
       "path": "materiales/clase-4/ppt-3/lab.en.html",
-      "bytes": 48902,
-      "sha256": "dfa3a6db4dacc68d622e540697e689dc40ce82b6dee64d8d5b1cfea69fcce527"
+      "bytes": 48900,
+      "sha256": "0e96c902606780f6b563454a5019cf99285ed10f9a51e658092e5ac104954b36"
     },
     {
       "path": "materiales/clase-4/covers/module-4.png",
@@ -122,22 +122,22 @@
     {
       "path": "materiales/clase-4/ppt-4/presentation.en.pptx",
       "bytes": 203529,
-      "sha256": "792a17b49a571d577a8bbbe35fa3ef8f8f534ee218335cd13fef4aeb8e35252c"
+      "sha256": "bbe83b9ad25ba657a458c1e5f2b4d23a2a8b6461e3b80db19d2024edf276fb87"
     },
     {
       "path": "materiales/clase-4/ppt-4/presentation.en.pdf",
       "bytes": 959080,
-      "sha256": "b81d449d6d28b11066df8fb17a213af89107786aa9d71fcfcb17c01152b48efa"
+      "sha256": "52fb8ca6600141e16676531c51d6c632a6f9f722945a37b07abc588498281889"
     },
     {
       "path": "materiales/clase-4/ppt-4/lab.en.html",
-      "bytes": 53523,
-      "sha256": "a2255fc1e6a9f153a638f6e052b7a3d66a551df87efe3a5d27ec81fdf60bc979"
+      "bytes": 53514,
+      "sha256": "84a04ca181799e0b55c212406a938a9d7d049d004f340035c3fe6508b0cf99d0"
     },
     {
       "path": "materiales/clase-4/guide-audiovisual.en.pdf",
       "bytes": 54418,
-      "sha256": "c5d9dd29b7c96297465fcf496030d58b14d66da6e30710fdfcd9382d202ac623"
+      "sha256": "4f67015edc3e6eaee2b9b2e20ddeafaa2b1a163dc92d2dbb4cdc17cea95ed0b0"
     },
     {
       "path": "materiales/clase-4/index.en.html",
