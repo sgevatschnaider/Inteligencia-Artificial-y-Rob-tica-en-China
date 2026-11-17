@@ -17,10 +17,15 @@
         ]
       ],
       "takeaway": "¿Cómo se coordinan estas tecnologías para crear valor?",
-      "notes": "",
+      "notes": "Abra el módulo conectando dos sistemas: el automóvil y la fábrica que lo produce. En ambos, sensores y software adquieren valor cuando modifican una operación física de manera fiable. La electrificación cambia componentes y proveedores; el vehículo definido por software agrega una plataforma que debe mantenerse durante años. Esta convergencia no elimina las exigencias de calidad, seguridad ni organización. Proponga seguir una decisión: una cámara detecta una anomalía, un modelo la interpreta, una persona o un controlador actúa y una medición posterior verifica el resultado. La imagen es una ilustración conceptual heredada de Clase 1, no una fotografía documental de una planta identificada. La pregunta de apertura se retoma en el experimento final.",
       "sources": [
-        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
-      ]
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox",
+        "https://auto.huawei.com/en/ads/"
+      ],
+      "visual": {
+        "layout": "cover"
+      },
+      "section": "Vehículo y fábrica"
     },
     {
       "number": 2,
@@ -46,10 +51,15 @@
         ]
       ],
       "takeaway": "Una mejora aislada puede desplazar el cuello de botella.",
-      "notes": "",
+      "notes": "Desarrolle cada transformación como una capa distinta del mismo sistema. Un vehículo puede ser eléctrico sin ofrecer conducción automatizada avanzada. Una planta puede utilizar robots sin aprendizaje automático. Por eso no conviene tratar electrificación, software, IA y automatización como sinónimos. Solicite un ejemplo de complementariedad: una actualización puede mejorar la gestión de carga, pero depende de la batería y de los límites térmicos; una inspección visual puede reducir defectos, pero requiere trazabilidad para localizar y corregir su causa. Introduzca el cuello de botella: acelerar una estación solo aumenta la producción final si el resto de la línea y el abastecimiento pueden sostener ese ritmo. Esta idea permite evaluar inversiones concretas en lugar de contar tecnologías instaladas.",
       "sources": [
-        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
-      ]
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox",
+        "https://auto.huawei.com/en/ads/"
+      ],
+      "visual": {
+        "layout": "columns"
+      },
+      "section": "Vehículo y fábrica"
     },
     {
       "number": 3,
@@ -75,10 +85,16 @@
         ]
       ],
       "takeaway": "La actualización remota exige validación de seguridad durante todo el ciclo de vida.",
-      "notes": "No todos los vehículos usan una única computadora. La centralización y la arquitectura zonal son opciones de diseño. Una aplicación no debe poder comprometer funciones críticas.",
+      "notes": "Lea la arquitectura desde la base física hacia las aplicaciones. Los sensores y actuadores conectan el software con el vehículo; la plataforma organiza comunicaciones, recursos y separación de funciones; las aplicaciones incorporan servicios que deben validarse por separado. Una actualización OTA es un mecanismo de distribución, no una garantía de seguridad. Explique una secuencia de ingeniería: identificar versión y vehículo, probar compatibilidad, evaluar el cambio, desplegar con control y conservar trazabilidad. Una cabina multimedia y una función de frenado tienen criticidades distintas. Pregunte qué ocurriría si un cambio aparentemente menor alterara un tiempo de respuesta. El valor del software depende también de la capacidad de mantenerlo, auditarlo y recuperarse de una actualización fallida.",
       "sources": [
-        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
-      ]
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox",
+        "https://auto.huawei.com/en/ads/",
+        "https://unece.org/transport/documents/2021/03/standards/un-regulation-no-156-software-update-and-software-update"
+      ],
+      "visual": {
+        "layout": "layers"
+      },
+      "section": "Vehículo y fábrica"
     },
     {
       "number": 4,
@@ -104,21 +120,26 @@
         ]
       ],
       "takeaway": "Distinguir proveedor tecnológico, fabricante y operador.",
-      "notes": "",
+      "notes": "Utilice Huawei como ejemplo de organización de una cadena tecnológica, sin confundir su papel con el de cada fabricante de automóviles. Sensores, cómputo, plataforma, cabina y conectividad pueden provenir de diferentes participantes. La página oficial de ADS advierte que la función de asistencia no sustituye al conductor y que las prestaciones dependen del modelo y de las actualizaciones disponibles. Un video de demostración muestra una situación seleccionada; no determina la tasa de fallos en todos los entornos. Pida distinguir quién integra, quién valida, quién mantiene y quién presta el servicio. Desde la economía industrial, estas decisiones afectan captura de valor, dependencia del proveedor, interoperabilidad y costos de cambio durante la vida útil del vehículo.",
       "sources": [
         "https://www.huawei.com/en/media-center/multimedia/videos/2023/advanced-driving-system",
-        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
-      ]
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox",
+        "https://auto.huawei.com/en/ads/"
+      ],
+      "visual": {
+        "layout": "matrix"
+      },
+      "section": "Vehículo y fábrica"
     },
     {
       "number": 5,
       "title": "Asistencia, automatización y responsabilidad",
       "image": "slides/05.webp",
-      "subtitle": "Los niveles SAE se definen por la tarea y el dominio operacional",
+      "subtitle": "Quién realiza la tarea y quién responde a una contingencia",
       "items": [
         [
           "L0–L2 · conductor",
-          "El conductor supervisa el entorno y responde por la conducción."
+          "La persona realiza o supervisa la conducción; L0 no automatiza la tarea."
         ],
         [
           "L3 · condicional",
@@ -134,17 +155,21 @@
         ]
       ],
       "takeaway": "Un nombre comercial no establece el nivel de automatización.",
-      "notes": "Corrección del original: no atribuir responsabilidad permanente al conductor en todos los niveles. L4 puede operar con dominio limitado, sin ser autonomía universal.",
+      "notes": "La clasificación SAE describe el reparto de la tarea de conducción y la respuesta ante contingencias; no asigna por sí sola responsabilidad jurídica. En L0 a L2 la persona mantiene la supervisión de la conducción. En L3 el sistema actúa bajo condiciones definidas y puede requerir una transición a la persona. En L4 la respuesta a fallas pertenece al sistema dentro de su dominio operacional; fuera de ese dominio la función puede no estar disponible. L5 exige un alcance más amplio. Defina dominio operacional con ejemplos: zona, clima, velocidad y características de la vía. Evite equiparar un nombre comercial o una maniobra exitosa con un nivel SAE. La autorización de uso y la evaluación de seguridad deben examinarse para cada función y contexto.",
       "sources": [
         "https://www.sae.org/blog/sae-j3016-update",
         "https://www.huawei.com/en/media-center/multimedia/videos/2023/advanced-driving-system"
-      ]
+      ],
+      "visual": {
+        "layout": "rows"
+      },
+      "section": "Vehículo y fábrica"
     },
     {
       "number": 6,
       "title": "La fábrica como sistema de producción",
       "image": "slides/06.webp",
-      "subtitle": "El laboratorio representa estaciones en serie con buffers finitos",
+      "subtitle": "Disponibilidad × rendimiento × calidad, con una unidad de análisis explícita",
       "items": [
         [
           "Capacidad ideal",
@@ -164,8 +189,35 @@
         ]
       ],
       "takeaway": "OEE = A × P × Q. La salida real también depende del suministro y de los buffers.",
-      "notes": "Definiciones convencionales de OEE. En el laboratorio, OEE es un indicador aproximado de línea a partir de la estación limitante, no un dato empírico de BYD.",
-      "sources": []
+      "notes": "Presente OEE como el producto de disponibilidad, rendimiento y calidad, manteniendo explícita la unidad de análisis. El gráfico usa un ejemplo didáctico: 0,85 por 0,90 por 0,98 da 0,7497, aproximadamente 75 %. Si una estación tiene capacidad ideal de 120 unidades por hora, esa combinación equivale a unas 90 unidades buenas por hora bajo supuestos compatibles; no predice automáticamente la salida de la planta. El abastecimiento, los buffers, las paradas compartidas y las estaciones limitantes pueden cambiar el resultado. No promedie porcentajes de OEE entre máquinas como si fueran producción agregada. Como contexto de adopción, IFR informó 354.000 nuevas instalaciones de robots en China en 2025, el 59 % mundial: instalación y productividad siguen siendo indicadores diferentes.",
+      "sources": [
+        "https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally"
+      ],
+      "visual": {
+        "layout": "chart",
+        "categories": [
+          "A",
+          "P",
+          "Q"
+        ],
+        "series": [
+          {
+            "name": "Factor (%)",
+            "values": [
+              85,
+              90,
+              98
+            ]
+          }
+        ],
+        "max": 110,
+        "side": {
+          "value": "75 %",
+          "label": "OEE ≈ 0,85 × 0,90 × 0,98"
+        },
+        "caption": "Ejemplo hipotético: una estación; porcentajes, no datos de una fábrica real."
+      },
+      "section": "Vehículo y fábrica"
     },
     {
       "number": 7,
@@ -191,15 +243,119 @@
         ]
       ],
       "takeaway": "Para América Latina: identificar capacidades concretas antes de inferir oportunidades.",
-      "notes": "Las oportunidades son hipótesis de especialización, no pronósticos de inversión o empleo.",
+      "notes": "Recorra la cadena de valor desde materiales hasta servicios. La presencia de un recurso mineral no equivale a dominar el procesamiento químico, la fabricación de celdas o la integración del vehículo. El software tampoco elimina esas capacidades físicas. Introduzca tres preguntas para América Latina: qué problema local existe, qué capacidad complementaria puede desarrollarse y qué condiciones de acceso a datos y mantenimiento se necesitan. Un servicio de diagnóstico o gestión de recarga puede requerir menos capital que una planta de celdas, pero depende de conectividad, estándares y acuerdos con proveedores. Use la evidencia de comercio de la AIE para separar fabricación, ventas internas y exportaciones. Una elevada cuota de producción no demuestra por sí sola rentabilidad ni ausencia de dependencia tecnológica.",
       "sources": [
-        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
-      ]
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox",
+        "https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade"
+      ],
+      "visual": {
+        "layout": "flow"
+      },
+      "section": "Vehículo y fábrica"
     },
     {
+      "title": "Adopción eléctrica: comparar magnitudes",
+      "subtitle": "Cuota de ventas nuevas en 2025, no porcentaje del parque",
+      "items": [
+        [
+          "China",
+          "55 %"
+        ],
+        [
+          "Europa",
+          "28 %"
+        ],
+        [
+          "Estados Unidos",
+          "≈10 %"
+        ]
+      ],
+      "takeaway": "Ventas, producción y parque son tres indicadores diferentes.",
+      "sources": [
+        "https://www.iea.org/reports/global-ev-outlook-2026/trends-in-electric-cars"
+      ],
+      "visual": {
+        "layout": "chart",
+        "categories": [
+          "China",
+          "Europa",
+          "EE. UU."
+        ],
+        "series": [
+          {
+            "name": "Cuota (%)",
+            "values": [
+              55,
+              28,
+              10
+            ]
+          }
+        ],
+        "max": 60,
+        "side": {
+          "value": ">13 M",
+          "label": "automóviles eléctricos vendidos en China en 2025"
+        },
+        "caption": "AIE / IEA, Global EV Outlook 2026. BEV + PHEV; 2025; porcentajes redondeados."
+      },
       "number": 8,
-      "title": "Síntesis y experimento",
       "image": "slides/08.webp",
+      "notes": "El gráfico compara la participación de automóviles eléctricos en las ventas de automóviles nuevos de China, Europa y Estados Unidos durante 2025. Los valores se redondean a 55 %, 28 % y aproximadamente 10 %; la definición comprende eléctricos a batería e híbridos enchufables, no todo vehículo denominado híbrido. Son cuotas de ventas anuales, no la proporción eléctrica del parque en circulación. La AIE registra más de 13 millones de ventas eléctricas en China en ese año. Pregunte por qué una cuota de ventas puede crecer rápidamente mientras la sustitución del parque es más lenta. Relacione adopción con precios, oferta de modelos, recarga y políticas, sin atribuir causalidad a una sola variable. Los datos son observados para 2025 y no una proyección de 2030.",
+      "section": "Vehículo y fábrica"
+    },
+    {
+      "title": "El software y el límite físico",
+      "subtitle": "Modelo ideal: distancia de respuesta más distancia de frenado",
+      "items": [
+        [
+          "60 km/h",
+          "36,9 m"
+        ],
+        [
+          "120 km/h",
+          "114,2 m"
+        ]
+      ],
+      "takeaway": "Duplicar la velocidad cuadruplica la componente de frenado.",
+      "sources": [],
+      "visual": {
+        "layout": "chart",
+        "categories": [
+          "60 km/h / 1 s",
+          "120 km/h / 1 s",
+          "60 km/h / 0 s"
+        ],
+        "series": [
+          {
+            "name": "Respuesta",
+            "values": [
+              16.6667,
+              33.3333,
+              0
+            ]
+          },
+          {
+            "name": "Frenado",
+            "values": [
+              20.226,
+              80.904,
+              20.226
+            ]
+          }
+        ],
+        "stacked": true,
+        "max": 130,
+        "caption": "Cálculo didáctico en metros. μ = 0,7; g = 9,81 m/s²; sin pendiente ni aerodinámica."
+      },
+      "number": 9,
+      "image": "slides/09.webp",
+      "notes": "Este ejercicio reproduce las relaciones físicas del laboratorio complementario. A 60 km/h la velocidad es 16,67 m/s. Con un segundo de respuesta y adherencia 0,7, la respuesta agrega unos 16,7 metros y el frenado ideal unos 20,2 metros. Duplicar la velocidad duplica la distancia de respuesta y cuadruplica la componente de frenado. Eliminar el segundo de respuesta no elimina el frenado. Explique las unidades de v por t y v al cuadrado dividido por dos mu g. El gráfico es un cálculo didáctico, no una prueba de un automóvil ni una recomendación de distancia segura. Omite pendiente, aerodinámica, dinámica de neumáticos y fallos de percepción. El objetivo es reconocer qué límite puede modificar el software y cuál permanece físico.",
+      "section": "Vehículo y fábrica"
+    },
+    {
+      "number": 10,
+      "title": "Síntesis y experimento",
+      "image": "slides/10.webp",
       "subtitle": "Una fábrica más rápida puede seguir produciendo menos",
       "items": [
         [
@@ -220,8 +376,21 @@
         ]
       ],
       "takeaway": "¿Qué cambia al optimizar una estación que no es el cuello de botella?",
-      "notes": "Fuentes y recursos por módulo en la guía web. Los parámetros del laboratorio son sintéticos.",
-      "sources": []
+      "notes": "Cierre con un experimento controlado. Pida a los estudiantes ejecutar los escenarios de fábrica base y con IA, registrar la semilla y mantener el mismo horizonte de ocho horas. Después deben cambiar una sola variable: suministro, confiabilidad o buffers. La entrega debe incluir unidades buenas, rechazo, trabajo en proceso y una explicación del cuello de botella; un aumento del OEE de una estación puede coexistir con una salida agregada estable. Conecte el resultado con el gráfico de detención: tanto en seguridad como en producción, una mejora local debe interpretarse dentro del sistema. Solicite una decisión de inversión y una condición bajo la cual dejaría de ser conveniente. Esa condición hace explícita la hipótesis y permite discutir evidencia en lugar de promesas tecnológicas.",
+      "sources": [],
+      "visual": {
+        "layout": "close"
+      },
+      "section": "Vehículo y fábrica"
     }
-  ]
+  ],
+  "editorial_version": 2,
+  "module": 1,
+  "short_title": "Vehículo y fábrica",
+  "overview": "Software, datos y manufactura avanzada en China",
+  "hero": {
+    "path": "materiales/clase-4/editorial/assets/factory-concept.jpeg",
+    "alt": "Conceptual automotive assembly line",
+    "caption": "Ilustración conceptual / Clase 1; planta no identificada"
+  }
 }

@@ -1,8 +1,8 @@
 {
   "module": 1,
   "title": "The Smart Vehicle and the Factory of the Future",
-  "short_title": "Smart vehicles & smart factories",
-  "overview": "Software, data, electrification and advanced manufacturing in China.",
+  "short_title": "Vehicle and factory",
+  "overview": "Software, data and advanced manufacturing in China.",
   "guide": {
     "objective": "Understand how electrification, software, data and AI interact across vehicle architecture and factory operations.",
     "procedure": [
@@ -38,10 +38,16 @@
         ]
       ],
       "takeaway": "How do these technologies work together to create value?",
-      "notes": "Opening slide. Frame the vehicle and the factory as connected digital and physical systems. The economic result depends on coordination across hardware, software, data, suppliers and production operations.",
+      "notes": "Open by connecting two systems: the vehicle and the factory that produces it. In both, sensors and software create value when they change a physical operation reliably. Electrification changes components and suppliers; the software-defined vehicle adds a platform that must be maintained for years. This convergence does not remove requirements for quality, safety or organization. Follow one decision: a camera detects an anomaly, a model interprets it, a person or controller acts, and a subsequent measurement verifies the result. The image is a conceptual illustration inherited from Class 1, not documentary photography of an identified plant. Return to the opening question during the final experiment.",
       "sources": [
-        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
-      ]
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox",
+        "https://auto.huawei.com/en/ads/"
+      ],
+      "image": "slides-en/01.webp",
+      "visual": {
+        "layout": "cover"
+      },
+      "section": "Vehicle and factory"
     },
     {
       "number": 2,
@@ -66,10 +72,16 @@
         ]
       ],
       "takeaway": "An isolated improvement can simply move the bottleneck.",
-      "notes": "Explain that these four transformations are complements. A better battery, faster software or faster robot does not guarantee higher system output if another stage constrains the process.",
+      "notes": "Explain the transformations as distinct layers of one system. An electric vehicle need not provide advanced automated driving, and a robot-equipped plant need not use machine learning. Electrification, software, AI and automation therefore should not be used as synonyms. Ask for an example of complementarity: an update may improve charging management, but it still depends on battery and thermal limits; visual inspection may reduce defects, but traceability is needed to identify and correct their cause. Introduce the bottleneck: speeding up one station increases final output only if the other stations and the supply system can sustain the new rate. This provides a basis for evaluating a specific investment rather than counting installed technologies.",
       "sources": [
-        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
-      ]
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox",
+        "https://auto.huawei.com/en/ads/"
+      ],
+      "image": "slides-en/02.webp",
+      "visual": {
+        "layout": "columns"
+      },
+      "section": "Vehicle and factory"
     },
     {
       "number": 3,
@@ -94,10 +106,17 @@
         ]
       ],
       "takeaway": "Remote updates require safety validation throughout the vehicle life cycle.",
-      "notes": "Not every vehicle uses a single computer. Centralized and zonal architectures are alternative design choices. An application must not be able to compromise safety-critical functions. OTA updates require rollback, cybersecurity and validation.",
+      "notes": "Read the architecture from physical components to applications. Sensors and actuators connect software to the vehicle; the platform organizes communications, computing resources and separation of functions; applications add services that require their own validation. An OTA update is a distribution mechanism, not a safety guarantee. Explain the engineering sequence: identify version and vehicle, test compatibility, assess the change, deploy under control and retain traceability. A multimedia cockpit and a braking function have different criticality. Ask what would happen if an apparently minor change altered a response time. Software value also depends on the ability to maintain and audit it and to recover from an unsuccessful update.",
       "sources": [
-        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
-      ]
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox",
+        "https://auto.huawei.com/en/ads/",
+        "https://unece.org/transport/documents/2021/03/standards/un-regulation-no-156-software-update-and-software-update"
+      ],
+      "image": "slides-en/03.webp",
+      "visual": {
+        "layout": "layers"
+      },
+      "section": "Vehicle and factory"
     },
     {
       "number": 4,
@@ -122,20 +141,26 @@
         ]
       ],
       "takeaway": "Distinguish the technology supplier, the vehicle manufacturer and the operator.",
-      "notes": "Use Huawei as an example of a technology supplier within a broader ecosystem. Do not conflate the supplier's role with the automaker's legal and operational responsibilities.",
+      "notes": "Use Huawei to illustrate how a technological value chain is organized, without confusing its role with that of every vehicle manufacturer. Sensors, computing, platforms, cockpit services and connectivity may come from different participants. The official ADS page warns that assistance does not replace the driver and that capabilities depend on model and available updates. A demonstration video shows selected conditions; it does not establish failure rates across all environments. Ask who integrates, validates, maintains and operates each function. In industrial economics, these decisions affect value capture, supplier dependence, interoperability and switching costs throughout the vehicle life cycle.",
       "sources": [
         "https://www.huawei.com/en/media-center/multimedia/videos/2023/advanced-driving-system",
-        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
-      ]
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox",
+        "https://auto.huawei.com/en/ads/"
+      ],
+      "image": "slides-en/04.webp",
+      "visual": {
+        "layout": "matrix"
+      },
+      "section": "Vehicle and factory"
     },
     {
       "number": 5,
       "title": "Assistance, Automation and Responsibility",
-      "subtitle": "SAE levels are defined by the task and the operational domain.",
+      "subtitle": "Who performs the task and who handles fallback",
       "items": [
         [
           "L0–L2 · Driver",
-          "The driver supervises the environment and remains responsible for driving."
+          "The person performs or supervises driving; L0 does not automate the task."
         ],
         [
           "L3 · Conditional",
@@ -151,16 +176,21 @@
         ]
       ],
       "takeaway": "A commercial name does not establish the level of automation.",
-      "notes": "Correct a common misconception: the driver is not permanently responsible in every level. Level 4 can operate within a limited operational design domain; it is not universal autonomy.",
+      "notes": "The SAE classification describes the allocation of the driving task and fallback; it does not by itself assign legal liability. At levels 0 to 2 the person retains driving supervision. At level 3 the system operates under defined conditions and may require a transition to the person. At level 4 the system handles fallback within its operational design domain; the function may be unavailable outside that domain. Level 5 requires broader scope. Define the domain using examples such as area, weather, speed and road characteristics. A product name or a successful maneuver does not establish a SAE level. Authorization and safety evidence must be assessed for the specific function and context.",
       "sources": [
         "https://www.sae.org/blog/sae-j3016-update",
         "https://www.huawei.com/en/media-center/multimedia/videos/2023/advanced-driving-system"
-      ]
+      ],
+      "image": "slides-en/05.webp",
+      "visual": {
+        "layout": "rows"
+      },
+      "section": "Vehicle and factory"
     },
     {
       "number": 6,
       "title": "The Factory as a Production System",
-      "subtitle": "The laboratory represents serial stations with finite buffers.",
+      "subtitle": "Availability × performance × quality, with an explicit unit of analysis",
       "items": [
         [
           "Ideal capacity",
@@ -180,8 +210,36 @@
         ]
       ],
       "takeaway": "OEE = A × P × Q. Actual output also depends on supply and buffers.",
-      "notes": "Use conventional OEE definitions. In the laboratory, OEE is an approximate line indicator based on the bottleneck station, not empirical data from BYD. Distinguish local station efficiency from end-to-end throughput.",
-      "sources": []
+      "notes": "Present OEE as availability multiplied by performance and quality, with an explicit unit of analysis. The chart uses a teaching example: 0.85 times 0.90 times 0.98 equals 0.7497, or approximately 75%. If a station has an ideal capacity of 120 units per hour, this corresponds to about 90 good units per hour under compatible assumptions; it does not automatically predict plant output. Supply, buffers, shared stoppages and bottlenecks can change the result. Do not average machine OEE percentages as though they were aggregate production. As adoption context, IFR reported 354,000 new robot installations in China in 2025, representing 59% of global installations. Installation and productivity remain different indicators.",
+      "sources": [
+        "https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally"
+      ],
+      "image": "slides-en/06.webp",
+      "visual": {
+        "layout": "chart",
+        "categories": [
+          "A",
+          "P",
+          "Q"
+        ],
+        "series": [
+          {
+            "name": "Factor (%)",
+            "values": [
+              85,
+              90,
+              98
+            ]
+          }
+        ],
+        "max": 110,
+        "side": {
+          "value": "75 %",
+          "label": "OEE ≈ 0.85 × 0.90 × 0.98"
+        },
+        "caption": "Hypothetical example: one station; percentages, not data from a real factory."
+      },
+      "section": "Vehicle and factory"
     },
     {
       "number": 7,
@@ -206,13 +264,118 @@
         ]
       ],
       "takeaway": "For Latin America, identify concrete capabilities before inferring opportunities.",
-      "notes": "Treat regional opportunities as hypotheses for specialization, not forecasts of investment or employment. Ask which local suppliers, skills and institutions could occupy specific value-chain segments.",
+      "notes": "Follow the value chain from materials to services. Possessing a mineral resource does not mean controlling chemical processing, cell manufacturing or vehicle integration. Software does not remove those physical capabilities. Introduce three questions for Latin America: what local problem exists, what complementary capability can be developed, and what access to data and maintenance is required? Diagnostics or charging management may require less capital than a cell plant but still depend on connectivity, standards and supplier agreements. Use IEA trade evidence to distinguish manufacturing, domestic sales and exports. A high production share does not by itself establish profitability or the absence of technological dependence.",
       "sources": [
-        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox"
-      ]
+        "https://www.huawei.com/en/media-center/multimedia/videos/2023/making-of-arcfox",
+        "https://www.iea.org/reports/global-ev-outlook-2026/manufacturing-and-trade"
+      ],
+      "image": "slides-en/07.webp",
+      "visual": {
+        "layout": "flow"
+      },
+      "section": "Vehicle and factory"
     },
     {
+      "title": "Electric adoption: compare like with like",
+      "subtitle": "Share of new car sales in 2025, not share of the vehicle stock",
+      "items": [
+        [
+          "China",
+          "55 %"
+        ],
+        [
+          "Europe",
+          "28 %"
+        ],
+        [
+          "United States",
+          "≈10 %"
+        ]
+      ],
+      "takeaway": "Sales, production and fleet stock are different indicators.",
+      "sources": [
+        "https://www.iea.org/reports/global-ev-outlook-2026/trends-in-electric-cars"
+      ],
+      "visual": {
+        "layout": "chart",
+        "categories": [
+          "China",
+          "Europe",
+          "United States"
+        ],
+        "series": [
+          {
+            "name": "Share (%)",
+            "values": [
+              55,
+              28,
+              10
+            ]
+          }
+        ],
+        "max": 60,
+        "side": {
+          "value": ">13 M",
+          "label": "electric cars sold in China in 2025"
+        },
+        "caption": "IEA, Global EV Outlook 2026. BEV + PHEV; 2025; rounded percentages."
+      },
       "number": 8,
+      "image": "slides-en/08.webp",
+      "notes": "The chart compares the electric share of new car sales in China, Europe and the United States in 2025. Values are rounded to 55%, 28% and approximately 10%; electric cars include battery electric and plug-in hybrid cars, rather than every vehicle marketed as a hybrid. These are annual sales shares, not the electric share of the vehicle stock on the road. The IEA records more than 13 million electric car sales in China that year. Ask why the sales share can grow rapidly while replacement of the fleet remains slower. Connect adoption with prices, model availability, charging and policy without assigning causality to a single variable. These are observed 2025 figures, not projections for 2030.",
+      "section": "Vehicle and factory"
+    },
+    {
+      "title": "Software and the physical limit",
+      "subtitle": "Ideal model: response distance plus braking distance",
+      "items": [
+        [
+          "60 km/h",
+          "36.9 m"
+        ],
+        [
+          "120 km/h",
+          "114.2 m"
+        ]
+      ],
+      "takeaway": "Doubling speed quadruples the braking component.",
+      "sources": [],
+      "visual": {
+        "layout": "chart",
+        "categories": [
+          "60 km/h / 1 s",
+          "120 km/h / 1 s",
+          "60 km/h / 0 s"
+        ],
+        "series": [
+          {
+            "name": "Response",
+            "values": [
+              16.6667,
+              33.3333,
+              0
+            ]
+          },
+          {
+            "name": "Braking",
+            "values": [
+              20.226,
+              80.904,
+              20.226
+            ]
+          }
+        ],
+        "stacked": true,
+        "max": 130,
+        "caption": "Teaching calculation in metres. μ = 0.7; g = 9.81 m/s²; no slope or aerodynamics."
+      },
+      "number": 9,
+      "image": "slides-en/09.webp",
+      "notes": "This exercise reproduces the physical relationships used in the additional laboratory. At 60 km/h, speed is 16.67 m/s. With a one-second response and a friction coefficient of 0.7, response contributes about 16.7 meters and ideal braking about 20.2 meters. Doubling speed doubles response distance and quadruples the braking component. Removing the response second does not remove braking distance. Explain the units of speed times time and speed squared divided by twice friction times gravity. The chart is a teaching calculation, not a vehicle test or a safe-distance recommendation. It omits slope, aerodynamics, tire dynamics and perception failures. The aim is to identify the limit that software can change and the physical limit that remains.",
+      "section": "Vehicle and factory"
+    },
+    {
+      "number": 10,
       "title": "Summary and Experiment",
       "subtitle": "A faster factory can still produce fewer good units.",
       "items": [
@@ -234,8 +397,19 @@
         ]
       ],
       "takeaway": "What changes when you optimize a station that is not the bottleneck?",
-      "notes": "The model parameters are synthetic. Have students explain the mechanism behind the observed result rather than merely reporting which scenario produced the largest number.",
-      "sources": []
+      "notes": "Close with a controlled experiment. Ask students to run the baseline and AI-factory scenarios, record the seed and use the same eight-hour horizon. They should then change one variable: supply, reliability or buffers. Their submission should include good units, rejects, work in process and an explanation of the bottleneck. Higher OEE at one station can coexist with unchanged aggregate output. Connect this finding to the stopping-distance chart: in safety and production alike, a local improvement must be interpreted within the whole system. Ask for an investment decision and one condition under which it would no longer be worthwhile. Stating that condition makes the hypothesis explicit and supports discussion of evidence rather than technological promises.",
+      "sources": [],
+      "image": "slides-en/10.webp",
+      "visual": {
+        "layout": "close"
+      },
+      "section": "Vehicle and factory"
     }
-  ]
+  ],
+  "editorial_version": 2,
+  "hero": {
+    "path": "materiales/clase-4/editorial/assets/factory-concept.jpeg",
+    "alt": "Conceptual automotive assembly line",
+    "caption": "Conceptual illustration / Class 1; no identified plant"
+  }
 }

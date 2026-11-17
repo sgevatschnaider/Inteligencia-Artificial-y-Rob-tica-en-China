@@ -401,11 +401,49 @@ def build_download_index(out):
     modules=[]
     for module,(folder,count) in MODULES.items():
         data=json.loads((BASE/folder/"slides.en.json").read_text(encoding="utf-8"))
-        modules.append(f'<article class="module" id="module-{module}"><img src="covers/module-{module}.png" width="1600" height="900" alt="Module {module} illustration"><div><p class="eyebrow">Module {module} · {count} slides</p><h2>{escape(data["title"])}</h2><div class="actions"><a class="button" href="{folder}/presentation.en.pptx">PowerPoint with speaker notes</a><a class="button" href="{folder}/presentation.en.pdf">PDF</a><a class="button" href="{folder}/lab.en.html">Interactive laboratory</a></div></div></article>')
+        count=len(data['slides'])
+        reader=f'<a class="button" href="{folder}/index.en.html">Slide reader and notes</a>' if (BASE/folder/'index.en.html').exists() else ''
+        modules.append(f'<article class="module" id="module-{module}"><img src="covers/module-{module}.png" width="1600" height="900" alt="Module {module} cover"><div><p class="eyebrow">Module {module} · {count} slides</p><h2>{escape(data["title"])}</h2><div class="actions">{reader}<a class="button" href="{folder}/presentation.en.pptx">PowerPoint with speaker notes</a><a class="button" href="{folder}/presentation.en.pdf">PDF</a><a class="button" href="{folder}/lab.en.html">Interactive laboratory</a></div></div></article>')
     out.write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Class 4 · English materials</title><link rel="stylesheet" href="theme.css"></head><body><main class="wrap"><p><a href="index.html">Clase 4 · Español</a></p><h1>Technological China · Class 4</h1><p class="lead">English presentations, speaker notes and interactive laboratories.</p><div class="actions"><a class="button" href="guide-audiovisual.en.pdf">Audiovisual guide (PDF)</a><a class="button" href="ppt-1/lab-sdv.en.html">Latency and stopping distance laboratory</a></div>'+''.join(modules)+'</main><footer class="wrap">Prepared by Sergio Gevatschnaider</footer></body></html>\n',encoding="utf-8")
     return out
 
+def package_editorial_outputs():
+    """Package native decks authored by render_class4_editorial.mjs.
+
+    Native PPTX and its actual LibreOffice PDF/previews are source-hash checked.
+    Never send these redesigned slides through the legacy raster/card renderer.
+    """
+    from verify_class4_editorial import verify
+    artifacts=[];modules={}
+    translations=json.loads((BASE/'lab-translations.en.json').read_text(encoding='utf-8'))
+    for module,(folder,_) in MODULES.items():
+        directory=BASE/folder;data=json.loads((directory/'slides.en.json').read_text())
+        if data.get('editorial_version')==2:
+            verify(module)
+            for name in ['lab.html']+(['lab-sdv.html'] if module==1 else []):
+                target=directory/name.replace('.html','.en.html')
+                translate_lab(directory/name,target,translations)
+                target.write_text(target.read_text().replace('href="guide.html"','href="guide.en.html"'))
+        deck=Presentation(directory/'presentation.en.pptx');pdf=PdfReader(directory/'presentation.en.pdf')
+        count=len(data['slides']);assert len(deck.slides)==len(pdf.pages)==count
+        for slide,source in zip(deck.slides,data['slides']):
+            assert source['notes'].strip() and source['notes'] in slide.notes_slide.notes_text_frame.text
+        modules[str(module)]={'slides':count,'pdf_pages':count,'speaker_notes':count,'pdf_page_size':[960,540],'editorial_version':data.get('editorial_version',1)}
+        paths=[BASE/'covers'/f'module-{module}.png',directory/'presentation.en.pptx',directory/'presentation.en.pdf',directory/'lab.en.html']
+        if module==1:paths += [directory/'lab-sdv.en.html',directory/'sdv.en.js']
+        for p in paths:artifacts.append({'path':str(p.relative_to(ROOT)),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
+    build_download_index(BASE/'index.en.html')
+    for p in [BASE/'guide-audiovisual.en.pdf',BASE/'index.en.html']:
+        artifacts.append({'path':str(p.relative_to(ROOT)),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
+    videos=json.loads((BASE/'videos.en.json').read_text())
+    report={'edition':'English','modules':modules,'videos':{'total':len(videos),'verified':sum(v['status']=='verified' for v in videos),'archived':sum(v['status']=='archived' for v in videos)},'artifacts':artifacts,'validation':{'pptx_slide_counts':True,'speaker_notes_present':True,'pdf_page_counts':True,'lab_files_generated':True,'editorial_source_hashes':True}}
+    qa=ROOT/'qa/class4-en';qa.mkdir(parents=True,exist_ok=True);(qa/'manifest.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+    print(json.dumps({'editorial_modules':[m for m,d in modules.items() if d['editorial_version']==2],'slides':sum(d['slides'] for d in modules.values()),'artifacts':len(artifacts),'authoring':'native PPTX source lineage verified'}))
+
 def make_outputs():
+    if any(json.loads((BASE/folder/'slides.en.json').read_text()).get('editorial_version')==2 for folder,_ in MODULES.values()):
+        package_editorial_outputs()
+        return
     BUILD.mkdir(parents=True,exist_ok=True)
     cover_dir=BASE/"covers"; cover_dir.mkdir(parents=True,exist_ok=True)
     translations=json.loads((BASE/"lab-translations.en.json").read_text(encoding="utf-8"))
