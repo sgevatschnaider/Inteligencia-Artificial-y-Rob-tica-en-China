@@ -20,7 +20,13 @@
     "☀ Cambiar tema": "☀ Toggle theme",
     "HTML · Sin conexión": "HTML · Offline",
     "Navegación de la clase": "Class navigation",
-    "Navegación principal": "Main navigation"
+    "Navegación principal": "Main navigation",
+    "AUTORÍA": "AUTHORSHIP",
+    "es-AR": "en-US",
+    "☾ Modo oscuro": "☾ Dark mode",
+    "☾ Tema oscuro": "☾ Dark theme",
+    "☀ Tema claro": "☀ Light theme",
+    "En pausa": "Paused"
   },
   "lab1": {
     "Laboratorio 1 · Gemelo digital de una fábrica inteligente": "Lab 1 · Digital Twin of a Smart Factory",
@@ -120,7 +126,19 @@
     "Inspección": "Inspection",
     "Cola": "Queue",
     "Procesadas:": "Processed:",
-    "min/u": "min/unit"
+    "min/u": "min/unit",
+    "Escenario:": "Scenario:",
+    "Abastecimiento:": "Supply:",
+    "unidades": "units",
+    "min/unidad": "min/unit",
+    "ESTACIÓN": "STATION",
+    "Turno": "Shift",
+    "CSV generado con los resultados registrados.": "CSV generated with the recorded results.",
+    "La estación ${names[bi]} está en mantenimiento. Mientras no se recupere, la producción de toda la línea puede verse limitada. Observá cómo se acumula trabajo en proceso antes de esa estación.": "Station ${names[bi]} is under maintenance. Until it recovers, output across the entire line may be limited. Observe how work in process accumulates before that station.",
+    "Se perdieron ${state.lost} unidades de abastecimiento porque la entrada superó la capacidad disponible. Aumentar la velocidad de las máquinas no resolvería por sí solo este problema de suministro.": "${state.lost} supplied units were lost because input exceeded available capacity. Increasing machine speed alone would not resolve this supply problem.",
+    "El rendimiento está por debajo de su capacidad ideal. Revisá las colas, el abastecimiento y los bloqueos: una estación puede estar disponible pero producir poco si está ociosa o esperando espacio.": "Performance is below ideal capacity. Check queues, supply and blocking: an available station may produce little if it is idle or waiting for space.",
+    "La calidad está reduciendo la producción conforme. Una mejora de velocidad sin control de defectos puede elevar el volumen procesado, pero no necesariamente las unidades vendibles.": "Quality is reducing good output. Higher speed without defect control may increase processed volume without increasing saleable units.",
+    "La estación limitante es ${names[bi]}. Compará este escenario con «Fábrica con IA»: el efecto de mantenimiento y mejora de ciclo depende de que las demás estaciones y el suministro puedan acompañarlo.": "The bottleneck station is ${names[bi]}. Compare this scenario with the AI-enabled factory: the effect of maintenance and cycle improvements depends on the other stations and supply keeping pace."
   },
   "lab2": {
     "Laboratorio 2 | 6G y computación cuántica · China tecnológica": "Lab 2 | 6G and Quantum Computing · Technological China",
@@ -167,7 +185,6 @@
     "Elegí un escenario e iniciá la simulación.": "Choose a scenario and start the simulation.",
     "Qué está modelando esta simulación": "What this simulation models",
     "Para una cola M/M/1 estable:": "For a stable M/M/1 queue:",
-    "con": "with",
     "La latencia total suma una componente fija hipotética de transporte/procesamiento y la espera/servicio del modelo de colas. Si la demanda supera la capacidad, se muestra una aproximación de sobrecarga y pérdida; ya no se utiliza la fórmula estacionaria M/M/1.": "Total latency combines a hypothetical fixed transport/processing component with waiting and service time from the queueing model. If demand exceeds capacity, the simulator displays an overload and loss approximation; the steady-state M/M/1 formula is no longer used.",
     "Importante:": "Important:",
     "las diferencias entre 5G y 6G son supuestos ajustables para enseñanza. No son mediciones verificadas de redes, ni promesas de latencia real; una red satelital también está limitada por propagación, obstáculos y cobertura.": "The differences between 5G and 6G are adjustable teaching assumptions. They are not verified network measurements or promises of real latency. Satellite networks are also constrained by propagation, obstacles and coverage.",
@@ -254,7 +271,25 @@
     " mediciones realizadas": " measurements performed",
     "entrelazamiento máximo": "maximum entanglement",
     "estado separable": "separable state",
-    "CSV cuántico exportado": "Quantum CSV exported"
+    "CSV cuántico exportado": "Quantum CSV exported",
+    "&nbsp; con &nbsp;": "&nbsp; with &nbsp;",
+    "6G hipotético": "Hypothetical 6G",
+    "CSV de redes exportado": "Network CSV exported",
+    "Estado preparado:": "Prepared state:",
+    "No hay operaciones para deshacer": "No operations to undo",
+    "Puerta desconocida": "Unknown gate",
+    "puerta": "gate",
+    "Un qubit: no existe entrelazamiento entre qubits.": "One qubit: there is no entanglement between qubits.",
+    "Concurrencia ideal:": "Ideal concurrence:",
+    "entrelazamiento parcial": "partial entanglement",
+    "El ruido de medición se excluye de esta medida.": "Measurement noise is excluded from this measure.",
+    "Normalización:": "Normalization:",
+    "Estado de dos qubits. Concurrencia ideal": "Two-qubit state. Ideal concurrence",
+    "Estado de un qubit.": "One-qubit state.",
+    "Se realizaron ${q.shotNumber} mediciones con ${(+$('noise').value)}% de mezcla de ruido.": "${q.shotNumber} measurements were performed with ${(+$('noise').value)}% noise mixture.",
+    "Elegí «Medir» o «1.000 mediciones» para muestrear resultados.": "Choose Measure or 1,000 shots to sample results.",
+    "Las operaciones unitarias conservan la normalización.": "Unitary operations preserve normalization.",
+    "Bloch reducido:": "Reduced Bloch vector:"
   },
   "lab3": {
     "Laboratorio 3 · Neurotecnología, biotecnología e IA para la ciencia": "Lab 3 · Neurotechnology, Biotechnology and AI for Science",
@@ -436,7 +471,15 @@
     "candidato": "candidate",
     "riesgo": "risk",
     "El presupuesto quedó por debajo de los ensayos ya realizados; no se eliminan observaciones.": "The budget is below the number of experiments already completed; observations are not removed.",
-    "La semilla BCI no modifica la campaña molecular actual.": "The BCI seed does not change the current molecular campaign."
+    "La semilla BCI no modifica la campaña molecular actual.": "The BCI seed does not change the current molecular campaign.",
+    "tiempo (s)": "time (s)",
+    "Campaña completa": "Campaign complete",
+    "Primero iniciá una campaña.": "Start a campaign first.",
+    "La probabilidad estimada para la clase derecha es": "The estimated probability of the right class is",
+    "Con umbral": "With threshold",
+    "el sistema asigna la clase": "the system assigns the class",
+    "izquierda": "left",
+    "derecha": "right"
   },
   "lab4": {
     "Laboratorio 4 · China 2030: drones, espacio y energía": "Lab 4 · China 2030: Drones, Space and Energy",
@@ -700,7 +743,18 @@
     "Navegación y sincronización": "Navigation and synchronization",
     "Seguridad y coordinación de flotas": "Safety and fleet coordination",
     "Sincronización temporal de redes": "Network time synchronization",
-    "intensidad eléctrica (kg CO₂/kWh)": "electricity carbon intensity (kg CO₂/kWh)"
+    "intensidad eléctrica (kg CO₂/kWh)": "electricity carbon intensity (kg CO₂/kWh)",
+    "Sin solución": "No solution",
+    "Receptor": "Receiver",
+    "Constelación esquemática · no a escala": "Schematic constellation · not to scale",
+    "precio eléctrico (USD/MWh)": "electricity price (USD/MWh)",
+    "Libre": "Available",
+    "Taller": "Maintenance",
+    "misiones": "missions",
+    "Completadas + pendientes": "Completed + pending",
+    "Completadas": "Completed",
+    "Avance manual": "Manual step",
+    "A las ${$(\"airClock\").textContent}, hay ${air.queue.length} misiones pendientes (${blocked} restringidas por el escenario), ${counts.flight} vehículos en vuelo y ${counts.charging} cargando.": "At ${$(\"airClock\").textContent}, there are ${air.queue.length} pending missions (${blocked} restricted by the scenario), ${counts.flight} vehicles in flight and ${counts.charging} charging."
   },
   "labSdv": {
     "Latencia y detención · China tecnológica": "Latency and Stopping Distance · Technological China",

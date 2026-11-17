@@ -1,6 +1,7 @@
 import vm from 'node:vm';import fs from 'node:fs';
+const english=process.env.CLASS4_LANGUAGE==='en',labFile=english?'lab.en.html':'lab.html';
 const results=[];function check(ok,name,details){results.push({name,pass:!!ok,details});if(!ok)throw Error(name)}
-function load(i){const html=fs.readFileSync(`materiales/clase-4/ppt-${i}/lab.html`,'utf8'),els=new Map();
+function load(i){const html=fs.readFileSync(`materiales/clase-4/ppt-${i}/${labFile}`,'utf8'),els=new Map();
 const ctx=new Proxy({measureText:t=>({width:String(t).length*7}),setLineDash:()=>{}},{get:(o,k)=>k in o?o[k]:(...a)=>ctx,set:(o,k,v)=>(o[k]=v,true)});
 function element(id){if(els.has(id))return els.get(id);const style={},e={id,value:'0',textContent:'',innerHTML:'',style,dataset:{},className:'',width:700,height:300,children:[],classList:{toggle(){},add(){},remove(){},contains(){return false}},addEventListener(){},getContext:()=>ctx,querySelector:()=>element(id+'-child'),querySelectorAll:()=>[],appendChild(){},append(){},click(){},setAttribute(){},getAttribute(){return null},remove(){}};els.set(id,e);return e}
 for(const m of html.matchAll(/<(input|select)\b([^>]*)>/g)){const a=Object.fromEntries(Array.from(m[2].matchAll(/([\w-]+)="([^"]*)"/g),x=>[x[1],x[2]]));if(a.id){element(a.id).value=a.value||'0';}}
@@ -28,14 +29,14 @@ check(run(`compare();comparison.active.length===comparison.random.length`),'Comp
 check(run(`science.observations.every(o=>Number.isFinite(o.noiseVar))`),'GP conserva varianza de cada ensayo');
 ({run,els}=load(4));
 const air=run(`(()=>{$('demand').value=30;initAir();for(let i=0;i<48;i++)airTick();let g=air.generated;airTick();return{g,stable:air.generated===g,t:air.t,soc:air.units.map(u=>u.soc),hist:air.history.map(x=>x.t)}})()`);check(air.g===240&&air.t===480&&air.stable,'Aire demanda completa y fin de turno',air);check(air.soc.every(v=>v>=0&&v<=1)&&air.hist.every((v,i,a)=>i===0||v>a[i-1]),'Aire SOC acotado e historial temporal');
-check(run(`$('satCount').value=4;$('obstruction').value=80;$('receiver').value=2;runPnt();$('pntError').textContent==='Sin solución'`),'PNT sin solución no reporta error cero');
+check(run(`$('satCount').value=4;$('obstruction').value=80;$('receiver').value=2;runPnt();$('pntError').textContent===${english?JSON.stringify('No solution'):JSON.stringify('Sin solución')}`),'PNT sin solución no reporta error cero');
 check(run(`setTab('energy');h2Calc();fusionCalc();true`),'Pestaña energía y cálculos sin funciones inexistentes');
-const h2=run(`$('power').value=20;$('utilization').value=65;$('efficiency').value=52;h2Calc();$('h2Production').textContent`);check(h2==='6.000','H₂ produce 6000 kg/día',h2);
+const h2=run(`$('power').value=20;$('utilization').value=65;$('efficiency').value=52;h2Calc();$('h2Production').textContent`);check(h2===(english?'6,000':'6.000'),'H₂ produce 6000 kg/día',h2);
 const d=60/3.6,brake=d*d/(2*.7*9.81);check(Math.abs((2*d)**2/(2*.7*9.81)/brake-4)<1e-12,'Detención: duplicar velocidad cuadruplica frenado');
 for(let i=1;i<=4;i++){
- const l=load(i);const html=fs.readFileSync(`materiales/clase-4/ppt-${i}/lab.html`,'utf8');
+ const l=load(i);const html=fs.readFileSync(`materiales/clase-4/ppt-${i}/${labFile}`,'utf8');
  for(const m of html.matchAll(/<input\b([^>]*type="range"[^>]*)>/g)){const a=Object.fromEntries(Array.from(m[1].matchAll(/([\w-]+)="([^"]*)"/g),x=>[x[1],x[2]]));for(const v of [a.min,a.max]){l.els.get(a.id).value=v;l.run(i===1?'syncControls();advanceOne()':i===2?'updateNetLabels();netMetrics(1);renderQuantum()':i===3?'trainBci();if(science)renderScience()':'setAirLabels();initAir();airTick();runPnt();h2Calc();fusionCalc()');}}
  check(true,'Laboratorio '+i+': extremos de todos los rangos sin excepción');
 }
 }catch(e){results.push({name:e.message,pass:false});console.error(e.stack)}
-fs.mkdirSync('qa/clase-4',{recursive:true});fs.writeFileSync('qa/clase-4/model-tests.json',JSON.stringify({date:new Date().toISOString(),environment:'Node VM with DOM/canvas stubs; mathematical and execution checks, not rendered browser tests',results},null,2));console.log(JSON.stringify({passed:results.filter(x=>x.pass).length,failed:results.filter(x=>!x.pass)}));if(results.some(x=>!x.pass))process.exitCode=1;
+fs.mkdirSync(english?'qa/class4-en':'qa/clase-4',{recursive:true});fs.writeFileSync(english?'qa/class4-en/model-tests.json':'qa/clase-4/model-tests.json',JSON.stringify({date:new Date().toISOString(),environment:'Node VM with DOM/canvas stubs; mathematical and execution checks, not rendered browser tests',results},null,2));console.log(JSON.stringify({passed:results.filter(x=>x.pass).length,failed:results.filter(x=>!x.pass)}));if(results.some(x=>!x.pass))process.exitCode=1;

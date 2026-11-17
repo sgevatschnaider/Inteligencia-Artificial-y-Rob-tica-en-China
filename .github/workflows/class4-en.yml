@@ -5,6 +5,9 @@ on:
     paths:
       - "materiales/clase-4/**"
       - "scripts/build_class4_en.py"
+      - "scripts/verify_class4_en.py"
+      - "scripts/check_class4_models.mjs"
+      - "tests/test_class4_en.py"
       - ".github/workflows/class4-en.yml"
       - "qa/class4-en/**"
 permissions:
@@ -29,6 +32,12 @@ jobs:
           pip install python-pptx pillow reportlab pypdf
       - name: Build English decks, PDFs, covers and labs
         run: python scripts/build_class4_en.py
+      - name: Validate generated English materials
+        run: |
+          python -m unittest discover -s tests -p 'test_class4_en.py'
+          python scripts/verify_class4_en.py
+          python scripts/validate_repo.py
+          CLASS4_LANGUAGE=en node scripts/check_class4_models.mjs
       - name: Commit generated deliverables
         run: |
           git config user.name "github-actions[bot]"
@@ -38,8 +47,11 @@ jobs:
             materiales/clase-4/ppt-*/presentation.en.pdf \
             materiales/clase-4/ppt-*/lab.en.html \
             materiales/clase-4/ppt-1/lab-sdv.en.html \
+            materiales/clase-4/ppt-1/sdv.en.js \
+            materiales/clase-4/index.en.html \
+            materiales/clase-4/index.html \
             materiales/clase-4/guide-audiovisual.en.pdf \
-            qa/class4-en/manifest.json
+            qa/class4-en/manifest.json qa/class4-en/model-tests.json
           if git diff --cached --quiet; then
             echo "No generated changes."
           else

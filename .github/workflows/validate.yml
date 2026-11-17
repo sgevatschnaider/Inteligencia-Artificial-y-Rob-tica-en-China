@@ -4,16 +4,23 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_run:
+    workflows: [Build Class 4 English materials]
+    branches: [main]
+    types: [completed]
 
 permissions:
   contents: read
 
 jobs:
   bilingual-content:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_branch || github.ref }}
       - name: Validate links and bilingual structure
         run: python scripts/validate_repo.py
       - name: Check site and research reader JavaScript
@@ -70,6 +77,9 @@ jobs:
           node scripts/check_class3_ppt4.cjs
           node scripts/check_class3_ppt5.cjs
           node scripts/check_class3_ppt6.cjs
+      - name: Test generated Class 4 English laboratories in Chrome
+        if: github.event_name == 'workflow_run'
+        run: node scripts/check_class4_en_browser.cjs
       - name: Preserve Dragon browser review images
         if: always()
         uses: actions/upload-artifact@v4

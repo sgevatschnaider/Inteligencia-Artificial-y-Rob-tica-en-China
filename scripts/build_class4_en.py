@@ -2,6 +2,7 @@
 """Build the English Class 4 package: editable PPTX, PDF decks, covers and translated labs."""
 from __future__ import annotations
 import hashlib, json, math, os, re, textwrap
+from html import escape
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 from pptx import Presentation
@@ -195,7 +196,7 @@ def render_slide_image(module, data, slide, cover_path, out):
         y+=24
         for label,body in slide["items"][:2]:
             rounded(d,(850,y,1480,y+85),(16,49,63),outline=(77,132,145),radius=15,width=2)
-            d.text((875,y+15),label,font=pil_font(20,True),fill=rgb(GOLD))
+            draw_lines(d,(875,y+15),label,pil_font(20,True),rgb(GOLD),190,24,2)
             draw_lines(d,(1085,y+15),body,pil_font(18),rgb(WHITE),365,24,2)
             y+=102
         rounded(d,(850,660,1480,750),(38,49,49),outline=(173,131,67),radius=16,width=2)
@@ -248,7 +249,7 @@ def add_rect(slide, x,y,w,h, fill, outline=None, radius=True):
 
 def build_pptx(module, data, cover_path, out):
     prs=Presentation()
-    prs.slide_width=Inches(13.333); prs.slide_height=Inches(7.5)
+    prs.slide_height=Inches(7.5); prs.slide_width=prs.slide_height*16//9
     blank=prs.slide_layouts[6]
     for sd in data["slides"]:
         sl=prs.slides.add_slide(blank)
@@ -265,8 +266,8 @@ def build_pptx(module, data, cover_path, out):
             y=3.95
             for label,body in sd["items"][:2]:
                 add_rect(sl,7.05,y,5.2,.72,PANEL2,"#497587")
-                add_text(sl,label,7.22,y+.10,1.35,.24,12,GOLD,True)
-                add_text(sl,body,8.65,y+.10,3.42,.48,11,WHITE)
+                add_text(sl,label,7.22,y+.10,1.6,.48,12,GOLD,True)
+                add_text(sl,body,8.95,y+.10,3.12,.48,11,WHITE)
                 y+=.82
             add_rect(sl,7.05,5.78,5.2,.78,"#26383b","#9b7945")
             add_text(sl,sd["takeaway"],7.23,5.94,4.82,.45,12,GOLD,True)
@@ -287,30 +288,36 @@ def build_pptx(module, data, cover_path, out):
             add_text(sl,sd["takeaway"],.98,6.45,11.35,.28,11,GOLD,True)
         add_text(sl,"Prepared by Sergio Gevatschnaider",.80,7.02,5.6,.22,8,MUTED)
         add_text(sl,"ENGLISH EDITION · CLASS 4",8.3,7.02,4.2,.22,8,MUTED,True,align=PP_ALIGN.RIGHT)
-        try:
-            notes=sl.notes_slide.notes_text_frame
-            src="\n".join(sd.get("sources",[]))
-            notes.text=(sd.get("notes","")+"\n\nSources:\n"+src).strip()
-        except Exception:
-            pass
+        notes=sl.notes_slide.notes_text_frame
+        src="\n".join(sd.get("sources",[]))
+        notes.text=(sd.get("notes","")+"\n\nSources:\n"+src).strip()
     prs.save(out)
     check=Presentation(out)
     assert len(check.slides)==len(data["slides"]), f"Slide count mismatch in {out}"
-    for s in check.slides:
-        assert s.notes_slide.notes_text_frame.text.strip(), f"Missing speaker notes on slide in {out}"
+    for s,sd in zip(check.slides,data["slides"]):
+        expected_notes=(sd.get("notes","")+"\n\nSources:\n"+"\n".join(sd.get("sources",[]))).strip()
+        assert sd.get("notes","").strip(), f"Missing source speaker notes in {out}"
+        assert s.notes_slide.notes_text_frame.text == expected_notes, f"Speaker notes mismatch in {out}"
     return out
 
 class PageImage(Flowable):
     def __init__(self, path, width, height):
         super().__init__(); self.path=str(path); self.width=width; self.height=height
     def draw(self):
-        self.canv.drawImage(self.path,0,0,width=self.width,height=self.height,preserveAspectRatio=False,mask="auto")
+        self.canv.drawImage(self.path,0,0,width=self.width,height=self.height,preserveAspectRatio=True,mask="auto")
 
 def build_pdf(slide_paths, out):
     page=(960,540)
-    doc=SimpleDocTemplate(str(out),pagesize=page,leftMargin=0,rightMargin=0,topMargin=0,bottomMargin=0)
+    # SimpleDocTemplate's default Frame adds 6 pt on every side, even with
+    # zero document margins. Use the full 16:9 page as an unpadded frame.
+    doc=BaseDocTemplate(str(out),pagesize=page,leftMargin=0,rightMargin=0,topMargin=0,bottomMargin=0)
+    frame=Frame(0,0,*page,leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0,id="slide")
+    doc.addPageTemplates(PageTemplate(id="slide",frames=[frame]))
     story=[]
     for i,p in enumerate(slide_paths):
+        with Image.open(p) as image:
+            if image.width*9 != image.height*16:
+                raise ValueError(f"Slide image must be 16:9: {p}")
         if i: story.append(PageBreak())
         story.append(PageImage(p,page[0],page[1]))
     doc.build(story)
@@ -318,12 +325,19 @@ def build_pdf(slide_paths, out):
     return out
 
 def build_video_guide(videos, out):
+    # Embed fonts so viewers do not substitute differently sized base fonts.
+    pdfmetrics.registerFont(TTFont("GuideSans",FONT_REG))
+    pdfmetrics.registerFont(TTFont("GuideSans-Bold",FONT_BOLD))
+    pdfmetrics.registerFontFamily("GuideSans",normal="GuideSans",bold="GuideSans-Bold",italic="GuideSans",boldItalic="GuideSans-Bold")
     styles=getSampleStyleSheet()
     styles.add(ParagraphStyle(name="GuideTitle",parent=styles["Title"],fontName="Helvetica-Bold",fontSize=24,leading=28,textColor=colors.HexColor("#102b38"),spaceAfter=8))
     styles.add(ParagraphStyle(name="GuideSub",parent=styles["Normal"],fontSize=10,leading=14,textColor=colors.HexColor("#536b74"),spaceAfter=12))
     styles.add(ParagraphStyle(name="VideoTitle",parent=styles["Heading2"],fontSize=12,leading=15,textColor=colors.HexColor("#123d4b"),spaceBefore=9,spaceAfter=4))
     styles.add(ParagraphStyle(name="SmallBody",parent=styles["BodyText"],fontSize=9,leading=12,spaceAfter=4))
     styles.add(ParagraphStyle(name="Status",parent=styles["BodyText"],fontSize=8,leading=10,textColor=colors.HexColor("#7c5c27"),spaceAfter=3))
+    for style in styles.byName.values():
+        if hasattr(style,"fontName"):
+            style.fontName="GuideSans-Bold" if "Bold" in style.fontName else "GuideSans"
     doc=SimpleDocTemplate(str(out),pagesize=A4,rightMargin=17*mm,leftMargin=17*mm,topMargin=16*mm,bottomMargin=16*mm)
     story=[Paragraph("TECHNOLOGICAL CHINA · CLASS 4",styles["GuideSub"]),
            Paragraph("Videos for Exploring the Industrial Frontier",styles["GuideTitle"]),
@@ -335,7 +349,7 @@ def build_video_guide(videos, out):
         story.append(Paragraph(f"MODULE {module}",styles["Heading1"]))
         for v in [x for x in videos if x["module"]==module]:
             status="VERIFIED RESOURCE" if v["status"]=="verified" else "ARCHIVE LINK · AVAILABILITY NOT VERIFIED"
-            link=f'<link href="{v["url"]}" color="#0b7774">Open original resource ↗</link>'
+            link=f'<link href="{v["url"]}" color="#0b7774">Open original resource</link>'
             story.append(KeepTogether([
                 Paragraph(v["title"],styles["VideoTitle"]),
                 Paragraph(f"<b>{status}</b> · {v['origin']} · Slides {v['slides']}",styles["Status"]),
@@ -350,6 +364,14 @@ def build_video_guide(videos, out):
     assert len(PdfReader(str(out)).pages)>=3
     return out
 
+def translate_text(text, mapping):
+    # Match once against the source: sequential replacements also translated
+    # already-English text and changed JavaScript `const` into `withst` (con).
+    patterns=[]
+    for src in sorted(mapping,key=len,reverse=True):
+        patterns.append((r"(?<!\w)" if src[0].isalnum() else "")+re.escape(src)+(r"(?!\w)" if src[-1].isalnum() else ""))
+    return re.sub("|".join(patterns),lambda m:mapping[m.group()],text)
+
 def translate_lab(source, target, translations, extra_links=True):
     text=source.read_text(encoding="utf-8")
     mapping={}
@@ -361,19 +383,27 @@ def translate_lab(source, target, translations, extra_links=True):
         mapping={**translations.get("common",{}),**translations.get(f"lab{idx}",{})}
     elif source.name=="lab-sdv.html":
         mapping={**translations.get("common",{}),**translations.get("labSdv",{})}
-    for src,dst in sorted(mapping.items(),key=lambda kv:len(kv[0]),reverse=True):
-        text=text.replace(src,dst)
+    text=translate_text(text,mapping)
+    text=text.replace("AUTORÍA","AUTHORSHIP")
     text=text.replace('<html lang="es">','<html lang="en">').replace('<html lang="es"','<html lang="en"')
     text=text.replace('href="../index.html"','href="../index.en.html"')
-    text=text.replace('href="index.html"','href="index.en.html"')
-    text=text.replace('href="guide.html"','href="guide.en.html"')
-    text=text.replace('href="../videos.html"','href="../videos.en.html"')
-    text=text.replace('href="../guia-docente.html"','href="../teaching-guide.en.html"')
+    text=text.replace('href="index.html"','href="presentation.en.pdf"')
+    text=text.replace('href="lab.html"','href="lab.en.html"')
+    text=text.replace('href="../videos.html','href="../guide-audiovisual.en.pdf')
+    text=text.replace('src="sdv.js"','src="sdv.en.js"')
     text=text.replace('href="../../index.html"','href="../../index.html?lang=en"')
     text=text.replace("Instituto Confucio UBA","")
     text=text.replace(" ·  · "," · ")
     target.write_text(text,encoding="utf-8")
     return target
+
+def build_download_index(out):
+    modules=[]
+    for module,(folder,count) in MODULES.items():
+        data=json.loads((BASE/folder/"slides.en.json").read_text(encoding="utf-8"))
+        modules.append(f'<article class="module" id="module-{module}"><img src="covers/module-{module}.png" width="1600" height="900" alt="Module {module} illustration"><div><p class="eyebrow">Module {module} · {count} slides</p><h2>{escape(data["title"])}</h2><div class="actions"><a class="button" href="{folder}/presentation.en.pptx">PowerPoint with speaker notes</a><a class="button" href="{folder}/presentation.en.pdf">PDF</a><a class="button" href="{folder}/lab.en.html">Interactive laboratory</a></div></div></article>')
+    out.write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Class 4 · English materials</title><link rel="stylesheet" href="theme.css"></head><body><main class="wrap"><p><a href="index.html">Clase 4 · Español</a></p><h1>Technological China · Class 4</h1><p class="lead">English presentations, speaker notes and interactive laboratories.</p><div class="actions"><a class="button" href="guide-audiovisual.en.pdf">Audiovisual guide (PDF)</a><a class="button" href="ppt-1/lab-sdv.en.html">Latency and stopping distance laboratory</a></div>'+''.join(modules)+'</main><footer class="wrap">Prepared by Sergio Gevatschnaider</footer></body></html>\n',encoding="utf-8")
+    return out
 
 def make_outputs():
     BUILD.mkdir(parents=True,exist_ok=True)
@@ -398,27 +428,28 @@ def make_outputs():
         src=BASE/folder/"lab.html"; dst=BASE/folder/"lab.en.html"
         translate_lab(src,dst,translations)
         if module==1:
-            translate_lab(BASE/folder/"lab-sdv.html",BASE/folder/"lab-sdv.en.html",translations)
-        for p in [cover,pptx,pdf,dst]:
+            sdv_lab=translate_lab(BASE/folder/"lab-sdv.html",BASE/folder/"lab-sdv.en.html",translations)
+            sdv_js=BASE/folder/"sdv.en.js"
+            sdv_mapping={**translations["labSdv"],"Respuesta":"Response","Frenado":"Braking","Margen ideal":"Ideal margin","Distancia (m)":"Distance (m)","es-AR":"en-US","velocidad_kmh,respuesta_s,adherencia,obstaculo_m,reaccion_m,frenado_m,total_m":"speed_kmh,response_s,friction,obstacle_m,reaction_m,braking_m,total_m","detencion_ideal.csv":"ideal_stopping.csv"}
+            sdv_js.write_text(translate_text((BASE/folder/"sdv.js").read_text(encoding="utf-8"),sdv_mapping),encoding="utf-8")
+        for p in [cover,pptx,pdf,dst]+([sdv_lab,sdv_js] if module==1 else []):
             manifest.append({"path":str(p.relative_to(ROOT)).replace("\\\\","/"),"bytes":p.stat().st_size,"sha256":hashlib.sha256(p.read_bytes()).hexdigest()})
     videos=json.loads((BASE/"videos.en.json").read_text(encoding="utf-8"))
     guide_pdf=BASE/"guide-audiovisual.en.pdf"
     build_video_guide(videos,guide_pdf)
     manifest.append({"path":str(guide_pdf.relative_to(ROOT)),"bytes":guide_pdf.stat().st_size,"sha256":hashlib.sha256(guide_pdf.read_bytes()).hexdigest()})
+    index=build_download_index(BASE/"index.en.html")
+    manifest.append({"path":str(index.relative_to(ROOT)),"bytes":index.stat().st_size,"sha256":hashlib.sha256(index.read_bytes()).hexdigest()})
+    landing=BASE/"index.html"
+    text=landing.read_text(encoding="utf-8")
+    if 'href="index.en.html"' not in text:
+        text=text.replace('<div class="actions">','<div class="actions"><a class="button" href="index.en.html" lang="en">English materials · PPTX, PDF &amp; labs</a>',1)
+        landing.write_text(text,encoding="utf-8")
     qa=ROOT/"qa"/"class4-en"; qa.mkdir(parents=True,exist_ok=True)
-    report={"edition":"English","modules":{str(m):{"slides":n} for m,(_,n) in MODULES.items()},
+    report={"edition":"English","modules":{str(m):{"slides":n,"pdf_pages":len(PdfReader(str(BASE/f/"presentation.en.pdf")).pages),"speaker_notes":n,"pdf_page_size":[960,540]} for m,(f,n) in MODULES.items()},
             "videos":{"total":len(videos),"verified":sum(v["status"]=="verified" for v in videos),"archived":sum(v["status"]=="archived" for v in videos)},
             "artifacts":manifest,"validation":{"pptx_slide_counts":True,"speaker_notes_present":True,"pdf_page_counts":True,"lab_files_generated":True}}
     (qa/"manifest.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
-    # Remove institutional references from Class 4 HTML; retain the named author attribution.
-    for p in BASE.rglob("*.html"):
-        if p.name.endswith(".en.html"): continue
-        s=p.read_text(encoding="utf-8")
-        new=s.replace(" · Instituto Confucio UBA","").replace("Instituto Confucio UBA","")
-        new=new.replace('<p class="eyebrow"></p>','')
-        if p.name=="guia-docente.html":
-            new=new.replace('<p class="eyebrow"></p>','<p class="eyebrow">CLASE 4 · GUÍA DOCENTE</p>')
-        if new!=s: p.write_text(new,encoding="utf-8")
     print(json.dumps({"modules":4,"slides":sum(n for _,n in MODULES.values()),"videos":len(videos),
                       "verified_videos":sum(v["status"]=="verified" for v in videos),
                       "archived_links":sum(v["status"]=="archived" for v in videos),
