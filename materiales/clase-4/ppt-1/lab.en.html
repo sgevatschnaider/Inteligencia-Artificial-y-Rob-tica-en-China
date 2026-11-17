@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab 1 · Digital Twin of a Smart Factory</title>
+<style>
+:root{
+  --bg:#07111f;--panel:#101e30;--panel2:#14263b;--line:#263b53;
+  --text:#eef5fc;--muted:#9eb0c5;--cyan:#58d5e8;--blue:#5b9cff;
+  --gold:#f3bd63;--green:#52d6a0;--red:#ff737e;--purple:#b59bff;
+  --shadow:0 16px 42px rgba(0,0,0,.25)
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1000px 500px at 80% -10%,#173653 0%,transparent 60%),var(--bg);color:var(--text);font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+button,input{font:inherit}
+button{cursor:pointer}
+.wrap{max-width:1440px;margin:auto;padding:26px 24px 48px}
+header{display:flex;align-items:flex-start;justify-content:space-between;gap:22px;margin-bottom:22px}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);font-weight:800}
+h1{font-size:clamp(27px,4vw,43px);line-height:1.05;margin:9px 0 10px;letter-spacing:-.035em}
+.subtitle{max-width:830px;color:var(--muted);font-size:15px}
+.author{white-space:nowrap;border:1px solid var(--line);background:#0c1929;padding:10px 13px;border-radius:12px;color:#c4d3e3;font-size:12px}
+.author b{color:#fff;display:block;font-size:13px;margin-top:2px}
+.topline{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:18px 0}
+.pill{border:1px solid var(--line);background:#0d1b2b;border-radius:999px;padding:6px 11px;font-size:11px;color:#b7c7d8}
+.pill strong{color:var(--cyan)}
+.grid{display:grid;grid-template-columns:1.55fr .85fr;gap:18px;align-items:start}
+.panel{background:linear-gradient(160deg,rgba(20,38,59,.96),rgba(12,26,42,.98));border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px}
+.panel h2{font-size:17px;margin:0 0 5px;letter-spacing:-.02em}
+.panel .hint{font-size:12px;color:var(--muted);margin:0 0 15px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.section-head small{color:var(--muted);font-size:11px}
+.scenarios{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 17px}
+.scenario{border:1px solid #35506b;background:#0c1a2a;color:#c7d7e8;padding:9px 12px;border-radius:10px;font-size:12px;font-weight:700;transition:.2s}
+.scenario:hover{border-color:var(--cyan);transform:translateY(-1px)}
+.scenario.active{background:linear-gradient(135deg,#164a60,#153c58);border-color:#4bc5dc;color:#fff;box-shadow:0 0 0 2px rgba(88,213,232,.1) inset}
+.controlbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:15px}
+.btn{border:1px solid #3a526c;background:#172b42;color:#e8f2fb;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:800}
+.btn.primary{background:linear-gradient(135deg,#087e99,#2563a8);border-color:#2ca9c5;color:white}
+.btn.gold{background:#4a3519;border-color:#90672e;color:#ffe0a5}
+.btn.ghost{background:transparent}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.status{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-size:12px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px currentColor}
+.dot.running{background:var(--green)}.dot.paused{background:var(--gold)}.dot.done{background:var(--blue)}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:17px}
+.kpi{background:#0b1929;border:1px solid #233a52;border-radius:13px;padding:12px;min-width:0}
+.kpi label{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.kpi strong{font-size:clamp(18px,2vw,25px);letter-spacing:-.04em;display:block;white-space:nowrap}
+.kpi em{font-style:normal;font-size:10px;color:#8fa5bb}
+.kpi .cyan{color:var(--cyan)}.kpi .green{color:var(--green)}.kpi .gold{color:var(--gold)}.kpi .red{color:var(--red)}
+.factory{background:linear-gradient(180deg,#091827,#0c1b2a);border:1px solid #243b53;border-radius:15px;padding:15px;overflow:hidden}
+.factory-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:13px}
+.factory-top b{font-size:13px}
+.factory-top span{font-size:11px;color:var(--muted)}
+.track{height:8px;border-radius:99px;background:#1b3045;position:relative;margin:0 4px 16px;overflow:hidden}
+.track:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 25px,#6b8298 26px 29px,transparent 30px 48px);opacity:.55}
+.track-glow{position:absolute;left:-30%;top:0;height:100%;width:30%;background:linear-gradient(90deg,transparent,var(--cyan),transparent);filter:blur(2px);animation:conveyor 3s linear infinite}
+@keyframes conveyor{to{left:110%}}
+.stations{display:grid;grid-template-columns:repeat(6,minmax(125px,1fr));gap:9px;overflow-x:auto;padding-bottom:4px}
+.station{position:relative;background:#102239;border:1px solid #2a4058;border-radius:12px;padding:11px 10px;min-width:0;transition:.2s}
+.station .num{font-size:10px;color:#7f9ab4;letter-spacing:.12em;font-weight:800}
+.station .name{font-size:12px;font-weight:800;margin:5px 0 9px;min-height:31px}
+.station .state{font-size:10px;font-weight:800;display:flex;align-items:center;gap:5px;margin-bottom:9px;color:var(--muted)}
+.state i{width:7px;height:7px;border-radius:50%;background:#8094a9}
+.station.processing{border-color:#238ca5;box-shadow:0 0 0 1px rgba(88,213,232,.12) inset}
+.station.processing .state{color:var(--cyan)}.station.processing .state i{background:var(--cyan);box-shadow:0 0 9px var(--cyan)}
+.station.down{border-color:#a84a57;background:#2a1c2a}.station.down .state{color:var(--red)}.station.down .state i{background:var(--red)}
+.station.blocked{border-color:#9b7337}.station.blocked .state{color:var(--gold)}.station.blocked .state i{background:var(--gold)}
+.station .meter{height:5px;background:#253c54;border-radius:99px;overflow:hidden;margin:6px 0}
+.station .meter span{display:block;height:100%;width:0;background:linear-gradient(90deg,#2498b8,#70e1ed);border-radius:99px}
+.station .details{display:flex;justify-content:space-between;color:#92a8be;font-size:10px}
+.station .mini{margin-top:9px;font-size:10px;color:#b9c9d9}
+.station .mini b{color:white}
+.bottom-factory{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:13px;color:var(--muted);font-size:11px}
+.legend{display:flex;gap:13px;flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:5px}
+.legend i{width:7px;height:7px;border-radius:50%;display:inline-block}
+.metrics-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.chartbox{background:#0b1929;border:1px solid #233a52;border-radius:13px;padding:12px}
+.chartbox h3{font-size:12px;margin:0 0 7px}
+canvas{width:100%;height:155px;display:block}
+.side{display:grid;gap:18px}
+.controls{display:grid;gap:14px}
+.control{display:grid;gap:6px}
+.control label{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:#c4d3e3}
+.control label b{color:var(--cyan);font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:#54cce1}
+.scale{display:flex;justify-content:space-between;color:#7189a2;font-size:10px}
+.readout{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.readout div{background:#0b1929;border:1px solid #243a52;border-radius:11px;padding:10px}
+.readout small{display:block;color:var(--muted);font-size:10px}
+.readout b{font-size:17px}
+.formula{border-left:3px solid var(--cyan);background:#0b1a2a;padding:11px 13px;border-radius:0 10px 10px 0;color:#c6d7e7;font-size:12px}
+.formula code{font-family:Georgia,serif;font-size:15px;color:#fff}
+.explain{color:#aebfd0;font-size:12px}
+.explain strong{color:#f1f7fd}
+.toast{position:fixed;right:22px;bottom:22px;background:#17374b;border:1px solid #3f9bb0;color:white;padding:12px 16px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s;pointer-events:none;z-index:5;font-size:13px}
+.toast.show{opacity:1;transform:translateY(0)}
+footer{margin-top:20px;color:#758da5;font-size:11px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media(max-width:1050px){.grid{grid-template-columns:1fr}.stations{grid-template-columns:repeat(6,145px)}}
+@media(max-width:700px){.wrap{padding:18px 13px 35px}header{display:block}.author{display:inline-block;margin-top:14px}.kpis{grid-template-columns:repeat(2,1fr)}.kpi:last-child{grid-column:span 2}.metrics-row{grid-template-columns:1fr}.panel{padding:14px}}
+.course-nav{display:flex;flex-wrap:wrap;gap:18px;padding:16px 4%;background:#071923;color:#d8e9fa}.course-nav a{color:#8de7db;font:600 15px system-ui}html{scroll-behavior:smooth}*{box-sizing:border-box}canvas{max-width:100%}@media(max-width:600px){h1{overflow-wrap:anywhere}.course-nav{gap:12px}}:focus-visible{outline:3px solid #f3bd63;outline-offset:3px}</style>
+</head>
+<body><nav class="course-nav" aria-label="Class navigation"><a href="../index.en.html">← Class 4</a><a href="presentation.en.pdf">Presentation</a><a href="guide.html">Study guide & model</a><a href="../guide-audiovisual.en.pdf#modulo-1">Videos</a></nav>
+<div class="wrap">
+<header>
+  <div>
+    <div class="eyebrow">Technological China · Class 4 · Interactive Lab 01</div>
+    <h1>Digital twin of a smart factory</h1>
+    <div class="subtitle">Simulate an automotive production line. Explore how availability, performance, quality, buffers and disruptions determine actual output.</div>
+    <div class="topline">
+      <span class="pill"><strong>Model:</strong> simplified discrete-event simulation</span>
+      <span class="pill"><strong>Horizon:</strong> 8-hour shift</span>
+      <span class="pill"><strong>Unit:</strong> simulated minutes</span>
+    </div>
+  </div>
+  <div class="author">AUTHORSHIP<b>Prepared by Sergio Gevatschnaider</b></div>
+</header>
+
+<div class="grid">
+<main>
+  <section class="panel">
+    <div class="section-head">
+      <div><h2>1. Choose a production scenario</h2><p class="hint">Each button loads a different parameter set and resets the shift so scenarios can be compared on an equal basis.</p></div>
+      <span class="pill" id="scenarioTag">Scenario: Baseline</span>
+    </div>
+    <div class="scenarios" id="scenarioButtons">
+      <button class="scenario active" data-scenario="base">Balanced baseline</button>
+      <button class="scenario" data-scenario="smart">AI-enabled factory</button>
+      <button class="scenario" data-scenario="weld">Welding failure</button>
+      <button class="scenario" data-scenario="paint">Bottleneck: painting</button>
+      <button class="scenario" data-scenario="supply">Battery supply interruption</button>
+      <button class="scenario" data-scenario="manual">Manual production</button>
+    </div>
+    <div class="controlbar">
+      <button class="btn primary" id="runBtn">▶ Start simulation</button>
+      <button class="btn" id="stepBtn">＋ Advance 1 minute</button>
+      <button class="btn ghost" id="resetBtn">↺ Reset shift</button>
+      <button class="btn gold" id="csvBtn">↓ Export CSV</button>
+      <span class="status"><i class="dot paused" id="runDot"></i><span id="runStatus">Paused</span></span>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><label>Simulated time</label><strong class="cyan" id="timeKpi">00:00</strong><em>of 08:00 h</em></div>
+      <div class="kpi"><label>Good vehicles</label><strong class="green" id="goodKpi">0</strong><em>completed units</em></div>
+      <div class="kpi"><label>Estimated OEE</label><strong class="cyan" id="oeeKpi">—</strong><em>at bottleneck station</em></div>
+      <div class="kpi"><label>Rejects</label><strong class="red" id="rejectKpi">0</strong><em>nonconforming units</em></div>
+      <div class="kpi"><label>Work in process</label><strong class="gold" id="wipKpi">0</strong><em>units on the line</em></div>
+    </div>
+
+    <div class="factory">
+      <div class="factory-top"><b>PRODUCTION LINE · ELECTRIC VEHICLE</b><span id="factoryClock">Shift 00:00 / 08:00</span></div>
+      <div class="track"><div class="track-glow"></div></div>
+      <div class="stations" id="stations"></div>
+      <div class="bottom-factory">
+        <div class="legend">
+          <span><i style="background:var(--cyan)"></i>Processing</span>
+          <span><i style="background:var(--red)"></i>Failure / maintenance</span>
+          <span><i style="background:var(--gold)"></i>Blocked</span>
+          <span><i style="background:#8094a9"></i>Waiting</span>
+        </div>
+        <span id="supplyText">Supply: 1.8 min/unit</span>
+      </div>
+    </div>
+
+    <div class="metrics-row">
+      <div class="chartbox"><h3>Cumulative output · good units and rejects</h3><canvas id="outputChart" width="620" height="190"></canvas></div>
+      <div class="chartbox"><h3>Buffer status between stations</h3><canvas id="bufferChart" width="620" height="190"></canvas></div>
+    </div>
+  </section>
+  <section class="panel" style="margin-top:18px">
+    <div class="section-head"><div><h2>2. Interpret the experiment</h2><p class="hint">The simulation helps identify constraints and explain why a technology investment does not always increase final output.</p></div></div>
+    <div class="readout">
+      <div><small>Bottleneck station</small><b id="bottleneckText">Painting</b></div>
+      <div><small>Lost supply</small><b id="lostText">0 units</b></div>
+      <div><small>Total maintenance time</small><b id="downText">0 min</b></div>
+      <div><small>Simulated hourly output</small><b id="rateText">0 units/h</b></div>
+    </div>
+    <p class="explain" id="insight" style="margin:13px 0 0">Start the simulation to observe the line. Change scenarios to compare automation, failures and bottlenecks.</p>
+  </section>
+</main>
+
+<aside class="side">
+  <section class="panel">
+    <h2>3. Change the conditions</h2>
+    <p class="hint">Controls take effect in real time; no reset is required.</p>
+    <div class="controls">
+      <div class="control">
+        <label for="supplySlider">Supply interval <b id="supplyValue">1.8 min</b></label>
+        <input id="supplySlider" type="range" min="1.2" max="4.0" step="0.1" value="1.8">
+        <div class="scale"><span>Fast · 1.2</span><span>Slow · 4.0</span></div>
+      </div>
+      <div class="control">
+        <label for="bufferSlider">Capacity of each buffer <b id="bufferValue">5 units</b></label>
+        <input id="bufferSlider" type="range" min="1" max="10" step="1" value="5">
+        <div class="scale"><span>1 unit</span><span>10 units</span></div>
+      </div>
+      <div class="control">
+        <label for="reliabilitySlider">Overall reliability <b id="reliabilityValue">98%</b></label>
+        <input id="reliabilitySlider" type="range" min="90" max="100" step="1" value="98">
+        <div class="scale"><span>90%</span><span>100%</span></div>
+      </div>
+      <div class="control">
+        <label for="speedSlider">Simulation speed <b id="speedValue">1×</b></label>
+        <input id="speedSlider" type="range" min="1" max="5" step="1" value="1">
+        <div class="scale"><span>1×</span><span>5×</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>4. Mathematical model</h2>
+    <p class="hint">Overall Equipment Effectiveness (OEE).</p>
+    <div class="formula"><code>OEE = Availability × Performance × Quality</code></div>
+    <p class="explain"><strong>Availability (A):</strong> share of planned production time during which the bottleneck station is available.</p>
+    <p class="explain"><strong>Performance (P):</strong> total output relative to ideal capacity during available time.</p>
+    <p class="explain"><strong>Quality (Q):</strong> share of completed vehicles that meet quality requirements.</p>
+    <p class="explain">In this model, OEE is calculated for the station with the longest cycle time. It is an educational approximation of the line, not an audited metric from a real plant.</p>
+  </section>
+
+  <section class="panel">
+    <h2>5. Questions to investigate</h2>
+    <p class="hint">Use the scenarios to answer these questions with evidence from the simulation.</p>
+    <ol class="explain" style="padding-left:19px;margin-bottom:0">
+      <li style="margin-bottom:8px">What happens if we increase the speed of a station that is not the bottleneck?</li>
+      <li style="margin-bottom:8px">How much does output improve when predictive maintenance is introduced?</li>
+      <li style="margin-bottom:8px">What is the effect of reducing buffer capacity?</li>
+      <li>Can OEE increase while good output falls?</li>
+    </ol>
+  </section>
+</aside>
+</div>
+<footer><span>Educational laboratory · Simplified stochastic model · Does not represent data from a specific factory.</span><span>Prepared by Sergio Gevatschnaider</span></footer>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const baseStations = [
+ {name:"Estampado",cycle:1.55,reliability:.994,repair:3,yield:.999},
+ {name:"Soldadura",cycle:1.85,reliability:.989,repair:4,yield:.997},
+ {name:"Painting",cycle:2.35,reliability:.985,repair:5,yield:.994},
+ {name:"Battery assembly",cycle:2.15,reliability:.990,repair:4,yield:.997},
+ {name:"Ensamblaje final",cycle:2.00,reliability:.992,repair:3,yield:.998},
+ {name:"Inspection",cycle:1.35,reliability:.996,repair:2,yield:.999}
+];
+const scenarios = {
+ base:{name:"Balanced baseline",supply:1.8,buffer:5,reliability:98,stations:baseStations.map(x=>({...x}))},
+ smart:{name:"AI-enabled factory",supply:1.7,buffer:6,reliability:99,stations:baseStations.map((x,i)=>({...x,cycle:x.cycle*.91,reliability:Math.min(.9995,x.reliability+.007),repair:x.repair*.55,yield:Math.min(.9998,x.yield+.001)}))},
+ weld:{name:"Welding failure",supply:1.8,buffer:5,reliability:98,stations:baseStations.map((x,i)=>i===1?({...x,reliability:.88,repair:13}):({...x}))},
+ paint:{name:"Bottleneck: painting",supply:1.8,buffer:4,reliability:98,stations:baseStations.map((x,i)=>i===2?({...x,cycle:4.25}):({...x}))},
+ supply:{name:"Battery supply interruption",supply:3.2,buffer:3,reliability:98,stations:baseStations.map(x=>({...x}))},
+ manual:{name:"Manual production",supply:2.2,buffer:3,reliability:96,stations:baseStations.map(x=>({...x,cycle:x.cycle*1.28,reliability:Math.max(.94,x.reliability-.018),repair:x.repair*1.3,yield:Math.max(.975,x.yield-.008)}))}
+};
+const names=["Estampado","Soldadura","Painting","Battery assembly","Ensamblaje final","Inspection"];
+let cfg, state, timer=null, selectedScenario="base", lastRender=0;
+const $=id=>document.getElementById(id);
+const fmt=n=>Number(n).toLocaleString("en-US",{maximumFractionDigits:1});
+function clone(o){return JSON.parse(JSON.stringify(o))}
+function toast(msg){const el=$("toast");el.textContent=msg;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),2400)}
+let factorySeed=20261115;
+function factoryRandom(){factorySeed=(1664525*factorySeed+1013904223)>>>0;return factorySeed/4294967296}
+function makeState(){factorySeed=20261115;
+ return {time:0,raw:[],supplyAcc:0,stations:cfg.stations.map((s,i)=>({...s,queue:[],remaining:0,current:null,completed:false,down:0,downTotal:0,runTotal:0,blocked:0,processed:0,status:"idle"})),good:0,reject:0,lost:0,arrivals:0,history:[],totalDown:0,done:false};
+}
+function setScenario(key){
+ pause();selectedScenario=key;cfg=clone(scenarios[key]);state=makeState();
+ $("supplySlider").value=cfg.supply;$("bufferSlider").value=cfg.buffer;$("reliabilitySlider").value=cfg.reliability;
+ $("scenarioTag").textContent="Scenario: "+cfg.name;
+ document.querySelectorAll(".scenario").forEach(b=>b.classList.toggle("active",b.dataset.scenario===key));
+ syncControls();render();toast("Scenario loaded. The shift was reset for a fair comparison.");
+}
+function syncControls(){
+ $("supplyValue").textContent=Number($("supplySlider").value).toFixed(1).replace(".",",")+" min";
+ $("bufferValue").textContent=$("bufferSlider").value+" units";
+ $("reliabilityValue").textContent=$("reliabilitySlider").value+"%";
+ $("speedValue").textContent=$("speedSlider").value+"×";
+ $("supplyText").textContent="Supply: "+Number($("supplySlider").value).toFixed(1).replace(".",",")+" min/unit";
+ if(cfg){cfg.supply=Number($("supplySlider").value);cfg.buffer=Number($("bufferSlider").value);cfg.reliability=Number($("reliabilitySlider").value)}
+}
+function effectiveReliability(st){
+ const baseline=98, factor=cfg.reliability/baseline;
+ return Math.min(.9998,Math.max(.80,st.reliability*factor));
+}
+function wip(){return state.raw.length+state.stations.reduce((a,s)=>a+s.queue.length+(s.current?1:0),0)}
+function step(dt){
+ if(state.done)return;
+ state.time=Math.min(480,state.time+dt);
+ state.supplyAcc+=dt;
+ while(state.supplyAcc>=cfg.supply){state.supplyAcc-=cfg.supply;state.arrivals++;if(state.raw.length<12)state.raw.push({defect:false,id:state.arrivals});else state.lost++}
+ const cap=cfg.buffer;
+ for(let i=state.stations.length-1;i>=0;i--){
+   const st=state.stations[i];
+   if(st.down>0){const d=Math.min(dt,st.down);st.down-=d;st.downTotal+=d;st.status="down";state.totalDown+=d;continue}
+   if(st.completed){
+     if(i===state.stations.length-1){
+       if(st.current && st.current.defect){state.reject++}else{state.good++}
+       st.completed=false;st.current=null;st.status="processing";
+     }else if(state.stations[i+1].queue.length<cap){
+       state.stations[i+1].queue.push(st.current);st.current=null;st.completed=false;st.status="processing";
+     }else{st.blocked+=dt;st.status="blocked"}
+     continue;
+   }
+   if(st.remaining>0){
+     if(factoryRandom()<1-Math.pow(effectiveReliability(st),dt/60)){st.down=st.repair*(.65+factoryRandom()*.7);st.status="down";continue}
+     const used=Math.min(dt,st.remaining);st.remaining-=used;st.runTotal+=used;st.status="processing";
+     if(st.remaining<=0){
+       st.processed++;
+       if(st.current && factoryRandom()>st.yield)st.current.defect=true;
+       st.completed=true;
+     }
+     continue;
+   }
+   const q=i===0?state.raw:st.queue;
+   if(q.length===0){st.status="idle";continue}
+   st.current=q.shift();st.remaining=st.cycle;st.status="processing";
+ }
+ if(state.time>=480){state.time=480;state.done=true;pause();$("runBtn").textContent="✓ Shift completed";$("runStatus").textContent="Shift completed";$("runDot").className="dot done";toast("The 8-hour shift is complete. You can export the results or switch scenarios.")}
+ if(Math.floor(state.time/5)>Math.floor((state.time-dt)/5)){state.history.push({time:state.time,good:state.good,reject:state.reject,wip:wip(),buffers:state.stations.slice(0,-1).map(s=>s.queue.length)});}
+}
+function start(){
+ if(state.done){toast("The shift has ended. Reset it to start another one.");return}
+ if(timer)return;
+ $("runBtn").textContent="Ⅱ Pause simulation";$("runStatus").textContent="Running";$("runDot").className="dot running";
+ timer=setInterval(()=>{const speed=Number($("speedSlider").value);for(let i=0;i<speed;i++)step(.25);render()},100);
+}
+function pause(){
+ if(timer){clearInterval(timer);timer=null}
+ if($("runBtn"))$("runBtn").textContent="▶ Resume simulation";
+ if($("runStatus")&&!state?.done){$("runStatus").textContent="Paused";$("runDot").className="dot paused"}
+}
+function toggleRun(){if(timer)pause();else start()}
+function reset(){pause();state=makeState();$("runBtn").textContent="▶ Start simulation";$("runStatus").textContent="Paused";$("runDot").className="dot paused";render();toast("Shift reset. Scenario parameters have been retained.")}
+function advanceOne(){if(state.done)return;for(let i=0;i<4;i++)step(.25);render()}
+function buildStations(){
+ $("stations").innerHTML=state.stations.map((s,i)=>`<div class="station" id="station${i}">
+ <div class="num">STATION 0${i+1}</div><div class="name">${names[i]}</div>
+ <div class="state"><i></i><span class="stateText">Waiting</span></div>
+ <div class="meter"><span class="progress"></span></div>
+ <div class="details"><span>Queue <b class="queue">0</b></span><span><b class="cycle">${s.cycle.toFixed(1)}</b> min/unit</span></div>
+ <div class="mini">Processed: <b class="processed">0</b></div>
+ </div>`).join("");
+}
+function render(){
+ if(!state)return;
+ const hh=Math.floor(state.time/60),mm=Math.floor(state.time%60);
+ $("timeKpi").textContent=String(hh).padStart(2,"0")+":"+String(mm).padStart(2,"0");
+ $("factoryClock").textContent=`Shift ${String(hh).padStart(2,"0")}:${String(mm).padStart(2,"0")} / 08:00`;
+ $("goodKpi").textContent=fmt(state.good);$("rejectKpi").textContent=fmt(state.reject);$("wipKpi").textContent=fmt(wip());
+ const bottleneckIndex=cfg.stations.reduce((best,s,i,a)=>s.cycle>a[best].cycle?i:best,0);
+ const bottleneck=state.stations[bottleneckIndex];
+ const total=state.good+state.reject;
+ const A=state.time>0?Math.max(0,(state.time-bottleneck.downTotal)/state.time):0;
+ const operating=Math.max(.001,state.time-bottleneck.downTotal);
+ const P=state.time>0?Math.min(1.25,(total*bottleneck.cycle)/operating):0;
+ const Q=total>0?state.good/total:0;
+ const oee=state.time>0?A*Math.min(1,P)*Q*100:0;
+ $("oeeKpi").textContent=state.time>0?oee.toFixed(1)+"%":"—";
+ $("bottleneckText").textContent=names[bottleneckIndex];
+ $("lostText").textContent=state.lost+" units";
+ $("downText").textContent=fmt(state.totalDown)+" min";
+ $("rateText").textContent=state.time>0?fmt(state.good/(state.time/60))+" u/h":"0 units/h";
+ state.stations.forEach((s,i)=>{
+   const el=$("station"+i);if(!el)return;
+   el.className="station "+(s.status==="down"?"down":s.status==="blocked"?"blocked":s.status==="processing"?"processing":"");
+   const status=s.status==="down"?"Failure / repair":s.status==="blocked"?"Bloqueada":s.status==="processing"?"Processing":"Waiting";
+   el.querySelector(".stateText").textContent=status;
+   el.querySelector(".queue").textContent=s.queue.length+(i===0?state.raw.length:0);
+   el.querySelector(".cycle").textContent=s.cycle.toFixed(1);
+   el.querySelector(".processed").textContent=s.processed;
+   const pct=s.remaining>0?100*(1-s.remaining/s.cycle):s.completed?100:0;
+   el.querySelector(".progress").style.width=Math.max(0,Math.min(100,pct))+"%";
+ });
+ const insight=makeInsight(bottleneckIndex,A,P,Q);
+ $("insight").textContent=insight;
+ drawOutput();drawBuffers();
+ $("csvBtn").disabled=state.time===0;
+}
+function makeInsight(bi,A,P,Q){
+ if(state.time===0)return "Start the simulation to observe the line. Change scenarios to compare automation, failures and bottlenecks.";
+ const b=state.stations[bi];
+ if(b.status==="down")return `Station ${names[bi]} is under maintenance. Until it recovers, output across the entire line may be limited. Observe how work in process accumulates before that station.`;
+ if(state.lost>0)return `${state.lost} supplied units were lost because input exceeded available capacity. Increasing machine speed alone would not resolve this supply problem.`;
+ if(P<.65)return `Performance is below ideal capacity. Check queues, supply and blocking: an available station may produce little if it is idle or waiting for space.`;
+ if(Q<.98)return `Quality is reducing good output. Higher speed without defect control may increase processed volume without increasing saleable units.`;
+ return `The bottleneck station is ${names[bi]}. Compare this scenario with the AI-enabled factory: the effect of maintenance and cycle improvements depends on the other stations and supply keeping pace.`;
+}
+function drawOutput(){
+ const c=$("outputChart"),ctx=c.getContext("2d"),w=c.width,h=c.height;ctx.clearRect(0,0,w,h);
+ ctx.strokeStyle="#263b53";ctx.lineWidth=1;for(let j=1;j<=3;j++){let y=15+j*(h-38)/4;ctx.beginPath();ctx.moveTo(38,y);ctx.lineTo(w-10,y);ctx.stroke()}
+ const max=Math.max(10,state.good+state.reject+5);
+ function line(key,color){ctx.strokeStyle=color;ctx.lineWidth=2.5;ctx.beginPath();let pts=state.history.concat([{time:state.time,good:state.good,reject:state.reject}]);pts.forEach((p,i)=>{let x=38+(p.time/480)*(w-52),y=h-22-(p[key]/max)*(h-42);if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)});ctx.stroke()}
+ line("good","#52d6a0");line("reject","#ff737e");
+ ctx.fillStyle="#8fa5bb";ctx.font="10px Arial";ctx.fillText("0",17,h-18);ctx.fillText("8 h",w-38,h-5);
+ ctx.fillStyle="#52d6a0";ctx.fillText("Conformes "+state.good,42,13);ctx.fillStyle="#ff737e";ctx.fillText("Rejects "+state.reject,160,13);
+}
+function drawBuffers(){
+ const c=$("bufferChart"),ctx=c.getContext("2d"),w=c.width,h=c.height;ctx.clearRect(0,0,w,h);
+ const values=state.stations.slice(0,-1).map(s=>s.queue.length);const cap=cfg.buffer;
+ const gap=17,barW=(w-55-gap*5)/6,base=h-28;
+ for(let i=0;i<6;i++){const x=35+i*(barW+gap),v=values[i]||0,bh=(v/cap)*(h-58);ctx.fillStyle="#20374f";ctx.fillRect(x,base-(h-58),barW,h-58);ctx.fillStyle=v>=cap?"#f3bd63":"#58d5e8";ctx.fillRect(x,base-bh,barW,bh);ctx.fillStyle="#a8bbce";ctx.font="10px Arial";ctx.textAlign="center";ctx.fillText(["E1","E2","E3","E4","E5","E6"][i],x+barW/2,h-10);ctx.fillStyle="#fff";ctx.fillText(v,x+barW/2,base-bh-5)}
+ ctx.textAlign="left";ctx.fillStyle="#8fa5bb";ctx.fillText("Capacidad "+cap,8,12);
+}
+function exportCSV(){
+ const rows=[["tiempo_min","vehiculos_conformes","rechazos","trabajo_en_proceso","unidades_perdidas","buffer_estampado","buffer_soldadura","buffer_pintura","buffer_bateria","buffer_ensamblaje"]];
+ const data=state.history.concat([{time:state.time,good:state.good,reject:state.reject,wip:wip(),buffers:state.stations.slice(0,-1).map(s=>s.queue.length)}]);
+ data.forEach(p=>rows.push([p.time,p.good,p.reject,p.wip??wip(),state.lost,...(p.buffers||[]) ]));
+ const csv=rows.map(r=>r.join(",")).join("\n");const blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="resultados_gemelo_digital_fabrica.csv";a.click();URL.revokeObjectURL(url);toast("CSV generated with the recorded results.");
+}
+document.querySelectorAll(".scenario").forEach(b=>b.addEventListener("click",()=>setScenario(b.dataset.scenario)));
+$("runBtn").addEventListener("click",toggleRun);$("stepBtn").addEventListener("click",advanceOne);$("resetBtn").addEventListener("click",reset);$("csvBtn").addEventListener("click",exportCSV);
+["supplySlider","bufferSlider","reliabilitySlider","speedSlider"].forEach(id=>$(id).addEventListener("input",()=>{syncControls();render()}));
+cfg=clone(scenarios.base);state=makeState();buildStations();syncControls();render();
+</script>
+</body>
+</html>

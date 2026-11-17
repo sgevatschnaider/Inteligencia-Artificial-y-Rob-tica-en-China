@@ -1,0 +1,270 @@
+{
+  "date": "2026-11-17T09:27:12.021Z",
+  "environment": "Node VM with DOM/canvas stubs; mathematical and execution checks, not rendered browser tests",
+  "results": [
+    {
+      "name": "Fábrica conserva flujo base",
+      "pass": true,
+      "details": {
+        "key": "base",
+        "time": 480,
+        "arrivals": 266,
+        "good": 152,
+        "reject": 3,
+        "lost": 84,
+        "wip": 27
+      }
+    },
+    {
+      "name": "Fábrica conserva flujo smart",
+      "pass": true,
+      "details": {
+        "key": "smart",
+        "time": 480,
+        "arrivals": 282,
+        "good": 167,
+        "reject": 3,
+        "lost": 84,
+        "wip": 28
+      }
+    },
+    {
+      "name": "Fábrica conserva flujo weld",
+      "pass": true,
+      "details": {
+        "key": "weld",
+        "time": 480,
+        "arrivals": 266,
+        "good": 152,
+        "reject": 3,
+        "lost": 84,
+        "wip": 27
+      }
+    },
+    {
+      "name": "Fábrica conserva flujo paint",
+      "pass": true,
+      "details": {
+        "key": "paint",
+        "time": 480,
+        "arrivals": 266,
+        "good": 94,
+        "reject": 4,
+        "lost": 144,
+        "wip": 24
+      }
+    },
+    {
+      "name": "Fábrica conserva flujo supply",
+      "pass": true,
+      "details": {
+        "key": "supply",
+        "time": 480,
+        "arrivals": 149,
+        "good": 141,
+        "reject": 4,
+        "lost": 0,
+        "wip": 4
+      }
+    },
+    {
+      "name": "Fábrica conserva flujo manual",
+      "pass": true,
+      "details": {
+        "key": "manual",
+        "time": 480,
+        "arrivals": 218,
+        "good": 113,
+        "reject": 10,
+        "lost": 72,
+        "wip": 23
+      }
+    },
+    {
+      "name": "Fábrica reproducible con reinicio",
+      "pass": true
+    },
+    {
+      "name": "H² = identidad",
+      "pass": true
+    },
+    {
+      "name": "Bell normalizado y entrelazado",
+      "pass": true,
+      "details": {
+        "p": [
+          0.4999999999999999,
+          0,
+          0,
+          0.4999999999999999
+        ],
+        "c": 0.9999999999999998,
+        "b": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "name": "Bloch reducido del estado Bell es cero",
+      "pass": true
+    },
+    {
+      "name": "Puerta invalida mediciones",
+      "pass": true
+    },
+    {
+      "name": "Circuito conserva estado inicial 01",
+      "pass": true
+    },
+    {
+      "name": "Circuito conserva columnas de puertas",
+      "pass": true
+    },
+    {
+      "name": "Red valores finitos demanda 1",
+      "pass": true
+    },
+    {
+      "name": "Red valores finitos demanda 1000",
+      "pass": true
+    },
+    {
+      "name": "Red valores finitos demanda 3000",
+      "pass": true
+    },
+    {
+      "name": "ROC-AUC empates = 0,5",
+      "pass": true
+    },
+    {
+      "name": "BCI métricas acotadas",
+      "pass": true
+    },
+    {
+      "name": "Candidatos no se repiten",
+      "pass": true,
+      "details": {
+        "n": 16,
+        "unique": 16,
+        "used": 16
+      }
+    },
+    {
+      "name": "Comparación igual presupuesto",
+      "pass": true
+    },
+    {
+      "name": "GP conserva varianza de cada ensayo",
+      "pass": true
+    },
+    {
+      "name": "Aire demanda completa y fin de turno",
+      "pass": true,
+      "details": {
+        "g": 240,
+        "stable": true,
+        "t": 480,
+        "soc": [
+          0.8787133348325487,
+          0.7109560253501892,
+          0.4692630359423515,
+          0.5334556669519438,
+          0.6030870265818633,
+          0.6651126169996009,
+          0.7579395679291646,
+          0.3273679059729394
+        ],
+        "hist": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100,
+          110,
+          120,
+          130,
+          140,
+          150,
+          160,
+          170,
+          180,
+          190,
+          200,
+          210,
+          220,
+          230,
+          240,
+          250,
+          260,
+          270,
+          280,
+          290,
+          300,
+          310,
+          320,
+          330,
+          340,
+          350,
+          360,
+          370,
+          380,
+          390,
+          400,
+          410,
+          420,
+          430,
+          440,
+          450,
+          460,
+          470,
+          480
+        ]
+      }
+    },
+    {
+      "name": "Aire SOC acotado e historial temporal",
+      "pass": true
+    },
+    {
+      "name": "PNT sin solución no reporta error cero",
+      "pass": true
+    },
+    {
+      "name": "Pestaña energía y cálculos sin funciones inexistentes",
+      "pass": true
+    },
+    {
+      "name": "H₂ produce 6000 kg/día",
+      "pass": true,
+      "details": "6,000"
+    },
+    {
+      "name": "Detención: duplicar velocidad cuadruplica frenado",
+      "pass": true
+    },
+    {
+      "name": "Laboratorio 1: extremos de todos los rangos sin excepción",
+      "pass": true
+    },
+    {
+      "name": "Laboratorio 2: extremos de todos los rangos sin excepción",
+      "pass": true
+    },
+    {
+      "name": "Laboratorio 3: extremos de todos los rangos sin excepción",
+      "pass": true
+    },
+    {
+      "name": "Laboratorio 4: extremos de todos los rangos sin excepción",
+      "pass": true
+    }
+  ]
+}

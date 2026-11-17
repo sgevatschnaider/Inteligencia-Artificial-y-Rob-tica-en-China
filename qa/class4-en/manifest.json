@@ -1,0 +1,154 @@
+{
+  "edition": "English",
+  "modules": {
+    "1": {
+      "slides": 8,
+      "pdf_pages": 8,
+      "speaker_notes": 8,
+      "pdf_page_size": [
+        960,
+        540
+      ]
+    },
+    "2": {
+      "slides": 7,
+      "pdf_pages": 7,
+      "speaker_notes": 7,
+      "pdf_page_size": [
+        960,
+        540
+      ]
+    },
+    "3": {
+      "slides": 10,
+      "pdf_pages": 10,
+      "speaker_notes": 10,
+      "pdf_page_size": [
+        960,
+        540
+      ]
+    },
+    "4": {
+      "slides": 12,
+      "pdf_pages": 12,
+      "speaker_notes": 12,
+      "pdf_page_size": [
+        960,
+        540
+      ]
+    }
+  },
+  "videos": {
+    "total": 16,
+    "verified": 12,
+    "archived": 4
+  },
+  "artifacts": [
+    {
+      "path": "materiales/clase-4/covers/module-1.png",
+      "bytes": 90969,
+      "sha256": "987c1c6900e7cc523c939125a81c1d3459c9a724c7a15a1d616d1cdd4c2e04a2"
+    },
+    {
+      "path": "materiales/clase-4/ppt-1/presentation.en.pptx",
+      "bytes": 148797,
+      "sha256": "21631abf2d96681cdfb5ac4ff6590b2648c511b312962135b818999fb29544d7"
+    },
+    {
+      "path": "materiales/clase-4/ppt-1/presentation.en.pdf",
+      "bytes": 627267,
+      "sha256": "2ec4f27aac8224500c232e131433b234be5b22fd26ea44ea0917ba6b675306c1"
+    },
+    {
+      "path": "materiales/clase-4/ppt-1/lab.en.html",
+      "bytes": 30237,
+      "sha256": "ba310c905800ffa119bab700e22e31fc4a2d08abae2bd329bfc671785d33cde9"
+    },
+    {
+      "path": "materiales/clase-4/ppt-1/lab-sdv.en.html",
+      "bytes": 3313,
+      "sha256": "a998b3d96cc5099dc060bd3293c37e98e9be741d065e1844da30a032b6699585"
+    },
+    {
+      "path": "materiales/clase-4/ppt-1/sdv.en.js",
+      "bytes": 2335,
+      "sha256": "574313ec503b787e5f34448fac522756654c8c84f1424ab54e704880a7898a2f"
+    },
+    {
+      "path": "materiales/clase-4/covers/module-2.png",
+      "bytes": 146636,
+      "sha256": "38338bbda673267ff39f37431306f0198029523dd1ca473285a738544895bf45"
+    },
+    {
+      "path": "materiales/clase-4/ppt-2/presentation.en.pptx",
+      "bytes": 201744,
+      "sha256": "758f7efee625e5d426a2988932bba07b613f230af47e2b44581c0595cd259f28"
+    },
+    {
+      "path": "materiales/clase-4/ppt-2/presentation.en.pdf",
+      "bytes": 640306,
+      "sha256": "0008bfc47c8fdbd272ea4a7895f3c73d09140c65ee1747d97fad7d65fe8c7c20"
+    },
+    {
+      "path": "materiales/clase-4/ppt-2/lab.en.html",
+      "bytes": 41449,
+      "sha256": "d289335fc7e5beb9eb60421eed8fcbe83d563317d2492f7e73cb7aa9173fbdcd"
+    },
+    {
+      "path": "materiales/clase-4/covers/module-3.png",
+      "bytes": 143573,
+      "sha256": "ef5970fe62774d1bd9dcf3a2ded5f51e4174d5859088d6d634613e47124ff97c"
+    },
+    {
+      "path": "materiales/clase-4/ppt-3/presentation.en.pptx",
+      "bytes": 209654,
+      "sha256": "ca8823e4db85cdfbdd6895930e388b811c96a296153d9fa9f4c951f171ef1753"
+    },
+    {
+      "path": "materiales/clase-4/ppt-3/presentation.en.pdf",
+      "bytes": 789129,
+      "sha256": "9c657f6326e0831c3c116f5d954b94a09d5a4523b40bf43900f98deeabc50973"
+    },
+    {
+      "path": "materiales/clase-4/ppt-3/lab.en.html",
+      "bytes": 48902,
+      "sha256": "dfa3a6db4dacc68d622e540697e689dc40ce82b6dee64d8d5b1cfea69fcce527"
+    },
+    {
+      "path": "materiales/clase-4/covers/module-4.png",
+      "bytes": 130268,
+      "sha256": "72aacc92ad6b90cd7de7c6363a0ea493786cbbdafb4cc47c922e7d5e81bd1259"
+    },
+    {
+      "path": "materiales/clase-4/ppt-4/presentation.en.pptx",
+      "bytes": 203529,
+      "sha256": "792a17b49a571d577a8bbbe35fa3ef8f8f534ee218335cd13fef4aeb8e35252c"
+    },
+    {
+      "path": "materiales/clase-4/ppt-4/presentation.en.pdf",
+      "bytes": 959080,
+      "sha256": "b81d449d6d28b11066df8fb17a213af89107786aa9d71fcfcb17c01152b48efa"
+    },
+    {
+      "path": "materiales/clase-4/ppt-4/lab.en.html",
+      "bytes": 53523,
+      "sha256": "a2255fc1e6a9f153a638f6e052b7a3d66a551df87efe3a5d27ec81fdf60bc979"
+    },
+    {
+      "path": "materiales/clase-4/guide-audiovisual.en.pdf",
+      "bytes": 54418,
+      "sha256": "c5d9dd29b7c96297465fcf496030d58b14d66da6e30710fdfcd9382d202ac623"
+    },
+    {
+      "path": "materiales/clase-4/index.en.html",
+      "bytes": 2595,
+      "sha256": "8d0337a8601028ac1bf022e826dce66494afa66e6193425551a9b369e21a2b4a"
+    }
+  ],
+  "validation": {
+    "pptx_slide_counts": true,
+    "speaker_notes_present": true,
+    "pdf_page_counts": true,
+    "lab_files_generated": true
+  }
+}
