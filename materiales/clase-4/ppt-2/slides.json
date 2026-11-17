@@ -17,11 +17,16 @@
         ]
       ],
       "takeaway": "Separar requisitos, demostraciones experimentales y servicio comercial.",
-      "notes": "",
+      "notes": "Presente dos fronteras diferentes. Una red 6G busca comunicar, percibir y coordinar servicios; un procesador cuántico transforma estados físicos para resolver tareas computacionales específicas. Ambos requieren investigación, estandarización o validación y ecosistemas industriales, pero no comparten el mismo calendario de adopción. La fotografía muestra parte de Jiuzhang 4.0, documentada por Xinhua y publicada por CAS en mayo de 2026. No representa una red 6G ni un computador universal tolerante a fallos. Pida mantener tres preguntas durante el módulo: qué tarea se ejecutó, contra qué referencia se comparó y qué condiciones fueron necesarias. Este criterio permite valorar avances reales sin convertir una demostración especializada en una promesa de aplicación general.",
       "sources": [
         "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
-        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
-      ]
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information",
+        "https://english.cas.cn/newsroom/headlines/202605/t20260514_1159331.shtml"
+      ],
+      "visual": {
+        "layout": "cover"
+      },
+      "section": "Redes y cuántica"
     },
     {
       "number": 2,
@@ -47,10 +52,14 @@
         ]
       ],
       "takeaway": "0,1–1 ms es un objetivo de latencia radio en el marco ITU, no de Internet completo.",
-      "notes": "M.2160 incluye objetivos 50–200 Gbit/s de tasa pico según escenario. No son velocidades comerciales disponibles para cada usuario. ITU sigue el proceso IMT-2030.",
+      "notes": "IMT-2030 es el marco de la UIT para la evolución de las comunicaciones móviles hacia 2030 y después. Sus escenarios incluyen comunicación inmersiva, comunicaciones masivas, conectividad ubicua, alta fiabilidad y baja latencia, IA y comunicación, y percepción integrada. Distinga escenarios, capacidades objetivo y prestaciones disponibles. Una cifra de latencia radio no incluye automáticamente transporte, núcleo, colas y procesamiento de una aplicación. Del mismo modo, una tasa pico no equivale al caudal garantizado a cada usuario. Invite a elegir un caso de uso, como control industrial o cobertura rural, y justificar qué capacidad importa y qué costo introduce. La diapositiva resume cuatro dimensiones; las seis categorías oficiales se desarrollan aquí para evitar tratarlas como una única carrera por velocidad.",
       "sources": [
         "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en"
-      ]
+      ],
+      "visual": {
+        "layout": "matrix"
+      },
+      "section": "Redes y cuántica"
     },
     {
       "number": 3,
@@ -76,11 +85,15 @@
         ]
       ],
       "takeaway": "Un enlace satelital añade retardo de propagación y restricciones de capacidad.",
-      "notes": "",
+      "notes": "Siga un dato desde un sensor hasta una decisión. El acceso radio lo conecta con una estación; transporte y núcleo administran recursos y movilidad; edge o nube ejecutan procesamiento. Cada tramo agrega tiempo, consumo y posibles fallos. Situar cómputo cerca del usuario puede reducir una parte del retardo, pero no garantiza un mejor resultado si el nodo está congestionado. Los satélites ayudan a ampliar cobertura y agregan restricciones de propagación, visibilidad y capacidad. En el ecosistema chino participan universidades, fabricantes y operadores con intereses diferentes. La arquitectura es conceptual y no describe una red comercial única. Pida a los estudiantes identificar dónde ubicarían un algoritmo de inspección y qué cambiaría si el enlace al centro de datos se interrumpiera.",
       "sources": [
         "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
         "https://www.huawei.com/en/huaweitech/future-technologies/6g-isac-ow"
-      ]
+      ],
+      "visual": {
+        "layout": "flow"
+      },
+      "section": "Redes y cuántica"
     },
     {
       "number": 4,
@@ -106,11 +119,15 @@
         ]
       ],
       "takeaway": "Un prototipo 6G no demuestra cobertura comercial ni rentabilidad.",
-      "notes": "",
+      "notes": "La secuencia distingue crear un prototipo, acordar criterios de evaluación, construir un ecosistema y sostener un servicio. El marco IMT-2030 de 2023 organiza la visión; los trabajos posteriores precisan requisitos y metodologías. La participación de fabricantes u operadores chinos en investigación y normalización no implica que una red 6G comercial esté disponible universalmente. Un despliegue exige espectro, terminales, infraestructura, interoperabilidad, operación y una demanda que pague sus costos. Solicite clasificar un anuncio según la evidencia que aporta: experimento de laboratorio, documento normativo, prueba de interoperabilidad o servicio autorizado. La innovación puede avanzar sin que todas esas capas maduren al mismo tiempo. La secuencia no establece fechas de lanzamiento garantizadas ni una rentabilidad futura.",
       "sources": [
         "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
         "https://www.huawei.com/en/huaweitech/future-technologies/6g-isac-ow"
-      ]
+      ],
+      "visual": {
+        "layout": "timeline"
+      },
+      "section": "Redes y cuántica"
     },
     {
       "number": 5,
@@ -136,10 +153,14 @@
         ]
       ],
       "takeaway": "H·H|0⟩ = |0⟩. En Bell, P(00) = P(11) = 1/2.",
-      "notes": "Una superposición no equivale a leer simultáneamente todas las respuestas. El estado reducido de un qubit entrelazado puede estar en el interior de la esfera de Bloch.",
+      "notes": "Escriba el estado de un qubit como alpha por cero más beta por uno y explique la normalización de las probabilidades. La amplitud incluye información de fase que no se observa directamente en una medición aislada de la base computacional. Por eso dos estados con iguales probabilidades iniciales pueden dar resultados distintos después de otra puerta. Aplique H dos veces a cero para mostrar reversibilidad e interferencia. El entrelazamiento pertenece al estado conjunto; no permite enviar mensajes instantáneos ni leer todas las amplitudes en una sola medición. El laboratorio usa estados ideales pequeños y una mezcla de ruido al medir. Esa mezcla no reproduce decoherencia, calibración ni todos los errores de una máquina real.",
       "sources": [
         "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
-      ]
+      ],
+      "visual": {
+        "layout": "matrix"
+      },
+      "section": "Redes y cuántica"
     },
     {
       "number": 6,
@@ -165,15 +186,128 @@
         ]
       ],
       "takeaway": "Ventaja en una tarea específica no demuestra utilidad general ni criptografía rota.",
-      "notes": "El simulador de compuertas no reproduce muestreo bosónico ni hardware real. Comparar también algoritmos clásicos, corrección de errores y costo total.",
+      "notes": "Compare plataformas mediante la tarea y el protocolo, no por un único número. Jiuzhang investiga muestreo fotónico; Zuchongzhi utiliza circuitos superconductores y ha publicado experimentos de muestreo de circuitos aleatorios. El artículo de Zuchongzhi 3.0 describe un procesador de 105 qubits físicos; eso no significa 105 qubits lógicos protegidos de errores. Los fotones, los modos ópticos y los qubits de una arquitectura de puertas tampoco son magnitudes intercambiables. La distribución de claves y la metrología pertenecen a otras aplicaciones cuánticas. Pregunte qué resultado sería evidencia de utilidad para un problema industrial concreto. Harían falta una tarea útil, una comparación clásica actualizada, control de errores y costos totales, además de la demostración especializada.",
       "sources": [
-        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
-      ]
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information",
+        "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.134.090601",
+        "https://english.cas.cn/newsroom/headlines/202605/t20260514_1159331.shtml"
+      ],
+      "visual": {
+        "layout": "rows"
+      },
+      "section": "Redes y cuántica"
     },
     {
+      "title": "Del circuito al estado de Bell",
+      "subtitle": "Dos qubits, una puerta H y una CNOT",
+      "items": [
+        [
+          "H",
+          "Superposición"
+        ],
+        [
+          "CNOT",
+          "Correlación del estado conjunto"
+        ]
+      ],
+      "takeaway": "P(00) = P(11) = 1/2; una medición no revela todas las amplitudes.",
+      "sources": [
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
+      ],
+      "visual": {
+        "layout": "circuit"
+      },
       "number": 7,
-      "title": "Dos experimentos para interpretar la frontera",
       "image": "slides/07.webp",
+      "notes": "Recorra el circuito de izquierda a derecha. El estado inicial es cero cero. H sobre el primer qubit prepara una superposición; CNOT usa ese qubit como control y cambia el segundo cuando corresponde. El estado ideal final es la suma de cero cero y uno uno dividida por raíz de dos. Repetir la preparación y la medición produce aproximadamente mitad de cada resultado; no se obtiene una secuencia alternada garantizada. Distinguir correlación y entrelazamiento requiere conocer el protocolo y puede exigir medir en otras bases. En el laboratorio también puede deshacer puertas, cambiar el estado inicial y aumentar el ruido de medición. Pida predecir primero qué ocurrirá y contrastar después la predicción con las frecuencias.",
+      "section": "Redes y cuántica"
+    },
+    {
+      "title": "Algoritmos: utilidad y requisitos",
+      "subtitle": "Cada promesa necesita una tarea y una referencia clásica",
+      "items": [
+        [
+          "Shor",
+          "Factorización; exige recursos y corrección de errores."
+        ],
+        [
+          "Grover",
+          "Búsqueda con oráculo; mejora cuadrática de consultas."
+        ],
+        [
+          "Variacionales",
+          "Circuito y optimización clásica; ventaja por demostrar."
+        ],
+        [
+          "Simulación",
+          "Estudiar sistemas cuánticos con validación del resultado."
+        ]
+      ],
+      "takeaway": "Un récord de muestreo no prueba ventaja para cualquier problema.",
+      "sources": [
+        "https://quantum.cloud.ibm.com/learning/en/courses/fundamentals-of-quantum-algorithms",
+        "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.134.090601"
+      ],
+      "visual": {
+        "layout": "rows"
+      },
+      "number": 8,
+      "image": "slides/08.webp",
+      "notes": "Sitúe cada familia de algoritmos junto a sus condiciones de utilidad. Shor establece un resultado teórico para factorización, pero una amenaza práctica a criptografía de gran escala exige máquinas y corrección de errores que no se deducen de un récord de muestreo. Grover ofrece una mejora cuadrática en un modelo de consultas; no elimina el costo de construir el oráculo o cargar datos. Los métodos variacionales combinan un circuito con optimización clásica y no garantizan ventaja industrial. La simulación cuántica busca estudiar sistemas cuánticos y también necesita validación del resultado. Evite prometer aceleración para cualquier problema de IA. El criterio docente es formular una tarea, una referencia clásica y un presupuesto total de recursos antes de hablar de ventaja.",
+      "section": "Redes y cuántica"
+    },
+    {
+      "title": "Cerca de la saturación, la espera crece",
+      "subtitle": "Cola M/M/1: W = 1 / (μ − λ), solo cuando λ < μ",
+      "items": [
+        [
+          "λ = 650/s",
+          "W ≈ 2,86 ms"
+        ],
+        [
+          "λ = 900/s",
+          "W = 10 ms"
+        ],
+        [
+          "λ = 990/s",
+          "W = 100 ms"
+        ]
+      ],
+      "takeaway": "Al superar la capacidad no se puede seguir usando la fórmula estacionaria.",
+      "sources": [],
+      "visual": {
+        "layout": "chart",
+        "categories": [
+          "650/s",
+          "900/s",
+          "990/s"
+        ],
+        "series": [
+          {
+            "name": "Tiempo medio (ms)",
+            "values": [
+              2.86,
+              10,
+              100
+            ]
+          }
+        ],
+        "max": 120,
+        "side": {
+          "value": "35×",
+          "label": "más tiempo con 990/s que con 650/s"
+        },
+        "caption": "Ejemplo didáctico, no medición 5G/6G. μ = 1.000 solicitudes/s; tiempo en milisegundos."
+      },
+      "number": 9,
+      "image": "slides/09.webp",
+      "notes": "El gráfico es un cálculo de teoría de colas y no una medición de 5G o 6G. Para una cola M/M/1 estable, el tiempo medio en el sistema es uno dividido por mu menos lambda. Con capacidad de mil solicitudes por segundo, demandas de 650, 900 y 990 producen aproximadamente 2,86, 10 y 100 milisegundos. La cercanía a saturación explica el crecimiento no lineal. Cuando lambda alcanza o supera mu no existe ese régimen estacionario; el modelo del laboratorio cambia a una aproximación de sobrecarga. Los supuestos incluyen llegadas de Poisson, servicio exponencial, un servidor y estabilidad. No extrapole estas cifras a una red real sin identificar topología, distribución del tráfico y retardos adicionales.",
+      "section": "Redes y cuántica"
+    },
+    {
+      "number": 10,
+      "title": "Predecir, medir y contrastar",
+      "image": "slides/10.webp",
       "subtitle": "Congestión de red y circuitos de uno o dos qubits",
       "items": [
         [
@@ -194,11 +328,24 @@
         ]
       ],
       "takeaway": "¿Qué resultado depende de la física y cuál de los supuestos del modelo?",
-      "notes": "",
+      "notes": "Cierre separando leyes físicas, simplificaciones de ingeniería y evidencia empírica. En el módulo de red, aumentar demanda permite comprobar la dependencia no lineal de la latencia respecto de capacidad. En el simulador cuántico, preparar más, aplicar Z y después H cambia las probabilidades finales aunque Z no cambie inmediatamente la distribución en la base computacional. En Bell, compare frecuencias y predicción teórica usando muchas repeticiones. Después agregue ruido y explique qué parte del resultado corresponde a la evolución ideal y cuál al modelo de medición. La entrega debe formular una predicción, registrar parámetros y discutir una limitación. Esa estructura conecta el experimento con la evaluación crítica de anuncios tecnológicos.",
       "sources": [
         "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
         "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
-      ]
+      ],
+      "visual": {
+        "layout": "close"
+      },
+      "section": "Redes y cuántica"
     }
-  ]
+  ],
+  "editorial_version": 2,
+  "module": 2,
+  "short_title": "Redes y cuántica",
+  "overview": "Infraestructuras de investigación con horizontes distintos",
+  "hero": {
+    "path": "materiales/clase-4/editorial/assets/quantum-jiuzhang.png",
+    "alt": "Photograph of the Jiuzhang 4.0 photonic processor",
+    "caption": "Jiuzhang 4.0 / Xinhua, Zhou Mu / CAS, 14-05-2026"
+  }
 }

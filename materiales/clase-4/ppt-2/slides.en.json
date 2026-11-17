@@ -1,8 +1,8 @@
 {
   "module": 2,
   "title": "6G and Quantum Computing",
-  "short_title": "6G & quantum computing",
-  "overview": "Intelligent networks, integrated connectivity and new computing paradigms in the technological competition toward 2030.",
+  "short_title": "Networks and quantum",
+  "overview": "Research infrastructures with different time horizons.",
   "guide": {
     "objective": "Separate 6G research goals and network models from commercial service, and understand quantum amplitudes, phase, entanglement and measurement.",
     "procedure": [
@@ -38,11 +38,17 @@
         ]
       ],
       "takeaway": "Separate requirements, experimental demonstrations and commercial services.",
-      "notes": "Introduce two distinct frontiers. Both depend on research ecosystems, but their physical principles, maturity and routes to deployment are different.",
+      "notes": "Present two different frontiers. A 6G network aims to communicate, sense and coordinate services; a quantum processor transforms physical states to perform specific computational tasks. Both require research, standardization or validation and industrial ecosystems, but their adoption timelines differ. The photograph shows part of Jiuzhang 4.0, documented by Xinhua and published by CAS in May 2026. It represents neither a 6G network nor a universal fault-tolerant computer. Keep three questions visible throughout the module: what task was performed, what reference was used, and what conditions were required? This approach recognizes genuine advances without turning a specialized demonstration into a claim of general usefulness.",
       "sources": [
         "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
-        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
-      ]
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information",
+        "https://english.cas.cn/newsroom/headlines/202605/t20260514_1159331.shtml"
+      ],
+      "image": "slides-en/01.webp",
+      "visual": {
+        "layout": "cover"
+      },
+      "section": "Networks and quantum"
     },
     {
       "number": 2,
@@ -67,10 +73,15 @@
         ]
       ],
       "takeaway": "0.1–1 ms is a radio-interface target in the ITU framework, not a guarantee for the whole Internet.",
-      "notes": "Recommendation ITU-R M.2160 includes peak-rate objectives of 50–200 Gbit/s depending on scenario. These are not commercial speeds available to every user. ITU is conducting the IMT-2030 process.",
+      "notes": "IMT-2030 is the ITU framework for mobile communications towards 2030 and beyond. Its scenarios include immersive communication, massive communication, ubiquitous connectivity, high reliability and low latency, AI and communication, and integrated sensing and communication. Distinguish use scenarios, target capabilities and available performance. A radio-interface latency figure does not automatically include transport, core networks, queues or application processing. Likewise, peak data rate is not a throughput guarantee for every user. Choose a use case such as industrial control or rural coverage and justify which capability matters and what cost it introduces. The slide summarizes four dimensions; these notes develop the six official categories so they are not reduced to a single race for speed.",
       "sources": [
         "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en"
-      ]
+      ],
+      "image": "slides-en/02.webp",
+      "visual": {
+        "layout": "matrix"
+      },
+      "section": "Networks and quantum"
     },
     {
       "number": 3,
@@ -95,11 +106,16 @@
         ]
       ],
       "takeaway": "A satellite link adds propagation delay and capacity constraints.",
-      "notes": "Explain why latency depends on the entire path: radio access, transport, core, processing location, propagation and congestion. A satellite link can improve coverage but may add substantial propagation delay.",
+      "notes": "Follow a datum from a sensor to a decision. Radio access connects it to a station; transport and core manage resources and mobility; edge or cloud performs computation. Each segment adds delay, energy consumption and possible failure. Moving computation near the user can reduce part of the delay, but does not guarantee improvement if the node is congested. Satellites can extend coverage while adding propagation, visibility and capacity constraints. Chinese universities, manufacturers and operators participate with different interests. The architecture is conceptual rather than a description of one commercial network. Ask where students would place an inspection algorithm and what would change if the link to the data center failed.",
       "sources": [
         "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
         "https://www.huawei.com/en/huaweitech/future-technologies/6g-isac-ow"
-      ]
+      ],
+      "image": "slides-en/03.webp",
+      "visual": {
+        "layout": "flow"
+      },
+      "section": "Networks and quantum"
     },
     {
       "number": 4,
@@ -115,8 +131,8 @@
           "Requirements, candidate interfaces and comparable methods."
         ],
         [
-          "Chinese ecosystem",
-          "Universities, operators and manufacturers participate in the technology race."
+          "China",
+          "Universities, operators and manufacturers shape the research ecosystem."
         ],
         [
           "Adoption",
@@ -124,11 +140,16 @@
         ]
       ],
       "takeaway": "A 6G prototype does not demonstrate commercial coverage or profitability.",
-      "notes": "Distinguish a research prototype, standardization, spectrum allocation, network deployment, terminal availability and a viable business model.",
+      "notes": "The sequence distinguishes building a prototype, agreeing evaluation criteria, establishing an ecosystem and sustaining a service. The 2023 IMT-2030 framework organizes the vision; later work specifies requirements and evaluation methods. Participation by Chinese manufacturers and operators in research and standardization does not mean that a commercial 6G network is universally available. Deployment requires spectrum, devices, infrastructure, interoperability, operation and demand that can cover costs. Ask students to classify an announcement by its evidence: laboratory experiment, standards document, interoperability test or authorized service. Innovation can advance while these layers mature at different rates. The sequence does not establish guaranteed launch dates or future profitability.",
       "sources": [
         "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
         "https://www.huawei.com/en/huaweitech/future-technologies/6g-isac-ow"
-      ]
+      ],
+      "image": "slides-en/04.webp",
+      "visual": {
+        "layout": "timeline"
+      },
+      "section": "Networks and quantum"
     },
     {
       "number": 5,
@@ -153,10 +174,15 @@
         ]
       ],
       "takeaway": "H·H|0⟩ = |0⟩. For a Bell state, P(00) = P(11) = 1/2.",
-      "notes": "A superposition is not equivalent to reading all possible answers simultaneously. The reduced state of one qubit in an entangled pair may lie inside the Bloch sphere.",
+      "notes": "Write a qubit state as alpha times zero plus beta times one and explain probability normalization. Amplitude includes phase information that a single computational-basis measurement does not reveal directly. Consequently, two states with identical initial probabilities can behave differently after another gate. Apply H twice to zero to illustrate reversibility and interference. Entanglement is a property of a joint state; it does not enable instant messages or reveal every amplitude in a single measurement. The laboratory uses small ideal states and a noise mixture at measurement. This mixture does not reproduce decoherence, calibration or all errors in real hardware.",
       "sources": [
         "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
-      ]
+      ],
+      "image": "slides-en/05.webp",
+      "visual": {
+        "layout": "matrix"
+      },
+      "section": "Networks and quantum"
     },
     {
       "number": 6,
@@ -181,14 +207,128 @@
         ]
       ],
       "takeaway": "An advantage on one specific task does not prove general usefulness or broken cryptography.",
-      "notes": "The gate simulator does not reproduce boson sampling or real hardware. Compare classical algorithms, error correction, reliability and total cost as well as headline performance.",
+      "notes": "Compare platforms by task and protocol rather than by one headline number. Jiuzhang investigates photonic sampling; Zuchongzhi uses superconducting circuits and has published random-circuit-sampling experiments. The Zuchongzhi 3.0 paper describes a 105-physical-qubit processor; that does not mean 105 error-protected logical qubits. Photons, optical modes and gate-architecture qubits are not interchangeable quantities. Key distribution and metrology are other quantum applications. Ask what would count as evidence of usefulness for a specific industrial problem. A useful task, an updated classical comparison, error control and total cost would be needed in addition to the specialized demonstration.",
       "sources": [
-        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
-      ]
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information",
+        "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.134.090601",
+        "https://english.cas.cn/newsroom/headlines/202605/t20260514_1159331.shtml"
+      ],
+      "image": "slides-en/06.webp",
+      "visual": {
+        "layout": "rows"
+      },
+      "section": "Networks and quantum"
     },
     {
+      "title": "From circuit to Bell state",
+      "subtitle": "Two qubits, one H gate and one CNOT",
+      "items": [
+        [
+          "H",
+          "Superposition"
+        ],
+        [
+          "CNOT",
+          "Correlation in the joint state"
+        ]
+      ],
+      "takeaway": "P(00) = P(11) = 1/2; one measurement does not reveal every amplitude.",
+      "sources": [
+        "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
+      ],
+      "visual": {
+        "layout": "circuit"
+      },
       "number": 7,
-      "title": "Two Experiments for Interpreting the Frontier",
+      "image": "slides-en/07.webp",
+      "notes": "Read the circuit from left to right. The initial state is zero zero. H on the first qubit prepares a superposition; CNOT uses that qubit as a control and changes the second when appropriate. The ideal final state is the sum of zero zero and one one divided by the square root of two. Repeated preparation and measurement yields approximately half of each outcome, rather than a guaranteed alternating sequence. Distinguishing correlation from entanglement requires knowledge of the protocol and may require measurements in other bases. In the laboratory, students can also undo gates, change the initial state and increase measurement noise. Ask for a prediction before comparing it with observed frequencies.",
+      "section": "Networks and quantum"
+    },
+    {
+      "title": "Algorithms: usefulness and requirements",
+      "subtitle": "Every claim needs a task and a classical reference",
+      "items": [
+        [
+          "Shor",
+          "Factoring; requires resources and error correction."
+        ],
+        [
+          "Grover",
+          "Oracle search; quadratic query improvement."
+        ],
+        [
+          "Variational",
+          "Circuit plus classical optimization; advantage must be shown."
+        ],
+        [
+          "Simulation",
+          "Study quantum systems with validated results."
+        ]
+      ],
+      "takeaway": "A sampling record does not establish an advantage for every problem.",
+      "sources": [
+        "https://quantum.cloud.ibm.com/learning/en/courses/fundamentals-of-quantum-algorithms",
+        "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.134.090601"
+      ],
+      "visual": {
+        "layout": "rows"
+      },
+      "number": 8,
+      "image": "slides-en/08.webp",
+      "notes": "Place each algorithm family next to its conditions for usefulness. Shor establishes a theoretical factoring result, but a practical threat to large-scale cryptography requires hardware and error correction that a sampling record does not establish. Grover provides a quadratic improvement in a query model; it does not remove the cost of building the oracle or loading data. Variational methods combine a circuit and classical optimization without guaranteeing industrial advantage. Quantum simulation aims to study quantum systems and also needs validation. Avoid promising acceleration for arbitrary AI tasks. The teaching criterion is to specify a task, a classical reference and a total resource budget before discussing advantage.",
+      "section": "Networks and quantum"
+    },
+    {
+      "title": "Waiting time rises near saturation",
+      "subtitle": "M/M/1 queue: W = 1 / (μ − λ), only when λ < μ",
+      "items": [
+        [
+          "λ = 650/s",
+          "W ≈ 2.86 ms"
+        ],
+        [
+          "λ = 900/s",
+          "W = 10 ms"
+        ],
+        [
+          "λ = 990/s",
+          "W = 100 ms"
+        ]
+      ],
+      "takeaway": "Above capacity, the stationary formula can no longer be used.",
+      "sources": [],
+      "visual": {
+        "layout": "chart",
+        "categories": [
+          "650/s",
+          "900/s",
+          "990/s"
+        ],
+        "series": [
+          {
+            "name": "Mean time (ms)",
+            "values": [
+              2.86,
+              10,
+              100
+            ]
+          }
+        ],
+        "max": 120,
+        "side": {
+          "value": "35×",
+          "label": "longer time at 990/s than at 650/s"
+        },
+        "caption": "Teaching example, not a 5G/6G measurement. μ = 1,000 requests/s; time in milliseconds."
+      },
+      "number": 9,
+      "image": "slides-en/09.webp",
+      "notes": "The chart is a queueing-theory calculation, not a measurement of 5G or 6G. For a stable M/M/1 queue, mean time in the system equals one divided by mu minus lambda. With capacity of one thousand requests per second, demands of 650, 900 and 990 yield approximately 2.86, 10 and 100 milliseconds. Proximity to saturation explains the nonlinear increase. Once lambda reaches or exceeds mu, that stationary regime does not exist; the laboratory switches to an overload approximation. Assumptions include Poisson arrivals, exponential service, one server and stability. Do not extrapolate these values to a real network without identifying topology, traffic distributions and additional delays.",
+      "section": "Networks and quantum"
+    },
+    {
+      "number": 10,
+      "title": "Predict, measure and compare",
       "subtitle": "Network congestion and one- or two-qubit circuits.",
       "items": [
         [
@@ -209,11 +349,22 @@
         ]
       ],
       "takeaway": "Which result comes from the physics, and which depends on the model assumptions?",
-      "notes": "Ask students to identify which elements are physical principles and which are simplified engineering assumptions in the simulator.",
+      "notes": "Close by distinguishing physical laws, engineering simplifications and empirical evidence. In the network module, increasing demand demonstrates the nonlinear relation between latency and capacity. In the quantum simulator, preparing plus, applying Z and then H changes final probabilities even though Z does not immediately change the computational-basis distribution. For Bell, compare observed frequencies and theoretical predictions over many repetitions. Then add noise and explain which part comes from ideal evolution and which from the measurement model. The submission should state a prediction, record parameters and discuss a limitation. This structure connects experimentation with critical evaluation of technological announcements.",
       "sources": [
         "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en",
         "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information"
-      ]
+      ],
+      "image": "slides-en/10.webp",
+      "visual": {
+        "layout": "close"
+      },
+      "section": "Networks and quantum"
     }
-  ]
+  ],
+  "editorial_version": 2,
+  "hero": {
+    "path": "materiales/clase-4/editorial/assets/quantum-jiuzhang.png",
+    "alt": "Photograph of the Jiuzhang 4.0 photonic processor",
+    "caption": "Jiuzhang 4.0 / Xinhua, Zhou Mu / CAS, 14-05-2026"
+  }
 }
